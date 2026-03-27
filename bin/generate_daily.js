@@ -1,72 +1,69 @@
 const NEIGHBOURHOODS = ["small", "medium", "large"];
 
 // all the countable properties to include in the game
-const properties = [
-    { id: "P2048", name: "Height", suffix: " m", neighbourhood: "medium" },
-    { id: "P2067", name: "Mass / Weight", suffix: " kg", neighbourhood: "large" },
-    { id: "P2046", name: "Area", suffix: " sq km", neighbourhood: "large" },
-    { id: "P2043", name: "Length", suffix: " m", neighbourhood: "medium" },
-    { id: "P2044", name: "Elevation above sea level", suffix: " m", neighbourhood: "medium" },
-    { id: "P2052", name: "Top Speed", suffix: " km/h", neighbourhood: "medium" },
-    { id: "P3150", name: "Maximum Lifespan", suffix: " years", neighbourhood: "small" },
-    { id: "P3095", name: "Gestation Period", suffix: " days", neighbourhood: "small" },
-    { id: "P2050", name: "Wingspan", suffix: " m", neighbourhood: "small" },
-    { id: "P2045", name: "Depth", suffix: " m", neighbourhood: "medium" },
+const properties = {
+    "small": [
+        { id: "P3150", name: "Maximum Lifespan", suffix: " years", classes: ["Q16521", "Q729"] }, // Taxon, Animal
+        { id: "P3095", name: "Gestation Period", suffix: " days", classes: ["Q16521", "Q729"] },
+        { id: "P2050", name: "Wingspan", suffix: " m", classes: ["Q16521", "Q11436"] }, // Taxon, Aircraft
+        { id: "P2047", name: "Duration / Runtime", suffix: " minutes", classes: ["Q11424", "Q2188189", "Q7889"] }, // Film, Music, Game
+        { id: "P1113", name: "Number of Episodes", suffix: " episodes", classes: ["Q5398426", "Q16521"] }, // TV, Podcast
+        { id: "P1301", name: "Number of Seasons", suffix: " seasons", classes: ["Q5398426"] },
+        { id: "P1536", name: "Alcohol by Volume (ABV)", suffix: "%", classes: ["Q213253", "Q44"] }, // Beverage, Beer
+        { id: "P4354", name: "Tempo / Beats Per Minute", suffix: " BPM", classes: ["Q2188189"] },
+        { id: "P1128", name: "Number of Floors / Storeys", suffix: " floors", classes: ["Q41176", "Q1021643"] }, // Building, Skyscraper
+        { id: "P166", name: "Awards Received", suffix: " awards", classes: ["Q5", "Q43229"], parser: (v) => Array.isArray(v) ? v.length : 1 },
+        // coords are quite heavy for wikidata so disabled for now. could add a filter to force a certain relevance to prevent the scan
+        // {
+        //     id: "P625",
+        //     name: "Distance from Equator",
+        //     suffix: "° from Equator",
+        //     classes: ["Q515", "Q6256"],
+        //     parser: (coord) => {
+        //         const match = coord.match(/Point\([^ ]+\s+([-+]?\d+\.?\d*)\)/);
+        //         return match ? Math.abs(parseFloat(match[1])) : 0;
+        //     }
+        // },
+    ],
 
-    { id: "P1082", name: "Population", suffix: " people", neighbourhood: "large" },
-    { id: "P2664", name: "Number of Employees", suffix: " employees", neighbourhood: "large" },
-    { id: "P1098", name: "Native Speakers", suffix: " speakers", neighbourhood: "large" },
-    { id: "P1110", name: "Event Attendance", suffix: " attendees", neighbourhood: "large" },
-    { id: "P3762", name: "Student Enrollment", suffix: " students", neighbourhood: "large" },
+    "medium": [
+        { id: "P2048", name: "Height", suffix: " m", classes: ["Q5", "Q41176", "Q754507", "Q10884"] }, // Human, Building, Rocket, Tree
+        { id: "P2043", name: "Length", suffix: " m", classes: ["Q4022", "Q12280", "Q11446"] }, // River, Bridge, Ship
+        { id: "P2044", name: "Elevation above sea level", suffix: " m", classes: ["Q8502", "Q515", "Q1248784"] }, // Mountain, City, Airport
+        { id: "P2052", name: "Top Speed", suffix: " km/h", classes: ["Q11436", "Q7946", "Q870", "Q729"] }, // Aircraft, Car, Train, Animal
+        { id: "P2045", name: "Depth", suffix: " m", classes: ["Q1532", "Q9472"] }, // Lake, Ocean
+        { id: "P3346", name: "Spiciness (Scoville Scale)", suffix: " SHU", classes: ["Q331469", "Q23146"] }, // Chili, Sauce
+        { id: "P1104", name: "Number of Pages", suffix: " pages", classes: ["Q7725", "Q571"] }, // Lit Work, Book
+        { id: "P571", name: "Year of Creation / Inception", classes: ["Q4830453", "Q6256", "Q11424"], parser: (d) => new Date(d).getFullYear() },
+        { id: "P569", name: "Year of Birth", classes: ["Q5"], parser: (d) => new Date(d).getFullYear() },
+        { id: "P570", name: "Year of Death", classes: ["Q5"], parser: (d) => new Date(d).getFullYear() },
+        { id: "P575", name: "Year of Discovery", classes: ["Q11344", "Q3863"], parser: (d) => new Date(d).getFullYear() }, // Element, Asteroid
+        { id: "P2102", name: "Boiling Point", suffix: "°C", classes: ["Q11344", "Q11173"], parser: (k) => Math.round(Number(k) - 273.15) },
+    ],
 
-    { id: "P2133", name: "Total Revenue", prefix: "$", suffix: "", neighbourhood: "large" },
-    { id: "P2403", name: "Total Net Worth", prefix: "$", suffix: "", neighbourhood: "large" },
-    { id: "P2127", name: "Market Capitalisation", prefix: "$", suffix: " Billion", neighbourhood: "large", parser: (market_cap) => Math.round(Number(market_cap) / 1_000_000_000) },
-
-    { id: "P2130", name: "Production Budget", prefix: "$", suffix: "", neighbourhood: "large" },
-    { id: "P2139", name: "Total Box Office Revenue", prefix: "$", suffix: "", neighbourhood: "large" },
-    { id: "P2047", name: "Duration / Runtime", suffix: " minutes", neighbourhood: "small" },
-    { id: "P1143", name: "Total Word Count", suffix: " words", neighbourhood: "large" },
-    { id: "P1104", name: "Number of Pages", suffix: " pages", neighbourhood: "medium" },
-    { id: "P1113", name: "Number of Episodes", suffix: " episodes", neighbourhood: "small" },
-    { id: "P1301", name: "Number of Seasons", suffix: " seasons", neighbourhood: "small" },
-
-    { id: "P3734", name: "Social Media Followers", suffix: " followers", neighbourhood: "large" },
-    { id: "P8627", name: "YouTube Subscribers", suffix: " subscribers", neighbourhood: "large" },
-    { id: "P10985", name: "Spotify Monthly Listeners", suffix: " listeners", neighbourhood: "large" },
-    { id: "P3143", name: "Subreddit Subscribers", suffix: " members", neighbourhood: "large" },
-
-    { id: "P3346", name: "Spiciness (Scoville Scale)", suffix: " SHU", neighbourhood: "medium" },
-    { id: "P1536", name: "Alcohol by Volume (ABV)", suffix: "%", neighbourhood: "small" },
-    { id: "P4354", name: "Tempo / Beats Per Minute", suffix: " BPM", neighbourhood: "small" },
-
-    { id: "P1128", name: "Number of Floors / Storeys", suffix: " floors", neighbourhood: "small" },
-    { id: "P1083", name: "Maximum Capacity", suffix: " people", neighbourhood: "large" },
-
-    { id: "P2951", name: "Number of Passengers", suffix: " passengers", neighbourhood: "large" },
-
-    { id: "P571", name: "Year of Creation / Inception", neighbourhood: "medium", parser: (date) => new Date(date).getFullYear() },
-    { id: "P582", name: "Year of Ending / Dissolution", neighbourhood: "medium", parser: (date) => new Date(date).getFullYear() },
-    { id: "P569", name: "Year of Birth", neighbourhood: "medium", parser: (date) => new Date(date).getFullYear() },
-    { id: "P570", name: "Year of Death", neighbourhood: "medium", parser: (date) => new Date(date).getFullYear() },
-    { id: "P575", name: "Year of Discovery", neighbourhood: "medium", parser: (date) => new Date(date).getFullYear() },
-
-    { id: "P2243", name: "Approximate Distance from Sun", suffix: " km", neighbourhood: "large" },
-    { id: "P2102", name: "Boiling Point", suffix: "°C", neighbourhood: "medium", parser: (kelvin) => Math.round(Number(kelvin) - 273.15) },
-
-    { id: "P166", name: "Awards Received", suffix: " awards", neighbourhood: "small", parser: (award_list) => Array.isArray(award_list) ? award_list.length : 1 },
-
-    {
-        id: "P625",
-        name: "Distance from Equator",
-        suffix: "° from Equator",
-        neighbourhood: "small",
-        parser: (coord) => {
-            const match = coord.match(/Point\([^ ]+\s+([-+]?\d+\.?\d*)\)/);
-            return match ? Math.abs(parseFloat(match[1])) : 0;
-        }
-    }
-];
+    "large": [
+        { id: "P1082", name: "Population", suffix: " people", classes: ["Q515", "Q6256"] }, // City, Country
+        { id: "P2067", name: "Mass / Weight", suffix: " kg", classes: ["Q634", "Q11022", "Q11446"] }, // Planet, Star, Ship
+        { id: "P2046", name: "Area", suffix: " sq km", classes: ["Q6256", "Q23442", "Q515"] }, // Country, Island, City
+        { id: "P2664", name: "Number of Employees", suffix: " employees", classes: ["Q4830453", "Q2655353"] }, // Business, Agency
+        { id: "P1098", name: "Native Speakers", suffix: " speakers", classes: ["Q34770"] },
+        { id: "P1110", name: "Event Attendance", suffix: " attendees", classes: ["Q16567", "Q1076531"] }, // Event, Match
+        { id: "P3762", name: "Student Enrollment", suffix: " students", classes: ["Q3918", "Q3914"] }, // Uni, School
+        { id: "P2133", name: "Total Revenue", prefix: "$", suffix: "", classes: ["Q4830453", "Q11424"] },
+        { id: "P2403", name: "Total Net Worth", prefix: "$", suffix: "", classes: ["Q5"] },
+        { id: "P2127", name: "Market Capitalisation", prefix: "$", suffix: " Billion", classes: ["Q4830453"], parser: (v) => Math.round(Number(v) / 1_000_000_000) },
+        { id: "P2130", name: "Production Budget", prefix: "$", suffix: "", classes: ["Q11424", "Q7889"] }, // Film, Game
+        { id: "P2139", name: "Total Box Office Revenue", prefix: "$", suffix: "", classes: ["Q11424"] },
+        { id: "P1143", name: "Total Word Count", suffix: " words", classes: ["Q7725", "Q571"] },
+        { id: "P3734", name: "Social Media Followers", suffix: " followers", classes: ["Q5", "Q215380"] }, // Human, Band
+        { id: "P8627", name: "YouTube Subscribers", suffix: " subscribers", classes: ["Q5", "Q4830453"] },
+        { id: "P10985", name: "Spotify Monthly Listeners", suffix: " listeners", classes: ["Q5", "Q215380"] },
+        { id: "P3143", name: "Subreddit Subscribers", suffix: " members", classes: ["Q3962", "Q7889"] }, // Website, Game
+        { id: "P1083", name: "Maximum Capacity", suffix: " people", classes: ["Q48310", "Q182832"] }, // Stadium, Hall
+        { id: "P2951", name: "Number of Passengers", suffix: " passengers", classes: ["Q1248784", "Q55488"] }, // Airport, Station
+        { id: "P2243", name: "Approximate Distance from Sun", suffix: " km", classes: ["Q634", "Q3863"] } // Planet, Asteroid
+    ]
+};
 
 // TODO: dynamic formatter so market cap doesnt always have to be billion, can write a query to flip between latitude and longitude etc
 
@@ -109,11 +106,28 @@ const choose_difficulty = () => {
 
 const fetch_single_property = async (prop, difficulty) => {
     console.log(`Fetching data for ${prop.name}...`);
+
     const value_var = prop.id === "P625" ? "?coord" : "?value";
+
+    const class_list = prop.classes
+        ? prop.classes.map(c => `wd:${c}`).join(" ")
+
+        // fallback to logical entity
+        : "wd:Q15228";
 
     const query = `
     SELECT ?item ?itemLabel ${value_var} WHERE {
+      # 1. Provide the list of allowed classes
+      VALUES ?allowedClass { ${class_list} }
+      
+      # 2. Match items that are an instance of any allowed class (or its subclasses)
+      ?item wdt:P31/wdt:P279* ?allowedClass .
+      
+      # 3. Get the property value
       ?item wdt:${prop.id} ${value_var} .
+      
+      # 4. Standard performance hints and sitelink filters
+      hint:Prior hint:rangeSafe "true" . 
       ?item wikibase:sitelinks ?sitelinks .
       FILTER(?sitelinks >= ${difficulty.min} && ?sitelinks <= ${difficulty.max})
       SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
@@ -197,8 +211,7 @@ const main = async () => {
     console.log(`Today's Rangle will be ${difficulty.label} with ${neighbourhood} values.`);
 
     // pick 10 random properties from the neighbourhood
-    const subset_props = properties
-        .filter(p => p.neighbourhood === neighbourhood)
+    const subset_props = properties[neighbourhood]
         .sort(() => 0.5 - Math.random())
         .slice(0, 10);
 
