@@ -1,5 +1,8 @@
 const NEIGHBOURHOODS = ["small", "medium", "large"];
 
+// TODO https://gemini.google.com/app/45d708144dfec96f  https://gemini.google.com/app/e640a95e1bb097e5
+
+
 // all the countable properties to include in the game
 const properties = {
     "small": [
@@ -131,7 +134,7 @@ const fetch_single_property = async (prop, difficulty) => {
       ?item wikibase:sitelinks ?sitelinks .
       FILTER(?sitelinks >= ${difficulty.min} && ?sitelinks <= ${difficulty.max})
       SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-    } LIMIT 80`;
+    } LIMIT 150`;
 
     try {
         const response = await fetch("https://query.wikidata.org/sparql", {
@@ -232,11 +235,10 @@ const main = async () => {
         return acc;
     }, {});
 
-    // filter out buckets that are too small. the final lineup will be 5 items but we want some extra in case some are discarded for being unsafe
-    // buckets must also have a good variation of metrics
+    // filter out buckets that are too small. the final lineup will be 5 items but
+    // we want some extra in case some are discarded for being unsafe or too close
     const valid_buckets = Object.values(buckets).filter(bucket => {
-        const unique_metrics = new Set(bucket.map(item => item.metric));
-        return bucket.length >= 10 && unique_metrics.size >= 3;
+        return bucket.length >= 12;
     });
 
     if (valid_buckets.length === 0) {
@@ -276,21 +278,35 @@ const main = async () => {
         ...sorted_candidates.slice(1, sorted_candidates.length - 1).sort(() => 0.5 - Math.random()).slice(0, 8)
     ];
 
-    // check candidates for safety and pick the first 5 safe ones for the game
+    // check candidates for safety and sort once more for gap check
     const safe_items = await check_if_safe(candidates);
+    const sorted_safe = safe_items.sort((a, b) => a.value - b.value);
 
-    if (safe_items.length < 5) {
-        console.error("Not enough safe items found, trying again...");
-        return main();
+    const lineup = [];
+    const metric_counts = {};
+
+    for (const item of sorted_safe) {
+        // ensure metric diversity
+        if (metric_counts[item.metric] >= 2) {
+            continue;
+        }
+
+        // ensure no items are too close together (e.g. within 5% of each other) to avoid ambiguity in the game
+        const last_item = lineup[lineup.length - 1];
+        if (last_item && Math.abs(item.value - last_item.value) / Math.max(item.value, last_item.value) < 0.05) {
+            continue;
+        }
+
+        lineup.push(item);
+        metric_counts[item.metric] = (metric_counts[item.metric] || 0) + 1;
+
+        if (lineup.length === 5) break;
     }
 
-    // lastly sort the final items again and ensure still anchored with smallest and largest of new safe items in final lineup
-    // this should be a lineup of 5
-    const lineup = [
-        safe_items[0],
-        safe_items[safe_items.length - 1],
-        ...safe_items.slice(1, safe_items.length - 1).sort(() => 0.5 - Math.random()).slice(0, 3)
-    ].sort((a, b) => a.value - b.value);
+    if (lineup.length < 5) {
+        console.error("Couldn't find enough safe and well-spaced items, trying again...");
+        return main();
+    }
 
     console.log("Today's lineup:");
     lineup.forEach(item => {
