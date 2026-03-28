@@ -15,7 +15,7 @@ const properties = {
         { id: "P1536", name: "Alcohol by Volume (ABV)", suffix: "%", classes: ["Q213253", "Q44"] }, // Beverage, Beer
         { id: "P4354", name: "Tempo / Beats Per Minute", suffix: " BPM", classes: ["Q2188189"] },
         { id: "P1128", name: "Number of Floors / Storeys", suffix: " floors", classes: ["Q41176", "Q1021643"] }, // Building, Skyscraper
-        { id: "P166", name: "Awards Received", suffix: " awards", classes: ["Q5", "Q43229"], parser: (v) => Array.isArray(v) ? v.length : 1 },
+        //{ id: "P166", name: "Awards Received", suffix: " awards", classes: ["Q5", "Q43229"], parser: (v) => Array.isArray(v) ? v.length : 1 },
         // coords are quite heavy for wikidata so disabled for now. could add a filter to force a certain relevance to prevent the scan
         // {
         //     id: "P625",
@@ -54,7 +54,7 @@ const properties = {
         { id: "P3762", name: "Student Enrollment", suffix: " students", classes: ["Q3918", "Q3914"] }, // Uni, School
         { id: "P2133", name: "Total Revenue", prefix: "$", suffix: "", classes: ["Q4830453", "Q11424"] },
         { id: "P2403", name: "Total Net Worth", prefix: "$", suffix: "", classes: ["Q5"] },
-        { id: "P2127", name: "Market Capitalisation", prefix: "$", suffix: " Billion", classes: ["Q4830453"], parser: (v) => Math.round(Number(v) / 1_000_000_000) },
+        { id: "P2127", name: "Market Capitalisation", prefix: "$", suffix: "", classes: ["Q4830453"] },
         { id: "P2130", name: "Production Budget", prefix: "$", suffix: "", classes: ["Q11424", "Q7889"] }, // Film, Game
         { id: "P2139", name: "Total Box Office Revenue", prefix: "$", suffix: "", classes: ["Q11424"] },
         { id: "P1143", name: "Total Word Count", suffix: " words", classes: ["Q7725", "Q571"] },
@@ -98,13 +98,13 @@ const choose_difficulty = () => {
     const rng = Math.random();
 
     // 20% chance for something pretty easy
-    if (rng < 0.20) return { label: "Easy", min: 150, max: 1000 };
+    if (rng < 0.20) return { label: "Easy", min: 45, max: 1000 };
 
     // 20% chance for something quite hard
-    if (rng < 0.40) return { label: "Hard", min: 35, max: 70 };
+    if (rng < 0.40) return { label: "Hard", min: 4, max: 15 };
 
     // 60% chance for a medium challenge
-    return { label: "Medium", min: 70, max: 150 };
+    return { label: "Medium", min: 15, max: 45 };
 };
 
 const fetch_single_property = async (prop, difficulty) => {
@@ -119,22 +119,20 @@ const fetch_single_property = async (prop, difficulty) => {
         : "wd:Q15228";
 
     const query = `
-    SELECT ?item ?itemLabel ${value_var} WHERE {
-      # 1. Provide the list of allowed classes
-      VALUES ?allowedClass { ${class_list} }
-      
-      # 2. Match items that are an instance of any allowed class (or its subclasses)
-      ?item wdt:P31/wdt:P279* ?allowedClass .
-      
-      # 3. Get the property value
+    SELECT DISTINCT ?item ?itemLabel ${value_var} WHERE {
+      # 1. Start with the property. This acts as a massive primary filter.
       ?item wdt:${prop.id} ${value_var} .
       
-      # 4. Standard performance hints and sitelink filters
-      hint:Prior hint:rangeSafe "true" . 
+      # 2. Filter by sitelinks NEXT. 
       ?item wikibase:sitelinks ?sitelinks .
       FILTER(?sitelinks >= ${difficulty.min} && ?sitelinks <= ${difficulty.max})
+      
+      # 3. FINALLY, check the class hierarchy on the surviving items.
+      VALUES ?allowedClass { ${class_list} }
+      ?item wdt:P31/wdt:P279* ?allowedClass .
+      
       SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-    } LIMIT 150`;
+    } LIMIT 200`;
 
     try {
         const response = await fetch("https://query.wikidata.org/sparql", {
@@ -147,10 +145,8 @@ const fetch_single_property = async (prop, difficulty) => {
             body: new URLSearchParams({ query })
         });
 
-        console.log(`Received response for ${prop.name}`);
-
         if (!response.ok) {
-            console.error(`Wikidata error: ${response.status}`);
+            console.error(`Wikidata error for ${prop.name}: ${response.status}`);
             return [];
         }
 
@@ -163,6 +159,8 @@ const fetch_single_property = async (prop, difficulty) => {
             console.error(`Error parsing JSON for ${prop.name}:`, e.message);
             return [];
         }
+
+        console.log(`Received response for ${prop.name} with ${data.results.bindings.length} entries`);
 
         return data.results.bindings.map(r => {
             const raw = r.coord ? r.coord.value : r.value.value;
@@ -227,22 +225,38 @@ const main = async () => {
         await new Promise(resolve => setTimeout(resolve, 1000));
     }
 
-    // bucket the pool by magnitude to make the game harder (i.e. dont have them compare a small number to a huge one)
-    const buckets = pool.reduce((acc, item) => {
-        const magnitude = Math.floor(Math.log10(item.value));
-        if (!acc[magnitude]) acc[magnitude] = [];
-        acc[magnitude].push(item);
-        return acc;
-    }, {});
+    // bucket the pool with a sliding window on the sorted pool, keeping the magnitude close for a challenge
+    // this is much less harsh than the old exact magnitude buckets
+    const sorted_pool = pool.sort((a, b) => a.value - b.value);
+    const valid_buckets = [];
 
-    // filter out buckets that are too small. the final lineup will be 5 items but
-    // we want some extra in case some are discarded for being unsafe or too close
-    // pre-check the diversity too
-    const valid_buckets = Object.values(buckets).filter(bucket => {
+    for (let i = 0; i < sorted_pool.length; i++) {
+        const bucket = [];
+        const min_val = sorted_pool[i].value;
+
+        // largest item can be up to 100x the value of the smallest
+        const max_allowed = min_val * 100;
+
+        for (let j = i; j < sorted_pool.length; j++) {
+            if (sorted_pool[j].value <= max_allowed) {
+                bucket.push(sorted_pool[j]);
+            } else {
+                // too big
+                break;
+            }
+        }
+
+        // filter out buckets that are too small. the final lineup will be 5 items but
+        // we want some extra in case some are discarded for being unsafe or too close
+        // pre-check the diversity too
         const unique_metrics = new Set(bucket.map(item => item.metric));
-        console.log(`Bucket with magnitude ~10^${Math.floor(Math.log10(bucket[0].value))} has ${bucket.length} items across ${unique_metrics.size} metrics.`);
-        return bucket.length >= 12 && unique_metrics.size >= 3;
-    });
+        if (bucket.length >= 12 && unique_metrics.size >= 3) {
+            valid_buckets.push(bucket);
+
+            // skip ahead to the next bucket start
+            i += Math.floor(bucket.length / 2);
+        }
+    }
 
     if (valid_buckets.length === 0) {
         console.error("Didn't find any valid buckets, trying again...");
