@@ -1,7 +1,6 @@
+const fs = require("fs");
+
 const NEIGHBOURHOODS = ["small", "medium", "large"];
-
-// TODO https://gemini.google.com/app/45d708144dfec96f  https://gemini.google.com/app/e640a95e1bb097e5
-
 
 // all the countable properties to include in the game
 const properties = {
@@ -336,6 +335,53 @@ const main = async () => {
         lineup.forEach(item => {
             console.log(`${item.name} (${item.metric}): ${item.prefix}${item.value}${item.suffix}`);
         });
+
+        // create shuffled lineup to serve to players, but save the original order for the answer key
+        const shuffled_lineup = [...lineup].sort(() => 0.5 - Math.random());
+
+        // if the shuffled order is very close to the original order (e.g. more than 2 items in the same position), reshuffle
+        while (true) {
+            let same_position_count = 0;
+            for (let i = 0; i < lineup.length; i++) {
+                if (lineup[i].id === shuffled_lineup[i].id) {
+                    same_position_count++;
+                }
+            }
+
+            if (same_position_count > 2) {
+                console.log("Shuffled lineup is too close to original order, reshuffling...");
+                shuffled_lineup.sort(() => 0.5 - Math.random());
+            } else {
+                break;
+            }
+        }
+
+        // build the final data
+        const today_date = new Date().toISOString().split("T")[0];
+        const final_data = {
+            date: today_date,
+            difficulty: difficulty.label,
+            neighbourhood,
+            puzzle: shuffled_lineup.map(item => ({
+                id: item.id,
+                name: item.name,
+                metric: item.metric,
+                prefix: item.prefix,
+                suffix: item.suffix
+            })),
+            solution: lineup.map(item => item.id)
+        };
+
+        // ensure daily directory exists
+        if (!fs.existsSync("./daily")){
+            fs.mkdirSync("./daily");
+        }
+
+        // save to archive with date stamp
+        fs.writeFileSync(`./daily/${today_date}.json`, JSON.stringify(final_data, null, 2));
+
+        // also save to the today file
+        fs.writeFileSync(`./daily/today.json`, JSON.stringify(final_data, null, 2));
 
         break;
     }
