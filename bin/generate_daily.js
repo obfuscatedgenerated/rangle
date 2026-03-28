@@ -237,8 +237,11 @@ const main = async () => {
 
     // filter out buckets that are too small. the final lineup will be 5 items but
     // we want some extra in case some are discarded for being unsafe or too close
+    // pre-check the diversity too
     const valid_buckets = Object.values(buckets).filter(bucket => {
-        return bucket.length >= 12;
+        const unique_metrics = new Set(bucket.map(item => item.metric));
+        console.log(`Bucket with magnitude ~10^${Math.floor(Math.log10(bucket[0].value))} has ${bucket.length} items across ${unique_metrics.size} metrics.`);
+        return bucket.length >= 12 && unique_metrics.size >= 3;
     });
 
     if (valid_buckets.length === 0) {
@@ -246,72 +249,87 @@ const main = async () => {
         return main();
     }
 
-    // pick a random bucket and then pick 10 random items from that bucket to be checked for safety
-    const chosen_bucket = valid_buckets[Math.floor(Math.random() * valid_buckets.length)];
+    // shuffle bucket order and iterate until first valid one is found
+    valid_buckets.sort(() => 0.5 - Math.random());
 
-    // dont allow equal values or names
-    const unique_value_pool = new Set();
-    const seen_names = new Set();
-    const seen_values = new Set();
+    let success = false;
+    for (const chosen_bucket of valid_buckets) {
+        // dont allow equal values or names
+        const unique_value_pool = new Set();
+        const seen_names = new Set();
+        const seen_values = new Set();
 
-    for (const item of chosen_bucket) {
-        if (seen_names.has(item.name) || seen_values.has(item.value)) {
-            continue; // skip duplicates
+        for (const item of chosen_bucket) {
+            if (seen_names.has(item.name) || seen_values.has(item.value)) {
+                continue; // skip duplicates
+            }
+
+            seen_names.add(item.name);
+            seen_values.add(item.value);
+            unique_value_pool.add(item);
         }
 
-        seen_names.add(item.name);
-        seen_values.add(item.value);
-        unique_value_pool.add(item);
-    }
-
-    if (unique_value_pool.size < 10) {
-        console.error("Not enough unique items in the chosen bucket, trying again...");
-        return main();
-    }
-
-    const sorted_candidates = Array.from(unique_value_pool).sort((a, b) => a.value - b.value);
-
-    // rather than selecting 10 random items, take the smallest, the largest, and fill with randoms in between to ensure spread
-    const candidates = [
-        sorted_candidates[0],
-        sorted_candidates[sorted_candidates.length - 1],
-        ...sorted_candidates.slice(1, sorted_candidates.length - 1).sort(() => 0.5 - Math.random()).slice(0, 8)
-    ];
-
-    // check candidates for safety and sort once more for gap check
-    const safe_items = await check_if_safe(candidates);
-    const sorted_safe = safe_items.sort((a, b) => a.value - b.value);
-
-    const lineup = [];
-    const metric_counts = {};
-
-    for (const item of sorted_safe) {
-        // ensure metric diversity
-        if (metric_counts[item.metric] >= 2) {
+        if (unique_value_pool.size < 10) {
+            console.error("Not enough unique items in the chosen bucket, trying next bucket...");
             continue;
         }
 
-        // ensure no items are too close together (e.g. within 5% of each other) to avoid ambiguity in the game
-        const last_item = lineup[lineup.length - 1];
-        if (last_item && Math.abs(item.value - last_item.value) / Math.max(item.value, last_item.value) < 0.05) {
+        const sorted_candidates = Array.from(unique_value_pool).sort((a, b) => a.value - b.value);
+
+        // select up to 30 evenly distributed candidates
+        const candidates = [];
+        const step = Math.max(1, Math.floor(sorted_candidates.length / 30));
+        for (let i = 0; i < sorted_candidates.length && candidates.length < 30; i += step) {
+            candidates.push(sorted_candidates[i]);
+        }
+
+        // check candidates for safety and sort once more for gap check
+        const safe_items = await check_if_safe(candidates);
+        const sorted_safe = safe_items.sort((a, b) => a.value - b.value);
+
+        const lineup = [];
+        const metric_counts = {};
+
+        for (const item of sorted_safe) {
+            // ensure metric diversity
+            if (metric_counts[item.metric] >= 2) {
+                continue;
+            }
+
+            // ensure no items are too close together (e.g. within 5% of each other) to avoid ambiguity in the game
+            const last_item = lineup[lineup.length - 1];
+            if (last_item && Math.abs(item.value - last_item.value) / Math.max(item.value, last_item.value) < 0.05) {
+                continue;
+            }
+
+            lineup.push(item);
+            metric_counts[item.metric] = (metric_counts[item.metric] || 0) + 1;
+
+            // final lineup must be 5 items
+            if (lineup.length === 5) {
+                break;
+            }
+        }
+
+        if (lineup.length < 5) {
+            console.error("Couldn't find enough safe and well-spaced items, trying next bucket...");
             continue;
         }
 
-        lineup.push(item);
-        metric_counts[item.metric] = (metric_counts[item.metric] || 0) + 1;
+        success = true;
 
-        if (lineup.length === 5) break;
+        console.log("Today's lineup:");
+        lineup.forEach(item => {
+            console.log(`${item.name} (${item.metric}): ${item.prefix}${item.value}${item.suffix}`);
+        });
+
+        break;
     }
 
-    if (lineup.length < 5) {
-        console.error("Couldn't find enough safe and well-spaced items, trying again...");
+    if (!success) {
+        console.error("Couldn't find a valid lineup, starting over...");
         return main();
     }
-
-    console.log("Today's lineup:");
-    lineup.forEach(item => {
-        console.log(`${item.name} (${item.metric}): ${item.prefix}${item.value}${item.suffix}`);
-    });
 }
 
 main();
