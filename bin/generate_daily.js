@@ -118,7 +118,7 @@ const fetch_single_property = async (prop, difficulty) => {
         : "wd:Q15228";
 
     const query = `
-    SELECT DISTINCT ?item ?itemLabel ${value_var} WHERE {
+    SELECT DISTINCT ?item ?itemLabel ?itemDescription ${value_var} WHERE {
       # 1. Start with the property. This acts as a massive primary filter.
       ?item wdt:${prop.id} ${value_var} .
       
@@ -169,6 +169,7 @@ const fetch_single_property = async (prop, difficulty) => {
                 id: r.item.value.split("/").pop(),
                 name: r.itemLabel.value,
                 metric: prop.name,
+                description: r.itemDescription ? r.itemDescription.value : undefined,
                 value: parsed,
                 suffix: (prop.suffix || ""),
                 prefix: (prop.prefix || "")
@@ -375,6 +376,7 @@ const main = async () => {
                 name: item.name,
                 value: item.value,
                 metric: item.metric,
+                description: item.description,
                 prefix: item.prefix,
                 suffix: item.suffix
             }))

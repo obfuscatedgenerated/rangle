@@ -1,0 +1,52 @@
+{
+  "date": "2026-03-28",
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q33000",
+      "name": "British Sign Language",
+      "value": 77000,
+      "metric": "Native Speakers",
+      "description": "sign language used in the United Kingdom",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q27415",
+      "name": "Buick",
+      "value": 398156,
+      "metric": "Number of Employees",
+      "description": "luxury car brand of General Motors",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q499639",
+      "name": "Strangers on a Train",
+      "value": 1200000,
+      "metric": "Production Budget",
+      "description": "1951 film by Alfred Hitchcock",
+      "prefix": "$",
+      "suffix": ""
+    },
+    {
+      "id": "Q584509",
+      "name": "Limelight",
+      "value": 900000,
+      "metric": "Production Budget",
+      "description": "1952 film by Charlie Chaplin",
+      "prefix": "$",
+      "suffix": ""
+    },
+    {
+      "id": "Q34053",
+      "name": "Shughni",
+      "value": 64800,
+      "metric": "Native Speakers",
+      "description": "Eastern Iranian language",
+      "prefix": "",
+      "suffix": " speakers"
+    }
+  ]
+}
