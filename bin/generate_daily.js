@@ -1,5 +1,6 @@
 const fs = require("fs");
 
+const EPOCH = new Date("2026-03-28T00:00:00Z");
 const NEIGHBOURHOODS = ["small", "medium", "large"];
 
 // all the countable properties to include in the game
@@ -366,9 +367,11 @@ const main = async () => {
         }
 
         // build the final data
-        const today_date = new Date().toISOString().split("T")[0];
+        const today_date = new Date();
+        const today_date_iso = today_date.toISOString().split("T")[0];
         const final_data = {
-            date: today_date,
+            date: today_date_iso,
+            number: Math.floor((today_date - EPOCH) / (1000 * 60 * 60 * 24)) + 1,
             difficulty: difficulty.label,
             neighbourhood,
             puzzle: shuffled_lineup.map(item => ({
@@ -383,15 +386,15 @@ const main = async () => {
         };
 
         // ensure daily directory exists
-        if (!fs.existsSync("./daily")){
-            fs.mkdirSync("./daily");
+        if (!fs.existsSync("./public/daily")){
+            fs.mkdirSync("./public/daily");
         }
 
         // save to archive with date stamp
-        fs.writeFileSync(`./daily/${today_date}.json`, JSON.stringify(final_data, null, 2));
+        fs.writeFileSync(`./public/daily/${today_date}.json`, JSON.stringify(final_data, null, 2));
 
         // also save to the today file
-        fs.writeFileSync(`./daily/today.json`, JSON.stringify(final_data, null, 2));
+        fs.writeFileSync(`./public/daily/today.json`, JSON.stringify(final_data, null, 2));
 
         break;
     }
