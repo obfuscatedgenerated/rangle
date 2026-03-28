@@ -97,13 +97,13 @@ const choose_difficulty = () => {
     const rng = Math.random();
 
     // 20% chance for something pretty easy
-    if (rng < 0.20) return { label: "Easy", min: 45, max: 1000 };
+    if (rng < 0.20) return { label: "Easy", min: 80, max: 1000 };
 
     // 20% chance for something quite hard
-    if (rng < 0.40) return { label: "Hard", min: 4, max: 15 };
+    if (rng < 0.40) return { label: "Hard", min: 20, max: 40 };
 
     // 60% chance for a medium challenge
-    return { label: "Medium", min: 15, max: 45 };
+    return { label: "Medium", min: 40, max: 80 };
 };
 
 const fetch_single_property = async (prop, difficulty) => {
@@ -173,7 +173,15 @@ const fetch_single_property = async (prop, difficulty) => {
                 suffix: (prop.suffix || ""),
                 prefix: (prop.prefix || "")
             };
-        }).filter(item => !isNaN(item.value) && item.value > 0);
+        }).filter(
+            item =>
+                // no nan or 0 values
+                !isNaN(item.value)
+                && item.value > 0
+
+                // no junk names where the label is just the id
+                && !(/^Q\d+$/.test(item.name))
+        );
     } catch (e) {
         console.error(`Error fetching ${prop.name}:`, e.message);
         return [];
