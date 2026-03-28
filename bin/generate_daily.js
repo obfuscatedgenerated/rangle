@@ -336,7 +336,7 @@ const main = async () => {
             console.log(`${item.name} (${item.metric}): ${item.prefix}${item.value}${item.suffix}`);
         });
 
-        // create shuffled lineup to serve to players, but save the original order for the answer key
+        // create shuffled lineup to serve to players, but save the original order to check against for the shuffle quality
         const shuffled_lineup = [...lineup].sort(() => 0.5 - Math.random());
 
         // if the shuffled order is very close to the original order (e.g. more than 2 items in the same position), reshuffle
@@ -365,11 +365,11 @@ const main = async () => {
             puzzle: shuffled_lineup.map(item => ({
                 id: item.id,
                 name: item.name,
+                value: item.value,
                 metric: item.metric,
                 prefix: item.prefix,
                 suffix: item.suffix
-            })),
-            solution: lineup.map(item => item.id)
+            }))
         };
 
         // ensure daily directory exists
