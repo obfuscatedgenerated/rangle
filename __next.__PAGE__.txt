@@ -1,7 +1,7 @@
 1:"$Sreact.fragment"
-2:I[3597,["/_next/static/chunks/04vlfuo5_79tc.js","/_next/static/chunks/075w4lkq_gtfo.js"],"InfoPopup"]
-3:I[41341,["/_next/static/chunks/04vlfuo5_79tc.js","/_next/static/chunks/075w4lkq_gtfo.js"],"Game"]
+2:I[3597,["/_next/static/chunks/04vlfuo5_79tc.js","/_next/static/chunks/16baeb0pst2qz.js"],"InfoPopup"]
+3:I[41341,["/_next/static/chunks/04vlfuo5_79tc.js","/_next/static/chunks/16baeb0pst2qz.js"],"Game"]
 4:I[96782,["/_next/static/chunks/04vlfuo5_79tc.js"],"OutletBoundary"]
 5:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"flex-1 flex-col m-4 flex items-center justify-center","children":[["$","$L2",null,{}],["$","h1",null,{"className":"font-title text-3xl sm:text-4xl mb-1 font-bold","children":"Rangle"}],["$","$L3",null,{}],["$","p",null,{"className":"fixed left-2 bottom-2 opacity-75 text-xs sm:text-base","children":["Powered by ",["$","a",null,{"href":"https://www.wikidata.org/","target":"_blank","rel":"noopener noreferrer","className":"underline","children":"Wikidata"}]]}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/075w4lkq_gtfo.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"wKqSMk0O8ozKilwRAlBn4"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"flex-1 flex-col m-4 flex items-center justify-center","children":[["$","$L2",null,{}],["$","h1",null,{"className":"font-title text-3xl sm:text-4xl mb-1 font-bold","children":"Rangle"}],["$","$L3",null,{}],["$","p",null,{"className":"fixed left-2 bottom-2 opacity-75 text-xs sm:text-base","children":["Powered by ",["$","a",null,{"href":"https://www.wikidata.org/","target":"_blank","rel":"noopener noreferrer","className":"underline","children":"Wikidata"}]]}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/16baeb0pst2qz.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"FbEIkMhoPtImgvYOSWsBM"}
 6:null
