@@ -108,10 +108,11 @@ export const Game = () => {
         <>
             <SharePopup open={share_open} on_close={() => setShareOpen(false)} attempts={attempts} today_data={today_data} />
 
-            <p>#{today_data.number} | {today_data.difficulty} • {attempts.length}/5</p>
+            <p className="mb-4 sm:mb-8 text-sm sm:text-lg">#{today_data.number} | {today_data.difficulty} • {attempts.length}/5</p>
+
             <DraggableStats puzzle={current_order} on_reorder={on_reorder} correct_positions={correct_positions} finished={finished} />
 
-            <button disabled={finished} className="my-4 px-4 py-2 bg-blue-500 text-white rounded cursor-pointer disabled:bg-gray-500" onClick={check_answer}>
+            <button disabled={finished} className="my-4 sm:my-6 px-4 py-2 bg-blue-500 text-white rounded cursor-pointer disabled:bg-gray-500" onClick={check_answer}>
                 Check
             </button>
         </>

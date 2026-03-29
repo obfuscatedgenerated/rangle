@@ -34,7 +34,7 @@ const DraggableStat = ({ stat, correct, finished }: DraggableStatProps) => {
             ${correct || finished ? "" : "cursor-move"}
             `}
         >
-            <p className="text-2xl font-bold pointer-events-none">{stat.metric}{
+            <p className="text-balance text-center text-lg sm:text-2xl font-bold pointer-events-none">{stat.metric}{
                 finished
                     ? `: ${stat.prefix}${stat.value.toLocaleString()}${stat.suffix}`
                     : stat.unit_hint ? ` (${stat.unit_hint})` : ""
@@ -88,7 +88,7 @@ export const DraggableStats = ({puzzle, on_reorder, correct_positions, finished}
     return (
         <DndContext collisionDetection={closestCenter} onDragEnd={handle_drag_end}>
             <SortableContext items={sortable_ids} strategy={verticalListSortingStrategy}>
-                <div className="flex flex-col gap-4 w-full max-w-2xl mx-auto">
+                <div className="flex flex-col gap-2 sm:gap-4 w-full max-w-2xl mx-auto">
                     {puzzle.map((stat, index) => (
                         <DraggableStat
                             key={stat.id}
