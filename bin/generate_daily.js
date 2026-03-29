@@ -108,8 +108,8 @@ const exclude_categories = [
 
 const difficulties = {
     "easy": { label: "Easy", min: 150, max: 3000 },
-    "medium": { label: "Medium", min: 60, max: 149 },
-    "hard": { label: "Hard", min: 15, max: 59 }
+    "medium": { label: "Medium", min: 80, max: 149 },
+    "hard": { label: "Hard", min: 40, max: 79 }
 };
 
 const choose_difficulty = () => {
