@@ -114,8 +114,8 @@ export const DraggableStats = ({
     correct_positions,
     finished,
     reveal_values,
-    correct_className = "bg-green-600 border-green-800",
-    incorrect_className = "bg-zinc-900 border-gray-700"
+    correct_className = "bg-green-400 border-green-600 dark:bg-green-600 dark:border-green-800",
+    incorrect_className = "bg-zinc-300 border-gray-400 dark:bg-zinc-900 dark:border-gray-700"
 }: DraggableStatsProps) => {
     const handle_drag_end = (event: DragEndEvent) => {
         const { active, over } = event;
