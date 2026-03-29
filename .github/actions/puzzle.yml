@@ -1,0 +1,73 @@
+name: Generate Daily Puzzle
+
+on:
+  schedule:
+    - cron: '0 12 * * *' # runs at 12:00 PM UTC daily
+  workflow_dispatch:
+    inputs:
+      force_overwrite:
+        description: 'Force overwrite existing puzzle'
+        required: true
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # fetch main and gh-pages branches
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Generator Script
+        run: |
+          # If triggered manually AND the box is checked, add --force
+          if [ "${{ github.event.inputs.force_overwrite }}" == "true" ]; then
+            node bin/generate_daily.js --offset 1 --force
+          else
+            # For the daily cron job, just run it normally
+            node bin/generate_daily.js --offset 1
+          fi
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "🤖 Rangler"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: 1. Commit to Main (Source Archive)
+        run: |
+          git add public/daily/*.json
+          # The || echo prevents the action from failing if there are no changes
+          git commit -m "🤖 add latest puzzle to main archive [skip ci]" || echo "No changes"
+          git push origin main
+
+      - name: 2. Commit to gh-pages (Live Deployment)
+        run: |
+          git checkout -B gh-pages origin/gh-pages
+          
+          # Pull the fresh JSON files out of the main branch
+          git checkout main -- public/daily/
+          
+          # Move them from /public/daily to /daily (where the live site expects them)
+          mkdir -p daily
+          cp public/daily/*.json daily/
+          
+          # Clean up the public folder artifact we just used
+          rm -rf public
+          
+          # Ship it!
+          git add daily/*.json
+          git commit -m "update daily puzzle" || echo "No changes"
+          git push origin gh-pages

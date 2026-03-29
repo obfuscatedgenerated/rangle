@@ -7,11 +7,13 @@ program
     .name("generate_daily")
     .description("Generates the daily Rangle puzzle from Wikidata")
     .option("-d, --difficulty <difficulty>", "Difficulty level (easy, medium, hard)", "random")
-    .option("-n, --neighbourhood <neighbourhood>", "Neighbourhood of values (small, medium, large)", "random");
+    .option("-n, --neighbourhood <neighbourhood>", "Neighbourhood of values (small, medium, large)", "random")
+    .option("-o, --offset <days>", "Number of days in the future to generate for", "0")
+    .option("-f, --force", "Force generation even if today's file already exists", false);
 
 program.parse();
 
-const { difficulty: difficulty_arg, neighbourhood: neighbourhood_arg } = program.opts();
+const { difficulty: difficulty_arg, neighbourhood: neighbourhood_arg, offset: offset_arg, force: force_arg } = program.opts();
 
 const EPOCH = require("../epoch");
 const NEIGHBOURHOODS = ["small", "medium", "large"];
@@ -231,6 +233,27 @@ const check_if_safe = async (candidates) => {
 };
 
 const main = async () => {
+    const today_date = new Date();
+
+    if (offset_arg) {
+        const offset_days = parseInt(offset_arg, 10);
+        if (!isNaN(offset_days)) {
+            today_date.setUTCDate(today_date.getUTCDate() + offset_days);
+        }
+    }
+
+    const today_date_iso = today_date.toISOString().split("T")[0];
+
+    // check if today's file already exists
+    if (fs.existsSync(`./public/daily/${today_date_iso}.json`)) {
+        if (force_arg) {
+            console.warn("Today's file already exists, but --force is set, so regenerating...");
+        } else {
+            console.log("Today's file already exists, skipping generation.");
+            return;
+        }
+    }
+
     // pick a difficulty and neighbourhood for today
     const difficulty = difficulties[difficulty_arg] || choose_difficulty();
     const neighbourhood = NEIGHBOURHOODS.includes(neighbourhood_arg) ? neighbourhood_arg : NEIGHBOURHOODS[Math.floor(Math.random() * NEIGHBOURHOODS.length)];
@@ -388,12 +411,14 @@ const main = async () => {
             console.log(`${item.name} (${item.metric})`);
         });
 
+        // prevent dst drift
+        const target_midnight = new Date(`${today_date_iso}T00:00:00Z`).getTime();
+        const epoch_midnight = new Date(EPOCH).getTime();
+
         // build the final data
-        const today_date = new Date();
-        const today_date_iso = today_date.toISOString().split("T")[0];
         const final_data = {
             date: today_date_iso,
-            number: Math.floor((today_date - EPOCH) / (1000 * 60 * 60 * 24)) + 1,
+            number: Math.floor((target_midnight - epoch_midnight) / (1000 * 60 * 60 * 24)) + 1,
             difficulty: difficulty.label,
             neighbourhood,
             puzzle: shuffled_lineup.map(item => ({
@@ -426,5 +451,3 @@ const main = async () => {
 }
 
 main();
-
-// TODO: maybe gen a day ahead for moderation?
