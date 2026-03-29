@@ -151,9 +151,13 @@ export const Game = () => {
                 incorrect_className={just_attempted ? "bg-red-500 border-red-700 animate-shake-horizontal" : undefined}
             />
 
-            <button disabled={finished} className="my-4 sm:my-6 px-4 py-2 bg-blue-500 text-white rounded cursor-pointer disabled:bg-gray-500" onClick={check_answer}>
+            <button disabled={finished} className="my-4 sm:my-6 px-4 py-2 bg-blue-500 text-white rounded cursor-pointer disabled:bg-gray-500 disabled:cursor-auto" onClick={check_answer}>
                 Check
             </button>
         </>
     );
 }
+
+// TODO: way to get back info and share popup
+// TODO: store game result
+// TODO: archives
