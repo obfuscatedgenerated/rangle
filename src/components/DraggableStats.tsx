@@ -83,12 +83,12 @@ const DraggableStat = ({ stat, correct, finished, reveal_values, className = "" 
             <p className="text-pretty text-center text-lg sm:text-2xl font-bold pointer-events-none">
                 {reveal_values
                     ? (
-                        <div className="flex items-center">
+                        <span className="flex items-center">
                             <a className="pointer-events-auto underline" href={`https://wikidata.org/wiki/${stat.id}`} target="_blank" rel="noopener noreferrer">
                                 {stat.name}
                             </a>
                             <LinkIcon className="ml-1 w-4 h-4" />
-                        </div>
+                        </span>
                     )
                     : stat.name
                 }
