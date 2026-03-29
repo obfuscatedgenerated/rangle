@@ -9,7 +9,7 @@ export default function Home() {
             <h1 className="text-4xl font-bold">Rangle</h1>
             <Game />
 
-            <p className="absolute right-2 bottom-2 opacity-75">Powered by <a href="https://www.wikidata.org/" target="_blank" rel="noopener noreferrer" className="underline">Wikidata</a></p>
+            <p className="fixed right-2 bottom-2 opacity-75">Powered by <a href="https://www.wikidata.org/" target="_blank" rel="noopener noreferrer" className="underline">Wikidata</a></p>
         </main>
     );
 }
