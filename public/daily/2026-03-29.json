@@ -28,7 +28,7 @@
       "name": "Venus",
       "value": 108942109,
       "metric": "Approximate Distance from Sun",
-      "description": "second planet from the Solar System, tellurian and very similar to Earth",
+      "description": "planet in the Solar System, tellurian and very similar to Earth",
       "prefix": "",
       "suffix": " km",
       "unit_hint": "in kilometres"
@@ -47,7 +47,7 @@
       "name": "Earth",
       "value": 151930000,
       "metric": "Approximate Distance from Sun",
-      "description": "third planet from the Sun in the Solar System",
+      "description": "planet in the Solar System",
       "prefix": "",
       "suffix": " km",
       "unit_hint": "in kilometres"
