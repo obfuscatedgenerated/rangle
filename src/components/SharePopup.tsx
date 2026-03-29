@@ -12,7 +12,7 @@ interface SharePopupProps {
 
 const is_mobile = () => {
     if (typeof window === "undefined") {
-        return false;
+        return undefined;
     }
 
     return /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -20,7 +20,7 @@ const is_mobile = () => {
 
 export const SharePopup = ({open, on_close, attempts, today_data}: SharePopupProps) => {
     const dialog_ref = useRef<HTMLDialogElement>(null);
-    const [share_button_text, setShareButtonText] = useState(is_mobile() ? "Share Results" : "Copy Results");
+    const [share_button_text, setShareButtonText] = useState("Share Results");
 
     const got_it_right = attempts[attempts.length - 1]?.every((pos) => pos);
 
@@ -32,6 +32,11 @@ export const SharePopup = ({open, on_close, attempts, today_data}: SharePopupPro
             dialog_ref.current?.close();
         }
     }, [open]);
+
+    // on window load, update button text
+    useEffect(() => {
+        setShareButtonText(is_mobile() ? "Share Results" : "Copy Results");
+    }, []);
 
     const handle_copy = useCallback(
         (share_text: string) => {
