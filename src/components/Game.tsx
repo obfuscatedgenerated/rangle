@@ -149,34 +149,36 @@ export const Game = () => {
 
             <p className="mb-4 sm:mb-8 text-sm sm:text-lg">#{today_data.number} | {today_data.difficulty} • Attempt: {finished ? attempts.length : attempts.length + 1}/5</p>
 
-            <div className="flex">
-                <DraggableStats
-                    puzzle={current_order}
-                    on_reorder={set_current_order}
-                    correct_positions={correct_positions}
-                    finished={finished}
-                    reveal_values={reveal_values}
-                    incorrect_className={just_attempted ? "bg-red-500 border-red-700 animate-shake-horizontal" : undefined}
-                />
+            <div className="flex flex-col items-center gap-2">
+                <div className="flex">
+                    <DraggableStats
+                        puzzle={current_order}
+                        on_reorder={set_current_order}
+                        correct_positions={correct_positions}
+                        finished={finished}
+                        reveal_values={reveal_values}
+                        incorrect_className={just_attempted ? "bg-red-500 border-red-700 animate-shake-horizontal" : undefined}
+                    />
 
-                <div className="flex flex-col items-center ml-4 sm:ml-6 opacity-33">
-                    <span className="text-xs font-bold uppercase tracking-widest">
-                        <span className="hidden sm:inline">Smallest</span>
-                        <span className="inline sm:hidden">Min</span>
-                    </span>
-                    <div className="w-px flex-grow bg-gradient-to-b from-gray-300 via-gray-500 to-gray-300 my-2 relative">
-                        <div className="absolute bottom-0 -left-[4px] w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[8px] border-t-gray-500" />
+                    <div className="flex flex-col items-center ml-4 sm:ml-6 opacity-33">
+                        <span className="text-xs font-bold uppercase tracking-widest">
+                            <span className="hidden sm:inline">Smallest</span>
+                            <span className="inline sm:hidden">Min</span>
+                        </span>
+                        <div className="w-px flex-grow bg-gradient-to-b from-gray-300 via-gray-500 to-gray-300 my-2 relative">
+                            <div className="absolute bottom-0 -left-[4px] w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[8px] border-t-gray-500" />
+                        </div>
+                        <span className="text-xs font-bold uppercase tracking-widest">
+                            <span className="hidden sm:inline">Largest</span>
+                            <span className="inline sm:hidden">Max</span>
+                        </span>
                     </div>
-                    <span className="text-xs font-bold uppercase tracking-widest">
-                        <span className="hidden sm:inline">Largest</span>
-                        <span className="inline sm:hidden">Max</span>
-                    </span>
                 </div>
-            </div>
 
-            <button disabled={finished} className="my-4 sm:my-6 px-4 py-2 bg-blue-500 text-white rounded cursor-pointer disabled:bg-gray-500 disabled:cursor-auto" onClick={check_answer}>
-                Check
-            </button>
+                <button disabled={finished} className="w-full text-lg font-bold uppercase tracking-wider sm:max-w-lg my-4 sm:my-6 px-4 py-3 bg-blue-500 text-white rounded cursor-pointer disabled:bg-gray-500 disabled:cursor-auto" onClick={check_answer}>
+                    Check
+                </button>
+            </div>
 
             {finished_correctly && (
                 <ReactConfetti width={window_size.width} height={window_size.height} />
