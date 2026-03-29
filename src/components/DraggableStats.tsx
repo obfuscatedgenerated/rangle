@@ -10,9 +10,11 @@ interface DraggableStatProps {
     stat: PuzzleStat;
     correct: boolean;
     finished: boolean;
+
+    className?: string;
 }
 
-const DraggableStat = ({ stat, correct, finished }: DraggableStatProps) => {
+const DraggableStat = ({ stat, correct, finished, className = "" }: DraggableStatProps) => {
     const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
         id: stat.id,
         disabled: correct || finished,
@@ -30,7 +32,7 @@ const DraggableStat = ({ stat, correct, finished }: DraggableStatProps) => {
             {...attributes}
             {...listeners}
             className={`flex flex-col items-center justify-center gap-1 border-2 rounded p-4 w-full
-            ${correct ? "bg-green-600 border-green-800" : "bg-zinc-900 border-gray-700"}
+            ${className}
             ${correct || finished ? "" : "cursor-move"}
             `}
         >
@@ -50,9 +52,21 @@ interface DraggableStatsProps {
     on_reorder?: (new_order: PuzzleStat[]) => void;
     correct_positions: [boolean, boolean, boolean, boolean, boolean];
     finished: boolean;
+
+    base_className?: string;
+    correct_className?: string;
+    incorrect_className?: string;
 }
 
-export const DraggableStats = ({puzzle, on_reorder, correct_positions, finished}: DraggableStatsProps) => {
+export const DraggableStats = ({
+    puzzle,
+    on_reorder,
+    correct_positions,
+    finished,
+    base_className = "",
+    correct_className = "bg-green-600 border-green-800",
+    incorrect_className = "bg-zinc-900 border-gray-700"
+}: DraggableStatsProps) => {
     const handle_drag_end = (event: DragEndEvent) => {
         const { active, over } = event;
         if (!over || active.id === over.id || !on_reorder) {
@@ -95,6 +109,7 @@ export const DraggableStats = ({puzzle, on_reorder, correct_positions, finished}
                             stat={stat}
                             correct={correct_positions[index]}
                             finished={finished}
+                            className={`${base_className} ${correct_positions[index] ? correct_className : incorrect_className}`}
                         />
                     ))}
                 </div>

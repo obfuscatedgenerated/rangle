@@ -32,6 +32,8 @@ export const Game = () => {
     const [current_order, setCurrentOrder] = useState<PuzzleStat[]>([]);
     const [correct_positions, setCorrectPositions] = useState<StatPositionFlags>([false, false, false, false, false]);
 
+    const [just_attempted, setJustAttempted] = useState(false);
+
     const [attempts, setAttempts] = useState<StatPositionFlags[]>([]);
     const [finished, setFinished] = useState(false);
     const [share_open, setShareOpen] = useState(false);
@@ -72,17 +74,26 @@ export const Game = () => {
             // add attempt to history
             setAttempts((prev) => [...prev, new_correct_positions]);
 
+            // trigger just attempted state for styling purposes
+            setJustAttempted(true);
+            setTimeout(() => {
+                setJustAttempted(false);
+            }, 1000);
+
             // if everything is correct, fire the finish logic
             if (new_correct_positions.every((pos) => pos)) {
                 setFinished(true);
                 setShareOpen(true);
+                return;
             }
 
             // if reached attempt limit, reveal the answer
+            // TODO: animate this differently to show it rearranging, then display the share popup after
             if (attempts.length + 1 >= 5) {
                 setCurrentOrder(answers);
                 setFinished(true);
                 setShareOpen(true);
+                return;
             }
         },
         // any point memoising?
@@ -110,7 +121,14 @@ export const Game = () => {
 
             <p className="mb-4 sm:mb-8 text-sm sm:text-lg">#{today_data.number} | {today_data.difficulty} • {attempts.length}/5</p>
 
-            <DraggableStats puzzle={current_order} on_reorder={on_reorder} correct_positions={correct_positions} finished={finished} />
+            <DraggableStats
+                puzzle={current_order}
+                on_reorder={on_reorder}
+                correct_positions={correct_positions}
+                finished={finished}
+                base_className="transition-colors transition-300"
+                incorrect_className={just_attempted ? "bg-red-500 border-red-700 animate-shake-horizontal" : undefined}
+            />
 
             <button disabled={finished} className="my-4 sm:my-6 px-4 py-2 bg-blue-500 text-white rounded cursor-pointer disabled:bg-gray-500" onClick={check_answer}>
                 Check
