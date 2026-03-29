@@ -11,6 +11,7 @@ import {
 import { CSS } from "@dnd-kit/utilities";
 
 import type {PuzzleStat} from "@/components/Game";
+import {useEffect, useState} from "react";
 
 interface DraggableStatProps {
     stat: PuzzleStat;
@@ -38,12 +39,34 @@ const DraggableStat = ({ stat, correct, finished, reveal_values, className = "" 
         },
     });
 
+    const [value_display_state, setValueDisplayState] = useState<"hidden" | "about_to_reveal" | "visible">("hidden");
+
+    useEffect(() => {
+        if (!reveal_values) {
+            setValueDisplayState("hidden");
+            return;
+        }
+
+        // add to DOM just before starting animation to reveal values
+        if (reveal_values && value_display_state === "hidden") {
+            setValueDisplayState("about_to_reveal");
+        }
+
+        if (reveal_values && value_display_state === "about_to_reveal") {
+            // after a short delay, set to visible so that it appears with a fade-in transition
+            const timeout = setTimeout(() => {
+                setValueDisplayState("visible");
+            }, 50);
+
+            return () => clearTimeout(timeout);
+        }
+    }, [reveal_values, value_display_state]);
+
     const drag_style = {
         transform: CSS.Translate.toString(transform),
         transition: `${transition}, background-color 0.2s, border-color 0.2s`
     };
 
-    // TODO: transition when revealing values
     return (
         <div
             ref={correct ? undefined : setNodeRef}
@@ -55,11 +78,19 @@ const DraggableStat = ({ stat, correct, finished, reveal_values, className = "" 
             ${lock_position ? "" : "cursor-move"}
             `}
         >
-            <p className="text-balance text-center text-lg sm:text-2xl font-bold pointer-events-none">{stat.metric}{
-                reveal_values
-                    ? `: ${stat.prefix}${stat.value.toLocaleString()}${stat.suffix}`
-                    : stat.unit_hint ? ` (${stat.unit_hint})` : ""
-            }</p>
+            <p className="text-balance text-center text-lg sm:text-2xl font-bold pointer-events-none">
+                {stat.metric}
+
+                {value_display_state !== "hidden"
+                    && <span
+                        className={`transition-opacity ${value_display_state === "visible" ? "opacity-100" : "opacity-0"}`}
+                    >
+                        {`: ${stat.prefix}${stat.value.toLocaleString()}${stat.suffix}`}
+                    </span>
+                }
+
+                {value_display_state === "hidden" && <span>{stat.unit_hint ? ` (${stat.unit_hint})` : ""}</span>}
+            </p>
             <p className="text-sm pointer-events-none">{stat.name}</p>
             <p className="text-sm opacity-60 pointer-events-none">({stat.description})</p>
         </div>

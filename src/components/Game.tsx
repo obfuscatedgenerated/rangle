@@ -99,16 +99,20 @@ export const Game = () => {
             if (attempts.length + 1 >= 5) {
                 setFinished(true);
 
-                // reveal the order after a delay
+                // reveal the values after a delay
                 setTimeout(() => {
                     setRevealValues(true);
+                }, 1000);
+
+                // reveal the order after a slightly longer delay
+                setTimeout(() => {
                     setCurrentOrder(answers);
-                }, 1500);
+                }, 2000);
 
                 // open share popup after a longer delay
                 setTimeout(() => {
                     setShareOpen(true);
-                }, 2000);
+                }, 3000);
 
                 return;
             }
