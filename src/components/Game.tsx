@@ -55,48 +55,51 @@ export const Game = () => {
                 return;
             }
 
-            const guess_result = submit_guess(current_order);
-
             // trigger just attempted state for styling purposes
             setJustAttempted(true);
             setTimeout(() => {
                 setJustAttempted(false);
             }, 1000);
-            
-            if (!guess_result.finished) {
-                return;
-            }
-            
-            // game finished, trigger end game logic
-            if (guess_result.correct) {
-                // if everything is correct, fire the finish logic
-                setRevealValues(true);
 
-                // open share popup after a delay
-                setTimeout(() => {
-                    setShareOpen(true);
-                }, 1500);
-            } else {
-                // if reached attempt limit, reveal the answer
-                // reveal the values after a delay
-                setTimeout(() => {
-                    setRevealValues(true);
-                }, 1000);
-
-                // reveal the order after a slightly longer delay
-                setTimeout(() => {
-                    reveal_answers();
-                }, 2000);
-
-                // open share popup after a longer delay
-                setTimeout(() => {
-                    setShareOpen(true);
-                }, 3000);
-            }
+            submit_guess(current_order);
         },
         // any point memoising?
-        [today_data, current_order, submit_guess, reveal_answers, finished]
+        [current_order, submit_guess, today_data, finished]
     );
+
+    // trigger end game logic when game finishes (as it could be triggered by either submit_guess or loading saved state on mount)
+    useEffect(() => {
+        if (!finished) {
+            return;
+        }
+        
+        // game finished, trigger end game logic
+        if (finished_correctly) {
+            // if everything is correct, fire the finish logic
+            setRevealValues(true);
+
+            // open share popup after a delay
+            setTimeout(() => {
+                setShareOpen(true);
+            }, 1500);
+        } else {
+            // if reached attempt limit, reveal the answer
+            // reveal the values after a delay
+            setTimeout(() => {
+                setRevealValues(true);
+            }, 1000);
+
+            // reveal the order after a slightly longer delay
+            setTimeout(() => {
+                reveal_answers();
+            }, 2000);
+
+            // open share popup after a longer delay
+            setTimeout(() => {
+                setShareOpen(true);
+            }, 3000);
+        }
+    }, [finished, finished_correctly, reveal_answers]);
 
     if (!today_data) {
         return (

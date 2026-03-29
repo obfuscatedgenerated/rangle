@@ -82,9 +82,10 @@ export const SharePopup = ({open, on_close, attempts, today_data}: SharePopupPro
         [attempts, got_it_right, today_data, handle_copy]
     );
 
+    // TODO: base dialog component
     return (
         <dialog onAbort={on_close} ref={dialog_ref}
-                className="rounded-lg p-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-md w-full bg-background-variant text-foreground-variant flex flex-col items-center">
+                className="rounded-lg p-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[95vw] sm:max-w-md w-full bg-background-variant text-foreground-variant flex flex-col items-center">
             <h2 className="text-xl font-bold mb-2">Results</h2>
             <p className="mb-4 opacity-60">#{today_data.number} | {today_data.difficulty}</p>
 
@@ -100,10 +101,10 @@ export const SharePopup = ({open, on_close, attempts, today_data}: SharePopupPro
             </div>
 
             {got_it_right ? (
-                <p className="mt-4 text-green-600 font-bold">Great job! You solved today&apos;s Rangle
-                    in {attempts.length} attempts.</p>
+                <p className="mt-4 text-green-600 font-bold text-pretty text-center">Great job! You solved today&apos;s Rangle
+                    in {attempts.length} attempt{attempts.length === 1 ? "" : "s"}.</p>
             ) : (
-                <p className="mt-4 text-red-600 font-bold">Better luck next time!</p>
+                <p className="mt-4 text-red-600 font-bold text-pretty text-center">Better luck next time!</p>
             )}
 
             <div className="mt-4 flex gap-4">

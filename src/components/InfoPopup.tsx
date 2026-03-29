@@ -16,7 +16,7 @@ export const InfoPopup = () => {
     }, []);
 
     return (
-        <dialog ref={dialog_ref} className="rounded-lg p-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-md w-full bg-background-variant text-foreground-variant flex flex-col items-center">
+        <dialog ref={dialog_ref} className="rounded-lg p-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[95vw] sm:max-w-md w-full bg-background-variant text-foreground-variant flex flex-col items-center">
             <h2 className="font-title text-xl font-bold">Rangle</h2>
             <p className="font-title mb-4 opacity-60">(pronounced &quot;wrangle&quot;)</p>
 
