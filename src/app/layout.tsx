@@ -17,6 +17,46 @@ const sans = Roboto({
 export const metadata: Metadata = {
     title: "Rangle",
     description: "Rangle is a game about sorting.",
+    icons: "/icon.svg",
+    openGraph: {
+        images: [
+            {
+                url: "/icon@1x.png",
+                width: 64,
+                height: 64,
+            },
+            {
+                url: "/icon@2x.png",
+                width: 128,
+                height: 128,
+            },
+            {
+                url: "/icon@3x.png",
+                width: 192,
+                height: 192,
+            },
+            {
+                url: "/icon@4x.png",
+                width: 256,
+                height: 256,
+            },
+            {
+                url: "/icon@8x.png",
+                width: 512,
+                height: 512,
+            },
+            {
+                url: "/icon@16x.png",
+                width: 1024,
+                height: 1024,
+            },
+            {
+                url: "/icon@32x.png",
+                width: 2048,
+                height: 2048,
+            }
+        ]
+    }
 };
 
 export default function RootLayout({
