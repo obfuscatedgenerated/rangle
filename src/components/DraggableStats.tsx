@@ -78,7 +78,8 @@ const DraggableStat = ({ stat, correct, finished, reveal_values, className = "" 
             ${lock_position ? "" : "cursor-move"}
             `}
         >
-            <p className="text-balance text-center text-lg sm:text-2xl font-bold pointer-events-none">
+            <p className="text-pretty text-center text-lg sm:text-2xl font-bold pointer-events-none">{stat.name}</p>
+            <p className="uppercase tracking-wider text-pretty text-sm sm:text-base text-center pointer-events-none mb-2">
                 {stat.metric}
 
                 {value_display_state !== "hidden"
@@ -91,8 +92,7 @@ const DraggableStat = ({ stat, correct, finished, reveal_values, className = "" 
 
                 {value_display_state === "hidden" && <span>{stat.unit_hint ? ` (${stat.unit_hint})` : ""}</span>}
             </p>
-            <p className="text-sm pointer-events-none">{stat.name}</p>
-            <p className="text-sm opacity-60 pointer-events-none">({stat.description})</p>
+            <p className="text-pretty text-center text-sm opacity-60 pointer-events-none">({stat.description})</p>
         </div>
     );
 };
