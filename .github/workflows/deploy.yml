@@ -6,6 +6,8 @@ on:
       - main
     paths-ignore:
       - 'public/daily/**'
+      - 'README.md'
+      - '.github/workflows/**'
   workflow_dispatch:
 
 permissions:
