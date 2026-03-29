@@ -88,11 +88,19 @@ export const Game = () => {
             }
 
             // if reached attempt limit, reveal the answer
-            // TODO: animate this differently to show it rearranging, then display the share popup after
             if (attempts.length + 1 >= 5) {
-                setCurrentOrder(answers);
                 setFinished(true);
-                setShareOpen(true);
+
+                // reveal the order after a delay
+                setTimeout(() => {
+                    setCurrentOrder(answers);
+                }, 1500);
+
+                // open share popup after a longer delay
+                setTimeout(() => {
+                    setShareOpen(true);
+                }, 2000);
+
                 return;
             }
         },

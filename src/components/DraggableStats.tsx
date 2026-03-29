@@ -1,7 +1,13 @@
 "use client";
 
 import { DndContext, closestCenter, DragEndEvent } from "@dnd-kit/core";
-import { arrayMove, SortableContext, verticalListSortingStrategy, useSortable } from "@dnd-kit/sortable";
+import {
+    arrayMove,
+    SortableContext,
+    verticalListSortingStrategy,
+    useSortable,
+    defaultAnimateLayoutChanges
+} from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
 import type {PuzzleStat} from "@/components/Game";
@@ -15,9 +21,20 @@ interface DraggableStatProps {
 }
 
 const DraggableStat = ({ stat, correct, finished, className = "" }: DraggableStatProps) => {
+    const lock_position = correct || finished;
+
     const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
         id: stat.id,
-        disabled: correct || finished,
+        disabled: lock_position,
+        animateLayoutChanges: (args) => {
+            if (finished) {
+                // auto animate to correct positions when puzzle is finished
+                return true;
+            }
+
+            // otherwise use normal animation logic
+            return defaultAnimateLayoutChanges(args);
+        },
     });
 
     const drag_style = {
@@ -33,7 +50,7 @@ const DraggableStat = ({ stat, correct, finished, className = "" }: DraggableSta
             {...listeners}
             className={`flex flex-col items-center justify-center gap-1 border-2 rounded p-4 w-full
             ${className}
-            ${correct || finished ? "" : "cursor-move"}
+            ${lock_position ? "" : "cursor-move"}
             `}
         >
             <p className="text-balance text-center text-lg sm:text-2xl font-bold pointer-events-none">{stat.metric}{
@@ -93,9 +110,11 @@ export const DraggableStats = ({
     };
 
     // filter out locked ids so sortable context doesn't even know they exist
-    const sortable_ids = puzzle
-        .filter((_, index) => !correct_positions[index])
-        .map(p => p.id);
+    const sortable_ids = finished
+        ? puzzle // everything should now be visible to the sortable context so it can animate to correct positions
+        : puzzle
+            .filter((_, index) => !correct_positions[index])
+            .map(p => p.id);
 
     return (
         <DndContext collisionDetection={closestCenter} onDragEnd={handle_drag_end}>
@@ -115,5 +134,3 @@ export const DraggableStats = ({
         </DndContext>
     );
 }
-
-// TODO: gradual reveal animation
