@@ -23,10 +23,32 @@ export const useRangleState = () => {
                 const parsed_state = JSON.parse(saved_state);
                 const today_save = parsed_state?.[data.date];
                 if (today_save) {
-                    setCurrentOrder(today_save.current_order);
-                    setCorrectPositions(today_save.correct_positions);
+                    // resolve ids to full order object
+                    // TODO: should current order just store ids in general?
+                    const id_to_stat: Record<string, PuzzleStat> = {};
+                    data.puzzle.forEach((stat: PuzzleStat) => {
+                        id_to_stat[stat.id] = stat;
+                    });
+
+                    const saved_order = today_save.current_order_ids.map((id: string) => id_to_stat[id]);
+                    setCurrentOrder(saved_order);
+
+                    // evaluate correct positions for saved order
+                    const answers = [...data.puzzle].sort((a, b) => a.value - b.value);
+                    const saved_correct_positions: StatPositionFlags = [false, false, false, false, false];
+                    for (let i = 0; i < saved_order.length; i++) {
+                        if (saved_order[i].id === answers[i].id) {
+                            saved_correct_positions[i] = true;
+                        }
+                    }
+                    setCorrectPositions(saved_correct_positions);
+
                     setAttempts(today_save.attempts);
-                    setFinished(today_save.finished);
+
+                    // evaluate if finished based on saved state
+                    if (saved_correct_positions.every((pos) => pos) || today_save.attempts.length >= 5) {
+                        setFinished(true);
+                    }
                 } else {
                     setCurrentOrder(data.puzzle);
                 }
@@ -64,10 +86,8 @@ export const useRangleState = () => {
 
             // save state to local storage
             const save_state = {
-                current_order: guess,
-                correct_positions: new_correct_positions,
-                attempts: [...attempts, new_correct_positions],
-                finished: new_correct_positions.every((pos) => pos) || attempts.length + 1 >= 5,
+                current_order_ids: guess.map((stat) => stat.id),
+                attempts: [...attempts, new_correct_positions]
             };
 
             const existing_saves = localStorage.getItem("rangle_state_v1");
