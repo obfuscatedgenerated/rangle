@@ -28,6 +28,24 @@ export interface PuzzleStat {
 export type StatPositionFlags = [boolean, boolean, boolean, boolean, boolean];
 
 export const Game = () => {
+    const [date_override, setDateOverride] = useState<string | undefined>(undefined);
+
+    const on_load_error = useCallback(
+        (err: Error) => {
+            // if the error is not found, try to go back a day
+            if (err.message === "NO_PUZZLE") {
+                const yesterday = date_override ? new Date(date_override) : new Date();
+                yesterday.setDate(yesterday.getDate() - 1);
+                setDateOverride(yesterday.toISOString().split("T")[0]);
+
+                console.log("No puzzle found for date, trying previous day:", yesterday.toISOString().split("T")[0]);
+            } else {
+                alert("Error loading puzzle: " + err.message);
+            }
+        },
+        [date_override]
+    );
+
     const {
         today_data,
         attempts,
@@ -38,7 +56,10 @@ export const Game = () => {
         reveal_answers,
         submit_guess,
         set_current_order
-    } = useRangleState();
+    } = useRangleState({
+        on_load_error,
+        date_override
+    });
 
     const [just_attempted, setJustAttempted] = useState(false);
 
