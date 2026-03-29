@@ -9,6 +9,7 @@ import EPOCH from "../../epoch";
 import {useState, useEffect, useCallback} from "react";
 
 import ReactConfetti from "react-confetti";
+import {useWindowSize} from "@/hooks/useWindowSize";
 
 export interface TodayData {
     date: string;
@@ -75,6 +76,8 @@ export const Game = () => {
 
     const [reveal_values, setRevealValues] = useState(false);
     const [share_open, setShareOpen] = useState(false);
+
+    const window_size = useWindowSize();
 
     const check_answer = useCallback(
         () => {
@@ -176,7 +179,7 @@ export const Game = () => {
             </button>
 
             {finished_correctly && (
-                <ReactConfetti />
+                <ReactConfetti width={window_size.width} height={window_size.height} />
             )}
         </>
     );
