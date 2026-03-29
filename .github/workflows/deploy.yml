@@ -40,5 +40,6 @@ jobs:
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
         with:
+          cname: "rangle.ollieg.codes"
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
