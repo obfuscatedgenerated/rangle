@@ -1,0 +1,55 @@
+{
+  "date": "2026-03-29",
+  "number": 1,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q926860",
+      "name": "North American XF-108 Rapier",
+      "value": 17.5,
+      "metric": "Wingspan",
+      "description": "aircraft",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q23623",
+      "name": "Queer as Folk",
+      "value": 10,
+      "metric": "Number of Episodes",
+      "description": "1999 British television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q19881",
+      "name": "Sacra di San Michele",
+      "value": 11,
+      "metric": "Number of Floors / Storeys",
+      "description": "religious complex on Mount Pirchiriano",
+      "prefix": "",
+      "suffix": " floors"
+    },
+    {
+      "id": "Q911047",
+      "name": "Palazzo Medici Riccardi",
+      "value": 12,
+      "metric": "Number of Floors / Storeys",
+      "description": "palace and museum in Florence, Italy",
+      "prefix": "",
+      "suffix": " floors"
+    },
+    {
+      "id": "Q647915",
+      "name": "British Aerospace Jetstream 31",
+      "value": 15.85,
+      "metric": "Wingspan",
+      "description": "1980 airliner series",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}

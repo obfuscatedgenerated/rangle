@@ -97,14 +97,14 @@ const exclude_categories = [
 const choose_difficulty = () => {
     const rng = Math.random();
 
-    // 20% chance for something pretty easy
-    if (rng < 0.20) return { label: "Easy", min: 80, max: 1000 };
+    // 20% chance for something pretty easy, very famous
+    if (rng < 0.20) return { label: "Easy", min: 45, max: 1000 };
 
-    // 20% chance for something quite hard
-    if (rng < 0.40) return { label: "Hard", min: 20, max: 40 };
+    // 20% chance for something quite hard, niche but verifiable
+    if (rng < 0.40) return { label: "Hard", min: 5, max: 15 };
 
-    // 60% chance for a medium challenge
-    return { label: "Medium", min: 40, max: 80 };
+    // 60% chance for a medium challenge, standard trivia
+    return { label: "Medium", min: 16, max: 44 };
 };
 
 const fetch_single_property = async (prop, difficulty) => {
@@ -173,7 +173,8 @@ const fetch_single_property = async (prop, difficulty) => {
                 description: r.itemDescription ? r.itemDescription.value : undefined,
                 value: parsed,
                 suffix: (prop.suffix || ""),
-                prefix: (prop.prefix || "")
+                prefix: (prop.prefix || ""),
+                unit_hint: prop.unit_hint
             };
         }).filter(
             item =>
