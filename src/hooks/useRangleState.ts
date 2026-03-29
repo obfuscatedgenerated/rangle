@@ -10,6 +10,7 @@ export const useRangleState = () => {
     const [attempts, setAttempts] = useState<StatPositionFlags[]>([]);
 
     const [finished, setFinished] = useState(false);
+    const [finished_correctly, setFinishedCorrectly] = useState(false);
 
     // fetch today's data on load, as well as local save state if today's exists
     useEffect(() => {
@@ -46,8 +47,10 @@ export const useRangleState = () => {
                     setAttempts(today_save.attempts);
 
                     // evaluate if finished based on saved state
-                    if (saved_correct_positions.every((pos) => pos) || today_save.attempts.length >= 5) {
+                    const is_correct = saved_correct_positions.every((pos) => pos);
+                    if (is_correct || today_save.attempts.length >= 5) {
                         setFinished(true);
+                        setFinishedCorrectly(is_correct);
                     }
                 } else {
                     setCurrentOrder(data.puzzle);
@@ -97,6 +100,7 @@ export const useRangleState = () => {
             
             if (new_correct_positions.every((pos) => pos)) {
                 setFinished(true);
+                setFinishedCorrectly(true);
                 return {
                     correct: true,
                     finished: true,
@@ -131,6 +135,7 @@ export const useRangleState = () => {
         correct_positions,
         attempts,
         finished,
+        finished_correctly,
         submit_guess,
         reveal_answers,
     };

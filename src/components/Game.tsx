@@ -4,6 +4,7 @@ import {useState, useEffect, useCallback} from "react";
 import {DraggableStats} from "@/components/DraggableStats";
 import {SharePopup} from "@/components/SharePopup";
 import {useRangleState} from "@/hooks/useRangleState";
+import ReactConfetti from "react-confetti";
 
 export interface TodayData {
     date: string;
@@ -32,6 +33,7 @@ export const Game = () => {
         attempts,
         current_order,
         finished,
+        finished_correctly,
         correct_positions,
         reveal_answers,
         submit_guess,
@@ -122,6 +124,10 @@ export const Game = () => {
             <button disabled={finished} className="my-4 sm:my-6 px-4 py-2 bg-blue-500 text-white rounded cursor-pointer disabled:bg-gray-500 disabled:cursor-auto" onClick={check_answer}>
                 Check
             </button>
+
+            {finished_correctly && (
+                <ReactConfetti />
+            )}
         </>
     );
 }
