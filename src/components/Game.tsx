@@ -3,6 +3,7 @@
 import {useState, useEffect, useCallback} from "react";
 import {DraggableStats} from "@/components/DraggableStats";
 import {SharePopup} from "@/components/SharePopup";
+import {useRangleState} from "@/hooks/useRangleState";
 
 export interface TodayData {
     date: string;
@@ -26,34 +27,21 @@ export interface PuzzleStat {
 export type StatPositionFlags = [boolean, boolean, boolean, boolean, boolean];
 
 export const Game = () => {
-    const [today_data, setTodayData] = useState<TodayData | null>(null);
-    const [answers, setAnswers] = useState<PuzzleStat[]>([]);
-
-    const [current_order, setCurrentOrder] = useState<PuzzleStat[]>([]);
-    const [correct_positions, setCorrectPositions] = useState<StatPositionFlags>([false, false, false, false, false]);
+    const {
+        today_data,
+        attempts,
+        current_order,
+        finished,
+        correct_positions,
+        reveal_answers,
+        submit_guess,
+        set_current_order
+    } = useRangleState();
 
     const [just_attempted, setJustAttempted] = useState(false);
 
-    const [attempts, setAttempts] = useState<StatPositionFlags[]>([]);
-
-    const [finished, setFinished] = useState(false);
     const [reveal_values, setRevealValues] = useState(false);
     const [share_open, setShareOpen] = useState(false);
-
-    useEffect(() => {
-        fetch("/daily/today.json", {
-            cache: "no-store",
-        }).then((res) => res.json()).then((data) => {
-            setTodayData(data);
-            setCurrentOrder(data.puzzle);
-
-            // compute answers by sorting by value
-            const sorted_puzzle = [...data.puzzle].sort((a, b) => a.value - b.value);
-            setAnswers(sorted_puzzle);
-        }).catch((err) => {
-            console.error("Error fetching today's data:", err);
-        });
-    }, []);
 
     const check_answer = useCallback(
         () => {
@@ -65,40 +53,29 @@ export const Game = () => {
                 return;
             }
 
-            const new_correct_positions: [boolean, boolean, boolean, boolean, boolean] = [false, false, false, false, false];
-            for (let i = 0; i < current_order.length; i++) {
-                if (current_order[i].id === answers[i].id) {
-                    new_correct_positions[i] = true;
-                }
-            }
-            setCorrectPositions(new_correct_positions);
-
-            // add attempt to history
-            setAttempts((prev) => [...prev, new_correct_positions]);
+            const guess_result = submit_guess(current_order);
 
             // trigger just attempted state for styling purposes
             setJustAttempted(true);
             setTimeout(() => {
                 setJustAttempted(false);
             }, 1000);
-
-            // if everything is correct, fire the finish logic
-            if (new_correct_positions.every((pos) => pos)) {
-                setFinished(true);
+            
+            if (!guess_result.finished) {
+                return;
+            }
+            
+            // game finished, trigger end game logic
+            if (guess_result.correct) {
+                // if everything is correct, fire the finish logic
                 setRevealValues(true);
 
                 // open share popup after a delay
                 setTimeout(() => {
                     setShareOpen(true);
                 }, 1500);
-
-                return;
-            }
-
-            // if reached attempt limit, reveal the answer
-            if (attempts.length + 1 >= 5) {
-                setFinished(true);
-
+            } else {
+                // if reached attempt limit, reveal the answer
                 // reveal the values after a delay
                 setTimeout(() => {
                     setRevealValues(true);
@@ -106,26 +83,17 @@ export const Game = () => {
 
                 // reveal the order after a slightly longer delay
                 setTimeout(() => {
-                    setCurrentOrder(answers);
+                    reveal_answers();
                 }, 2000);
 
                 // open share popup after a longer delay
                 setTimeout(() => {
                     setShareOpen(true);
                 }, 3000);
-
-                return;
             }
         },
         // any point memoising?
-        [today_data, finished, attempts.length, current_order, answers]
-    );
-
-    const on_reorder = useCallback(
-        (new_order: PuzzleStat[]) => {
-            setCurrentOrder(new_order);
-        },
-        []
+        [today_data, current_order, submit_guess, reveal_answers, finished]
     );
 
     if (!today_data) {
@@ -144,7 +112,7 @@ export const Game = () => {
 
             <DraggableStats
                 puzzle={current_order}
-                on_reorder={on_reorder}
+                on_reorder={set_current_order}
                 correct_positions={correct_positions}
                 finished={finished}
                 reveal_values={reveal_values}
@@ -159,5 +127,4 @@ export const Game = () => {
 }
 
 // TODO: way to get back info and share popup
-// TODO: store game result
 // TODO: archives
