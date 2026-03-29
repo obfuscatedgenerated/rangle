@@ -98,7 +98,7 @@ const DraggableStat = ({ stat, correct, finished, reveal_values, className = "" 
 
                 {value_display_state !== "hidden"
                     && <span
-                        className={`transition-opacity ${value_display_state === "visible" ? "opacity-100" : "opacity-0"}`}
+                        className={`transition-opacity font-black tracking-normal normal-case ${value_display_state === "visible" ? "opacity-100" : "opacity-0"}`}
                     >
                         {`: ${stat.prefix}${stat.value.toLocaleString()}${stat.suffix}`}
                     </span>
