@@ -73,7 +73,7 @@ const DraggableStat = ({ stat, correct, finished, reveal_values, className = "" 
             style={correct ? undefined : drag_style}
             {...attributes}
             {...listeners}
-            className={`flex flex-col items-center justify-center gap-1 border-2 rounded p-4 w-full
+            className={`touch-none flex flex-col items-center justify-center gap-1 border-2 rounded p-4 w-full
             ${className}
             ${lock_position ? "" : "cursor-move"}
             `}
