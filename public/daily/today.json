@@ -1,55 +1,56 @@
 {
   "date": "2026-03-29",
   "number": 1,
-  "difficulty": "Medium",
-  "neighbourhood": "small",
+  "difficulty": "Easy",
+  "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q926860",
-      "name": "North American XF-108 Rapier",
-      "value": 17.5,
-      "metric": "Wingspan",
-      "description": "aircraft",
-      "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "id": "Q174555",
+      "name": "Madagascar",
+      "value": 193595521,
+      "metric": "Total Box Office Revenue",
+      "description": "2005 animated film directed by Eric Darnell and Tom McGrath",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q23623",
-      "name": "Queer as Folk",
-      "value": 10,
-      "metric": "Number of Episodes",
-      "description": "1999 British television series",
+      "id": "Q256",
+      "name": "Turkish",
+      "value": 82231620,
+      "metric": "Native Speakers",
+      "description": "Oghuz Turkic language of the Turkish people",
       "prefix": "",
-      "suffix": " episodes"
+      "suffix": " speakers"
     },
     {
-      "id": "Q19881",
-      "name": "Sacra di San Michele",
-      "value": 11,
-      "metric": "Number of Floors / Storeys",
-      "description": "religious complex on Mount Pirchiriano",
+      "id": "Q313",
+      "name": "Venus",
+      "value": 108942109,
+      "metric": "Approximate Distance from Sun",
+      "description": "second planet from the Solar System, tellurian and very similar to Earth",
       "prefix": "",
-      "suffix": " floors"
+      "suffix": " km",
+      "unit_hint": "in kilometres"
     },
     {
-      "id": "Q911047",
-      "name": "Palazzo Medici Riccardi",
-      "value": 12,
-      "metric": "Number of Floors / Storeys",
-      "description": "palace and museum in Florence, Italy",
+      "id": "Q5287",
+      "name": "Japanese",
+      "value": 128000000,
+      "metric": "Native Speakers",
+      "description": "language spoken in East Asia",
       "prefix": "",
-      "suffix": " floors"
+      "suffix": " speakers"
     },
     {
-      "id": "Q647915",
-      "name": "British Aerospace Jetstream 31",
-      "value": 15.85,
-      "metric": "Wingspan",
-      "description": "1980 airliner series",
+      "id": "Q2",
+      "name": "Earth",
+      "value": 151930000,
+      "metric": "Approximate Distance from Sun",
+      "description": "third planet from the Sun in the Solar System",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " km",
+      "unit_hint": "in kilometres"
     }
   ]
 }
