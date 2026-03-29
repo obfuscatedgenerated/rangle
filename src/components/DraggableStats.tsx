@@ -1,8 +1,47 @@
 "use client";
 
-import {DragDropContext, Droppable, Draggable, DropResult} from "@hello-pangea/dnd";
+import { DndContext, closestCenter, DragEndEvent } from "@dnd-kit/core";
+import { arrayMove, SortableContext, verticalListSortingStrategy, useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 
 import type {PuzzleStat} from "@/components/Game";
+
+interface DraggableStatProps {
+    stat: PuzzleStat;
+    locked: boolean;
+    reveal_values: boolean;
+}
+
+const DraggableStat = ({ stat, locked, reveal_values }: DraggableStatProps) => {
+    const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
+        id: stat.id,
+        disabled: locked,
+    });
+
+    const drag_style = {
+        transform: CSS.Translate.toString(transform),
+        transition,
+    };
+
+    return (
+        <div
+            ref={locked ? undefined : setNodeRef}
+            style={locked ? undefined : drag_style}
+            {...attributes}
+            {...listeners}
+            className={`flex flex-col items-center justify-center gap-1 border-2 rounded p-4 w-full ${
+                locked ? "bg-green-600 border-green-800" : "bg-zinc-900 border-gray-700 cursor-grab"
+            }`}
+        >
+            {reveal_values && (
+                <p className="text-2xl font-bold pointer-events-none">{stat.prefix}{stat.value}{stat.suffix}</p>
+            )}
+            <p className="text-2xl font-bold pointer-events-none">{stat.metric}</p>
+            <p className="text-sm pointer-events-none">{stat.name}</p>
+            <p className="text-sm opacity-60 pointer-events-none">({stat.description})</p>
+        </div>
+    );
+};
 
 interface DraggableStatsProps {
     puzzle: PuzzleStat[];
@@ -12,64 +51,52 @@ interface DraggableStatsProps {
 }
 
 export const DraggableStats = ({puzzle, on_reorder, correct_positions, reveal_values}: DraggableStatsProps) => {
-    const handle_drag_end = (result: DropResult) => {
-        if (!result.destination || !on_reorder) {
+    const handle_drag_end = (event: DragEndEvent) => {
+        const { active, over } = event;
+        if (!over || active.id === over.id || !on_reorder) {
             return;
         }
 
-        const items = Array.from(puzzle);
-        const [reordered_item] = items.splice(result.source.index, 1);
-        items.splice(result.destination.index, 0, reordered_item);
+        const old_idx = puzzle.findIndex((p) => p.id === active.id);
+        const new_idx = puzzle.findIndex((p) => p.id === over.id);
+
+        const shifted = arrayMove(puzzle, old_idx, new_idx);
 
         // anything originally in a correct position should stay in the same position
         for (let i = 0; i < correct_positions.length; i++) {
             if (correct_positions[i]) {
                 const correct_item = puzzle[i];
-                const current_index = items.findIndex((item) => item.id === correct_item.id);
+                const current_index = shifted.findIndex((item) => item.id === correct_item.id);
                 if (current_index !== i) {
                     // move the correct item back to its original position
-                    items.splice(current_index, 1);
-                    items.splice(i, 0, correct_item);
+                    shifted.splice(current_index, 1);
+                    shifted.splice(i, 0, correct_item);
                 }
             }
         }
 
-        on_reorder(items);
+        on_reorder(shifted);
     };
 
-    // TODO: actually lock the correct positions to avoid consuing animation. might need dnd-kit
+    // filter out locked ids so sortable context doesn't even know they exist
+    const sortable_ids = puzzle
+        .filter((_, index) => !correct_positions[index])
+        .map(p => p.id);
+
     return (
-        <DragDropContext onDragEnd={handle_drag_end}>
-            <Droppable droppableId="puzzle-list">
-                {(provided) => (
-                    <div
-                        {...provided.droppableProps}
-                        ref={provided.innerRef}
-                        className="flex flex-col items-center justify-center gap-4 w-full max-w-2xl"
-                    >
-                        {puzzle.map((stat, index) => (
-                            <Draggable key={stat.id} draggableId={stat.id} index={index} isDragDisabled={correct_positions[index]}>
-                                {(provided, snapshot) => (
-                                    <div
-                                        ref={provided.innerRef}
-                                        {...provided.draggableProps}
-                                        {...provided.dragHandleProps}
-                                        className={`flex flex-col items-center justify-center gap-1 border-2 border-gray-300 rounded p-4 w-full ${correct_positions[index] ? "bg-green-500 border-green-700 cursor-default" : "bg-background-variant cursor-move"}`}
-                                    >
-                                        {reveal_values && (
-                                            <p className="text-2xl font-bold pointer-events-none">{stat.prefix}{stat.value}{stat.suffix}</p>
-                                        )}
-                                        <p className="text-2xl font-bold pointer-events-none">{stat.metric}</p>
-                                        <p className="text-sm pointer-events-none">{stat.name}</p>
-                                        <p className="text-sm opacity-60 pointer-events-none">({stat.description})</p>
-                                    </div>
-                                )}
-                            </Draggable>
-                        ))}
-                        {provided.placeholder}
-                    </div>
-                )}
-            </Droppable>
-        </DragDropContext>
+        <DndContext collisionDetection={closestCenter} onDragEnd={handle_drag_end}>
+            <SortableContext items={sortable_ids} strategy={verticalListSortingStrategy}>
+                <div className="flex flex-col gap-4 w-full max-w-2xl mx-auto">
+                    {puzzle.map((stat, index) => (
+                        <DraggableStat
+                            key={stat.id}
+                            stat={stat}
+                            locked={correct_positions[index]}
+                            reveal_values={reveal_values}
+                        />
+                    ))}
+                </div>
+            </SortableContext>
+        </DndContext>
     );
 }
