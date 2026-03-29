@@ -16,11 +16,12 @@ interface DraggableStatProps {
     stat: PuzzleStat;
     correct: boolean;
     finished: boolean;
+    reveal_values: boolean;
 
     className?: string;
 }
 
-const DraggableStat = ({ stat, correct, finished, className = "" }: DraggableStatProps) => {
+const DraggableStat = ({ stat, correct, finished, reveal_values, className = "" }: DraggableStatProps) => {
     const lock_position = correct || finished;
 
     const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
@@ -42,6 +43,7 @@ const DraggableStat = ({ stat, correct, finished, className = "" }: DraggableSta
         transition: `${transition}, background-color 0.2s, border-color 0.2s`
     };
 
+    // TODO: transition when revealing values
     return (
         <div
             ref={correct ? undefined : setNodeRef}
@@ -54,7 +56,7 @@ const DraggableStat = ({ stat, correct, finished, className = "" }: DraggableSta
             `}
         >
             <p className="text-balance text-center text-lg sm:text-2xl font-bold pointer-events-none">{stat.metric}{
-                finished
+                reveal_values
                     ? `: ${stat.prefix}${stat.value.toLocaleString()}${stat.suffix}`
                     : stat.unit_hint ? ` (${stat.unit_hint})` : ""
             }</p>
@@ -69,6 +71,7 @@ interface DraggableStatsProps {
     on_reorder?: (new_order: PuzzleStat[]) => void;
     correct_positions: [boolean, boolean, boolean, boolean, boolean];
     finished: boolean;
+    reveal_values: boolean;
 
     correct_className?: string;
     incorrect_className?: string;
@@ -79,6 +82,7 @@ export const DraggableStats = ({
     on_reorder,
     correct_positions,
     finished,
+    reveal_values,
     correct_className = "bg-green-600 border-green-800",
     incorrect_className = "bg-zinc-900 border-gray-700"
 }: DraggableStatsProps) => {
@@ -126,6 +130,7 @@ export const DraggableStats = ({
                             stat={stat}
                             correct={correct_positions[index]}
                             finished={finished}
+                            reveal_values={reveal_values}
                             className={correct_positions[index] ? correct_className : incorrect_className}
                         />
                     ))}

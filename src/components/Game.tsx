@@ -35,7 +35,9 @@ export const Game = () => {
     const [just_attempted, setJustAttempted] = useState(false);
 
     const [attempts, setAttempts] = useState<StatPositionFlags[]>([]);
+
     const [finished, setFinished] = useState(false);
+    const [reveal_values, setRevealValues] = useState(false);
     const [share_open, setShareOpen] = useState(false);
 
     useEffect(() => {
@@ -83,7 +85,13 @@ export const Game = () => {
             // if everything is correct, fire the finish logic
             if (new_correct_positions.every((pos) => pos)) {
                 setFinished(true);
-                setShareOpen(true);
+                setRevealValues(true);
+
+                // open share popup after a delay
+                setTimeout(() => {
+                    setShareOpen(true);
+                }, 1500);
+
                 return;
             }
 
@@ -93,6 +101,7 @@ export const Game = () => {
 
                 // reveal the order after a delay
                 setTimeout(() => {
+                    setRevealValues(true);
                     setCurrentOrder(answers);
                 }, 1500);
 
@@ -134,6 +143,7 @@ export const Game = () => {
                 on_reorder={on_reorder}
                 correct_positions={correct_positions}
                 finished={finished}
+                reveal_values={reveal_values}
                 incorrect_className={just_attempted ? "bg-red-500 border-red-700 animate-shake-horizontal" : undefined}
             />
 
