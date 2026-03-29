@@ -391,7 +391,7 @@ const main = async () => {
         }
 
         // save to archive with date stamp
-        fs.writeFileSync(`./public/daily/${today_date}.json`, JSON.stringify(final_data, null, 2));
+        fs.writeFileSync(`./public/daily/${today_date_iso}.json`, JSON.stringify(final_data, null, 2));
 
         // also save to the today file
         fs.writeFileSync(`./public/daily/today.json`, JSON.stringify(final_data, null, 2));
@@ -406,3 +406,5 @@ const main = async () => {
 }
 
 main();
+
+// TODO: maybe gen a day ahead for moderation?
