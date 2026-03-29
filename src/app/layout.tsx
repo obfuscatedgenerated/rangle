@@ -1,14 +1,16 @@
 import type {Metadata} from "next";
-import {Geist, Geist_Mono} from "next/font/google";
+import {Encode_Sans, Roboto} from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
+// used specifically for Rangle title
+const title = Encode_Sans({
+    variable: "--font-title",
     subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
+// used as default body font
+const sans = Roboto({
+    variable: "--font-sans",
     subsets: ["latin"],
 });
 
@@ -25,7 +27,7 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+            className={`${title.variable} ${sans.variable} font-sans h-full antialiased`}
         >
         <body className="min-h-full flex flex-col">{children}</body>
         </html>

@@ -17,8 +17,8 @@ export const InfoPopup = () => {
 
     return (
         <dialog ref={dialog_ref} className="rounded-lg p-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-md w-full bg-background-variant text-foreground-variant flex flex-col items-center">
-            <h2 className="text-xl font-bold mb-2">Rangle</h2>
-            <p className="mb-4 opacity-60">(pronounced &quot;wrangle&quot;)</p>
+            <h2 className="font-title text-xl font-bold">Rangle</h2>
+            <p className="font-title mb-4 opacity-60">(pronounced &quot;wrangle&quot;)</p>
 
             <p>
                 Rangle is a game about sorting. Each day, you are given a list of 5 stats, and your goal is to find the correct order of the stat values.
