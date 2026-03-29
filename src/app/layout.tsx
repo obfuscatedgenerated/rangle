@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "Rangle",
     description: "Rangle is a game about sorting.",
     icons: "/icon.svg",
+    metadataBase: "https://rangle.ollieg.codes",
     openGraph: {
         images: [
             {

@@ -19,7 +19,7 @@ export const useRangleState = ({ on_load_error, date_override }: RangleStateHook
 
     // fetch today's data on load, as well as local save state if today's exists
     useEffect(() => {
-        const today_date = date_override ? new Date(date_override) : new Date();
+        const today_date = date_override ? new Date(`${date_override}T00:00:00Z`) : new Date();
         const today_date_iso = today_date.toISOString().split("T")[0];
 
         fetch(`/daily/${today_date_iso}.json`)

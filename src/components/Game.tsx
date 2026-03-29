@@ -1,9 +1,13 @@
 "use client";
 
-import {useState, useEffect, useCallback} from "react";
 import {DraggableStats} from "@/components/DraggableStats";
 import {SharePopup} from "@/components/SharePopup";
 import {useRangleState} from "@/hooks/useRangleState";
+
+import EPOCH from "../../epoch";
+
+import {useState, useEffect, useCallback} from "react";
+
 import ReactConfetti from "react-confetti";
 
 export interface TodayData {
@@ -34,10 +38,16 @@ export const Game = () => {
         (err: Error) => {
             // if the error is not found, try to go back a day
             if (err.message === "NO_PUZZLE") {
-                const yesterday = date_override ? new Date(date_override) : new Date();
-                yesterday.setDate(yesterday.getDate() - 1);
-                setDateOverride(yesterday.toISOString().split("T")[0]);
+                const yesterday = date_override ? new Date(`${date_override}T00:00:00Z`) : new Date();
+                yesterday.setUTCDate(yesterday.getUTCDate() - 1);
 
+                // if yesterday is before the epoch, stop trying
+                if (yesterday < EPOCH) {
+                    alert("No puzzles available!");
+                    return;
+                }
+
+                setDateOverride(yesterday.toISOString().split("T")[0]);
                 console.log("No puzzle found for date, trying previous day:", yesterday.toISOString().split("T")[0]);
             } else {
                 alert("Error loading puzzle: " + err.message);

@@ -13,7 +13,7 @@ program.parse();
 
 const { difficulty: difficulty_arg, neighbourhood: neighbourhood_arg } = program.opts();
 
-const EPOCH = new Date("2026-03-29T00:00:00Z");
+const EPOCH = require("../epoch");
 const NEIGHBOURHOODS = ["small", "medium", "large"];
 
 // all the countable properties to include in the game
