@@ -1,0 +1,57 @@
+{
+  "date": "2026-03-30",
+  "number": 2,
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q608997",
+      "name": "Mil Mi-2",
+      "value": 113,
+      "metric": "Top Speed",
+      "description": "utility helicopter family by Mil",
+      "prefix": "",
+      "suffix": " km/h",
+      "unit_hint": "in km/h"
+    },
+    {
+      "id": "Q1320289",
+      "name": "Destination Moon",
+      "value": 62,
+      "metric": "Number of Pages",
+      "description": "sixteenth volume of The Adventures of Tintin",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q497367",
+      "name": "Qingdao Jiaozhou Bay Bridge",
+      "value": 26.707,
+      "metric": "Length",
+      "description": "bridge in Qingdao, Shandong, China",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q721226",
+      "name": "LZ 127 Graf Zeppelin",
+      "value": 128,
+      "metric": "Top Speed",
+      "description": "German Zeppelin (rigid airship)",
+      "prefix": "",
+      "suffix": " km/h",
+      "unit_hint": "in km/h"
+    },
+    {
+      "id": "Q923929",
+      "name": "Pactolus",
+      "value": 25,
+      "metric": "Length",
+      "description": "river in Turkey",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
