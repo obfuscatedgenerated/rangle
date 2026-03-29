@@ -12,6 +12,7 @@ import { CSS } from "@dnd-kit/utilities";
 
 import type {PuzzleStat} from "@/components/Game";
 import {useEffect, useState} from "react";
+import {LinkIcon} from "lucide-react";
 
 interface DraggableStatProps {
     stat: PuzzleStat;
@@ -67,6 +68,7 @@ const DraggableStat = ({ stat, correct, finished, reveal_values, className = "" 
         transition: `${transition}, background-color 0.2s, border-color 0.2s`
     };
 
+    // TODO: animate in link
     return (
         <div
             ref={correct ? undefined : setNodeRef}
@@ -78,7 +80,19 @@ const DraggableStat = ({ stat, correct, finished, reveal_values, className = "" 
             ${lock_position ? "" : "cursor-move"}
             `}
         >
-            <p className="text-pretty text-center text-lg sm:text-2xl font-bold pointer-events-none">{stat.name}</p>
+            <p className="text-pretty text-center text-lg sm:text-2xl font-bold pointer-events-none">
+                {reveal_values
+                    ? (
+                        <div className="flex items-center">
+                            <a className="pointer-events-auto underline" href={`https://wikidata.org/wiki/${stat.id}`} target="_blank" rel="noopener noreferrer">
+                                {stat.name}
+                            </a>
+                            <LinkIcon className="ml-1 w-4 h-4" />
+                        </div>
+                    )
+                    : stat.name
+                }
+            </p>
             <p className="uppercase tracking-wider text-pretty text-sm sm:text-base text-center pointer-events-none mb-2">
                 {stat.metric}
 
