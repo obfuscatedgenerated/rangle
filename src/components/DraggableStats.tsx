@@ -100,3 +100,5 @@ export const DraggableStats = ({puzzle, on_reorder, correct_positions, reveal_va
         </DndContext>
     );
 }
+
+// TODO: gradual reveal animation

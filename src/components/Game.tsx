@@ -55,6 +55,10 @@ export const Game = () => {
             if (!today_data) {
                 return;
             }
+            
+            if (finished) {
+                return;
+            }
 
             const new_correct_positions: [boolean, boolean, boolean, boolean, boolean] = [false, false, false, false, false];
             for (let i = 0; i < current_order.length; i++) {
@@ -81,7 +85,7 @@ export const Game = () => {
             }
         },
         // any point memoising?
-        [today_data, attempts.length, correct_positions, current_order, answers]
+        [today_data, finished, attempts.length, current_order, answers]
     );
 
     const on_reorder = useCallback(
@@ -103,10 +107,10 @@ export const Game = () => {
         <>
             <SharePopup open={share_open} on_close={() => setShareOpen(false)} attempts={attempts} today_data={today_data} />
 
-            <p>#{today_data.number} | {today_data.difficulty}</p>
+            <p>#{today_data.number} | {today_data.difficulty} • {attempts.length}/5</p>
             <DraggableStats puzzle={current_order} on_reorder={on_reorder} correct_positions={correct_positions} reveal_values={finished} />
 
-            <button className="my-4 px-4 py-2 bg-blue-500 text-white rounded cursor-pointer" onClick={check_answer}>
+            <button disabled={finished} className="my-4 px-4 py-2 bg-blue-500 text-white rounded cursor-pointer disabled:bg-gray-500" onClick={check_answer}>
                 Check
             </button>
         </>
