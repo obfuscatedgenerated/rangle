@@ -22,7 +22,7 @@ const DraggableStat = ({ stat, correct, finished, className = "" }: DraggableSta
 
     const drag_style = {
         transform: CSS.Translate.toString(transform),
-        transition,
+        transition: `${transition}, background-color 0.2s, border-color 0.2s`
     };
 
     return (
@@ -53,7 +53,6 @@ interface DraggableStatsProps {
     correct_positions: [boolean, boolean, boolean, boolean, boolean];
     finished: boolean;
 
-    base_className?: string;
     correct_className?: string;
     incorrect_className?: string;
 }
@@ -63,7 +62,6 @@ export const DraggableStats = ({
     on_reorder,
     correct_positions,
     finished,
-    base_className = "",
     correct_className = "bg-green-600 border-green-800",
     incorrect_className = "bg-zinc-900 border-gray-700"
 }: DraggableStatsProps) => {
@@ -109,7 +107,7 @@ export const DraggableStats = ({
                             stat={stat}
                             correct={correct_positions[index]}
                             finished={finished}
-                            className={`${base_className} ${correct_positions[index] ? correct_className : incorrect_className}`}
+                            className={correct_positions[index] ? correct_className : incorrect_className}
                         />
                     ))}
                 </div>

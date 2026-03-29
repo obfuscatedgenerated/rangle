@@ -126,7 +126,6 @@ export const Game = () => {
                 on_reorder={on_reorder}
                 correct_positions={correct_positions}
                 finished={finished}
-                base_className="transition-colors transition-300"
                 incorrect_className={just_attempted ? "bg-red-500 border-red-700 animate-shake-horizontal" : undefined}
             />
 
