@@ -1,7 +1,6 @@
 "use client";
 
 import {useEffect, useRef} from "react";
-import extra_styles from "./InfoPopup.module.css";
 
 export const InfoPopup = () => {
     const dialog_ref = useRef<HTMLDialogElement>(null);
@@ -17,7 +16,7 @@ export const InfoPopup = () => {
     }, []);
 
     return (
-        <dialog ref={dialog_ref} className={`rounded-lg p-4 ${extra_styles.dialog} absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-md w-full bg-background-variant text-foreground-variant flex flex-col items-center`}>
+        <dialog ref={dialog_ref} className="rounded-lg p-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-md w-full bg-background-variant text-foreground-variant flex flex-col items-center">
             <h2 className="text-xl font-bold mb-2">Rangle</h2>
             <p className="mb-4 opacity-60">(pronounced &quot;wrangle&quot;)</p>
 
@@ -28,13 +27,13 @@ export const InfoPopup = () => {
             <br />
 
             <p>
-                You have 6 attempts to guess the correct order. Stats marked green are correct and will be locked in place.
+                You have 5 attempts to guess the correct order. Stats marked green are correct and will be locked in place.
             </p>
 
             <br />
 
             <button
-                className="px-4 py-2 bg-blue-500 text-white rounded cursor-pointer"
+                className="px-4 py-2 bg-red-500 text-white rounded cursor-pointer"
                 onClick={() => dialog_ref.current?.close()}
             >
                 Close

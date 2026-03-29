@@ -2,8 +2,9 @@
 
 import {useState, useEffect, useCallback} from "react";
 import {DraggableStats} from "@/components/DraggableStats";
+import {SharePopup} from "@/components/SharePopup";
 
-interface TodayData {
+export interface TodayData {
     date: string;
     number: number;
     difficulty: string;
@@ -21,15 +22,18 @@ export interface PuzzleStat {
     suffix: string;
 }
 
+export type StatPositionFlags = [boolean, boolean, boolean, boolean, boolean];
+
 export const Game = () => {
     const [today_data, setTodayData] = useState<TodayData | null>(null);
     const [answers, setAnswers] = useState<PuzzleStat[]>([]);
 
     const [current_order, setCurrentOrder] = useState<PuzzleStat[]>([]);
-    const [correct_positions, setCorrectPositions] = useState<[boolean, boolean, boolean, boolean, boolean]>([false, false, false, false, false]);
+    const [correct_positions, setCorrectPositions] = useState<StatPositionFlags>([false, false, false, false, false]);
 
-    const [attempts, setAttempts] = useState(0);
+    const [attempts, setAttempts] = useState<StatPositionFlags[]>([]);
     const [finished, setFinished] = useState(false);
+    const [share_open, setShareOpen] = useState(false);
 
     useEffect(() => {
         fetch("/daily/today.json", {
@@ -52,8 +56,6 @@ export const Game = () => {
                 return;
             }
 
-            setAttempts(attempts + 1);
-
             const new_correct_positions: [boolean, boolean, boolean, boolean, boolean] = [false, false, false, false, false];
             for (let i = 0; i < current_order.length; i++) {
                 if (current_order[i].id === answers[i].id) {
@@ -62,19 +64,24 @@ export const Game = () => {
             }
             setCorrectPositions(new_correct_positions);
 
+            // add attempt to history
+            setAttempts((prev) => [...prev, new_correct_positions]);
+
             // if everything is correct, fire the finish logic
             if (new_correct_positions.every((pos) => pos)) {
                 setFinished(true);
+                setShareOpen(true);
             }
 
             // if reached attempt limit, reveal the answer
-            if (attempts + 1 >= 6) {
+            if (attempts.length + 1 >= 5) {
                 setCurrentOrder(answers);
                 setFinished(true);
+                setShareOpen(true);
             }
         },
         // any point memoising?
-        [answers, current_order, today_data, attempts]
+        [today_data, attempts.length, correct_positions, current_order, answers]
     );
 
     const on_reorder = useCallback(
@@ -94,6 +101,8 @@ export const Game = () => {
 
     return (
         <>
+            <SharePopup open={share_open} on_close={() => setShareOpen(false)} attempts={attempts} today_data={today_data} />
+
             <p>#{today_data.number} | {today_data.difficulty}</p>
             <DraggableStats puzzle={current_order} on_reorder={on_reorder} correct_positions={correct_positions} reveal_values={finished} />
 
