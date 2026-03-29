@@ -8,14 +8,14 @@ import type {PuzzleStat} from "@/components/Game";
 
 interface DraggableStatProps {
     stat: PuzzleStat;
-    locked: boolean;
-    reveal_values: boolean;
+    correct: boolean;
+    finished: boolean;
 }
 
-const DraggableStat = ({ stat, locked, reveal_values }: DraggableStatProps) => {
+const DraggableStat = ({ stat, correct, finished }: DraggableStatProps) => {
     const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
         id: stat.id,
-        disabled: locked,
+        disabled: correct || finished,
     });
 
     const drag_style = {
@@ -25,15 +25,16 @@ const DraggableStat = ({ stat, locked, reveal_values }: DraggableStatProps) => {
 
     return (
         <div
-            ref={locked ? undefined : setNodeRef}
-            style={locked ? undefined : drag_style}
+            ref={correct ? undefined : setNodeRef}
+            style={correct ? undefined : drag_style}
             {...attributes}
             {...listeners}
-            className={`flex flex-col items-center justify-center gap-1 border-2 rounded p-4 w-full ${
-                locked ? "bg-green-600 border-green-800" : "bg-zinc-900 border-gray-700 cursor-grab"
-            }`}
+            className={`flex flex-col items-center justify-center gap-1 border-2 rounded p-4 w-full
+            ${correct ? "bg-green-600 border-green-800" : "bg-zinc-900 border-gray-700"}
+            ${correct || finished ? "" : "cursor-move"}
+            `}
         >
-            {reveal_values && (
+            {finished && (
                 <p className="text-2xl font-bold pointer-events-none">{stat.prefix}{stat.value}{stat.suffix}</p>
             )}
             <p className="text-2xl font-bold pointer-events-none">{stat.metric}</p>
@@ -47,10 +48,10 @@ interface DraggableStatsProps {
     puzzle: PuzzleStat[];
     on_reorder?: (new_order: PuzzleStat[]) => void;
     correct_positions: [boolean, boolean, boolean, boolean, boolean];
-    reveal_values: boolean;
+    finished: boolean;
 }
 
-export const DraggableStats = ({puzzle, on_reorder, correct_positions, reveal_values}: DraggableStatsProps) => {
+export const DraggableStats = ({puzzle, on_reorder, correct_positions, finished}: DraggableStatsProps) => {
     const handle_drag_end = (event: DragEndEvent) => {
         const { active, over } = event;
         if (!over || active.id === over.id || !on_reorder) {
@@ -91,8 +92,8 @@ export const DraggableStats = ({puzzle, on_reorder, correct_positions, reveal_va
                         <DraggableStat
                             key={stat.id}
                             stat={stat}
-                            locked={correct_positions[index]}
-                            reveal_values={reveal_values}
+                            correct={correct_positions[index]}
+                            finished={finished}
                         />
                     ))}
                 </div>
