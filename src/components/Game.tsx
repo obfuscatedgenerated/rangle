@@ -20,6 +20,7 @@ export interface PuzzleStat {
     description: string;
     prefix: string;
     suffix: string;
+    unit_hint: string;
 }
 
 export type StatPositionFlags = [boolean, boolean, boolean, boolean, boolean];

@@ -1,19 +1,19 @@
 const fs = require("fs");
 
-const EPOCH = new Date("2026-03-28T00:00:00Z");
+const EPOCH = new Date("2026-03-29T00:00:00Z");
 const NEIGHBOURHOODS = ["small", "medium", "large"];
 
 // all the countable properties to include in the game
 const properties = {
     "small": [
-        { id: "P3150", name: "Maximum Lifespan", suffix: " years", classes: ["Q16521", "Q729"] }, // Taxon, Animal
-        { id: "P3095", name: "Gestation Period", suffix: " days", classes: ["Q16521", "Q729"] },
-        { id: "P2050", name: "Wingspan", suffix: " m", classes: ["Q16521", "Q11436"] }, // Taxon, Aircraft
-        { id: "P2047", name: "Duration / Runtime", suffix: " minutes", classes: ["Q11424", "Q2188189", "Q7889"] }, // Film, Music, Game
+        { id: "P3150", name: "Maximum Lifespan", suffix: " years", classes: ["Q16521", "Q729"], unit_hint: "in years" }, // Taxon, Animal
+        { id: "P3095", name: "Gestation Period", suffix: " days", classes: ["Q16521", "Q729"], unit_hint: "in days" },
+        { id: "P2050", name: "Wingspan", suffix: " m", classes: ["Q16521", "Q11436"], unit_hint: "in metres" }, // Taxon, Aircraft
+        { id: "P2047", name: "Duration / Runtime", suffix: " minutes", classes: ["Q11424", "Q2188189", "Q7889"], unit_hint: "in minutes" }, // Film, Music, Game
         { id: "P1113", name: "Number of Episodes", suffix: " episodes", classes: ["Q5398426", "Q16521"] }, // TV, Podcast
         { id: "P1301", name: "Number of Seasons", suffix: " seasons", classes: ["Q5398426"] },
-        { id: "P1536", name: "Alcohol by Volume (ABV)", suffix: "%", classes: ["Q213253", "Q44"] }, // Beverage, Beer
-        { id: "P4354", name: "Tempo / Beats Per Minute", suffix: " BPM", classes: ["Q2188189"] },
+        { id: "P1536", name: "Alcohol by Volume (ABV)", suffix: "%", classes: ["Q213253", "Q44"], unit_hint: "by percent" }, // Beverage, Beer
+        { id: "P4354", name: "Tempo", suffix: " BPM", classes: ["Q2188189"], unit_hint: "BPM" },
         { id: "P1128", name: "Number of Floors / Storeys", suffix: " floors", classes: ["Q41176", "Q1021643"] }, // Building, Skyscraper
         //{ id: "P166", name: "Awards Received", suffix: " awards", classes: ["Q5", "Q43229"], parser: (v) => Array.isArray(v) ? v.length : 1 },
         // coords are quite heavy for wikidata so disabled for now. could add a filter to force a certain relevance to prevent the scan
@@ -30,33 +30,33 @@ const properties = {
     ],
 
     "medium": [
-        { id: "P2048", name: "Height", suffix: " m", classes: ["Q5", "Q41176", "Q754507", "Q10884"] }, // Human, Building, Rocket, Tree
-        { id: "P2043", name: "Length", suffix: " m", classes: ["Q4022", "Q12280", "Q11446"] }, // River, Bridge, Ship
-        { id: "P2044", name: "Elevation above sea level", suffix: " m", classes: ["Q8502", "Q515", "Q1248784"] }, // Mountain, City, Airport
-        { id: "P2052", name: "Top Speed", suffix: " km/h", classes: ["Q11436", "Q7946", "Q870", "Q729"] }, // Aircraft, Car, Train, Animal
-        { id: "P2045", name: "Depth", suffix: " m", classes: ["Q1532", "Q9472"] }, // Lake, Ocean
+        { id: "P2048", name: "Height", suffix: " m", classes: ["Q5", "Q41176", "Q754507", "Q10884"], unit_hint: "in metres" }, // Human, Building, Rocket, Tree
+        { id: "P2043", name: "Length", suffix: " m", classes: ["Q4022", "Q12280", "Q11446"], unit_hint: "in metres" }, // River, Bridge, Ship
+        { id: "P2044", name: "Elevation above sea level", suffix: " m", classes: ["Q8502", "Q515", "Q1248784"], unit_hint: "in metres" }, // Mountain, City, Airport
+        { id: "P2052", name: "Top Speed", suffix: " km/h", classes: ["Q11436", "Q7946", "Q870", "Q729"], unit_hint: "in km/h" }, // Aircraft, Car, Train, Animal
+        { id: "P2045", name: "Depth", suffix: " m", classes: ["Q1532", "Q9472"], unit_hint: "in metres" }, // Lake, Ocean
         { id: "P3346", name: "Spiciness (Scoville Scale)", suffix: " SHU", classes: ["Q331469", "Q23146"] }, // Chili, Sauce
         { id: "P1104", name: "Number of Pages", suffix: " pages", classes: ["Q7725", "Q571"] }, // Lit Work, Book
         { id: "P571", name: "Year of Creation / Inception", classes: ["Q4830453", "Q6256", "Q11424"], parser: (d) => new Date(d).getFullYear() },
         { id: "P569", name: "Year of Birth", classes: ["Q5"], parser: (d) => new Date(d).getFullYear() },
         { id: "P570", name: "Year of Death", classes: ["Q5"], parser: (d) => new Date(d).getFullYear() },
         { id: "P575", name: "Year of Discovery", classes: ["Q11344", "Q3863"], parser: (d) => new Date(d).getFullYear() }, // Element, Asteroid
-        { id: "P2102", name: "Boiling Point", suffix: "°C", classes: ["Q11344", "Q11173"], parser: (k) => Math.round(Number(k) - 273.15) },
+        { id: "P2102", name: "Boiling Point", suffix: "°C", classes: ["Q11344", "Q11173"], parser: (k) => Math.round(Number(k) - 273.15), unit_hint: "in Celsius" },
     ],
 
     "large": [
         { id: "P1082", name: "Population", suffix: " people", classes: ["Q515", "Q6256"] }, // City, Country
-        { id: "P2067", name: "Mass / Weight", suffix: " kg", classes: ["Q634", "Q11022", "Q11446"] }, // Planet, Star, Ship
-        { id: "P2046", name: "Area", suffix: " sq km", classes: ["Q6256", "Q23442", "Q515"] }, // Country, Island, City
+        { id: "P2067", name: "Mass / Weight", suffix: " kg", classes: ["Q634", "Q11022", "Q11446"], unit_hint: "in kilograms" }, // Planet, Star, Ship
+        { id: "P2046", name: "Area", suffix: " sq km", classes: ["Q6256", "Q23442", "Q515"], unit_hint: "in sq km" }, // Country, Island, City
         { id: "P2664", name: "Number of Employees", suffix: " employees", classes: ["Q4830453", "Q2655353"] }, // Business, Agency
         { id: "P1098", name: "Native Speakers", suffix: " speakers", classes: ["Q34770"] },
         { id: "P1110", name: "Event Attendance", suffix: " attendees", classes: ["Q16567", "Q1076531"] }, // Event, Match
         { id: "P3762", name: "Student Enrollment", suffix: " students", classes: ["Q3918", "Q3914"] }, // Uni, School
-        { id: "P2133", name: "Total Revenue", prefix: "$", suffix: "", classes: ["Q4830453", "Q11424"] },
-        { id: "P2403", name: "Total Net Worth", prefix: "$", suffix: "", classes: ["Q5"] },
-        { id: "P2127", name: "Market Capitalisation", prefix: "$", suffix: "", classes: ["Q4830453"] },
-        { id: "P2130", name: "Production Budget", prefix: "$", suffix: "", classes: ["Q11424", "Q7889"] }, // Film, Game
-        { id: "P2139", name: "Total Box Office Revenue", prefix: "$", suffix: "", classes: ["Q11424"] },
+        { id: "P2133", name: "Total Revenue", prefix: "$", suffix: "", classes: ["Q4830453", "Q11424"], unit_hint: "in dollars" },
+        { id: "P2403", name: "Total Net Worth", prefix: "$", suffix: "", classes: ["Q5"], unit_hint: "in dollars" },
+        { id: "P2127", name: "Market Capitalisation", prefix: "$", suffix: "", classes: ["Q4830453"], unit_hint: "in dollars" },
+        { id: "P2130", name: "Production Budget", prefix: "$", suffix: "", classes: ["Q11424", "Q7889"], unit_hint: "in dollars" }, // Film, Game
+        { id: "P2139", name: "Total Box Office Revenue", prefix: "$", suffix: "", classes: ["Q11424"], unit_hint: "in dollars" },
         { id: "P1143", name: "Total Word Count", suffix: " words", classes: ["Q7725", "Q571"] },
         { id: "P3734", name: "Social Media Followers", suffix: " followers", classes: ["Q5", "Q215380"] }, // Human, Band
         { id: "P8627", name: "YouTube Subscribers", suffix: " subscribers", classes: ["Q5", "Q4830453"] },
@@ -64,7 +64,7 @@ const properties = {
         { id: "P3143", name: "Subreddit Subscribers", suffix: " members", classes: ["Q3962", "Q7889"] }, // Website, Game
         { id: "P1083", name: "Maximum Capacity", suffix: " people", classes: ["Q48310", "Q182832"] }, // Stadium, Hall
         { id: "P2951", name: "Number of Passengers", suffix: " passengers", classes: ["Q1248784", "Q55488"] }, // Airport, Station
-        { id: "P2243", name: "Approximate Distance from Sun", suffix: " km", classes: ["Q634", "Q3863"] } // Planet, Asteroid
+        { id: "P2243", name: "Approximate Distance from Sun", suffix: " km", classes: ["Q634", "Q3863"], unit_hint: "in kilometres" } // Planet, Asteroid
     ]
 };
 
@@ -381,7 +381,8 @@ const main = async () => {
                 metric: item.metric,
                 description: item.description,
                 prefix: item.prefix,
-                suffix: item.suffix
+                suffix: item.suffix,
+                unit_hint: item.unit_hint
             }))
         };
 

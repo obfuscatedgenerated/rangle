@@ -34,7 +34,11 @@ const DraggableStat = ({ stat, correct, finished }: DraggableStatProps) => {
             ${correct || finished ? "" : "cursor-move"}
             `}
         >
-            <p className="text-2xl font-bold pointer-events-none">{stat.metric}{finished ? `: ${stat.prefix}${stat.value.toLocaleString()}${stat.suffix}` : ""}</p>
+            <p className="text-2xl font-bold pointer-events-none">{stat.metric}{
+                finished
+                    ? `: ${stat.prefix}${stat.value.toLocaleString()}${stat.suffix}`
+                    : stat.unit_hint ? ` (${stat.unit_hint})` : ""
+            }</p>
             <p className="text-sm pointer-events-none">{stat.name}</p>
             <p className="text-sm opacity-60 pointer-events-none">({stat.description})</p>
         </div>
