@@ -1,57 +1,57 @@
 {
   "date": "2026-03-30",
   "number": 2,
-  "difficulty": "Hard",
+  "difficulty": "Easy",
   "neighbourhood": "medium",
   "puzzle": [
     {
-      "id": "Q608997",
-      "name": "Mil Mi-2",
-      "value": 113,
-      "metric": "Top Speed",
-      "description": "utility helicopter family by Mil",
-      "prefix": "",
-      "suffix": " km/h",
-      "unit_hint": "in km/h"
-    },
-    {
-      "id": "Q1320289",
-      "name": "Destination Moon",
-      "value": 62,
-      "metric": "Number of Pages",
-      "description": "sixteenth volume of The Adventures of Tintin",
-      "prefix": "",
-      "suffix": " pages"
-    },
-    {
-      "id": "Q497367",
-      "name": "Qingdao Jiaozhou Bay Bridge",
-      "value": 26.707,
+      "id": "Q25173",
+      "name": "Titanic",
+      "value": 269.1,
       "metric": "Length",
-      "description": "bridge in Qingdao, Shandong, China",
+      "description": "British transatlantic passenger liner, launched and foundered in 1912",
       "prefix": "",
       "suffix": " m",
       "unit_hint": "in metres"
     },
     {
-      "id": "Q721226",
-      "name": "LZ 127 Graf Zeppelin",
-      "value": 128,
-      "metric": "Top Speed",
-      "description": "German Zeppelin (rigid airship)",
+      "id": "Q744",
+      "name": "nickel",
+      "value": 1751,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Ni and atomic number 28",
       "prefix": "",
-      "suffix": " km/h",
-      "unit_hint": "in km/h"
+      "suffix": ""
     },
     {
-      "id": "Q923929",
-      "name": "Pactolus",
-      "value": 25,
+      "id": "Q703",
+      "name": "potassium",
+      "value": 492,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol K and atomic number 19",
+      "prefix": "",
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
+    },
+    {
+      "id": "Q584",
+      "name": "Rhine",
+      "value": 1232.7,
       "metric": "Length",
-      "description": "river in Turkey",
+      "description": "river in Western Europe to the North Sea",
       "prefix": "",
       "suffix": " m",
       "unit_hint": "in metres"
+    },
+    {
+      "id": "Q758",
+      "name": "zinc",
+      "value": 634,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol Zn and atomic number 30",
+      "prefix": "",
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
     }
   ]
 }
