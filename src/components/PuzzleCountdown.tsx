@@ -16,7 +16,7 @@ export const PuzzleCountdown = () => {
         Date.UTC(
             now.getUTCFullYear(),
             now.getUTCMonth(),
-            now.getUTCDate(),
+            now.getUTCDate() + 1,
             0, 0, 0, 0
         )
     );
