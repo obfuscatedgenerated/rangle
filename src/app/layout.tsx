@@ -2,6 +2,8 @@ import type {Metadata} from "next";
 import {Encode_Sans, Roboto} from "next/font/google";
 import "./globals.css";
 
+import {ViewTransition} from "react";
+
 // used specifically for Rangle title
 const title = Encode_Sans({
     variable: "--font-title",
@@ -76,7 +78,11 @@ export default function RootLayout({
             lang="en"
             className={`${title.variable} ${sans.variable} font-sans h-full antialiased`}
         >
-        <body className="min-h-full flex flex-col">{children}</body>
+            <body className="min-h-full flex flex-col">
+                <ViewTransition name="zoom-and-fade">
+                    {children}
+                </ViewTransition>
+            </body>
         </html>
     );
 }
