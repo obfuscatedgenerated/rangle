@@ -34,12 +34,14 @@ export interface PuzzleStat {
 export type StatPositionFlags = [boolean, boolean, boolean, boolean, boolean];
 
 interface GameProps {
+    archive_date?: string;
     on_loaded?: () => void;
     on_info_click?: () => void;
 }
 
-export const Game = ({ on_loaded, on_info_click }: GameProps) => {
-    const [date_override, setDateOverride] = useState<string | undefined>(undefined);
+export const Game = ({ archive_date, on_loaded, on_info_click }: GameProps) => {
+    // if undefined, will load today's puzzle
+    const [date_override, setDateOverride] = useState<string | undefined>(archive_date);
 
     const on_load_error = useCallback(
         (err: Error) => {
@@ -148,7 +150,7 @@ export const Game = ({ on_loaded, on_info_click }: GameProps) => {
 
     return (
         <>
-            <SharePopup open={share_open} on_close={() => setShareOpen(false)} attempts={attempts} today_data={today_data} />
+            <SharePopup archive_date={archive_date} open={share_open} on_close={() => setShareOpen(false)} attempts={attempts} today_data={today_data} />
 
             <p className="mb-4 sm:mb-8 text-sm sm:text-lg">#{today_data.number} | {today_data.difficulty} • Attempt: {finished ? attempts.length : attempts.length + 1}/5</p>
 

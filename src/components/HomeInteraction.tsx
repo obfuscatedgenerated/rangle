@@ -2,11 +2,63 @@
 
 import {InfoPopup} from "@/components/InfoPopup";
 import {Game} from "@/components/Game";
-
-import {useEffect, useState} from "react";
 import {LoadingSpinner} from "@/components/LoadingSpinner";
 
+import {useEffect, useMemo, useState} from "react";
+import {useSearchParams, useRouter} from "next/navigation";
+
+import EPOCH from "../../epoch";
+
 export const HomeInteraction = () => {
+    const search_params = useSearchParams();
+    const router = useRouter();
+
+    // returns undefined if none set, null if invalid (and should be removed from url), or the date string if valid
+    const validated_archive_date = useMemo(
+        () => {
+            const date_str = search_params.get("d");
+            if (!date_str) {
+                return undefined;
+            }
+
+            // validate format is YYYY-MM-DD
+            if (!/^\d{4}-\d{2}-\d{2}$/.test(date_str)) {
+                console.warn("Invalid date format in search params, expected YYYY-MM-DD:", date_str);
+                return null;
+            }
+
+            // check if the game file exists for the date, if not, return undefined
+            // this is just done mathematically for now by checking its within the range of the epoch and today
+            // ideally it'd go fetch the file but that would require making this function async
+            // future dates can be fetched if the secret flag is present (for testing future puzzles)
+            const date = new Date(`${date_str}T00:00:00Z`);
+            const today = new Date();
+            if (date < EPOCH || (date > today && !search_params.has("super_secret_time_travel"))) {
+                console.warn("Date in search params is out of range:", date_str);
+                return null;
+            }
+
+            // if the date is today, avoid treating it as an archive date
+            if (date.toISOString().split("T")[0] === today.toISOString().split("T")[0]) {
+                console.warn("Date in search params is today, treating as not archived:", date_str);
+                return null;
+            }
+
+            return date_str;
+        },
+        [search_params]
+    );
+
+    // if the date param is invalid, remove it from the url
+    useEffect(() => {
+        if (validated_archive_date === null) {
+            // remove the invalid date param from the url
+            const new_search_params = new URLSearchParams(search_params.toString());
+            new_search_params.delete("d");
+            router.replace(`/?${new_search_params.toString()}`);
+        }
+    }, [validated_archive_date, search_params, router]);
+
     const [loaded, setLoaded] = useState(false);
     const [show_info_popup, setShowInfoPopup] = useState(false);
 
@@ -27,7 +79,7 @@ export const HomeInteraction = () => {
             <h1 className="font-title text-3xl sm:text-4xl mb-1 font-bold">Rangle</h1>
             {!loaded && <LoadingSpinner className="mt-4" />}
 
-            <Game on_loaded={() => setLoaded(true)} on_info_click={() => setShowInfoPopup(true)} />
+            <Game archive_date={validated_archive_date || undefined} on_loaded={() => setLoaded(true)} on_info_click={() => setShowInfoPopup(true)} />
 
             {loaded && <p className="sm:fixed left-2 bottom-2 opacity-75 text-xs sm:text-base">Powered by <a href="https://www.wikidata.org/" target="_blank" rel="noopener noreferrer" className="underline">Wikidata</a></p>}
         </main>

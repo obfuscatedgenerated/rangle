@@ -1,6 +1,6 @@
 "use client";
 
-import {useCallback, useEffect, useRef, useState} from "react";
+import {useCallback, useEffect, useMemo, useRef, useState} from "react";
 import type {StatPositionFlags, TodayData} from "@/components/Game";
 import {PuzzleCountdown} from "@/components/PuzzleCountdown";
 
@@ -9,6 +9,7 @@ interface SharePopupProps {
     on_close: () => void;
     attempts: StatPositionFlags[];
     today_data: TodayData;
+    archive_date?: string;
 }
 
 const is_mobile = () => {
@@ -19,7 +20,7 @@ const is_mobile = () => {
     return /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
-export const SharePopup = ({open, on_close, attempts, today_data}: SharePopupProps) => {
+export const SharePopup = ({open, on_close, attempts, today_data, archive_date}: SharePopupProps) => {
     const dialog_ref = useRef<HTMLDialogElement>(null);
     const [share_button_text, setShareButtonText] = useState("Share Results");
 
@@ -54,6 +55,18 @@ export const SharePopup = ({open, on_close, attempts, today_data}: SharePopupPro
         },
         []
     );
+    
+    const share_url = useMemo(
+        () => {
+            const base_url = window.location.origin;
+            if (archive_date) {
+                return `${base_url}/?d=${archive_date}`;
+            } else {
+                return base_url;
+            }
+        },
+        [archive_date]
+    );
 
     const on_share = useCallback(
         () => {
@@ -61,9 +74,9 @@ export const SharePopup = ({open, on_close, attempts, today_data}: SharePopupPro
                 return;
             }
 
-            const share_text = `Rangle #${today_data.number} | ${today_data.difficulty} • ${got_it_right ? attempts.length : "X"}/5\n\n` +
+            const share_text = `Rangle #${today_data.number}${archive_date ? `(archived from ${archive_date})` : ""} | ${today_data.difficulty} • ${got_it_right ? attempts.length : "X"}/5\n\n` +
                 attempts.map((attempt) => attempt.map((pos) => pos ? "🟩" : "⬛").join(" ")).join("\n") +
-                `\n\n${window.location.href}`;
+                `\n\n${share_url}`;
 
             // if on mobile, open share dialog if available, otherwise fallback to copying to clipboard
             // even if share dialog available on desktop, it usually sucks so copy it
@@ -71,8 +84,13 @@ export const SharePopup = ({open, on_close, attempts, today_data}: SharePopupPro
                 navigator.share({
                     title: `Rangle #${today_data.number}`,
                     text: share_text,
-                    url: window.location.href,
+                    url: share_url
                 }).catch((err) => {
+                    // if just cancelled, don't show error
+                    if (err.name === "AbortError") {
+                        return;
+                    }
+                    
                     console.error("Error sharing:", err);
                     handle_copy(share_text);
                 });
@@ -80,7 +98,7 @@ export const SharePopup = ({open, on_close, attempts, today_data}: SharePopupPro
                 handle_copy(share_text);
             }
         },
-        [attempts, got_it_right, today_data, handle_copy]
+        [today_data, archive_date, got_it_right, attempts, share_url, handle_copy]
     );
 
     // TODO: base dialog component
