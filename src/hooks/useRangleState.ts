@@ -14,6 +14,16 @@ export interface SaveStateDay {
 
 export type SaveState = Record<string, SaveStateDay>;
 
+export interface ScoreStateDay {
+    attempts: number;
+    updated: string;
+
+    // true = won, false = lost, undefined = in progress
+    result?: boolean;
+}
+
+export type ScoreState = Record<string, ScoreStateDay>;
+
 export const useRangleState = ({ on_loaded, on_load_error, date_override }: RangleStateHookProps = {}) => {
     const [today_data, setTodayData] = useState<TodayData | null>(null);
 
@@ -133,17 +143,49 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
             if (new_correct_positions.every((pos) => pos)) {
                 setFinished(true);
                 setFinishedCorrectly(true);
+
+                // store in rangle_scores
+                const scores_str = localStorage.getItem("rangle_scores_v1");
+                const scores = scores_str ? JSON.parse(scores_str) : {};
+                scores[today_data.date] = {
+                    attempts: attempts.length + 1,
+                    updated: new Date().toISOString(),
+                    result: true,
+                } as ScoreStateDay;
+                localStorage.setItem("rangle_scores_v1", JSON.stringify(scores));
+
                 return {
                     correct: true,
                     finished: true,
                 }
             } else if (attempts.length + 1 >= 5) {
                 setFinished(true);
+
+                // store in rangle_scores
+                const scores_str = localStorage.getItem("rangle_scores_v1");
+                const scores = scores_str ? JSON.parse(scores_str) : {};
+                scores[today_data.date] = {
+                    attempts: attempts.length + 1,
+                    updated: new Date().toISOString(),
+                    result: false,
+                } as ScoreStateDay;
+                localStorage.setItem("rangle_scores_v1", JSON.stringify(scores));
+
                 return {
                     correct: false,
                     finished: true,
                 }
             } else {
+                // store in rangle_scores as in progress
+                const scores_str = localStorage.getItem("rangle_scores_v1");
+                const scores = scores_str ? JSON.parse(scores_str) : {};
+                scores[today_data.date] = {
+                    attempts: attempts.length + 1,
+                    updated: new Date().toISOString(),
+                    result: undefined,
+                } as ScoreStateDay;
+                localStorage.setItem("rangle_scores_v1", JSON.stringify(scores));
+
                 return {
                     correct: false,
                     finished: false,
