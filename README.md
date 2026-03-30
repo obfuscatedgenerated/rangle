@@ -1,6 +1,6 @@
 # Rangle
 
-> (pronounced "wrangle")
+> (pronounced "wrangle" | "range-le")
 
 Rangle is a game about sorting. Each day, you are given a list of 5 stats, and your goal is to find the correct order of the stat values.
 
