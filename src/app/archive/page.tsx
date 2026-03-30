@@ -1,21 +1,14 @@
 import {Metadata} from "next";
+import {Suspense} from "react";
 
-import EPOCH from "../../../epoch";
-import Link from "next/link";
+import {ArchiveGrid} from "@/components/ArchiveGrid";
+import {LoadingSpinner} from "@/components/LoadingSpinner";
 
 export const metadata: Metadata = {
     title: "The Archive"
 }
 
 export default function ArchivePage() {
-    // for every day going backwards until the epoch, add a link to the puzzle
-    const today = new Date();
-    const iso_dates = [];
-    for (let date = today; date >= EPOCH; date.setUTCDate(date.getUTCDate() - 1)) {
-       iso_dates.push(date.toISOString().split("T")[0]);
-    }
-
-    // TODO: proper ui, pagination maybe too
 
     return (
         <main className="flex flex-col items-center justify-center min-h-screen py-2">
@@ -24,13 +17,9 @@ export default function ArchivePage() {
 
             <br />
 
-            {iso_dates.map((date_str, index) => (
-                <div key={date_str}>
-                    <Link href={`/?d=${date_str}`} className="text-blue-500 hover:underline">
-                        [{index === 0 ? "Today" : (iso_dates.length - index)}] {date_str}
-                    </Link>
-                </div>
-            ))}
+            <Suspense fallback={<LoadingSpinner />}>
+                <ArchiveGrid />
+            </Suspense>
         </main>
     );
 }
