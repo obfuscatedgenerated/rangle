@@ -10,7 +10,8 @@ import {useState, useEffect, useCallback} from "react";
 
 import ReactConfetti from "react-confetti";
 import {useWindowSize} from "@/hooks/useWindowSize";
-import {Info} from "lucide-react";
+import {CalendarDays, Info} from "lucide-react";
+import Link from "next/link";
 
 export interface TodayData {
     date: string;
@@ -182,10 +183,14 @@ export const Game = ({ archive_date, on_loaded, on_info_click }: GameProps) => {
 
                 <div className="flex w-full items-stretch sm:max-w-xl my-4 sm:my-6 gap-2">
                     {on_info_click && (
-                        <button onClick={on_info_click} className="cursor-pointer p-4 rounded aspect-square border-2 border-gray-500">
+                        <button onClick={on_info_click} className="cursor-pointer p-4 rounded aspect-square border-2 border-blue-500" title="Info">
                             <Info />
                         </button>
                     )}
+
+                    <Link href="/archive" className="cursor-pointer p-4 rounded aspect-square border-2 border-blue-500" title="Archive">
+                        <CalendarDays />
+                    </Link>
 
                     <button disabled={finished} className="w-full text-lg font-bold uppercase tracking-wider px-4 py-3 bg-blue-500 text-white rounded cursor-pointer disabled:bg-gray-500 disabled:cursor-auto" onClick={check_answer}>
                         Check

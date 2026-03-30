@@ -4,6 +4,8 @@ import {useCallback, useEffect, useMemo, useRef, useState} from "react";
 import type {StatPositionFlags, TodayData} from "@/components/Game";
 import {PuzzleCountdown} from "@/components/PuzzleCountdown";
 
+import Link from "next/link";
+
 interface SharePopupProps {
     open: boolean;
     on_close: () => void;
@@ -143,6 +145,8 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date}:
                     {share_button_text}
                 </button>
             </div>
+
+            <p className="mt-4">Eager for more? Visit <Link className="underline" href="/archive">the archive</Link> to play previous Rangles.</p>
         </dialog>
     );
 }
