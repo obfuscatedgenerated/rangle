@@ -1,7 +1,7 @@
 1:"$Sreact.fragment"
-2:I[3597,["/_next/static/chunks/04vlfuo5_79tc.js","/_next/static/chunks/0xu54uon-.z1c.js"],"InfoPopup"]
-3:I[41341,["/_next/static/chunks/04vlfuo5_79tc.js","/_next/static/chunks/0xu54uon-.z1c.js"],"Game"]
-4:I[96782,["/_next/static/chunks/04vlfuo5_79tc.js"],"OutletBoundary"]
-5:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"flex-1 flex-col m-4 pb-4 sm:pb-0 flex items-center justify-center","children":[["$","$L2",null,{}],["$","h1",null,{"className":"font-title text-3xl sm:text-4xl mb-1 font-bold","children":"Rangle"}],["$","$L3",null,{}],["$","p",null,{"className":"sm:fixed left-2 bottom-2 opacity-75 text-xs sm:text-base","children":["Powered by ",["$","a",null,{"href":"https://www.wikidata.org/","target":"_blank","rel":"noopener noreferrer","className":"underline","children":"Wikidata"}]]}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/0xu54uon-.z1c.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"z3BRSWI2Xm4iYizNsm_xb"}
+3:"$Sreact.suspense"
+4:I[50560,["/_next/static/chunks/04vlfuo5_79tc.js","/_next/static/chunks/092en8r7t16b4.js"],"HomeInteraction"]
+5:I[96782,["/_next/static/chunks/04vlfuo5_79tc.js"],"OutletBoundary"]
+2:"Please enable JavaScript to play Rangle!"
+0:{"rsc":["$","$1","c",{"children":[[["$","noscript",null,{"children":"Please enable JavaScript to play Rangle!"}],["$","$3",null,{"fallback":"Loading...","children":["$","$L4",null,{}]}]],[["$","script","script-0",{"src":"/_next/static/chunks/092en8r7t16b4.js","async":true}]],["$","$L5",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"4QGJX-mYdhN0Ruqp9kvHw"}
 6:null
