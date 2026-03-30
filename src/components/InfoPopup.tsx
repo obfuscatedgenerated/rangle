@@ -2,13 +2,18 @@
 
 import {useEffect, useRef, useState} from "react";
 
-export const InfoPopup = () => {
+interface InfoPopupProps {
+    open: boolean;
+    on_close: () => void;
+}
+
+export const InfoPopup = ({open, on_close}: InfoPopupProps) => {
     const dialog_ref = useRef<HTMLDialogElement>(null);
 
     const [pronunciation, setPronunciation] = useState("wrangle");
 
     useEffect(() => {
-        // if pronounciation not in localstorage, randomly choose between "wrangle" and "range-le" and save to localstorage :)))
+        // if pronunciation not in localstorage, randomly choose between "wrangle" and "range-le" and save to localstorage :)))
         if (!localStorage.getItem("gaslight")) {
             const options = ["wrangle", "range-le"];
             const choice = options[Math.floor(Math.random() * options.length)];
@@ -16,18 +21,18 @@ export const InfoPopup = () => {
         }
 
         setPronunciation(localStorage.getItem("gaslight")!);
-
-        // when ready, show the dialog if not shown before
-        if (localStorage.getItem("info_popup_shown") === "true") {
-            return;
-        }
-
-        localStorage.setItem("info_popup_shown", "true");
-        dialog_ref.current?.showModal();
     }, []);
 
+    useEffect(() => {
+        if (open) {
+            dialog_ref.current?.showModal();
+        } else {
+            dialog_ref.current?.close();
+        }
+    }, [open]);
+
     return (
-        <dialog ref={dialog_ref} className="rounded-lg p-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[95vw] sm:max-w-md w-full bg-background-variant text-foreground-variant flex flex-col items-center">
+        <dialog onAbort={on_close} ref={dialog_ref} className="rounded-lg p-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[95vw] sm:max-w-md w-full bg-background-variant text-foreground-variant flex flex-col items-center">
             <h2 className="font-title text-xl font-bold">Rangle</h2>
             <p className="font-title mb-4 opacity-60">(pronounced &quot;{pronunciation}&quot;)</p>
 
@@ -45,7 +50,7 @@ export const InfoPopup = () => {
 
             <button
                 className="px-4 py-2 bg-red-500 text-white rounded cursor-pointer"
-                onClick={() => dialog_ref.current?.close()}
+                onClick={on_close}
             >
                 Close
             </button>

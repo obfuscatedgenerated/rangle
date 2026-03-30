@@ -10,6 +10,7 @@ import {useState, useEffect, useCallback} from "react";
 
 import ReactConfetti from "react-confetti";
 import {useWindowSize} from "@/hooks/useWindowSize";
+import {Info} from "lucide-react";
 
 export interface TodayData {
     date: string;
@@ -32,7 +33,11 @@ export interface PuzzleStat {
 
 export type StatPositionFlags = [boolean, boolean, boolean, boolean, boolean];
 
-export const Game = () => {
+interface GameProps {
+    on_info_click?: () => void;
+}
+
+export const Game = ({ on_info_click }: GameProps) => {
     const [date_override, setDateOverride] = useState<string | undefined>(undefined);
 
     const on_load_error = useCallback(
@@ -175,9 +180,17 @@ export const Game = () => {
                     </div>
                 </div>
 
-                <button disabled={finished} className="w-full text-lg font-bold uppercase tracking-wider sm:max-w-lg my-4 sm:my-6 px-4 py-3 bg-blue-500 text-white rounded cursor-pointer disabled:bg-gray-500 disabled:cursor-auto" onClick={check_answer}>
-                    Check
-                </button>
+                <div className="flex w-full items-stretch sm:max-w-xl my-4 sm:my-6 gap-2">
+                    {on_info_click && (
+                        <button onClick={on_info_click} className="cursor-pointer p-4 rounded aspect-square border-2 border-gray-500">
+                            <Info />
+                        </button>
+                    )}
+
+                    <button disabled={finished} className="w-full text-lg font-bold uppercase tracking-wider px-4 py-3 bg-blue-500 text-white rounded cursor-pointer disabled:bg-gray-500 disabled:cursor-auto" onClick={check_answer}>
+                        Check
+                    </button>
+                </div>
             </div>
 
             {finished_correctly && (
@@ -187,5 +200,5 @@ export const Game = () => {
     );
 }
 
-// TODO: way to get back info and share popup
+// TODO: way to get back share popup
 // TODO: archives
