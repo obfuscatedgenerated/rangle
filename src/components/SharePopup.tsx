@@ -2,6 +2,7 @@
 
 import {useCallback, useEffect, useRef, useState} from "react";
 import type {StatPositionFlags, TodayData} from "@/components/Game";
+import {PuzzleCountdown} from "@/components/PuzzleCountdown";
 
 interface SharePopupProps {
     open: boolean;
@@ -106,6 +107,8 @@ export const SharePopup = ({open, on_close, attempts, today_data}: SharePopupPro
             ) : (
                 <p className="mt-4 text-red-600 font-bold text-pretty text-center">Better luck next time!</p>
             )}
+
+            <PuzzleCountdown />
 
             <div className="mt-4 flex gap-4">
                 <button
