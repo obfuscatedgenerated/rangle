@@ -15,7 +15,10 @@ const sans = Roboto({
 });
 
 export const metadata: Metadata = {
-    title: "Rangle",
+    title: {
+        default: "Rangle",
+        template: "%s | Rangle"
+    },
     description: "Rangle is a game about sorting.",
     icons: "/icon.svg",
     metadataBase: "https://rangle.ollieg.codes",
