@@ -48,6 +48,12 @@ export const InfoPopup = ({open, on_close}: InfoPopupProps) => {
 
             <br />
 
+            <p>
+                Puzzles are automatically generated using Wikidata, and only manually reviewed on a best effort basis. If you find any issues with the puzzles (in difficulty, inaccuracy, or offensive content), please report them using the bug report link below.
+            </p>
+
+            <br />
+
             <div className="flex gap-2">
                 <a href="https://github.com/obfuscatedgenerated/rangle" target="_blank" rel="noreferrer noopener" className="underline">
                     Source code
