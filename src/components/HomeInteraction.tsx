@@ -27,11 +27,19 @@ export const HomeInteraction = () => {
                 return null;
             }
 
+            // validate constructed date is valid
+            let date: Date;
+            try {
+                date = new Date(`${date_str}T00:00:00Z`);
+            } catch (e) {
+                console.warn("Invalid date in search params:", date_str, e);
+                return null;
+            }
+
             // check if the game file exists for the date, if not, return undefined
             // this is just done mathematically for now by checking its within the range of the epoch and today
             // ideally it'd go fetch the file but that would require making this function async
             // future dates can be fetched if the secret flag is present (for testing future puzzles)
-            const date = new Date(`${date_str}T00:00:00Z`);
             const today = new Date();
             if (date < EPOCH || (date > today && !search_params.has("super_secret_time_travel"))) {
                 console.warn("Date in search params is out of range:", date_str);
@@ -50,6 +58,7 @@ export const HomeInteraction = () => {
     );
 
     // if the date param is invalid, remove it from the url
+    // TODO: not working in prod?
     useEffect(() => {
         if (validated_archive_date === null) {
             // remove the invalid date param from the url
