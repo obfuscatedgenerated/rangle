@@ -24,12 +24,13 @@ export const PuzzleCountdown = () => {
     const renderer = ({ hours, minutes, seconds, completed }: RendererProps) => {
         if (completed) {
             return (
-                <button
+                // TODO: Link is better but need to handle state properly
+                <a
                     className="text-2xl font-bold tracking-widest bg-green-600 px-3 py-1 rounded text-white cursor-pointer font-sans"
-                    onClick={() => window.location.reload()}
+                    href="/"
                 >
                     Play now!
-                </button>
+                </a>
             )
         } else {
             const h = String(hours).padStart(2, "0");

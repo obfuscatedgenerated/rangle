@@ -8,6 +8,7 @@ import Link from "next/link";
 import {ScoreStateDay} from "@/hooks/useRangleState";
 import {useRangleScores} from "@/hooks/useRangleScores";
 import {LoadingSpinner} from "@/components/LoadingSpinner";
+import {PuzzleCountdown} from "@/components/PuzzleCountdown";
 
 interface ArchiveTileProps {
     date_str: string;
@@ -137,6 +138,8 @@ export const ArchiveGrid = ({scroll_to_date}: ArchiveGridProps) => {
     // TODO: lazy load? wont worry til gets bigger
     return (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 gap-4">
+            <PuzzleCountdown />
+
             {iso_dates.map((date_str) => (
                 <ArchiveTile
                     key={date_str}
