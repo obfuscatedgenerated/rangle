@@ -2,7 +2,7 @@
 
 import EPOCH from "../../epoch";
 
-import {useMemo} from "react";
+import {useEffect, useMemo, useRef} from "react";
 import Link from "next/link";
 
 import {ScoreStateDay} from "@/hooks/useRangleState";
@@ -11,16 +11,18 @@ import {LoadingSpinner} from "@/components/LoadingSpinner";
 
 interface ArchiveTileProps {
     date_str: string;
-    index: number;
-    total: number;
     score?: ScoreStateDay;
+    set_ref?: (date_str: string, ref: HTMLAnchorElement | null) => void;
+    link_className?: string;
+    box_className?: string;
 }
 
 const ArchiveTile = ({
     date_str,
-    index,
-    total,
     score,
+    set_ref,
+    link_className = "",
+    box_className = "",
 }: ArchiveTileProps) => {
     const formatted_date = useMemo(
         () => {
@@ -50,7 +52,7 @@ const ArchiveTile = ({
     );
 
     return (
-        <Link href={`/?d=${date_str}`} title={`Play Rangle #${rangle_number} from ${formatted_date}`}>
+        <Link href={`/?d=${date_str}`} title={`Play Rangle #${rangle_number} from ${formatted_date}`} ref={(el) => set_ref?.(date_str, el)} className={link_className}>
             <div className={`
                 aspect-square
                 rounded-lg
@@ -65,6 +67,7 @@ const ArchiveTile = ({
                     ? "bg-red-100 dark:bg-red-900/50 border-red-400 dark:border-red-700"
                     : "bg-gray-100 dark:bg-gray-900/50 border-gray-300 dark:border-gray-700"
                 }
+                ${box_className}
             `}>
                 <div>
                     <h2 className="font-bold sm:text-lg">Rangle #{rangle_number}</h2>
@@ -93,7 +96,11 @@ const ArchiveTile = ({
     );
 }
 
-export const ArchiveGrid = () => {
+interface ArchiveGridProps {
+    scroll_to_date?: string;
+}
+
+export const ArchiveGrid = ({scroll_to_date}: ArchiveGridProps) => {
     const iso_dates = useMemo(
         () => {
             // for every day going backwards until the epoch, add a link to the puzzle
@@ -110,19 +117,39 @@ export const ArchiveGrid = () => {
 
     const {scores} = useRangleScores();
 
+    // date -> item ref for scrolling into view
+    const item_refs = useRef<Map<string, HTMLAnchorElement>>(new Map());
+
+    useEffect(() => {
+        if (scroll_to_date) {
+            const ref = item_refs.current.get(scroll_to_date);
+            console.log("Scrolling to date", scroll_to_date, ref);
+            if (ref) {
+                ref.scrollIntoView({behavior: "smooth", block: "center"});
+            }
+        }
+    }, [scroll_to_date]);
+
     if (scores === null) {
         return <LoadingSpinner />;
     }
 
+    // TODO: lazy load? wont worry til gets bigger
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-            {iso_dates.map((date_str, index) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {iso_dates.map((date_str) => (
                 <ArchiveTile
                     key={date_str}
                     date_str={date_str}
-                    index={index}
-                    total={iso_dates.length}
                     score={scores[date_str]}
+                    set_ref={(date_str, ref) => {
+                        if (ref) {
+                            item_refs.current.set(date_str, ref);
+                        } else {
+                            item_refs.current.delete(date_str);
+                        }
+                    }}
+                    box_className={date_str === scroll_to_date ? "ring-4 ring-blue-400 dark:ring-blue-700" : ""}
                 />
             ))}
         </div>

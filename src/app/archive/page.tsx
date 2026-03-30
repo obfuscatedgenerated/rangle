@@ -1,8 +1,8 @@
 import {Metadata} from "next";
 import {Suspense} from "react";
 
-import {ArchiveGrid} from "@/components/ArchiveGrid";
 import {LoadingSpinner} from "@/components/LoadingSpinner";
+import {ArchiveInteraction} from "@/components/ArchiveInteraction";
 
 export const metadata: Metadata = {
     title: "The Archive"
@@ -11,14 +11,11 @@ export const metadata: Metadata = {
 export default function ArchivePage() {
 
     return (
-        <main className="flex flex-col items-center justify-center min-h-screen py-2">
-            <h1>The Archive</h1>
-            <h2>(this is a work in progress!)</h2>
-
-            <br />
+        <main className="flex flex-col items-center min-h-screen py-8 gap-8">
+            <h1 className="text-2xl font-bold uppercase tracking-widest">The Archive</h1>
 
             <Suspense fallback={<LoadingSpinner />}>
-                <ArchiveGrid />
+                <ArchiveInteraction />
             </Suspense>
         </main>
     );
