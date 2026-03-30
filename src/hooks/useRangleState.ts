@@ -7,6 +7,13 @@ interface RangleStateHookProps {
     date_override?: string;
 }
 
+export interface SaveStateDay {
+    current_order_ids: string[];
+    attempts: StatPositionFlags[];
+}
+
+export type SaveState = Record<string, SaveStateDay>;
+
 export const useRangleState = ({ on_loaded, on_load_error, date_override }: RangleStateHookProps = {}) => {
     const [today_data, setTodayData] = useState<TodayData | null>(null);
 
@@ -86,7 +93,7 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
                     on_load_error(err);
                 }
             });
-    }, [date_override, on_load_error]);
+    }, [date_override, on_load_error, on_loaded]);
 
     // memoise sorted answers
     const answers = useMemo(
@@ -113,7 +120,7 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
             setAttempts((prev) => [...prev, new_correct_positions]);
 
             // save state to local storage
-            const save_state = {
+            const save_state: SaveStateDay = {
                 current_order_ids: guess.map((stat) => stat.id),
                 attempts: [...attempts, new_correct_positions]
             };
