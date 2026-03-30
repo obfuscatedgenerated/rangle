@@ -19,8 +19,8 @@ export const ArchiveInteraction = () => {
     const [chosen_date, setChosenDate] = useState<string>("");
 
     return (
-        <div className="flex flex-col">
-            <label className="mb-4 flex items-center justify-center gap-2">
+        <div className="flex flex-col h-full max-h-[85vh]">
+            <label className="shrink-0 mb-4 flex items-center justify-center gap-2">
                 Jump to date:
 
                 <input
@@ -33,7 +33,9 @@ export const ArchiveInteraction = () => {
                 />
             </label>
 
-            <ArchiveGrid scroll_to_date={chosen_date} />
+            <div className="flex-1 min-h-0 overflow-y-auto pr-4">
+                <ArchiveGrid scroll_to_date={chosen_date} />
+            </div>
         </div>
     );
 }
