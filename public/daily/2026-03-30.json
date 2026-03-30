@@ -26,7 +26,7 @@
     {
       "id": "Q703",
       "name": "potassium",
-      "value": 492,
+      "value": 765.5,
       "metric": "Boiling Point",
       "description": "chemical element with symbol K and atomic number 19",
       "prefix": "",
@@ -40,13 +40,13 @@
       "metric": "Length",
       "description": "river in Western Europe to the North Sea",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " km",
+      "unit_hint": "in kilometres"
     },
     {
       "id": "Q758",
       "name": "zinc",
-      "value": 634,
+      "value": 907,
       "metric": "Boiling Point",
       "description": "chemical element with symbol Zn and atomic number 30",
       "prefix": "",
