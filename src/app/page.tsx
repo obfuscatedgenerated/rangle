@@ -6,7 +6,7 @@ export default function Home() {
     return (
       <>
           <noscript className="absolute top-1/4 left-1/2 -translate-x-1/2">Please enable JavaScript to play Rangle!</noscript>
-          <Suspense fallback={<LoadingSpinner className="mt-4" />}>
+          <Suspense fallback={<LoadingSpinner className="m-auto" />}>
               <HomeInteraction />
           </Suspense>
       </>
