@@ -1,7 +1,7 @@
 1:"$Sreact.fragment"
 3:"$Sreact.suspense"
-4:I[50560,["/_next/static/chunks/04vlfuo5_79tc.js","/_next/static/chunks/092en8r7t16b4.js"],"HomeInteraction"]
+4:I[50560,["/_next/static/chunks/04vlfuo5_79tc.js","/_next/static/chunks/0ce7qcvpwfuaq.js"],"HomeInteraction"]
 5:I[96782,["/_next/static/chunks/04vlfuo5_79tc.js"],"OutletBoundary"]
 2:"Please enable JavaScript to play Rangle!"
-0:{"rsc":["$","$1","c",{"children":[[["$","noscript",null,{"children":"Please enable JavaScript to play Rangle!"}],["$","$3",null,{"fallback":"Loading...","children":["$","$L4",null,{}]}]],[["$","script","script-0",{"src":"/_next/static/chunks/092en8r7t16b4.js","async":true}]],["$","$L5",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"4QGJX-mYdhN0Ruqp9kvHw"}
+0:{"rsc":["$","$1","c",{"children":[[["$","noscript",null,{"children":"Please enable JavaScript to play Rangle!"}],["$","$3",null,{"fallback":"Loading...","children":["$","$L4",null,{}]}]],[["$","script","script-0",{"src":"/_next/static/chunks/0ce7qcvpwfuaq.js","async":true}]],["$","$L5",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"4e5KZnBsaw2n5Nt-13s2R"}
 6:null
