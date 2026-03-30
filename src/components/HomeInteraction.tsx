@@ -4,8 +4,10 @@ import {InfoPopup} from "@/components/InfoPopup";
 import {Game} from "@/components/Game";
 
 import {useEffect, useState} from "react";
+import {LoadingSpinner} from "@/components/LoadingSpinner";
 
 export const HomeInteraction = () => {
+    const [loaded, setLoaded] = useState(false);
     const [show_info_popup, setShowInfoPopup] = useState(false);
 
     useEffect(() => {
@@ -19,13 +21,15 @@ export const HomeInteraction = () => {
     }, []);
 
     return (
-        <main className="flex-1 flex-col m-4 pb-4 sm:pb-0 flex items-center justify-center">
+        <main className="flex-1 flex-col m-4 mb-1 pb-6 sm:pb-0 flex items-center justify-center">
             <InfoPopup open={show_info_popup} on_close={() => setShowInfoPopup(false)} />
 
             <h1 className="font-title text-3xl sm:text-4xl mb-1 font-bold">Rangle</h1>
-            <Game on_info_click={() => setShowInfoPopup(true)} />
+            {!loaded && <LoadingSpinner className="mt-4" />}
 
-            <p className="sm:fixed left-2 bottom-2 opacity-75 text-xs sm:text-base">Powered by <a href="https://www.wikidata.org/" target="_blank" rel="noopener noreferrer" className="underline">Wikidata</a></p>
+            <Game on_loaded={() => setLoaded(true)} on_info_click={() => setShowInfoPopup(true)} />
+
+            {loaded && <p className="sm:fixed left-2 bottom-2 opacity-75 text-xs sm:text-base">Powered by <a href="https://www.wikidata.org/" target="_blank" rel="noopener noreferrer" className="underline">Wikidata</a></p>}
         </main>
     );
 }

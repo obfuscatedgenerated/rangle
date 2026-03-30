@@ -34,10 +34,11 @@ export interface PuzzleStat {
 export type StatPositionFlags = [boolean, boolean, boolean, boolean, boolean];
 
 interface GameProps {
+    on_loaded?: () => void;
     on_info_click?: () => void;
 }
 
-export const Game = ({ on_info_click }: GameProps) => {
+export const Game = ({ on_loaded, on_info_click }: GameProps) => {
     const [date_override, setDateOverride] = useState<string | undefined>(undefined);
 
     const on_load_error = useCallback(
@@ -73,6 +74,7 @@ export const Game = ({ on_info_click }: GameProps) => {
         submit_guess,
         set_current_order
     } = useRangleState({
+        on_loaded,
         on_load_error,
         date_override
     });
@@ -141,11 +143,7 @@ export const Game = ({ on_info_click }: GameProps) => {
     }, [finished, finished_correctly, reveal_answers]);
 
     if (!today_data) {
-        return (
-            <div className="flex flex-col items-center justify-center gap-4">
-                <p>Loading...</p>
-            </div>
-        );
+        return null;
     }
 
     return (
@@ -194,7 +192,7 @@ export const Game = ({ on_info_click }: GameProps) => {
             </div>
 
             {finished_correctly && (
-                <ReactConfetti width={window_size.width} height={window_size.height} />
+                <ReactConfetti style={{position: "fixed"}} width={window_size.width} height={window_size.height} />
             )}
         </>
     );

@@ -2,11 +2,12 @@ import {PuzzleStat, StatPositionFlags, TodayData} from "@/components/Game";
 import {useCallback, useEffect, useMemo, useState} from "react";
 
 interface RangleStateHookProps {
+    on_loaded?: () => void;
     on_load_error?: (err: Error) => void;
     date_override?: string;
 }
 
-export const useRangleState = ({ on_load_error, date_override }: RangleStateHookProps = {}) => {
+export const useRangleState = ({ on_loaded, on_load_error, date_override }: RangleStateHookProps = {}) => {
     const [today_data, setTodayData] = useState<TodayData | null>(null);
 
     const [current_order, setCurrentOrder] = useState<PuzzleStat[]>([]);
@@ -74,6 +75,10 @@ export const useRangleState = ({ on_load_error, date_override }: RangleStateHook
                     }
                 } else {
                     setCurrentOrder(data.puzzle);
+                }
+
+                if (on_loaded) {
+                    on_loaded();
                 }
             }).catch((err) => {
                 console.error("Error fetching today's data:", err);
