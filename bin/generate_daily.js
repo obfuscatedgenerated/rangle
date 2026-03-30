@@ -76,10 +76,13 @@ const properties = {
         { id: "P1128", name: "Number of Employees", suffix: " employees", classes: ["Q4830453", "Q2655353"] }, // Business, Agency
         { id: "P1110", name: "Event Attendance", suffix: " attendees", classes: ["Q16567", "Q1076531"] }, // Event, Match
         { id: "P1083", name: "Maximum Capacity", suffix: " people", classes: ["Q48310", "Q182832"] }, // Stadium, Hall
-        { id: "P3762", name: "Student Enrollment", suffix: " students", classes: ["Q3918", "Q3914"] }, // Uni, School
+        { id: "P2196", name: "Student Enrollment", suffix: " students", classes: ["Q3918", "Q3914"] }, // Uni, School
         { id: "P2951", name: "Number of Passengers", suffix: " passengers", classes: ["Q1248784", "Q55488"] } // Airport, Station
     ]
 };
+
+// TODO: fix temperature conversion
+// TODO: say the point in time for money values
 
 const exclude_categories = [
     { id: "Q198", name: "War / Armed Conflict" },
