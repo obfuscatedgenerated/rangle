@@ -69,7 +69,7 @@ const properties = {
         { id: "P2226", name: "Market Capitalisation", prefix: "$", suffix: "", classes: ["Q4830453"], unit_hint: "in dollars" },
         { id: "P2130", name: "Production Budget", prefix: "$", suffix: "", classes: ["Q11424", "Q7889"], unit_hint: "in dollars" }, // Film, Game
         { id: "P2142", name: "Total Box Office Revenue", prefix: "$", suffix: "", classes: ["Q11424"], unit_hint: "in dollars" },
-        { id: "P2664", name: "Total Units Sold", suffix: " units", classes: ["Q7889", "Q2188189", "Q571", "Q2424752", "Q101352", "Q116933"] },
+        { id: "P2664", name: "Total Units Sold", suffix: " units", unit_hint: "approx.", classes: ["Q7889", "Q2188189", "Q571", "Q2424752", "Q101352", "Q116933"] },
 
         { id: "P1082", name: "Population", suffix: " people", classes: ["Q1549591", "Q5119", "Q3624078"] }, // Big City, Capital, Sovereign State
         { id: "P1098", name: "Native Speakers", suffix: " speakers", classes: ["Q34770"] },
