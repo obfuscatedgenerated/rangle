@@ -79,6 +79,7 @@ export default function RootLayout({
             className={`${title.variable} ${sans.variable} font-sans h-full antialiased`}
         >
             <body className="min-h-full flex flex-col">
+                <noscript className="absolute top-1/4 left-1/2 -translate-x-1/2">Please enable JavaScript to play Rangle!</noscript>
                 <ViewTransition name="zoom-and-fade">
                     {children}
                 </ViewTransition>
