@@ -2,7 +2,7 @@
 
 import EPOCH from "../../epoch";
 
-import {useEffect, useMemo, useRef} from "react";
+import {useEffect, useMemo, useRef, useState} from "react";
 import Link from "next/link";
 
 import {ScoreStateDay} from "@/hooks/useRangleState";
@@ -10,8 +10,21 @@ import {useRangleScores} from "@/hooks/useRangleScores";
 import {LoadingSpinner} from "@/components/LoadingSpinner";
 import {PuzzleCountdown} from "@/components/PuzzleCountdown";
 
+interface MetadataDay {
+    number: number;
+    difficulty: string;
+    neighbourhood: string;
+}
+
+interface MetadataFile {
+    time: string;
+    count: number;
+    days: {[date_str: string]: MetadataDay};
+}
+
 interface ArchiveTileProps {
     date_str: string;
+    metadata: MetadataDay;
     score?: ScoreStateDay;
     set_ref?: (date_str: string, ref: HTMLAnchorElement | null) => void;
     link_className?: string;
@@ -20,6 +33,7 @@ interface ArchiveTileProps {
 
 const ArchiveTile = ({
     date_str,
+    metadata,
     score,
     set_ref,
     link_className = "",
@@ -29,15 +43,6 @@ const ArchiveTile = ({
         () => {
             const date = new Date(`${date_str}T00:00:00Z`);
             return date.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
-        },
-        [date_str]
-    );
-
-    const rangle_number = useMemo(
-        () => {
-            const date = new Date(`${date_str}T00:00:00Z`);
-            const diff_time = date.getTime() - EPOCH.getTime();
-            return Math.floor(diff_time / (1000 * 60 * 60 * 24)) + 1;
         },
         [date_str]
     );
@@ -53,7 +58,7 @@ const ArchiveTile = ({
     );
 
     return (
-        <Link href={`/?d=${date_str}`} title={`Play Rangle #${rangle_number} from ${formatted_date}`} ref={(el) => set_ref?.(date_str, el)} className={link_className}>
+        <Link href={`/?d=${date_str}`} title={`Play Rangle #${metadata.number} from ${formatted_date}`} ref={(el) => set_ref?.(date_str, el)} className={link_className}>
             <div className={`
                 aspect-square
                 rounded-lg
@@ -71,7 +76,7 @@ const ArchiveTile = ({
                 ${box_className}
             `}>
                 <div>
-                    <h2 className="font-bold sm:text-lg">Rangle #{rangle_number}</h2>
+                    <h2 className="font-bold sm:text-lg">Rangle #{metadata.number}</h2>
                     <h3 className="font-bold text-sm sm:text-base">{formatted_date}</h3>
 
                     {score ? (
@@ -90,7 +95,7 @@ const ArchiveTile = ({
                     {days_ago === 0
                         ? "Today"
                         : `${days_ago} day${days_ago !== 1 ? "s" : ""} ago`
-                    }
+                    }  • {metadata.difficulty}
                 </p>
             </div>
         </Link>
@@ -102,20 +107,32 @@ interface ArchiveGridProps {
 }
 
 export const ArchiveGrid = ({scroll_to_date}: ArchiveGridProps) => {
-    const iso_dates = useMemo(
-        () => {
-            // for every day going backwards until the epoch, add a link to the puzzle
-            // TODO: fetch the difficulty. maybe worth creating an index.json file with metadata for every puzzle inc difficulty and just fetching that in full
-            const today = new Date();
-            const iso_dates = [];
-            for (let date = today; date >= EPOCH; date.setUTCDate(date.getUTCDate() - 1)) {
-                iso_dates.push(date.toISOString().split("T")[0]);
-            }
+    const [metadata, setMetadata] = useState<MetadataFile | null>(null);
 
-            return iso_dates;
-        },
-        []
-    );
+    useEffect(() => {
+        fetch("/daily/meta.json")
+            .then((res) => res.json())
+            .then((data) => setMetadata(data))
+            .catch((err) => {
+                console.error("Error fetching metadata:", err);
+                setMetadata(null);
+            });
+    }, []);
+
+    const iso_dates = useMemo(() => {
+        if (!metadata) {
+            return [];
+        }
+
+        return Object.keys(metadata.days).filter((date_str) => {
+            // make sure to only include current dates
+            // TODO: should meta.json just exclude future days to avoid this computation?
+            const date = new Date(`${date_str}T00:00:00Z`);
+            const today = new Date();
+
+            return date >= EPOCH && date < today;
+        }).reverse();
+    }, [metadata]);
 
     const {scores} = useRangleScores();
 
@@ -132,7 +149,7 @@ export const ArchiveGrid = ({scroll_to_date}: ArchiveGridProps) => {
         }
     }, [scroll_to_date]);
 
-    if (scores === null) {
+    if (metadata === null || scores === null) {
         return <LoadingSpinner />;
     }
 
@@ -145,6 +162,7 @@ export const ArchiveGrid = ({scroll_to_date}: ArchiveGridProps) => {
                 <ArchiveTile
                     key={date_str}
                     date_str={date_str}
+                    metadata={metadata.days[date_str]}
                     score={scores[date_str]}
                     set_ref={(date_str, ref) => {
                         if (ref) {
