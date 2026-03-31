@@ -105,6 +105,7 @@ export const ArchiveGrid = ({scroll_to_date}: ArchiveGridProps) => {
     const iso_dates = useMemo(
         () => {
             // for every day going backwards until the epoch, add a link to the puzzle
+            // TODO: fetch the difficulty. maybe worth creating an index.json file with metadata for every puzzle inc difficulty and just fetching that in full
             const today = new Date();
             const iso_dates = [];
             for (let date = today; date >= EPOCH; date.setUTCDate(date.getUTCDate() - 1)) {
