@@ -1,0 +1,58 @@
+{
+  "date": "2026-04-03",
+  "number": 5,
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q48814715",
+      "name": "Ingenuity",
+      "value": 36,
+      "metric": "Top Speed",
+      "description": "decommissioned NASA rotorcraft on the Mars 2020 mission",
+      "prefix": "",
+      "suffix": " km/h",
+      "unit_hint": "in km/h"
+    },
+    {
+      "id": "Q52505",
+      "name": "Rialto Bridge",
+      "value": 48,
+      "metric": "Length",
+      "description": "one of four bridges spanning the Grand Canal in Venice, Italy",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q486066",
+      "name": "Yakovlev SJ-100",
+      "value": 54,
+      "metric": "Wingspan",
+      "description": "twin-engine regional jet",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q35926",
+      "name": "HMS Beagle",
+      "value": 27,
+      "metric": "Length",
+      "description": "1820 Cherokee-class brig-sloop",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q54382",
+      "name": "Challenger",
+      "value": 24,
+      "metric": "Wingspan",
+      "description": "American Space Shuttle orbiter",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}

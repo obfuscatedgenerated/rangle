@@ -9,11 +9,12 @@ program
     .option("-d, --difficulty <difficulty>", "Difficulty level (easy, medium, hard)", "random")
     .option("-n, --neighbourhood <neighbourhood>", "Neighbourhood of values (small, medium, large)", "random")
     .option("-o, --offset <days>", "Number of days in the future to generate for", "0")
-    .option("-f, --force", "Force generation even if today's file already exists", false);
+    .option("-f, --force", "Force generation even if today's file already exists", false)
+    .option("-p, --properties <propertyID1,propertyID2,...>", "Comma-separated list of specific Wikidata property IDs to use instead of random selection. If less than 10, random properties will be added to fill the gap.");
 
 program.parse();
 
-const { difficulty: difficulty_arg, neighbourhood: neighbourhood_arg, offset: offset_arg, force: force_arg } = program.opts();
+const { difficulty: difficulty_arg, neighbourhood: neighbourhood_arg, offset: offset_arg, force: force_arg, properties: properties_arg } = program.opts();
 
 const EPOCH = require("../epoch");
 const NEIGHBOURHOODS = ["small", "medium", "large"];
@@ -34,7 +35,21 @@ const properties = {
         { id: "P2665", name: "Alcohol by Volume (ABV)", suffix: "%", classes: ["Q154", "Q44"], unit_hint: "by percent" }, // Beverage, Beer
         { id: "P1725", name: "Tempo", suffix: " BPM", classes: ["Q2188189"], unit_hint: "BPM" },
         { id: "P1101", name: "Number of Floors", suffix: " floors", classes: ["Q41176", "Q1021643"] }, // Building, Skyscraper
-        { id: "P1685", name: "Pokédex Number", prefix: "#", suffix: "", classes: ["Q3966183"] }
+
+        {
+            id: "P1685",
+            name: "Pokédex Number",
+            prefix: "#",
+            suffix: "",
+            classes: ["Q3966183"], // pokemon species
+
+            // pokemon are obviously referenced less than other things so need to relax the sitelink ranges
+            sitelink_override: {
+                Easy: { min: 22, max: 120 },
+                Medium: { min: 12, max: 21 },
+                Hard: { min: 4, max: 11 }
+            }
+        }
     ],
 
     // thousands
@@ -112,9 +127,26 @@ const exclude_categories = [
 ];
 
 const difficulties = {
-    "easy": { label: "Easy", min: 150, max: 3000 },
-    "medium": { label: "Medium", min: 80, max: 149 },
-    "hard": { label: "Hard", min: 40, max: 79 }
+    "easy": {
+        label: "Easy",
+        min: 150,
+        max: 3000,
+        tightness: {"small": 20, "medium": 50, "large": 100}
+    },
+
+    "medium": {
+        label: "Medium",
+        min: 80,
+        max: 149,
+        tightness: {"small": 10, "medium": 25, "large": 50}
+    },
+
+    "hard": {
+        label: "Hard",
+        min: 40,
+        max: 79,
+        tightness: {"small": 5, "medium": 8, "large": 15}
+    }
 };
 
 const choose_difficulty = () => {
@@ -131,7 +163,7 @@ const choose_difficulty = () => {
 };
 
 const fetch_single_property = async (prop, difficulty) => {
-    console.log(`Fetching data for ${prop.name}...`);
+    console.log(`Fetching data for ${prop.name} (${prop.id})...`);
 
     const value_var = prop.id === "P625" ? "?coord" : "?value";
 
@@ -141,6 +173,12 @@ const fetch_single_property = async (prop, difficulty) => {
         // fallback to logical entity
         : "wd:Q15228";
 
+    // some properties specify an override for sitelink ranges by difficulty
+    const resolved_sitelink_range = {
+        min: prop.sitelink_override?.[difficulty.label]?.min || difficulty.min,
+        max: prop.sitelink_override?.[difficulty.label]?.max || difficulty.max
+    };
+
     const query = `
     SELECT DISTINCT ?item ?itemLabel ?itemDescription ${value_var} WHERE {
       # 1. Start with the property. This acts as a massive primary filter.
@@ -148,7 +186,7 @@ const fetch_single_property = async (prop, difficulty) => {
       
       # 2. Filter by sitelinks NEXT. 
       ?item wikibase:sitelinks ?sitelinks .
-      FILTER(?sitelinks >= ${difficulty.min} && ?sitelinks <= ${difficulty.max})
+      FILTER(?sitelinks >= ${resolved_sitelink_range.min} && ?sitelinks <= ${resolved_sitelink_range.max})
       
       # 3. FINALLY, check the class hierarchy on the surviving items.
       VALUES ?allowedClass { ${class_list} }
@@ -189,6 +227,7 @@ const fetch_single_property = async (prop, difficulty) => {
             const raw = r.coord ? r.coord.value : r.value.value;
             const parsed = prop.parser ? prop.parser(raw) : parseFloat(raw);
 
+            //console.log(r.itemLabel.value)
             return {
                 id: r.item.value.split("/").pop(),
                 name: r.itemLabel.value,
@@ -260,15 +299,43 @@ const main = async () => {
     }
 
     // pick a difficulty and neighbourhood for today
-    const difficulty = difficulties[difficulty_arg] || choose_difficulty();
-    const neighbourhood = NEIGHBOURHOODS.includes(neighbourhood_arg) ? neighbourhood_arg : NEIGHBOURHOODS[Math.floor(Math.random() * NEIGHBOURHOODS.length)];
+    const difficulty = difficulties[difficulty_arg.toLowerCase()] || choose_difficulty();
+    const neighbourhood = NEIGHBOURHOODS.includes(neighbourhood_arg.toLowerCase()) ? neighbourhood_arg.toLowerCase() : NEIGHBOURHOODS[Math.floor(Math.random() * NEIGHBOURHOODS.length)];
 
     console.log(`Today's Rangle will be ${difficulty.label} with ${neighbourhood} values.`);
 
-    // pick 10 random properties from the neighbourhood
-    const subset_props = properties[neighbourhood]
-        .sort(() => 0.5 - Math.random())
-        .slice(0, 10);
+    const subset_props = [];
+
+    // if properties were provided via command line, use those and add random ones to fill up to 10
+    if (properties_arg) {
+        const provided_props = properties_arg.split(",").map(p => p.trim());
+
+        // search all neighbourhoods for the provided properties
+        const matched_props = [];
+        for (const nbhd of NEIGHBOURHOODS) {
+            for (const prop of properties[nbhd]) {
+                if (provided_props.includes(prop.id)) {
+                    matched_props.push(prop);
+
+                    // warn if they provided a property that doesn't exist in the chosen neighbourhood, but still add it to the pool
+                    if (nbhd !== neighbourhood) {
+                        console.warn(`Provided property ${prop.id} (${prop.name}) is not in the chosen neighbourhood (${neighbourhood}), but it will still be included in the pool.`);
+                    }
+                }
+            }
+        }
+
+        // add matched properties to the front of the list
+        subset_props.unshift(...matched_props);
+    }
+
+    // fill up to 10 properties with random ones from the chosen neighbourhood, ensuring no duplicates with provided ones
+    while (subset_props.length < 10) {
+        const random_prop = properties[neighbourhood][Math.floor(Math.random() * properties[neighbourhood].length)];
+        if (!subset_props.some(p => p.id === random_prop.id)) {
+            subset_props.push(random_prop);
+        }
+    }
 
     // fetch properties with up to 3 in parallel, giving a fair delay to stay within limits
     const pool = [];
@@ -282,39 +349,51 @@ const main = async () => {
     // bucket the pool with a sliding window on the sorted pool, keeping the magnitude close for a challenge
     // this is much less harsh than the old exact magnitude buckets
     const sorted_pool = pool.sort((a, b) => a.value - b.value);
+
     const valid_buckets = [];
 
-    for (let i = 0; i < sorted_pool.length; i++) {
-        const bucket = [];
-        const min_val = sorted_pool[i].value;
+    let current_tightness = difficulty.tightness[neighbourhood];
+    let bucket_attempts = 0;
 
-        // largest item can be up to 100x the value of the smallest
-        const max_allowed = min_val * 100;
+    while (valid_buckets.length === 0) {
+        for (let i = 0; i < sorted_pool.length; i++) {
+            const bucket = [];
+            const min_val = sorted_pool[i].value;
 
-        for (let j = i; j < sorted_pool.length; j++) {
-            if (sorted_pool[j].value <= max_allowed) {
-                bucket.push(sorted_pool[j]);
-            } else {
-                // too big
-                break;
+            // largest item can be up to a certain multiplier of the value of the smallest depending on difficulty and neighbourhood
+            const max_allowed = min_val * current_tightness;
+
+            for (let j = i; j < sorted_pool.length; j++) {
+                if (sorted_pool[j].value <= max_allowed) {
+                    bucket.push(sorted_pool[j]);
+                } else {
+                    // too big
+                    break;
+                }
+            }
+
+            // filter out buckets that are too small. the final lineup will be 5 items but
+            // we want some extra in case some are discarded for being unsafe or too close
+            // pre-check the diversity too
+            const unique_metrics = new Set(bucket.map(item => item.metric));
+            if (bucket.length >= 12 && unique_metrics.size >= 3) {
+                valid_buckets.push(bucket);
+
+                // skip ahead to the next bucket start
+                i += Math.floor(bucket.length / 2);
             }
         }
 
-        // filter out buckets that are too small. the final lineup will be 5 items but
-        // we want some extra in case some are discarded for being unsafe or too close
-        // pre-check the diversity too
-        const unique_metrics = new Set(bucket.map(item => item.metric));
-        if (bucket.length >= 12 && unique_metrics.size >= 3) {
-            valid_buckets.push(bucket);
-
-            // skip ahead to the next bucket start
-            i += Math.floor(bucket.length / 2);
+        if (valid_buckets.length === 0) {
+            if (bucket_attempts >= 5) {
+                console.error("Couldn't find any valid buckets after multiple attempts, restarting generation...");
+                return main();
+            } else {
+                console.warn("Didn't find any valid buckets, relaxing tightness and trying again...");
+                bucket_attempts++;
+                current_tightness *= 1.25;
+            }
         }
-    }
-
-    if (valid_buckets.length === 0) {
-        console.error("Didn't find any valid buckets, trying again...");
-        return main();
     }
 
     // shuffle bucket order and iterate until first valid one is found
