@@ -25,8 +25,8 @@ const properties = {
     // usually up to a few hundred at most, some outliers up towards 1000 but will caught by sliding window
     "small": [
         { id: "P2048", name: "Height", suffix: " cm", classes: ["Q5"], unit_hint: "in centimeters", normalised: true, parser: (v) => Math.round(v * 100) }, // Human
-        { id: "P2043", name: "Length", suffix: " cm", classes: ["Q502895", "Q39546", "Q30056"], unit_hint: "in centimeters", normalised: true, parser: (v) => Math.round(v * 100) }, // Insects, Hand tools, Gadgets
-        { id: "P2067", name: "Mass / Weight", suffix: " grams", classes: ["Q1309492", "Q5159", "Q502895"], unit_hint: "in grams", normalised: true, parser: (v) => Math.round(v * 1000) }, // Fruits, Birds, Insects
+        { id: "P2043", name: "Length", suffix: " cm", classes: ["Q1390", "Q2102", "Q6607"], unit_hint: "in centimeters, on average", normalised: true, parser: (v) => Math.round(v * 100) }, // Insects, Snakes, Guitars
+        { id: "P2067", name: "Mass / Weight", suffix: " grams", classes: ["Q1309492", "Q5113", "Q1390"], unit_hint: "in grams", normalised: true, parser: (v) => Math.round(v * 1000) }, // Fruits, Birds, Insects
 
         { id: "P2250", name: "Life Expectancy / Maximum Lifespan", suffix: " years", classes: ["Q729"], unit_hint: "in years", normalised: true, parser: (v) => Math.round(v / 31556952) }, // Animals
         { id: "P3063", name: "Gestation Period", suffix: " days", classes: ["Q729"], unit_hint: "in days", normalised: true, parser: (v) => Math.round(v / 86400) },
@@ -38,8 +38,7 @@ const properties = {
             id: "P2665",
             name: "Alcohol by Volume",
             suffix: "%",
-            // alcoholic beverage
-            classes: ["Q154"],
+            classes: ["Q154"], // alcoholic beverage
             unit_hint: "by approx. percent",
 
             // needs to be relaxed too
@@ -50,8 +49,21 @@ const properties = {
             }
         },
 
-        { id: "P1725", name: "Tempo", suffix: " BPM", classes: ["Q2188189"], unit_hint: "BPM" },
-        { id: "P1101", name: "Number of Floors", suffix: " floors", classes: ["Q41176", "Q1021643"] }, // Building, Skyscraper
+        {
+            id: "P1725",
+            name: "Tempo",
+            suffix: " BPM",
+            classes: ["Q2188189"], // Musical Work
+            unit_hint: "beats per minute",
+
+            sitelink_override: {
+                Easy: { min: 25, max: 100 },
+                Medium: { min: 10, max: 24 },
+                Hard: { min: 3, max: 9 }
+            }
+        },
+
+        { id: "P1101", name: "Number of Floors", suffix: " floors", classes: ["Q41176"] }, // Building
 
         {
             id: "P1685",
@@ -71,24 +83,24 @@ const properties = {
 
     // thousands
     "medium": [
-        { id: "P2048", name: "Height", suffix: " m", classes: ["Q41176", "Q754507", "Q10884"], unit_hint: "in metres", normalised: true, parser: (v) => Math.round(v) }, // Building, Rocket, Tree
+        { id: "P2048", name: "Height", suffix: " m", classes: ["Q41176", "Q40218", "Q10884"], unit_hint: "in metres", normalised: true, parser: (v) => Math.round(v) }, // Building, Spacecraft, Tree
         { id: "P2043", name: "Length", suffix: " m", classes: ["Q4022", "Q12280", "Q11446"], unit_hint: "in metres", normalised: true, parser: (v) => Math.round(v) }, // River, Bridge, Ship
         { id: "P2067", name: "Mass / Weight", suffix: " kg", classes: ["Q5", "Q1420", "Q7377"], unit_hint: "in kilograms", normalised: true, parser: (v) => Math.round(v) }, // Humans, Cars, Mammals
         { id: "P2050", name: "Wingspan", suffix: " m", classes: ["Q729", "Q11436"], unit_hint: "in metres", normalised: true, parser: (v) => Math.round(v) }, // Animal, Aircraft
-        { id: "P2045", name: "Depth", suffix: " m", classes: ["Q1532", "Q9472"], unit_hint: "in metres", normalised: true, parser: (v) => Math.round(v) }, // Lake, Ocean
+        { id: "P4511", name: "Depth", suffix: " m", classes: ["Q23397", "Q9430"], unit_hint: "in metres", normalised: true, parser: (v) => Math.round(v) }, // Lake, Ocean
         { id: "P2052", name: "Top Speed", suffix: " km/h", classes: ["Q11436", "Q1420", "Q870", "Q729"], unit_hint: "in km/h", normalised: true, parser: (v) => Math.round(v * 3.6) }, // Aircraft, Car, Train, Animal
         { id: "P2102", name: "Boiling Point", suffix: "°C", classes: ["Q11344", "Q11173"], normalised: true, parser: (k) => Math.round(Number(k) - 273.15), unit_hint: "in Celsius" },
         { id: "P2044", name: "Elevation above sea level", suffix: " m", classes: ["Q8502", "Q515", "Q1248784"], unit_hint: "in metres", normalised: true, parser: (v) => Math.round(v) }, // Mountain, City, Airport
 
-        { id: "P2043", name: "Length", suffix: " km", classes: ["Q34442", "Q154"], unit_hint: "in kilometres", normalised: true, parser: (v) => Math.round(v / 1000) }, // Roads, Borders
+        { id: "P2043", name: "Length", suffix: " km", classes: ["Q34442", "Q133346"], unit_hint: "in kilometres", normalised: true, parser: (v) => Math.round(v / 1000) }, // Roads, Borders
         { id: "P2067", name: "Mass / Weight", suffix: " tonnes", classes: ["Q11446", "Q11436"], unit_hint: "in metric tonnes", normalised: true, parser: (v) => Math.round(v / 1000) }, // Ships, Aircraft
 
         { id: "P571", name: "Year of Creation / Inception", classes: ["Q4830453", "Q6256", "Q11424"], parser: (d) => new Date(d).getFullYear() },
         { id: "P569", name: "Year of Birth", classes: ["Q5"], parser: (d) => new Date(d).getFullYear() },
         { id: "P575", name: "Year of Discovery", classes: ["Q11344", "Q3863"], parser: (d) => new Date(d).getFullYear() }, // Element, Asteroid
-        { id: "P3346", name: "Spiciness (Scoville Scale)", suffix: " SHU", classes: ["Q331469", "Q23146"] }, // Chili, Sauce
+        { id: "P3346", name: "Spiciness (Scoville Scale)", suffix: " SHU", classes: ["Q165199", "Q178359"] }, // Chili, Sauce
 
-        { id: "P1104", name: "Number of Pages", suffix: " pages", classes: ["Q7725", "Q571"] } // Lit Work, Book
+        { id: "P1104", name: "Number of Pages", suffix: " pages", classes: ["Q7725634", "Q571"] } // Lit Work, Book
     ],
 
     // 100k and million and billion scale
@@ -101,15 +113,15 @@ const properties = {
         { id: "P2226", name: "Market Capitalisation", prefix: "$", suffix: "", classes: ["Q4830453"], unit_hint: "in dollars" },
         { id: "P2130", name: "Production Budget", prefix: "$", suffix: "", classes: ["Q11424", "Q7889"], unit_hint: "in dollars" }, // Film, Game
         { id: "P2142", name: "Total Box Office Revenue", prefix: "$", suffix: "", classes: ["Q11424"], unit_hint: "in dollars" },
-        { id: "P2664", name: "Total Units Sold", suffix: " units", unit_hint: "approx.", classes: ["Q7889", "Q2188189", "Q571", "Q2424752", "Q101352", "Q116933"] },
+        { id: "P2664", name: "Total Units Sold", suffix: " units", unit_hint: "approx.", classes: ["Q7889", "Q2188189", "Q571", "Q2424752"] },
 
         { id: "P1082", name: "Population", suffix: " people", classes: ["Q1549591", "Q5119", "Q3624078"] }, // Big City, Capital, Sovereign State
         { id: "P1098", name: "Native Speakers", suffix: " speakers", classes: ["Q34770"] },
-        { id: "P1128", name: "Number of Employees", suffix: " employees", classes: ["Q4830453", "Q2655353"] }, // Business, Agency
-        { id: "P1110", name: "Event Attendance", suffix: " attendees", classes: ["Q16567", "Q1076531"] }, // Event, Match
-        { id: "P1083", name: "Maximum Capacity", suffix: " people", classes: ["Q48310", "Q182832"] }, // Stadium, Hall
+        { id: "P1128", name: "Number of Employees", suffix: " employees", classes: ["Q4830453", "Q352450"] }, // Business, Agency
+        { id: "P1110", name: "Event Attendance", suffix: " attendees", classes: ["Q1656682"] }, // Event
+        { id: "P1083", name: "Maximum Capacity", suffix: " people", classes: ["Q483110", "Q240854"] }, // Stadium, Hall
         { id: "P2196", name: "Student Enrollment", suffix: " students", classes: ["Q3918", "Q3914"] }, // Uni, School
-        { id: "P2951", name: "Number of Passengers", suffix: " passengers", classes: ["Q1248784", "Q55488"] } // Airport, Station
+        { id: "P3872", name: "Number of Passengers", suffix: " passengers", unit_hint: "annual", classes: ["Q1248784", "Q55488"] } // Airport, Station
     ]
 };
 
@@ -118,29 +130,33 @@ const properties = {
 
 const exclude_categories = [
     { id: "Q198", name: "War / Armed Conflict" },
-    { id: "Q8065", name: "Disaster" },
+    { id: "Q3839081", name: "Disaster" },
+    { id: "Q8065", name: "Natural disaster" },
     { id: "Q12136", name: "Disease / Illness" },
     { id: "Q83267", name: "Crime" },
-    { id: "Q128758", name: "Terrorism / Terrorist Attack" },
-    { id: "Q13101262", name: "Mass Murder" },
-    { id: "Q170584", name: "Serial Killer" },
-    { id: "Q3122841", name: "Genocide" },
-    { id: "Q170784", name: "Execution" },
-    { id: "Q319965", name: "Massacre" },
-    { id: "Q133171", name: "Epidemic / Pandemic" },
-    { id: "Q178225", name: "Accident" },
-    { id: "Q906564", name: "Shipwreck" },
+    { id: "Q7283", name: "Terrorism / Terrorist Attack" },
+    { id: "Q750215", name: "Mass Murder" },
+    { id: "Q484188", name: "Serial Killer" },
+    { id: "Q41397", name: "Genocide" },
+    { id: "Q8454", name: "Execution" },
+    { id: "Q3199915", name: "Massacre" },
+    { id: "Q44512", name: "Epidemic" },
+    { id: "Q12184", name: "Pandemic" },
+    { id: "Q171558", name: "Accident" },
+    { id: "Q852190", name: "Shipwreck" },
+    { id: "Q906512", name: "Shipwrecking" },
     { id: "Q10737", name: "Suicide" },
-    { id: "Q7937", name: "Drug Abuse / Overdose" },
-    { id: "Q36450", name: "Pornography" },
-    { id: "Q131102", name: "Sex Crime" },
-    { id: "Q8050", name: "Slavery" },
+    { id: "Q3184856", name: "Drug Abuse" },
+    { id: "Q3505252", name: "Overdose" },
+    { id: "Q291", name: "Pornography" },
+    { id: "Q5801919", name: "Sex Crime" },
+    { id: "Q8463", name: "Slavery" },
     { id: "Q132781", name: "Torture" },
     { id: "Q728", name: "Weapon" },
-    { id: "Q12774", name: "Explosive" },
-    { id: "Q42811", name: "Sex organ" },
-    { id: "Q184224", name: "Sex toy" },
-    { id: "Q462942", name: "Sex act" }
+    { id: "Q911807", name: "Explosive" },
+    { id: "Q4620674", name: "Sex organ" },
+    { id: "Q10816", name: "Sex toy" },
+    { id: "Q5873", name: "Sex act" }
 ];
 
 const difficulties = {
@@ -181,6 +197,8 @@ const choose_difficulty = () => {
 
 const fetch_single_property = async (prop, difficulty) => {
     console.log(`Fetching data for ${prop.name} (${prop.id})...`);
+
+    // TODO: retry on 429 or 504 after delay
 
     // some properties specify an override for sitelink ranges by difficulty
     const resolved_sitelink_range = {
@@ -351,11 +369,20 @@ const main = async () => {
     // if properties were provided via command line, use those and add random ones to fill up to 10
     if (properties_arg) {
         const provided_props = properties_arg.split(",").map(p => p.trim());
+        // TODO: handle ids without a P at the start
 
         // search all neighbourhoods for the provided properties
+        // starting with the chosen neighbourhood (as some properties appear in multiple)
+        // TODO: clearer specificer in case they really do want one from another hood
         const matched_props = [];
-        for (const nbhd of NEIGHBOURHOODS) {
+        for (const nbhd of [neighbourhood, ...NEIGHBOURHOODS.filter(n => n !== neighbourhood)]) {
             for (const prop of properties[nbhd]) {
+                // skip properties already matched from a previous neighbourhood to avoid duplicates
+                // TODO: not the best algorithm
+                if (matched_props.some(p => p.id === prop.id)) {
+                    continue;
+                }
+
                 if (provided_props.includes(prop.id)) {
                     matched_props.push(prop);
 
