@@ -24,16 +24,68 @@ const NEIGHBOURHOODS = ["small", "medium", "large"];
 const properties = {
     // usually up to a few hundred at most, some outliers up towards 1000 but will caught by sliding window
     "small": [
-        { id: "P2048", name: "Height", suffix: " cm", classes: ["Q5"], unit_hint: "in centimeters", normalised: true, parser: (v) => Math.round(v * 100) }, // Human
+        { id: "P2048", name: "Height", suffix: " cm", classes: ["Q5"], skip_class_recurse: true, unit_hint: "in centimeters", normalised: true, parser: (v) => Math.round(v * 100) }, // Human
         { id: "P2043", name: "Length", suffix: " cm", classes: ["Q1390", "Q2102", "Q6607"], unit_hint: "in centimeters, on average", normalised: true, parser: (v) => Math.round(v * 100) }, // Insects, Snakes, Guitars
         { id: "P2067", name: "Mass / Weight", suffix: " grams", classes: ["Q1309492", "Q5113", "Q1390"], unit_hint: "in grams", normalised: true, parser: (v) => Math.round(v * 1000) }, // Fruits, Birds, Insects
 
-        { id: "P2250", name: "Life Expectancy / Maximum Lifespan", suffix: " years", classes: ["Q729"], unit_hint: "in years", normalised: true, parser: (v) => Math.round(v / 31556952) }, // Animals
-        { id: "P3063", name: "Gestation Period", suffix: " days", classes: ["Q729"], unit_hint: "in days", normalised: true, parser: (v) => Math.round(v / 86400) },
+        {
+            id: "P2250",
+            name: "Life Expectancy / Maximum Lifespan",
+            suffix: " years",
+            // Taxon
+            classes: ["Q16521"],
+            skip_class_recurse: true,
+            unit_hint: "in years",
+            normalised: true, parser: (v) => Math.round(v / 31556952),
+            sitelink_override: {
+                Easy: { min: 100, max: 3000 },
+                Medium: { min: 30, max: 99 },
+                Hard: { min: 1, max: 29 }
+            }
+        },
+        {
+            id: "P3063",
+            name: "Gestation Period",
+            suffix: " days",
+            // Taxon
+            classes: ["Q16521"],
+            skip_class_recurse: true,
+            unit_hint: "in days",
+            normalised: true,
+            parser: (v) => Math.round(v / 86400),
+            sitelink_override: {
+                Easy: { min: 100, max: 3000 },
+                Medium: { min: 30, max: 99 },
+                Hard: { min: 1, max: 29 }
+            }
+        },
         { id: "P2047", name: "Duration / Runtime", suffix: " minutes", classes: ["Q11424", "Q2188189", "Q7889"], unit_hint: "in minutes", normalised: true, parser: (v) => Math.round(v / 60) }, // Film, Music, Game
-        { id: "P1113", name: "Number of Episodes", suffix: " episodes", classes: ["Q5398426", "Q20899"] }, // TV, Podcast
-        { id: "P2437", name: "Number of Seasons", suffix: " seasons", classes: ["Q5398426"] },
+        {
+            id: "P1113",
+            name: "Number of Episodes",
+            suffix: " episodes",
 
+            // TV series, Podcast
+            classes: ["Q5398426", "Q20899"],
+
+            // tv series are often regional, so lower the ranges a bit
+            sitelink_override: {
+                Easy: { min: 30, max: 3000 },
+                Medium: { min: 10, max: 29 },
+                Hard: { min: 4, max: 9 }
+            }
+        },
+        {
+            id: "P2437",
+            name: "Number of Seasons",
+            suffix: " seasons",
+            classes: ["Q5398426"],
+            sitelink_override: {
+                Easy: { min: 10, max: 3000 },
+                Medium: { min: 5, max: 9 },
+                Hard: { min: 1, max: 4 }
+            }
+        },
         {
             id: "P2665",
             name: "Alcohol by Volume",
@@ -53,12 +105,13 @@ const properties = {
             id: "P1725",
             name: "Tempo",
             suffix: " BPM",
-            classes: ["Q2188189"], // Musical Work
+            classes: ["Q2188189", "Q7366"], // Musical Work, Song
+            skip_class_recurse: true,
             unit_hint: "beats per minute",
 
             sitelink_override: {
-                Easy: { min: 25, max: 100 },
-                Medium: { min: 10, max: 24 },
+                Easy: { min: 27, max: 3000 },
+                Medium: { min: 10, max: 26 },
                 Hard: { min: 3, max: 9 }
             }
         },
@@ -85,7 +138,7 @@ const properties = {
     "medium": [
         { id: "P2048", name: "Height", suffix: " m", classes: ["Q41176", "Q40218", "Q10884"], unit_hint: "in metres", normalised: true, parser: (v) => Math.round(v) }, // Building, Spacecraft, Tree
         { id: "P2043", name: "Length", suffix: " m", classes: ["Q4022", "Q12280", "Q11446"], unit_hint: "in metres", normalised: true, parser: (v) => Math.round(v) }, // River, Bridge, Ship
-        { id: "P2067", name: "Mass / Weight", suffix: " kg", classes: ["Q5", "Q1420", "Q7377"], unit_hint: "in kilograms", normalised: true, parser: (v) => Math.round(v) }, // Humans, Cars, Mammals
+        { id: "P2067", name: "Mass / Weight", suffix: " kg", classes: ["Q5", "Q1420", "Q7377", "Q110551885"], unit_hint: "in kilograms", normalised: true, parser: (v) => Math.round(v) }, // Humans, Cars, Mammals
         { id: "P2050", name: "Wingspan", suffix: " m", classes: ["Q729", "Q11436"], unit_hint: "in metres", normalised: true, parser: (v) => Math.round(v) }, // Animal, Aircraft
         { id: "P4511", name: "Depth", suffix: " m", classes: ["Q23397", "Q9430"], unit_hint: "in metres", normalised: true, parser: (v) => Math.round(v) }, // Lake, Ocean
         { id: "P2052", name: "Top Speed", suffix: " km/h", classes: ["Q11436", "Q1420", "Q870", "Q729"], unit_hint: "in km/h", normalised: true, parser: (v) => Math.round(v * 3.6) }, // Aircraft, Car, Train, Animal
@@ -108,7 +161,7 @@ const properties = {
         { id: "P2243", name: "Distance from Sun", suffix: " km", classes: ["Q634", "Q3863"], unit_hint: "in kilometres", normalised: true, parser: (v) => Math.round(v / 1000) }, // Planet, Asteroid
         { id: "P2046", name: "Area", suffix: " sq km", classes: ["Q6256", "Q23442", "Q515"], unit_hint: "in sq km", normalised: true, parser: (v) => Math.round(v / 1000000) }, // Country, Island, City
 
-        { id: "P2139", name: "Total Revenue", prefix: "$", suffix: "", classes: ["Q4830453", "Q11424"], unit_hint: "in dollars" },
+        { id: "P2139", name: "Total Revenue", prefix: "$", suffix: "", classes: ["Q4830453", "Q11424"], skip_class_recurse: true, unit_hint: "in dollars" },
         { id: "P2218", name: "Total Net Worth", prefix: "$", suffix: "", classes: ["Q5"], unit_hint: "in dollars" },
         { id: "P2226", name: "Market Capitalisation", prefix: "$", suffix: "", classes: ["Q4830453"], unit_hint: "in dollars" },
         { id: "P2130", name: "Production Budget", prefix: "$", suffix: "", classes: ["Q11424", "Q7889"], unit_hint: "in dollars" }, // Film, Game
@@ -127,6 +180,8 @@ const properties = {
 
 // TODO: fix temperature conversion
 // TODO: say the point in time for money values
+
+// TODO: way to exclude dictators and controversial figures?
 
 const exclude_categories = [
     { id: "Q198", name: "War / Armed Conflict" },
@@ -212,6 +267,11 @@ const fetch_single_property = async (prop, difficulty) => {
         // fallback to logical entity
         : "wd:Q15228";
 
+    // TODO: allow this to be specified per class in some cases? still allow this flag as its easier if its everyone, but sometimes we want to recurse some classes and not others (could use special char)
+    const class_filter = prop.skip_class_recurse
+        ? `?item wdt:P31 ?allowedClass .`
+        : `?item wdt:P31/wdt:P279* ?allowedClass .`;
+
     // coordinates have a different prop name
     const value_selection = prop.id === "P625"
         ? "(SAMPLE(?rawValue) AS ?value)"
@@ -240,7 +300,7 @@ const fetch_single_property = async (prop, difficulty) => {
       
       # 3. FINALLY, check the class hierarchy on the surviving items.
       VALUES ?allowedClass { ${class_list} }
-      ?item wdt:P31/wdt:P279* ?allowedClass .
+      ${class_filter}
       
       SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
     }
@@ -370,6 +430,7 @@ const main = async () => {
     if (properties_arg) {
         const provided_props = properties_arg.split(",").map(p => p.trim());
         // TODO: handle ids without a P at the start
+        // TODO: way top ensure these are actually picked
 
         // search all neighbourhoods for the provided properties
         // starting with the chosen neighbourhood (as some properties appear in multiple)
