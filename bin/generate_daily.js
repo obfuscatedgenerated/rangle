@@ -173,7 +173,7 @@ const properties = {
         { id: "P1128", name: "Number of Employees", suffix: " employees", classes: ["Q4830453", "Q352450"] }, // Business, Agency
         { id: "P1110", name: "Event Attendance", suffix: " attendees", classes: ["Q1656682"] }, // Event
         { id: "P1083", name: "Maximum Capacity", suffix: " people", classes: ["Q483110", "Q240854"] }, // Stadium, Hall
-        { id: "P2196", name: "Student Enrollment", suffix: " students", classes: ["Q3918", "Q3914"] }, // Uni, School
+        { id: "P2196", name: "Student Enrollment", suffix: " students", classes: ["Q3918", "Q3914"] }, // Uni, School // TODO: does this belong in large, or is the high end of medium, or in between!!! maybe we need large and mega
         { id: "P3872", name: "Number of Passengers", suffix: " passengers", unit_hint: "annual", classes: ["Q1248784", "Q55488"] } // Airport, Station
     ]
 };

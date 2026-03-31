@@ -1,56 +1,56 @@
 {
   "date": "2026-04-01",
   "number": 4,
-  "difficulty": "Hard",
-  "neighbourhood": "large",
+  "difficulty": "Foolish",
+  "neighbourhood": "custom",
   "puzzle": [
     {
-      "id": "Q1138968",
-      "name": "Nostalghia",
-      "value": 500000,
-      "metric": "Production Budget",
-      "description": "1983 film by Andrei Tarkovsky",
-      "prefix": "$",
+      "id": "Q208994",
+      "name": "1",
+      "value": 4735,
+      "metric": "Duration",
+      "description": "2000 compilation album by The Beatles",
+      "prefix": "",
+      "suffix": " seconds",
+      "unit_hint": "in seconds"
+    },
+    {
+      "id": "Q4633268",
+      "name": "2",
+      "value": 2012,
+      "metric": "Year of Release",
+      "description": "album by Mac DeMarco",
+      "prefix": "",
       "suffix": "",
-      "unit_hint": "in dollars"
+      "unit_hint": ""
     },
     {
-      "id": "Q218513",
-      "name": "Bleach",
-      "value": 200000,
-      "metric": "Total Units Sold",
-      "description": "1989 debut studio album by Nirvana",
+      "id": "Q407009",
+      "name": "3",
+      "value": 2003,
+      "metric": "Year of Inception",
+      "description": "global telecommunications brand",
       "prefix": "",
-      "suffix": " units",
-      "unit_hint": "approx."
+      "suffix": ""
     },
     {
-      "id": "Q29440",
-      "name": "Assyrian Neo-Aramaic",
-      "value": 232300,
-      "metric": "Native Speakers",
-      "description": "Neo-Aramaic dialect",
+      "id": "Q202",
+      "name": "4",
+      "value": 4,
+      "metric": "Numeric Value",
+      "description": "natural number",
       "prefix": "",
-      "suffix": " speakers"
+      "suffix": ""
     },
     {
-      "id": "Q760",
-      "name": "Saint Lucia",
-      "value": 167591,
-      "metric": "Population",
-      "description": "island sovereign state in the Caribbean Sea",
+      "id": "Q1062280",
+      "name": "5",
+      "value": 29,
+      "metric": "Years on Air",
+      "description": "British TV station",
       "prefix": "",
-      "suffix": " people"
-    },
-    {
-      "id": "Q650601",
-      "name": "Atari Jaguar",
-      "value": 100000,
-      "metric": "Total Units Sold",
-      "description": "Fifth-generation home video game console by Atari",
-      "prefix": "",
-      "suffix": " units",
-      "unit_hint": "approx."
+      "suffix": " years",
+      "unit_hint": "happy belated birthday!"
     }
   ]
 }
