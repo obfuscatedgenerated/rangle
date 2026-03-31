@@ -10,11 +10,12 @@ program
     .option("-n, --neighbourhood <neighbourhood>", "Neighbourhood of values (small, medium, large)", "random")
     .option("-o, --offset <days>", "Number of days in the future to generate for", "0")
     .option("-f, --force", "Force generation even if today's file already exists", false)
-    .option("-p, --properties <propertyID1,propertyID2,...>", "Comma-separated list of specific Wikidata property IDs to use instead of random selection. If less than 10, random properties will be added to fill the gap.");
+    .option("-p, --properties <propertyID1,propertyID2,...>", "Comma-separated list of specific Wikidata property IDs to use instead of random selection. If less than 10, random properties will be added to fill the gap.")
+    .option("-v, --verbose", "Enable verbose logging for debugging purposes", false);
 
 program.parse();
 
-const { difficulty: difficulty_arg, neighbourhood: neighbourhood_arg, offset: offset_arg, force: force_arg, properties: properties_arg } = program.opts();
+const { difficulty: difficulty_arg, neighbourhood: neighbourhood_arg, offset: offset_arg, force: force_arg, properties: properties_arg, verbose } = program.opts();
 
 const EPOCH = require("../epoch");
 const NEIGHBOURHOODS = ["small", "medium", "large"];
@@ -32,7 +33,23 @@ const properties = {
         { id: "P2047", name: "Duration / Runtime", suffix: " minutes", classes: ["Q11424", "Q2188189", "Q7889"], unit_hint: "in minutes", normalised: true, parser: (v) => Math.round(v / 60) }, // Film, Music, Game
         { id: "P1113", name: "Number of Episodes", suffix: " episodes", classes: ["Q5398426", "Q20899"] }, // TV, Podcast
         { id: "P2437", name: "Number of Seasons", suffix: " seasons", classes: ["Q5398426"] },
-        { id: "P2665", name: "Alcohol by Volume (ABV)", suffix: "%", classes: ["Q154", "Q44"], unit_hint: "by percent" }, // Beverage, Beer
+
+        {
+            id: "P2665",
+            name: "Alcohol by Volume",
+            suffix: "%",
+            // alcoholic beverage
+            classes: ["Q154"],
+            unit_hint: "by approx. percent",
+
+            // needs to be relaxed too
+            sitelink_override: {
+                Easy: { min: 30, max: 60 },
+                Medium: { min: 12, max: 29 },
+                Hard: { min: 1, max: 11 }
+            }
+        },
+
         { id: "P1725", name: "Tempo", suffix: " BPM", classes: ["Q2188189"], unit_hint: "BPM" },
         { id: "P1101", name: "Number of Floors", suffix: " floors", classes: ["Q41176", "Q1021643"] }, // Building, Skyscraper
 
@@ -45,9 +62,9 @@ const properties = {
 
             // pokemon are obviously referenced less than other things so need to relax the sitelink ranges
             sitelink_override: {
-                Easy: { min: 22, max: 120 },
+                Easy: { min: 22, max: 3000 },
                 Medium: { min: 12, max: 21 },
-                Hard: { min: 4, max: 11 }
+                Hard: { min: 1, max: 11 }
             }
         }
     ],
@@ -165,7 +182,11 @@ const choose_difficulty = () => {
 const fetch_single_property = async (prop, difficulty) => {
     console.log(`Fetching data for ${prop.name} (${prop.id})...`);
 
-    const value_var = prop.id === "P625" ? "?coord" : "?value";
+    // some properties specify an override for sitelink ranges by difficulty
+    const resolved_sitelink_range = {
+        min: prop.sitelink_override?.[difficulty.label]?.min || difficulty.min,
+        max: prop.sitelink_override?.[difficulty.label]?.max || difficulty.max
+    };
 
     const class_list = prop.classes
         ? prop.classes.map(c => `wd:${c}`).join(" ")
@@ -173,16 +194,27 @@ const fetch_single_property = async (prop, difficulty) => {
         // fallback to logical entity
         : "wd:Q15228";
 
-    // some properties specify an override for sitelink ranges by difficulty
-    const resolved_sitelink_range = {
-        min: prop.sitelink_override?.[difficulty.label]?.min || difficulty.min,
-        max: prop.sitelink_override?.[difficulty.label]?.max || difficulty.max
-    };
+    // coordinates have a different prop name
+    const value_selection = prop.id === "P625"
+        ? "(SAMPLE(?rawValue) AS ?value)"
+        //: "(SAMPLE(?value) AS ?value)";
+
+        // now using max as its typically more correct if data isnt deprecated (e.g. populations typically grow)
+        : "(MAX(?rawValue) AS ?value)";
 
     const query = `
-    SELECT DISTINCT ?item ?itemLabel ?itemDescription ${value_var} WHERE {
+    SELECT DISTINCT ?item ?itemLabel ?itemDescription ${value_selection} WHERE {
       # 1. Start with the property. This acts as a massive primary filter.
-      ?item ${prop.normalised ? `p:${prop.id}/psn:${prop.id}/wikibase:quantityAmount` : `wdt:${prop.id}`} ${value_var} .
+      ${prop.normalised ? `
+        # Normalised Path: needs manual rank filter to avoid old/deprecated data
+        ?item p:${prop.id} ?statement .
+        ?statement psn:${prop.id}/wikibase:quantityAmount ?rawValue .
+        ?statement wikibase:rank ?rank .
+        FILTER(?rank != wikibase:DeprecatedRank) 
+      ` : `
+        # Truthy Path: automatically excludes deprecated, but can still return multiple 'Normal' ranks
+        ?item wdt:${prop.id} ?rawValue .
+      `}
       
       # 2. Filter by sitelinks NEXT. 
       ?item wikibase:sitelinks ?sitelinks .
@@ -193,7 +225,10 @@ const fetch_single_property = async (prop, difficulty) => {
       ?item wdt:P31/wdt:P279* ?allowedClass .
       
       SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-    } LIMIT 200`;
+    }
+    # 4. Mandatory Grouping for Aggregates
+    GROUP BY ?item ?itemLabel ?itemDescription
+    LIMIT 200`;
 
     try {
         const response = await fetch("https://query.wikidata.org/sparql", {
@@ -207,7 +242,7 @@ const fetch_single_property = async (prop, difficulty) => {
         });
 
         if (!response.ok) {
-            console.error(`Wikidata error for ${prop.name}: ${response.status}`);
+            console.error(`Wikidata error for ${prop.name}: ${response.status} ${response.statusText}: ${await response.text()}`);
             return [];
         }
 
@@ -227,7 +262,14 @@ const fetch_single_property = async (prop, difficulty) => {
             const raw = r.coord ? r.coord.value : r.value.value;
             const parsed = prop.parser ? prop.parser(raw) : parseFloat(raw);
 
-            //console.log(r.itemLabel.value)
+            if (verbose) {
+                console.log(`Parsed value for ${r.itemLabel.value} (${prop.name}):`, {
+                    raw,
+                    parsed,
+                    unit_hint: prop.unit_hint
+                });
+            }
+
             return {
                 id: r.item.value.split("/").pop(),
                 name: r.itemLabel.value,
