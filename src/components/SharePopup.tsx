@@ -76,7 +76,7 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date}:
                 return;
             }
 
-            const share_text = `Rangle #${today_data.number}${archive_date ? `(archived from ${archive_date})` : ""} | ${today_data.difficulty} • ${got_it_right ? attempts.length : "X"}/5\n\n` +
+            const share_text = `Rangle #${today_data.number}${archive_date ? ` (archived from ${archive_date})` : ""} | ${today_data.difficulty} • ${got_it_right ? attempts.length : "X"}/5\n\n` +
                 attempts.map((attempt) => attempt.map((pos) => pos ? "🟩" : "⬛").join(" ")).join("\n") +
                 `\n\n${share_url}`;
 
