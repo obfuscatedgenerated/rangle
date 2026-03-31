@@ -43,10 +43,10 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
         fetch(`/daily/${today_date_iso}.json`)
             .then((res) => {
                 if (!res.ok) {
-                    if (res.status === 404) {
-                        throw new Error("NO_PUZZLE");
-                    } else {
-                        throw new Error(res.statusText);
+                    const err_msg = res.status === 404 ? "NO_PUZZLE" : res.statusText;
+                    console.error("Error fetching today's data:", err_msg);
+                    if (on_load_error) {
+                        on_load_error(new Error(err_msg));
                     }
                 }
                 return res.json();
