@@ -41,6 +41,9 @@ jobs:
             node bin/generate_daily.js --offset 1
           fi
 
+      - name: Update metadata
+        run: node bin/generate_meta.js
+
       - name: Configure Git
         run: |
           git config --global user.name "🤖 Rangler"
