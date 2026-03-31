@@ -85,8 +85,7 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date}:
             if (is_mobile() && navigator.share) {
                 navigator.share({
                     title: `Rangle #${today_data.number}`,
-                    text: share_text,
-                    url: share_url
+                    text: share_text
                 }).catch((err) => {
                     // if just cancelled, don't show error
                     if (err.name === "AbortError") {
