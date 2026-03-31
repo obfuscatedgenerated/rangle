@@ -39,22 +39,24 @@ const ArchiveTile = ({
     link_className = "",
     box_className = "",
 }: ArchiveTileProps) => {
+    const date_value = useMemo(() => {
+        return new Date(`${date_str}T00:00:00Z`);
+    }, [date_str]);
+
     const formatted_date = useMemo(
         () => {
-            const date = new Date(`${date_str}T00:00:00Z`);
-            return date.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
+            return date_value.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
         },
-        [date_str]
+        [date_value]
     );
 
     const days_ago = useMemo(
         () => {
-            const date = new Date(`${date_str}T00:00:00Z`);
             const today = new Date();
-            const diff_time = today.getTime() - date.getTime();
+            const diff_time = today.getTime() - date_value.getTime();
             return Math.floor(diff_time / (1000 * 60 * 60 * 24));
         },
-        [date_str]
+        [date_value]
     );
 
     return (
