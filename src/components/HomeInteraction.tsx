@@ -2,6 +2,7 @@
 
 import {InfoPopup} from "@/components/InfoPopup";
 import {Game} from "@/components/Game";
+import {MigrationManager} from "@/components/MigrationManager";
 import {LoadingSpinner} from "@/components/LoadingSpinner";
 
 import {useEffect, useMemo, useState} from "react";
@@ -83,6 +84,8 @@ export const HomeInteraction = () => {
 
     return (
         <main className="flex-1 flex-col m-4 mb-1 pb-6 sm:pb-0 flex items-center justify-center">
+            <MigrationManager />
+
             <InfoPopup open={show_info_popup} on_close={() => setShowInfoPopup(false)} />
 
             <h1 className="font-title text-3xl sm:text-4xl mb-1 font-bold">Rangle</h1>
