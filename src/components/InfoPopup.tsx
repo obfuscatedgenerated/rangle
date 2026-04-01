@@ -34,7 +34,8 @@ export const InfoPopup = ({open, on_close}: InfoPopupProps) => {
     return (
         <dialog onAbort={on_close} ref={dialog_ref} className="rounded-lg p-4 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[95vw] sm:max-w-md w-full bg-background-variant text-foreground-variant flex flex-col items-center">
             <h2 className="font-title text-xl font-bold">Rangle</h2>
-            <p className="font-title mb-4 opacity-60">(pronounced &quot;{pronunciation}&quot;)</p>
+            <p className="font-title mb-2 opacity-60">(pronounced &quot;{pronunciation}&quot;)</p>
+            <p className="mb-4">by <a className="underline" href="https://ollieg.codes" target="_blank" rel="noreferrer noopener">Ollie G.</a></p>
 
             <p>
                 Rangle is a game about sorting. Each day, you are given a list of 5 stats, and your goal is to find the correct order of the stat values.
