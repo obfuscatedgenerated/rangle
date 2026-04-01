@@ -59,13 +59,17 @@ export const HomeInteraction = () => {
     );
 
     // if the date param is invalid, remove it from the url
-    // TODO: not working in prod?
     useEffect(() => {
         if (validated_archive_date === null) {
             // remove the invalid date param from the url
             const new_search_params = new URLSearchParams(search_params.toString());
             new_search_params.delete("d");
             router.replace(`/?${new_search_params.toString()}`);
+
+            // if the router didnt do it for some reason, do it manually
+            if (window.location.search.includes("d=")) {
+                window.history.replaceState({}, "", `/?${new_search_params.toString()}`);
+            }
         }
     }, [validated_archive_date, search_params, router]);
 

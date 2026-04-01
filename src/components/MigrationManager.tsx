@@ -95,6 +95,11 @@ export const MigrationManager = () => {
         new_search_params.delete("mig");
         router.replace("?" + new_search_params.toString());
 
+        // if the router didnt do it for some reason, do it manually
+        if (window.location.search.includes("mig=")) {
+            window.history.replaceState({}, "", `${window.location.pathname}?${new_search_params.toString()}`);
+        }
+
         setBannerVisible(true);
     }, [router, search_params]);
 
