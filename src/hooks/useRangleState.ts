@@ -10,6 +10,7 @@ interface RangleStateHookProps {
 export interface SaveStateDay {
     current_order_ids: string[];
     attempts: StatPositionFlags[];
+    hardcore?: boolean;
 }
 
 export type SaveState = Record<string, SaveStateDay>;
@@ -34,6 +35,8 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
 
     const [finished, setFinished] = useState(false);
     const [finished_correctly, setFinishedCorrectly] = useState(false);
+
+    const [hardcore, setHardcore] = useState(false);
 
     // fetch today's data on load, as well as local save state if today's exists
     useEffect(() => {
@@ -65,6 +68,12 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
                         data.puzzle.forEach((stat: PuzzleStat) => {
                             id_to_stat[stat.id] = stat;
                         });
+
+                        if (today_save.hardcore) {
+                            setHardcore(true);
+                        } else {
+                            setHardcore(false);
+                        }
 
                         const saved_order = today_save.current_order_ids.map((id: string) => id_to_stat[id]);
                         setCurrentOrder(saved_order);
@@ -132,7 +141,8 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
             // save state to local storage
             const save_state: SaveStateDay = {
                 current_order_ids: guess.map((stat) => stat.id),
-                attempts: [...attempts, new_correct_positions]
+                attempts: [...attempts, new_correct_positions],
+                hardcore
             };
 
             const existing_saves = localStorage.getItem("rangle_state_v1");
@@ -157,6 +167,7 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
                 return {
                     correct: true,
                     finished: true,
+                    correct_positions: new_correct_positions,
                 }
             } else if (attempts.length + 1 >= 5) {
                 setFinished(true);
@@ -174,6 +185,7 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
                 return {
                     correct: false,
                     finished: true,
+                    correct_positions: new_correct_positions,
                 }
             } else {
                 // store in rangle_scores as in progress
@@ -189,10 +201,11 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
                 return {
                     correct: false,
                     finished: false,
+                    correct_positions: new_correct_positions,
                 }
             }
         },
-        [answers, attempts, today_data]
+        [answers, attempts, today_data, hardcore]
     );
 
     const reveal_answers = useCallback(
@@ -212,5 +225,7 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
         finished_correctly,
         submit_guess,
         reveal_answers,
+        hardcore,
+        setHardcore,
     };
 }

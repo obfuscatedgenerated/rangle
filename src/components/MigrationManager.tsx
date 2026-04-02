@@ -17,6 +17,7 @@ interface UnmappedSaveStateDay {
 type UnmappedSaveState = Record<string, UnmappedSaveStateDay>;
 
 
+// old site never had hardcore mode, so no need to migrate
 const KEY_MAP = {
     c: "current_order_ids",
     a: "attempts",

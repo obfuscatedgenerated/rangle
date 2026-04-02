@@ -2,16 +2,19 @@
 
 import {DraggableStats} from "@/components/DraggableStats";
 import {SharePopup} from "@/components/SharePopup";
+import {Toast} from "@/components/Toast";
+
 import {useRangleState} from "@/hooks/useRangleState";
+import {useWindowSize} from "@/hooks/useWindowSize";
 
 import EPOCH from "../../epoch";
 
 import {useState, useEffect, useCallback} from "react";
+import Link from "next/link";
 
 import ReactConfetti from "react-confetti";
-import {useWindowSize} from "@/hooks/useWindowSize";
 import {CalendarDays, Info} from "lucide-react";
-import Link from "next/link";
+import {HardcoreToggle} from "@/components/HardcoreToggle";
 
 export interface TodayData {
     date: string;
@@ -75,7 +78,9 @@ export const Game = ({ archive_date, on_loaded, on_info_click }: GameProps) => {
         correct_positions,
         reveal_answers,
         submit_guess,
-        set_current_order
+        set_current_order,
+        hardcore,
+        setHardcore
     } = useRangleState({
         on_loaded,
         on_load_error,
@@ -86,6 +91,9 @@ export const Game = ({ archive_date, on_loaded, on_info_click }: GameProps) => {
 
     const [reveal_values, setRevealValues] = useState(false);
     const [share_open, setShareOpen] = useState(false);
+
+    const [toast_message, setToastMessage] = useState("");
+    const [toast_visible, setToastVisible] = useState(false);
 
     const window_size = useWindowSize();
 
@@ -99,16 +107,38 @@ export const Game = ({ archive_date, on_loaded, on_info_click }: GameProps) => {
                 return;
             }
 
+            // TODO: block duplicate guesses (need to add to rangle state)
+
             // trigger just attempted state for styling purposes
             setJustAttempted(true);
             setTimeout(() => {
                 setJustAttempted(false);
             }, 1000);
 
-            submit_guess(current_order);
+            const {correct_positions: new_correct_positions} = submit_guess(current_order);
+
+            if (hardcore) {
+                // show number correct in toast
+                const num_correct = new_correct_positions.filter((pos) => pos).length;
+
+                let emoji = "❌";
+                if (num_correct === 5) {
+                    emoji = "🎉";
+                } else if (num_correct >= 3) {
+                    emoji = "🤏";
+                } else if (num_correct >= 1) {
+                    emoji = "🤔";
+                }
+
+                setToastMessage(`${emoji} ${num_correct}/5 correct`);
+                setToastVisible(true);
+                setTimeout(() => {
+                    setToastVisible(false);
+                }, 2000);
+            }
         },
         // any point memoising?
-        [current_order, submit_guess, today_data, finished]
+        [today_data, finished, submit_guess, current_order, hardcore]
     );
 
     // trigger end game logic when game finishes (as it could be triggered by either submit_guess or loading saved state on mount)
@@ -151,7 +181,7 @@ export const Game = ({ archive_date, on_loaded, on_info_click }: GameProps) => {
 
     return (
         <>
-            <SharePopup archive_date={archive_date} open={share_open} on_close={() => setShareOpen(false)} attempts={attempts} today_data={today_data} />
+            <SharePopup hardcore={hardcore} archive_date={archive_date} open={share_open} on_close={() => setShareOpen(false)} attempts={attempts} today_data={today_data} />
 
             <p className="mb-4 sm:mb-8 text-sm sm:text-lg">#{today_data.number} | {today_data.difficulty} • Attempt: {finished ? attempts.length : attempts.length + 1}/5</p>
 
@@ -160,10 +190,10 @@ export const Game = ({ archive_date, on_loaded, on_info_click }: GameProps) => {
                     <DraggableStats
                         puzzle={current_order}
                         on_reorder={set_current_order}
-                        correct_positions={correct_positions}
+                        correct_positions={(hardcore && !finished) ? [false, false, false, false, false] : correct_positions}
                         finished={finished}
                         reveal_values={reveal_values}
-                        incorrect_className={just_attempted ? "bg-red-500 border-red-700 animate-shake-horizontal" : undefined}
+                        incorrect_className={!hardcore && just_attempted ? "bg-red-500 border-red-700 animate-shake-horizontal" : undefined}
                     />
 
                     <div className="flex flex-col items-center ml-4 sm:ml-6 opacity-33">
@@ -181,7 +211,7 @@ export const Game = ({ archive_date, on_loaded, on_info_click }: GameProps) => {
                     </div>
                 </div>
 
-                <div className="flex w-full items-stretch sm:max-w-xl my-4 sm:my-6 gap-2">
+                <div className="flex w-full items-stretch sm:max-w-xl mt-4 mb-2 sm:mt-6 sm:mb-4 gap-2">
                     {on_info_click && (
                         <button onClick={on_info_click} className="cursor-pointer p-4 rounded aspect-square border-2 border-blue-500" title="Info">
                             <Info />
@@ -196,11 +226,15 @@ export const Game = ({ archive_date, on_loaded, on_info_click }: GameProps) => {
                         Check
                     </button>
                 </div>
+
+                <HardcoreToggle className="mb-4 sm:mb-6" hardcore={hardcore} attempt_count={attempts.length} on_toggle={setHardcore} />
             </div>
 
             {finished_correctly && (
                 <ReactConfetti style={{position: "fixed"}} width={window_size.width} height={window_size.height} />
             )}
+
+            <Toast message={toast_message} visible={toast_visible} position="center" />
         </>
     );
 }

@@ -12,6 +12,7 @@ interface SharePopupProps {
     attempts: StatPositionFlags[];
     today_data: TodayData;
     archive_date?: string;
+    hardcore?: boolean;
 }
 
 const is_mobile = () => {
@@ -22,7 +23,7 @@ const is_mobile = () => {
     return /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
-export const SharePopup = ({open, on_close, attempts, today_data, archive_date}: SharePopupProps) => {
+export const SharePopup = ({open, on_close, attempts, today_data, archive_date, hardcore}: SharePopupProps) => {
     const dialog_ref = useRef<HTMLDialogElement>(null);
     const [share_button_text, setShareButtonText] = useState("Share Results");
 
@@ -76,7 +77,7 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date}:
                 return;
             }
 
-            const share_text = `Rangle #${today_data.number}${archive_date ? ` (archived from ${archive_date})` : ""} | ${today_data.difficulty} • ${got_it_right ? attempts.length : "X"}/5\n\n` +
+            const share_text = `Rangle #${today_data.number}${archive_date ? ` (archived from ${archive_date})` : ""} | ${today_data.difficulty} • ${got_it_right ? attempts.length : "X"}/5\n${hardcore ? "💪 HARDCORE mode!\n" : ""}\n` +
                 attempts.map((attempt) => attempt.map((pos) => pos ? "🟩" : "⬛").join(" ")).join("\n") +
                 `\n\n${share_url}`;
 
