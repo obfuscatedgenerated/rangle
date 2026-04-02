@@ -73,6 +73,8 @@ const ArchiveTile = ({
                     ? "bg-green-100 dark:bg-green-900/50 border-green-400 dark:border-green-700"
                     : score && score.result === false
                     ? "bg-red-100 dark:bg-red-900/50 border-red-400 dark:border-red-700"
+                    : score && score.result === undefined
+                    ? "bg-yellow-100 dark:bg-yellow-900/50 border-yellow-400 dark:border-yellow-700"
                     : "bg-gray-100 dark:bg-gray-900/50 border-gray-300 dark:border-gray-700"
                 }
                 ${box_className}
