@@ -86,7 +86,7 @@ const ArchiveTile = ({
                     {score ? (
                         <p className="text-sm opacity-70">
                             {score.result === undefined
-                                ? `In Progress (${score.attempts} attempts)`
+                                ? `In Progress (${score.attempts} attempt${score.attempts !== 1 ? "s" : ""})`
                                 : score.result ? `✅ ${score.attempts}/5` : "❌ X/5"
                             }
                         </p>
