@@ -55,6 +55,12 @@ export const InfoPopup = ({open, on_close}: InfoPopupProps) => {
 
             <br />
 
+            <p>
+                In hardcore mode, only the number of correct stats is revealed after each attempt, and no stats are marked correct until the end of the game. This mode is locked in after your first attempt, so make sure to choose wisely!
+            </p>
+
+            <br />
+
             <div className="flex gap-2">
                 <a href="https://github.com/obfuscatedgenerated/rangle" target="_blank" rel="noreferrer noopener" className="underline">
                     Source code
