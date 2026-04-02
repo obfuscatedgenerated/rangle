@@ -11,11 +11,12 @@ program
     .option("-o, --offset <days>", "Number of days in the future to generate for", "0")
     .option("-f, --force", "Force generation even if today's file already exists", false)
     .option("-p, --properties <propertyID1,propertyID2,...>", "Comma-separated list of specific Wikidata property IDs to use instead of random selection. If less than 10, random properties will be added to fill the gap.")
+    .option("--no-backfill", "Disable backfilling to 10 properties if custom properties are provided, i.e. only use the specified ones. If no properties are provided, there won't be any!", false)
     .option("-v, --verbose", "Enable verbose logging for debugging purposes", false);
 
 program.parse();
 
-const { difficulty: difficulty_arg, neighbourhood: neighbourhood_arg, offset: offset_arg, force: force_arg, properties: properties_arg, verbose } = program.opts();
+const { difficulty: difficulty_arg, neighbourhood: neighbourhood_arg, offset: offset_arg, force: force_arg, properties: properties_arg, verbose, backfill } = program.opts();
 
 const EPOCH = require("../epoch");
 const NEIGHBOURHOODS = ["small", "medium", "large"];
@@ -430,7 +431,6 @@ const main = async () => {
     if (properties_arg) {
         const provided_props = properties_arg.split(",").map(p => p.trim());
         // TODO: handle ids without a P at the start
-        // TODO: way top ensure these are actually picked
 
         // search all neighbourhoods for the provided properties
         // starting with the chosen neighbourhood (as some properties appear in multiple)
@@ -459,11 +459,13 @@ const main = async () => {
         subset_props.unshift(...matched_props);
     }
 
-    // fill up to 10 properties with random ones from the chosen neighbourhood, ensuring no duplicates with provided ones
-    while (subset_props.length < 10) {
-        const random_prop = properties[neighbourhood][Math.floor(Math.random() * properties[neighbourhood].length)];
-        if (!subset_props.some(p => p.id === random_prop.id)) {
-            subset_props.push(random_prop);
+    if (backfill) {
+        // fill up to 10 properties with random ones from the chosen neighbourhood, ensuring no duplicates with provided ones
+        while (subset_props.length < 10) {
+            const random_prop = properties[neighbourhood][Math.floor(Math.random() * properties[neighbourhood].length)];
+            if (!subset_props.some(p => p.id === random_prop.id)) {
+                subset_props.push(random_prop);
+            }
         }
     }
 
@@ -506,7 +508,9 @@ const main = async () => {
             // we want some extra in case some are discarded for being unsafe or too close
             // pre-check the diversity too
             const unique_metrics = new Set(bucket.map(item => item.metric));
-            if (bucket.length >= 12 && unique_metrics.size >= 3) {
+
+            // if less than 3 props in use then dont enforce the diversity check
+            if (bucket.length >= 12 && (unique_metrics.size >= 3 || subset_props.length <= 3)) {
                 valid_buckets.push(bucket);
 
                 // skip ahead to the next bucket start
@@ -569,7 +573,8 @@ const main = async () => {
 
         for (const item of sorted_safe) {
             // ensure metric diversity
-            if (metric_counts[item.metric] >= 2) {
+            // if num of props in play is less than 3 then disable this check
+            if (metric_counts[item.metric] >= 2 && subset_props.length > 3) {
                 continue;
             }
 
