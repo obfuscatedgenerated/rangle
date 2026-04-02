@@ -8,7 +8,7 @@ import {LoadingSpinner} from "@/components/LoadingSpinner";
 import {useEffect, useMemo, useState} from "react";
 import {useSearchParams, useRouter} from "next/navigation";
 
-import EPOCH from "../../epoch";
+import {epoch_utc, time_zone} from "../../time";
 
 export const HomeInteraction = () => {
     const search_params = useSearchParams();
@@ -29,11 +29,8 @@ export const HomeInteraction = () => {
             }
 
             // validate constructed date is valid
-            let date: Date;
-            try {
-                date = new Date(`${date_str}T00:00:00Z`);
-            } catch (e) {
-                console.warn("Invalid date in search params:", date_str, e);
+            if (isNaN(new Date(`${date_str}T00:00:00Z`).getTime())) {
+                console.warn("Invalid date in search params:", date_str);
                 return null;
             }
 
@@ -41,14 +38,15 @@ export const HomeInteraction = () => {
             // this is just done mathematically for now by checking its within the range of the epoch and today
             // ideally it'd go fetch the file but that would require making this function async
             // future dates can be fetched if the secret flag is present (for testing future puzzles)
-            const today = new Date();
-            if (date < EPOCH || (date > today && !search_params.has("super_secret_time_travel"))) {
+            const today_iso = new Date().toLocaleDateString("en-CA", { timeZone: time_zone });
+            const epoch_iso = epoch_utc.toISOString().split("T")[0];
+            if (date_str < epoch_iso || (date_str > today_iso && !search_params.has("super_secret_time_travel"))) {
                 console.warn("Date in search params is out of range:", date_str);
                 return null;
             }
 
             // if the date is today, avoid treating it as an archive date
-            if (date.toISOString().split("T")[0] === today.toISOString().split("T")[0]) {
+            if (date_str === today_iso) {
                 console.warn("Date in search params is today, treating as not archived:", date_str);
                 return null;
             }

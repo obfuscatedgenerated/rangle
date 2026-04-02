@@ -1,18 +1,18 @@
 "use client";
 
-import EPOCH from "../../epoch";
+import {epoch_utc, time_zone} from "../../time";
 
 import {ArchiveGrid} from "@/components/ArchiveGrid";
 import {useMemo, useState} from "react";
 
 export const ArchiveInteraction = () => {
     const epoch_iso = useMemo(
-        () => EPOCH.toISOString().split("T")[0],
+        () => epoch_utc.toISOString().split("T")[0],
         []
     );
 
     const today_iso = useMemo(
-        () => new Date().toISOString().split("T")[0],
+        () => new Date().toLocaleDateString("en-CA", { timeZone: time_zone }),
         []
     );
 

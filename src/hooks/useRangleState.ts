@@ -1,3 +1,5 @@
+import {time_zone} from "../../time";
+
 import {PuzzleStat, StatPositionFlags, TodayData} from "@/components/Game";
 import {useCallback, useEffect, useMemo, useState} from "react";
 
@@ -40,8 +42,9 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
 
     // fetch today's data on load, as well as local save state if today's exists
     useEffect(() => {
-        const today_date = date_override ? new Date(`${date_override}T00:00:00Z`) : new Date();
-        const today_date_iso = today_date.toISOString().split("T")[0];
+        const today_date_iso = date_override
+            ? date_override
+            : new Date().toLocaleDateString("en-CA", { timeZone: time_zone });
 
         fetch(`/daily/${today_date_iso}.json`)
             .then((res) => {

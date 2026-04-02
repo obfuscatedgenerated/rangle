@@ -7,7 +7,7 @@ import {Toast} from "@/components/Toast";
 import {useRangleState} from "@/hooks/useRangleState";
 import {useWindowSize} from "@/hooks/useWindowSize";
 
-import EPOCH from "../../epoch";
+import {epoch_utc, time_zone} from "../../time";
 
 import {useState, useEffect, useCallback} from "react";
 import Link from "next/link";
@@ -51,17 +51,23 @@ export const Game = ({ archive_date, on_loaded, on_info_click }: GameProps) => {
         (err: Error) => {
             // if the error is not found, try to go back a day
             if (err.message === "NO_PUZZLE") {
-                const yesterday = date_override ? new Date(`${date_override}T00:00:00Z`) : new Date();
+                const current_iso = date_override
+                    ? date_override
+                    : new Date().toLocaleDateString("en-CA", { timeZone: time_zone });
+
+                const yesterday = new Date(`${current_iso}T00:00:00Z`);
                 yesterday.setUTCDate(yesterday.getUTCDate() - 1);
 
                 // if yesterday is before the epoch, stop trying
-                if (yesterday < EPOCH) {
+                if (yesterday < epoch_utc) {
                     alert("No puzzles available!");
                     return;
                 }
 
-                setDateOverride(yesterday.toISOString().split("T")[0]);
-                console.log("No puzzle found for date, trying previous day:", yesterday.toISOString().split("T")[0]);
+                const yesterday_iso = yesterday.toISOString().split("T")[0];
+
+                setDateOverride(yesterday_iso);
+                console.log("No puzzle found for date, trying previous day:", yesterday_iso);
             } else {
                 alert("Error loading puzzle: " + err.message);
             }

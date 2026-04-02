@@ -100,7 +100,7 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
                 handle_copy(share_text);
             }
         },
-        [today_data, archive_date, got_it_right, attempts, share_url, handle_copy]
+        [today_data, archive_date, got_it_right, attempts, hardcore, share_url, handle_copy]
     );
 
     // TODO: base dialog component

@@ -18,7 +18,7 @@ program.parse();
 
 const { difficulty: difficulty_arg, neighbourhood: neighbourhood_arg, offset: offset_arg, force: force_arg, properties: properties_arg, verbose, backfill } = program.opts();
 
-const EPOCH = require("../epoch");
+const {epoch_utc, time_zone} = require("../time");
 const NEIGHBOURHOODS = ["small", "medium", "large"];
 
 // all the countable properties to include in the game
@@ -398,16 +398,27 @@ const check_if_safe = async (candidates) => {
 };
 
 const main = async () => {
-    const today_date = new Date();
+    const now = new Date();
 
+    // formatted to the target timezone but as a string, so decoupled from timezone but still represents the current time in that timezone
+    const tz_time_str = now.toLocaleString("en-US", { timeZone: time_zone });
+
+    // parse back as a local date, which effectively gives us the current time in the target timezone as a Date object
+    const tz_time_mock = new Date(tz_time_str);
+
+    // apply offset days
     if (offset_arg) {
         const offset_days = parseInt(offset_arg, 10);
         if (!isNaN(offset_days)) {
-            today_date.setUTCDate(today_date.getUTCDate() + offset_days);
+            tz_time_mock.setDate(tz_time_mock.getDate() + offset_days);
         }
     }
 
-    const today_date_iso = today_date.toISOString().split("T")[0];
+    // manually format to iso safely
+    const year = tz_time_mock.getFullYear();
+    const month = String(tz_time_mock.getMonth() + 1).padStart(2, "0");
+    const day = String(tz_time_mock.getDate()).padStart(2, "0");
+    const today_date_iso = `${year}-${month}-${day}`;
 
     // check if today's file already exists
     if (fs.existsSync(`./public/daily/${today_date_iso}.json`)) {
@@ -630,9 +641,8 @@ const main = async () => {
             console.log(`${item.name} (${item.metric})`);
         });
 
-        // prevent dst drift
         const target_midnight = new Date(`${today_date_iso}T00:00:00Z`).getTime();
-        const epoch_midnight = new Date(EPOCH).getTime();
+        const epoch_midnight = new Date(epoch_utc).getTime();
 
         // build the final data
         const final_data = {

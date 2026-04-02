@@ -1,6 +1,6 @@
 "use client";
 
-import EPOCH from "../../epoch";
+import {epoch_utc, time_zone} from "../../time";
 
 import {useEffect, useMemo, useRef, useState} from "react";
 import Link from "next/link";
@@ -128,13 +128,13 @@ export const ArchiveGrid = ({scroll_to_date}: ArchiveGridProps) => {
             return [];
         }
 
+        const today_iso = new Date().toLocaleDateString("en-CA", { timeZone: time_zone });
+        const epoch_iso = epoch_utc.toISOString().split("T")[0];
+
         return Object.keys(metadata.days).filter((date_str) => {
             // make sure to only include current dates
             // TODO: should meta.json just exclude future days to avoid this computation?
-            const date = new Date(`${date_str}T00:00:00Z`);
-            const today = new Date();
-
-            return date >= EPOCH && date < today;
+            return date_str >= epoch_iso && date_str <= today_iso;
         }).reverse();
     }, [metadata]);
 
