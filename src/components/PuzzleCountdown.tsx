@@ -14,6 +14,8 @@ interface RendererProps {
 
 export const PuzzleCountdown = () => {
     const next_midnight = useMemo(() => {
+        // TODO: this might be a flimsy hack, investigate if reported but for now leave it as non-critical
+
         const now = new Date();
 
         // formatted to the target timezone but as a string, so decoupled from timezone but still represents the current time in that timezone
