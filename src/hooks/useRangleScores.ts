@@ -1,3 +1,5 @@
+import {time_zone} from "../../time";
+
 import {useState, useEffect, useMemo} from "react";
 
 import type {SaveStateDay, ScoreState} from "@/hooks/useRangleState";
@@ -66,29 +68,100 @@ export const useRangleScores = () => {
         return () => window.removeEventListener('storage', score_listener);
     }, []);
 
-    const stats = useMemo(
-        () => {
-            if (!scores) {
-                return null;
+    const stats = useMemo(() => {
+        if (!scores) {
+            return null;
+        }
+
+        // filter out in progress games and sort by date ascending
+        const sorted_entries = Object.entries(scores)
+            .filter(([_, score]) => score.result !== undefined)
+            .sort(([dateA], [dateB]) => dateA.localeCompare(dateB));
+
+        let current_play_streak = 0;
+        let longest_play_streak = 0;
+
+        let current_win_streak = 0;
+        let longest_win_streak = 0;
+
+        let wins = 0;
+        const score_distribution: Record<number, number> = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+
+        let previous_date: Date | null = null;
+
+        for (const [date_str, score] of sorted_entries) {
+            // sum wins and score distribution
+            if (score.result === true) {
+                wins++;
+                if (score.attempts) {
+                    score_distribution[score.attempts] = (score_distribution[score.attempts] || 0) + 1;
+                }
             }
 
-            return {
-                total_played: Object.values(scores).filter((score) => score.result !== undefined).length,
-                wins: Object.values(scores).filter((score) => score.result === true).length,
-                current_streak: Object.values(scores).reverse().findIndex((score) => score.result === false) === -1
-                    ? Object.values(scores).filter((score) => score.result === true).length
-                    : Object.values(scores).reverse().findIndex((score) => score.result === false),
-                longest_streak: Object.values(scores).reduce((max, score) => {
+            // utc date maths
+            const current_date = new Date(`${date_str}T00:00:00Z`);
+
+            if (previous_date) {
+                const diff_time = current_date.getTime() - previous_date.getTime();
+                const diff_days = Math.round(diff_time / (1000 * 60 * 60 * 24));
+
+                if (diff_days === 1) {
+                    // next day in a row, so play streak continues
+                    current_play_streak++;
+
+                    // if they also won, win streak continues, otherwise resets
                     if (score.result === true) {
-                        return max + 1;
+                        current_win_streak++;
                     } else {
-                        return 0;
+                        current_win_streak = 0;
                     }
-                }, 0)
-            };
-        },
-        [scores]
-    );
+                } else {
+                    // both streaks reset as missed at least one day
+                    current_play_streak = 1;
+                    current_win_streak = score.result === true ? 1 : 0;
+                }
+            } else {
+                //  first entry, so start play streak and win streak if they won
+                current_play_streak = 1;
+                current_win_streak = score.result === true ? 1 : 0;
+            }
+
+            // compare against current longest streaks
+            if (current_play_streak > longest_play_streak) {
+                longest_play_streak = current_play_streak;
+            }
+            if (current_win_streak > longest_win_streak) {
+                longest_win_streak = current_win_streak;
+            }
+
+            previous_date = current_date;
+        }
+
+        // check if streaks died today
+        if (previous_date) {
+            const today_iso = new Date().toLocaleDateString("en-CA", { timeZone: time_zone });
+            const today_utc = new Date(`${today_iso}T00:00:00Z`);
+
+            const days_since_last_play = Math.round((today_utc.getTime() - previous_date.getTime()) / (1000 * 60 * 60 * 24));
+
+            // if they haven't played today or yesterday, streaks are dead
+            if (days_since_last_play > 1) {
+                current_play_streak = 0;
+                current_win_streak = 0;
+            }
+        }
+
+        return {
+            total_played: sorted_entries.length,
+            wins,
+            win_percentage: sorted_entries.length > 0 ? Math.round((wins / sorted_entries.length) * 100) : 0,
+            current_play_streak,
+            longest_play_streak,
+            current_win_streak,
+            longest_win_streak,
+            score_distribution
+        };
+    }, [scores]);
 
     return { scores, stats };
 };
