@@ -187,8 +187,8 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
             <SharePopup hardcore={hardcore} archive_date={archive_date} open={share_open} on_close={() => setShareOpen(false)} attempts={attempts} today_data={today_data} />
 
             <div className="flex mb-4 sm:mb-6 items-center justify-center gap-8">
-                <p className="text-sm sm:text-lg">#{today_data.number} | {today_data.difficulty} • Attempt: {finished ? attempts.length : attempts.length + 1}/5</p>
-                <HardcoreToggle hardcore={hardcore} attempt_count={attempts.length} on_toggle={setHardcore} />
+                <p className="text-sm sm:text-lg text-center text-pretty">#{today_data.number} | {today_data.difficulty} • Attempt: {finished ? attempts.length : attempts.length + 1}/5</p>
+                <HardcoreToggle className="text-nowrap" hardcore={hardcore} attempt_count={attempts.length} on_toggle={setHardcore} />
             </div>
 
             <div className="flex flex-col items-center gap-2">
