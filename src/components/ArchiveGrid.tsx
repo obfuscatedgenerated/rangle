@@ -45,16 +45,21 @@ const ArchiveTile = ({
 
     const formatted_date = useMemo(
         () => {
-            return date_value.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
+            // maths is safer in utc
+            return date_value.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
         },
         [date_value]
     );
 
     const days_ago = useMemo(
         () => {
-            const today = new Date();
-            const diff_time = today.getTime() - date_value.getTime();
-            return Math.floor(diff_time / (1000 * 60 * 60 * 24));
+            const today_iso = new Date().toLocaleDateString("en-CA", { timeZone: time_zone });
+
+            // maths is safer in utc
+            const today_utc = new Date(`${today_iso}T00:00:00Z`);
+
+            const diff_ms = today_utc.getTime() - date_value.getTime();
+            return Math.floor(diff_ms / (1000 * 60 * 60 * 24));
         },
         [date_value]
     );
