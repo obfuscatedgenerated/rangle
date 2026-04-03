@@ -18,16 +18,6 @@ export interface SaveStateDay {
 
 export type SaveState = Record<string, SaveStateDay>;
 
-export interface ScoreStateDay {
-    attempts: number;
-    updated: string;
-
-    // true = won, false = lost, undefined = in progress
-    result?: boolean;
-}
-
-export type ScoreState = Record<string, ScoreStateDay>;
-
 export const useRangleState = ({ on_loaded, on_load_error, date_override }: RangleStateHookProps = {}) => {
     const [today_data, setTodayData] = useState<TodayData | null>(null);
 

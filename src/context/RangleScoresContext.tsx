@@ -1,7 +1,17 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from "react";
-import type { SaveStateDay, ScoreState, ScoreStateDay } from "@/hooks/useRangleState";
+import {createContext, ReactNode, useCallback, useContext, useEffect, useState} from "react";
+import type {SaveStateDay} from "@/hooks/useRangleState";
+
+export interface ScoreStateDay {
+    attempts: number;
+    updated: string;
+
+    // true = won, false = lost, undefined = in progress
+    result?: boolean;
+}
+
+export type ScoreState = Record<string, ScoreStateDay>;
 
 interface RangleScoresContextType {
     scores: ScoreState | null;

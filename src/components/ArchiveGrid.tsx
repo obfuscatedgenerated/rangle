@@ -5,8 +5,7 @@ import {epoch_utc, time_zone} from "../../time";
 import {useEffect, useMemo, useRef, useState} from "react";
 import Link from "next/link";
 
-import {ScoreStateDay} from "@/hooks/useRangleState";
-import {useRangleScores} from "@/context/RangleScoresContext";
+import {ScoreStateDay, useRangleScores} from "@/context/RangleScoresContext";
 import {LoadingSpinner} from "@/components/LoadingSpinner";
 import {PuzzleCountdown} from "@/components/PuzzleCountdown";
 
