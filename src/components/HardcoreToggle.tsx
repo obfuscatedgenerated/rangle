@@ -1,5 +1,7 @@
 "use client";
 
+import {ToggleSwitch} from "@/components/ToggleSwitch";
+
 import {Lock} from "lucide-react";
 
 interface HardcoreToggleProps {
@@ -9,27 +11,10 @@ interface HardcoreToggleProps {
     className?: string;
 }
 
-export const HardcoreToggle = ({ attempt_count, hardcore, on_toggle, className = "" }: HardcoreToggleProps) => {
-    const handle_toggle = (e: React.ChangeEvent<HTMLInputElement>) => {
-        on_toggle(e.target.checked);
-    };
+export const HardcoreToggle = ({ attempt_count, hardcore, on_toggle, className = "" }: HardcoreToggleProps) => (
+    <ToggleSwitch title="Toggle hardcore mode (locked after first attempt)" value={hardcore} on_toggle={on_toggle} disabled={attempt_count > 0} className={className}>
+        Hardcore Mode
 
-    return (
-        <label className={`flex items-center space-x-2 ${className}`}>
-            <input
-                type="checkbox"
-                className="h-5 w-5 sr-only peer"
-                disabled={attempt_count > 0}
-                onChange={handle_toggle}
-                checked={hardcore}
-                title="Toggle hardcore mode (locked after first attempt)"
-            />
-            <div aria-hidden="true" title="Toggle hardcore mode (locked after first attempt)" className="cursor-pointer peer-disabled:cursor-not-allowed relative w-9 h-5 bg-gray-500 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-buffer after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600 peer-disabled:opacity-75" />
-            <span className={`text-sm transition-colors duration-300 ${attempt_count > 0 ? "text-gray-400 dark:text-gray-500" : "text-gray-700 dark:text-gray-300"} flex items-center gap-2`}>
-                Hardcore Mode
-
-                <Lock className={`h-4 w-4 transition-opacity duration-300 ${attempt_count > 0 ? "opacity-100" : "opacity-0"}`} />
-            </span>
-        </label>
-    );
-}
+        <Lock className={`h-4 w-4 transition-opacity duration-300 ${attempt_count > 0 ? "opacity-100" : "opacity-0"}`} />
+    </ToggleSwitch>
+);

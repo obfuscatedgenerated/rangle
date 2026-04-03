@@ -3,6 +3,7 @@ import {time_zone} from "../../time";
 import {PuzzleStat, StatPositionFlags, TodayData} from "@/components/Game";
 import {useRangleScores} from "@/context/RangleScoresContext";
 import {useCallback, useEffect, useMemo, useState} from "react";
+import {useSettingValue} from "@/context/SettingsContext";
 
 interface RangleStateHookProps {
     on_loaded?: () => void;
@@ -29,9 +30,17 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
     const [finished, setFinished] = useState(false);
     const [finished_correctly, setFinishedCorrectly] = useState(false);
 
-    const [hardcore, setHardcore] = useState(false);
+    const [default_hardcore] = useSettingValue("default_hardcore");
+    const [hardcore, setHardcore] = useState(default_hardcore);
     
     const {update_score} = useRangleScores();
+
+    // sync hardcore setting with default from settings context if no attempts have been made yet
+    useEffect(() => {
+        if (attempts.length === 0) {
+            setHardcore(default_hardcore);
+        }
+    }, [default_hardcore, attempts.length]);
 
     // fetch today's data on load, as well as local save state if today's exists
     useEffect(() => {
@@ -65,9 +74,9 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
                             id_to_stat[stat.id] = stat;
                         });
 
-                        if (today_save.hardcore) {
+                        if (today_save.hardcore === true) {
                             setHardcore(true);
-                        } else {
+                        } else if (today_save.hardcore === false) {
                             setHardcore(false);
                         }
 
