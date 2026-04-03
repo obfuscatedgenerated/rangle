@@ -52,9 +52,28 @@ const PresentedStats = ({stats}: {stats: Stats}) => (
             </div>
         </div>
 
-        <div className="w-full mb-8">
+        <h3 className="text-sm font-bold uppercase tracking-[0.2em] mb-4 text-center opacity-80">
+            The Records
+        </h3>
+
+        <div className="grid grid-cols-2 gap-4 mb-8 w-full text-center">
+            <div>
+                <div className="text-3xl font-black leading-none text-orange-500">
+                    {stats.longest_win_streak} day{stats.longest_win_streak !== 1 && "s"}
+                </div>
+                <div className="text-xs uppercase tracking-widest opacity-60 mt-1">Longest Win Streak 🔥</div>
+            </div>
+            <div>
+                <div className="text-3xl font-black leading-none text-blue-400">
+                    {stats.longest_play_streak} day{stats.longest_play_streak !== 1 && "s"}
+                </div>
+                <div className="text-xs uppercase tracking-widest opacity-60 mt-1">Longest Play Streak 🗓️</div>
+            </div>
+        </div>
+
+        <div className="w-full mb-6">
             <h3 className="text-sm font-bold uppercase tracking-[0.2em] mb-4 text-center opacity-80">
-                Score Distribution
+                The Scores
             </h3>
 
             <div className="space-y-2 px-2">
@@ -80,6 +99,8 @@ const PresentedStats = ({stats}: {stats: Stats}) => (
                 })}
             </div>
         </div>
+
+        <p className="mb-8 opacity-60 text-center text-pretty">(Streaks only counted if played on day of release)</p>
     </>
 );
 
