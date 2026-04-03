@@ -75,6 +75,16 @@ export const useRangleScores = () => {
             return {
                 total_played: Object.values(scores).filter((score) => score.result !== undefined).length,
                 wins: Object.values(scores).filter((score) => score.result === true).length,
+                current_streak: Object.values(scores).reverse().findIndex((score) => score.result === false) === -1
+                    ? Object.values(scores).filter((score) => score.result === true).length
+                    : Object.values(scores).reverse().findIndex((score) => score.result === false),
+                longest_streak: Object.values(scores).reduce((max, score) => {
+                    if (score.result === true) {
+                        return max + 1;
+                    } else {
+                        return 0;
+                    }
+                }, 0)
             };
         },
         [scores]
