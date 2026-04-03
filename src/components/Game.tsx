@@ -3,6 +3,7 @@
 import {DraggableStats} from "@/components/DraggableStats";
 import {SharePopup} from "@/components/SharePopup";
 import {Toast} from "@/components/Toast";
+import {HardcoreToggle} from "@/components/HardcoreToggle";
 
 import {useRangleState} from "@/hooks/useRangleState";
 import {useWindowSize} from "@/hooks/useWindowSize";
@@ -10,11 +11,8 @@ import {useWindowSize} from "@/hooks/useWindowSize";
 import {epoch_utc, time_zone} from "../../time";
 
 import {useState, useEffect, useCallback} from "react";
-import Link from "next/link";
 
 import ReactConfetti from "react-confetti";
-import {CalendarDays, Info} from "lucide-react";
-import {HardcoreToggle} from "@/components/HardcoreToggle";
 
 export interface TodayData {
     date: string;
@@ -40,10 +38,9 @@ export type StatPositionFlags = [boolean, boolean, boolean, boolean, boolean];
 interface GameProps {
     archive_date?: string;
     on_loaded?: () => void;
-    on_info_click?: () => void;
 }
 
-export const Game = ({ archive_date, on_loaded, on_info_click }: GameProps) => {
+export const Game = ({ archive_date, on_loaded }: GameProps) => {
     // if undefined, will load today's puzzle
     const [date_override, setDateOverride] = useState<string | undefined>(archive_date);
 
@@ -189,7 +186,10 @@ export const Game = ({ archive_date, on_loaded, on_info_click }: GameProps) => {
         <>
             <SharePopup hardcore={hardcore} archive_date={archive_date} open={share_open} on_close={() => setShareOpen(false)} attempts={attempts} today_data={today_data} />
 
-            <p className="mb-4 sm:mb-8 text-sm sm:text-lg">#{today_data.number} | {today_data.difficulty} • Attempt: {finished ? attempts.length : attempts.length + 1}/5</p>
+            <div className="flex mb-4 sm:mb-6 items-center justify-center gap-8">
+                <p className="text-sm sm:text-lg">#{today_data.number} | {today_data.difficulty} • Attempt: {finished ? attempts.length : attempts.length + 1}/5</p>
+                <HardcoreToggle hardcore={hardcore} attempt_count={attempts.length} on_toggle={setHardcore} />
+            </div>
 
             <div className="flex flex-col items-center gap-2">
                 <div className="flex">
@@ -217,23 +217,9 @@ export const Game = ({ archive_date, on_loaded, on_info_click }: GameProps) => {
                     </div>
                 </div>
 
-                <div className="flex w-full items-stretch sm:max-w-xl mt-4 mb-2 sm:mt-6 sm:mb-4 gap-2">
-                    {on_info_click && (
-                        <button onClick={on_info_click} className="cursor-pointer p-4 rounded aspect-square border-2 border-blue-500" title="Info">
-                            <Info />
-                        </button>
-                    )}
-
-                    <Link href="/archive" className="cursor-pointer p-4 rounded aspect-square border-2 border-blue-500" title="Archive">
-                        <CalendarDays />
-                    </Link>
-
-                    <button disabled={finished} className="w-full text-lg font-bold uppercase tracking-wider px-4 py-3 bg-blue-500 text-white rounded cursor-pointer disabled:bg-gray-500 disabled:cursor-auto" onClick={check_answer}>
-                        Check
-                    </button>
-                </div>
-
-                <HardcoreToggle className="mb-4 sm:mb-6" hardcore={hardcore} attempt_count={attempts.length} on_toggle={setHardcore} />
+                <button disabled={finished} className="w-full text-lg font-bold uppercase tracking-wider mt-4 mb-2 sm:mt-6 sm:mb-4 px-4 py-3 bg-blue-500 text-white rounded cursor-pointer disabled:bg-gray-500 disabled:cursor-auto" onClick={check_answer}>
+                    Check
+                </button>
             </div>
 
             {finished_correctly && (

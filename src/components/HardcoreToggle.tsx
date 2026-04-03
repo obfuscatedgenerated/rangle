@@ -24,7 +24,7 @@ export const HardcoreToggle = ({ attempt_count, hardcore, on_toggle, className =
                 checked={hardcore}
                 title="Toggle hardcore mode (locked after first attempt)"
             />
-            <div aria-hidden="true" title="Toggle hardcore mode (locked after first attempt)" className="cursor-pointer peer-disabled:cursor-not-allowed relative w-9 h-5 bg-gray-500 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-buffer after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600"></div>
+            <div aria-hidden="true" title="Toggle hardcore mode (locked after first attempt)" className="cursor-pointer peer-disabled:cursor-not-allowed relative w-9 h-5 bg-gray-500 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-buffer after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-600 peer-disabled:opacity-75" />
             <span className={`text-sm transition-colors duration-300 ${attempt_count > 0 ? "text-gray-400 dark:text-gray-500" : "text-gray-700 dark:text-gray-300"} flex items-center gap-2`}>
                 Hardcore Mode
 
