@@ -1,6 +1,7 @@
 import {time_zone} from "../../time";
 
 import {PuzzleStat, StatPositionFlags, TodayData} from "@/components/Game";
+import {useRangleScores} from "@/context/RangleScoresContext";
 import {useCallback, useEffect, useMemo, useState} from "react";
 
 interface RangleStateHookProps {
@@ -39,6 +40,8 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
     const [finished_correctly, setFinishedCorrectly] = useState(false);
 
     const [hardcore, setHardcore] = useState(false);
+    
+    const {update_score} = useRangleScores();
 
     // fetch today's data on load, as well as local save state if today's exists
     useEffect(() => {
@@ -158,14 +161,11 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
                 setFinishedCorrectly(true);
 
                 // store in rangle_scores
-                const scores_str = localStorage.getItem("rangle_scores_v1");
-                const scores = scores_str ? JSON.parse(scores_str) : {};
-                scores[today_data.date] = {
+                update_score(today_data.date, {
                     attempts: attempts.length + 1,
                     updated: new Date().toISOString(),
                     result: true,
-                } as ScoreStateDay;
-                localStorage.setItem("rangle_scores_v1", JSON.stringify(scores));
+                });
 
                 return {
                     correct: true,
@@ -176,14 +176,11 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
                 setFinished(true);
 
                 // store in rangle_scores
-                const scores_str = localStorage.getItem("rangle_scores_v1");
-                const scores = scores_str ? JSON.parse(scores_str) : {};
-                scores[today_data.date] = {
+                update_score(today_data.date, {
                     attempts: attempts.length + 1,
                     updated: new Date().toISOString(),
                     result: false,
-                } as ScoreStateDay;
-                localStorage.setItem("rangle_scores_v1", JSON.stringify(scores));
+                });
 
                 return {
                     correct: false,
@@ -192,14 +189,11 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
                 }
             } else {
                 // store in rangle_scores as in progress
-                const scores_str = localStorage.getItem("rangle_scores_v1");
-                const scores = scores_str ? JSON.parse(scores_str) : {};
-                scores[today_data.date] = {
+                update_score(today_data.date, {
                     attempts: attempts.length + 1,
                     updated: new Date().toISOString(),
                     result: undefined,
-                } as ScoreStateDay;
-                localStorage.setItem("rangle_scores_v1", JSON.stringify(scores));
+                });
 
                 return {
                     correct: false,
@@ -208,7 +202,7 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
                 }
             }
         },
-        [answers, attempts, today_data, hardcore]
+        [today_data, attempts, hardcore, answers, update_score]
     );
 
     const reveal_answers = useCallback(

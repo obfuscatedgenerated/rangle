@@ -3,6 +3,7 @@ import {Encode_Sans, Roboto} from "next/font/google";
 import "./globals.css";
 
 import {ViewTransition} from "react";
+import {RangleScoresProvider} from "@/context/RangleScoresContext";
 
 // used specifically for Rangle title
 const title = Encode_Sans({
@@ -81,7 +82,9 @@ export default function RootLayout({
             <body className="min-h-full flex flex-col">
                 <noscript className="absolute top-1/4 left-1/2 -translate-x-1/2">Please enable JavaScript to play Rangle!</noscript>
                 <ViewTransition name="zoom-and-fade">
-                    {children}
+                    <RangleScoresProvider>
+                        {children}
+                    </RangleScoresProvider>
                 </ViewTransition>
             </body>
         </html>

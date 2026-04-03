@@ -6,7 +6,7 @@ import {useEffect, useMemo, useRef, useState} from "react";
 import Link from "next/link";
 
 import {ScoreStateDay} from "@/hooks/useRangleState";
-import {useRangleScores} from "@/hooks/useRangleScores";
+import {useRangleScores} from "@/context/RangleScoresContext";
 import {LoadingSpinner} from "@/components/LoadingSpinner";
 import {PuzzleCountdown} from "@/components/PuzzleCountdown";
 
