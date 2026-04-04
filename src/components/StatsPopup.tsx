@@ -39,13 +39,13 @@ const PresentedStats = ({stats}: {stats: Stats}) => (
                 <div className="text-xs uppercase tracking-widest opacity-60 mt-1">Won</div>
             </div>
             <div>
-                <div className="text-3xl font-black leading-none text-orange-500">
+                <div className="text-3xl font-black leading-none text-win-streak">
                     {stats.current_win_streak}
                 </div>
                 <div className="text-xs uppercase tracking-widest opacity-60 mt-1">Win Streak 🔥</div>
             </div>
             <div>
-                <div className="text-3xl font-black leading-none text-blue-400">
+                <div className="text-3xl font-black leading-none text-play-streak">
                     {stats.current_play_streak}
                 </div>
                 <div className="text-xs uppercase tracking-widest opacity-60 mt-1">Play Streak 🗓️</div>
@@ -58,13 +58,13 @@ const PresentedStats = ({stats}: {stats: Stats}) => (
 
         <div className="grid grid-cols-2 gap-4 mb-8 w-full text-center">
             <div>
-                <div className="text-3xl font-black leading-none text-orange-500">
+                <div className="text-3xl font-black leading-none text-win-streak">
                     {stats.longest_win_streak} day{stats.longest_win_streak !== 1 && "s"}
                 </div>
                 <div className="text-xs uppercase tracking-widest opacity-60 mt-1">Longest Win Streak 🔥</div>
             </div>
             <div>
-                <div className="text-3xl font-black leading-none text-blue-400">
+                <div className="text-3xl font-black leading-none text-play-streak">
                     {stats.longest_play_streak} day{stats.longest_play_streak !== 1 && "s"}
                 </div>
                 <div className="text-xs uppercase tracking-widest opacity-60 mt-1">Longest Play Streak 🗓️</div>
@@ -84,12 +84,12 @@ const PresentedStats = ({stats}: {stats: Stats}) => (
                     return (
                         <div key={guess} className="flex items-center gap-3">
                             <span className="w-2 text-sm font-medium opacity-50">{guess}</span>
-                            <div className="flex-1 h-5 bg-white/5 rounded-sm overflow-hidden">
+                            <div className="flex-1 h-5 bg-foreground/15 dark:bg-foreground/5 rounded-sm overflow-hidden">
                                 <div
-                                    className={`h-full flex items-center justify-end px-2 transition-all duration-700 ease-out ${count > 0 ? "bg-blue-600" : "bg-white/10"}`}
+                                    className={`h-full flex items-center justify-end px-2 transition-all duration-700 ease-out ${count > 0 ? "bg-primary" : "bg-foreground/10"}`}
                                     style={{ width: `${Math.max(width_percent, 7)}%` }} // minimum width so 0/low counts are still visible
                                 >
-                            <span className="text-[0.7rem] font-bold text-white">
+                            <span className="text-[0.7rem] font-bold text-on-primary">
                                 {count}
                             </span>
                                 </div>
@@ -222,7 +222,7 @@ export const StatsPopup = ({open, on_close}: StatsPopupProps) => {
             {stats === null ? <LoadingSpinner /> : <PresentedStats stats={stats} />}
 
             <button
-                className="px-4 py-2 bg-red-500 text-white rounded cursor-pointer"
+                className="px-4 py-2 bg-secondary text-on-secondary rounded cursor-pointer"
                 onClick={on_close}
             >
                 Close

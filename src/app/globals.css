@@ -1,60 +1,170 @@
 @import "tailwindcss";
 
 :root {
+    /* Base UI  */
     --background: #ffffff;
     --background-variant: #cccccc;
+    --background-variant-border: #9ca3af;
+    --tertiary-background: #6b7280;
+
     --foreground: #171717;
     --foreground-variant: #333333;
+    --muted-foreground: #374151;
+    --muted: #6b7280;
+    --disabled: #9ca3af;
+
+    /* Branding & Actions */
+    --primary: #3b82f6;
+    --on-primary: #ffffff;
+    --secondary: #ef4444;
+    --on-secondary: #ffffff;
+
+    /* Game Status */
     --correct: #4ade80;
+    --correct-border: #16a34a;
+    --incorrect: #ef4444;
+    --incorrect-border: #b91c1c;
+
+    /* Archive Tiles */
+    --won: #dcfce7;
+    --won-border: #4ade80;
+    --on-won: #171717;
+
+    --lost: #fee2e2;
+    --lost-border: #f87171;
+    --on-lost: #171717;
+
+    --in-progress: #fef9c3;
+    --in-progress-border: #facc15;
+    --on-in-progress: #171717;
+
+    --unplayed: #f3f4f6;
+    --unplayed-border: #d1d5db;
+    --on-unplayed: #171717;
+
+    /* Accents & UI Elements */
+    --win-streak: #f97316;
+    --play-streak: #60a5fa;
+    --arrow-start: #d1d5db;
+    --arrow-middle: #6b7280;
+    --arrow-end: #d1d5db;
+    --handle: #ffffff;
+    --toast: #1f2937;
+    --on-toast: #ffffff;
+
+    --font-main: var(--font-roboto);
+    --font-title: var(--font-encode);
 }
 
-html {
-    scrollbar-gutter: stable;
-    overflow-x: hidden;
-}
-
-@theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --color-background-variant: var(--background-variant);
-    --color-foreground-variant: var(--foreground-variant);
-    --color-correct: var(--correct);
-    --font-title: var(--font-title);
-    --font-sans: var(--font-sans);
-
-    --animate-shake-horizontal: shake-horizontal 0.5s ease-in-out;
-    @keyframes shake-horizontal {
-        0%,
-        100% {
-            transform: translateX(0);
-        }
-        10%,
-        30%,
-        50%,
-        70% {
-            transform: translateX(-1%);
-        }
-        20%,
-        40%,
-        60%,
-        80% {
-            transform: translateX(1%);
-        }
-    }
+.theme-fools {
+    --font-main: "Comic Sans MS", cursive, sans-serif;
+    --font-title: "Comic Sans MS", cursive, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --background: #0a0a0a;
-        --background-variant: #1a1a1a;
+        --background-variant: #18181b;
+        --background-variant-border: #374151;
+        --tertiary-background: #374151;
+
         --foreground: #ededed;
         --foreground-variant: #cccccc;
+        --muted-foreground: #d1d5db;
+        --muted: #9ca3af;
+        --disabled: #6b7280;
+
+        --correct: #16a34a;
+        --correct-border: #166534;
+
+        --won: #14532d;
+        --won-border: #15803d;
+        --on-won: #ededed;
+
+        --lost: #7f1d1d;
+        --lost-border: #b91c1c;
+        --on-lost: #ededed;
+
+        --in-progress: #713f12;
+        --in-progress-border: #a16207;
+        --on-in-progress: #ededed;
+
+        --unplayed: #111827;
+        --unplayed-border: #374151;
+        --on-unplayed: #ededed;
+
+        --primary: oklch(54.6% 0.245 262.881);
     }
 
     input[type="date"]::-webkit-calendar-picker-indicator {
         filter: invert(1);
         cursor: pointer;
     }
+}
+
+/* TODO: scrollbar style in theme, opacities in themes, etc. */
+
+@theme inline {
+    --color-background: var(--background);
+    --color-background-variant: var(--background-variant);
+    --color-background-variant-border: var(--background-variant-border);
+    --color-tertiary-background: var(--tertiary-background);
+
+    --color-foreground: var(--foreground);
+    --color-foreground-variant: var(--foreground-variant);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-disabled: var(--disabled);
+
+    --color-primary: var(--primary);
+    --color-on-primary: var(--on-primary);
+    --color-secondary: var(--secondary);
+    --color-on-secondary: var(--on-secondary);
+
+    --color-correct: var(--correct);
+    --color-correct-border: var(--correct-border);
+    --color-incorrect: var(--incorrect);
+    --color-incorrect-border: var(--incorrect-border);
+    --color-correct-variant: var(--correct);
+
+    --color-won: var(--won);
+    --color-won-border: var(--won-border);
+    --color-on-won: var(--on-won);
+    --color-lost: var(--lost);
+    --color-lost-border: var(--lost-border);
+    --color-on-lost: var(--on-lost);
+    --color-in-progress: var(--in-progress);
+    --color-in-progress-border: var(--in-progress-border);
+    --color-on-in-progress: var(--on-in-progress);
+    --color-unplayed: var(--unplayed);
+    --color-unplayed-border: var(--unplayed-border);
+    --color-on-unplayed: var(--on-unplayed);
+
+    --color-win-streak: var(--win-streak);
+    --color-play-streak: var(--play-streak);
+
+    --color-arrow-start: var(--arrow-start);
+    --color-arrow-middle: var(--arrow-middle);
+    --color-arrow-end: var(--arrow-end);
+
+    --color-handle: var(--handle);
+    --color-toast: var(--toast);
+    --color-on-toast: var(--on-toast);
+
+    --animate-shake-horizontal: shake-horizontal 0.5s ease-in-out;
+    @keyframes shake-horizontal {
+        0%, 100% { transform: translateX(0); }
+        10%, 30%, 50%, 70% { transform: translateX(-1%); }
+        20%, 40%, 60%, 80% { transform: translateX(1%); }
+    }
+
+    --font-main: var(--font-main);
+    --font-title: var(--font-title);
+}
+
+html {
+    scrollbar-gutter: stable;
+    overflow-x: hidden;
 }
 
 body {

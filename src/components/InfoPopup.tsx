@@ -76,7 +76,7 @@ export const InfoPopup = ({open, on_close}: InfoPopupProps) => {
             <br />
 
             <button
-                className="px-4 py-2 bg-red-500 text-white rounded cursor-pointer"
+                className="px-4 py-2 bg-secondary text-on-secondary rounded cursor-pointer"
                 onClick={on_close}
             >
                 Close

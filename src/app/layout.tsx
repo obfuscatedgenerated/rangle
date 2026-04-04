@@ -6,18 +6,6 @@ import {ViewTransition} from "react";
 import {RangleScoresProvider} from "@/context/RangleScoresContext";
 import {SettingsProvider} from "@/context/SettingsContext";
 
-// used specifically for Rangle title
-const title = Encode_Sans({
-    variable: "--font-title",
-    subsets: ["latin"],
-});
-
-// used as default body font
-const sans = Roboto({
-    variable: "--font-sans",
-    subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
     title: {
         default: "Rangle",
@@ -70,6 +58,20 @@ export const metadata: Metadata = {
     }
 };
 
+// default fonts
+
+// used specifically for Rangle title
+const encode = Encode_Sans({
+    variable: "--font-encode",
+    subsets: ["latin"],
+});
+
+// used as default body font
+const roboto = Roboto({
+    variable: "--font-roboto",
+    subsets: ["latin"],
+});
+
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -78,7 +80,7 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className={`${title.variable} ${sans.variable} font-sans h-full antialiased`}
+            className={`${encode.variable} ${roboto.variable} font-main h-full antialiased`}
         >
             <body className="min-h-full flex flex-col">
                 <noscript className="absolute top-1/4 left-1/2 -translate-x-1/2">Please enable JavaScript to play Rangle!</noscript>

@@ -199,7 +199,7 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
                         correct_positions={(hardcore && !finished) ? [false, false, false, false, false] : correct_positions}
                         finished={finished}
                         reveal_values={reveal_values}
-                        incorrect_className={!hardcore && just_attempted ? "bg-red-500 border-red-700 animate-shake-horizontal" : undefined}
+                        incorrect_className={!hardcore && just_attempted ? "bg-incorrect border-incorrect-border animate-shake-horizontal" : undefined}
                     />
 
                     <div className="flex flex-col items-center ml-4 sm:ml-6 opacity-33">
@@ -207,8 +207,8 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
                             <span className="hidden sm:inline">Smallest</span>
                             <span className="inline sm:hidden">Min</span>
                         </span>
-                        <div className="w-px flex-grow bg-gradient-to-b from-gray-300 via-gray-500 to-gray-300 my-2 relative">
-                            <div className="absolute bottom-0 -left-[4px] w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[8px] border-t-gray-500" />
+                        <div className="w-px flex-grow bg-gradient-to-b from-arrow-start via-arrow-middle to-arrow-end my-2 relative">
+                            <div className="absolute bottom-0 -left-[4px] w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[8px] border-t-arrow-middle" />
                         </div>
                         <span className="text-xs font-bold uppercase tracking-widest">
                             <span className="hidden sm:inline">Largest</span>
@@ -217,7 +217,7 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
                     </div>
                 </div>
 
-                <button disabled={finished} className="w-full text-lg font-bold uppercase tracking-wider mt-4 mb-2 sm:mt-6 sm:mb-4 px-4 py-3 bg-blue-500 text-white rounded cursor-pointer disabled:bg-gray-500 disabled:cursor-auto" onClick={check_answer}>
+                <button disabled={finished} className="w-full text-lg font-bold uppercase tracking-wider mt-4 mb-2 sm:mt-6 sm:mb-4 px-4 py-3 bg-primary text-on-primary rounded cursor-pointer disabled:bg-disabled disabled:cursor-auto" onClick={check_answer}>
                     Check
                 </button>
             </div>

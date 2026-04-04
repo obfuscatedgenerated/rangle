@@ -115,31 +115,31 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
                     <div key={idx} className="flex gap-1">
                         {attempt.map((pos, pos_idx) => (
                             <div key={pos_idx}
-                                 className={`w-4 h-4 rounded ${pos ? "bg-green-600" : "bg-gray-700"}`}></div>
+                                 className={`w-4 h-4 rounded ${pos ? "bg-correct" : "bg-tertiary-background"}`}></div>
                         ))}
                     </div>
                 ))}
             </div>
 
             {got_it_right ? (
-                <p className="mt-4 text-green-600 font-bold text-pretty text-center">Great job! You solved today&apos;s Rangle
+                <p className="mt-4 text-correct-variant font-bold text-pretty text-center">Great job! You solved today&apos;s Rangle
                     in {attempts.length} attempt{attempts.length === 1 ? "" : "s"}.</p>
             ) : (
-                <p className="mt-4 text-red-600 font-bold text-pretty text-center">Better luck next time!</p>
+                <p className="mt-4 text-incorrect-variant font-bold text-pretty text-center">Better luck next time!</p>
             )}
 
             <PuzzleCountdown />
 
             <div className="mt-4 flex gap-4">
                 <button
-                    className="px-4 py-2 bg-red-500 text-white rounded cursor-pointer"
+                    className="px-4 py-2 bg-secondary text-on-secondary rounded cursor-pointer"
                     onClick={() => dialog_ref.current?.close()}
                 >
                     Close
                 </button>
 
                 <button
-                    className="px-4 py-2 bg-blue-500 text-white rounded cursor-pointer"
+                    className="px-4 py-2 bg-primary text-on-primary rounded cursor-pointer"
                     onClick={on_share}
                 >
                     {share_button_text}

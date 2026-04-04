@@ -74,12 +74,12 @@ const ArchiveTile = ({
                 flex-col
                 justify-between
                 ${score && score.result === true
-                    ? "bg-green-100 dark:bg-green-900/50 border-green-400 dark:border-green-700"
+                    ? "bg-won dark:bg-won/50 border-won-border text-on-won"
                     : score && score.result === false
-                    ? "bg-red-100 dark:bg-red-900/50 border-red-400 dark:border-red-700"
+                    ? "bg-lost dark:bg-lost/50 border-lost-border text-on-lost"
                     : score && score.result === undefined
-                    ? "bg-yellow-100 dark:bg-yellow-900/50 border-yellow-400 dark:border-yellow-700"
-                    : "bg-gray-100 dark:bg-gray-900/50 border-gray-300 dark:border-gray-700"
+                    ? "bg-in-progress dark:bg-in-progress/50 border-in-progress-border text-on-in-progress"
+                    : "bg-unplayed dark:bg-unplayed/50 border-unplayed-border text-on-unplayed"
                 }
                 ${box_className}
             `}>
@@ -179,7 +179,7 @@ export const ArchiveGrid = ({scroll_to_date}: ArchiveGridProps) => {
                             item_refs.current.delete(date_str);
                         }
                     }}
-                    box_className={date_str === scroll_to_date ? "ring-4 ring-blue-400 dark:ring-blue-700" : ""}
+                    box_className={date_str === scroll_to_date ? "ring-4 ring-primary" : ""}
                 />
             ))}
         </div>
