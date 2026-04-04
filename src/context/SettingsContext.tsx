@@ -1,10 +1,11 @@
 "use client";
 
 import {createContext, useContext, useEffect, useState} from "react";
+import type {ThemeID} from "@/themes";
 
 const DEFAULT_SETTINGS = {
     default_hardcore: false as boolean,
-    theme: "default" as string,
+    theme: "default" as ThemeID,
 } as const;
 
 export type Settings = typeof DEFAULT_SETTINGS;

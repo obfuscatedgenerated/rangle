@@ -5,6 +5,7 @@ import "./globals.css";
 import {ViewTransition} from "react";
 import {RangleScoresProvider} from "@/context/RangleScoresContext";
 import {SettingsProvider} from "@/context/SettingsContext";
+import {ThemeApplier} from "@/components/ThemeApplier";
 
 export const metadata: Metadata = {
     title: {
@@ -84,13 +85,15 @@ export default function RootLayout({
         >
             <body className="min-h-full flex flex-col">
                 <noscript className="absolute top-1/4 left-1/2 -translate-x-1/2">Please enable JavaScript to play Rangle!</noscript>
-                <ViewTransition name="zoom-and-fade">
-                    <SettingsProvider>
-                        <RangleScoresProvider>
+                <SettingsProvider>
+                    <RangleScoresProvider>
+                        <ThemeApplier />
+
+                        <ViewTransition name="zoom-and-fade">
                             {children}
-                        </RangleScoresProvider>
-                    </SettingsProvider>
-                </ViewTransition>
+                        </ViewTransition>
+                    </RangleScoresProvider>
+                </SettingsProvider>
             </body>
         </html>
     );

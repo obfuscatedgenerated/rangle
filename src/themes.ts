@@ -1,20 +1,21 @@
 import type { ScoreState } from "@/context/RangleScoresContext";
 
 export interface ThemeDefinition {
-    css_class: string;
     name: string;
+    css_class: string;
     criteria: (scores: ScoreState) => boolean;
     criteria_description?: string;
     secret?: boolean;
 }
 
-export const THEMES: ThemeDefinition[] = [
-    {
+export const THEMES: {[id: string]: ThemeDefinition} = {
+    default: {
         name: "Classic",
         css_class: "",
         criteria: () => true,
     },
-    {
+
+    fools: {
         name: "Foolish",
         css_class: "theme-fools",
         criteria_description: "winning the April Fools 2026 Rangle",
@@ -23,4 +24,6 @@ export const THEMES: ThemeDefinition[] = [
         },
         secret: true
     }
-];
+} as const;
+
+export type ThemeID = keyof typeof THEMES;
