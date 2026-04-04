@@ -10,9 +10,11 @@ import {useWindowSize} from "@/hooks/useWindowSize";
 
 import {epoch_utc, time_zone} from "../../time";
 
-import {useState, useEffect, useCallback} from "react";
+import {useState, useEffect, useCallback, useMemo} from "react";
 
 import ReactConfetti from "react-confetti";
+import {useSettingValue} from "@/context/SettingsContext";
+import {THEMES} from "@/themes";
 
 export interface TodayData {
     date: string;
@@ -178,6 +180,20 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
         }
     }, [finished, finished_correctly, reveal_answers]);
 
+    const [theme_id] = useSettingValue("theme");
+
+    const theme_confetti_colors = useMemo(
+        () => {
+            const theme_data = THEMES[theme_id as keyof typeof THEMES];
+            if (theme_data && theme_data.confetti_colors) {
+                return theme_data.confetti_colors;
+            }
+
+            return undefined;
+        },
+        [theme_id]
+    );
+
     if (!today_data) {
         return null;
     }
@@ -223,7 +239,7 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
             </div>
 
             {finished_correctly && (
-                <ReactConfetti style={{position: "fixed"}} width={window_size.width} height={window_size.height} />
+                <ReactConfetti style={{position: "fixed"}} width={window_size.width} height={window_size.height} colors={theme_confetti_colors} />
             )}
 
             <Toast message={toast_message} visible={toast_visible} position="center" />

@@ -6,6 +6,7 @@ export interface ThemeDefinition {
     criteria?: (data: {scores: ScoreState, stats: Stats}) => boolean;
     criteria_description?: string;
     secret?: boolean;
+    confetti_colors?: string[];
 }
 
 import fools from "./fools.module.css";
@@ -21,6 +22,7 @@ export const THEMES: {[id: string]: ThemeDefinition} = {
     pride: {
         name: "Pride",
         css_class: pride.theme,
+        confetti_colors: ["#FF0000", "#FF7F00", "#FFFF00", "#00FF00", "#0000FF", "#8B00FF"]
     },
 
     fools: {
@@ -34,14 +36,16 @@ export const THEMES: {[id: string]: ThemeDefinition} = {
             }
 
             return score.result === true;
-        }
+        },
+        confetti_colors: ["#000"]
     },
 
     gold: {
         name: "Gold",
         css_class: gold.theme,
         criteria_description: "solving at least 14 Rangles",
-        criteria: ({stats}) => stats.wins >= 14
+        criteria: ({stats}) => stats.wins >= 14,
+        confetti_colors: ["#FFD700", "#FFF8DC", "#FFEC8B"]
     },
 } as const;
 
