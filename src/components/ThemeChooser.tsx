@@ -9,7 +9,7 @@ import {LoadingSpinner} from "@/components/LoadingSpinner";
 import {ChevronDown} from "lucide-react";
 
 export const ThemeChooser = () => {
-    const {scores} = useRangleScores();
+    const {scores, stats} = useRangleScores();
     const [theme_id, setThemeId] = useSettingValue("theme");
 
     // secret options arent shown unless criteria is met
@@ -17,7 +17,7 @@ export const ThemeChooser = () => {
 
     const themes_with_met_criteria = useMemo(
         () => {
-            if (!scores) {
+            if (!scores || !stats) {
                 return [];
             }
 
@@ -28,24 +28,24 @@ export const ThemeChooser = () => {
                     return true;
                 }
 
-                return theme.criteria(scores);
+                return theme.criteria({scores, stats});
             });
         },
-        [scores]
+        [scores, stats]
     );
 
     const visible_themes = useMemo(
         () => {
-            if (!scores) {
+            if (!scores || !stats) {
                 return Object.keys(THEMES).filter((id) => !THEMES[id as keyof typeof THEMES].secret);
             }
 
             return Object.keys(THEMES).filter((id) => {
                 const theme = THEMES[id as keyof typeof THEMES];
-                return !theme.secret || theme.criteria === undefined || theme.criteria(scores);
+                return !theme.secret || theme.criteria === undefined || theme.criteria({scores, stats});
             });
         },
-        [scores]
+        [scores, stats]
     );
 
     const selected_theme_name = useMemo(
