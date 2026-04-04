@@ -5,6 +5,8 @@ import type {StatPositionFlags, TodayData} from "@/components/Game";
 import {PuzzleCountdown} from "@/components/PuzzleCountdown";
 
 import Link from "next/link";
+import {useSettingValue} from "@/context/SettingsContext";
+import {THEMES} from "@/themes";
 
 interface SharePopupProps {
     open: boolean;
@@ -27,7 +29,14 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
     const dialog_ref = useRef<HTMLDialogElement>(null);
     const [share_button_text, setShareButtonText] = useState("Share Results");
 
-    const got_it_right = attempts[attempts.length - 1]?.every((pos) => pos);
+    const got_it_right = useMemo(() => attempts[attempts.length - 1]?.every((pos) => pos), [attempts]);
+
+    const [theme_id] = useSettingValue("theme");
+
+    const theme_share_emoji = useMemo(() => {
+        const theme_data = THEMES[theme_id] || THEMES["default"];
+        return theme_data.share_emoji || THEMES["default"].share_emoji;
+    }, [theme_id]);
 
     // sync with open prop
     useEffect(() => {
@@ -78,7 +87,7 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
             }
 
             const share_text = `Rangle #${today_data.number}${archive_date ? ` (archived from ${archive_date})` : ""} | ${today_data.difficulty} • ${got_it_right ? attempts.length : "X"}/5\n${hardcore ? "💪 HARDCORE mode!\n" : ""}\n` +
-                attempts.map((attempt) => attempt.map((pos) => pos ? "🟩" : "⬛").join(" ")).join("\n") +
+                attempts.map((attempt) => attempt.map((pos) => pos ? theme_share_emoji.correct : theme_share_emoji.incorrect).join(" ")).join("\n") +
                 `\n\n${share_url}`;
 
             // if on mobile, open share dialog if available, otherwise fallback to copying to clipboard
@@ -100,7 +109,7 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
                 handle_copy(share_text);
             }
         },
-        [today_data, archive_date, got_it_right, attempts, hardcore, share_url, handle_copy]
+        [today_data, archive_date, got_it_right, attempts, hardcore, share_url, theme_share_emoji.correct, theme_share_emoji.incorrect, handle_copy]
     );
 
     // TODO: base dialog component
