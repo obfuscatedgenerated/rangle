@@ -1,3 +1,5 @@
+import fools from "./fools.module.css";
+
 import type { ScoreState } from "@/context/RangleScoresContext";
 
 export interface ThemeDefinition {
@@ -16,7 +18,7 @@ export const THEMES: {[id: string]: ThemeDefinition} = {
 
     fools: {
         name: "Foolish",
-        css_class: "theme-fools",
+        css_class: fools.theme,
         criteria_description: "winning the April Fools 2026 Rangle",
         criteria: (scores) => {
             const score = scores["2026-04-01"];

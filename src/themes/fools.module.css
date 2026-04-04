@@ -1,0 +1,59 @@
+.theme {}
+
+:root:has(body):has(.theme) {
+    /* Base UI  */
+    --background: #ff0000;
+    --background-variant: #ffff00;
+    --background-variant-border: #ff00ff;
+    --tertiary-background: #00ffff;
+
+    --foreground: #0000ff;
+    --foreground-variant: #000000;
+    --muted-foreground: #0000ff;
+    --muted: #000000;
+    --disabled: #808080;
+
+    /* Actions */
+    --primary: #00ff00;
+    --on-primary: #000000;
+    --secondary: #ffff00;
+    --on-secondary: #000000;
+
+    /* Game Status */
+    --correct: #00ffff;
+    --correct-border: #000000;
+    --incorrect: #ff00ff;
+    --incorrect-border: #000000;
+
+    /* Archive Tiles */
+    --won: #00ff00;
+    --won-border: #000000;
+    --on-won: #000000;
+
+    --lost: #ff0000;
+    --lost-border: #ffffff;
+    --on-lost: #ffffff;
+
+    --in-progress: #ffff00;
+    --in-progress-border: #000000;
+    --on-in-progress: #000000;
+
+    --unplayed: #ffffff;
+    --unplayed-border: #000000;
+    --on-unplayed: #000000;
+
+    /* Accents & UI Elements */
+    --win-streak: #ff00ff;
+    --play-streak: #00ffff;
+
+    --arrow-start: #ff0000;
+    --arrow-middle: #00ff00;
+    --arrow-end: #0000ff;
+
+    --handle: #ffffff;
+    --toast: #ffff00;
+    --on-toast: #000000;
+
+    --font-main: "Comic Sans MS", cursive, sans-serif;
+    --font-title: "Comic Sans MS", cursive, sans-serif;
+}
