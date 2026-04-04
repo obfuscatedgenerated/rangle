@@ -35,7 +35,7 @@ export const THEMES: {[id: string]: ThemeDefinition} = {
         name: "Gold",
         css_class: gold.theme,
         criteria_description: "solving at least 14 Rangles",
-        //criteria: ({stats}) => stats.wins >= 14
+        criteria: ({stats}) => stats.wins >= 14
     }
 } as const;
 
