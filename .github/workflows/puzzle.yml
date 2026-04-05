@@ -35,10 +35,10 @@ jobs:
         run: |
           # If triggered manually AND the box is checked, add --force
           if [ "${{ github.event.inputs.force_overwrite }}" == "true" ]; then
-            node bin/generate_daily.js --offset 1 --force
+            node bin/generate_daily.js --verbose --offset 1 --force
           else
             # For the daily cron job, just run it normally
-            node bin/generate_daily.js --offset 1
+            node bin/generate_daily.js --verbose --offset 1
           fi
 
       - name: Update metadata
