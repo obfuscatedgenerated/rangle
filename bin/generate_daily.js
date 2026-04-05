@@ -11,7 +11,7 @@ program
     .option("-o, --offset <days>", "Number of days in the future to generate for", "0")
     .option("-f, --force", "Force generation even if today's file already exists", false)
     .option("-p, --properties <propertyID1,propertyID2,...>", "Comma-separated list of specific Wikidata property IDs to use instead of random selection. If less than 10, random properties will be added to fill the gap.")
-    .option("--no-backfill", "Disable backfilling to 10 properties if custom properties are provided, i.e. only use the specified ones. If no properties are provided, there won't be any!", false)
+    .option("--no-backfill", "Disable backfilling to 10 properties if custom properties are provided, i.e. only use the specified ones. If no properties are provided, there won't be any!")
     .option("-v, --verbose", "Enable verbose logging for debugging purposes", false);
 
 program.parse();
