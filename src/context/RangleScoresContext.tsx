@@ -30,6 +30,7 @@ interface RangleScoresContextType {
     scores: ScoreState | null;
     stats: Stats | null;
     update_score: (date: string, score_data: ScoreStateDay) => void;
+    rebuild_scores: () => void;
 }
 
 const RangleScoresContext = createContext<RangleScoresContextType | undefined>(undefined);
@@ -221,8 +222,14 @@ export const RangleScoresProvider = ({ children }: { children: ReactNode }) => {
         };
     }, [scores]);
 
+    const rebuild_scores = useCallback(() => {
+        localStorage.removeItem("rangle_scores_v1");
+        const migrated = migrate_from_state();
+        setScores(migrated || {});
+    }, [migrate_from_state]);
+
     return (
-        <RangleScoresContext.Provider value={{ scores, stats, update_score }}>
+        <RangleScoresContext.Provider value={{ scores, stats, update_score, rebuild_scores }}>
             {children}
         </RangleScoresContext.Provider>
     );

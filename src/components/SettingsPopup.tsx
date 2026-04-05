@@ -5,6 +5,7 @@ import {ToggleSwitch} from "@/components/ToggleSwitch";
 
 import {useSettings} from "@/context/SettingsContext";
 import {ThemeChooser} from "@/components/ThemeChooser";
+import {useRangleScores} from "@/context/RangleScoresContext";
 
 interface SettingsPopupProps {
     open: boolean;
@@ -27,13 +28,14 @@ export const SettingsPopup = ({open, on_close}: SettingsPopupProps) => {
 
     const [rebuild_button_text, setRebuildButtonText] = useState("Rebuild score file");
 
+    const { rebuild_scores } = useRangleScores();
     const handle_rebuild_scores = useCallback(
         () => {
-            localStorage.removeItem("rangle_scores_v1");
+            rebuild_scores();
             setRebuildButtonText("Score file rebuilt!");
             setTimeout(() => setRebuildButtonText("Rebuild score file"), 2000);
         },
-        []
+        [rebuild_scores]
     );
 
     // TODO: base dialog component
