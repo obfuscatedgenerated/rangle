@@ -19,6 +19,8 @@ export interface SaveStateDay {
 
 export type SaveState = Record<string, SaveStateDay>;
 
+// TODO: sync state across tabs
+
 export const useRangleState = ({ on_loaded, on_load_error, date_override }: RangleStateHookProps = {}) => {
     const [today_data, setTodayData] = useState<TodayData | null>(null);
 

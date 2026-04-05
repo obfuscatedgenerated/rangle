@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect, useRef} from "react";
+import {useCallback, useEffect, useRef, useState} from "react";
 import {ToggleSwitch} from "@/components/ToggleSwitch";
 
 import {useSettings} from "@/context/SettingsContext";
@@ -25,6 +25,17 @@ export const SettingsPopup = ({open, on_close}: SettingsPopupProps) => {
         }
     }, [open]);
 
+    const [rebuild_button_text, setRebuildButtonText] = useState("Rebuild score file");
+
+    const handle_rebuild_scores = useCallback(
+        () => {
+            localStorage.removeItem("rangle_scores_v1");
+            setRebuildButtonText("Score file rebuilt!");
+            setTimeout(() => setRebuildButtonText("Rebuild score file"), 2000);
+        },
+        []
+    );
+
     // TODO: base dialog component
     return (
         <dialog onAbort={on_close} ref={dialog_ref} className="rounded-lg p-4 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[95vw] sm:max-w-md w-full bg-background-variant text-foreground-variant flex flex-col items-center">
@@ -39,10 +50,14 @@ export const SettingsPopup = ({open, on_close}: SettingsPopupProps) => {
                     Theme
                     <ThemeChooser />
                 </label>
+
+                <button className="px-4 py-2 mx-auto bg-primary text-on-primary rounded cursor-pointer" onClick={handle_rebuild_scores}>
+                    {rebuild_button_text}
+                </button>
             </div>
 
             <button
-                className="mt-2 px-4 py-2 bg-red-500 text-white rounded cursor-pointer"
+                className="mt-2 px-4 py-2 bg-secondary text-on-secondary rounded cursor-pointer"
                 onClick={on_close}
             >
                 Close
