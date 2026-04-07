@@ -108,7 +108,7 @@ export const BonusPopup = ({open, on_finish, bonus_rounds}: BonusPopupProps) => 
                 <h2 className="font-title text-xl font-bold">Bonus Round!</h2>
 
                 <b className="mt-2">Congratulations on solving today&apos;s Rangle!</b>
-                <p>However, {bonus_rounds.length === 1 ? "one of the" : "some"} values {bonus_rounds.length === 1 ? "has" : "have"}n&apos;t been revealed...</p>
+                <p className="text-center text-balance">However, {bonus_rounds.length === 1 ? "one of the" : "some"} values {bonus_rounds.length === 1 ? "has" : "have"}n&apos;t been revealed...</p>
 
                 <p className="my-4 text-center text-pretty">Can you guess the missing value{bonus_rounds.length > 1 ? "s" : ""} <b>within 5%</b> to score {bonus_rounds.length === 1 ? "a" : "some"} bonus point{bonus_rounds.length === 1 ? "" : "s"}?</p>
 
