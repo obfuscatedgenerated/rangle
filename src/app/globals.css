@@ -153,6 +153,23 @@
         20%, 40%, 60%, 80% { transform: translateX(1%); }
     }
 
+    --animate-spotlight-search-left: search-left 5s ease-in-out infinite;
+    --animate-spotlight-search-right: search-right 5.5s ease-in-out infinite;
+
+    @keyframes search-left {
+        0%, 100% { transform: rotate(-40deg) skewX(-10deg); opacity: 0.15; }
+        25% { transform: rotate(-10deg) skewX(5deg); opacity: 0.4; }
+        50% { transform: rotate(-50deg) skewX(-15deg); opacity: 0.25; }
+        75% { transform: rotate(-20deg) skewX(0deg); opacity: 0.5; }
+    }
+
+    @keyframes search-right {
+        0%, 100% { transform: rotate(45deg) skewX(12deg); opacity: 0.2; }
+        30% { transform: rotate(15deg) skewX(-5deg); opacity: 0.5; }
+        60% { transform: rotate(55deg) skewX(15deg); opacity: 0.15; }
+        85% { transform: rotate(25deg) skewX(2deg); opacity: 0.4; }
+    }
+
     --font-main: var(--font-main);
     --font-title: var(--font-title);
 }
