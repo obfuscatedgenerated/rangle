@@ -136,7 +136,7 @@ export const BonusPopup = ({open, on_finish, bonus_rounds}: BonusPopupProps) => 
 
                 <button
                     disabled={suspenseful || revealed_answers}
-                    className="w-full text-lg font-bold uppercase tracking-wider mt-4 mb-2 sm:mt-6 sm:mb-4 px-4 py-3 bg-primary text-on-primary rounded cursor-pointer"
+                    className="w-full text-lg font-bold uppercase tracking-wider mt-4 mb-2 sm:mt-6 sm:mb-4 px-4 py-3 bg-primary text-on-primary rounded cursor-pointer transition-colors duration-1000 disabled:bg-primary/50 disabled:cursor-not-allowed"
                     onClick={handle_submit}
                 >
                     Submit guess{bonus_rounds.length > 1 ? "es" : ""}
