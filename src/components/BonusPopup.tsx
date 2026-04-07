@@ -4,6 +4,7 @@ import {useCallback, useEffect, useRef, useState} from "react";
 
 import type {PuzzleStat} from "@/components/Game";
 import {SearchSpotlights} from "@/components/SearchSpotlights";
+import {useAudioPlayer} from "react-use-audio-player";
 
 interface BonusPopupProps {
     open: boolean;
@@ -36,6 +37,11 @@ export const BonusPopup = ({open, on_finish, bonus_rounds}: BonusPopupProps) => 
     const [suspenseful, setSuspenseful] = useState(false);
     const [revealed_answers, setRevealedAnswers] = useState<boolean>(false);
 
+    const drumroll = useAudioPlayer("/drumroll.mp3", {
+        autoplay: false,
+        loop: false
+    });
+
     const handle_submit = useCallback(
         () => {
             const results: Record<string, boolean> = {};
@@ -64,6 +70,9 @@ export const BonusPopup = ({open, on_finish, bonus_rounds}: BonusPopupProps) => 
 
             setSuspenseful(true);
 
+            drumroll.seek(0);
+            drumroll.play();
+
             setTimeout(() => {
                 setSuspenseful(false);
 
@@ -88,7 +97,7 @@ export const BonusPopup = ({open, on_finish, bonus_rounds}: BonusPopupProps) => 
                 }, 3000);
             }, 3000);
         },
-        [bonus_rounds, input_states, on_finish]
+        [bonus_rounds, drumroll, input_states, on_finish]
     );
 
     return (
@@ -96,8 +105,6 @@ export const BonusPopup = ({open, on_finish, bonus_rounds}: BonusPopupProps) => 
             <SearchSpotlights active={suspenseful} />
 
             <dialog ref={dialog_ref} className="rounded-lg p-4 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[95vw] sm:max-w-md w-full bg-background-variant text-foreground-variant flex flex-col items-center">
-
-
                 <h2 className="font-title text-xl font-bold">Bonus Round!</h2>
 
                 <b className="mt-2">Congratulations on solving today&apos;s Rangle!</b>
@@ -128,6 +135,7 @@ export const BonusPopup = ({open, on_finish, bonus_rounds}: BonusPopupProps) => 
                 </div>
 
                 <button
+                    disabled={suspenseful || revealed_answers}
                     className="w-full text-lg font-bold uppercase tracking-wider mt-4 mb-2 sm:mt-6 sm:mb-4 px-4 py-3 bg-primary text-on-primary rounded cursor-pointer"
                     onClick={handle_submit}
                 >
