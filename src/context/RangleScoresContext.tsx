@@ -244,4 +244,3 @@ export const useRangleScores = () => {
 };
 
 // TODO: store hardcore and bonus_results here for stats
-]
