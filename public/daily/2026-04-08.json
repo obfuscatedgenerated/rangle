@@ -1,0 +1,56 @@
+{
+  "date": "2026-04-08",
+  "number": 11,
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q1053",
+      "name": "molybdenum",
+      "value": 1778,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Mo and atomic number 42",
+      "prefix": "",
+      "suffix": ""
+    },
+    {
+      "id": "Q83125",
+      "name": "Tower Bridge",
+      "value": 244,
+      "metric": "Length",
+      "description": "bascule and suspension bridge in London",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q483027",
+      "name": "Paolo Maldini",
+      "value": 85,
+      "metric": "Mass / Weight",
+      "description": "Italian association football player (born 1968)",
+      "prefix": "",
+      "suffix": " kg",
+      "unit_hint": "in kilograms"
+    },
+    {
+      "id": "Q1846",
+      "name": "holmium",
+      "value": 1878,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Ho and atomic number 67",
+      "prefix": "",
+      "suffix": ""
+    },
+    {
+      "id": "Q214204",
+      "name": "Eden Hazard",
+      "value": 79,
+      "metric": "Mass / Weight",
+      "description": "Belgian footballer (born 1991)",
+      "prefix": "",
+      "suffix": " kg",
+      "unit_hint": "in kilograms"
+    }
+  ]
+}
