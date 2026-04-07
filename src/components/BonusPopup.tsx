@@ -38,6 +38,7 @@ export const BonusPopup = ({open, on_finish, bonus_rounds}: BonusPopupProps) => 
                 const input_value = input_states[stat.id];
 
                 if (!input_value) {
+                    // TODO: better ux
                     alert("Please fill in all guesses before submitting!");
                     return;
                 }
@@ -66,10 +67,10 @@ export const BonusPopup = ({open, on_finish, bonus_rounds}: BonusPopupProps) => 
         <dialog ref={dialog_ref} className="rounded-lg p-4 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[95vw] sm:max-w-md w-full bg-background-variant text-foreground-variant flex flex-col items-center">
             <h2 className="font-title text-xl font-bold">Bonus Round!</h2>
 
-            <p>Congratulations on solving today&apos;s Rangle!</p>
-            <p>However, {bonus_rounds.length === 1 ? "one of" : "some"} values haven&apos;t been revealed!</p>
+            <b className="mt-2">Congratulations on solving today&apos;s Rangle!</b>
+            <p>However, {bonus_rounds.length === 1 ? "one of the" : "some"} values {bonus_rounds.length === 1 ? "has" : "have"}n&apos;t been revealed...</p>
 
-            <p>Can you guess the missing value{bonus_rounds.length > 1 ? "s" : ""} within 5% to score {bonus_rounds.length === 1 ? "a" : "some"} bonus point{bonus_rounds.length === 1 ? "" : "s"}?</p>
+            <p className="my-4 text-center text-pretty">Can you guess the missing value{bonus_rounds.length > 1 ? "s" : ""} <b>within 5%</b> to score {bonus_rounds.length === 1 ? "a" : "some"} bonus point{bonus_rounds.length === 1 ? "" : "s"}?</p>
 
             <div className="flex flex-col items-center mt-4">
                 {bonus_rounds.map((stat, index) => (

@@ -187,7 +187,9 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
             setRevealValues(true);
 
             if (bonus_rounds.length > 0 && Object.keys(bonus_results).length === 0) {
-                setBonusPopupOpen(true);
+                setTimeout(() => {
+                    setBonusPopupOpen(true);
+                }, 1000);
             } else {
                 // skip bonus round if there arent any bonus rounds, or already been played from saved state
                 on_post_bonus_round();
