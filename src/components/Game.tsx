@@ -87,7 +87,9 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
         submit_guess,
         set_current_order,
         hardcore,
-        setHardcore
+        setHardcore,
+        bonus_results,
+        set_bonus_results
     } = useRangleState({
         on_loaded,
         on_load_error,
@@ -100,7 +102,6 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
 
     const [bonus_popup_open, setBonusPopupOpen] = useState(false);
     const [bonus_round_reveal, setBonusRoundReveal] = useState(false);
-    const [bonus_results, setBonusResults] = useState<Record<string, boolean>>({});
 
     const [share_open, setShareOpen] = useState(false);
 
@@ -163,7 +164,7 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
 
     const on_post_bonus_round = useCallback(
         (results: Record<string, boolean> = {}) => {
-            setBonusResults(results);
+            set_bonus_results(results);
             setBonusPopupOpen(false);
             setBonusRoundReveal(true);
 
@@ -171,7 +172,7 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
                 setShareOpen(true);
             }, 1500);
         },
-        []
+        [set_bonus_results]
     );
 
     // trigger end game logic when game finishes (as it could be triggered by either submit_guess or loading saved state on mount)
@@ -185,10 +186,10 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
             // if everything is correct, fire the finish logic
             setRevealValues(true);
 
-            if (bonus_rounds.length > 0) {
+            if (bonus_rounds.length > 0 && Object.keys(bonus_results).length === 0) {
                 setBonusPopupOpen(true);
             } else {
-                // skip bonus round if there arent any bonus rounds!
+                // skip bonus round if there arent any bonus rounds, or already been played from saved state
                 on_post_bonus_round();
             }
         } else {
