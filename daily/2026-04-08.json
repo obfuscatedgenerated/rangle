@@ -2,55 +2,54 @@
   "date": "2026-04-08",
   "number": 11,
   "difficulty": "Medium",
-  "neighbourhood": "medium",
+  "neighbourhood": "small",
   "puzzle": [
     {
-      "id": "Q1053",
-      "name": "molybdenum",
-      "value": 1778,
-      "metric": "Year of Discovery",
-      "description": "chemical element with symbol Mo and atomic number 42",
+      "id": "Q506074",
+      "name": "Family Feud",
+      "value": 2384,
+      "metric": "Number of Episodes",
+      "description": "American TV game show",
       "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q1154303",
+      "name": "Lucario",
+      "value": 448,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
       "suffix": ""
     },
     {
-      "id": "Q83125",
-      "name": "Tower Bridge",
-      "value": 244,
-      "metric": "Length",
-      "description": "bascule and suspension bridge in London",
+      "id": "Q29220",
+      "name": "Sumatran rhinoceros",
+      "value": 400,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " days",
+      "unit_hint": "in days"
     },
     {
-      "id": "Q483027",
-      "name": "Paolo Maldini",
-      "value": 85,
-      "metric": "Mass / Weight",
-      "description": "Italian association football player (born 1968)",
-      "prefix": "",
-      "suffix": " kg",
-      "unit_hint": "in kilograms"
-    },
-    {
-      "id": "Q1846",
-      "name": "holmium",
-      "value": 1878,
-      "metric": "Year of Discovery",
-      "description": "chemical element with symbol Ho and atomic number 67",
-      "prefix": "",
+      "id": "Q1266682",
+      "name": "Regirock",
+      "value": 377,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
       "suffix": ""
     },
     {
-      "id": "Q214204",
-      "name": "Eden Hazard",
-      "value": 79,
-      "metric": "Mass / Weight",
-      "description": "Belgian footballer (born 1991)",
+      "id": "Q1052814",
+      "name": "Hoffmann's Two-toed Sloth",
+      "value": 350,
+      "metric": "Gestation Period",
+      "description": "species of two-toed sloth",
       "prefix": "",
-      "suffix": " kg",
-      "unit_hint": "in kilograms"
+      "suffix": " days",
+      "unit_hint": "in days"
     }
   ]
 }
