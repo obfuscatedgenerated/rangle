@@ -19,11 +19,12 @@ interface DraggableStatProps {
     correct: boolean;
     finished: boolean;
     reveal_values: boolean;
+    bonus_round_reveal?: boolean;
 
     className?: string;
 }
 
-const DraggableStat = ({ stat, correct, finished, reveal_values, className = "" }: DraggableStatProps) => {
+const DraggableStat = ({ stat, correct, finished, reveal_values, bonus_round_reveal = false, className = "" }: DraggableStatProps) => {
     const lock_position = correct || finished;
 
     const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
@@ -49,11 +50,11 @@ const DraggableStat = ({ stat, correct, finished, reveal_values, className = "" 
         }
 
         // add to DOM just before starting animation to reveal values
-        if (reveal_values && value_display_state === "hidden") {
+        if (reveal_values && (!stat.bonus_round || bonus_round_reveal) && value_display_state === "hidden") {
             setValueDisplayState("about_to_reveal");
         }
 
-        if (reveal_values && value_display_state === "about_to_reveal") {
+        if (reveal_values && (!stat.bonus_round || bonus_round_reveal) && value_display_state === "about_to_reveal") {
             // after a short delay, set to visible so that it appears with a fade-in transition
             const timeout = setTimeout(() => {
                 setValueDisplayState("visible");
@@ -61,7 +62,7 @@ const DraggableStat = ({ stat, correct, finished, reveal_values, className = "" 
 
             return () => clearTimeout(timeout);
         }
-    }, [reveal_values, value_display_state]);
+    }, [bonus_round_reveal, reveal_values, stat.bonus_round, value_display_state]);
 
     const drag_style = {
         transform: CSS.Translate.toString(transform),
@@ -81,7 +82,7 @@ const DraggableStat = ({ stat, correct, finished, reveal_values, className = "" 
             `}
         >
             <p className="text-pretty text-center text-lg sm:text-2xl font-bold pointer-events-none">
-                {reveal_values
+                {reveal_values && (!stat.bonus_round || bonus_round_reveal)
                     ? (
                         <span className="flex items-center">
                             <a title={`Open ${stat.name} on Wikidata`} className="pointer-events-auto underline" href={`https://wikidata.org/wiki/${stat.id}`} target="_blank" rel="noopener noreferrer">
@@ -122,6 +123,7 @@ interface DraggableStatsProps {
     correct_positions: [boolean, boolean, boolean, boolean, boolean];
     finished: boolean;
     reveal_values: boolean;
+    bonus_round_reveal?: boolean;
 
     correct_className?: string;
     incorrect_className?: string;
@@ -133,6 +135,7 @@ export const DraggableStats = ({
     correct_positions,
     finished,
     reveal_values,
+    bonus_round_reveal = false,
     correct_className = "bg-correct border-correct-border",
     incorrect_className = "bg-background-variant border-background-variant-border"
 }: DraggableStatsProps) => {
@@ -181,6 +184,7 @@ export const DraggableStats = ({
                             correct={correct_positions[index]}
                             finished={finished}
                             reveal_values={reveal_values}
+                            bonus_round_reveal={bonus_round_reveal}
                             className={correct_positions[index] ? correct_className : incorrect_className}
                         />
                     ))}

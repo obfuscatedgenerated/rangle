@@ -11,7 +11,8 @@
       "metric": "Number of Episodes",
       "description": "American TV game show",
       "prefix": "",
-      "suffix": " episodes"
+      "suffix": " episodes",
+      "bonus_round": true
     },
     {
       "id": "Q1154303",

@@ -15,6 +15,7 @@ import {useState, useEffect, useCallback, useMemo} from "react";
 import ReactConfetti from "react-confetti";
 import {useSettingValue} from "@/context/SettingsContext";
 import {THEMES} from "@/themes";
+import {BonusPopup} from "@/components/BonusPopup";
 
 export interface TodayData {
     date: string;
@@ -33,6 +34,7 @@ export interface PuzzleStat {
     prefix: string;
     suffix: string;
     unit_hint: string;
+    bonus_round?: boolean;
 }
 
 export type StatPositionFlags = [boolean, boolean, boolean, boolean, boolean];
@@ -95,6 +97,11 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
     const [just_attempted, setJustAttempted] = useState(false);
 
     const [reveal_values, setRevealValues] = useState(false);
+
+    const [bonus_popup_open, setBonusPopupOpen] = useState(false);
+    const [bonus_round_reveal, setBonusRoundReveal] = useState(false);
+    const [bonus_results, setBonusResults] = useState<Record<string, boolean>>({});
+
     const [share_open, setShareOpen] = useState(false);
 
     const [toast_message, setToastMessage] = useState("");
@@ -146,6 +153,27 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
         [today_data, finished, submit_guess, current_order, hardcore]
     );
 
+    const bonus_rounds = useMemo(() => {
+        if (!today_data) {
+            return [];
+        }
+
+        return today_data.puzzle.filter((stat) => stat.bonus_round);
+    }, [today_data]);
+
+    const on_post_bonus_round = useCallback(
+        (results: Record<string, boolean> = {}) => {
+            setBonusResults(results);
+            setBonusPopupOpen(false);
+            setBonusRoundReveal(true);
+
+            setTimeout(() => {
+                setShareOpen(true);
+            }, 1500);
+        },
+        []
+    );
+
     // trigger end game logic when game finishes (as it could be triggered by either submit_guess or loading saved state on mount)
     useEffect(() => {
         if (!finished) {
@@ -157,10 +185,12 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
             // if everything is correct, fire the finish logic
             setRevealValues(true);
 
-            // open share popup after a delay
-            setTimeout(() => {
-                setShareOpen(true);
-            }, 1500);
+            if (bonus_rounds.length > 0) {
+                setBonusPopupOpen(true);
+            } else {
+                // skip bonus round if there arent any bonus rounds!
+                on_post_bonus_round();
+            }
         } else {
             // if reached attempt limit, reveal the answer
             // reveal the values after a delay
@@ -171,14 +201,12 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
             // reveal the order after a slightly longer delay
             setTimeout(() => {
                 reveal_answers();
-            }, 2000);
 
-            // open share popup after a longer delay
-            setTimeout(() => {
-                setShareOpen(true);
-            }, 3000);
+                // skip bonus round if they didn't win!
+                on_post_bonus_round();
+            }, 2000);
         }
-    }, [finished, finished_correctly, reveal_answers]);
+    }, [finished, finished_correctly, bonus_rounds.length, on_post_bonus_round, reveal_answers]);
 
     const [theme_id] = useSettingValue("theme");
 
@@ -200,7 +228,17 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
 
     return (
         <>
-            <SharePopup hardcore={hardcore} archive_date={archive_date} open={share_open} on_close={() => setShareOpen(false)} attempts={attempts} today_data={today_data} />
+            <SharePopup
+                archive_date={archive_date}
+                open={share_open}
+                on_close={() => setShareOpen(false)}
+                attempts={attempts}
+                hardcore={hardcore}
+                bonus_results={bonus_results}
+                today_data={today_data}
+            />
+
+            <BonusPopup open={bonus_popup_open} on_finish={on_post_bonus_round} bonus_rounds={bonus_rounds} />
 
             <div className="flex mb-4 sm:mb-6 items-center justify-center gap-8">
                 <p className="text-sm sm:text-lg text-center text-pretty">#{today_data.number} | {today_data.difficulty} • Attempt: {finished ? attempts.length : attempts.length + 1}/5</p>
@@ -216,6 +254,7 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
                         finished={finished}
                         reveal_values={reveal_values}
                         incorrect_className={!hardcore && just_attempted ? "bg-incorrect border-incorrect-border animate-shake-horizontal" : undefined}
+                        bonus_round_reveal={bonus_round_reveal}
                     />
 
                     <div className="flex flex-col items-center ml-4 sm:ml-6 opacity-33">
