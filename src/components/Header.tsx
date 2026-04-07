@@ -8,6 +8,7 @@ import {ComponentType, useEffect, useState} from "react";
 import Link from "next/link";
 import {StatsPopup} from "@/components/StatsPopup";
 import {SettingsPopup} from "@/components/SettingsPopup";
+import {LoginButton} from "@/components/LoginButton";
 
 const HeaderIconButton = ({ Icon, title, on_click }: { Icon: ComponentType, title: string, on_click: () => void }) => (
     <button onClick={on_click} className="cursor-pointer p-3 aspect-square" title={title}>
@@ -21,11 +22,7 @@ const HeaderIconLink = ({ Icon, title, href }: { Icon: ComponentType, title: str
     </Link>
 );
 
-interface HeaderProps {
-
-}
-
-export const Header = ({}: HeaderProps) => {
+export const Header = () => {
     const [show_info_popup, setShowInfoPopup] = useState(false);
     const [show_stats_popup, setShowStatsPopup] = useState(false);
     const [show_settings_popup, setShowSettingsPopup] = useState(false);
@@ -50,6 +47,8 @@ export const Header = ({}: HeaderProps) => {
 
                 <HeaderIconLink Icon={CalendarDays} title="Archive" href="/archive" />
                 <HeaderIconButton Icon={Settings} title="Settings" on_click={() => setShowSettingsPopup(true)} />
+
+                <LoginButton />
             </header>
 
             <InfoPopup open={show_info_popup} on_close={() => setShowInfoPopup(false)} />
