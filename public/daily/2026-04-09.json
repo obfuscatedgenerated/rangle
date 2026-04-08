@@ -1,54 +1,55 @@
 {
   "date": "2026-04-09",
   "number": 12,
-  "difficulty": "Easy",
-  "neighbourhood": "large",
+  "difficulty": "Medium",
+  "neighbourhood": "small",
   "puzzle": [
     {
-      "id": "Q796",
-      "name": "Iraq",
-      "value": 38274618,
-      "metric": "Population",
-      "description": "sovereign state in Western Asia",
+      "id": "Q35525",
+      "name": "White House",
+      "value": 4,
+      "metric": "Number of Floors",
+      "description": "official residence and office of the President of the United States",
       "prefix": "",
-      "suffix": " people"
+      "suffix": " floors"
     },
     {
-      "id": "Q174555",
-      "name": "Madagascar",
-      "value": 75000000,
-      "metric": "Production Budget",
-      "description": "2005 animated film directed by Eric Darnell and Tom McGrath",
-      "prefix": "$",
-      "suffix": "",
-      "unit_hint": "in dollars"
+      "id": "Q11208",
+      "name": "The Pentagon",
+      "value": 5,
+      "metric": "Number of Floors",
+      "description": "headquarters of the United States Department of Defense; named after the shape of the building, a polygon with five (greek: penta) sides",
+      "prefix": "",
+      "suffix": " floors"
     },
     {
-      "id": "Q9168",
-      "name": "Persian",
-      "value": 45000000,
-      "metric": "Native Speakers",
-      "description": "Western Iranian language",
+      "id": "Q737413",
+      "name": "Greater Horseshoe Bat",
+      "value": 3,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of mammal",
       "prefix": "",
-      "suffix": " speakers"
+      "suffix": " years",
+      "unit_hint": "in years"
     },
     {
-      "id": "Q1049",
-      "name": "Sudan",
-      "value": 40533330,
-      "metric": "Population",
-      "description": "country in Northeast Africa",
+      "id": "Q26842",
+      "name": "silverfish",
+      "value": 2,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of insect",
       "prefix": "",
-      "suffix": " people"
+      "suffix": " years",
+      "unit_hint": "in years"
     },
     {
-      "id": "Q652",
-      "name": "Italian",
-      "value": 64800000,
-      "metric": "Native Speakers",
-      "description": "Romance language",
+      "id": "Q1128810",
+      "name": "Private Crimes",
+      "value": 1,
+      "metric": "Number of Seasons",
+      "description": "television program",
       "prefix": "",
-      "suffix": " speakers"
+      "suffix": " seasons"
     }
   ]
 }
