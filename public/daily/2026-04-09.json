@@ -1,0 +1,54 @@
+{
+  "date": "2026-04-09",
+  "number": 12,
+  "difficulty": "Easy",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q796",
+      "name": "Iraq",
+      "value": 38274618,
+      "metric": "Population",
+      "description": "sovereign state in Western Asia",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q174555",
+      "name": "Madagascar",
+      "value": 75000000,
+      "metric": "Production Budget",
+      "description": "2005 animated film directed by Eric Darnell and Tom McGrath",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q9168",
+      "name": "Persian",
+      "value": 45000000,
+      "metric": "Native Speakers",
+      "description": "Western Iranian language",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q1049",
+      "name": "Sudan",
+      "value": 40533330,
+      "metric": "Population",
+      "description": "country in Northeast Africa",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q652",
+      "name": "Italian",
+      "value": 64800000,
+      "metric": "Native Speakers",
+      "description": "Romance language",
+      "prefix": "",
+      "suffix": " speakers"
+    }
+  ]
+}
