@@ -48,14 +48,13 @@
     }
 
     & :global(header) {
-        border-bottom: 1px solid #1f2937;
         position: relative;
     }
 
     & :global(header)::after {
         content: "";
         position: absolute;
-        bottom: -1px;
+        bottom: 15%;
         left: 0;
 
         width: 100%;
