@@ -1,0 +1,56 @@
+{
+  "date": "2026-04-10",
+  "number": 13,
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q35342",
+      "name": "Titicaca",
+      "value": 489,
+      "metric": "Depth",
+      "description": "Alpine lake in Peru and Bolivia",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q134883",
+      "name": "CN Tower",
+      "value": 553,
+      "metric": "Height",
+      "description": "communications and observation tower in Toronto, Canada",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q1100",
+      "name": "tellurium",
+      "value": 1783,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Te and atomic number 52",
+      "prefix": "",
+      "suffix": ""
+    },
+    {
+      "id": "Q1819",
+      "name": "samarium",
+      "value": 1879,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Sm and atomic number 62",
+      "prefix": "",
+      "suffix": ""
+    },
+    {
+      "id": "Q5532",
+      "name": "Lake Malawi",
+      "value": 704,
+      "metric": "Depth",
+      "description": "African Great Lake",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
