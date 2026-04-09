@@ -9,6 +9,7 @@ import {useEffect, useMemo, useState} from "react";
 import {useSearchParams, useRouter} from "next/navigation";
 
 import {epoch_utc, time_zone} from "../../time";
+import {ChangelogWidget} from "@/components/ChangelogWidget";
 
 export const HomeInteraction = () => {
     const search_params = useSearchParams();
@@ -76,6 +77,8 @@ export const HomeInteraction = () => {
     return (
         <>
             <Header />
+
+            <ChangelogWidget />
 
             <main className="flex-1 flex-col mx-4 my-0 pb-8 sm:pb-0 flex items-center justify-center">
                 <MigrationManager />

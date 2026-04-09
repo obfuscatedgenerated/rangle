@@ -42,3 +42,5 @@ next-env.d.ts
 
 .idea/
 *.iml
+
+src/generated_changelog.json
