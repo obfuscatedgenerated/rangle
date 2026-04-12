@@ -1,55 +1,56 @@
 {
   "date": "2026-04-13",
   "number": 16,
-  "difficulty": "Medium",
-  "neighbourhood": "large",
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
   "puzzle": [
     {
-      "id": "Q161562",
-      "name": "California Institute of Technology",
-      "value": 2397,
-      "metric": "Student Enrollment",
-      "description": "private research university located in Pasadena, California, USA",
+      "id": "Q184492",
+      "name": "Mälaren",
+      "value": 64,
+      "metric": "Depth",
+      "description": "lake in Sweden",
       "prefix": "",
-      "suffix": " students"
+      "suffix": " m",
+      "unit_hint": "in metres"
     },
     {
-      "id": "Q12175",
-      "name": "Manx",
-      "value": 1823,
-      "metric": "Native Speakers",
-      "description": "Celtic language spoken on the Isle of Man",
+      "id": "Q14429",
+      "name": "Lake Biel",
+      "value": 74,
+      "metric": "Depth",
+      "description": "lake at Biel/Bienne, Canton of Bern, Switzerland",
       "prefix": "",
-      "suffix": " speakers"
+      "suffix": " m",
+      "unit_hint": "in metres"
     },
     {
-      "id": "Q32747",
-      "name": "Veps",
-      "value": 1276,
-      "metric": "Native Speakers",
-      "description": "Finnic language native to Northwest Russia",
+      "id": "Q192258",
+      "name": "Quidditch Through the Ages",
+      "value": 56,
+      "metric": "Number of Pages",
+      "description": "2001 book by J. K. Rowling",
       "prefix": "",
-      "suffix": " speakers"
+      "suffix": " pages"
     },
     {
-      "id": "Q37320",
-      "name": "Cleveland",
-      "value": 214,
-      "metric": "Area",
-      "description": "city in and county seat of Cuyahoga County, Ohio, United States",
+      "id": "Q107790",
+      "name": "The Green Book",
+      "value": 110,
+      "metric": "Number of Pages",
+      "description": "لا اله الا الله",
       "prefix": "",
-      "suffix": " sq km",
-      "unit_hint": "in sq km"
+      "suffix": " pages"
     },
     {
-      "id": "Q3604",
-      "name": "Djibouti",
-      "value": 200,
-      "metric": "Area",
-      "description": "capital city of Djibouti",
+      "id": "Q52505",
+      "name": "Rialto Bridge",
+      "value": 48,
+      "metric": "Length",
+      "description": "one of four bridges spanning the Grand Canal in Venice, Italy",
       "prefix": "",
-      "suffix": " sq km",
-      "unit_hint": "in sq km"
+      "suffix": " m",
+      "unit_hint": "in metres"
     }
   ]
 }
