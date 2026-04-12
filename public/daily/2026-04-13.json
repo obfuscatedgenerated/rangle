@@ -2,57 +2,54 @@
   "date": "2026-04-13",
   "number": 16,
   "difficulty": "Medium",
-  "neighbourhood": "medium",
+  "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q42191",
-      "name": "Issyk-Kul",
-      "value": 668,
-      "metric": "Depth",
-      "description": "lake in Kyrgyzstan",
+      "id": "Q161562",
+      "name": "California Institute of Technology",
+      "value": 2397,
+      "metric": "Student Enrollment",
+      "description": "private research university located in Pasadena, California, USA",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " students"
     },
     {
-      "id": "Q12495",
-      "name": "Burj Khalifa",
-      "value": 830,
-      "metric": "Height",
-      "description": "skyscraper in Dubai, United Arab Emirates",
+      "id": "Q12175",
+      "name": "Manx",
+      "value": 1823,
+      "metric": "Native Speakers",
+      "description": "Celtic language spoken on the Isle of Man",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " speakers"
     },
     {
-      "id": "Q157246",
-      "name": "Bitola",
-      "value": 576,
-      "metric": "Elevation above sea level",
-      "description": "town and seat of Bitola Municipality, North Macedonia",
+      "id": "Q32747",
+      "name": "Veps",
+      "value": 1276,
+      "metric": "Native Speakers",
+      "description": "Finnic language native to Northwest Russia",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " speakers"
     },
     {
-      "id": "Q61089",
-      "name": "Malacca",
-      "value": 543,
-      "metric": "Elevation above sea level",
-      "description": "state capital of Malacca, Malaysia",
+      "id": "Q37320",
+      "name": "Cleveland",
+      "value": 214,
+      "metric": "Area",
+      "description": "city in and county seat of Cuyahoga County, Ohio, United States",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " sq km",
+      "unit_hint": "in sq km"
     },
     {
-      "id": "Q5532",
-      "name": "Lake Malawi",
-      "value": 704,
-      "metric": "Depth",
-      "description": "African Great Lake",
+      "id": "Q3604",
+      "name": "Djibouti",
+      "value": 200,
+      "metric": "Area",
+      "description": "capital city of Djibouti",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " sq km",
+      "unit_hint": "in sq km"
     }
   ]
 }
