@@ -1,0 +1,57 @@
+{
+  "date": "2026-04-14",
+  "number": 17,
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q1386",
+      "name": "praseodymium",
+      "value": 3130,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol Pr and atomic number 59",
+      "prefix": "",
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
+    },
+    {
+      "id": "Q1307",
+      "name": "oganesson",
+      "value": 2002,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Og and atomic number 118",
+      "prefix": "",
+      "suffix": ""
+    },
+    {
+      "id": "Q69060",
+      "name": "Xining",
+      "value": 2275,
+      "metric": "Elevation above sea level",
+      "description": "capital city of Qinghai province, China",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q676203",
+      "name": "Machu Picchu",
+      "value": 2430,
+      "metric": "Elevation above sea level",
+      "description": "15th-century Inca citadel in the Peruvian Andes and UNESCO World Heritage Site",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q1846",
+      "name": "holmium",
+      "value": 2600,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol Ho and atomic number 67",
+      "prefix": "",
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
+    }
+  ]
+}
