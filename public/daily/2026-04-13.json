@@ -1,0 +1,58 @@
+{
+  "date": "2026-04-13",
+  "number": 16,
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q42191",
+      "name": "Issyk-Kul",
+      "value": 668,
+      "metric": "Depth",
+      "description": "lake in Kyrgyzstan",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q12495",
+      "name": "Burj Khalifa",
+      "value": 830,
+      "metric": "Height",
+      "description": "skyscraper in Dubai, United Arab Emirates",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q157246",
+      "name": "Bitola",
+      "value": 576,
+      "metric": "Elevation above sea level",
+      "description": "town and seat of Bitola Municipality, North Macedonia",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q61089",
+      "name": "Malacca",
+      "value": 543,
+      "metric": "Elevation above sea level",
+      "description": "state capital of Malacca, Malaysia",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q5532",
+      "name": "Lake Malawi",
+      "value": 704,
+      "metric": "Depth",
+      "description": "African Great Lake",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
