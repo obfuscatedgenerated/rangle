@@ -1,57 +1,56 @@
 {
   "date": "2026-04-14",
   "number": 17,
-  "difficulty": "Medium",
-  "neighbourhood": "medium",
+  "difficulty": "Hard",
+  "neighbourhood": "small",
   "puzzle": [
     {
-      "id": "Q1386",
-      "name": "praseodymium",
-      "value": 3130,
-      "metric": "Boiling Point",
-      "description": "chemical element with symbol Pr and atomic number 59",
+      "id": "Q3238275",
+      "name": "Homo sapiens sapiens",
+      "value": 278,
+      "metric": "Gestation Period",
+      "description": "subspecies of mammal",
       "prefix": "",
-      "suffix": "°C",
-      "unit_hint": "in Celsius"
+      "suffix": " days",
+      "unit_hint": "in days"
     },
     {
-      "id": "Q1307",
-      "name": "oganesson",
-      "value": 2002,
-      "metric": "Year of Discovery",
-      "description": "chemical element with symbol Og and atomic number 118",
+      "id": "Q4125587",
+      "name": "Victor Lindelöf",
+      "value": 187,
+      "metric": "Height",
+      "description": "Swedish association football player",
       "prefix": "",
-      "suffix": ""
+      "suffix": " cm",
+      "unit_hint": "in centimeters"
     },
     {
-      "id": "Q69060",
-      "name": "Xining",
-      "value": 2275,
-      "metric": "Elevation above sea level",
-      "description": "capital city of Qinghai province, China",
+      "id": "Q201373",
+      "name": "Nikola Žigić",
+      "value": 202,
+      "metric": "Height",
+      "description": "Serbian footballer",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " cm",
+      "unit_hint": "in centimeters"
     },
     {
-      "id": "Q676203",
-      "name": "Machu Picchu",
-      "value": 2430,
-      "metric": "Elevation above sea level",
-      "description": "15th-century Inca citadel in the Peruvian Andes and UNESCO World Heritage Site",
+      "id": "Q3281841",
+      "name": "Bela, a Feia",
+      "value": 217,
+      "metric": "Number of Episodes",
+      "description": "television series",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " episodes"
     },
     {
-      "id": "Q1846",
-      "name": "holmium",
-      "value": 2600,
-      "metric": "Boiling Point",
-      "description": "chemical element with symbol Ho and atomic number 67",
+      "id": "Q6155819",
+      "name": "Una muchacha llamada Milagros",
+      "value": 229,
+      "metric": "Number of Episodes",
+      "description": "television series",
       "prefix": "",
-      "suffix": "°C",
-      "unit_hint": "in Celsius"
+      "suffix": " episodes"
     }
   ]
 }
