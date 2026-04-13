@@ -1,56 +1,55 @@
 {
   "date": "2026-04-14",
   "number": 17,
-  "difficulty": "Hard",
+  "difficulty": "Easy",
   "neighbourhood": "small",
   "puzzle": [
     {
-      "id": "Q3238275",
-      "name": "Homo sapiens sapiens",
-      "value": 278,
+      "id": "Q2668662",
+      "name": "Father of the Pride",
+      "value": 15,
+      "metric": "Number of Episodes",
+      "description": "American animated television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q25311",
+      "name": "Mustela nivalis",
+      "value": 35,
       "metric": "Gestation Period",
-      "description": "subspecies of mammal",
+      "description": "species of mammal",
       "prefix": "",
       "suffix": " days",
       "unit_hint": "in days"
     },
     {
-      "id": "Q4125587",
-      "name": "Victor Lindelöf",
-      "value": 187,
-      "metric": "Height",
-      "description": "Swedish association football player",
-      "prefix": "",
-      "suffix": " cm",
-      "unit_hint": "in centimeters"
-    },
-    {
-      "id": "Q201373",
-      "name": "Nikola Žigić",
-      "value": 202,
-      "metric": "Height",
-      "description": "Serbian footballer",
-      "prefix": "",
-      "suffix": " cm",
-      "unit_hint": "in centimeters"
-    },
-    {
-      "id": "Q3281841",
-      "name": "Bela, a Feia",
-      "value": 217,
+      "id": "Q212731",
+      "name": "Fawlty Towers",
+      "value": 12,
       "metric": "Number of Episodes",
-      "description": "television series",
+      "description": "1970s BBC television sitcom",
       "prefix": "",
       "suffix": " episodes"
     },
     {
-      "id": "Q6155819",
-      "name": "Una muchacha llamada Milagros",
-      "value": 229,
-      "metric": "Number of Episodes",
-      "description": "television series",
+      "id": "Q140",
+      "name": "lion",
+      "value": 108,
+      "metric": "Gestation Period",
+      "description": "species of big cat",
       "prefix": "",
-      "suffix": " episodes"
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q1263559",
+      "name": "Eevee",
+      "value": 133,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
     }
   ]
 }
