@@ -49,7 +49,8 @@
       "metric": "Pokédex Number",
       "description": "Pokémon species",
       "prefix": "#",
-      "suffix": ""
+      "suffix": "",
+      "bonus_round": true
     }
   ]
 }
