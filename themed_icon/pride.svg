@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="100%" height="100%">
+  <defs>
+    <linearGradient id="densePrideGradient" x1="0" y1="8" x2="0" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E40303" />    <stop offset="12.5%" stop-color="#FF5C00" /> <stop offset="25%" stop-color="#FFED00" />   <stop offset="37.5%" stop-color="#76C700" /> <stop offset="50%" stop-color="#008026" />   <stop offset="62.5%" stop-color="#0063FF" /> <stop offset="75%" stop-color="#732982" />   <stop offset="87.5%" stop-color="#FF00E5" /> <stop offset="100%" stop-color="#8B008B" />  </linearGradient>
+  </defs>
+
+  <rect x="10" y="8" width="22" height="12" rx="3" fill="url(#densePrideGradient)" />
+  <rect x="10" y="26" width="22" height="12" rx="3" fill="url(#densePrideGradient)" />
+  <rect x="10" y="44" width="22" height="12" rx="3" fill="url(#densePrideGradient)" />
+
+  <g>
+    <path d="M 32 14 C 52 14, 52 32, 40 32" fill="none" stroke="#64748B" stroke-width="6" />
+    <polygon points="41,26 31,32 41,38" fill="#64748B" />
+  </g>
+
+  <g fill="none" stroke="#94A3B8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 40 41 L 51 54" />
+    <path d="M 47 54 L 55 54" />
+  </g>
+</svg>
