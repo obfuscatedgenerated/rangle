@@ -18,7 +18,7 @@ export const ThemeApplier = () => {
             const icon_path = theme_data.icon || "/icon.svg";
 
             // find the rel icon link element with an svg href to replace
-            // if multiple exist, choose the first and delete the rest
+            // if multiple exist, choose the first and neutralise (but not delete to prevent page change errors) the rest
             const link_elements = document.querySelectorAll('link[rel="icon"][href$=".svg"]') as NodeListOf<HTMLLinkElement> | null;
             let link_element: HTMLLinkElement | null = null;
 
@@ -27,7 +27,7 @@ export const ThemeApplier = () => {
                     if (!link_element) {
                         link_element = el;
                     } else {
-                        el.remove();
+                        el.href = "";
                     }
                 }
             }
