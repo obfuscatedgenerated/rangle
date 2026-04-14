@@ -1,8 +1,14 @@
 ---
-latest: Bonus rounds! 
+latest: Sounds and icons!
 ---
 
 # Changelog
+
+## 2026-04-14
+
+Added some more sound effects for gameplay. You can also now toggle sound effects on and off in the settings menu.
+
+Also added customised browser icons for each theme. Hope you like them :)
 
 ## 2026-04-08
 
