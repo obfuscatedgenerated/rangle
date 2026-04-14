@@ -76,4 +76,3 @@ export const THEMES: {default: Required<Pick<ThemeDefinition, "share_emoji">> & 
 export type ThemeID = keyof typeof THEMES;
 
 // TODO: themed sound effects
-// TODO: themed cursor
