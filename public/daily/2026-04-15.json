@@ -1,0 +1,54 @@
+{
+  "date": "2026-04-15",
+  "number": 18,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q13199",
+      "name": "Romansh",
+      "value": 40039,
+      "metric": "Native Speakers",
+      "description": "Romance language spoken in the Swiss canton of Grisons (Graubünden)",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q900492",
+      "name": "Cà Mau Airport",
+      "value": 30698,
+      "metric": "Number of Passengers",
+      "description": "airport in Vietnam",
+      "prefix": "",
+      "suffix": " passengers",
+      "unit_hint": "annual"
+    },
+    {
+      "id": "Q153978",
+      "name": "University of Tübingen",
+      "value": 28238,
+      "metric": "Student Enrollment",
+      "description": "public research university in Tübingen, Germany",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q33557",
+      "name": "Karelian",
+      "value": 35600,
+      "metric": "Native Speakers",
+      "description": "Finnic language",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q7894375",
+      "name": "Universidade Federal de Goiás",
+      "value": 25846,
+      "metric": "Student Enrollment",
+      "description": "public university in Goiânia, Goiás, Brazil",
+      "prefix": "",
+      "suffix": " students"
+    }
+  ]
+}
