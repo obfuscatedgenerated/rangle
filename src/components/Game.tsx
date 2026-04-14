@@ -10,7 +10,7 @@ import {useWindowSize} from "@/hooks/useWindowSize";
 
 import {epoch_utc, time_zone} from "../../time";
 
-import {useState, useEffect, useCallback, useMemo} from "react";
+import {useState, useEffect, useCallback, useMemo, useRef} from "react";
 
 import ReactConfetti from "react-confetti";
 import {useSettingValue} from "@/context/SettingsContext";
@@ -163,8 +163,11 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
     }, [today_data]);
 
     const on_post_bonus_round = useCallback(
-        (results: Record<string, boolean> = {}) => {
-            set_bonus_results(results);
+        (results: Record<string, boolean> | null = null) => {
+            if (results) {
+                set_bonus_results(results);
+            }
+
             setBonusPopupOpen(false);
             setBonusRoundReveal(true);
 
@@ -175,11 +178,16 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
         [set_bonus_results]
     );
 
+    const end_game_guard = useRef(false);
+
     // trigger end game logic when game finishes (as it could be triggered by either submit_guess or loading saved state on mount)
+    // TODO: this kinda sucks
     useEffect(() => {
-        if (!finished) {
+        if (end_game_guard.current || !finished) {
             return;
         }
+
+        end_game_guard.current = true;
         
         // game finished, trigger end game logic
         if (finished_correctly) {
@@ -209,7 +217,7 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
                 on_post_bonus_round();
             }, 2000);
         }
-    }, [finished, finished_correctly, bonus_rounds.length, on_post_bonus_round, reveal_answers]);
+    }, [finished, finished_correctly, bonus_rounds.length, on_post_bonus_round, reveal_answers, bonus_results]);
 
     const [theme_id] = useSettingValue("theme");
 
