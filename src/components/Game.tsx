@@ -16,6 +16,7 @@ import ReactConfetti from "react-confetti";
 import {useSettingValue} from "@/context/SettingsContext";
 import {THEMES} from "@/themes";
 import {BonusPopup} from "@/components/BonusPopup";
+import {useAudioPlayer} from "react-use-audio-player";
 
 export interface TodayData {
     date: string;
@@ -110,6 +111,26 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
 
     const window_size = useWindowSize();
 
+    const correct_sound = useAudioPlayer("/correct.mp3", {
+        autoplay: false,
+        loop: false,
+        initialVolume: 0.75
+    });
+
+    const incorrect_sound = useAudioPlayer("/incorrect.mp3", {
+        autoplay: false,
+        loop: false,
+        initialVolume: 0.5
+    });
+
+    const swoosh_sound = useAudioPlayer("/swoosh.mp3", {
+        autoplay: false,
+        loop: false,
+        initialVolume: 0.75
+    });
+    
+    const [sound_enabled] = useSettingValue("sound");
+
     const check_answer = useCallback(
         () => {
             if (!today_data) {
@@ -129,6 +150,16 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
             }, 1000);
 
             const {correct_positions: new_correct_positions} = submit_guess(current_order);
+            
+            if (sound_enabled) {
+                if (new_correct_positions.every((pos) => pos)) {
+                    correct_sound.seek(0);
+                    correct_sound.play();
+                } else {
+                    incorrect_sound.seek(0);
+                    incorrect_sound.play();
+                }
+            }
 
             if (hardcore) {
                 // show number correct in toast
@@ -151,7 +182,7 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
             }
         },
         // any point memoising?
-        [today_data, finished, submit_guess, current_order, hardcore]
+        [today_data, finished, submit_guess, current_order, sound_enabled, hardcore, correct_sound, incorrect_sound]
     );
 
     const bonus_rounds = useMemo(() => {
@@ -212,12 +243,17 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
             // reveal the order after a slightly longer delay
             setTimeout(() => {
                 reveal_answers();
+                
+                if (sound_enabled) {
+                    swoosh_sound.seek(0);
+                    swoosh_sound.play();
+                }
 
                 // skip bonus round if they didn't win!
                 on_post_bonus_round();
             }, 2000);
         }
-    }, [finished, finished_correctly, bonus_rounds.length, on_post_bonus_round, reveal_answers, bonus_results]);
+    }, [finished, finished_correctly, bonus_rounds.length, on_post_bonus_round, reveal_answers, bonus_results, sound_enabled, swoosh_sound]);
 
     const [theme_id] = useSettingValue("theme");
 
