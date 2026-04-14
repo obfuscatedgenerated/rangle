@@ -2,55 +2,55 @@
   "date": "2026-04-15",
   "number": 18,
   "difficulty": "Easy",
-  "neighbourhood": "medium",
+  "neighbourhood": "small",
   "puzzle": [
     {
-      "id": "Q703",
-      "name": "potassium",
-      "value": 766,
-      "metric": "Boiling Point",
-      "description": "chemical element with symbol K and atomic number 19",
+      "id": "Q189007",
+      "name": "Just Dance",
+      "value": 119,
+      "metric": "Tempo",
+      "description": "2008 song by Lady Gaga",
       "prefix": "",
-      "suffix": "°C",
-      "unit_hint": "in Celsius"
+      "suffix": " BPM",
+      "unit_hint": "beats per minute"
     },
     {
-      "id": "Q5505",
-      "name": "Lake Victoria",
-      "value": 83,
-      "metric": "Depth",
-      "description": "lake in east-central Africa",
+      "id": "Q19363670",
+      "name": "The Lion Guard",
+      "value": 74,
+      "metric": "Number of Episodes",
+      "description": "2015 American animated television series",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " episodes"
     },
     {
-      "id": "Q871",
-      "name": "arsenic",
-      "value": 1300,
-      "metric": "Year of Discovery",
-      "description": "chemical element with symbol As and atomic number 33",
+      "id": "Q130826",
+      "name": "Criminal",
+      "value": 108,
+      "metric": "Tempo",
+      "description": "2011 song by Britney Spears",
       "prefix": "",
-      "suffix": ""
+      "suffix": " BPM",
+      "unit_hint": "beats per minute"
     },
     {
-      "id": "Q880",
-      "name": "platinum",
-      "value": 1557,
-      "metric": "Year of Discovery",
-      "description": "chemical element with symbol Pt and atomic number 78",
+      "id": "Q174555",
+      "name": "Madagascar",
+      "value": 86,
+      "metric": "Duration / Runtime",
+      "description": "2005 animated film directed by Eric Darnell and Tom McGrath",
       "prefix": "",
-      "suffix": ""
+      "suffix": " minutes",
+      "unit_hint": "in minutes"
     },
     {
-      "id": "Q23883",
-      "name": "Dead Sea",
-      "value": 360,
-      "metric": "Depth",
-      "description": "lake with no outflow (sea) in Western Asia",
+      "id": "Q1236206",
+      "name": "The Powerpuff Girls",
+      "value": 78,
+      "metric": "Number of Episodes",
+      "description": "American animated television series from 1998–2005",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " episodes"
     }
   ]
 }
