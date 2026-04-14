@@ -5,6 +5,7 @@ import {useCallback, useEffect, useRef, useState} from "react";
 import type {PuzzleStat} from "@/components/Game";
 import {SearchSpotlights} from "@/components/SearchSpotlights";
 import {useAudioPlayer} from "react-use-audio-player";
+import {useSettingValue} from "@/context/SettingsContext";
 
 interface BonusPopupProps {
     open: boolean;
@@ -42,6 +43,8 @@ export const BonusPopup = ({open, on_finish, bonus_rounds}: BonusPopupProps) => 
         loop: false
     });
 
+    const [sound_enabled] = useSettingValue("sound");
+
     const handle_submit = useCallback(
         () => {
             const results: Record<string, boolean> = {};
@@ -70,8 +73,10 @@ export const BonusPopup = ({open, on_finish, bonus_rounds}: BonusPopupProps) => 
 
             setSuspenseful(true);
 
-            drumroll.seek(0);
-            drumroll.play();
+            if (sound_enabled) {
+                drumroll.seek(0);
+                drumroll.play();
+            }
 
             setTimeout(() => {
                 setSuspenseful(false);
