@@ -1,5 +1,5 @@
 ---
-latest: Sounds and icons!
+latest: Sounds, icons, cursors!!!
 ---
 
 # Changelog
@@ -8,7 +8,7 @@ latest: Sounds and icons!
 
 Added some more sound effects for gameplay. You can also now toggle sound effects on and off in the settings menu.
 
-Also added customised browser icons for each theme. Hope you like them :)
+Also added customised browser icons for each theme, and gave a couple themes some custom cursors. Hope you like them :)
 
 ## 2026-04-08
 
