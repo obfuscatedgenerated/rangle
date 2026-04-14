@@ -1,54 +1,56 @@
 {
   "date": "2026-04-15",
   "number": 18,
-  "difficulty": "Medium",
-  "neighbourhood": "large",
+  "difficulty": "Easy",
+  "neighbourhood": "medium",
   "puzzle": [
     {
-      "id": "Q13199",
-      "name": "Romansh",
-      "value": 40039,
-      "metric": "Native Speakers",
-      "description": "Romance language spoken in the Swiss canton of Grisons (Graubünden)",
+      "id": "Q703",
+      "name": "potassium",
+      "value": 766,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol K and atomic number 19",
       "prefix": "",
-      "suffix": " speakers"
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
     },
     {
-      "id": "Q900492",
-      "name": "Cà Mau Airport",
-      "value": 30698,
-      "metric": "Number of Passengers",
-      "description": "airport in Vietnam",
+      "id": "Q5505",
+      "name": "Lake Victoria",
+      "value": 83,
+      "metric": "Depth",
+      "description": "lake in east-central Africa",
       "prefix": "",
-      "suffix": " passengers",
-      "unit_hint": "annual"
+      "suffix": " m",
+      "unit_hint": "in metres"
     },
     {
-      "id": "Q153978",
-      "name": "University of Tübingen",
-      "value": 28238,
-      "metric": "Student Enrollment",
-      "description": "public research university in Tübingen, Germany",
+      "id": "Q871",
+      "name": "arsenic",
+      "value": 1300,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol As and atomic number 33",
       "prefix": "",
-      "suffix": " students"
+      "suffix": ""
     },
     {
-      "id": "Q33557",
-      "name": "Karelian",
-      "value": 35600,
-      "metric": "Native Speakers",
-      "description": "Finnic language",
+      "id": "Q880",
+      "name": "platinum",
+      "value": 1557,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Pt and atomic number 78",
       "prefix": "",
-      "suffix": " speakers"
+      "suffix": ""
     },
     {
-      "id": "Q7894375",
-      "name": "Universidade Federal de Goiás",
-      "value": 25846,
-      "metric": "Student Enrollment",
-      "description": "public university in Goiânia, Goiás, Brazil",
+      "id": "Q23883",
+      "name": "Dead Sea",
+      "value": 360,
+      "metric": "Depth",
+      "description": "lake with no outflow (sea) in Western Asia",
       "prefix": "",
-      "suffix": " students"
+      "suffix": " m",
+      "unit_hint": "in metres"
     }
   ]
 }
