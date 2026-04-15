@@ -1,7 +1,9 @@
 "use client";
 
-import {createContext, useCallback, useContext, useEffect, useState} from "react";
+import {createContext, useCallback, useContext, useEffect, useMemo, useState} from "react";
 import {useRouter, useSearchParams} from "next/navigation";
+
+const AUTH_URL = "https://auth.ollieg.codes";
 
 interface LoginDetails {
     id: string;
@@ -13,11 +15,15 @@ interface LoginDetails {
 interface AuthContextType {
     user_info: LoginDetails | null;
     auth_origin: string | null;
+    login_url?: string;
+    logout?: () => void;
 }
 
 const AuthContext = createContext<AuthContextType>({
     user_info: null,
-    auth_origin: null
+    auth_origin: null,
+    login_url: undefined,
+    logout: undefined,
 });
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
@@ -29,7 +35,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
     const fetch_user_info = useCallback(
         () => {
-            fetch("https://auth.ollieg.codes/me", {
+            fetch(`${AUTH_URL}/me`, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("sso_token")}`
                 }
@@ -79,8 +85,26 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         }
     }, [search_params, fetch_user_info, router]);
 
+    const login_url = useMemo(() => {
+        if (!auth_origin) {
+            return undefined;
+        }
+        return `${AUTH_URL}/login?from=${auth_origin}`;
+    }, [auth_origin]);
+
+    const logout = useCallback(
+        () => {
+            localStorage.removeItem("sso_token");
+            setUserInfo(null);
+            if (auth_origin) {
+                window.location.href = `${AUTH_URL}/logout?from=${auth_origin}`;
+            }
+        },
+        [auth_origin]
+    );
+
     return (
-        <AuthContext.Provider value={{ user_info, auth_origin }}>
+        <AuthContext.Provider value={{ user_info, auth_origin, login_url, logout }}>
             {children}
         </AuthContext.Provider>
     );

@@ -6,18 +6,17 @@ import {LoadingSpinner} from "@/components/LoadingSpinner";
 import {useAuth} from "@/context/AuthContext";
 
 export const LoginButton = () => {
-    const {user_info, auth_origin} = useAuth();
+    const {user_info, auth_origin, login_url, logout} = useAuth();
 
     return (
         <>
             {user_info ?
                 // TODO: this will be a proper menu later. for now just logout
-                // TODO: need to clear token locally too!
-                <a href={`https://auth.ollieg.codes/logout?from=${auth_origin}`} title="Logout" className="cursor-pointer aspect-square w-8 h-8">
+                <button onClick={logout} title="Logout" className="cursor-pointer aspect-square w-8 h-8">
                     <img src={user_info?.avatar} className="w-full h-full rounded-full" title={user_info.username} draggable="false" alt="User Avatar" />
-                </a>
+                </button>
                 : auth_origin ? (
-                    <a href={`https://auth.ollieg.codes/login?from=${auth_origin}`} className="cursor-pointer aspect-square w-8 h-8 flex items-center justify-center" title="Login">
+                    <a href={login_url} className="cursor-pointer aspect-square w-8 h-8 flex items-center justify-center" title="Login">
                         <CircleUserRound />
                     </a>
                 )
