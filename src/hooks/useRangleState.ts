@@ -57,10 +57,7 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
             .then((res) => {
                 if (!res.ok) {
                     const err_msg = res.status === 404 ? "NO_PUZZLE" : res.statusText;
-                    console.error("Error fetching today's data:", err_msg);
-                    if (on_load_error) {
-                        on_load_error(new Error(err_msg));
-                    }
+                    throw new Error(err_msg);
                 }
                 return res.json();
             })
@@ -119,7 +116,7 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
                     on_loaded();
                 }
             }).catch((err) => {
-                console.error("Error fetching today's data:", err);
+                console.error("Error loading today's data:", err);
                 if (on_load_error) {
                     on_load_error(err);
                 }
