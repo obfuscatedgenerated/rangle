@@ -2,7 +2,7 @@
 
 import {InfoPopup} from "@/components/InfoPopup";
 
-import {CalendarDays, ChartNoAxesCombined, Info, Settings} from "lucide-react";
+import {CalendarDays, ChartNoAxesCombined, Cloud, Info, Settings} from "lucide-react";
 
 import {ComponentType, useEffect, useState} from "react";
 import Link from "next/link";
@@ -10,14 +10,14 @@ import {StatsPopup} from "@/components/StatsPopup";
 import {SettingsPopup} from "@/components/SettingsPopup";
 import {LoginButton} from "@/components/LoginButton";
 
-const HeaderIconButton = ({ Icon, title, on_click }: { Icon: ComponentType, title: string, on_click: () => void }) => (
-    <button onClick={on_click} className="cursor-pointer p-3 aspect-square" title={title}>
+const HeaderIconButton = ({ Icon, title, on_click, disabled = false }: { Icon: ComponentType, title: string, on_click: () => void, disabled?: boolean }) => (
+    <button onClick={on_click} className="cursor-pointer p-3 aspect-square disabled:text-gray-500 disabled:cursor-auto" title={title} disabled={disabled}>
         <Icon />
     </button>
 );
 
-const HeaderIconLink = ({ Icon, title, href }: { Icon: ComponentType, title: string, href: string }) => (
-    <Link href={href} className="cursor-pointer p-3 aspect-square" title={title}>
+const HeaderIconLink = ({ Icon, title, href, disabled = false }: { Icon: ComponentType, title: string, href: string, disabled?: boolean }) => (
+    <Link href={disabled ? href : ""} className={`p-3 aspect-square ${disabled ? "text-gray-500" : "cursor-pointer"}`} title={title} aria-disabled={disabled}>
         <Icon />
     </Link>
 );
@@ -41,12 +41,12 @@ export const Header = () => {
             <header className="w-full max-w-3xl mx-auto p-4 flex items-center justify-between">
                 <HeaderIconButton Icon={Info} title="Info" on_click={() => setShowInfoPopup(true)} />
                 <HeaderIconButton Icon={ChartNoAxesCombined} title="Stats" on_click={() => setShowStatsPopup(true)} />
+                <HeaderIconLink Icon={CalendarDays} title="Archive" href="/archive" />
 
                 <h1 className="font-title text-3xl sm:text-4xl mb-1 mx-6 font-bold">Rangle</h1>
 
-                <HeaderIconLink Icon={CalendarDays} title="Archive" href="/archive" />
                 <HeaderIconButton Icon={Settings} title="Settings" on_click={() => setShowSettingsPopup(true)} />
-
+                <HeaderIconButton Icon={Cloud} title="Cloud" on_click={() => alert("Cloud sync is not implemented yet")} disabled />
                 <LoginButton />
             </header>
 

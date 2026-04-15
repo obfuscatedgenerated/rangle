@@ -60,7 +60,7 @@
     cursor: url("/themed_cursor/fools.cur"), auto;
 
 
-    & :global(.cursor-pointer), a {
+    & :global(.cursor-pointer):not([disabled]), a {
         cursor: url("/themed_cursor/fools_pointer.cur"), pointer !important;
     }
 }

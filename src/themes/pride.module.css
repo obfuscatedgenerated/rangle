@@ -103,8 +103,7 @@
 
     cursor: url("/themed_cursor/pride.cur"), auto;
 
-
-    & :global(.cursor-pointer), a {
+    & :global(.cursor-pointer):not([disabled]), a {
         cursor: url("/themed_cursor/pride_pointer.cur"), pointer !important;
     }
 }
