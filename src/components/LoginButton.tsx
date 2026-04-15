@@ -6,7 +6,7 @@ import {LoadingSpinner} from "@/components/LoadingSpinner";
 import {useAuth} from "@/context/AuthContext";
 
 export const LoginButton = () => {
-    const {user_info, login_url, logout} = useAuth();
+    const {user_info, auth_origin, login_url, logout} = useAuth();
 
     return (
         <>
@@ -15,7 +15,7 @@ export const LoginButton = () => {
                 <button onClick={logout} title="Logout" className="cursor-pointer aspect-square w-8 h-8">
                     <img src={user_info?.avatar} className="w-full h-full rounded-full" title={user_info.username} draggable="false" alt="User Avatar" />
                 </button>
-                : user_info ? (
+                : auth_origin ? (
                     <a href={login_url} className="cursor-pointer aspect-square w-8 h-8 flex items-center justify-center" title="Login">
                         <CircleUserRound />
                     </a>
