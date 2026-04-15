@@ -1,6 +1,6 @@
 {
-  "time": "2026-04-13T13:32:08.080Z",
-  "count": 17,
+  "time": "2026-04-15T12:36:44.576Z",
+  "count": 19,
   "days": {
     "2026-03-29": {
       "number": 1,
@@ -84,6 +84,16 @@
     },
     "2026-04-14": {
       "number": 17,
+      "difficulty": "Easy",
+      "neighbourhood": "small"
+    },
+    "2026-04-15": {
+      "number": 18,
+      "difficulty": "Easy",
+      "neighbourhood": "small"
+    },
+    "2026-04-16": {
+      "number": 19,
       "difficulty": "Easy",
       "neighbourhood": "small"
     }
