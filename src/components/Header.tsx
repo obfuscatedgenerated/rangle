@@ -17,7 +17,7 @@ const HeaderIconButton = ({ Icon, title, on_click, disabled = false }: { Icon: C
 );
 
 const HeaderIconLink = ({ Icon, title, href, disabled = false }: { Icon: ComponentType, title: string, href: string, disabled?: boolean }) => (
-    <Link href={disabled ? href : ""} className={`p-3 aspect-square ${disabled ? "text-gray-500" : "cursor-pointer"}`} title={title} aria-disabled={disabled}>
+    <Link href={!disabled ? href : ""} className={`p-3 aspect-square ${disabled ? "text-gray-500 cursor-auto" : ""}`} title={title} aria-disabled={disabled}>
         <Icon />
     </Link>
 );
