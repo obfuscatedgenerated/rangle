@@ -15,6 +15,7 @@ export interface SaveStateDay {
     current_order_ids: string[];
     attempts: StatPositionFlags[];
     hardcore?: boolean;
+    bonus_results?: Record<string, boolean>;
 }
 
 export type SaveState = Record<string, SaveStateDay>;
@@ -34,6 +35,8 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
 
     const [default_hardcore] = useSettingValue("default_hardcore");
     const [hardcore, setHardcore] = useState(default_hardcore);
+
+    const [bonus_results, setBonusResults] = useState<Record<string, boolean>>({});
     
     const {update_score} = useRangleScores();
 
@@ -96,6 +99,8 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
                         setCorrectPositions(saved_correct_positions);
 
                         setAttempts(today_save.attempts);
+
+                        setBonusResults(today_save.bonus_results || {});
 
                         // evaluate if finished based on saved state
                         const is_correct = saved_correct_positions.every((pos) => pos);
@@ -212,6 +217,30 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
         },
         [answers]
     );
+
+    const set_bonus_results = useCallback(
+        (results: Record<string, boolean>) => {
+            if (!today_data) {
+                throw new Error("Today's data not loaded yet");
+            }
+
+            // save bonus round results to local storage, expecting an existing save for today
+            const existing_saves = localStorage.getItem("rangle_state_v1");
+            const parsed_saves = existing_saves ? JSON.parse(existing_saves) : {};
+            const today_save = parsed_saves?.[today_data.date];
+            if (!today_save) {
+                alert("No existing save found for today when trying to set bonus results");
+                return;
+            }
+
+            today_save.bonus_results = results;
+            parsed_saves[today_data.date] = today_save;
+            localStorage.setItem("rangle_state_v1", JSON.stringify(parsed_saves));
+
+            setBonusResults(results);
+        },
+        [today_data]
+    );
     
     return {
         today_data,
@@ -225,5 +254,7 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
         reveal_answers,
         hardcore,
         setHardcore,
+        bonus_results,
+        set_bonus_results
     };
 }

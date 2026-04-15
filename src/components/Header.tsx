@@ -33,7 +33,6 @@ export const Header = () => {
             return;
         }
 
-        localStorage.setItem("info_popup_shown", "true");
         setShowInfoPopup(true);
     }, []);
 
@@ -51,7 +50,10 @@ export const Header = () => {
                 <LoginButton />
             </header>
 
-            <InfoPopup open={show_info_popup} on_close={() => setShowInfoPopup(false)} />
+            <InfoPopup open={show_info_popup} on_close={() => {
+                setShowInfoPopup(false);
+                localStorage.setItem("info_popup_shown", "true");
+            }} />
             <StatsPopup open={show_stats_popup} on_close={() => setShowStatsPopup(false)} />
             <SettingsPopup open={show_settings_popup} on_close={() => setShowSettingsPopup(false)} />
         </>

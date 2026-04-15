@@ -10,11 +10,13 @@ import {useWindowSize} from "@/hooks/useWindowSize";
 
 import {epoch_utc, time_zone} from "../../time";
 
-import {useState, useEffect, useCallback, useMemo} from "react";
+import {useState, useEffect, useCallback, useMemo, useRef} from "react";
 
 import ReactConfetti from "react-confetti";
 import {useSettingValue} from "@/context/SettingsContext";
 import {THEMES} from "@/themes";
+import {BonusPopup} from "@/components/BonusPopup";
+import {useAudioPlayer} from "react-use-audio-player";
 
 export interface TodayData {
     date: string;
@@ -33,6 +35,7 @@ export interface PuzzleStat {
     prefix: string;
     suffix: string;
     unit_hint: string;
+    bonus_round?: boolean;
 }
 
 export type StatPositionFlags = [boolean, boolean, boolean, boolean, boolean];
@@ -85,7 +88,9 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
         submit_guess,
         set_current_order,
         hardcore,
-        setHardcore
+        setHardcore,
+        bonus_results,
+        set_bonus_results
     } = useRangleState({
         on_loaded,
         on_load_error,
@@ -95,12 +100,36 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
     const [just_attempted, setJustAttempted] = useState(false);
 
     const [reveal_values, setRevealValues] = useState(false);
+
+    const [bonus_popup_open, setBonusPopupOpen] = useState(false);
+    const [bonus_round_reveal, setBonusRoundReveal] = useState(false);
+
     const [share_open, setShareOpen] = useState(false);
 
     const [toast_message, setToastMessage] = useState("");
     const [toast_visible, setToastVisible] = useState(false);
 
     const window_size = useWindowSize();
+
+    const correct_sound = useAudioPlayer("/correct.mp3", {
+        autoplay: false,
+        loop: false,
+        initialVolume: 0.75
+    });
+
+    const incorrect_sound = useAudioPlayer("/incorrect.mp3", {
+        autoplay: false,
+        loop: false,
+        initialVolume: 0.5
+    });
+
+    const swoosh_sound = useAudioPlayer("/swoosh.mp3", {
+        autoplay: false,
+        loop: false,
+        initialVolume: 0.75
+    });
+    
+    const [sound_enabled] = useSettingValue("sound");
 
     const check_answer = useCallback(
         () => {
@@ -121,6 +150,16 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
             }, 1000);
 
             const {correct_positions: new_correct_positions} = submit_guess(current_order);
+            
+            if (sound_enabled) {
+                if (new_correct_positions.every((pos) => pos)) {
+                    correct_sound.seek(0);
+                    correct_sound.play();
+                } else {
+                    incorrect_sound.seek(0);
+                    incorrect_sound.play();
+                }
+            }
 
             if (hardcore) {
                 // show number correct in toast
@@ -143,24 +182,57 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
             }
         },
         // any point memoising?
-        [today_data, finished, submit_guess, current_order, hardcore]
+        [today_data, finished, submit_guess, current_order, sound_enabled, hardcore, correct_sound, incorrect_sound]
     );
 
+    const bonus_rounds = useMemo(() => {
+        if (!today_data) {
+            return [];
+        }
+
+        return today_data.puzzle.filter((stat) => stat.bonus_round);
+    }, [today_data]);
+
+    const on_post_bonus_round = useCallback(
+        (results: Record<string, boolean> | null = null) => {
+            if (results) {
+                set_bonus_results(results);
+            }
+
+            setBonusPopupOpen(false);
+            setBonusRoundReveal(true);
+
+            setTimeout(() => {
+                setShareOpen(true);
+            }, 1500);
+        },
+        [set_bonus_results]
+    );
+
+    const end_game_guard = useRef(false);
+
     // trigger end game logic when game finishes (as it could be triggered by either submit_guess or loading saved state on mount)
+    // TODO: this kinda sucks
     useEffect(() => {
-        if (!finished) {
+        if (end_game_guard.current || !finished) {
             return;
         }
+
+        end_game_guard.current = true;
         
         // game finished, trigger end game logic
         if (finished_correctly) {
             // if everything is correct, fire the finish logic
             setRevealValues(true);
 
-            // open share popup after a delay
-            setTimeout(() => {
-                setShareOpen(true);
-            }, 1500);
+            if (bonus_rounds.length > 0 && Object.keys(bonus_results).length === 0) {
+                setTimeout(() => {
+                    setBonusPopupOpen(true);
+                }, 1000);
+            } else {
+                // skip bonus round if there arent any bonus rounds, or already been played from saved state
+                on_post_bonus_round();
+            }
         } else {
             // if reached attempt limit, reveal the answer
             // reveal the values after a delay
@@ -171,14 +243,17 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
             // reveal the order after a slightly longer delay
             setTimeout(() => {
                 reveal_answers();
-            }, 2000);
+                
+                if (sound_enabled) {
+                    swoosh_sound.seek(0);
+                    swoosh_sound.play();
+                }
 
-            // open share popup after a longer delay
-            setTimeout(() => {
-                setShareOpen(true);
-            }, 3000);
+                // skip bonus round if they didn't win!
+                on_post_bonus_round();
+            }, 2000);
         }
-    }, [finished, finished_correctly, reveal_answers]);
+    }, [finished, finished_correctly, bonus_rounds.length, on_post_bonus_round, reveal_answers, bonus_results, sound_enabled, swoosh_sound]);
 
     const [theme_id] = useSettingValue("theme");
 
@@ -200,7 +275,17 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
 
     return (
         <>
-            <SharePopup hardcore={hardcore} archive_date={archive_date} open={share_open} on_close={() => setShareOpen(false)} attempts={attempts} today_data={today_data} />
+            <SharePopup
+                archive_date={archive_date}
+                open={share_open}
+                on_close={() => setShareOpen(false)}
+                attempts={attempts}
+                hardcore={hardcore}
+                bonus_results={bonus_results}
+                today_data={today_data}
+            />
+
+            <BonusPopup open={bonus_popup_open} on_finish={on_post_bonus_round} bonus_rounds={bonus_rounds} />
 
             <div className="flex mb-4 sm:mb-6 items-center justify-center gap-8">
                 <p className="text-sm sm:text-lg text-center text-pretty">#{today_data.number} | {today_data.difficulty} • Attempt: {finished ? attempts.length : attempts.length + 1}/5</p>
@@ -216,6 +301,7 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
                         finished={finished}
                         reveal_values={reveal_values}
                         incorrect_className={!hardcore && just_attempted ? "bg-incorrect border-incorrect-border animate-shake-horizontal" : undefined}
+                        bonus_round_reveal={bonus_round_reveal}
                     />
 
                     <div className="flex flex-col items-center ml-4 sm:ml-6 opacity-33">

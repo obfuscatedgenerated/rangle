@@ -15,6 +15,7 @@ interface SharePopupProps {
     today_data: TodayData;
     archive_date?: string;
     hardcore?: boolean;
+    bonus_results: Record<string, boolean>;
 }
 
 const is_mobile = () => {
@@ -25,7 +26,7 @@ const is_mobile = () => {
     return /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
-export const SharePopup = ({open, on_close, attempts, today_data, archive_date, hardcore}: SharePopupProps) => {
+export const SharePopup = ({open, on_close, attempts, today_data, archive_date, hardcore, bonus_results}: SharePopupProps) => {
     const dialog_ref = useRef<HTMLDialogElement>(null);
     const [share_button_text, setShareButtonText] = useState("Share Results");
 
@@ -68,6 +69,16 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
         []
     );
     
+    const total_bonus_rounds = useMemo(
+        () => Object.keys(bonus_results).length,
+        [bonus_results]
+    );
+
+    const successful_bonus_rounds = useMemo(
+        () => Object.values(bonus_results).filter((result) => result).length,
+        [bonus_results]
+    );
+    
     const share_url = useMemo(
         () => {
             const base_url = window.location.origin;
@@ -79,17 +90,40 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
         },
         [archive_date]
     );
+    
+    const share_text = useMemo(
+        () => {
+            if (!today_data) {
+                return "";
+            }
+            
+            let share_text = `Rangle #${today_data.number}${archive_date ? ` (archived from ${archive_date})` : ""} | ${today_data.difficulty} • ${got_it_right ? attempts.length : "X"}/5`;
+
+            if (hardcore) {
+                share_text += "\n💪 HARDCORE mode!"
+            }
+            
+            share_text += "\n\n";
+
+            share_text += attempts.map(
+                (attempt) =>
+                    attempt.map(
+                        (pos) => pos ? theme_share_emoji.correct : theme_share_emoji.incorrect).join(" ")
+            ).join("\n");
+            
+            if (total_bonus_rounds > 0) {
+                share_text += `\n\nBonus round${total_bonus_rounds === 1 ? "" : "s"}: ${successful_bonus_rounds} ${theme_share_emoji.correct} out of ${total_bonus_rounds}`;
+            }
+
+            share_text += `\n\n${share_url}`;
+            
+            return share_text;
+        },
+        [today_data, archive_date, got_it_right, attempts, hardcore, total_bonus_rounds, share_url, theme_share_emoji.correct, theme_share_emoji.incorrect, successful_bonus_rounds]
+    );
 
     const on_share = useCallback(
         () => {
-            if (!today_data) {
-                return;
-            }
-
-            const share_text = `Rangle #${today_data.number}${archive_date ? ` (archived from ${archive_date})` : ""} | ${today_data.difficulty} • ${got_it_right ? attempts.length : "X"}/5\n${hardcore ? "💪 HARDCORE mode!\n" : ""}\n` +
-                attempts.map((attempt) => attempt.map((pos) => pos ? theme_share_emoji.correct : theme_share_emoji.incorrect).join(" ")).join("\n") +
-                `\n\n${share_url}`;
-
             // if on mobile, open share dialog if available, otherwise fallback to copying to clipboard
             // even if share dialog available on desktop, it usually sucks so copy it
             if (is_mobile() && navigator.share) {
@@ -109,7 +143,7 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
                 handle_copy(share_text);
             }
         },
-        [today_data, archive_date, got_it_right, attempts, hardcore, share_url, theme_share_emoji.correct, theme_share_emoji.incorrect, handle_copy]
+        [today_data.number, share_text, handle_copy]
     );
 
     // TODO: base dialog component
@@ -135,6 +169,12 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
                     in {attempts.length} attempt{attempts.length === 1 ? "" : "s"}.</p>
             ) : (
                 <p className="mt-4 text-incorrect-variant font-bold text-pretty text-center">Better luck next time!</p>
+            )}
+
+            {total_bonus_rounds > 0 && (
+                <p className="mt-2 text-center">
+                    You got {successful_bonus_rounds} out of {total_bonus_rounds} bonus round{total_bonus_rounds === 1 ? "" : "s"} correct!
+                </p>
             )}
 
             <PuzzleCountdown />

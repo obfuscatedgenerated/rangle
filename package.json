@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -H 127.0.0.1",
-    "build": "next build",
+    "changelog": "node bin/generate_changelog.mjs",
+    "changelog:watch": "npm run changelog && chokidar \"CHANGELOG.md\" -c \"npm run changelog\"",
+    "dev": "concurrently -n \"NEXT,CHANGELOG\" -c \"magenta,cyan\" \"next dev -H 127.0.0.1\" \"npm run changelog:watch\"",
+    "build": "npm run changelog && next build",
     "start": "next start",
     "lint": "eslint"
   },
@@ -19,15 +21,21 @@
     "react": "19.2.4",
     "react-confetti": "^6.4.0",
     "react-countdown": "^2.3.6",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "react-use-audio-player": "^4.0.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^9.2.1",
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
+    "gray-matter": "^4.0.3",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

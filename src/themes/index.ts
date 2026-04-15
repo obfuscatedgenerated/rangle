@@ -11,6 +11,7 @@ export interface ThemeDefinition {
         correct: string;
         incorrect: string;
     };
+    icon?: string;
 }
 
 import fools from "./fools.module.css";
@@ -34,7 +35,8 @@ export const THEMES: {default: Required<Pick<ThemeDefinition, "share_emoji">> & 
         share_emoji: {
             correct: "🏳️‍🌈",
             incorrect: "⬛"
-        }
+        },
+        icon: "./themed_icon/pride.svg"
     },
 
     fools: {
@@ -53,7 +55,8 @@ export const THEMES: {default: Required<Pick<ThemeDefinition, "share_emoji">> & 
         share_emoji: {
             correct: "🤡",
             incorrect: "⬛"
-        }
+        },
+        icon: "./themed_icon/fools.svg"
     },
 
     gold: {
@@ -65,8 +68,11 @@ export const THEMES: {default: Required<Pick<ThemeDefinition, "share_emoji">> & 
         share_emoji: {
             correct: "🥇",
             incorrect: "⬛"
-        }
+        },
+        icon: "./themed_icon/gold.svg"
     },
 } as const;
 
 export type ThemeID = keyof typeof THEMES;
+
+// TODO: themed sound effects

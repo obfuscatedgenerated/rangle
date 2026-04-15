@@ -56,4 +56,11 @@
 
     --font-main: "Comic Sans MS", cursive, sans-serif;
     --font-title: "Comic Sans MS", cursive, sans-serif;
+
+    cursor: url("/themed_cursor/fools.cur"), auto;
+
+
+    & :global(.cursor-pointer), a {
+        cursor: url("/themed_cursor/fools_pointer.cur"), pointer !important;
+    }
 }

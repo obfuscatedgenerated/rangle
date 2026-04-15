@@ -6,6 +6,7 @@ import type {ThemeID} from "@/themes";
 const DEFAULT_SETTINGS = {
     default_hardcore: false as boolean,
     theme: "default" as ThemeID,
+    sound: true as boolean,
 } as const;
 
 export type Settings = typeof DEFAULT_SETTINGS;
