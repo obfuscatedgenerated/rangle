@@ -40,7 +40,8 @@
       "metric": "Number of Seasons",
       "description": "2007 American teen drama television series",
       "prefix": "",
-      "suffix": " seasons"
+      "suffix": " seasons",
+      "bonus_round": true
     },
     {
       "id": "Q929276",
