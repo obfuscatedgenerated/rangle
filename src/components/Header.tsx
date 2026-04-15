@@ -38,16 +38,20 @@ export const Header = () => {
 
     return (
         <>
-            <header className="w-full max-w-3xl mx-auto p-4 flex items-center justify-between">
-                <HeaderIconButton Icon={Info} title="Info" on_click={() => setShowInfoPopup(true)} />
-                <HeaderIconButton Icon={ChartNoAxesCombined} title="Stats" on_click={() => setShowStatsPopup(true)} />
-                <HeaderIconLink Icon={CalendarDays} title="Archive" href="/archive" />
+            <header className="w-full flex items-center justify-center p-3 sm:p-4">
+                <div className="sm:mr-32"></div>
 
-                <h1 className="font-title text-3xl sm:text-4xl mb-1 mx-6 font-bold">Rangle</h1>
+                <div className="w-full max-w-3xl flex items-center justify-between">
+                    <HeaderIconButton Icon={Info} title="Info" on_click={() => setShowInfoPopup(true)} />
+                    <HeaderIconButton Icon={ChartNoAxesCombined} title="Stats" on_click={() => setShowStatsPopup(true)} />
 
-                <HeaderIconButton Icon={Settings} title="Settings" on_click={() => setShowSettingsPopup(true)} />
-                <HeaderIconButton Icon={Cloud} title="Cloud" on_click={() => alert("Cloud sync is not implemented yet")} disabled />
-                <LoginButton />
+                    <h1 className="font-title text-3xl sm:text-4xl mb-1 mx-4 sm:mx-6 font-bold">Rangle</h1>
+
+                    <HeaderIconLink Icon={CalendarDays} title="Archive" href="/archive" />
+                    <HeaderIconButton Icon={Settings} title="Settings" on_click={() => setShowSettingsPopup(true)} />
+                </div>
+
+                <LoginButton className="sm:ml-32" />
             </header>
 
             <InfoPopup open={show_info_popup} on_close={() => {
