@@ -11,7 +11,8 @@
       "metric": "Number of Pages",
       "description": "2003 novel by Dan Brown",
       "prefix": "",
-      "suffix": " pages"
+      "suffix": " pages",
+      "bonus_round": true
     },
     {
       "id": "Q15288",
@@ -49,7 +50,8 @@
       "metric": "Number of Pages",
       "description": "1945 novella by George Orwell",
       "prefix": "",
-      "suffix": " pages"
+      "suffix": " pages",
+      "bonus_round": true
     }
   ]
 }
