@@ -2,52 +2,54 @@
   "date": "2026-04-17",
   "number": 20,
   "difficulty": "Medium",
-  "neighbourhood": "large",
+  "neighbourhood": "medium",
   "puzzle": [
     {
-      "id": "Q13164",
-      "name": "Lomonosov Moscow State University",
-      "value": 38150,
-      "metric": "Student Enrollment",
-      "description": "public research university in Moscow, Russia",
+      "id": "Q81689",
+      "name": "The Da Vinci Code",
+      "value": 519,
+      "metric": "Number of Pages",
+      "description": "2003 novel by Dan Brown",
       "prefix": "",
-      "suffix": " students"
+      "suffix": " pages"
     },
     {
-      "id": "Q33569",
-      "name": "Hawaiian",
-      "value": 27200,
-      "metric": "Native Speakers",
-      "description": "Polynesian language",
+      "id": "Q15288",
+      "name": "Lake Ladoga",
+      "value": 230,
+      "metric": "Depth",
+      "description": "freshwater lake in Russia and largest lake entirely in Europe",
       "prefix": "",
-      "suffix": " speakers"
+      "suffix": " m",
+      "unit_hint": "in metres"
     },
     {
-      "id": "Q26319",
-      "name": "Università degli Studi Niccolò Cusano",
-      "value": 32567,
-      "metric": "Student Enrollment",
-      "description": "university in Rome, Italy",
+      "id": "Q1053",
+      "name": "molybdenum",
+      "value": 1778,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Mo and atomic number 42",
       "prefix": "",
-      "suffix": " students"
+      "suffix": ""
     },
     {
-      "id": "Q36202",
-      "name": "Ladin",
-      "value": 30000,
-      "metric": "Native Speakers",
-      "description": "Rhaeto-Romance language of northeast Italy",
+      "id": "Q166162",
+      "name": "Lake Onega",
+      "value": 127,
+      "metric": "Depth",
+      "description": "freshwater lake in Russia, second largest in Europe",
       "prefix": "",
-      "suffix": " speakers"
+      "suffix": " m",
+      "unit_hint": "in metres"
     },
     {
-      "id": "Q10285",
-      "name": "Colosseum",
-      "value": 65000,
-      "metric": "Maximum Capacity",
-      "description": "ancient Roman amphitheatre, a landmark of Rome, Italy",
+      "id": "Q1396889",
+      "name": "Animal Farm",
+      "value": 92,
+      "metric": "Number of Pages",
+      "description": "1945 novella by George Orwell",
       "prefix": "",
-      "suffix": " people"
+      "suffix": " pages"
     }
   ]
 }
