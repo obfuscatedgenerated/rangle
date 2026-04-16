@@ -1,0 +1,53 @@
+{
+  "date": "2026-04-17",
+  "number": 20,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q13164",
+      "name": "Lomonosov Moscow State University",
+      "value": 38150,
+      "metric": "Student Enrollment",
+      "description": "public research university in Moscow, Russia",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q33569",
+      "name": "Hawaiian",
+      "value": 27200,
+      "metric": "Native Speakers",
+      "description": "Polynesian language",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q26319",
+      "name": "Università degli Studi Niccolò Cusano",
+      "value": 32567,
+      "metric": "Student Enrollment",
+      "description": "university in Rome, Italy",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q36202",
+      "name": "Ladin",
+      "value": 30000,
+      "metric": "Native Speakers",
+      "description": "Rhaeto-Romance language of northeast Italy",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q10285",
+      "name": "Colosseum",
+      "value": 65000,
+      "metric": "Maximum Capacity",
+      "description": "ancient Roman amphitheatre, a landmark of Rome, Italy",
+      "prefix": "",
+      "suffix": " people"
+    }
+  ]
+}
