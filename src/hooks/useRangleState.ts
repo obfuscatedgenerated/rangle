@@ -14,6 +14,7 @@ interface RangleStateHookProps {
 export interface SaveStateDay {
     current_order_ids: string[];
     attempts: StatPositionFlags[];
+    previous_guess_ids?: string[][]; // TODO: remove attempts field and compute on demand
     hardcore?: boolean;
     bonus_results?: Record<string, boolean>;
 }
@@ -29,6 +30,9 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
     const [correct_positions, setCorrectPositions] = useState<StatPositionFlags>([false, false, false, false, false]);
 
     const [attempts, setAttempts] = useState<StatPositionFlags[]>([]);
+    const [previous_guesses, setPreviousGuesses] = useState<PuzzleStat[][]>([]);
+    // TODO: make attempts a computed value from previous_guesses and correct_positions
+    // TODO: store only ids, not full stats, then compute out
 
     const [finished, setFinished] = useState(false);
     const [finished_correctly, setFinishedCorrectly] = useState(false);
@@ -85,6 +89,9 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
                         const saved_order = today_save.current_order_ids.map((id: string) => id_to_stat[id]);
                         setCurrentOrder(saved_order);
 
+                        const saved_previous_guesses = (today_save.previous_guess_ids || []).map((guess_ids: string[]) => guess_ids.map((id: string) => id_to_stat[id]));
+                        setPreviousGuesses(saved_previous_guesses);
+
                         // evaluate correct positions for saved order
                         const answers = [...data.puzzle].sort((a, b) => a.value - b.value);
                         const saved_correct_positions: StatPositionFlags = [false, false, false, false, false];
@@ -96,8 +103,6 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
                         setCorrectPositions(saved_correct_positions);
 
                         setAttempts(today_save.attempts);
-
-                        setBonusResults(today_save.bonus_results || {});
 
                         // evaluate if finished based on saved state
                         const is_correct = saved_correct_positions.every((pos) => pos);
@@ -146,11 +151,13 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
 
             // add attempt to history
             setAttempts((prev) => [...prev, new_correct_positions]);
+            setPreviousGuesses((prev) => [...prev, guess]);
 
             // save state to local storage
             const save_state: SaveStateDay = {
                 current_order_ids: guess.map((stat) => stat.id),
                 attempts: [...attempts, new_correct_positions],
+                previous_guess_ids: [...previous_guesses, guess].map((guess) => guess.map((stat) => stat.id)),
                 hardcore
             };
 
@@ -205,7 +212,7 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
                 }
             }
         },
-        [today_data, attempts, hardcore, answers, update_score]
+        [today_data, attempts, previous_guesses, hardcore, answers, update_score]
     );
 
     const reveal_answers = useCallback(
@@ -252,6 +259,7 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
         hardcore,
         setHardcore,
         bonus_results,
-        set_bonus_results
+        set_bonus_results,
+        previous_guesses
     };
 }

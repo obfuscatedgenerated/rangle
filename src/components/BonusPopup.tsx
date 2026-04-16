@@ -102,7 +102,7 @@ export const BonusPopup = ({open, on_finish, bonus_rounds}: BonusPopupProps) => 
                 }, 3000);
             }, 3000);
         },
-        [bonus_rounds, drumroll, input_states, on_finish]
+        [bonus_rounds, drumroll, input_states, on_finish, sound_enabled]
     );
 
     return (

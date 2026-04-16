@@ -90,7 +90,8 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
         hardcore,
         setHardcore,
         bonus_results,
-        set_bonus_results
+        set_bonus_results,
+        previous_guesses
     } = useRangleState({
         on_loaded,
         on_load_error,
@@ -141,7 +142,14 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
                 return;
             }
 
-            // TODO: block duplicate guesses (need to add to rangle state)
+            if (previous_guesses.some((guess) => guess.every((value, index) => value === current_order[index]))) {
+                setToastMessage("You've already tried that order!");
+                setToastVisible(true);
+                setTimeout(() => {
+                    setToastVisible(false);
+                }, 2000);
+                return;
+            }
 
             // trigger just attempted state for styling purposes
             setJustAttempted(true);
@@ -182,7 +190,7 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
             }
         },
         // any point memoising?
-        [today_data, finished, submit_guess, current_order, sound_enabled, hardcore, correct_sound, incorrect_sound]
+        [today_data, finished, previous_guesses, submit_guess, current_order, sound_enabled, hardcore, correct_sound, incorrect_sound]
     );
 
     const bonus_rounds = useMemo(() => {
