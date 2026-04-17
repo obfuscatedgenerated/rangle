@@ -110,6 +110,10 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
                             setFinished(true);
                             setFinishedCorrectly(is_correct);
                         }
+
+                        if (today_save.bonus_results) {
+                            setBonusResults(today_save.bonus_results);
+                        }
                     } else {
                         setCurrentOrder(data.puzzle);
                     }
