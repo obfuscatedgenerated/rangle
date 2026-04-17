@@ -10,6 +10,7 @@ interface LoginDetails {
     username: string;
     email: string;
     avatar: string;
+    provider: string;
 }
 
 interface AuthContextType {
@@ -40,7 +41,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                     "Authorization": `Bearer ${localStorage.getItem("sso_token")}`
                 }
             }).then(res => res.json()).then(data => {
-                setUserInfo(data.user);
+                setUserInfo({
+                    ...data.user,
+                    provider: data.provider
+                });
             }).catch((err) => {
                 console.error("Failed to fetch user info", err);
                 localStorage.removeItem("sso_token");
@@ -55,11 +59,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
             return;
         }
 
-        // currently the auth service will steer away redirects to localhost, so override the origin
-        if (window.location.origin === "http://localhost:3000" || window.location.origin === "http://127.0.0.1:3000") {
-           setAuthOrigin("https://rangle.today");
-           return;
-        }
+        // // currently the auth service will steer away redirects to localhost, so override the origin
+        // if (window.location.origin === "http://localhost:3000" || window.location.origin === "http://127.0.0.1:3000") {
+        //    setAuthOrigin("https://rangle.today");
+        //    return;
+        // }
 
         setAuthOrigin(window.location.origin);
     }, []);
@@ -95,7 +99,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const logout = useCallback(
         () => {
             localStorage.removeItem("sso_token");
-            setUserInfo(null);
+            //setUserInfo(null);
             if (auth_origin) {
                 window.location.href = `${AUTH_URL}/logout?from=${auth_origin}`;
             }
