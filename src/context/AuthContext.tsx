@@ -1,6 +1,6 @@
 "use client";
 
-import {createContext, useCallback, useContext, useEffect, useMemo, useState} from "react";
+import {createContext, Suspense, useCallback, useContext, useEffect, useMemo, useState} from "react";
 import {useRouter, useSearchParams} from "next/navigation";
 
 const AUTH_URL = "https://auth.ollieg.codes";
@@ -27,12 +27,31 @@ const AuthContext = createContext<AuthContextType>({
     logout: undefined,
 });
 
+// since search params have to be suspended but arent actually mission critical, just move that logic to a sub-component!
+const AuthTokenHandler = ({ fetch_user_info }: { fetch_user_info: () => void }) => {
+    const search_params = useSearchParams();
+    const router = useRouter();
+
+    // if token in search params, save it and fetch
+    useEffect(() => {
+        const token = search_params.get("token");
+        if (token) {
+            localStorage.setItem("sso_token", token);
+            fetch_user_info();
+
+            // remove token from url
+            const url = new URL(window.location.href);
+            url.searchParams.delete("token");
+            router.replace(url.toString());
+        }
+    }, [search_params, fetch_user_info, router]);
+
+    return null;
+};
+
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const [auth_origin, setAuthOrigin] = useState<string | null>(null);
     const [user_info, setUserInfo] = useState<LoginDetails | null>(null);
-
-    const search_params = useSearchParams();
-    const router = useRouter();
 
     const fetch_user_info = useCallback(
         () => {
@@ -75,20 +94,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         }
     }, [fetch_user_info, user_info]);
 
-    // if token in search params, save it and fetch
-    useEffect(() => {
-        const token = search_params.get("token");
-        if (token) {
-            localStorage.setItem("sso_token", token);
-            fetch_user_info();
-
-            // remove token from url
-            const url = new URL(window.location.href);
-            url.searchParams.delete("token");
-            router.replace(url.toString());
-        }
-    }, [search_params, fetch_user_info, router]);
-
     const login_url = useMemo(() => {
         if (!auth_origin) {
             return undefined;
@@ -109,6 +114,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
     return (
         <AuthContext.Provider value={{ user_info, auth_origin, login_url, logout }}>
+            <Suspense fallback={null}>
+                <AuthTokenHandler fetch_user_info={fetch_user_info} />
+            </Suspense>
+
             {children}
         </AuthContext.Provider>
     );
