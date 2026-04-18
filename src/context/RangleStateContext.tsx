@@ -6,6 +6,8 @@ import {PuzzleStat, StatPositionFlags, TodayData} from "@/components/Game";
 import {useRangleScores} from "@/context/RangleScoresContext";
 import {createContext, useCallback, useContext, useEffect, useMemo, useState} from "react";
 import {useSettingValue} from "@/context/SettingsContext";
+import {useCloudSync} from "@/context/CloudSyncContext";
+import {cloud_bus, CLOUD_SYNC_EVENTS} from "@/util/event_bus";
 
 interface RangleStateHookProps {
     on_loaded?: () => void;
@@ -66,6 +68,8 @@ export const RangleStateProvider = ({children}: { children: React.ReactNode }) =
     const [bonus_results, setBonusResults] = useState<Record<string, boolean>>({});
 
     const {update_score} = useRangleScores();
+    
+    const {push_update} = useCloudSync();
 
     // sync hardcore setting with default from settings context if no attempts have been made yet
     useEffect(() => {
@@ -195,6 +199,9 @@ export const RangleStateProvider = ({children}: { children: React.ReactNode }) =
             const parsed_saves = existing_saves ? JSON.parse(existing_saves) : {};
             parsed_saves[today_data.date] = save_state;
             localStorage.setItem("rangle_state_v1", JSON.stringify(parsed_saves));
+            
+            // push update to the cloud
+            push_update(today_data.date, save_state);
 
             if (new_correct_positions.every((pos) => pos)) {
                 setFinished(true);
@@ -242,7 +249,7 @@ export const RangleStateProvider = ({children}: { children: React.ReactNode }) =
                 }
             }
         },
-        [today_data, attempts, previous_guesses, hardcore, answers, update_score]
+        [today_data, attempts, previous_guesses, hardcore, push_update, answers, update_score]
     );
 
     const reveal_answers = useCallback(
@@ -272,9 +279,12 @@ export const RangleStateProvider = ({children}: { children: React.ReactNode }) =
             parsed_saves[today_data.date] = today_save;
             localStorage.setItem("rangle_state_v1", JSON.stringify(parsed_saves));
 
+            // push update to the cloud
+            push_update(today_data.date, today_save);
+
             setBonusResults(results);
         },
-        [today_data]
+        [today_data, push_update]
     );
 
     const reload_today_from_storage = useCallback(
@@ -335,6 +345,15 @@ export const RangleStateProvider = ({children}: { children: React.ReactNode }) =
         },
         [today_data]
     );
+
+    // listen to cloud event bus for reloading today
+    useEffect(() => {
+        cloud_bus.on(CLOUD_SYNC_EVENTS.RELOAD_LOCAL_STATE, reload_today_from_storage);
+
+        return () => {
+            cloud_bus.off(CLOUD_SYNC_EVENTS.RELOAD_LOCAL_STATE, reload_today_from_storage);
+        };
+    }, [reload_today_from_storage]);
 
     // TODO: sync state across tabs, handling conflicting date overrides
 

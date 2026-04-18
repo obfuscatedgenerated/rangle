@@ -92,9 +92,9 @@ export default function RootLayout({
                 <ContextProviders providers={[
                     RangleScoresProvider,
                     SettingsProvider,
-                    RangleStateProvider,
                     AuthProvider,
                     CloudSyncProvider,
+                    RangleStateProvider,
                 ]}>
                     <ThemeApplier />
 

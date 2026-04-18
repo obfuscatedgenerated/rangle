@@ -10,6 +10,7 @@ import {useSearchParams, useRouter} from "next/navigation";
 
 import {epoch_utc, time_zone} from "../../time";
 import {ChangelogWidget} from "@/components/ChangelogWidget";
+import {useCloudSync} from "@/context/CloudSyncContext";
 
 export const HomeInteraction = () => {
     const search_params = useSearchParams();
@@ -73,6 +74,14 @@ export const HomeInteraction = () => {
     }, [validated_archive_date, search_params, router]);
 
     const [loaded, setLoaded] = useState(false);
+
+    // trigger full cloud sync on load if ready
+    const {trigger_full_sync, status} = useCloudSync();
+    useEffect(() => {
+        if (status === "idle") {
+            trigger_full_sync();
+        }
+    }, [status, trigger_full_sync]);
 
     return (
         <>
