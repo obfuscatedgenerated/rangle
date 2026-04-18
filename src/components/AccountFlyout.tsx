@@ -22,7 +22,7 @@ export const AccountFlyout = ({open, on_close}: AccountFlyoutProps) => {
     return (
         <>
             <Scrim className={`fixed top-0 left-0 w-full h-full bg-black/50 transition-opacity duration-500 ${open ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={on_close} />
-            <div aria-hidden={!open} className={`z-9999 fixed top-0 right-0 w-100 h-full bg-background-variant p-4 transition-transform duration-500 transform ${open ? "translate-x-0" : "translate-x-full"}`}>
+            <div aria-hidden={!open} className={`pl-6 sm:pl-4 p-4 z-9999 fixed top-0 right-0 w-100 h-full bg-background-variant transition-opacity sm:transition-all duration-500 sm:transform ${open ? "sm:translate-x-0 opacity-100" : "sm:translate-x-full opacity-0 pointer-events-none"}`}>
                 <div className="flex items-center justify-between mb-8">
                     <h2 className="font-bold text-xl">Account</h2>
 
