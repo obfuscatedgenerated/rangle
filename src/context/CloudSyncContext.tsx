@@ -133,13 +133,15 @@ export const CloudSyncProvider = ({children}: { children: React.ReactNode }) => 
         },
         []
     );
-    
+
     const merge_settings = useCallback(
-        (local: Settings, remote: Settings, priority_local = true) => {
-            // for now just union with priority, but in future might be worth adding timestamps
-            return priority_local
-                ? { ...remote, ...local }
-                : { ...local, ...remote };
+        (local: Settings, remote: Settings, local_updated: number, remote_updated: number) => {
+            // return the newer of the two
+            if (remote_updated > local_updated) {
+                return remote;
+            } else {
+                return local;
+            }
         },
         []
     );
@@ -227,7 +229,13 @@ export const CloudSyncProvider = ({children}: { children: React.ReactNode }) => 
                 const remote_raw = await cloud.getItem("settings");
                 const remote_settings = remote_raw ? JSON.parse(remote_raw) : {};
 
-                const merged_settings = merge_settings(local_settings, remote_settings);
+                let remote_updated = 0;
+                if (remote_settings.updated) {
+                    remote_updated = remote_settings.updated;
+                    delete remote_settings.updated;
+                }
+
+                const merged_settings = merge_settings(local_settings, remote_settings, parseInt(localStorage.getItem("rangle_settings_updated_v1") || "0", 10), remote_updated);
                 const merged_settings_str = JSON.stringify(merged_settings);
 
                 const local_changed = JSON.stringify(local_settings) !== merged_settings_str;
@@ -235,11 +243,16 @@ export const CloudSyncProvider = ({children}: { children: React.ReactNode }) => 
 
                 if (local_changed) {
                     localStorage.setItem("rangle_settings_v1", merged_settings_str);
-                    update_settings(merged_settings);
+                    last_settings.current = merged_settings;
+                    update_settings(merged_settings, remote_updated);
                 }
 
                 if (remote_changed) {
-                    await cloud.setItem("settings", merged_settings_str);
+                    const settings_to_save = {
+                        ...merged_settings,
+                        updated: local_changed ? remote_updated : Date.now()
+                    };
+                    await cloud.setItem("settings", JSON.stringify(settings_to_save));
                 }
 
                 setLastSynced(new Date());

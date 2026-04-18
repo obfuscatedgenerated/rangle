@@ -13,13 +13,15 @@ export type Settings = typeof DEFAULT_SETTINGS;
 
 interface SettingsContextType {
     settings: Settings;
-    update_settings: (new_settings: Partial<Settings>) => void;
+    update_settings: (new_settings: Partial<Settings>, timestamp?: number) => void;
+    last_updated: number | null;
 }
 
 const SettingsContext = createContext<SettingsContextType | undefined>(undefined);
 
 export const SettingsProvider = ({ children }: { children: React.ReactNode }) => {
     const [settings, setSettings] = useState<Settings>(DEFAULT_SETTINGS);
+    const [last_updated, setLastUpdated] = useState<number | null>(null);
 
     // load settings from localStorage on initial mount
     useEffect(() => {
@@ -32,19 +34,31 @@ export const SettingsProvider = ({ children }: { children: React.ReactNode }) =>
                 console.error("Error parsing settings from localStorage:", err);
             }
         }
+
+        const settings_updated_raw = localStorage.getItem("rangle_settings_updated_v1");
+        if (settings_updated_raw) {
+            const parsed_updated = parseInt(settings_updated_raw, 10);
+            if (!isNaN(parsed_updated)) {
+                setLastUpdated(parsed_updated);
+            }
+        }
     }, []);
 
-    const update_settings = (new_settings: Partial<Settings>) => {
+    const update_settings = (new_settings: Partial<Settings>, timestamp?: number) => {
         setSettings((prev) => ({ ...prev, ...new_settings }));
 
         const settings_raw = localStorage.getItem("rangle_settings_v1");
         const settings_to_save = settings_raw ? JSON.parse(settings_raw) : DEFAULT_SETTINGS;
         const updated_settings = { ...settings_to_save, ...new_settings };
         localStorage.setItem("rangle_settings_v1", JSON.stringify(updated_settings));
+
+        const now = timestamp || Date.now();
+        localStorage.setItem("rangle_settings_updated_v1", now.toString());
+        setLastUpdated(now);
     };
 
     return (
-        <SettingsContext.Provider value={{ settings, update_settings }}>
+        <SettingsContext.Provider value={{ settings, update_settings, last_updated }}>
             {children}
         </SettingsContext.Provider>
     );
