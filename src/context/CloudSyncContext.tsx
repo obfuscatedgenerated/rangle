@@ -172,15 +172,21 @@ export const CloudSyncProvider = ({children}: { children: React.ReactNode }) => 
 
                 const merged_state = merge_states(local_state, remote_state);
 
+                const merged_state_str = JSON.stringify(merged_state);
+                const local_changed = JSON.stringify(local_state) !== merged_state_str;
+                const remote_changed = JSON.stringify(remote_state) !== merged_state_str;
+
                 // update local and the cloud if there is actually data to send
-                if (JSON.stringify(merged_state) !== JSON.stringify(remote_state)) {
+                if (local_changed) {
                     // update local state with merged result
-                    localStorage.setItem("rangle_state_v1", JSON.stringify(merged_state));
+                    localStorage.setItem("rangle_state_v1", merged_state_str);
                     reload_today_from_storage();
-                    
-                    await cloud.setItem("state", JSON.stringify(merged_state));
 
                     rebuild_scores();
+                }
+
+                if (remote_changed) {
+                    await cloud.setItem("state", merged_state_str);
                 }
 
                 setLastSynced(new Date());
@@ -222,12 +228,18 @@ export const CloudSyncProvider = ({children}: { children: React.ReactNode }) => 
                 const remote_settings = remote_raw ? JSON.parse(remote_raw) : {};
 
                 const merged_settings = merge_settings(local_settings, remote_settings);
+                const merged_settings_str = JSON.stringify(merged_settings);
 
-                if (JSON.stringify(merged_settings) !== JSON.stringify(remote_settings)) {
-                    localStorage.setItem("rangle_settings_v1", JSON.stringify(merged_settings));
-                    await cloud.setItem("settings", JSON.stringify(merged_settings));
+                const local_changed = JSON.stringify(local_settings) !== merged_settings_str;
+                const remote_changed = JSON.stringify(remote_settings) !== merged_settings_str;
 
+                if (local_changed) {
+                    localStorage.setItem("rangle_settings_v1", merged_settings_str);
                     update_settings(merged_settings);
+                }
+
+                if (remote_changed) {
+                    await cloud.setItem("settings", merged_settings_str);
                 }
 
                 setLastSynced(new Date());
@@ -257,7 +269,7 @@ export const CloudSyncProvider = ({children}: { children: React.ReactNode }) => 
 
     const push_update = useCallback(
         async (date: string, state: SaveStateDay) => {
-            if (status !== "synced") {
+            if (status !== "idle" && status !== "synced") {
                 return;
             }
 
@@ -265,22 +277,12 @@ export const CloudSyncProvider = ({children}: { children: React.ReactNode }) => 
                 const remote_raw = await cloud.getItem("state");
                 const remote_state = remote_raw ? JSON.parse(remote_raw) as SaveState : {};
 
-                const local_raw = localStorage.getItem("rangle_state_v1");
-                const local_state = local_raw ? JSON.parse(local_raw) as SaveState : {};
-
                 const new_remote_state = {
                     ...remote_state,
                     [date]: state
                 };
 
-                const new_local_state = {
-                    ...local_state,
-                    [date]: state
-                };
-
                 await cloud.setItem("state", JSON.stringify(new_remote_state));
-                localStorage.setItem("rangle_state_v1", JSON.stringify(new_local_state));
-
                 setLastSynced(new Date());
             } catch (err) {
                 console.error("Failed to push update to cloud", err);

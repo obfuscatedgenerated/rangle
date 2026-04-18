@@ -29,6 +29,10 @@ export const LoginPopup = ({open, on_close}: LoginPopupProps) => {
                     <p className="mb-4 text-pretty text-center">Cloud sync is only available to invited users. Logging in does not guarantee access to cloud sync.</p>
                     <p className="mb-4 text-pretty text-center">By logging in, you agree to the ollieg.codes <a href="https://ollieg.codes/privacy" target="_blank" rel="noreferrer noopener" className="underline">Privacy Policy</a>.</p>
 
+                    <br />
+
+                    <p className="mb-4 text-pretty text-center">Cloud sync is in beta and may have bugs. There is the risk that your local or cloud data may be corrupted or lost. A backup is automatically kept, but you agree regardless that you might lose progress.</p>
+
                     <div className="flex gap-4 flex-row-reverse">
                         <button
                             className="mt-2 px-4 py-2 bg-primary text-on-primary rounded cursor-pointer"
