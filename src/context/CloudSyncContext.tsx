@@ -9,6 +9,8 @@ import {createContext, useCallback, useContext, useEffect, useMemo, useRef, useS
 import {GlobalStorage} from "@/util/globalStorage";
 import {useSettings, Settings} from "@/context/SettingsContext";
 import {cloud_bus, CLOUD_SYNC_EVENTS} from "@/util/event_bus";
+import {LoadingSpinner} from "@/components/LoadingSpinner";
+import {CircleAlert, Check, Ban} from "lucide-react";
 
 const CLOUD_URL = "https://cloud.ollieg.codes";
 
@@ -20,6 +22,15 @@ export const CLOUD_SYNC_STATUS_MESSAGES: Record<CloudSyncStatus, string> = {
     "error": "Error syncing",
     "ineligible": "Ineligible",
     "logged_out": "Log in to enable cloud sync"
+}
+
+export const CLOUD_SYNC_ICONS: Record<CloudSyncStatus, React.ComponentType<{className?: string, aria_hidden?: "true" | "false" | boolean}>> = {
+    "idle": () => null,
+    "syncing": ({className = "", aria_hidden = false}) => <LoadingSpinner aria_hidden={aria_hidden} className={`w-4! h-4! rounded-full bg-muted/50 animate-pulse ${className}`} label="Syncing to cloud..." />,
+    "synced": ({className = "", aria_hidden = false}) => <Check aria-hidden={aria_hidden} className={`w-4 h-4 p-1 rounded-full bg-green-600 ${className}`} aria-label="Synced to cloud" />,
+    "error": ({className = "", aria_hidden = false}) => <CircleAlert aria-hidden={aria_hidden} className={`w-4 h-4 p-0.5 rounded-full bg-red-500 ${className}`} aria-label="Error syncing to cloud" />,
+    "ineligible": ({className = "", aria_hidden = false}) => <Ban aria-hidden={aria_hidden} className={`w-4 h-4 p-0.5 rounded-full bg-gray-700 ${className}`} aria-label="Not eligible for cloud sync" />,
+    "logged_out": () => null,
 }
 
 interface CloudSyncContextType {
