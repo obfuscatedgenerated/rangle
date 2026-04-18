@@ -43,6 +43,11 @@ const AuthTokenHandler = ({ fetch_user_info }: { fetch_user_info: () => void }) 
             const url = new URL(window.location.href);
             url.searchParams.delete("token");
             router.replace(url.toString());
+
+            // if the router didnt do it for some reason, do it manually
+            if (window.location.search.includes("token=")) {
+                window.history.replaceState({}, "", `/?${url.searchParams.toString()}`);
+            }
         }
     }, [search_params, fetch_user_info, router]);
 
@@ -76,12 +81,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     useEffect(() => {
         if (typeof window === "undefined") {
             return;
-        }
-
-        // currently the auth service will steer away redirects to localhost, so override the origin
-        if (window.location.origin === "http://localhost:3000" || window.location.origin === "http://127.0.0.1:3000") {
-           setAuthOrigin("https://rangle.today");
-           return;
         }
 
         setAuthOrigin(window.location.origin);
