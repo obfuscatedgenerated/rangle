@@ -42,14 +42,16 @@ export const ChangelogWidget = () => {
 
     return (
         <>
-            <button
-                className="group w-full mb-4 text-xs opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center gap-1 cursor-pointer"
-                title="Click to open changelog"
-                onClick={() => setShowChangelog(true)}
-            >
-                <span className="bg-primary opacity-80 dark:opacity-60 group-hover:opacity-100 group-hover:dark:opacity-90 transition-opacity text-on-primary px-1.5 py-0.5 rounded-full text-[10px] font-bold">NEW</span>
-                {changelog.latest} <span className="underline">View Changelog</span>
-            </button>
+            <div className="w-full mb-4">
+                <button
+                    className="mx-auto group text-xs opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center gap-1 cursor-pointer"
+                    title="Click to open changelog"
+                    onClick={() => setShowChangelog(true)}
+                >
+                    <span className="bg-primary opacity-80 dark:opacity-60 group-hover:opacity-100 group-hover:dark:opacity-90 transition-opacity text-on-primary px-1.5 py-0.5 rounded-full text-[10px] font-bold">NEW</span>
+                    {changelog.latest} <span className="underline">View Changelog</span>
+                </button>
+            </div>
 
             <ChangelogPopup open={show_changelog} on_close={() => setShowChangelog(false)} />
         </>

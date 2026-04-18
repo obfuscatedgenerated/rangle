@@ -1,8 +1,12 @@
 ---
-latest: Sounds, icons, cursors!!!
+latest: The cloud! (it's just someone else's computer)
 ---
 
 # Changelog
+
+## 2026-04-18
+
+Cloud sync is now available for invited users.
 
 ## 2026-04-14
 
