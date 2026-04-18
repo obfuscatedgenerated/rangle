@@ -16,7 +16,7 @@ export type CloudSyncStatus = "idle" | "syncing" | "synced" | "error" | "ineligi
 export const CLOUD_SYNC_STATUS_MESSAGES: Record<CloudSyncStatus, string> = {
     "idle": "Idle",
     "syncing": "Syncing...",
-    "synced": "Last synced at",
+    "synced": "Synced",
     "error": "Error syncing",
     "ineligible": "Ineligible",
     "logged_out": "Log in to enable cloud sync"
