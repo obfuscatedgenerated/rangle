@@ -9,6 +9,7 @@ import {ThemeApplier} from "@/components/ThemeApplier";
 import {ContextProviders} from "@/components/ContextProviders";
 import {AuthProvider} from "@/context/AuthContext";
 import {CloudSyncProvider} from "@/context/CloudSyncContext";
+import {RangleStateProvider} from "@/context/RangleStateContext";
 
 export const metadata: Metadata = {
     title: {
@@ -90,8 +91,9 @@ export default function RootLayout({
                 <noscript className="absolute top-1/4 left-1/2 -translate-x-1/2">Please enable JavaScript to play Rangle!</noscript>
                 <ContextProviders providers={[
                     RangleScoresProvider,
-                    AuthProvider,
                     SettingsProvider,
+                    RangleStateProvider,
+                    AuthProvider,
                     CloudSyncProvider,
                 ]}>
                     <ThemeApplier />

@@ -4,7 +4,7 @@ import {useSearchParams, useRouter} from "next/navigation";
 import {useEffect, useRef, useState} from "react";
 
 import type {StatPositionFlags} from "@/components/Game";
-import type {SaveState, SaveStateDay} from "@/hooks/useRangleState";
+import type {SaveState, SaveStateDay} from "@/context/RangleStateContext";
 
 import {X} from "lucide-react";
 import {decompressFromEncodedURIComponent} from "lz-string";
@@ -72,7 +72,7 @@ export const MigrationManager = () => {
                 const mapped_day_data: SaveStateDay = {} as SaveStateDay;
                 for (const [short_key, value] of Object.entries(day_data)) {
                     const long_key = KEY_MAP[short_key as keyof UnmappedSaveStateDay];
-                    mapped_day_data[long_key] = value;
+                    (mapped_day_data as any)[long_key] = value as SaveStateDay[keyof SaveStateDay];
                 }
                 return [date, mapped_day_data];
             })

@@ -1,7 +1,7 @@
 "use client";
 
 import {createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useState} from "react";
-import type {SaveStateDay} from "@/hooks/useRangleState";
+import type {SaveStateDay} from "@/context/RangleStateContext";
 import {time_zone} from "../../time";
 
 export interface ScoreStateDay {

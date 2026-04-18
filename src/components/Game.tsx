@@ -5,7 +5,7 @@ import {SharePopup} from "@/components/SharePopup";
 import {Toast} from "@/components/Toast";
 import {HardcoreToggle} from "@/components/HardcoreToggle";
 
-import {useRangleState} from "@/hooks/useRangleState";
+import {useRangleState} from "@/context/RangleStateContext";
 import {useWindowSize} from "@/hooks/useWindowSize";
 
 import {epoch_utc, time_zone} from "../../time";
@@ -88,15 +88,21 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
         submit_guess,
         set_current_order,
         hardcore,
-        setHardcore,
+        set_hardcore,
         bonus_results,
         set_bonus_results,
-        previous_guesses
-    } = useRangleState({
-        on_loaded,
-        on_load_error,
-        date_override
-    });
+        previous_guesses,
+        load_puzzle
+    } = useRangleState();
+
+    // load puzzle on mount
+    useEffect(() => {
+        load_puzzle({
+            on_loaded,
+            on_load_error,
+            date_override
+        });
+    }, [date_override, load_puzzle, on_load_error, on_loaded]);
 
     const [just_attempted, setJustAttempted] = useState(false);
 
@@ -297,7 +303,7 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
 
             <div className="flex mb-4 sm:mb-6 items-center justify-center gap-8">
                 <p className="text-sm sm:text-lg text-center text-pretty">#{today_data.number} | {today_data.difficulty} • Attempt: {finished ? attempts.length : attempts.length + 1}/5</p>
-                <HardcoreToggle className="text-nowrap" hardcore={hardcore} attempt_count={attempts.length} on_toggle={setHardcore} />
+                <HardcoreToggle className="text-nowrap" hardcore={hardcore} attempt_count={attempts.length} on_toggle={set_hardcore} />
             </div>
 
             <div className="flex flex-col items-center gap-2">

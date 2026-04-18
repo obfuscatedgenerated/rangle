@@ -2,7 +2,7 @@
 
 import {useAuth} from "@/context/AuthContext";
 
-import type {SaveState, SaveStateDay} from "@/hooks/useRangleState";
+import {SaveState, SaveStateDay, useRangleState} from "@/context/RangleStateContext";
 import {useRangleScores} from "@/context/RangleScoresContext";
 
 import {createContext, useCallback, useContext, useEffect, useMemo, useRef, useState} from "react";
@@ -36,6 +36,7 @@ const CloudSyncContext = createContext<CloudSyncContextType | undefined>(undefin
 
 export const CloudSyncProvider = ({children}: { children: React.ReactNode }) => {
     const {user_info} = useAuth();
+    const {reload_today_from_storage} = useRangleState();
     const {rebuild_scores} = useRangleScores();
     const {settings, update_settings} = useSettings();
 
@@ -174,8 +175,8 @@ export const CloudSyncProvider = ({children}: { children: React.ReactNode }) => 
                 // update local and the cloud if there is actually data to send
                 if (JSON.stringify(merged_state) !== JSON.stringify(remote_state)) {
                     // update local state with merged result
-                    // TODO: update the state hook. might need to convert it to context
                     localStorage.setItem("rangle_state_v1", JSON.stringify(merged_state));
+                    reload_today_from_storage();
                     
                     await cloud.setItem("state", JSON.stringify(merged_state));
 
@@ -190,7 +191,7 @@ export const CloudSyncProvider = ({children}: { children: React.ReactNode }) => 
                 setStatus("error");
             }
         },
-        [cloud, merge_states, rebuild_scores, status, user_info]
+        [cloud, merge_states, rebuild_scores, reload_today_from_storage, status, user_info]
     );
     
     const trigger_settings_sync = useCallback(
