@@ -59,11 +59,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
             return;
         }
 
-        // // currently the auth service will steer away redirects to localhost, so override the origin
-        // if (window.location.origin === "http://localhost:3000" || window.location.origin === "http://127.0.0.1:3000") {
-        //    setAuthOrigin("https://rangle.today");
-        //    return;
-        // }
+        // currently the auth service will steer away redirects to localhost, so override the origin
+        if (window.location.origin === "http://localhost:3000" || window.location.origin === "http://127.0.0.1:3000") {
+           setAuthOrigin("https://rangle.today");
+           return;
+        }
 
         setAuthOrigin(window.location.origin);
     }, []);

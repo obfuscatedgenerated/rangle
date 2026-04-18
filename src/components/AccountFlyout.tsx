@@ -4,6 +4,7 @@ import {useAuth} from "@/context/AuthContext";
 
 import {X} from "lucide-react";
 import {Scrim} from "@/components/Scrim";
+import {CLOUD_SYNC_STATUS_MESSAGES, useCloudSync} from "@/context/CloudSyncContext";
 
 interface AccountFlyoutProps {
     open: boolean;
@@ -12,6 +13,7 @@ interface AccountFlyoutProps {
 
 export const AccountFlyout = ({open, on_close}: AccountFlyoutProps) => {
     const {user_info, logout} = useAuth();
+    const { status, error_message } = useCloudSync();
 
     if (!user_info) {
         return null;
@@ -45,7 +47,8 @@ export const AccountFlyout = ({open, on_close}: AccountFlyoutProps) => {
 
                     <h3 className="font-bold text-lg">Cloud Sync</h3>
 
-                    <p>Status: <b>Ineligible</b></p>
+                    <p>Status: <b>{CLOUD_SYNC_STATUS_MESSAGES[status]}</b></p>
+                    {(status === "error" || status === "ineligible") && <p className="text-incorrect">{error_message}</p>}
                 </div>
             </div>
         </>
