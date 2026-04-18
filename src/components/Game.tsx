@@ -118,6 +118,15 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
 
     const window_size = useWindowSize();
 
+    // reset game state when archive date changes
+    useEffect(() => {
+        end_game_guard.current = false;
+        setRevealValues(false);
+        setBonusRoundReveal(false);
+        setJustAttempted(false);
+        setShareOpen(false);
+    }, [archive_date]);
+
     const correct_sound = useAudioPlayer("/correct.mp3", {
         autoplay: false,
         loop: false,
@@ -228,7 +237,12 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
     // trigger end game logic when game finishes (as it could be triggered by either submit_guess or loading saved state on mount)
     // TODO: this kinda sucks
     useEffect(() => {
-        if (end_game_guard.current || !finished) {
+        if (end_game_guard.current || !finished || !today_data) {
+            return;
+        }
+
+        const expected_date_iso = date_override || new Date().toLocaleDateString("en-CA", { timeZone: time_zone });
+        if (today_data.date !== expected_date_iso) {
             return;
         }
 

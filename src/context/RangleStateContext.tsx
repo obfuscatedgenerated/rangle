@@ -4,7 +4,7 @@ import {time_zone} from "../../time";
 
 import {PuzzleStat, StatPositionFlags, TodayData} from "@/components/Game";
 import {useRangleScores} from "@/context/RangleScoresContext";
-import {createContext, useCallback, useContext, useEffect, useMemo, useState} from "react";
+import {createContext, useCallback, useContext, useEffect, useMemo, useRef, useState} from "react";
 import {useSettingValue} from "@/context/SettingsContext";
 import {useCloudSync} from "@/context/CloudSyncContext";
 import {cloud_bus, CLOUD_SYNC_EVENTS} from "@/util/event_bus";
@@ -50,6 +50,7 @@ const RangleStateContext = createContext<RangleStateContextType | undefined>(und
 
 export const RangleStateProvider = ({children}: { children: React.ReactNode }) => {
     const [today_data, setTodayData] = useState<TodayData | null>(null);
+    const fetched_date = useRef<string | null>(null);
 
     const [current_order, setCurrentOrder] = useState<PuzzleStat[]>([]);
     const [correct_positions, setCorrectPositions] = useState<StatPositionFlags>([false, false, false, false, false]);
@@ -83,6 +84,24 @@ export const RangleStateProvider = ({children}: { children: React.ReactNode }) =
             const today_date_iso = date_override
                 ? date_override
                 : new Date().toLocaleDateString("en-CA", {timeZone: time_zone});
+
+            if (fetched_date.current === today_date_iso) {
+                if (on_loaded) {
+                    on_loaded();
+                }
+                return;
+            }
+            fetched_date.current = today_date_iso;
+
+            // clear existing state when loading a new puzzle
+            setTodayData(null);
+            setCurrentOrder([]);
+            setCorrectPositions([false, false, false, false, false]);
+            setAttempts([]);
+            setPreviousGuesses([]);
+            setFinished(false);
+            setFinishedCorrectly(false);
+            setBonusResults({});
 
             fetch(`/daily/${today_date_iso}.json`)
                 .then((res) => {
@@ -151,12 +170,14 @@ export const RangleStateProvider = ({children}: { children: React.ReactNode }) =
                     if (on_loaded) {
                         on_loaded();
                     }
-                }).catch((err) => {
-                console.error("Error loading today's data:", err);
-                if (on_load_error) {
-                    on_load_error(err);
-                }
-            });
+                })
+                .catch((err) => {
+                    fetched_date.current = null;
+                    console.error("Error loading today's data:", err);
+                    if (on_load_error) {
+                        on_load_error(err);
+                    }
+                });
         },
         []
     );

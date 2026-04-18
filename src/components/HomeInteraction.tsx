@@ -5,7 +5,7 @@ import {Game} from "@/components/Game";
 import {MigrationManager} from "@/components/MigrationManager";
 import {LoadingSpinner} from "@/components/LoadingSpinner";
 
-import {useEffect, useMemo, useState} from "react";
+import {useCallback, useEffect, useMemo, useState} from "react";
 import {useSearchParams, useRouter} from "next/navigation";
 
 import {epoch_utc, time_zone} from "../../time";
@@ -74,6 +74,10 @@ export const HomeInteraction = () => {
     }, [validated_archive_date, search_params, router]);
 
     const [loaded, setLoaded] = useState(false);
+    const on_loaded = useCallback(
+        () => setLoaded(true),
+        []
+    );
 
     // trigger full cloud sync on load if ready
     const {trigger_full_sync, status} = useCloudSync();
@@ -94,7 +98,7 @@ export const HomeInteraction = () => {
 
                 {!loaded && <LoadingSpinner className="mt-4" />}
 
-                <Game archive_date={validated_archive_date || undefined} on_loaded={() => setLoaded(true)} />
+                <Game archive_date={validated_archive_date || undefined} on_loaded={on_loaded} />
 
                 {loaded && <p className="sm:fixed left-2 bottom-2 opacity-75 text-xs sm:text-base">Powered by <a href="https://www.wikidata.org/" target="_blank" rel="noopener noreferrer" className="underline">Wikidata</a></p>}
             </main>
