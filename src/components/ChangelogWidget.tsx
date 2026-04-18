@@ -20,12 +20,15 @@ const ChangelogPopup = ({ open, on_close }: { open: boolean, on_close: () => voi
     return (
         <dialog onAbort={on_close} ref={dialog_ref} className="rounded-lg p-4 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[95vw] sm:max-w-md w-full bg-background-variant text-foreground-variant flex flex-col items-center">
             <h2 className="text-xl font-bold mb-4">Changelog</h2>
-            {changelog.entries.map((entry, idx) => (
-                <div key={idx} className="mb-4 w-full">
-                    <h3 className="font-bold tracking-widest opacity-60">{entry.date}</h3>
-                    <p className="ml-2 mt-2 text-pretty" dangerouslySetInnerHTML={{ __html: entry.content }}></p>
-                </div>
-            ))}
+
+            <div className="flex-1 overflow-y-auto min-h-0 w-full mb-2">
+                {changelog.entries.map((entry, idx) => (
+                    <div key={idx} className="mb-4 w-full">
+                        <h3 className="font-bold tracking-widest opacity-60">{entry.date}</h3>
+                        <p className="ml-2 mt-2 text-pretty" dangerouslySetInnerHTML={{ __html: entry.content }}></p>
+                    </div>
+                ))}
+            </div>
 
             <button
                 className="px-4 py-2 bg-secondary text-on-secondary rounded cursor-pointer"
