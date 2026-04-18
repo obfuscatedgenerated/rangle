@@ -22,7 +22,7 @@ export class GlobalStorage {
             ...options,
             headers: {
                 ...options.headers,
-                "Accept": "application/json",
+                "Accept": "text/plain",
                 "Authorization": `Bearer ${localStorage.getItem("sso_token")}`
             },
         });
@@ -45,7 +45,7 @@ export class GlobalStorage {
             return null;
         }
 
-        return await res.json();
+        return await res.text();
     }
 
     async setItem(key: string, value: string): Promise<void> {

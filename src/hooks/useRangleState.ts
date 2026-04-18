@@ -17,6 +17,7 @@ export interface SaveStateDay {
     previous_guess_ids?: string[][]; // TODO: remove attempts field and compute on demand
     hardcore?: boolean;
     bonus_results?: Record<string, boolean>;
+    updated?: string;
 }
 
 export type SaveState = Record<string, SaveStateDay>;
@@ -162,7 +163,8 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
                 current_order_ids: guess.map((stat) => stat.id),
                 attempts: [...attempts, new_correct_positions],
                 previous_guess_ids: [...previous_guesses, guess].map((guess) => guess.map((stat) => stat.id)),
-                hardcore
+                hardcore,
+                updated: new Date().toISOString(),
             };
 
             const existing_saves = localStorage.getItem("rangle_state_v1");
@@ -242,6 +244,7 @@ export const useRangleState = ({ on_loaded, on_load_error, date_override }: Rang
             }
 
             today_save.bonus_results = results;
+            today_save.updated = new Date().toISOString();
             parsed_saves[today_data.date] = today_save;
             localStorage.setItem("rangle_state_v1", JSON.stringify(parsed_saves));
 
