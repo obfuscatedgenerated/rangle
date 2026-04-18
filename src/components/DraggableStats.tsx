@@ -145,32 +145,43 @@ export const DraggableStats = ({
             return;
         }
 
-        const old_idx = puzzle.findIndex((p) => p.id === active.id);
-        const new_idx = puzzle.findIndex((p) => p.id === over.id);
-
-        const shifted = arrayMove(puzzle, old_idx, new_idx);
-
-        // anything originally in a correct position should stay in the same position
-        for (let i = 0; i < correct_positions.length; i++) {
-            if (correct_positions[i]) {
-                const correct_item = puzzle[i];
-                const current_index = shifted.findIndex((item) => item.id === correct_item.id);
-                if (current_index !== i) {
-                    // move the correct item back to its original position
-                    shifted.splice(current_index, 1);
-                    shifted.splice(i, 0, correct_item);
-                }
-            }
+        if (finished) {
+            const old_idx = puzzle.findIndex((p) => p.id === active.id);
+            const new_idx = puzzle.findIndex((p) => p.id === over.id);
+            on_reorder(arrayMove(puzzle, old_idx, new_idx));
+            return;
         }
 
-        on_reorder(shifted);
+        const unlocked_items = puzzle.filter((_, idx) => !correct_positions[idx]);
+
+        const old_unlocked_idx = unlocked_items.findIndex((p) => p.id === active.id);
+        const new_unlocked_idx = unlocked_items.findIndex((p) => p.id === over.id);
+
+        if (old_unlocked_idx === -1 || new_unlocked_idx === -1) {
+            return;
+        }
+
+        const shifted_unlocked = arrayMove(unlocked_items, old_unlocked_idx, new_unlocked_idx);
+
+        // anything originally in a correct position should stay in the same position
+        let unlocked_ptr = 0;
+        const new_puzzle = puzzle.map((item, idx) => {
+            if (correct_positions[idx]) {
+                return item;
+            } else {
+                return shifted_unlocked[unlocked_ptr++];
+            }
+        });
+
+        on_reorder(new_puzzle);
     };
 
     // filter out locked ids so sortable context doesn't even know they exist
-    const sortable_ids = finished
+    const sortable_ids = (finished
         ? puzzle // everything should now be visible to the sortable context so it can animate to correct positions
         : puzzle
             .filter((_, index) => !correct_positions[index])
+    )
             .map(p => p.id);
 
     return (
