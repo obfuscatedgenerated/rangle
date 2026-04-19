@@ -281,7 +281,7 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
                 on_post_bonus_round();
             }, 2000);
         }
-    }, [finished, finished_correctly, bonus_rounds.length, on_post_bonus_round, reveal_answers, bonus_results, sound_enabled, swoosh_sound]);
+    }, [finished, finished_correctly, bonus_rounds.length, on_post_bonus_round, reveal_answers, bonus_results, sound_enabled, swoosh_sound, today_data, date_override]);
 
     const [theme_id] = useSettingValue("theme");
 
