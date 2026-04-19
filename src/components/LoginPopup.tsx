@@ -1,5 +1,6 @@
 import {useAuth} from "@/context/AuthContext";
 import {useEffect, useRef, useState} from "react";
+import {HeightListeningIFrame} from "@/components/HeightListeningIFrame";
 
 interface LoginPopupProps {
     open: boolean;
@@ -53,7 +54,7 @@ export const LoginPopup = ({open, on_close}: LoginPopupProps) => {
 
             {disclaimer_shown && (
                 <>
-                    <iframe className="w-full h-70 rounded-lg" src={login_url}></iframe>
+                    <HeightListeningIFrame className="w-full max-h-100 rounded-lg transition-[height] duration-200 ease-out" src={login_url}></HeightListeningIFrame>
 
                     <button
                         className="mt-2 px-4 py-2 bg-secondary text-on-secondary rounded cursor-pointer"
