@@ -1,56 +1,56 @@
 {
   "date": "2026-04-21",
   "number": 24,
-  "difficulty": "Medium",
+  "difficulty": "Easy",
   "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q39722",
-      "name": "The Rescuers",
-      "value": 7500000,
-      "metric": "Production Budget",
-      "description": "1977 animated film directed by Wolfgang Reitherman, John Lounsbery and Art Stevens",
-      "prefix": "$",
-      "suffix": "",
-      "unit_hint": "in dollars"
-    },
-    {
-      "id": "Q25226",
-      "name": "Cam Ranh International Airport",
-      "value": 8300000,
-      "metric": "Number of Passengers",
-      "description": "Airport that serves Nha Trang, Vietnam",
+      "id": "Q49740",
+      "name": "Minecraft",
+      "value": 350000000,
+      "metric": "Total Units Sold",
+      "description": "2011 video game",
       "prefix": "",
-      "suffix": " passengers",
-      "unit_hint": "annual"
+      "suffix": " units",
+      "unit_hint": "approx."
     },
     {
-      "id": "Q72778",
-      "name": "Taiyuan",
-      "value": 5304061,
-      "metric": "Population",
-      "description": "capital city of Shanxi province, China",
+      "id": "Q313",
+      "name": "Venus",
+      "value": 108942109,
+      "metric": "Distance from Sun",
+      "description": "second planet from the Solar System, tellurian and very similar to Earth",
       "prefix": "",
-      "suffix": " people"
+      "suffix": " km",
+      "unit_hint": "in kilometres"
     },
     {
-      "id": "Q183584",
-      "name": "Lanzhou",
-      "value": 4359446,
-      "metric": "Population",
-      "description": "prefecture-level city in Gansu, China",
+      "id": "Q5287",
+      "name": "Japanese",
+      "value": 128000000,
+      "metric": "Native Speakers",
+      "description": "language spoken in East Asia",
       "prefix": "",
-      "suffix": " people"
+      "suffix": " speakers"
     },
     {
-      "id": "Q47703",
-      "name": "The Godfather",
-      "value": 7000000,
-      "metric": "Production Budget",
-      "description": "1972 film directed by Francis Ford Coppola",
-      "prefix": "$",
-      "suffix": "",
-      "unit_hint": "in dollars"
+      "id": "Q2",
+      "name": "Earth",
+      "value": 152098232,
+      "metric": "Distance from Sun",
+      "description": "third planet from the Sun in the Solar System",
+      "prefix": "",
+      "suffix": " km",
+      "unit_hint": "in kilometres"
+    },
+    {
+      "id": "Q9240",
+      "name": "Indonesian",
+      "value": 198996550,
+      "metric": "Native Speakers",
+      "description": "official language of Indonesia",
+      "prefix": "",
+      "suffix": " speakers"
     }
   ]
 }
