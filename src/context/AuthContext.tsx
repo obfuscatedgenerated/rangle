@@ -1,9 +1,11 @@
 "use client";
 
-import {createContext, Suspense, useCallback, useContext, useEffect, useMemo, useState} from "react";
+import {createContext, Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState} from "react";
 import {useRouter, useSearchParams} from "next/navigation";
 
+// TODO move this and time.js to next_public env
 const AUTH_URL = "https://auth.ollieg.codes";
+const ACTIVITY_CLIENT_ID = "1495567479978725476";
 
 interface LoginDetails {
     id: string;
@@ -18,6 +20,7 @@ interface AuthContextType {
     auth_origin: string | null;
     login_url?: string;
     logout?: () => void;
+    via_discord_activity: boolean;
 }
 
 const AuthContext = createContext<AuthContextType>({
@@ -25,6 +28,7 @@ const AuthContext = createContext<AuthContextType>({
     auth_origin: null,
     login_url: undefined,
     logout: undefined,
+    via_discord_activity: false
 });
 
 // since search params have to be suspended but arent actually mission critical, just move that logic to a sub-component!
@@ -100,19 +104,88 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         return `${AUTH_URL}/login?from=${auth_origin}`;
     }, [auth_origin]);
 
+    const loading_discord_activity = useRef(false);
+    const [via_discord_activity, setViaDiscordActivity] = useState(false);
+
     const logout = useCallback(
         () => {
+            if (via_discord_activity) {
+                return;
+            }
+            
             localStorage.removeItem("sso_token");
             //setUserInfo(null);
             if (auth_origin) {
                 window.location.href = `${AUTH_URL}/logout?from=${auth_origin}`;
             }
         },
-        [auth_origin]
+        [auth_origin, via_discord_activity]
     );
 
+    const handle_discord_activity_login = useCallback(
+        async () => {
+            loading_discord_activity.current = true;
+
+            // lazy load the sdk
+            try {
+                const { DiscordSDK } = await import("@discord/embedded-app-sdk");
+
+                const sdk = new DiscordSDK(ACTIVITY_CLIENT_ID);
+                await sdk.ready();
+
+                // get the code
+                const { code } = await sdk.commands.authorize({
+                    client_id: ACTIVITY_CLIENT_ID,
+                    scope: ["identify", "email"],
+                    state: "",
+                    prompt: "none",
+                });
+
+                // exchange code for token with auth service
+                const res = await fetch(`${AUTH_URL}/login-discord-activity?activity=rangle`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ code })
+                });
+                
+                if (res.ok) {
+                    const data = await res.json();
+                    localStorage.setItem("sso_token", data.token);
+                    
+                    fetch_user_info();
+                    setViaDiscordActivity(true);
+                } else {
+                    console.error("Failed to exchange Discord activity code for token", await res.text());
+                }
+            } catch (err) {
+                console.error("Error during Discord activity login", err);
+            } finally {
+                loading_discord_activity.current = false;
+            }
+        }, 
+        [fetch_user_info]
+    );
+
+    // handle discord activity auth
+    useEffect(() => {
+        const is_discord = typeof window !== "undefined" && window.location.search.includes("instance_id=");
+
+        if (is_discord && !loading_discord_activity.current) {
+            if (localStorage.getItem("sso_token")) {
+                // if we already have a token, just fetch user info and set state
+                fetch_user_info();
+                setViaDiscordActivity(true);
+                return;
+            }
+            
+            handle_discord_activity_login();
+        }
+    }, [fetch_user_info, handle_discord_activity_login]);
+
     return (
-        <AuthContext.Provider value={{ user_info, auth_origin, login_url, logout }}>
+        <AuthContext.Provider value={{ user_info, auth_origin, login_url, logout, via_discord_activity }}>
             <Suspense fallback={null}>
                 <AuthTokenHandler fetch_user_info={fetch_user_info} />
             </Suspense>

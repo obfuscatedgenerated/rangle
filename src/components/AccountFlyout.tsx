@@ -12,7 +12,7 @@ interface AccountFlyoutProps {
 }
 
 export const AccountFlyout = ({open, on_close}: AccountFlyoutProps) => {
-    const {user_info, logout} = useAuth();
+    const {user_info, logout, via_discord_activity} = useAuth();
     const { status, error_message } = useCloudSync();
     const StatusIcon = CLOUD_SYNC_ICONS[status];
 
@@ -40,9 +40,11 @@ export const AccountFlyout = ({open, on_close}: AccountFlyoutProps) => {
                         <span className="opacity-75">({user_info.provider})</span>
                     </div>
 
-                    <button onClick={logout} className="mt-4 px-4 py-2 bg-secondary text-on-secondary rounded cursor-pointer">
-                        Log out
-                    </button>
+                    {!via_discord_activity && (
+                        <button onClick={logout} className="mt-4 px-4 py-2 bg-secondary text-on-secondary rounded cursor-pointer">
+                            Log out
+                        </button>
+                    )}
 
                     <hr className="w-full border-t border-arrow-middle my-4" />
 
