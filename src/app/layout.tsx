@@ -87,7 +87,7 @@ export default function RootLayout({
             lang="en"
             className={`${encode.variable} ${roboto.variable} font-main h-full antialiased`}
         >
-            <body className="min-h-full flex flex-col">
+            <body className="pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] min-h-full flex flex-col">
                 <noscript className="absolute top-1/4 left-1/2 -translate-x-1/2">Please enable JavaScript to play Rangle!</noscript>
                 <ContextProviders providers={[
                     RangleScoresProvider,
