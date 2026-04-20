@@ -11,6 +11,7 @@ import {useSettings, Settings} from "@/context/SettingsContext";
 import {cloud_bus, CLOUD_SYNC_EVENTS} from "@/util/event_bus";
 import {LoadingSpinner} from "@/components/LoadingSpinner";
 import {CircleAlert, Check, Ban} from "lucide-react";
+import {in_discord_activity} from "@/util/discord";
 
 const CLOUD_URL = "https://cloud.ollieg.codes";
 
@@ -47,7 +48,7 @@ interface CloudSyncContextType {
 const CloudSyncContext = createContext<CloudSyncContextType | undefined>(undefined);
 
 export const CloudSyncProvider = ({children}: { children: React.ReactNode }) => {
-    const {user_info, via_discord_activity} = useAuth();
+    const {user_info} = useAuth();
     const {rebuild_scores} = useRangleScores();
     const {settings, update_settings} = useSettings();
 
@@ -56,12 +57,12 @@ export const CloudSyncProvider = ({children}: { children: React.ReactNode }) => 
     const [error_message, setErrorMessage] = useState<string | null>(null);
 
     const cloud_url = useMemo(() => {
-        if (via_discord_activity) {
+        if (in_discord_activity()) {
             return "/.proxy/cloud";
         }
 
         return CLOUD_URL;
-    }, [via_discord_activity]);
+    }, []);
 
     const cloud = useMemo(() => new GlobalStorage("rangle", cloud_url), [cloud_url]);
 
