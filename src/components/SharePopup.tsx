@@ -7,6 +7,8 @@ import {PuzzleCountdown} from "@/components/PuzzleCountdown";
 import Link from "next/link";
 import {useSettingValue} from "@/context/SettingsContext";
 import {THEMES} from "@/themes";
+import {useAuth} from "@/context/AuthContext";
+import {get_discord_sdk} from "@/util/discord";
 
 interface SharePopupProps {
     open: boolean;
@@ -48,10 +50,16 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
         }
     }, [open]);
 
+    const {via_discord_activity} = useAuth();
+
     // on window load, update button text
     useEffect(() => {
-        setShareButtonText(is_mobile() ? "Share Results" : "Copy Results");
-    }, []);
+        if (!via_discord_activity && !is_mobile()) {
+            setShareButtonText("Share Results");
+        } else {
+            setShareButtonText("Copy Results");
+        }
+    }, [via_discord_activity]);
 
     const handle_copy = useCallback(
         (share_text: string) => {
@@ -123,7 +131,16 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
     );
 
     const on_share = useCallback(
-        () => {
+        async () => {
+            // if in discord, open the in-app share dialog
+            if (via_discord_activity) {
+                const sdk = await get_discord_sdk();
+                await sdk.commands.shareLink({
+                    message: share_text
+                });
+                return;
+            }
+
             // if on mobile, open share dialog if available, otherwise fallback to copying to clipboard
             // even if share dialog available on desktop, it usually sucks so copy it
             if (is_mobile() && navigator.share) {
@@ -143,7 +160,7 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
                 handle_copy(share_text);
             }
         },
-        [today_data.number, share_text, handle_copy]
+        [via_discord_activity, share_text, today_data.number, handle_copy]
     );
 
     // TODO: base dialog component
