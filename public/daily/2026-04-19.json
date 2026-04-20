@@ -1,0 +1,56 @@
+{
+  "date": "2026-04-19",
+  "number": 22,
+  "difficulty": "Easy",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q319",
+      "name": "Jupiter",
+      "value": 816520700,
+      "metric": "Distance from Sun",
+      "description": "fifth planet in the Solar System and largest among all; gaseous giant mainly composed of hydrogen and helium",
+      "prefix": "",
+      "suffix": " km",
+      "unit_hint": "in kilometres"
+    },
+    {
+      "id": "Q9240",
+      "name": "Indonesian",
+      "value": 198996550,
+      "metric": "Native Speakers",
+      "description": "official language of Indonesia",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q111",
+      "name": "Mars",
+      "value": 249232432,
+      "metric": "Distance from Sun",
+      "description": "fourth planet from the Solar System, tellurian and orange-red due to iron oxide",
+      "prefix": "",
+      "suffix": " km",
+      "unit_hint": "in kilometres"
+    },
+    {
+      "id": "Q9610",
+      "name": "Bangla",
+      "value": 300000000,
+      "metric": "Native Speakers",
+      "description": "Indo-Aryan language mostly spoken in Bangladesh and India",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q49740",
+      "name": "Minecraft",
+      "value": 350000000,
+      "metric": "Total Units Sold",
+      "description": "2011 video game",
+      "prefix": "",
+      "suffix": " units",
+      "unit_hint": "approx."
+    }
+  ]
+}
