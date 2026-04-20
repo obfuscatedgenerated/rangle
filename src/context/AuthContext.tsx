@@ -143,7 +143,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 const { code } = await sdk.commands.authorize({
                     client_id: ACTIVITY_CLIENT_ID,
                     response_type: "code",
-                    scope: ["identify", "email", "activities.write"],
+                    scope: ["identify", "email", "applications.commands"],
                     state: "",
                 });
 
@@ -189,13 +189,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
             const sso_token = localStorage.getItem("sso_token");
             const discord_token = localStorage.getItem("discord_access_token");
 
-            // already got stored credentials, skip to fetching info and authenticating
+            // already got stored credentials, skip to authenticating
             if (sso_token && discord_token) {
                 get_discord_sdk().then(async (sdk) => {
                     try {
                         await sdk.commands.authenticate({ access_token: discord_token });
-
-                        fetch_user_info();
                         setViaDiscordActivity(true);
                     } catch (err) {
                         // token may have expired, run whole flow again
