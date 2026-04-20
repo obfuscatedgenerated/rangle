@@ -66,7 +66,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         () => {
             // if in discord activity, override auth url to proxy
             let auth_url = AUTH_URL;
-            if (window.location.search.includes("instance_id=")) {
+            if (window.location.search.includes("instance_id=") || sessionStorage.getItem("via_discord_activity") === "true") {
                 auth_url = "/.proxy/auth";
             }
 
@@ -163,6 +163,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                     
                     fetch_user_info();
                     setViaDiscordActivity(true);
+                    sessionStorage.setItem("via_discord_activity", "true");
                 } else {
                     console.error("Failed to exchange Discord activity code for token", await res.text());
                 }
