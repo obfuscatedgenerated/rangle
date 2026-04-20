@@ -21,6 +21,7 @@ interface AuthContextType {
     login_url?: string;
     logout?: () => void;
     via_discord_activity: boolean;
+    open_external_link?: (url: string) => void;
 }
 
 const AuthContext = createContext<AuthContextType>({
@@ -28,7 +29,8 @@ const AuthContext = createContext<AuthContextType>({
     auth_origin: null,
     login_url: undefined,
     logout: undefined,
-    via_discord_activity: false
+    via_discord_activity: false,
+    open_external_link: undefined
 });
 
 // since search params have to be suspended but arent actually mission critical, just move that logic to a sub-component!
@@ -128,16 +130,39 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         [auth_origin, via_discord_activity]
     );
 
+    const DiscordSDK = useRef<typeof import("@discord/embedded-app-sdk").DiscordSDK | null>(null);
+    const import_discord = useCallback(
+        async (): Promise<typeof import("@discord/embedded-app-sdk").DiscordSDK> => {
+            if (!DiscordSDK.current) {
+                const {DiscordSDK: imp_sdk} = await import("@discord/embedded-app-sdk");
+                DiscordSDK.current = imp_sdk;
+            }
+            
+            return DiscordSDK.current;
+        },
+        []
+    );
+    
+    const loaded_sdk = useRef<import("@discord/embedded-app-sdk").DiscordSDK | null>(null);
+    const get_discord_sdk = useCallback(
+        async () => {
+            if (!loaded_sdk.current) {
+                const SDKClass = await import_discord();
+                loaded_sdk.current = new SDKClass(ACTIVITY_CLIENT_ID);
+                await loaded_sdk.current.ready();
+            }
+            return loaded_sdk.current;
+        },
+        [import_discord]
+    );
+
     const handle_discord_activity_login = useCallback(
         async () => {
             loading_discord_activity.current = true;
 
             // lazy load the sdk
             try {
-                const { DiscordSDK } = await import("@discord/embedded-app-sdk");
-
-                const sdk = new DiscordSDK(ACTIVITY_CLIENT_ID);
-                await sdk.ready();
+                const sdk = await get_discord_sdk();
 
                 // get the code
                 const { code } = await sdk.commands.authorize({
@@ -173,7 +198,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 loading_discord_activity.current = false;
             }
         }, 
-        [fetch_user_info]
+        [fetch_user_info, get_discord_sdk]
     );
 
     // handle discord activity auth
@@ -192,8 +217,26 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         }
     }, [fetch_user_info, handle_discord_activity_login]);
 
+    const open_external_link = useCallback(
+        (url: string) => {
+            if (!via_discord_activity && !window.location.search.includes("instance_id=") && sessionStorage.getItem("via_discord_activity") !== "true") {
+                window.open(url, "_blank", "noopener noreferrer");
+                return;
+            }
+
+            get_discord_sdk().then(async sdk => {
+                await sdk.commands.openExternalLink({
+                    url
+                });
+            }).catch(err => {
+                console.error("Failed to open external link with Discord SDK", err);
+            });
+        },
+        [get_discord_sdk, via_discord_activity]
+    );
+
     return (
-        <AuthContext.Provider value={{ user_info, auth_origin, login_url, logout, via_discord_activity }}>
+        <AuthContext.Provider value={{ user_info, auth_origin, login_url, logout, via_discord_activity, open_external_link }}>
             <Suspense fallback={null}>
                 <AuthTokenHandler fetch_user_info={fetch_user_info} />
             </Suspense>

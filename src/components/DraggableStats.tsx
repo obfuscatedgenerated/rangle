@@ -13,6 +13,7 @@ import { CSS } from "@dnd-kit/utilities";
 import type {PuzzleStat} from "@/components/Game";
 import {useEffect, useState} from "react";
 import {LinkIcon} from "lucide-react";
+import {NewTabLink} from "@/components/NewTabLink";
 
 interface DraggableStatProps {
     stat: PuzzleStat;
@@ -85,9 +86,9 @@ const DraggableStat = ({ stat, correct, finished, reveal_values, bonus_round_rev
                 {reveal_values && (!stat.bonus_round || bonus_round_reveal)
                     ? (
                         <span className="flex items-center">
-                            <a title={`Open ${stat.name} on Wikidata`} className="pointer-events-auto underline" href={`https://wikidata.org/wiki/${stat.id}`} target="_blank" rel="noopener noreferrer">
+                            <NewTabLink title={`Open ${stat.name} on Wikidata`} className="pointer-events-auto underline" href={`https://wikidata.org/wiki/${stat.id}`}>
                                 {stat.name}
-                            </a>
+                            </NewTabLink>
                             <LinkIcon className="ml-1 w-4 h-4" />
                         </span>
                     )
