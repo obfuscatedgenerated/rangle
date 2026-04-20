@@ -146,8 +146,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                     scope: ["identify", "email"],
                     state: "",
                     prompt: "none",
-                    // @ts-ignore
-                    redirect_uri: window.location.href
                 });
 
                 // exchange code for token with auth service
