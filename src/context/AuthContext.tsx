@@ -145,7 +145,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                     response_type: "code",
                     scope: ["identify", "email", "rpc.activities.write"],
                     state: "",
-                    prompt: "none",
                 });
 
                 // exchange code for token with auth service
