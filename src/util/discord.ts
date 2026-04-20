@@ -15,6 +15,7 @@ export const get_discord_sdk = async () => {
     return loaded_sdk;
 };
 
+// TODO: could use discordsays origin check?
 export const in_discord_activity = () => {
     if (typeof window === "undefined") {
         return false;

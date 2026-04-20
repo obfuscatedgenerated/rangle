@@ -8,6 +8,7 @@ import Link from "next/link";
 import {useSettingValue} from "@/context/SettingsContext";
 import {THEMES} from "@/themes";
 import {useAuth} from "@/context/AuthContext";
+import {in_discord_activity} from "@/util/discord";
 
 interface SharePopupProps {
     open: boolean;
@@ -91,7 +92,12 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
     
     const share_url = useMemo(
         () => {
-            const base_url = window.location.origin;
+            let base_url = window.location.origin;
+
+            if (in_discord_activity()) {
+                base_url = "https://rangle.today";
+            }
+
             if (archive_date) {
                 return `${base_url}/?d=${archive_date}`;
             } else {
