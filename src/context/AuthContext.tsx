@@ -159,7 +159,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 
                 if (res.ok) {
                     const data = await res.json();
+
                     localStorage.setItem("sso_token", data.token);
+                    localStorage.setItem("discord_access_token", data.discord_access_token);
 
                     // also authenticate the sdk fully to use rpc
                     await sdk.commands.authenticate({
@@ -185,14 +187,31 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         if (in_discord_activity() && !loading_discord_activity.current) {
             localStorage.setItem("in_discord", "true");
 
-            if (localStorage.getItem("sso_token")) {
-                // if we already have a token, just fetch user info and set state
-                fetch_user_info();
-                setViaDiscordActivity(true);
+            const sso_token = localStorage.getItem("sso_token");
+            const discord_token = localStorage.getItem("discord_access_token");
+
+            // already got stored credentials, skip to fetching info and authenticating
+            if (sso_token && discord_token) {
+                get_discord_sdk().then(async (sdk) => {
+                    try {
+                        await sdk.commands.authenticate({ access_token: discord_token });
+
+                        fetch_user_info();
+                        setViaDiscordActivity(true);
+                    } catch (err) {
+                        // token may have expired, run whole flow again
+                        console.error("Failed to authenticate with stored Discord token, running login flow again", err);
+                        handle_discord_activity_login();
+                    }
+                });
+
                 return;
             }
-            
-            handle_discord_activity_login();
+
+            // missing one or both tokens, need to do full login flow
+            if (!loading_discord_activity.current) {
+                handle_discord_activity_login();
+            }
         }
 
         console.log("Are we in a Discord activity?", in_discord_activity());
