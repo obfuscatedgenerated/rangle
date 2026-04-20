@@ -14,13 +14,13 @@ export const get_discord_sdk = async () => {
         loaded_sdk = new DiscordSDK(ACTIVITY_CLIENT_ID);
         await loaded_sdk.ready();
 
-        // disable interactive pip once
-        if (!already_disabled_pip) {
-            already_disabled_pip = true;
-            await loaded_sdk.commands.setConfig({
-                use_interactive_pip: false
-            });
-        }
+        // // disable interactive pip once
+        // if (!already_disabled_pip) {
+        //     already_disabled_pip = true;
+        //     await loaded_sdk.commands.setConfig({
+        //         use_interactive_pip: false
+        //     });
+        // }
     }
     return loaded_sdk;
 };
