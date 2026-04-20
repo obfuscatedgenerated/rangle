@@ -64,7 +64,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
     const fetch_user_info = useCallback(
         () => {
-            fetch(`${AUTH_URL}/me`, {
+            // if in discord activity, override auth url to proxy
+            let auth_url = AUTH_URL;
+            if (window.location.search.includes("instance_id=")) {
+                auth_url = "/.proxy/auth";
+            }
+
+            fetch(`${auth_url}/me`, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("sso_token")}`
                 }
@@ -136,13 +142,16 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 // get the code
                 const { code } = await sdk.commands.authorize({
                     client_id: ACTIVITY_CLIENT_ID,
+                    response_type: "code",
                     scope: ["identify", "email"],
                     state: "",
                     prompt: "none",
+                    // @ts-ignore
+                    redirect_uri: window.location.href
                 });
 
                 // exchange code for token with auth service
-                const res = await fetch(`${AUTH_URL}/login-discord-activity?activity=rangle`, {
+                const res = await fetch("/.proxy/auth/login-discord-activity?activity=rangle", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
