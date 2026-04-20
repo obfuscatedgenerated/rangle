@@ -143,7 +143,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 const { code } = await sdk.commands.authorize({
                     client_id: ACTIVITY_CLIENT_ID,
                     response_type: "code",
-                    scope: ["identify", "email"],
+                    scope: ["identify", "email", "rpc.activities.write"],
                     state: "",
                     prompt: "none",
                 });
