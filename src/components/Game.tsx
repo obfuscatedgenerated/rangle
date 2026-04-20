@@ -309,13 +309,23 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
         if (finished) {
             details_prefix = finished_correctly ? "Finished" : "Failed";
         }
+        
+        let attempts_value: string | number = finished ? attempts.length : attempts.length + 1;
+        if (attempts_value > 5) {
+            attempts_value = "X";
+        }
+        
+        let state_suffix = "";
+        if (hardcore) {
+            state_suffix = " (Hardcore)";
+        }
 
         return {
             type: 0,
             details: `${details_prefix} Rangle #${today_data.number} | ${today_data.difficulty}`,
-            state: `${attempts.length}/5 attempts`,
+            state: `${attempts_value}/5 attempts${state_suffix}`,
         };
-    }, [today_data, finished, attempts.length, finished_correctly]);
+    }, [today_data, finished, attempts.length, hardcore, finished_correctly]);
 
     if (!today_data) {
         return null;
