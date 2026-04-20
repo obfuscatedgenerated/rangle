@@ -1,6 +1,7 @@
 import {useAuth} from "@/context/AuthContext";
 import {useEffect, useRef, useState} from "react";
 import {HeightListeningIFrame} from "@/components/HeightListeningIFrame";
+import {NewTabLink} from "@/components/NewTabLink";
 
 interface LoginPopupProps {
     open: boolean;
@@ -28,7 +29,7 @@ export const LoginPopup = ({open, on_close}: LoginPopupProps) => {
             {!disclaimer_shown && (
                 <>
                     <p className="mb-4 text-pretty text-center">Cloud sync is only available to invited users. Logging in does not guarantee access to cloud sync.</p>
-                    <p className="mb-4 text-pretty text-center">By logging in, you agree to the ollieg.codes <a href="https://ollieg.codes/privacy" target="_blank" rel="noreferrer noopener" className="underline">Privacy Policy</a>.</p>
+                    <p className="mb-4 text-pretty text-center">By logging in, you agree to the ollieg.codes <NewTabLink href="https://ollieg.codes/privacy" className="underline">Privacy Policy</NewTabLink>.</p>
 
                     <br />
 

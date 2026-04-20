@@ -11,6 +11,7 @@ import {useSearchParams, useRouter} from "next/navigation";
 import {epoch_utc, time_zone} from "../../time";
 import {ChangelogWidget} from "@/components/ChangelogWidget";
 import {useCloudSync} from "@/context/CloudSyncContext";
+import {NewTabLink} from "@/components/NewTabLink";
 
 export const HomeInteraction = () => {
     const search_params = useSearchParams();
@@ -100,7 +101,7 @@ export const HomeInteraction = () => {
 
                 <Game archive_date={validated_archive_date || undefined} on_loaded={on_loaded} />
 
-                {loaded && <p className="sm:fixed left-2 bottom-2 opacity-75 text-xs sm:text-base">Powered by <a href="https://www.wikidata.org/" target="_blank" rel="noopener noreferrer" className="underline">Wikidata</a></p>}
+                {loaded && <p className="sm:fixed left-2 bottom-2 opacity-75 text-xs sm:text-base">Powered by <NewTabLink href="https://www.wikidata.org/" className="underline">Wikidata</NewTabLink></p>}
             </main>
         </>
     );
