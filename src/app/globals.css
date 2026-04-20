@@ -54,6 +54,11 @@
 
     --font-main: var(--font-roboto);
     --font-title: var(--font-encode);
+
+    --sait: var(--discord-safe-area-inset-top, env(safe-area-inset-top));
+    --saib: var(--discord-safe-area-inset-bottom, env(safe-area-inset-bottom));
+    --sail: var(--discord-safe-area-inset-left, env(safe-area-inset-left));
+    --sair: var(--discord-safe-area-inset-right, env(safe-area-inset-right));
 }
 
 @media (prefers-color-scheme: dark) {
