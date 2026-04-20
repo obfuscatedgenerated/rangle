@@ -1,56 +1,56 @@
 {
   "date": "2026-04-21",
   "number": 24,
-  "difficulty": "Easy",
+  "difficulty": "Medium",
   "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q49740",
-      "name": "Minecraft",
-      "value": 350000000,
-      "metric": "Total Units Sold",
-      "description": "2011 video game",
-      "prefix": "",
-      "suffix": " units",
-      "unit_hint": "approx."
+      "id": "Q943192",
+      "name": "Fantasia",
+      "value": 76411819,
+      "metric": "Total Box Office Revenue",
+      "description": "1940 American animated film",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q313",
-      "name": "Venus",
-      "value": 108942109,
-      "metric": "Distance from Sun",
-      "description": "second planet from the Solar System, tellurian and very similar to Earth",
-      "prefix": "",
-      "suffix": " km",
-      "unit_hint": "in kilometres"
+      "id": "Q190135",
+      "name": "The Little Mermaid",
+      "value": 40000000,
+      "metric": "Production Budget",
+      "description": "1989 animated film directed by John Musker and Ron Clements",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q5287",
-      "name": "Japanese",
-      "value": 128000000,
+      "id": "Q33268",
+      "name": "Bhojpuri",
+      "value": 52200000,
       "metric": "Native Speakers",
-      "description": "language spoken in East Asia",
+      "description": "Indo-Aryan language native to India and Nepal",
       "prefix": "",
       "suffix": " speakers"
     },
     {
-      "id": "Q2",
-      "name": "Earth",
-      "value": 152098232,
-      "metric": "Distance from Sun",
-      "description": "third planet from the Sun in the Solar System",
-      "prefix": "",
-      "suffix": " km",
-      "unit_hint": "in kilometres"
-    },
-    {
-      "id": "Q9240",
-      "name": "Indonesian",
-      "value": 198996550,
+      "id": "Q36236",
+      "name": "Malayalam",
+      "value": 37100000,
       "metric": "Native Speakers",
-      "description": "official language of Indonesia",
+      "description": "Dravidian language of Southern India",
       "prefix": "",
       "suffix": " speakers"
+    },
+    {
+      "id": "Q36479",
+      "name": "The Lion King",
+      "value": 45000000,
+      "metric": "Production Budget",
+      "description": "1994 animated film directed by Roger Allers and Rob Minkoff",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     }
   ]
 }
