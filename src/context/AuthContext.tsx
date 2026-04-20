@@ -3,9 +3,10 @@
 import {createContext, Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState} from "react";
 import {useRouter, useSearchParams} from "next/navigation";
 
+import {ACTIVITY_CLIENT_ID, get_discord_sdk, in_discord_activity} from "@/util/discord";
+
 // TODO move this and time.js to next_public env
 const AUTH_URL = "https://auth.ollieg.codes";
-const ACTIVITY_CLIENT_ID = "1495567479978725476";
 
 interface LoginDetails {
     id: string;
@@ -68,7 +69,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         () => {
             // if in discord activity, override auth url to proxy
             let auth_url = AUTH_URL;
-            if (window.location.search.includes("instance_id=") || sessionStorage.getItem("via_discord_activity") === "true") {
+            if (in_discord_activity()) {
                 auth_url = "/.proxy/auth";
             }
 
@@ -130,32 +131,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         [auth_origin, via_discord_activity]
     );
 
-    const DiscordSDK = useRef<typeof import("@discord/embedded-app-sdk").DiscordSDK | null>(null);
-    const import_discord = useCallback(
-        async (): Promise<typeof import("@discord/embedded-app-sdk").DiscordSDK> => {
-            if (!DiscordSDK.current) {
-                const {DiscordSDK: imp_sdk} = await import("@discord/embedded-app-sdk");
-                DiscordSDK.current = imp_sdk;
-            }
-            
-            return DiscordSDK.current;
-        },
-        []
-    );
-    
-    const loaded_sdk = useRef<import("@discord/embedded-app-sdk").DiscordSDK | null>(null);
-    const get_discord_sdk = useCallback(
-        async () => {
-            if (!loaded_sdk.current) {
-                const SDKClass = await import_discord();
-                loaded_sdk.current = new SDKClass(ACTIVITY_CLIENT_ID);
-                await loaded_sdk.current.ready();
-            }
-            return loaded_sdk.current;
-        },
-        [import_discord]
-    );
-
     const handle_discord_activity_login = useCallback(
         async () => {
             loading_discord_activity.current = true;
@@ -188,7 +163,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                     
                     fetch_user_info();
                     setViaDiscordActivity(true);
-                    sessionStorage.setItem("via_discord_activity", "true");
                 } else {
                     console.error("Failed to exchange Discord activity code for token", await res.text());
                 }
@@ -198,14 +172,14 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 loading_discord_activity.current = false;
             }
         }, 
-        [fetch_user_info, get_discord_sdk]
+        [fetch_user_info]
     );
 
     // handle discord activity auth
     useEffect(() => {
-        const is_discord = typeof window !== "undefined" && window.location.search.includes("instance_id=");
+        if (in_discord_activity() && !loading_discord_activity.current) {
+            localStorage.setItem("in_discord", "true");
 
-        if (is_discord && !loading_discord_activity.current) {
             if (localStorage.getItem("sso_token")) {
                 // if we already have a token, just fetch user info and set state
                 fetch_user_info();
@@ -215,11 +189,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
             
             handle_discord_activity_login();
         }
+
+        console.log("Are we in a Discord activity?", in_discord_activity());
     }, [fetch_user_info, handle_discord_activity_login]);
 
     const open_external_link = useCallback(
         (url: string) => {
-            if (!via_discord_activity && !window.location.search.includes("instance_id=") && sessionStorage.getItem("via_discord_activity") !== "true") {
+            if (!in_discord_activity()) {
                 window.open(url, "_blank", "noopener noreferrer");
                 return;
             }
@@ -232,7 +208,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 console.error("Failed to open external link with Discord SDK", err);
             });
         },
-        [get_discord_sdk, via_discord_activity]
+        []
     );
 
     return (

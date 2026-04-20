@@ -18,6 +18,8 @@ import {THEMES} from "@/themes";
 import {BonusPopup} from "@/components/BonusPopup";
 import {useAudioPlayer} from "react-use-audio-player";
 
+import {Activity, DiscordPresence} from "@/components/DiscordPresence";
+
 export interface TodayData {
     date: string;
     number: number;
@@ -297,12 +299,32 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
         [theme_id]
     );
 
+    // compute discord presence
+    const activity: Activity | undefined = useMemo(() => {
+        if (!today_data) {
+            return undefined;
+        }
+        
+        let details_prefix = "Attempting";
+        if (finished) {
+            details_prefix = finished_correctly ? "Finished" : "Failed";
+        }
+
+        return {
+            type: 0,
+            details: `${details_prefix} Rangle #${today_data.number} | ${today_data.difficulty}`,
+            state: `${attempts.length}/5 attempts`,
+        };
+    }, [today_data, finished, attempts.length, finished_correctly]);
+
     if (!today_data) {
         return null;
     }
 
     return (
         <>
+            <DiscordPresence activity={activity} />
+
             <SharePopup
                 archive_date={archive_date}
                 open={share_open}

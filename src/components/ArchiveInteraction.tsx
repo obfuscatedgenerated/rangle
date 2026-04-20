@@ -5,6 +5,8 @@ import {epoch_utc, time_zone} from "../../time";
 import {ArchiveGrid} from "@/components/ArchiveGrid";
 import {useMemo, useState} from "react";
 
+import {DiscordPresence} from "@/components/DiscordPresence";
+
 export const ArchiveInteraction = () => {
     const epoch_iso = useMemo(
         () => epoch_utc.toISOString().split("T")[0],
@@ -20,6 +22,11 @@ export const ArchiveInteraction = () => {
 
     return (
         <div className="flex flex-col h-full max-h-[85vh]">
+            <DiscordPresence activity={{
+                type: 4,
+                details: "Browsing the archive",
+            }} />
+
             <label className="shrink-0 mb-4 flex items-center justify-center gap-2">
                 Jump to date:
 
