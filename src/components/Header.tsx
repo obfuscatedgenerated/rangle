@@ -1,6 +1,6 @@
 "use client";
 
-import {InfoPopup} from "@/components/InfoPopup";
+import InfoPopup from "@/components/InfoPopup";
 
 import {CalendarDays, ChartNoAxesCombined, Cloud, Info, Settings} from "lucide-react";
 

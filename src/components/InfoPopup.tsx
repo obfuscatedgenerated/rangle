@@ -7,7 +7,7 @@ interface InfoPopupProps {
     on_close: () => void;
 }
 
-export const InfoPopup = ({open, on_close}: InfoPopupProps) => {
+const InfoPopup = ({open, on_close}: InfoPopupProps) => {
     const dialog_ref = useRef<HTMLDialogElement>(null);
 
     const [pronunciation, setPronunciation] = useState("wrangle");
@@ -71,6 +71,12 @@ export const InfoPopup = ({open, on_close}: InfoPopupProps) => {
                 <a href="https://github.com/obfuscatedgenerated/rangle/issues/new" target="_blank" rel="noreferrer noopener" className="underline">
                     Report a bug
                 </a>
+
+                •
+
+                <a href="https://discord.com/oauth2/authorize?client_id=1495567479978725476" target="_blank" rel="noreferrer noopener" className="underline">
+                    Add to Discord
+                </a>
             </div>
 
             <br />
@@ -84,3 +90,4 @@ export const InfoPopup = ({open, on_close}: InfoPopupProps) => {
         </dialog>
     );
 }
+export default InfoPopup
