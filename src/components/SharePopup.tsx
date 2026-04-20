@@ -8,7 +8,6 @@ import Link from "next/link";
 import {useSettingValue} from "@/context/SettingsContext";
 import {THEMES} from "@/themes";
 import {useAuth} from "@/context/AuthContext";
-import {get_discord_sdk} from "@/util/discord";
 
 interface SharePopupProps {
     open: boolean;
@@ -32,6 +31,8 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
     const dialog_ref = useRef<HTMLDialogElement>(null);
     const [share_button_text, setShareButtonText] = useState("Share Results");
 
+    const [manual_share_mode, setManualShareMode] = useState(false);
+
     const got_it_right = useMemo(() => attempts[attempts.length - 1]?.every((pos) => pos), [attempts]);
 
     const [theme_id] = useSettingValue("theme");
@@ -47,6 +48,7 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
             dialog_ref.current?.showModal();
         } else {
             dialog_ref.current?.close();
+            setManualShareMode(false);
         }
     }, [open]);
 
@@ -54,7 +56,7 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
 
     // on window load, update button text
     useEffect(() => {
-        if (!via_discord_activity && !is_mobile()) {
+        if (via_discord_activity || is_mobile()) {
             setShareButtonText("Share Results");
         } else {
             setShareButtonText("Copy Results");
@@ -132,12 +134,11 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
 
     const on_share = useCallback(
         async () => {
-            // if in discord, open the in-app share dialog
+            // if in discord, have to present it as text to manually copy lol!
+            // TODO: maybe add a bot like wordle?
             if (via_discord_activity) {
-                const sdk = await get_discord_sdk();
-                await sdk.commands.shareLink({
-                    message: share_text
-                });
+                // TODO: might be able to select all
+                setManualShareMode(true);
                 return;
             }
 
@@ -196,6 +197,13 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
 
             <PuzzleCountdown />
 
+            {manual_share_mode && (
+                <div className="mt-4 flex flex-col items-center gap-2">
+                    <p className="text-center">Copy the text below!</p>
+                    <textarea readOnly className="w-full h-32 p-2 bg-secondary text-on-secondary rounded" value={share_text}></textarea>
+                </div>
+            )}
+
             <div className="mt-4 flex gap-4">
                 <button
                     className="px-4 py-2 bg-secondary text-on-secondary rounded cursor-pointer"
@@ -204,12 +212,14 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
                     Close
                 </button>
 
-                <button
-                    className="px-4 py-2 bg-primary text-on-primary rounded cursor-pointer"
-                    onClick={on_share}
-                >
-                    {share_button_text}
-                </button>
+                {!manual_share_mode && (
+                    <button
+                        className="px-4 py-2 bg-primary text-on-primary rounded cursor-pointer"
+                        onClick={on_share}
+                    >
+                        {share_button_text}
+                    </button>
+                )}
             </div>
 
             <p className="mt-4">Eager for more? Visit <Link className="underline" href="/archive">the archive</Link> to play previous Rangles.</p>
