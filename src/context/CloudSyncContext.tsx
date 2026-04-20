@@ -47,7 +47,7 @@ interface CloudSyncContextType {
 const CloudSyncContext = createContext<CloudSyncContextType | undefined>(undefined);
 
 export const CloudSyncProvider = ({children}: { children: React.ReactNode }) => {
-    const {user_info} = useAuth();
+    const {user_info, via_discord_activity} = useAuth();
     const {rebuild_scores} = useRangleScores();
     const {settings, update_settings} = useSettings();
 
@@ -55,7 +55,15 @@ export const CloudSyncProvider = ({children}: { children: React.ReactNode }) => 
     const [last_synced, setLastSynced] = useState<Date | null>(null);
     const [error_message, setErrorMessage] = useState<string | null>(null);
 
-    const cloud = useMemo(() => new GlobalStorage("rangle", CLOUD_URL), []);
+    const cloud_url = useMemo(() => {
+        if (via_discord_activity) {
+            return "/.proxy/cloud";
+        }
+
+        return CLOUD_URL;
+    }, [via_discord_activity]);
+
+    const cloud = useMemo(() => new GlobalStorage("rangle", cloud_url), [cloud_url]);
 
     // check user eligibility
     useEffect(() => {
@@ -64,7 +72,7 @@ export const CloudSyncProvider = ({children}: { children: React.ReactNode }) => 
             return;
         }
 
-        fetch(`${CLOUD_URL}/endowment/globalStorage:*`, {
+        fetch(`${cloud_url}/endowment/globalStorage:*`, {
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem("sso_token")}`
             }
