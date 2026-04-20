@@ -22,8 +22,8 @@
     /* Game Status */
     --correct: #ccb43a;
     --correct-border: #aa8a15;
-    --incorrect: #7a6210;
-    --incorrect-border: #3d3108;
+    --incorrect: #8b0000;
+    --incorrect-border: #3d0a0a;
 
     /* Archive Tiles */
     --won: #ffd700;
