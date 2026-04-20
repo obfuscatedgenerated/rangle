@@ -160,6 +160,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 if (res.ok) {
                     const data = await res.json();
                     localStorage.setItem("sso_token", data.token);
+
+                    // also authenticate the sdk fully to use rpc
+                    await sdk.commands.authenticate({
+                        access_token: data.discord_access_token,
+                    });
                     
                     fetch_user_info();
                     setViaDiscordActivity(true);
