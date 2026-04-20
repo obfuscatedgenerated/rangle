@@ -97,7 +97,7 @@ export const CloudSyncProvider = ({children}: { children: React.ReactNode }) => 
             setStatus("error");
             setErrorMessage("Failed to check cloud sync eligibility");
         });
-    }, [user_info]);
+    }, [cloud_url, user_info]);
 
     const merge_states = useCallback(
         (local: SaveState, remote: SaveState) => {

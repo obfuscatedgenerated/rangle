@@ -2,7 +2,7 @@
 
 import type {DiscordSDK} from "@discord/embedded-app-sdk";
 
-import {get_discord_sdk, in_discord_activity} from "@/util/discord";
+import {get_discord_sdk} from "@/util/discord";
 import {useEffect} from "react";
 import {useAuth} from "@/context/AuthContext";
 

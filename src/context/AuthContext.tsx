@@ -232,6 +232,19 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         []
     );
 
+    // once authenticated, disable interactive pip
+    useEffect(() => {
+        if (via_discord_activity) {
+            get_discord_sdk().then(sdk => {
+                sdk.commands.setConfig({
+                    use_interactive_pip: false
+                }).catch(err => {
+                    console.error("Failed to set Discord SDK config", err);
+                });
+            });
+        }
+    }, [via_discord_activity]);
+
     return (
         <AuthContext.Provider value={{ user_info, auth_origin, login_url, logout, via_discord_activity, open_external_link }}>
             <Suspense fallback={null}>

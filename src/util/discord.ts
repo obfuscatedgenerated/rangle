@@ -5,22 +5,12 @@ export const ACTIVITY_CLIENT_ID = "1495567479978725476";
 
 let loaded_sdk: DiscordSDK | null = null;
 
-let already_disabled_pip = false;
-
 export const get_discord_sdk = async () => {
     if (!loaded_sdk) {
         const {DiscordSDK} = await import("@discord/embedded-app-sdk");
 
         loaded_sdk = new DiscordSDK(ACTIVITY_CLIENT_ID);
         await loaded_sdk.ready();
-
-        // // disable interactive pip once
-        // if (!already_disabled_pip) {
-        //     already_disabled_pip = true;
-        //     await loaded_sdk.commands.setConfig({
-        //         use_interactive_pip: false
-        //     });
-        // }
     }
     return loaded_sdk;
 };
