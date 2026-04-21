@@ -75,7 +75,39 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
                 }, 2000);
             }).catch((err) => {
                 console.error("Error copying to clipboard:", err);
-                alert("Failed to copy to clipboard!");
+
+                // try legacy method as fallback
+                const text_area = document.createElement("textarea");
+                text_area.value = share_text;
+                document.body.appendChild(text_area);
+                text_area.select();
+                try {
+                    const successful = document.execCommand("copy");
+                    if (successful) {
+                        setShareButtonText("Copied!");
+                        setTimeout(() => {
+                            if (is_mobile() && !via_discord_activity) {
+                                setShareButtonText("Share Results");
+                            } else {
+                                setShareButtonText("Copy Results");
+                            }
+                        }, 2000);
+                    } else {
+                        throw new Error("execCommand failed");
+                    }
+                } catch (err) {
+                    console.error("Legacy copy method failed:", err);
+                }
+
+                setShareButtonText("Error!");
+
+                setTimeout(() => {
+                    if (is_mobile() && !via_discord_activity) {
+                        setShareButtonText("Share Results");
+                    } else {
+                        setShareButtonText("Copy Results");
+                    }
+                }, 2000);
             });
         },
         [via_discord_activity]
