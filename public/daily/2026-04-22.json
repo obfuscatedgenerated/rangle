@@ -5,51 +5,52 @@
   "neighbourhood": "small",
   "puzzle": [
     {
-      "id": "Q1253950",
-      "name": "Mudkip",
-      "value": 258,
-      "metric": "Pokédex Number",
-      "description": "Pokémon species",
-      "prefix": "#",
-      "suffix": ""
+      "id": "Q30847",
+      "name": "caracal",
+      "value": 70,
+      "metric": "Gestation Period",
+      "description": "species of wild cat",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
     },
     {
-      "id": "Q754197",
-      "name": "JAG",
-      "value": 227,
+      "id": "Q2668662",
+      "name": "Father of the Pride",
+      "value": 15,
       "metric": "Number of Episodes",
-      "description": "American legal drama television series (1995-2005)",
+      "description": "American animated television series",
       "prefix": "",
       "suffix": " episodes"
     },
     {
-      "id": "Q463999",
-      "name": "The Cosby Show",
-      "value": 201,
+      "id": "Q174555",
+      "name": "Madagascar",
+      "value": 86,
+      "metric": "Duration / Runtime",
+      "description": "2005 animated film directed by Eric Darnell and Tom McGrath",
+      "prefix": "",
+      "suffix": " minutes",
+      "unit_hint": "in minutes"
+    },
+    {
+      "id": "Q13409848",
+      "name": "The Heirs",
+      "value": 20,
       "metric": "Number of Episodes",
-      "description": "American sitcom",
+      "description": "2013 South Korean television series",
       "prefix": "",
       "suffix": " episodes"
     },
     {
-      "id": "Q3044",
-      "name": "Charlemagne",
-      "value": 184,
-      "metric": "Height",
-      "description": "king of Franks, regarded as the first Holy Roman Emperor (747–814) (742-814)",
+      "id": "Q36101",
+      "name": "koala",
+      "value": 10,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "arboreal herbivorous marsupial native to Australia",
       "prefix": "",
-      "suffix": " cm",
-      "unit_hint": "in centimeters"
-    },
-    {
-      "id": "Q9671",
-      "name": "Michael Schumacher",
-      "value": 174,
-      "metric": "Height",
-      "description": "German racing driver",
-      "prefix": "",
-      "suffix": " cm",
-      "unit_hint": "in centimeters"
+      "suffix": " years",
+      "unit_hint": "in years"
     }
   ]
 }
