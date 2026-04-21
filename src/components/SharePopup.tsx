@@ -100,19 +100,19 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
                     }
                 } catch (err) {
                     console.error("Legacy copy method failed:", err);
+
+                    setShareButtonText("Error!");
+
+                    setTimeout(() => {
+                        if (is_mobile() && !via_discord_activity) {
+                            setShareButtonText("Share Results");
+                        } else {
+                            setShareButtonText("Copy Results");
+                        }
+                    }, 2000);
                 } finally {
                     document.body.removeChild(text_area);
                 }
-
-                setShareButtonText("Error!");
-
-                setTimeout(() => {
-                    if (is_mobile() && !via_discord_activity) {
-                        setShareButtonText("Share Results");
-                    } else {
-                        setShareButtonText("Copy Results");
-                    }
-                }, 2000);
             });
         },
         [via_discord_activity]
