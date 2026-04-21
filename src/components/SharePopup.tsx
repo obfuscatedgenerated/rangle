@@ -10,6 +10,8 @@ import {THEMES} from "@/themes";
 import {useAuth} from "@/context/AuthContext";
 import {in_discord_activity} from "@/util/discord";
 
+import copy from "copy-to-clipboard";
+
 interface SharePopupProps {
     open: boolean;
     on_close: () => void;
@@ -63,7 +65,7 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
 
     const handle_copy = useCallback(
         (share_text: string) => {
-            navigator.clipboard.writeText(share_text).then(() => {
+            copy(share_text).then(() => {
                 setShareButtonText("Copied!");
 
                 setTimeout(() => {
@@ -75,46 +77,6 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
                 }, 2000);
             }).catch((err) => {
                 console.error("Error copying to clipboard:", err);
-
-                // try legacy method as fallback
-                const text_area = document.createElement("textarea");
-                text_area.style.position = "fixed";
-                text_area.style.top = "-9999px";
-                text_area.style.left = "0";
-                text_area.value = share_text;
-                document.body.appendChild(text_area);
-                text_area.focus();
-                text_area.select();
-                text_area.setSelectionRange(0, text_area.value.length);
-                try {
-                    const successful = document.execCommand("copy");
-                    if (successful) {
-                        setShareButtonText("Copied!");
-                        setTimeout(() => {
-                            if (is_mobile() && !via_discord_activity) {
-                                setShareButtonText("Share Results");
-                            } else {
-                                setShareButtonText("Copy Results");
-                            }
-                        }, 2000);
-                    } else {
-                        throw new Error("execCommand failed");
-                    }
-                } catch (err) {
-                    console.error("Legacy copy method failed:", err);
-
-                    setShareButtonText("Error!");
-
-                    setTimeout(() => {
-                        if (is_mobile() && !via_discord_activity) {
-                            setShareButtonText("Share Results");
-                        } else {
-                            setShareButtonText("Copy Results");
-                        }
-                    }, 2000);
-                } finally {
-                    document.body.removeChild(text_area);
-                }
             });
         },
         [via_discord_activity]
