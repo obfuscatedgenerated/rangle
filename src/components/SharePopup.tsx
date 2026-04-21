@@ -78,6 +78,9 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
 
                 // try legacy method as fallback
                 const text_area = document.createElement("textarea");
+                text_area.style.position = "fixed";
+                text_area.style.top = "-9999px";
+                text_area.style.left = "0";
                 text_area.value = share_text;
                 document.body.appendChild(text_area);
                 text_area.select();
