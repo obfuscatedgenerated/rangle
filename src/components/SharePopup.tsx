@@ -10,8 +10,6 @@ import {THEMES} from "@/themes";
 import {useAuth} from "@/context/AuthContext";
 import {in_discord_activity} from "@/util/discord";
 
-import copy from "copy-to-clipboard";
-
 interface SharePopupProps {
     open: boolean;
     on_close: () => void;
@@ -34,6 +32,8 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
     const dialog_ref = useRef<HTMLDialogElement>(null);
     const [share_button_text, setShareButtonText] = useState("Share Results");
 
+    const [manual_share_mode, setManualShareMode] = useState(false);
+
     const got_it_right = useMemo(() => attempts[attempts.length - 1]?.every((pos) => pos), [attempts]);
 
     const [theme_id] = useSettingValue("theme");
@@ -49,6 +49,7 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
             dialog_ref.current?.showModal();
         } else {
             dialog_ref.current?.close();
+            setManualShareMode(false);
         }
     }, [open]);
 
@@ -56,7 +57,7 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
 
     // on window load, update button text
     useEffect(() => {
-        if (is_mobile() && !via_discord_activity) {
+        if (via_discord_activity || is_mobile()) {
             setShareButtonText("Share Results");
         } else {
             setShareButtonText("Copy Results");
@@ -65,21 +66,18 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
 
     const handle_copy = useCallback(
         (share_text: string) => {
-            copy(share_text).then(() => {
+            navigator.clipboard.writeText(share_text).then(() => {
                 setShareButtonText("Copied!");
 
                 setTimeout(() => {
-                    if (is_mobile() && !via_discord_activity) {
-                        setShareButtonText("Share Results");
-                    } else {
-                        setShareButtonText("Copy Results");
-                    }
+                    setShareButtonText(is_mobile() ? "Share Results" : "Copy Results");
                 }, 2000);
             }).catch((err) => {
                 console.error("Error copying to clipboard:", err);
+                alert("Failed to copy to clipboard!");
             });
         },
-        [via_discord_activity]
+        []
     );
     
     const total_bonus_rounds = useMemo(
@@ -142,8 +140,11 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
 
     const on_share = useCallback(
         async () => {
+            // if in discord, have to present it as text to manually copy lol!
+            // TODO: maybe add a bot like wordle?
             if (via_discord_activity) {
-                handle_copy(share_text);
+                // TODO: might be able to select all
+                setManualShareMode(true);
                 return;
             }
 
@@ -202,6 +203,13 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
 
             <PuzzleCountdown />
 
+            {manual_share_mode && (
+                <div className="mt-4 flex flex-col items-center gap-2">
+                    <p className="text-center">Copy the text below!</p>
+                    <textarea readOnly className="w-full h-32 p-2 bg-secondary text-on-secondary rounded" value={share_text}></textarea>
+                </div>
+            )}
+
             <div className="mt-4 flex gap-4">
                 <button
                     className="px-4 py-2 bg-secondary text-on-secondary rounded cursor-pointer"
@@ -210,12 +218,14 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
                     Close
                 </button>
 
-                <button
-                    className="px-4 py-2 bg-primary text-on-primary rounded cursor-pointer"
-                    onClick={on_share}
-                >
-                    {share_button_text}
-                </button>
+                {!manual_share_mode && (
+                    <button
+                        className="px-4 py-2 bg-primary text-on-primary rounded cursor-pointer"
+                        onClick={on_share}
+                    >
+                        {share_button_text}
+                    </button>
+                )}
             </div>
 
             <p className="mt-4">Eager for more? Visit <Link className="underline" href="/archive">the archive</Link> to play previous Rangles.</p>

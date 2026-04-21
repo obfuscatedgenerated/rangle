@@ -23,9 +23,6 @@ importers:
       commander:
         specifier: ^14.0.3
         version: 14.0.3
-      copy-to-clipboard:
-        specifier: ^4.0.0
-        version: 4.0.0
       lucide-react:
         specifier: ^1.7.0
         version: 1.7.0(react@19.2.4)
@@ -997,9 +994,6 @@ packages:
 
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
-
-  copy-to-clipboard@4.0.0:
-    resolution: {integrity: sha512-mfN771XnlPSUl0eCw4QoGcXfbK2205n52j4JuXINgUi0WLiFp/YtZ5at8tO9DZSmpHzoyx83ytca/NJqCcdzRw==}
 
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
@@ -3393,8 +3387,6 @@ snapshots:
       yargs: 17.7.2
 
   convert-source-map@2.0.0: {}
-
-  copy-to-clipboard@4.0.0: {}
 
   cross-spawn@7.0.6:
     dependencies:
