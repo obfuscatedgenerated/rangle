@@ -83,7 +83,9 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
                 text_area.style.left = "0";
                 text_area.value = share_text;
                 document.body.appendChild(text_area);
+                text_area.focus();
                 text_area.select();
+                text_area.setSelectionRange(0, text_area.value.length);
                 try {
                     const successful = document.execCommand("copy");
                     if (successful) {
