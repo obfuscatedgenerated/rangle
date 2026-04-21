@@ -97,6 +97,8 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
                     }
                 } catch (err) {
                     console.error("Legacy copy method failed:", err);
+                } finally {
+                    document.body.removeChild(text_area);
                 }
 
                 setShareButtonText("Error!");
