@@ -1,56 +1,54 @@
 {
   "date": "2026-04-22",
   "number": 25,
-  "difficulty": "Easy",
-  "neighbourhood": "small",
+  "difficulty": "Medium",
+  "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q30847",
-      "name": "caracal",
-      "value": 70,
-      "metric": "Gestation Period",
-      "description": "species of wild cat",
+      "id": "Q40993",
+      "name": "Porsche",
+      "value": 36996,
+      "metric": "Number of Employees",
+      "description": "German automobile manufacturer specializing in high-performance sports cars, SUVs and sedans, owned by Volkswagen AG",
       "prefix": "",
-      "suffix": " days",
-      "unit_hint": "in days"
+      "suffix": " employees"
     },
     {
-      "id": "Q2668662",
-      "name": "Father of the Pride",
-      "value": 15,
-      "metric": "Number of Episodes",
-      "description": "American animated television series",
+      "id": "Q49088",
+      "name": "Columbia University",
+      "value": 33413,
+      "metric": "Student Enrollment",
+      "description": "private university in New York City, New York, US",
       "prefix": "",
-      "suffix": " episodes"
+      "suffix": " students"
     },
     {
-      "id": "Q174555",
-      "name": "Madagascar",
-      "value": 86,
-      "metric": "Duration / Runtime",
-      "description": "2005 animated film directed by Eric Darnell and Tom McGrath",
+      "id": "Q900492",
+      "name": "Cà Mau Airport",
+      "value": 30698,
+      "metric": "Number of Passengers",
+      "description": "airport in Vietnam",
       "prefix": "",
-      "suffix": " minutes",
-      "unit_hint": "in minutes"
+      "suffix": " passengers",
+      "unit_hint": "annual"
     },
     {
-      "id": "Q13409848",
-      "name": "The Heirs",
-      "value": 20,
-      "metric": "Number of Episodes",
-      "description": "2013 South Korean television series",
+      "id": "Q13199",
+      "name": "Romansh",
+      "value": 40039,
+      "metric": "Native Speakers",
+      "description": "Romance language spoken in the Swiss canton of Grisons (Graubünden)",
       "prefix": "",
-      "suffix": " episodes"
+      "suffix": " speakers"
     },
     {
-      "id": "Q36101",
-      "name": "koala",
-      "value": 10,
-      "metric": "Life Expectancy / Maximum Lifespan",
-      "description": "arboreal herbivorous marsupial native to Australia",
+      "id": "Q151510",
+      "name": "Heidelberg University",
+      "value": 28413,
+      "metric": "Student Enrollment",
+      "description": "public research university in Heidelberg, Baden-Württemberg, Germany",
       "prefix": "",
-      "suffix": " years",
-      "unit_hint": "in years"
+      "suffix": " students"
     }
   ]
 }
