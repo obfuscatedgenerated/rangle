@@ -1,0 +1,55 @@
+{
+  "date": "2026-04-22",
+  "number": 25,
+  "difficulty": "Easy",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q1253950",
+      "name": "Mudkip",
+      "value": 258,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q754197",
+      "name": "JAG",
+      "value": 227,
+      "metric": "Number of Episodes",
+      "description": "American legal drama television series (1995-2005)",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q463999",
+      "name": "The Cosby Show",
+      "value": 201,
+      "metric": "Number of Episodes",
+      "description": "American sitcom",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q3044",
+      "name": "Charlemagne",
+      "value": 184,
+      "metric": "Height",
+      "description": "king of Franks, regarded as the first Holy Roman Emperor (747–814) (742-814)",
+      "prefix": "",
+      "suffix": " cm",
+      "unit_hint": "in centimeters"
+    },
+    {
+      "id": "Q9671",
+      "name": "Michael Schumacher",
+      "value": 174,
+      "metric": "Height",
+      "description": "German racing driver",
+      "prefix": "",
+      "suffix": " cm",
+      "unit_hint": "in centimeters"
+    }
+  ]
+}
