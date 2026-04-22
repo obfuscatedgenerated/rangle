@@ -8,6 +8,8 @@ import {ACTIVITY_CLIENT_ID, get_discord_sdk, in_discord_activity} from "@/util/d
 // TODO move this and time.js to next_public env
 const AUTH_URL = "https://auth.ollieg.codes";
 
+export const DEFAULT_DISCORD_SCOPES = ["identify", "email", "rpc.activities.write"] as const;
+
 interface LoginDetails {
     id: string;
     username: string;
@@ -72,6 +74,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
             if (in_discord_activity()) {
                 auth_url = "/.proxy/auth";
             }
+
+            // TODO: this can be fetched from the jwt, /me is unnecessary if verification is not needed
 
             fetch(`${auth_url}/me`, {
                 headers: {
@@ -143,7 +147,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 const { code } = await sdk.commands.authorize({
                     client_id: ACTIVITY_CLIENT_ID,
                     response_type: "code",
-                    scope: ["identify", "email", "rpc.activities.write"],
+                    scope: [...DEFAULT_DISCORD_SCOPES],
                     state: "",
                 });
 

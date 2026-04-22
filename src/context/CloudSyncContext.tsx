@@ -13,7 +13,7 @@ import {LoadingSpinner} from "@/components/LoadingSpinner";
 import {CircleAlert, Check, Ban} from "lucide-react";
 import {in_discord_activity} from "@/util/discord";
 
-const CLOUD_URL = "https://cloud.ollieg.codes";
+export const CLOUD_URL = "https://cloud.ollieg.codes";
 
 export type CloudSyncStatus = "idle" | "syncing" | "synced" | "error" | "ineligible" | "logged_out";
 export const CLOUD_SYNC_STATUS_MESSAGES: Record<CloudSyncStatus, string> = {

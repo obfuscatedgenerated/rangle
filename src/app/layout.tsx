@@ -10,6 +10,7 @@ import {ContextProviders} from "@/components/ContextProviders";
 import {AuthProvider} from "@/context/AuthContext";
 import {CloudSyncProvider} from "@/context/CloudSyncContext";
 import {RangleStateProvider} from "@/context/RangleStateContext";
+import {DiscordLeaderboardProvider} from "@/context/DiscordLeaderboardContext";
 
 export const metadata: Metadata = {
     title: {
@@ -95,6 +96,7 @@ export default function RootLayout({
                     AuthProvider,
                     CloudSyncProvider,
                     RangleStateProvider,
+                    DiscordLeaderboardProvider
                 ]}>
                     <ThemeApplier />
 
