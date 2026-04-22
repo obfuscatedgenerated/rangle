@@ -1,53 +1,54 @@
 {
   "date": "2026-04-23",
   "number": 26,
-  "difficulty": "Hard",
-  "neighbourhood": "small",
+  "difficulty": "Medium",
+  "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q5471",
-      "name": "La Scala",
-      "value": 12,
-      "metric": "Number of Floors",
-      "description": "opera house in Milan, Italy",
+      "id": "Q3604",
+      "name": "Djibouti",
+      "value": 603900,
+      "metric": "Population",
+      "description": "capital city of Djibouti",
       "prefix": "",
-      "suffix": " floors"
+      "suffix": " people"
     },
     {
-      "id": "Q2700924",
-      "name": "Wortegemsen",
-      "value": 24.5,
-      "metric": "Alcohol by Volume",
+      "id": "Q34014",
+      "name": "Swazi",
+      "value": 2034200,
+      "metric": "Native Speakers",
+      "description": "language of the Swazi people",
       "prefix": "",
-      "suffix": "%",
-      "unit_hint": "by approx. percent"
+      "suffix": " speakers"
     },
     {
-      "id": "Q956782",
-      "name": "Women's Murder Club",
-      "value": 13,
-      "metric": "Number of Episodes",
-      "description": "television series",
-      "prefix": "",
-      "suffix": " episodes"
+      "id": "Q14799",
+      "name": "Lenovo",
+      "value": 13367000,
+      "metric": "Market Capitalisation",
+      "description": "Chinese multinational technology company established in 1984",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q57965",
-      "name": "Tokyo Skytree",
-      "value": 29,
-      "metric": "Number of Floors",
-      "description": "tower in Tokyo, Japan",
+      "id": "Q200078",
+      "name": "Okayama",
+      "value": 720043,
+      "metric": "Population",
+      "description": "city in Okayama prefecture, Japan",
       "prefix": "",
-      "suffix": " floors"
+      "suffix": " people"
     },
     {
-      "id": "Q317575",
-      "name": "Les Faucheurs de marguerites",
-      "value": 14,
-      "metric": "Number of Episodes",
-      "description": "television series",
+      "id": "Q29561",
+      "name": "Avar",
+      "value": 766500,
+      "metric": "Native Speakers",
+      "description": "language belonging to the Avar–Andic group of the Northeast Caucasian language family",
       "prefix": "",
-      "suffix": " episodes"
+      "suffix": " speakers"
     }
   ]
 }
