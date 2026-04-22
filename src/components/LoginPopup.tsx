@@ -29,7 +29,7 @@ export const LoginPopup = ({open, on_close}: LoginPopupProps) => {
             {!disclaimer_shown && (
                 <>
                     <p className="mb-4 text-pretty text-center">Cloud sync is only available to invited users. Logging in does not guarantee access to cloud sync.</p>
-                    <p className="mb-4 text-pretty text-center">By logging in, you agree to the ollieg.codes <NewTabLink href="https://ollieg.codes/privacy" className="underline">Privacy Policy</NewTabLink>.</p>
+                    <p className="mb-4 text-pretty text-center">By logging in, you agree to the <NewTabLink href="https://rangle.today/privacy" className="underline">Privacy Policy</NewTabLink>.</p>
 
                     <br />
 
