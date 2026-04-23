@@ -43,7 +43,7 @@ export const DiscordSplash = () => {
     }
 
     return (
-        <div className={`fixed top-0 left-0 h-screen w-screen bg-background flex items-center justify-center p-4 z-99999 pointer-events-none transition-opacity duration-500 ${show_splash ? "opacity-100" : "opacity-0"}`}>
+        <div className={`splash fixed top-0 left-0 h-screen w-screen bg-background flex items-center justify-center p-4 z-99999 pointer-events-none transition-opacity duration-500 ${show_splash ? "opacity-100" : "opacity-0"}`}>
             <Image src="/icon.svg" alt="Rangle Logo" width={128} height={128} />
             <p className="font-title font-bold text-2xl tracking-wider">Rangle</p>
         </div>

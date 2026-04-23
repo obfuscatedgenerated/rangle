@@ -311,3 +311,8 @@ body:has(dialog[open]) {
         font-size: 11px;
     }
 }
+
+/* cheaply hide the dialogs when the splash is shown (not perfect but will do) */
+body:has(.splash) dialog.opacity-100 {
+    display: none;
+}
