@@ -313,11 +313,11 @@ body:has(dialog[open]) {
 }
 
 /* cheaply hide the dialogs when the splash is shown (not perfect but will do) */
-html:has(.splash) dialog.opacity-100 {
+html:has(.splash.opacity-100) dialog {
     display: none;
 }
 
 /* hide scrollbar when splash is shown too */
-html:has(.splash), html:has(.splash) * {
+html:has(.splash.opacity-100), html:has(.splash.opacity-100) * {
     overflow: hidden;
 }
