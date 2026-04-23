@@ -117,7 +117,7 @@ export const StatsPopup = ({open, on_close, open_leaderboard}: StatsPopupProps) 
             {stats === null ? <LoadingSpinner /> : <PresentedStats stats={stats} />}
 
             {in_discord_guild && (
-                <span className="underline cursor-pointer mb-2" onClick={open_leaderboard}>View server leaderboard</span>
+                <span className="underline cursor-pointer mb-2" onClick={open_leaderboard}>View server leaderboard for today</span>
             )}
 
             <button
