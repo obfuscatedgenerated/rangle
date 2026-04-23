@@ -3,7 +3,7 @@
 import {createContext, useCallback, useContext, useEffect, useRef, useState} from "react";
 import {DEFAULT_DISCORD_SCOPES, useAuth} from "@/context/AuthContext";
 import {ACTIVITY_CLIENT_ID, get_discord_sdk} from "@/util/discord";
-import {CLOUD_URL} from "@/context/CloudSyncContext";
+import {useCloudSync} from "@/context/CloudSyncContext";
 
 export interface LeaderboardEntry {
     user_id: string;
@@ -29,6 +29,7 @@ const DiscordLeaderboardContext = createContext<DiscordLeaderboardContextType>({
 });
 
 export const DiscordLeaderboardProvider = ({ children }: { children: React.ReactNode }) => {
+    const {cloud_url} = useCloudSync();
     const {via_discord_activity} = useAuth();
 
     const [current_guild_id, setCurrentGuildId] = useState<string | null>(null);
@@ -48,7 +49,7 @@ export const DiscordLeaderboardProvider = ({ children }: { children: React.React
             setCurrentGuildId(sdk.guildId);
 
             // also perform an unverified "check in" to this guild to list us on leaderboards even without the full sync (but not read to avoid leaking member lists!)
-            fetch(`${CLOUD_URL}/rangle/guilds/${sdk.guildId}/checkin`, {
+            fetch(`${cloud_url}/rangle/guilds/${sdk.guildId}/checkin`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -58,7 +59,7 @@ export const DiscordLeaderboardProvider = ({ children }: { children: React.React
                 console.error("Failed to check in to guild for leaderboard:", err);
             });
         });
-    }, [via_discord_activity]);
+    }, [cloud_url, via_discord_activity]);
 
     const [needs_consent, setNeedsConsent] = useState(false);
     const leaderboard_grant = useRef<string | null>(null);
@@ -97,7 +98,7 @@ export const DiscordLeaderboardProvider = ({ children }: { children: React.React
                 setNeedsConsent(false);
 
                 // resync guilds and obtain the leaderboard grant, expiry time, and guilds map
-                const res = await fetch(`${CLOUD_URL}/rangle/sync_guilds`, {
+                const res = await fetch(`${cloud_url}/rangle/sync_guilds`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -124,7 +125,7 @@ export const DiscordLeaderboardProvider = ({ children }: { children: React.React
             }
 
             // now we can fetch the leaderboard for this guild with the grant
-            const res = await fetch(`${CLOUD_URL}/rangle/guilds/${current_guild_id}/leaderboard/${iso_date}`, {
+            const res = await fetch(`${cloud_url}/rangle/guilds/${current_guild_id}/leaderboard/${iso_date}`, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("sso_token")}`,
                     "X-Leaderboard-Grant": leaderboard_grant.current!
@@ -138,7 +139,7 @@ export const DiscordLeaderboardProvider = ({ children }: { children: React.React
             const data = await res.json();
             return data as LeaderboardEntry[];
         },
-        [current_guild_id]
+        [cloud_url, current_guild_id]
     );
 
     return (

@@ -9,6 +9,7 @@ import {useSettingValue} from "@/context/SettingsContext";
 import {THEMES} from "@/themes";
 import {useAuth} from "@/context/AuthContext";
 import {in_discord_activity} from "@/util/discord";
+import {LeaderboardPopup} from "@/components/LeaderboardPopup";
 
 interface SharePopupProps {
     open: boolean;
@@ -170,8 +171,11 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
         [via_discord_activity, share_text, today_data.number, handle_copy]
     );
 
+    const [leaderboard_open, setLeaderboardOpen] = useState(false);
+
     // TODO: base dialog component
     return (
+        <>
         <dialog onAbort={on_close} ref={dialog_ref}
                 className="rounded-lg p-4 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[95vw] sm:max-w-md w-full bg-background-variant text-foreground-variant flex flex-col items-center">
             <h2 className="text-xl font-bold mb-2">Results</h2>
@@ -203,6 +207,10 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
 
             <PuzzleCountdown />
 
+            {via_discord_activity && (
+                <span className="underline cursor-pointer" onClick={() => setLeaderboardOpen(true)}>View Server Leaderboard</span>
+            )}
+
             {manual_share_mode && (
                 <div className="mt-4 flex flex-col items-center gap-2">
                     <p className="text-center">Copy the text below!</p>
@@ -230,6 +238,9 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
 
             <p className="mt-4">Eager for more? Visit <Link className="underline" href="/archive">the archive</Link> to play previous Rangles.</p>
         </dialog>
+            {/*TODO: prob shouldnt be a child here, and should be accesible lesewhere. but just a test for now*/}
+            <LeaderboardPopup open={leaderboard_open} on_close={() => setLeaderboardOpen(false)} today_data={today_data} />
+        </>
     );
 }
 

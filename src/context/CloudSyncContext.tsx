@@ -13,7 +13,7 @@ import {LoadingSpinner} from "@/components/LoadingSpinner";
 import {CircleAlert, Check, Ban} from "lucide-react";
 import {in_discord_activity} from "@/util/discord";
 
-export const CLOUD_URL = "https://cloud.ollieg.codes";
+const CLOUD_URL = "https://cloud.ollieg.codes";
 
 export type CloudSyncStatus = "idle" | "syncing" | "synced" | "error" | "ineligible" | "logged_out";
 export const CLOUD_SYNC_STATUS_MESSAGES: Record<CloudSyncStatus, string> = {
@@ -43,6 +43,8 @@ interface CloudSyncContextType {
     trigger_settings_sync: () => void;
     trigger_full_sync: () => void;
     push_update: (date: string, state: SaveStateDay) => void;
+
+    cloud_url: string;
 }
 
 const CloudSyncContext = createContext<CloudSyncContextType | undefined>(undefined);
@@ -361,7 +363,8 @@ export const CloudSyncProvider = ({children}: { children: React.ReactNode }) => 
             trigger_state_sync,
             trigger_settings_sync,
             trigger_full_sync,
-            push_update
+            push_update,
+            cloud_url
         }}>
             {children}
         </CloudSyncContext.Provider>
