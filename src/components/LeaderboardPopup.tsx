@@ -1,13 +1,12 @@
 "use client";
 
-import {useCallback, useEffect, useMemo, useRef, useState} from "react";
+import {useEffect, useMemo, useRef, useState} from "react";
 
 import {useAuth} from "@/context/AuthContext";
 import {LeaderboardEntry, useDiscordLeaderboard} from "@/context/DiscordLeaderboardContext";
 
 import type {TodayData} from "@/components/Game";
 import {LoadingSpinner} from "@/components/LoadingSpinner";
-import {NewTabLink} from "@/components/NewTabLink";
 
 interface LeaderboardPopupProps {
     open: boolean;

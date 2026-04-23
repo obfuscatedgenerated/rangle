@@ -8,6 +8,8 @@ import {ACTIVITY_CLIENT_ID, get_discord_sdk, in_discord_activity} from "@/util/d
 // TODO move this and time.js to next_public env
 const AUTH_URL = "https://auth.ollieg.codes";
 
+const DISCORD_SCOPES = ["identify", "email", "rpc.activities.write", "guilds"] as const;
+
 interface LoginDetails {
     id: string;
     username: string;
@@ -145,7 +147,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 const { code } = await sdk.commands.authorize({
                     client_id: ACTIVITY_CLIENT_ID,
                     response_type: "code",
-                    scope: ["identify", "email", "rpc.activities.write", "guilds"],
+                    scope: [...DISCORD_SCOPES],
                     state: "",
                 });
 
@@ -163,6 +165,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
                     localStorage.setItem("sso_token", data.token);
                     localStorage.setItem("discord_access_token", data.discord_access_token);
+                    localStorage.setItem("discord_scopes", DISCORD_SCOPES.join(","));
 
                     // also authenticate the sdk fully to use rpc
                     await sdk.commands.authenticate({
@@ -190,9 +193,19 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
             const sso_token = localStorage.getItem("sso_token");
             const discord_token = localStorage.getItem("discord_access_token");
+            const discord_scopes = localStorage.getItem("discord_scopes");
 
             // already got stored credentials, skip to authenticating
             if (sso_token && discord_token) {
+                // but first ensure that it was authorised with every scope needed
+                const stored_scopes = discord_scopes ? discord_scopes.split(",") : [];
+                const missing_scopes = DISCORD_SCOPES.filter(scope => !stored_scopes.includes(scope));
+                if (missing_scopes.length > 0) {
+                    console.warn("Missing Discord scopes, need to re-authenticate", missing_scopes);
+                    handle_discord_activity_login();
+                    return;
+                }
+
                 get_discord_sdk().then(async (sdk) => {
                     try {
                         await sdk.commands.authenticate({ access_token: discord_token });

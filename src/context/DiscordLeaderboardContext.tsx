@@ -83,7 +83,7 @@ export const DiscordLeaderboardProvider = ({ children }: { children: React.React
                 });
 
                 if (!res.ok) {
-                    throw new Error("Failed to escalate permissions: " + await res.text());
+                    throw new Error("Failed to fetch leaderboard grant: " + await res.text());
                 }
 
                 const data = await res.json();
