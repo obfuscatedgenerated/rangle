@@ -1,8 +1,16 @@
 ---
-latest: The cloud! (it's just someone else's computer)
+latest: Discord leaderboards!
 ---
 
 # Changelog
+
+## 2026-04-23
+
+For a few days, Rangle has been available as a [Discord activity](https://discord.com/oauth2/authorize?client_id=1495567479978725476).
+
+I've now added a server leaderboard to this!
+
+(Note that you may be asked to authorise the activity again, now with the new permission to view what servers you're in)
 
 ## 2026-04-18
 
