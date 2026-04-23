@@ -8,8 +8,6 @@ import {ACTIVITY_CLIENT_ID, get_discord_sdk, in_discord_activity} from "@/util/d
 // TODO move this and time.js to next_public env
 const AUTH_URL = "https://auth.ollieg.codes";
 
-export const DEFAULT_DISCORD_SCOPES = ["identify", "email", "rpc.activities.write"] as const;
-
 interface LoginDetails {
     id: string;
     username: string;
@@ -147,7 +145,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 const { code } = await sdk.commands.authorize({
                     client_id: ACTIVITY_CLIENT_ID,
                     response_type: "code",
-                    scope: [...DEFAULT_DISCORD_SCOPES],
+                    scope: ["identify", "email", "rpc.activities.write", "guilds"],
                     state: "",
                 });
 

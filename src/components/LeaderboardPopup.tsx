@@ -63,7 +63,7 @@ export const LeaderboardPopup = ({open, on_close, today_data}: LeaderboardPopupP
     }, [open]);
 
     const {via_discord_activity} = useAuth();
-    const {get_leaderboard, needs_consent} = useDiscordLeaderboard();
+    const {get_leaderboard} = useDiscordLeaderboard();
 
     const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[] | null>(null);
 
@@ -74,7 +74,7 @@ export const LeaderboardPopup = ({open, on_close, today_data}: LeaderboardPopupP
         }
 
         setLeaderboard(null);
-        get_leaderboard(today_data.date, false).then(lb => {
+        get_leaderboard(today_data.date).then(lb => {
             if (lb) {
                 setLeaderboard(lb);
             }
@@ -91,31 +91,11 @@ export const LeaderboardPopup = ({open, on_close, today_data}: LeaderboardPopupP
                 className="rounded-lg p-4 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[95vw] sm:max-w-md w-full bg-background-variant text-foreground-variant flex flex-col items-center">
             <h2 className="text-xl font-bold mb-2">Leaderboard</h2>
 
-            {needs_consent && (
-                <>
-                    <p className="text-center">
-                        To view the leaderboard, we need to verify your server membership.<br/>
-                        We&apos;ll ask for permission to <i>&quot;Know what servers you&apos;re in&quot;</i><br />
-                        We&apos;ll also add you to the leaderboards of your other servers while we&apos;re at it, but we won&apos;t have access to your messages or other data in the server.<br />
-                        This data is processed in accordance with our <NewTabLink href="https://rangle.today/privacy">Privacy Policy</NewTabLink>.
-                    </p>
-                    <button onClick={() => {
-                        get_leaderboard(today_data.date, true).then(lb => {
-                            if (lb) {
-                                setLeaderboard(lb);
-                            }
-                        });
-                    }} className="mt-4 px-4 py-2 bg-primary text-on-primary rounded cursor-pointer">
-                        Verify
-                    </button>
-                </>
-            )}
-
-            {leaderboard && (
+            {leaderboard ? (
                 <LeaderboardContent leaderboard={leaderboard} today_data={today_data} />
+            ) : (
+                <LoadingSpinner />
             )}
-
-            {!needs_consent && !leaderboard && <LoadingSpinner />}
 
             <button
                 className="mt-2 px-4 py-2 bg-secondary text-on-secondary rounded cursor-pointer"
