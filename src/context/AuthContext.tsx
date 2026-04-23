@@ -8,7 +8,7 @@ import {ACTIVITY_CLIENT_ID, get_discord_sdk, in_discord_activity} from "@/util/d
 // TODO move this and time.js to next_public env
 const AUTH_URL = "https://auth.ollieg.codes";
 
-const DISCORD_SCOPES = ["identify", "email", "rpc.activities.write", "guilds"] as const;
+const DISCORD_SCOPES = ["identify", "rpc.activities.write", "guilds"] as const;
 
 interface LoginDetails {
     id: string;
