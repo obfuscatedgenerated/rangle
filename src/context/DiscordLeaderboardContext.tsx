@@ -91,8 +91,13 @@ export const DiscordLeaderboardProvider = ({ children }: { children: React.React
                         prompt: prompt_consent ? undefined : "none"
                     })).code;
                 } catch (err) {
-                    console.warn("User not already consented to guilds scope. Call again with prompt_consent=true once shown message confirmation");
-                    setNeedsConsent(true);
+                    if (!prompt_consent) {
+                        console.warn("User not already consented to guilds scope. Call again with prompt_consent=true once shown message confirmation");
+                        setNeedsConsent(true);
+                    } else {
+                        console.error("Failed to get authorization code for guilds scope", err);
+                    }
+
                     return null;
                 }
                 setNeedsConsent(false);

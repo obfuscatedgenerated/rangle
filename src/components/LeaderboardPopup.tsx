@@ -116,7 +116,7 @@ export const LeaderboardPopup = ({open, on_close, today_data}: LeaderboardPopupP
             {!needs_consent && !leaderboard && <LoadingSpinner />}
 
             <button
-                className="px-4 py-2 bg-secondary text-on-secondary rounded cursor-pointer"
+                className="mt-2 px-4 py-2 bg-secondary text-on-secondary rounded cursor-pointer"
                 onClick={() => dialog_ref.current?.close()}
             >
                 Close
