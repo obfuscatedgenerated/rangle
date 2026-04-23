@@ -4,10 +4,14 @@ import {useRangleScores, type Stats} from "@/context/RangleScoresContext";
 import {LoadingSpinner} from "@/components/LoadingSpinner";
 
 import {useEffect, useRef} from "react";
+import {useAuth} from "@/context/AuthContext";
+import {LeaderboardPopup} from "@/components/LeaderboardPopup";
 
 interface StatsPopupProps {
     open: boolean;
     on_close: () => void;
+
+    open_leaderboard: () => void;
 }
 const PresentedStats = ({stats}: {stats: Stats}) => (
     <>
@@ -90,7 +94,7 @@ const PresentedStats = ({stats}: {stats: Stats}) => (
     </>
 );
 
-export const StatsPopup = ({open, on_close}: StatsPopupProps) => {
+export const StatsPopup = ({open, on_close, open_leaderboard}: StatsPopupProps) => {
     const dialog_ref = useRef<HTMLDialogElement>(null);
 
     // sync with open prop
@@ -103,6 +107,7 @@ export const StatsPopup = ({open, on_close}: StatsPopupProps) => {
     }, [open]);
 
     const {stats} = useRangleScores();
+    const {via_discord_activity} = useAuth();
 
     // TODO: base dialog component
     return (
@@ -110,6 +115,10 @@ export const StatsPopup = ({open, on_close}: StatsPopupProps) => {
             <h2 className="text-xl font-bold mb-6">Statistics</h2>
 
             {stats === null ? <LoadingSpinner /> : <PresentedStats stats={stats} />}
+
+            {via_discord_activity && (
+                <span className="underline cursor-pointer" onClick={open_leaderboard}>View Server Leaderboard</span>
+            )}
 
             <button
                 className="px-4 py-2 bg-secondary text-on-secondary rounded cursor-pointer"

@@ -2,7 +2,7 @@
 
 import InfoPopup from "@/components/InfoPopup";
 
-import {CalendarDays, ChartNoAxesCombined, Cloud, Info, Settings} from "lucide-react";
+import {CalendarDays, ChartNoAxesCombined, Info, Settings} from "lucide-react";
 
 import {ComponentType, useEffect, useState} from "react";
 import Link from "next/link";
@@ -22,7 +22,11 @@ const HeaderIconLink = ({ Icon, title, href, disabled = false }: { Icon: Compone
     </Link>
 );
 
-export const Header = () => {
+interface HeaderProps {
+    open_leaderboard: () => void;
+}
+
+export const Header = ({open_leaderboard}: HeaderProps) => {
     const [show_info_popup, setShowInfoPopup] = useState(false);
     const [show_stats_popup, setShowStatsPopup] = useState(false);
     const [show_settings_popup, setShowSettingsPopup] = useState(false);
@@ -58,7 +62,7 @@ export const Header = () => {
                 setShowInfoPopup(false);
                 localStorage.setItem("info_popup_shown", "true");
             }} />
-            <StatsPopup open={show_stats_popup} on_close={() => setShowStatsPopup(false)} />
+            <StatsPopup open={show_stats_popup} on_close={() => setShowStatsPopup(false)} open_leaderboard={open_leaderboard} />
             <SettingsPopup open={show_settings_popup} on_close={() => setShowSettingsPopup(false)} />
         </>
     )

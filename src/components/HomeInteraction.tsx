@@ -88,9 +88,11 @@ export const HomeInteraction = () => {
         }
     }, [status, trigger_full_sync]);
 
+    const [leaderboard_open, setLeaderboardOpen] = useState(false);
+
     return (
         <>
-            <Header />
+            <Header open_leaderboard={() => setLeaderboardOpen(true)} />
 
             <ChangelogWidget />
 
@@ -99,7 +101,13 @@ export const HomeInteraction = () => {
 
                 {!loaded && <LoadingSpinner className="mt-4" />}
 
-                <Game archive_date={validated_archive_date || undefined} on_loaded={on_loaded} />
+                <Game
+                    archive_date={validated_archive_date || undefined}
+                    on_loaded={on_loaded}
+                    leaderboard_is_open={leaderboard_open}
+                    open_leaderboard={() => setLeaderboardOpen(true)}
+                    close_leaderboard={() => setLeaderboardOpen(false)}
+                />
 
                 {loaded && <p className="sm:fixed left-2 bottom-2 opacity-75 text-xs sm:text-base">Powered by <NewTabLink href="https://www.wikidata.org/" className="underline">Wikidata</NewTabLink></p>}
             </main>

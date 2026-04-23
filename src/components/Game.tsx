@@ -19,6 +19,7 @@ import {BonusPopup} from "@/components/BonusPopup";
 import {useAudioPlayer} from "react-use-audio-player";
 
 import {Activity, DiscordPresence} from "@/components/DiscordPresence";
+import {LeaderboardPopup} from "@/components/LeaderboardPopup";
 
 export interface TodayData {
     date: string;
@@ -45,9 +46,12 @@ export type StatPositionFlags = [boolean, boolean, boolean, boolean, boolean];
 interface GameProps {
     archive_date?: string;
     on_loaded?: () => void;
+    leaderboard_is_open: boolean;
+    open_leaderboard: () => void;
+    close_leaderboard: () => void;
 }
 
-export const Game = ({ archive_date, on_loaded }: GameProps) => {
+export const Game = ({archive_date, on_loaded, leaderboard_is_open, open_leaderboard, close_leaderboard}: GameProps) => {
     // if undefined, will load today's puzzle
     const [date_override, setDateOverride] = useState<string | undefined>(archive_date);
 
@@ -343,7 +347,10 @@ export const Game = ({ archive_date, on_loaded }: GameProps) => {
                 hardcore={hardcore}
                 bonus_results={bonus_results}
                 today_data={today_data}
+                open_leaderboard={open_leaderboard}
             />
+
+            <LeaderboardPopup open={leaderboard_is_open} on_close={close_leaderboard} today_data={today_data} />
 
             <BonusPopup open={bonus_popup_open} on_finish={on_post_bonus_round} bonus_rounds={bonus_rounds} />
 
