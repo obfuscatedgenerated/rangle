@@ -56,7 +56,7 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
         }
     }, [open]);
 
-    const {via_discord_activity} = useAuth();
+    const {via_discord_activity, in_discord_guild} = useAuth();
 
     // on window load, update button text
     useEffect(() => {
@@ -206,7 +206,7 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
 
             <PuzzleCountdown />
 
-            {via_discord_activity && (
+            {in_discord_guild && (
                 <span className="underline cursor-pointer" onClick={open_leaderboard}>View server leaderboard</span>
             )}
 

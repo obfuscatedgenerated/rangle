@@ -107,7 +107,7 @@ export const StatsPopup = ({open, on_close, open_leaderboard}: StatsPopupProps) 
     }, [open]);
 
     const {stats} = useRangleScores();
-    const {via_discord_activity} = useAuth();
+    const {in_discord_guild} = useAuth();
 
     // TODO: base dialog component
     return (
@@ -116,7 +116,7 @@ export const StatsPopup = ({open, on_close, open_leaderboard}: StatsPopupProps) 
 
             {stats === null ? <LoadingSpinner /> : <PresentedStats stats={stats} />}
 
-            {via_discord_activity && (
+            {in_discord_guild && (
                 <span className="underline cursor-pointer mb-2" onClick={open_leaderboard}>View server leaderboard</span>
             )}
 

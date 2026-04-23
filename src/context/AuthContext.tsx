@@ -24,6 +24,7 @@ interface AuthContextType {
     login_url?: string;
     logout?: () => void;
     via_discord_activity: boolean;
+    in_discord_guild: boolean;
     open_external_link?: (url: string) => void;
 }
 
@@ -33,6 +34,7 @@ const AuthContext = createContext<AuthContextType>({
     login_url: undefined,
     logout: undefined,
     via_discord_activity: false,
+    in_discord_guild: false,
     open_external_link: undefined
 });
 
@@ -247,10 +249,15 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         []
     );
 
-    // once authenticated, disable interactive pip
+    // once authenticated, disable interactive pip and set if in guild
+    const [in_discord_guild, setInDiscordGuild] = useState(false);
     useEffect(() => {
         if (via_discord_activity) {
             get_discord_sdk().then(sdk => {
+                if (sdk.guildId) {
+                    setInDiscordGuild(true);
+                }
+
                 sdk.commands.setConfig({
                     use_interactive_pip: false
                 }).catch(err => {
@@ -261,7 +268,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     }, [via_discord_activity]);
 
     return (
-        <AuthContext.Provider value={{ user_info, auth_origin, login_url, logout, via_discord_activity, open_external_link }}>
+        <AuthContext.Provider value={{ user_info, auth_origin, login_url, logout, via_discord_activity, open_external_link, in_discord_guild }}>
             <Suspense fallback={null}>
                 <AuthTokenHandler fetch_user_info={fetch_user_info} />
             </Suspense>
