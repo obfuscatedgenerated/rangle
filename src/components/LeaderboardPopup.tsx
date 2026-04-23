@@ -7,6 +7,7 @@ import {LeaderboardEntry, useDiscordLeaderboard} from "@/context/DiscordLeaderbo
 
 import type {TodayData} from "@/components/Game";
 import {LoadingSpinner} from "@/components/LoadingSpinner";
+import {NewTabLink} from "@/components/NewTabLink";
 
 interface LeaderboardPopupProps {
     open: boolean;
@@ -95,7 +96,8 @@ export const LeaderboardPopup = ({open, on_close, today_data}: LeaderboardPopupP
                     <p className="text-center">
                         To view the leaderboard, we need to verify your server membership.<br/>
                         We&apos;ll ask for permission to <i>&quot;Know what servers you&apos;re in&quot;</i><br />
-                        We&apos;ll also add you to the leaderboards of your other servers while we&apos;re at it, but we won&apos;t have access to your messages or other data in the server.
+                        We&apos;ll also add you to the leaderboards of your other servers while we&apos;re at it, but we won&apos;t have access to your messages or other data in the server.<br />
+                        This data is processed in accordance with our <NewTabLink href="https://rangle.today/privacy">Privacy Policy</NewTabLink>.
                     </p>
                     <button onClick={() => {
                         get_leaderboard(today_data.date, true).then(lb => {

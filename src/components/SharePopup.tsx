@@ -207,9 +207,10 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
 
             <PuzzleCountdown />
 
-            {via_discord_activity && (
-                <span className="underline cursor-pointer" onClick={() => setLeaderboardOpen(true)}>View Server Leaderboard</span>
-            )}
+            {/* TODO: investiagte if progressive auth really is supported. if not, need to refactor cloud slightly AGAIN to be less clever as well as ask for guilds upfront*/}
+            {/*{via_discord_activity && (*/}
+            {/*    <span className="underline cursor-pointer" onClick={() => setLeaderboardOpen(true)}>View Server Leaderboard</span>*/}
+            {/*)}*/}
 
             {manual_share_mode && (
                 <div className="mt-4 flex flex-col items-center gap-2">
