@@ -38,9 +38,9 @@ const LeaderboardContent = ({leaderboard, today_data}: {leaderboard: Leaderboard
                         <tr key={entry.user_id} className="border-b border-divider">
                             <td className="py-2 text-right">{index + 1}</td>
                             <td className="py-2 text-center"><img src={entry.avatar_url} className="w-6 h-6 rounded-full inline mr-2" draggable="false" /> {entry.username || <i>{entry.user_id}</i>}</td>
-                            <td className="py-2 text-right">{entry.n_attempts}</td>
+                            <td className="py-2 text-center">{entry.n_attempts}</td>
                             <td className="py-2 text-center">{entry.hardcore ? "💪" : ""}</td>
-                            {has_bonus && <td className="py-2">{entry.n_correct_bonus}</td>}
+                            {has_bonus && <td className="py-2 center">{entry.n_correct_bonus}</td>}
                         </tr>
                     ))}
                 </tbody>
