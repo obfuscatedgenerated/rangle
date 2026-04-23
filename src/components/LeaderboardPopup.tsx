@@ -26,10 +26,10 @@ const LeaderboardContent = ({leaderboard, today_data}: {leaderboard: Leaderboard
             <table className="w-full text-left">
                 <thead>
                     <tr className="border-b border-divider">
-                        <th className="py-2">Rank</th>
-                        <th className="py-2">Player [WIP]</th>
-                        <th className="py-2">Attempts</th>
-                        <th className="py-2">Hardcore?</th>
+                        <th className="p-2">Rank</th>
+                        <th className="p-2">Player</th>
+                        <th className="p-2">Attempts</th>
+                        <th className="p-2">Hardcore?</th>
                         {has_bonus && <th className="py-2">Bonus correct</th>}
                     </tr>
                 </thead>
@@ -37,7 +37,7 @@ const LeaderboardContent = ({leaderboard, today_data}: {leaderboard: Leaderboard
                     {leaderboard.map((entry, index) => (
                         <tr key={entry.user_id} className="border-b border-divider">
                             <td className="py-2">{index + 1}</td>
-                            <td className="py-2">{entry.user_id}</td>
+                            <td className="py-2"><img src={entry.avatar_url} className="w-6 h-6 rounded-full inline mr-2" draggable="false" /> {entry.username || <i>{entry.user_id}</i>}</td>
                             <td className="py-2">{entry.n_attempts}</td>
                             <td className="py-2">{entry.hardcore ? "💪" : ""}</td>
                             {has_bonus && <td className="py-2">{entry.n_correct_bonus}</td>}

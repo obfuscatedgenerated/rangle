@@ -10,6 +10,8 @@ export interface LeaderboardEntry {
     n_attempts: number;
     hardcore: boolean;
     n_correct_bonus: number
+    username?: string;
+    avatar_url?: string;
 }
 
 interface DiscordLeaderboardContextType {
