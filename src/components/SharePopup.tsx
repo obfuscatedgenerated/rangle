@@ -208,7 +208,7 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
             <PuzzleCountdown />
 
             {in_discord_guild && (
-                <span className="underline cursor-pointer" onClick={open_leaderboard}><Crown /> View server leaderboard</span>
+                <span className="underline cursor-pointer font-bold" onClick={open_leaderboard}><Crown /> View server leaderboard</span>
             )}
 
             {manual_share_mode && (
