@@ -221,7 +221,7 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
             <div className="mt-4 flex gap-4">
                 <button
                     className="px-4 py-2 bg-secondary text-on-secondary rounded cursor-pointer"
-                    onClick={() => dialog_ref.current?.close()}
+                    onClick={on_close}
                 >
                     Close
                 </button>

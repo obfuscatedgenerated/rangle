@@ -98,7 +98,7 @@ export const LeaderboardPopup = ({open, on_close, today_data}: LeaderboardPopupP
 
             <button
                 className="mt-2 px-4 py-2 bg-secondary text-on-secondary rounded cursor-pointer"
-                onClick={() => dialog_ref.current?.close()}
+                onClick={on_close}
             >
                 Close
             </button>
