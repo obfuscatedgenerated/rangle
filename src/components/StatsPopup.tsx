@@ -6,6 +6,7 @@ import {LoadingSpinner} from "@/components/LoadingSpinner";
 import {useEffect, useRef} from "react";
 import {useAuth} from "@/context/AuthContext";
 import {LeaderboardPopup} from "@/components/LeaderboardPopup";
+import {Crown} from "lucide-react";
 
 interface StatsPopupProps {
     open: boolean;
@@ -117,7 +118,7 @@ export const StatsPopup = ({open, on_close, open_leaderboard}: StatsPopupProps) 
             {stats === null ? <LoadingSpinner /> : <PresentedStats stats={stats} />}
 
             {in_discord_guild && (
-                <span className="underline cursor-pointer mb-2" onClick={open_leaderboard}>View server leaderboard for today</span>
+                <span className="underline cursor-pointer mb-2" onClick={open_leaderboard}><Crown /> View server leaderboard for today</span>
             )}
 
             <button

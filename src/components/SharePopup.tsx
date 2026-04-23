@@ -10,6 +10,7 @@ import {THEMES} from "@/themes";
 import {useAuth} from "@/context/AuthContext";
 import {in_discord_activity} from "@/util/discord";
 import {LeaderboardPopup} from "@/components/LeaderboardPopup";
+import {Crown} from "lucide-react";
 
 interface SharePopupProps {
     open: boolean;
@@ -207,7 +208,7 @@ export const SharePopup = ({open, on_close, attempts, today_data, archive_date, 
             <PuzzleCountdown />
 
             {in_discord_guild && (
-                <span className="underline cursor-pointer" onClick={open_leaderboard}>View server leaderboard</span>
+                <span className="underline cursor-pointer" onClick={open_leaderboard}><Crown /> View server leaderboard</span>
             )}
 
             {manual_share_mode && (
