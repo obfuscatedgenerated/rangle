@@ -11,6 +11,7 @@ import {AuthProvider} from "@/context/AuthContext";
 import {CloudSyncProvider} from "@/context/CloudSyncContext";
 import {RangleStateProvider} from "@/context/RangleStateContext";
 import {DiscordLeaderboardProvider} from "@/context/DiscordLeaderboardContext";
+import {DiscordSplash} from "@/components/DiscordSplash";
 
 export const metadata: Metadata = {
     title: {
@@ -99,6 +100,7 @@ export default function RootLayout({
                     DiscordLeaderboardProvider
                 ]}>
                     <ThemeApplier />
+                    <DiscordSplash />
 
                     <ViewTransition name="zoom-and-fade">
                         {children}
