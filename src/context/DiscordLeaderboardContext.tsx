@@ -13,7 +13,8 @@ export interface LeaderboardEntry {
 }
 
 interface DiscordLeaderboardContextType {
-    get_leaderboard: (iso_date: string) => Promise<LeaderboardEntry[] | null>;
+    get_leaderboard: (iso_date: string, prompt_consent?: boolean) => Promise<LeaderboardEntry[] | null>;
+    needs_consent: boolean;
 
     current_guild_id: string | null;
     current_guild_data: { name: string; icon?: string } | null;
@@ -21,6 +22,7 @@ interface DiscordLeaderboardContextType {
 
 const DiscordLeaderboardContext = createContext<DiscordLeaderboardContextType>({
     get_leaderboard: async () => null,
+    needs_consent: false,
 
     current_guild_id: null,
     current_guild_data: null,
@@ -38,15 +40,33 @@ export const DiscordLeaderboardProvider = ({ children }: { children: React.React
         }
 
         get_discord_sdk().then(sdk => {
+            if (!sdk.guildId) {
+                console.log("User not playing in a guild, so leaderboard not available");
+                return;
+            }
+
             setCurrentGuildId(sdk.guildId);
+
+            // also perform an unverified "check in" to this guild to list us on leaderboards even without the full sync (but not read to avoid leaking member lists!)
+            fetch(`${CLOUD_URL}/rangle/guilds/${sdk.guildId}/checkin`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${localStorage.getItem("sso_token")}`
+                }
+            }).catch(err => {
+                console.error("Failed to check in to guild for leaderboard:", err);
+            });
         });
     }, [via_discord_activity]);
 
+    const [needs_consent, setNeedsConsent] = useState(false);
     const leaderboard_grant = useRef<string | null>(null);
 
     const get_leaderboard = useCallback(
-        async (iso_date: string) => {
+        async (iso_date: string, prompt_consent = false) => {
             if (!current_guild_id) {
+                console.error("User not in Discord activity, or not in a guild (or not yet loaded!)");
                 return null;
             }
 
@@ -59,13 +79,22 @@ export const DiscordLeaderboardProvider = ({ children }: { children: React.React
                 // authorise with guilds scope
                 const sdk = await get_discord_sdk();
 
-                // get the code
-                const {code} = await sdk.commands.authorize({
-                    client_id: ACTIVITY_CLIENT_ID,
-                    response_type: "code",
-                    scope: [...DEFAULT_DISCORD_SCOPES, "guilds"],
-                    state: "",
-                });
+                let code: string
+                try {
+                    // get the code
+                    code = (await sdk.commands.authorize({
+                        client_id: ACTIVITY_CLIENT_ID,
+                        response_type: "code",
+                        scope: [...DEFAULT_DISCORD_SCOPES, "guilds"],
+                        state: "",
+                        prompt: prompt_consent ? undefined : "none"
+                    })).code;
+                } catch (err) {
+                    console.warn("User not already consented to guilds scope. Call again with prompt_consent=true once shown message confirmation");
+                    setNeedsConsent(true);
+                    return null;
+                }
+                setNeedsConsent(false);
 
                 // resync guilds and obtain the leaderboard grant, expiry time, and guilds map
                 const res = await fetch(`${CLOUD_URL}/rangle/sync_guilds`, {
@@ -113,7 +142,7 @@ export const DiscordLeaderboardProvider = ({ children }: { children: React.React
     );
 
     return (
-        <DiscordLeaderboardContext.Provider value={{ get_leaderboard, current_guild_id, current_guild_data }}>
+        <DiscordLeaderboardContext.Provider value={{ get_leaderboard, current_guild_id, current_guild_data, needs_consent }}>
             {children}
         </DiscordLeaderboardContext.Provider>
     );
