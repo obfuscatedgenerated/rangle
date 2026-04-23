@@ -1,0 +1,57 @@
+{
+  "date": "2026-03-30",
+  "number": 2,
+  "difficulty": "Easy",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q25173",
+      "name": "Titanic",
+      "value": 269.1,
+      "metric": "Length",
+      "description": "British transatlantic passenger liner, launched and foundered in 1912",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q744",
+      "name": "nickel",
+      "value": 1751,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Ni and atomic number 28",
+      "prefix": "",
+      "suffix": ""
+    },
+    {
+      "id": "Q703",
+      "name": "potassium",
+      "value": 765.5,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol K and atomic number 19",
+      "prefix": "",
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
+    },
+    {
+      "id": "Q584",
+      "name": "Rhine",
+      "value": 1232.7,
+      "metric": "Length",
+      "description": "river in Western Europe to the North Sea",
+      "prefix": "",
+      "suffix": " km",
+      "unit_hint": "in kilometres"
+    },
+    {
+      "id": "Q758",
+      "name": "zinc",
+      "value": 907,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol Zn and atomic number 30",
+      "prefix": "",
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
+    }
+  ]
+}

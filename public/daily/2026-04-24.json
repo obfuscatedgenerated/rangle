@@ -1,0 +1,55 @@
+{
+  "date": "2026-04-24",
+  "number": 27,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q6844174",
+      "name": "Mighty Mouse: The New Adventures",
+      "value": 2,
+      "metric": "Number of Seasons",
+      "description": "American animated television series",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q887730",
+      "name": "Newcastle Brown Ale",
+      "value": 4.7,
+      "metric": "Alcohol by Volume",
+      "description": "brown ale, originally produced in Newcastle upon Tyne, but now brewed by Heineken at the Zoeterwoude Brewery in the Netherlands",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q1752151",
+      "name": "Wartortle",
+      "value": 8,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q2905047",
+      "name": "sorghum beer",
+      "value": 3.3,
+      "metric": "Alcohol by Volume",
+      "description": "beer originating in sub-Sahara Africa",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q3755648",
+      "name": "Tarzán",
+      "value": 3,
+      "metric": "Number of Seasons",
+      "description": "television series",
+      "prefix": "",
+      "suffix": " seasons"
+    }
+  ]
+}
