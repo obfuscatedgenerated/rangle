@@ -24,7 +24,7 @@ export const LoginPopup = ({open, on_close}: LoginPopupProps) => {
         <dialog onAbort={on_close} ref={dialog_ref} className="rounded-lg p-4 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[95vw] sm:max-w-md w-full bg-background-variant text-foreground-variant flex flex-col items-center">
             <h2 className="text-xl font-bold mb-2">Log in</h2>
 
-            <HeightListeningIFrame className="w-full max-h-100 rounded-lg transition-[height] duration-200 ease-out" src={login_url}></HeightListeningIFrame>
+            <HeightListeningIFrame className="w-full max-h-100 rounded-lg transition-[height] duration-200 ease-out" src={login_url} default_height={370}></HeightListeningIFrame>
 
             <p className="my-4 text-pretty text-center">By logging in, you agree to the <NewTabLink href="https://rangle.today/privacy" className="underline">Privacy Policy</NewTabLink>.</p>
 
