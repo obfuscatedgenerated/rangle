@@ -23,6 +23,6 @@ export const HeightListeningIFrame = ({src, className = "", default_height = 300
     }, []);
 
     return (
-        <iframe ref={iframe_ref} src={src} className={className} style={{height}}></iframe>
+        <iframe ref={iframe_ref} src={src} className={className} style={{height: `${height}px`}}></iframe>
     );
 }
