@@ -2,54 +2,55 @@
   "date": "2026-04-25",
   "number": 28,
   "difficulty": "Medium",
-  "neighbourhood": "medium",
+  "neighbourhood": "small",
   "puzzle": [
     {
-      "id": "Q126307",
-      "name": "Lake Van",
-      "value": 171,
-      "metric": "Depth",
-      "description": "largest lake in Turkey",
+      "id": "Q737413",
+      "name": "Greater Horseshoe Bat",
+      "value": 3,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of mammal",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " years",
+      "unit_hint": "in years"
     },
     {
-      "id": "Q182719",
-      "name": "Lake Turkana",
-      "value": 109,
-      "metric": "Depth",
-      "description": "alkaline lake on the border of Ethiopia and Kenya",
+      "id": "Q26842",
+      "name": "silverfish",
+      "value": 2,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of insect",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " years",
+      "unit_hint": "in years"
     },
     {
-      "id": "Q1819",
-      "name": "samarium",
-      "value": 1879,
-      "metric": "Year of Discovery",
-      "description": "chemical element with symbol Sm and atomic number 62",
+      "id": "Q317575",
+      "name": "Les Faucheurs de marguerites",
+      "value": 4,
+      "metric": "Number of Seasons",
+      "description": "television series",
       "prefix": "",
-      "suffix": ""
+      "suffix": " seasons"
     },
     {
-      "id": "Q43361",
-      "name": "Harry Potter and the Philosopher's Stone",
-      "value": 240,
-      "metric": "Number of Pages",
-      "description": "1997 novel by J. K. Rowling",
+      "id": "Q39058919",
+      "name": "Vighnaharta Ganesha",
+      "value": 1,
+      "metric": "Number of Seasons",
+      "description": "television series",
       "prefix": "",
-      "suffix": " pages"
+      "suffix": " seasons"
     },
     {
-      "id": "Q1100",
-      "name": "tellurium",
-      "value": 1783,
-      "metric": "Year of Discovery",
-      "description": "chemical element with symbol Te and atomic number 52",
+      "id": "Q2905047",
+      "name": "sorghum beer",
+      "value": 3.3,
+      "metric": "Alcohol by Volume",
+      "description": "beer originating in sub-Sahara Africa",
       "prefix": "",
-      "suffix": ""
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
     }
   ]
 }
