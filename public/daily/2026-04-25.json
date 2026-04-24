@@ -2,55 +2,54 @@
   "date": "2026-04-25",
   "number": 28,
   "difficulty": "Medium",
-  "neighbourhood": "small",
+  "neighbourhood": "medium",
   "puzzle": [
     {
-      "id": "Q737413",
-      "name": "Greater Horseshoe Bat",
-      "value": 3,
-      "metric": "Life Expectancy / Maximum Lifespan",
-      "description": "species of mammal",
+      "id": "Q193563",
+      "name": "Bibliothèque nationale de France",
+      "value": 1537,
+      "metric": "Year of Creation / Inception",
+      "description": "national library of France in Paris",
       "prefix": "",
-      "suffix": " years",
-      "unit_hint": "in years"
+      "suffix": ""
     },
     {
-      "id": "Q26842",
-      "name": "silverfish",
-      "value": 2,
-      "metric": "Life Expectancy / Maximum Lifespan",
-      "description": "species of insect",
+      "id": "Q134121",
+      "name": "Namur",
+      "value": 83,
+      "metric": "Elevation above sea level",
+      "description": "capital of Wallonia, Belgium",
       "prefix": "",
-      "suffix": " years",
-      "unit_hint": "in years"
+      "suffix": " m",
+      "unit_hint": "in metres"
     },
     {
-      "id": "Q317575",
-      "name": "Les Faucheurs de marguerites",
-      "value": 4,
-      "metric": "Number of Seasons",
-      "description": "television series",
+      "id": "Q131262",
+      "name": "University of Bologna",
+      "value": 1088,
+      "metric": "Year of Creation / Inception",
+      "description": "university in Bologna, Italy",
       "prefix": "",
-      "suffix": " seasons"
+      "suffix": ""
     },
     {
-      "id": "Q39058919",
-      "name": "Vighnaharta Ganesha",
-      "value": 1,
-      "metric": "Number of Seasons",
-      "description": "television series",
+      "id": "Q1053",
+      "name": "molybdenum",
+      "value": 1778,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Mo and atomic number 42",
       "prefix": "",
-      "suffix": " seasons"
+      "suffix": ""
     },
     {
-      "id": "Q2905047",
-      "name": "sorghum beer",
-      "value": 3.3,
-      "metric": "Alcohol by Volume",
-      "description": "beer originating in sub-Sahara Africa",
+      "id": "Q133116",
+      "name": "Hamilton",
+      "value": 75,
+      "metric": "Elevation above sea level",
+      "description": "city in Ontario, Canada",
       "prefix": "",
-      "suffix": "%",
-      "unit_hint": "by approx. percent"
+      "suffix": " m",
+      "unit_hint": "in metres"
     }
   ]
 }
