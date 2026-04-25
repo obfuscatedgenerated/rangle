@@ -26,8 +26,9 @@ export const LoginButton = ({className = ""}: { className?: string }) => {
 
             <div className={`ml-4 flex items-center justify-center ${className}`}>
                 {user_info ?
-                    <button onClick={() => setShowAccountFlyout(true)} title="Account Menu" className="cursor-pointer aspect-square w-8 h-8 relative">
-                        <img src={user_info?.avatar} className="w-full h-full rounded-full" draggable="false" alt="User Avatar" />
+                    <button onClick={() => setShowAccountFlyout(true)} title="Account Menu" className="cursor-pointer aspect-square w-8 h-8 relative border border-gray-700 rounded-full">
+                        {user_info?.avatar && <img src={user_info?.avatar} className="w-full h-full rounded-full" draggable="false" alt="User Avatar" />}
+                        {!user_info?.avatar && <span className="flex items-center justify-center w-full h-full rounded-full bg-gray-800 text-foreground uppercase">{user_info.username?.[0] || "?"}</span>}
                         <StatusIcon className="absolute -top-1 -right-1" />
                     </button>
                     : auth_origin ? (
