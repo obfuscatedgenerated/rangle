@@ -1,55 +1,56 @@
 {
   "date": "2026-04-26",
   "number": 29,
-  "difficulty": "Medium",
-  "neighbourhood": "small",
+  "difficulty": "Easy",
+  "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q506074",
-      "name": "Family Feud",
-      "value": 2384,
-      "metric": "Number of Episodes",
-      "description": "American TV game show",
+      "id": "Q1321",
+      "name": "Spanish",
+      "value": 485000000,
+      "metric": "Native Speakers",
+      "description": "Romance language originating in the Iberian Peninsula",
       "prefix": "",
-      "suffix": " episodes"
+      "suffix": " speakers"
     },
     {
-      "id": "Q1154303",
-      "name": "Lucario",
-      "value": 448,
-      "metric": "Pokédex Number",
-      "description": "Pokémon species",
-      "prefix": "#",
-      "suffix": ""
+      "id": "Q174555",
+      "name": "Madagascar",
+      "value": 542063846,
+      "metric": "Total Box Office Revenue",
+      "description": "2005 animated film directed by Eric Darnell and Tom McGrath",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q29220",
-      "name": "Sumatran rhinoceros",
-      "value": 400,
-      "metric": "Gestation Period",
-      "description": "species of mammal",
+      "id": "Q9610",
+      "name": "Bangla",
+      "value": 300000000,
+      "metric": "Native Speakers",
+      "description": "Indo-Aryan language mostly spoken in Bangladesh and India",
       "prefix": "",
-      "suffix": " days",
-      "unit_hint": "in days"
+      "suffix": " speakers"
     },
     {
-      "id": "Q1266682",
-      "name": "Regirock",
-      "value": 377,
-      "metric": "Pokédex Number",
-      "description": "Pokémon species",
-      "prefix": "#",
-      "suffix": ""
-    },
-    {
-      "id": "Q379732",
-      "name": "California sea lion",
-      "value": 350,
-      "metric": "Gestation Period",
-      "description": "species of mammal",
+      "id": "Q319",
+      "name": "Jupiter",
+      "value": 816520700,
+      "metric": "Distance from Sun",
+      "description": "fifth planet in the Solar System and largest among all; gaseous giant mainly composed of hydrogen and helium",
       "prefix": "",
-      "suffix": " days",
-      "unit_hint": "in days"
+      "suffix": " km",
+      "unit_hint": "in kilometres"
+    },
+    {
+      "id": "Q111",
+      "name": "Mars",
+      "value": 249232432,
+      "metric": "Distance from Sun",
+      "description": "fourth planet from the Solar System, tellurian and orange-red due to iron oxide",
+      "prefix": "",
+      "suffix": " km",
+      "unit_hint": "in kilometres"
     }
   ]
 }
