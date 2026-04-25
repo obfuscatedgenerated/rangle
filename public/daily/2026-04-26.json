@@ -1,0 +1,55 @@
+{
+  "date": "2026-04-26",
+  "number": 29,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q506074",
+      "name": "Family Feud",
+      "value": 2384,
+      "metric": "Number of Episodes",
+      "description": "American TV game show",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q1154303",
+      "name": "Lucario",
+      "value": 448,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q29220",
+      "name": "Sumatran rhinoceros",
+      "value": 400,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q1266682",
+      "name": "Regirock",
+      "value": 377,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q379732",
+      "name": "California sea lion",
+      "value": 350,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    }
+  ]
+}
