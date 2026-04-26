@@ -1,0 +1,55 @@
+{
+  "date": "2026-03-31",
+  "number": 3,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q1030463",
+      "name": "Mode Gakuen Cocoon Tower",
+      "value": 50,
+      "metric": "Number of Floors",
+      "description": "building in Tokyo, Japan",
+      "prefix": "",
+      "suffix": " floors"
+    },
+    {
+      "id": "Q40895",
+      "name": "Dumbo",
+      "value": 64,
+      "metric": "Duration / Runtime",
+      "description": "1941 animated film directed by Ben Sharpsteen",
+      "prefix": "",
+      "suffix": " minutes",
+      "unit_hint": "in minutes"
+    },
+    {
+      "id": "Q23670",
+      "name": "It's Always Sunny in Philadelphia",
+      "value": 17,
+      "metric": "Number of Seasons",
+      "description": "American comedy television series",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q191753",
+      "name": "Cinderella",
+      "value": 74,
+      "metric": "Duration / Runtime",
+      "description": "1950 American animated musical fantasy film",
+      "prefix": "",
+      "suffix": " minutes",
+      "unit_hint": "in minutes"
+    },
+    {
+      "id": "Q106582931",
+      "name": "Squid Game",
+      "value": 3,
+      "metric": "Number of Seasons",
+      "description": "2021 South Korean television series",
+      "prefix": "",
+      "suffix": " seasons"
+    }
+  ]
+}
