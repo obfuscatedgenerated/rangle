@@ -149,8 +149,8 @@
     },
     "2026-04-27": {
       "number": 30,
-      "difficulty": "Medium",
-      "neighbourhood": "large"
+      "difficulty": "Musical",
+      "neighbourhood": "custom"
     }
   }
 }
