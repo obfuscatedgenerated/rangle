@@ -32,7 +32,8 @@
       "description": "musical based on Gregory Maguire's novel",
       "prefix": "",
       "suffix": "",
-      "unit_hint": ""
+      "unit_hint": "",
+      "bonus_round": true
     },
     {
       "id": "Q669010",
