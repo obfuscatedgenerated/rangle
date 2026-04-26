@@ -1,0 +1,56 @@
+{
+  "date": "2026-04-27",
+  "number": 30,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q33868",
+      "name": "Meitei",
+      "value": 1470000,
+      "metric": "Native Speakers",
+      "description": "Sino-Tibetan language",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q14799",
+      "name": "Lenovo",
+      "value": 13367000,
+      "metric": "Market Capitalisation",
+      "description": "Chinese multinational technology company established in 1984",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q33522",
+      "name": "Kabardian",
+      "value": 1600000,
+      "metric": "Native Speakers",
+      "description": "Northwest Caucasian language",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q181479",
+      "name": "Ben Gurion Airport",
+      "value": 20008532,
+      "metric": "Number of Passengers",
+      "description": "main international airport of Israel",
+      "prefix": "",
+      "suffix": " passengers",
+      "unit_hint": "annual"
+    },
+    {
+      "id": "Q773330",
+      "name": "Da Nang International Airport",
+      "value": 15504650,
+      "metric": "Number of Passengers",
+      "description": "airport in Vietnam",
+      "prefix": "",
+      "suffix": " passengers",
+      "unit_hint": "annual"
+    }
+  ]
+}
