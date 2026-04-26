@@ -64,6 +64,22 @@ export const SettingsProvider = ({ children }: { children: React.ReactNode }) =>
     );
 };
 
+export const VirtualSettingsProvider = ({ children, initial_settings = DEFAULT_SETTINGS }: { children: React.ReactNode; initial_settings?: Partial<Settings> }) => {
+    const [settings, setSettings] = useState<Settings>({ ...DEFAULT_SETTINGS, ...initial_settings });
+    const [last_updated, setLastUpdated] = useState<number | null>(null);
+
+    const update_settings = (new_settings: Partial<Settings>, timestamp?: number) => {
+        setSettings((prev) => ({ ...prev, ...new_settings }));
+        setLastUpdated(timestamp || Date.now());
+    };
+
+    return (
+        <SettingsContext.Provider value={{ settings, update_settings, last_updated }}>
+            {children}
+        </SettingsContext.Provider>
+    );
+};
+
 export const useSettings = () => {
     const context = useContext(SettingsContext);
     if (!context) {

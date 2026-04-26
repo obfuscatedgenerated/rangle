@@ -402,6 +402,92 @@ export const RangleStateProvider = ({children}: { children: React.ReactNode }) =
     );
 }
 
+// provides state from a passed in data, still evalating answers but not storing in scores or cloud
+// TODO: unite logic
+export const VirtualRangleStateProvider = ({data, children}: { data: TodayData; children: React.ReactNode }) => {
+    const [current_order, setCurrentOrder] = useState<PuzzleStat[]>(data.puzzle);
+    const [correct_positions, setCorrectPositions] = useState<StatPositionFlags>([false, false, false, false, false]);
+    const [attempts, setAttempts] = useState<StatPositionFlags[]>([]);
+    const [previous_guesses, setPreviousGuesses] = useState<PuzzleStat[][]>([]);
+    const [finished, setFinished] = useState(false);
+    const [finished_correctly, setFinishedCorrectly] = useState(false);
+    const [hardcore, setHardcore] = useState(false);
+    const [bonus_results, setBonusResults] = useState<Record<string, boolean>>({});
+
+    const answers = useMemo(
+        () => [...data.puzzle].sort((a, b) => a.value - b.value),
+        [data]
+    );
+
+    const submit_guess = useCallback(
+        (guess: PuzzleStat[]) => {
+            const new_correct_positions: StatPositionFlags = [false, false, false, false, false];
+            for (let i = 0; i < guess.length; i++) {
+                if (guess[i].id === answers[i].id) {
+                    new_correct_positions[i] = true;
+                }
+            }
+            setCorrectPositions(new_correct_positions);
+            setAttempts((prev) => [...prev, new_correct_positions]);
+            setPreviousGuesses((prev) => [...prev, guess]);
+
+            if (new_correct_positions.every((pos) => pos)) {
+                setFinished(true);
+                setFinishedCorrectly(true);
+                return {
+                    correct: true,
+                    finished: true,
+                    correct_positions: new_correct_positions,
+                }
+            } else if (attempts.length + 1 >= 5) {
+                setFinished(true);
+                return {
+                    correct: false,
+                    finished: true,
+                    correct_positions: new_correct_positions,
+                }
+            } else {
+                return {
+                    correct: false,
+                    finished: false,
+                    correct_positions: new_correct_positions,
+                }
+            }
+        },
+        [answers, attempts.length]
+    );
+
+    const reveal_answers = useCallback(
+        () => {
+            setCurrentOrder(answers);
+        },
+        [answers]
+    );
+
+    return (
+        <RangleStateContext.Provider value={{
+            today_data: data,
+            current_order,
+            correct_positions,
+            attempts,
+            previous_guesses,
+            finished,
+            finished_correctly,
+            hardcore,
+            bonus_results,
+            load_puzzle: () => { },
+            submit_guess,
+            reveal_answers,
+            set_bonus_results: setBonusResults,
+            set_current_order: setCurrentOrder,
+            set_hardcore: setHardcore,
+            reload_today_from_storage: () => { },
+        }}>
+            {children}
+        </RangleStateContext.Provider>
+    );
+}
+
 export const useRangleState = () => {
     const context = useContext(RangleStateContext);
     if (!context) {
