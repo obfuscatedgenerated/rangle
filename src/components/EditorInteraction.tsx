@@ -1,9 +1,9 @@
 "use client";
 
 import {epoch_utc} from "../../time";
-import { useState, useEffect } from "react";
+import {useState, useEffect, useCallback} from "react";
 import { PuzzleStat } from "@/components/Game";
-import {Save, Shuffle} from "lucide-react";
+import {Play, Save, Shuffle, Upload} from "lucide-react";
 
 // --- API Helpers ---
 
@@ -235,7 +235,7 @@ const EditableStat = ({ index, stat, updateStat }: {
                        className="p-2 text-sm border rounded bg-tertiary-background" />
                 <input placeholder="Suffix" value={stat.suffix} onChange={(e) => updateStat(index, { suffix: e.target.value })}
                        className="p-2 text-sm border rounded bg-tertiary-background" />
-                <input placeholder="Unit Hint" value={stat.unit_hint} onChange={(e) => updateStat(index, { unit_hint: e.target.value })}
+                <input placeholder="Unit Hint" value={stat.unit_hint || ""} onChange={(e) => updateStat(index, { unit_hint: e.target.value })}
                        className="p-2 text-sm border rounded bg-tertiary-background" />
             </div>
 
@@ -274,39 +274,56 @@ export const EditorInteraction = () => {
     const [difficulty_string, setDifficultyString] = useState("Custom");
     const [neighbourhood_string, setNeighborhoodString] = useState("custom");
 
-    const exportJson = () => {
+    const get_json = () => {
         const days_since_epoch = Math.floor((new Date(iso_date).getTime() - epoch_utc.getTime()) / (1000 * 60 * 60 * 24));
 
-        const fullPuzzle = {
+        return {
             date: iso_date,
             number: days_since_epoch + 1,
             difficulty: difficulty_string,
             neighbourhood: neighbourhood_string,
             puzzle: puzzle
         };
-
-        const blob = new Blob([JSON.stringify(fullPuzzle, null, 2)], { type: "application/json" });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = `${iso_date}.json`;
-        a.click();
-        URL.revokeObjectURL(url);
-    };
-
-    const shufflePuzzle = () => {
-        // shuffle but check that 2 or less items are in the correct position
-        let shuffled = [...puzzle];
-        let give_up_counter = 0;
-        do {
-            for (let i = shuffled.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-            }
-        } while (give_up_counter++ < 25 && shuffled.filter((s, i) => s.id === puzzle[i].id).length > 2);
-
-        setPuzzle(shuffled);
     }
+
+    const export_json = useCallback(
+        () => {
+            const blob = new Blob([JSON.stringify(get_json(), null, 2)], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = `${iso_date}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        },
+        [get_json, iso_date]
+    );
+
+    const shuffle_puzzle = useCallback(
+        () => {
+            // shuffle but check that 2 or less items are in the correct position
+            const shuffled = [...puzzle];
+            let give_up_counter = 0;
+            do {
+                for (let i = shuffled.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+                }
+            } while (give_up_counter++ < 25 && shuffled.filter((s, i) => s.id === puzzle[i].id).length > 2);
+
+            setPuzzle(shuffled);
+        },
+        [puzzle]
+    );
+
+    const test_run = useCallback(
+        () => {
+            const url = new URL("/testrun", window.location.origin);
+            url.searchParams.set("data", btoa(JSON.stringify(get_json())));
+            window.open(url.toString(), "_blank");
+        },
+        [get_json]
+    );
 
     return (
         <div className="mx-auto p-6 gap-8 min-h-screen flex flex-col items-center">
@@ -344,21 +361,62 @@ export const EditorInteraction = () => {
                 </label>
 
                 <button
-                    onClick={shufflePuzzle}
-                    className="ml-4 bg-primary fg-on-primary px-6 py-2 rounded-full font-bold transition cursor-pointer flex items-center gap-1"
+                    onClick={shuffle_puzzle}
+                    className="ml-4 bg-primary fg-on-primary px-6 py-2 rounded-full font-bold transition cursor-pointer flex items-center gap-2"
                 >
                     <Shuffle className="w-4 h-4" />
 
                     Shuffle
                 </button>
 
+                <input
+                    type="file"
+                    accept=".json"
+                    onChange={(e) => {
+                        const file = e.target.files?.[0] || null;
+                        if (!file) return;
+
+                        const reader = new FileReader();
+                        reader.onload = () => {
+                            if (typeof reader.result === "string") {
+                                try {
+                                    const parsed_data = JSON.parse(reader.result);
+                                    setIsoDate(parsed_data.date || iso_date);
+                                    setDifficultyString(parsed_data.difficulty || difficulty_string);
+                                    setNeighborhoodString(parsed_data.neighbourhood || neighbourhood_string);
+                                    setPuzzle(parsed_data.puzzle || puzzle);
+                                } catch (err) {
+                                    console.error("Error parsing JSON:", err);
+                                }
+                            }
+                        };
+                        reader.readAsText(file);
+                    }}
+                    className="hidden"
+                    id="file-upload"
+                />
+                <label htmlFor="file-upload" className="bg-primary fg-on-primary px-6 py-2 rounded-full font-bold transition cursor-pointer flex items-center gap-2">
+                    <Upload className="w-4 h-4" />
+
+                    Open JSON
+                </label>
+
                 <button
-                    onClick={exportJson}
-                    className="bg-primary fg-on-primary px-6 py-2 rounded-full font-bold transition cursor-pointer flex items-center gap-1"
+                    onClick={export_json}
+                    className="bg-primary fg-on-primary px-6 py-2 rounded-full font-bold transition cursor-pointer flex items-center gap-2"
                 >
                     <Save className="w-4 h-4"  />
 
                     Export JSON
+                </button>
+
+                <button
+                    onClick={test_run}
+                    className="bg-primary fg-on-primary px-6 py-2 rounded-full font-bold transition cursor-pointer flex items-center gap-2"
+                >
+                    <Play className="w-4 h-4" />
+
+                    Test Run
                 </button>
             </div>
 
