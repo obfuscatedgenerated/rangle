@@ -310,7 +310,7 @@ export const EditorInteraction = () => {
 
     return (
         <div className="mx-auto p-6 gap-8 min-h-screen flex flex-col items-center">
-            <div className="flex justify-between items-center gap-5">
+            <div className="flex justify-center items-center gap-5 flex-wrap">
                 <label>
                     Date
                     <input
