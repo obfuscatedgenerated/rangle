@@ -37,7 +37,7 @@ export interface PuzzleStat {
     description: string;
     prefix: string;
     suffix: string;
-    unit_hint: string;
+    unit_hint?: string;
     bonus_round?: boolean;
 }
 

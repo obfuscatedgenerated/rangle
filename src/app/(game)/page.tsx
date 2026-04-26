@@ -1,4 +1,5 @@
 import {Suspense} from "react";
+
 import {HomeInteraction} from "@/components/HomeInteraction";
 import {LoadingSpinner} from "@/components/LoadingSpinner";
 

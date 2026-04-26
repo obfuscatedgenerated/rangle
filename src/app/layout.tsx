@@ -1,17 +1,7 @@
 import type {Metadata} from "next";
 import {Encode_Sans, Roboto} from "next/font/google";
-import "./globals.css";
 
-import {ViewTransition} from "react";
-import {RangleScoresProvider} from "@/context/RangleScoresContext";
-import {SettingsProvider} from "@/context/SettingsContext";
-import {ThemeApplier} from "@/components/ThemeApplier";
-import {ContextProviders} from "@/components/ContextProviders";
-import {AuthProvider} from "@/context/AuthContext";
-import {CloudSyncProvider} from "@/context/CloudSyncContext";
-import {RangleStateProvider} from "@/context/RangleStateContext";
-import {DiscordLeaderboardProvider} from "@/context/DiscordLeaderboardContext";
-import {DiscordSplash} from "@/components/DiscordSplash";
+import "./globals.css";
 
 export const metadata: Metadata = {
     title: {
@@ -91,21 +81,7 @@ export default function RootLayout({
         >
             <body className="pt-[var(--sait)] pb-[var(--saib)] min-h-full flex flex-col">
                 <noscript className="absolute top-1/4 left-1/2 -translate-x-1/2">Please enable JavaScript to play Rangle!</noscript>
-                <ContextProviders providers={[
-                    RangleScoresProvider,
-                    SettingsProvider,
-                    AuthProvider,
-                    CloudSyncProvider,
-                    RangleStateProvider,
-                    DiscordLeaderboardProvider
-                ]}>
-                    <ThemeApplier />
-                    <DiscordSplash />
-
-                    <ViewTransition name="zoom-and-fade">
-                        {children}
-                    </ViewTransition>
-                </ContextProviders>
+                {children}
             </body>
         </html>
     );
