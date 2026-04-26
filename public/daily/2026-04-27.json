@@ -2,56 +2,55 @@
   "date": "2026-04-27",
   "number": 30,
   "difficulty": "Medium",
-  "neighbourhood": "medium",
+  "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q49266",
-      "name": "Wichita",
-      "value": 396,
-      "metric": "Elevation above sea level",
-      "description": "city in and county seat of Sedgwick County, Kansas, United States",
+      "id": "Q33868",
+      "name": "Meitei",
+      "value": 1470000,
+      "metric": "Native Speakers",
+      "description": "Sino-Tibetan language",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " speakers"
     },
     {
-      "id": "Q158604",
-      "name": "Bakhchysarai",
-      "value": 300,
-      "metric": "Elevation above sea level",
-      "description": "town in Crimea, Ukraine",
-      "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "id": "Q14799",
+      "name": "Lenovo",
+      "value": 13367000,
+      "metric": "Market Capitalisation",
+      "description": "Chinese multinational technology company established in 1984",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q6414",
-      "name": "Lake Garda",
-      "value": 346,
-      "metric": "Depth",
-      "description": "lake in Italy",
+      "id": "Q33522",
+      "name": "Kabardian",
+      "value": 1600000,
+      "metric": "Native Speakers",
+      "description": "Northwest Caucasian language",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " speakers"
     },
     {
-      "id": "Q1100",
-      "name": "tellurium",
-      "value": 1783,
-      "metric": "Year of Discovery",
-      "description": "chemical element with symbol Te and atomic number 52",
+      "id": "Q181479",
+      "name": "Ben Gurion Airport",
+      "value": 20008532,
+      "metric": "Number of Passengers",
+      "description": "main international airport of Israel",
       "prefix": "",
-      "suffix": ""
+      "suffix": " passengers",
+      "unit_hint": "annual"
     },
     {
-      "id": "Q14379",
-      "name": "Lake Maggiore",
-      "value": 372,
-      "metric": "Depth",
-      "description": "lake in Italy and Switzerland",
+      "id": "Q773330",
+      "name": "Da Nang International Airport",
+      "value": 15504650,
+      "metric": "Number of Passengers",
+      "description": "airport in Vietnam",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " passengers",
+      "unit_hint": "annual"
     }
   ]
 }
