@@ -176,7 +176,7 @@ const EditableStat = ({ index, stat, updateStat }: {
                     type="text"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    placeholder="Search e.g. Platinum"
+                    placeholder="Search name or class ID..."
                     className="w-full p-2 border rounded bg-tertiary-background"
                 />
                 {results.length > 0 && (
