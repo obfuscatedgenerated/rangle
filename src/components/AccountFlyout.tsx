@@ -34,7 +34,7 @@ export const AccountFlyout = ({open, on_close}: AccountFlyoutProps) => {
 
                 <div className="flex flex-col items-center justify-center gap-4">
                     <div className="flex items-center gap-2">
-                        <img src={user_info.avatar} className="w-8 h-8 rounded-full" title={user_info.username} draggable="false" alt="User Avatar" />
+                        {user_info?.avatar && <img src={user_info.avatar} className="w-8 h-8 rounded-full" title={user_info.username} draggable="false" alt="User Avatar" />}
                         <b>{user_info.username}</b>
 
                         <span className="opacity-75">({user_info.provider})</span>
