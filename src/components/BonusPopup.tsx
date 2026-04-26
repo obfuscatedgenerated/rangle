@@ -65,8 +65,8 @@ export const BonusPopup = ({open, on_finish, bonus_rounds}: BonusPopupProps) => 
                     return;
                 }
 
-                const lower_bound = stat.value * 0.95;
-                const upper_bound = stat.value * 1.05;
+                const lower_bound = stat.value * 0.9;
+                const upper_bound = stat.value * 1.1;
 
                 results[stat.id] = input_number >= lower_bound && input_number <= upper_bound;
             }
@@ -115,7 +115,7 @@ export const BonusPopup = ({open, on_finish, bonus_rounds}: BonusPopupProps) => 
                 <b className="mt-2">Congratulations on solving today&apos;s Rangle!</b>
                 <p className="text-center text-balance">However, {bonus_rounds.length === 1 ? "one of the" : "some"} values {bonus_rounds.length === 1 ? "has" : "have"}n&apos;t been revealed...</p>
 
-                <p className="my-4 text-center text-pretty">Can you guess the missing value{bonus_rounds.length > 1 ? "s" : ""} <b>within 5%</b> to score {bonus_rounds.length === 1 ? "a" : "some"} bonus point{bonus_rounds.length === 1 ? "" : "s"}?</p>
+                <p className="my-4 text-center text-pretty">Can you guess the missing value{bonus_rounds.length > 1 ? "s" : ""} <b>within 10%</b> to score {bonus_rounds.length === 1 ? "a" : "some"} bonus point{bonus_rounds.length === 1 ? "" : "s"}?</p>
 
                 <div className="flex flex-col items-center mt-4">
                     {bonus_rounds.map((stat, index) => (
