@@ -3,6 +3,7 @@
 import {epoch_utc} from "../../time";
 import { useState, useEffect } from "react";
 import { PuzzleStat } from "@/components/Game";
+import {Save, Shuffle} from "lucide-react";
 
 // --- API Helpers ---
 
@@ -120,6 +121,11 @@ const EditableStat = ({ index, stat, updateStat }: {
         }, 300);
         return () => clearTimeout(delayDebounceFn);
     }, [searchTerm, stat.name]);
+
+    // if stat.name changes, update the input field to reflect that (e.g. when shuffling)
+    useEffect(() => {
+        setSearchTerm(stat.name);
+    }, [stat.name]);
 
     const selectItem = async (item: any) => {
         updateStat(index, {
@@ -288,9 +294,23 @@ export const EditorInteraction = () => {
         URL.revokeObjectURL(url);
     };
 
+    const shufflePuzzle = () => {
+        // shuffle but check that 2 or less items are in the correct position
+        let shuffled = [...puzzle];
+        let give_up_counter = 0;
+        do {
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+        } while (give_up_counter++ < 25 && shuffled.filter((s, i) => s.id === puzzle[i].id).length > 2);
+
+        setPuzzle(shuffled);
+    }
+
     return (
-        <div className="max-w-5xl mx-auto p-6 space-y-6 min-h-screen">
-            <div className="flex justify-between items-center">
+        <div className="mx-auto p-6 gap-8 min-h-screen flex flex-col items-center">
+            <div className="flex justify-between items-center gap-5">
                 <label>
                     Date
                     <input
@@ -324,14 +344,25 @@ export const EditorInteraction = () => {
                 </label>
 
                 <button
-                    onClick={exportJson}
-                    className="bg-primary fg-on-primary px-6 py-2 rounded-full font-bold  transition cursor-pointer"
+                    onClick={shufflePuzzle}
+                    className="ml-4 bg-primary fg-on-primary px-6 py-2 rounded-full font-bold transition cursor-pointer flex items-center gap-1"
                 >
+                    <Shuffle className="w-4 h-4" />
+
+                    Shuffle
+                </button>
+
+                <button
+                    onClick={exportJson}
+                    className="bg-primary fg-on-primary px-6 py-2 rounded-full font-bold transition cursor-pointer flex items-center gap-1"
+                >
+                    <Save className="w-4 h-4"  />
+
                     Export JSON
                 </button>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-4 max-w-5xl">
                 {puzzle.map((stat, i) => (
                     <div key={i} style={{ zIndex: 5 - i, position: 'relative' }}>
                         <EditableStat index={i} stat={stat} updateStat={updateStat} />
@@ -346,4 +377,4 @@ export const EditorInteraction = () => {
 // i don't typically like to, but it works nicely as a quick tool to create puzzles by hand
 
 // TODO: add neighbourhood and difficulty helpers to suggest value ranges
-// TODO: add shuffle / spread helper
+// TODO: add spread helper
