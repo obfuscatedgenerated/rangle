@@ -1,8 +1,8 @@
 "use client";
 
-import {LoadingSpinner} from "@/components/LoadingSpinner";
-import {LoginPopup} from "@/components/LoginPopup";
-import {AccountFlyout} from "@/components/AccountFlyout";
+import {LoadingSpinner} from "@/components/ui/LoadingSpinner";
+import {LoginPopup} from "@/features/popup/LoginPopup";
+import {AccountFlyout} from "@/components/layout/AccountFlyout";
 
 import {useAuth} from "@/context/AuthContext";
 import {CLOUD_SYNC_ICONS, useCloudSync} from "@/context/CloudSyncContext";

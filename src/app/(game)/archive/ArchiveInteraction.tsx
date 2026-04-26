@@ -1,11 +1,11 @@
 "use client";
 
-import {epoch_utc, time_zone} from "../../time";
+import {epoch_utc, time_zone} from "../../../../time";
 
-import {ArchiveGrid} from "@/components/ArchiveGrid";
+import {ArchiveGrid} from "@/features/archive/ArchiveGrid";
 import {useMemo, useState} from "react";
 
-import {DiscordPresence} from "@/components/DiscordPresence";
+import {DiscordPresence} from "@/components/meta/DiscordPresence";
 
 export const ArchiveInteraction = () => {
     const epoch_iso = useMemo(

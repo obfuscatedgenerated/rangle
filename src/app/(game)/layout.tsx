@@ -2,13 +2,13 @@ import {ViewTransition} from "react";
 
 import {RangleScoresProvider} from "@/context/RangleScoresContext";
 import {SettingsProvider} from "@/context/SettingsContext";
-import {ThemeApplier} from "@/components/ThemeApplier";
-import {ContextProviders} from "@/components/ContextProviders";
+import {ThemeApplier} from "@/components/meta/ThemeApplier";
+import {ContextProviders} from "@/components/meta/ContextProviders";
 import {AuthProvider} from "@/context/AuthContext";
 import {CloudSyncProvider} from "@/context/CloudSyncContext";
 import {RangleStateProvider} from "@/context/RangleStateContext";
 import {DiscordLeaderboardProvider} from "@/context/DiscordLeaderboardContext";
-import {DiscordSplash} from "@/components/DiscordSplash";
+import {DiscordSplash} from "@/features/platform/DiscordSplash";
 
 export default function GameLayout({
     children,

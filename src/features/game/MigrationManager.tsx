@@ -3,7 +3,7 @@
 import {useSearchParams, useRouter} from "next/navigation";
 import {useEffect, useRef, useState} from "react";
 
-import type {StatPositionFlags} from "@/components/Game";
+import type {StatPositionFlags} from "@/features/game/Game";
 import type {SaveState, SaveStateDay} from "@/context/RangleStateContext";
 
 import {X} from "lucide-react";

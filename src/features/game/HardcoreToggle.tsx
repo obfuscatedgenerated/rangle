@@ -1,6 +1,6 @@
 "use client";
 
-import {ToggleSwitch} from "@/components/ToggleSwitch";
+import {ToggleSwitch} from "@/components/ui/ToggleSwitch";
 
 import {Lock} from "lucide-react";
 

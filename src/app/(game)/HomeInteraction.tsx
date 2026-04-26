@@ -1,17 +1,17 @@
 "use client";
 
-import {Header} from "@/components/Header";
-import {Game} from "@/components/Game";
-import {MigrationManager} from "@/components/MigrationManager";
-import {LoadingSpinner} from "@/components/LoadingSpinner";
+import {Header} from "@/components/layout/Header";
+import {Game} from "@/features/game/Game";
+import {MigrationManager} from "@/features/game/MigrationManager";
+import {LoadingSpinner} from "@/components/ui/LoadingSpinner";
 
 import {useCallback, useEffect, useMemo, useState} from "react";
 import {useSearchParams, useRouter} from "next/navigation";
 
-import {epoch_utc, time_zone} from "../../time";
-import {ChangelogWidget} from "@/components/ChangelogWidget";
+import {epoch_utc, time_zone} from "../../../time";
+import {ChangelogWidget} from "@/features/game/ChangelogWidget";
 import {useCloudSync} from "@/context/CloudSyncContext";
-import {NewTabLink} from "@/components/NewTabLink";
+import {NewTabLink} from "@/components/ui/NewTabLink";
 
 export const HomeInteraction = () => {
     const search_params = useSearchParams();

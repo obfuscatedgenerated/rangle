@@ -1,25 +1,25 @@
 "use client";
 
-import {DraggableStats} from "@/components/DraggableStats";
-import {SharePopup} from "@/components/SharePopup";
-import {Toast} from "@/components/Toast";
-import {HardcoreToggle} from "@/components/HardcoreToggle";
+import {DraggableStats} from "@/features/game/DraggableStats";
+import {SharePopup} from "@/features/popup/SharePopup";
+import {Toast} from "@/components/ui/Toast";
+import {HardcoreToggle} from "@/features/game/HardcoreToggle";
 
 import {useRangleState} from "@/context/RangleStateContext";
 import {useWindowSize} from "@/hooks/useWindowSize";
 
-import {epoch_utc, time_zone} from "../../time";
+import {epoch_utc, time_zone} from "../../../time";
 
 import {useState, useEffect, useCallback, useMemo, useRef} from "react";
 
 import ReactConfetti from "react-confetti";
 import {useSettingValue} from "@/context/SettingsContext";
 import {THEMES} from "@/themes";
-import {BonusPopup} from "@/components/BonusPopup";
+import {BonusPopup} from "@/features/popup/BonusPopup";
 import {useAudioPlayer} from "react-use-audio-player";
 
-import {Activity, DiscordPresence} from "@/components/DiscordPresence";
-import {LeaderboardPopup} from "@/components/LeaderboardPopup";
+import {Activity, DiscordPresence} from "@/components/meta/DiscordPresence";
+import {LeaderboardPopup} from "@/features/popup/LeaderboardPopup";
 
 export interface TodayData {
     date: string;

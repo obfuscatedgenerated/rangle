@@ -1,8 +1,8 @@
 "use client";
 
-import {epoch_utc} from "../../time";
+import {epoch_utc} from "../../../../time";
 import {useState, useEffect, useCallback} from "react";
-import { PuzzleStat } from "@/components/Game";
+import { PuzzleStat } from "@/features/game/Game";
 import {Play, Save, Shuffle, Upload} from "lucide-react";
 
 // --- API Helpers ---

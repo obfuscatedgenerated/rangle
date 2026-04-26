@@ -1,14 +1,14 @@
 "use client";
 
-import InfoPopup from "@/components/InfoPopup";
+import InfoPopup from "@/features/popup/InfoPopup";
 
 import {CalendarDays, ChartNoAxesCombined, Info, Settings} from "lucide-react";
 
 import {ComponentType, useEffect, useState} from "react";
 import Link from "next/link";
-import {StatsPopup} from "@/components/StatsPopup";
-import {SettingsPopup} from "@/components/SettingsPopup";
-import {LoginButton} from "@/components/LoginButton";
+import {StatsPopup} from "@/features/popup/StatsPopup";
+import {SettingsPopup} from "@/features/popup/SettingsPopup";
+import {LoginButton} from "@/components/layout/LoginButton";
 
 const HeaderIconButton = ({ Icon, title, on_click, disabled = false }: { Icon: ComponentType, title: string, on_click: () => void, disabled?: boolean }) => (
     <button onClick={on_click} className="cursor-pointer p-3 aspect-square disabled:text-gray-500 disabled:cursor-auto" title={title} disabled={disabled}>

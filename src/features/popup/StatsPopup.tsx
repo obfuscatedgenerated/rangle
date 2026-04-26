@@ -1,11 +1,11 @@
 "use client";
 
 import {useRangleScores, type Stats} from "@/context/RangleScoresContext";
-import {LoadingSpinner} from "@/components/LoadingSpinner";
+import {LoadingSpinner} from "@/components/ui/LoadingSpinner";
 
 import {useEffect, useRef} from "react";
 import {useAuth} from "@/context/AuthContext";
-import {LeaderboardPopup} from "@/components/LeaderboardPopup";
+import {LeaderboardPopup} from "@/features/popup/LeaderboardPopup";
 import {Crown} from "lucide-react";
 
 interface StatsPopupProps {

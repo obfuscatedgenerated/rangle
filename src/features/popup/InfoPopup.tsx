@@ -1,7 +1,7 @@
 "use client";
 
 import {useEffect, useRef, useState} from "react";
-import {NewTabLink} from "@/components/NewTabLink";
+import {NewTabLink} from "@/components/ui/NewTabLink";
 
 interface InfoPopupProps {
     open: boolean;

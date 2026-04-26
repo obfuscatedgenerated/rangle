@@ -2,8 +2,8 @@
 
 import {useCallback, useEffect, useRef, useState} from "react";
 
-import type {PuzzleStat} from "@/components/Game";
-import {SearchSpotlights} from "@/components/SearchSpotlights";
+import type {PuzzleStat} from "@/features/game/Game";
+import {SearchSpotlights} from "@/features/game/SearchSpotlights";
 import {useAudioPlayer} from "react-use-audio-player";
 import {useSettingValue} from "@/context/SettingsContext";
 

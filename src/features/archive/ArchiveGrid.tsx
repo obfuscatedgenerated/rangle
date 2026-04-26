@@ -1,13 +1,13 @@
 "use client";
 
-import {epoch_utc, time_zone} from "../../time";
+import {epoch_utc, time_zone} from "../../../time";
 
 import {useEffect, useMemo, useRef, useState} from "react";
 import Link from "next/link";
 
 import {ScoreStateDay, useRangleScores} from "@/context/RangleScoresContext";
-import {LoadingSpinner} from "@/components/LoadingSpinner";
-import {PuzzleCountdown} from "@/components/PuzzleCountdown";
+import {LoadingSpinner} from "@/components/ui/LoadingSpinner";
+import {PuzzleCountdown} from "@/features/game/PuzzleCountdown";
 
 interface MetadataDay {
     number: number;
@@ -64,7 +64,7 @@ const ArchiveTile = ({
     );
 
     return (
-        <Link href={`/?d=${date_str}`} title={`Play Rangle #${metadata.number} from ${formatted_date}`} ref={(el) => set_ref?.(date_str, el)} className={link_className}>
+        <Link href={`/public?d=${date_str}`} title={`Play Rangle #${metadata.number} from ${formatted_date}`} ref={(el) => set_ref?.(date_str, el)} className={link_className}>
             <div className={`
                 aspect-square
                 rounded-lg

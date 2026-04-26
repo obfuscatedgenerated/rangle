@@ -1,7 +1,7 @@
 import {Suspense} from "react";
 
-import {HomeInteraction} from "@/components/HomeInteraction";
-import {LoadingSpinner} from "@/components/LoadingSpinner";
+import {HomeInteraction} from "@/app/(game)/HomeInteraction";
+import {LoadingSpinner} from "@/components/ui/LoadingSpinner";
 
 export default function Home() {
     return (

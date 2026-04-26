@@ -1,15 +1,15 @@
 "use client";
 
 import {useCallback, useEffect, useMemo, useRef, useState} from "react";
-import type {StatPositionFlags, TodayData} from "@/components/Game";
-import {PuzzleCountdown} from "@/components/PuzzleCountdown";
+import type {StatPositionFlags, TodayData} from "@/features/game/Game";
+import {PuzzleCountdown} from "@/features/game/PuzzleCountdown";
 
 import Link from "next/link";
 import {useSettingValue} from "@/context/SettingsContext";
 import {THEMES} from "@/themes";
 import {useAuth} from "@/context/AuthContext";
 import {in_discord_activity} from "@/util/discord";
-import {LeaderboardPopup} from "@/components/LeaderboardPopup";
+import {LeaderboardPopup} from "@/features/popup/LeaderboardPopup";
 import {Crown} from "lucide-react";
 
 interface SharePopupProps {

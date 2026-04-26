@@ -2,7 +2,7 @@
 
 import {time_zone} from "../../time";
 
-import {PuzzleStat, StatPositionFlags, TodayData} from "@/components/Game";
+import {PuzzleStat, StatPositionFlags, TodayData} from "@/features/game/Game";
 import {useRangleScores} from "@/context/RangleScoresContext";
 import {createContext, useCallback, useContext, useEffect, useMemo, useRef, useState} from "react";
 import {useSettingValue} from "@/context/SettingsContext";

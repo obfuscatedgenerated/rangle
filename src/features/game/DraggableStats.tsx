@@ -10,10 +10,10 @@ import {
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
-import type {PuzzleStat} from "@/components/Game";
+import type {PuzzleStat} from "@/features/game/Game";
 import {useEffect, useState} from "react";
 import {LinkIcon} from "lucide-react";
-import {NewTabLink} from "@/components/NewTabLink";
+import {NewTabLink} from "@/components/ui/NewTabLink";
 
 interface DraggableStatProps {
     stat: PuzzleStat;

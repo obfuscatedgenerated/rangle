@@ -9,7 +9,7 @@ import {createContext, useCallback, useContext, useEffect, useMemo, useRef, useS
 import {GlobalStorage} from "@/util/globalStorage";
 import {useSettings, Settings} from "@/context/SettingsContext";
 import {cloud_bus, CLOUD_SYNC_EVENTS} from "@/util/event_bus";
-import {LoadingSpinner} from "@/components/LoadingSpinner";
+import {LoadingSpinner} from "@/components/ui/LoadingSpinner";
 import {CircleAlert, Check, Ban} from "lucide-react";
 import {in_discord_activity} from "@/util/discord";
 

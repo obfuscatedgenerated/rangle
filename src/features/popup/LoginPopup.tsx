@@ -1,7 +1,7 @@
 import {useAuth} from "@/context/AuthContext";
 import {useEffect, useRef, useState} from "react";
-import {HeightListeningIFrame} from "@/components/HeightListeningIFrame";
-import {NewTabLink} from "@/components/NewTabLink";
+import {HeightListeningIFrame} from "@/components/ui/HeightListeningIFrame";
+import {NewTabLink} from "@/components/ui/NewTabLink";
 
 interface LoginPopupProps {
     open: boolean;

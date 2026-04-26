@@ -1,8 +1,8 @@
 import {Metadata} from "next";
 import {Suspense} from "react";
 
-import {LoadingSpinner} from "@/components/LoadingSpinner";
-import {ArchiveInteraction} from "@/components/ArchiveInteraction";
+import {LoadingSpinner} from "@/components/ui/LoadingSpinner";
+import {ArchiveInteraction} from "@/app/(game)/archive/ArchiveInteraction";
 
 export const metadata: Metadata = {
     title: "The Archive"

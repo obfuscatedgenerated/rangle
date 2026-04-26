@@ -2,9 +2,9 @@
 
 import {useEffect, useState} from "react";
 
-import {Game, TodayData} from "@/components/Game";
+import {Game, TodayData} from "@/features/game/Game";
 import {VirtualRangleStateProvider} from "@/context/RangleStateContext";
-import {LoadingSpinner} from "@/components/LoadingSpinner";
+import {LoadingSpinner} from "@/components/ui/LoadingSpinner";
 import {useSearchParams} from "next/navigation";
 
 const TestRun = ({json_data}: { json_data: TodayData }) => (

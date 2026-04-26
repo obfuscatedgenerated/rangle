@@ -1,10 +1,10 @@
 "use client";
 
 import {useCallback, useEffect, useRef, useState} from "react";
-import {ToggleSwitch} from "@/components/ToggleSwitch";
+import {ToggleSwitch} from "@/components/ui/ToggleSwitch";
 
 import {useSettings} from "@/context/SettingsContext";
-import {ThemeChooser} from "@/components/ThemeChooser";
+import {ThemeChooser} from "@/features/settings/ThemeChooser";
 import {useRangleScores} from "@/context/RangleScoresContext";
 
 interface SettingsPopupProps {

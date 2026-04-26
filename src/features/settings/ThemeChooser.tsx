@@ -5,7 +5,7 @@ import {THEMES} from "@/themes";
 
 import {useRangleScores} from "@/context/RangleScoresContext";
 import {useMemo} from "react";
-import {LoadingSpinner} from "@/components/LoadingSpinner";
+import {LoadingSpinner} from "@/components/ui/LoadingSpinner";
 import {ChevronDown} from "lucide-react";
 
 export const ThemeChooser = () => {

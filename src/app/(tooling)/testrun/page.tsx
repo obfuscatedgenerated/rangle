@@ -1,7 +1,7 @@
 import {Metadata} from "next";
 import {Suspense} from "react";
-import {LoadingSpinner} from "@/components/LoadingSpinner";
-import {TestRunInteraction} from "@/components/TestRunInteraction";
+import {LoadingSpinner} from "@/components/ui/LoadingSpinner";
+import {TestRunInteraction} from "@/app/(tooling)/testrun/TestRunInteraction";
 import {VirtualSettingsProvider} from "@/context/SettingsContext";
 
 export const metadata: Metadata = {

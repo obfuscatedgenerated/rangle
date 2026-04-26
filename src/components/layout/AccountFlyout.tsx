@@ -3,7 +3,7 @@
 import {useAuth} from "@/context/AuthContext";
 
 import {X} from "lucide-react";
-import {Scrim} from "@/components/Scrim";
+import {Scrim} from "@/components/ui/Scrim";
 import {CLOUD_SYNC_ICONS, CLOUD_SYNC_STATUS_MESSAGES, useCloudSync} from "@/context/CloudSyncContext";
 
 interface AccountFlyoutProps {

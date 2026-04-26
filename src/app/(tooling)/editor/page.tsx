@@ -1,8 +1,8 @@
 import type {Metadata} from "next";
 import {Suspense} from "react";
 
-import {LoadingSpinner} from "@/components/LoadingSpinner";
-import {EditorInteraction} from "@/components/EditorInteraction";
+import {LoadingSpinner} from "@/components/ui/LoadingSpinner";
+import {EditorInteraction} from "@/app/(tooling)/editor/EditorInteraction";
 
 export const metadata: Metadata = {
     title: "Editor",
