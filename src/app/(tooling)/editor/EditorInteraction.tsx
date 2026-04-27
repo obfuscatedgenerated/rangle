@@ -148,7 +148,7 @@ const EditableStat = ({ index, stat, updateStat }: {
 
     const selectProperty = (prop: any) => {
         const prefix_map: Record<string, string> = {
-            "dollar": "$",
+            "United States dollar": "$",
         }
 
         const suffix_map: Record<string, string> = {
@@ -161,6 +161,7 @@ const EditableStat = ({ index, stat, updateStat }: {
 
         const unit_hint_map: Record<string, string> = {
             "year": "",
+            "United States dollar": "in dollars",
         };
 
         const metric_prefix_map: Record<string, string> = {
