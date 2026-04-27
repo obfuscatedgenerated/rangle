@@ -1,18 +1,43 @@
 "use client";
 
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 
 import {Game, TodayData} from "@/features/game/Game";
 import {VirtualRangleStateProvider} from "@/context/RangleStateContext";
 import {LoadingSpinner} from "@/components/ui/LoadingSpinner";
 import {useSearchParams} from "next/navigation";
 import {safe_atob} from "@/util/base64";
+import {Save} from "lucide-react";
 
-const TestRun = ({json_data}: { json_data: TodayData }) => (
-    <VirtualRangleStateProvider data={json_data}>
-        <Game archive_date={json_data.date} leaderboard_is_open={false} open_leaderboard={() => {}} close_leaderboard={() => {}} />
-    </VirtualRangleStateProvider>
-);
+const TestRun = ({json_data}: { json_data: TodayData }) => {
+    const export_json = useCallback(
+        () => {
+            const blob = new Blob([JSON.stringify(json_data, null, 2)], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = `${json_data.date}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        },
+        [json_data]
+    );
+
+    return (
+        <VirtualRangleStateProvider data={json_data}>
+            <button
+                onClick={export_json}
+                className="mt-4 mb-6 bg-primary fg-on-primary px-6 py-2 rounded-full font-bold transition cursor-pointer flex items-center gap-2"
+            >
+                <Save className="w-4 h-4"/>
+
+                Export JSON
+            </button>
+
+            <Game archive_date={json_data.date} leaderboard_is_open={false} open_leaderboard={() => {}} close_leaderboard={() => {}}/>
+        </VirtualRangleStateProvider>
+    );
+};
 
 export const TestRunInteraction = () => {
     const [json_data, setJsonData] = useState<TodayData | null>(null);

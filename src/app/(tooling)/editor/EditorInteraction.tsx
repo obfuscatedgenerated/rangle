@@ -444,6 +444,7 @@ export const EditorInteraction = () => {
                     Open JSON
                 </label>
 
+                {/* TODO: make button a component, it looks nice */}
                 <button
                     onClick={export_json}
                     className="bg-primary fg-on-primary px-6 py-2 rounded-full font-bold transition cursor-pointer flex items-center gap-2"
