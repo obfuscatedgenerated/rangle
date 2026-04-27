@@ -484,3 +484,4 @@ export const EditorInteraction = () => {
 
 // TODO: add neighbourhood and difficulty helpers to suggest value ranges
 // TODO: add spread helper
+// TODO: allow item renaming?
