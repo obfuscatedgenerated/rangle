@@ -278,11 +278,9 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
                 <input placeholder="Description (always shown)" value={stat.description} onChange={(e) => updateStat(index, { description: e.target.value })}
                        className="w-full p-2 text-sm border rounded bg-tertiary-background flex-1" />
 
-                <div className="flex items-center gap-2">
-                    <input id={`bonus-${index}`} type="checkbox" checked={!!stat.bonus_round} onChange={(e) => updateStat(index, { bonus_round: e.target.checked })}
-                       className="ml-2" />
-                    <label htmlFor={`bonus-${index}`} className="text-sm opacity-60">Bonus Round</label>
-                </div>
+                <ToggleSwitch value={!!stat.bonus_round} on_toggle={(val) => updateStat(index, { bonus_round: val })} title="Mark this stat to be played in the bonus round. If the player beats the Rangle, all bonus round values are kept secret and the player must guess them!">
+                    Bonus round
+                </ToggleSwitch>
             </div>
         </div>
     );
