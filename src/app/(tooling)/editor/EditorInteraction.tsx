@@ -263,16 +263,16 @@ const EditableStat = ({ index, stat, updateStat }: {
 
             {/* METADATA */}
             <div className="md:col-span-2 grid grid-cols-3 gap-2">
-                <input placeholder="Prefix" value={stat.prefix} onChange={(e) => updateStat(index, { prefix: e.target.value })}
+                <input placeholder="Prefix (shown when revealed)" value={stat.prefix} onChange={(e) => updateStat(index, { prefix: e.target.value })}
                        className="p-2 text-sm border rounded bg-tertiary-background" />
-                <input placeholder="Suffix" value={stat.suffix} onChange={(e) => updateStat(index, { suffix: e.target.value })}
+                <input placeholder="Suffix (shown when revealed)" value={stat.suffix} onChange={(e) => updateStat(index, { suffix: e.target.value })}
                        className="p-2 text-sm border rounded bg-tertiary-background" />
-                <input placeholder="Unit Hint" value={stat.unit_hint || ""} onChange={(e) => updateStat(index, { unit_hint: e.target.value })}
+                <input placeholder="Unit Hint (always shown)" value={stat.unit_hint || ""} onChange={(e) => updateStat(index, { unit_hint: e.target.value })}
                        className="p-2 text-sm border rounded bg-tertiary-background" />
             </div>
 
             <div className="sm:col-span-3 flex items-center gap-4 mr-2 flex-col sm:flex-row">
-                <input placeholder="Description" value={stat.description} onChange={(e) => updateStat(index, { description: e.target.value })}
+                <input placeholder="Description (always shown)" value={stat.description} onChange={(e) => updateStat(index, { description: e.target.value })}
                        className="w-full p-2 text-sm border rounded bg-tertiary-background flex-1" />
 
                 <div className="flex items-center gap-2">
