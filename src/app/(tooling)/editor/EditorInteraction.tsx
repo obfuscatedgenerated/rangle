@@ -127,6 +127,11 @@ const EditableStat = ({ index, stat, updateStat }: {
         setSearchTerm(stat.name);
     }, [stat.name]);
 
+    // if metric changes, update metric search to reflect that (e.g. when shuffling)
+    useEffect(() => {
+        setMetricSearch(stat.metric);
+    }, [stat.metric]);
+
     const selectItem = async (item: any) => {
         updateStat(index, {
             id: item.id,
@@ -201,7 +206,14 @@ const EditableStat = ({ index, stat, updateStat }: {
                         type="text"
                         value={metricSearch}
                         onFocus={() => setShowMetricResults(true)}
-                        onChange={(e) => setMetricSearch(e.target.value)}
+                        onChange={(e) => {
+                            setMetricSearch(e.target.value);
+
+                            // sync stat.metric to what's typed into the field to allow for renaming a selected stat
+                            if (stat.metric !== e.target.value) {
+                                updateStat(index, { metric: e.target.value });
+                            }
+                        }}
                         placeholder="Search Props..."
                         className="w-full p-2 border rounded bg-tertiary-background"
                     />
