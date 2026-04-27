@@ -45,7 +45,7 @@ export const PuzzleCountdown = () => {
                     // TODO: Link is better but need to handle state properly
                     <a
                         className="text-2xl font-bold tracking-widest bg-green-600 px-3 py-1 rounded text-white cursor-pointer font-sans"
-                        href="/public"
+                        href="/"
                     >
                         Play now!
                     </a>

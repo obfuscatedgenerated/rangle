@@ -64,7 +64,7 @@ const ArchiveTile = ({
     );
 
     return (
-        <Link href={`/public?d=${date_str}`} title={`Play Rangle #${metadata.number} from ${formatted_date}`} ref={(el) => set_ref?.(date_str, el)} className={link_className}>
+        <Link href={`/?d=${date_str}`} title={`Play Rangle #${metadata.number} from ${formatted_date}`} ref={(el) => set_ref?.(date_str, el)} className={link_className}>
             <div className={`
                 aspect-square
                 rounded-lg
