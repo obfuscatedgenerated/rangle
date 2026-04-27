@@ -239,12 +239,15 @@ const EditableStat = ({ index, stat, updateStat }: {
                        className="p-2 text-sm border rounded bg-tertiary-background" />
             </div>
 
-            <div className="md:col-span-2 flex items-center gap-4 mr-2">
+            <div className="sm:col-span-3 flex items-center gap-4 mr-2 flex-col sm:flex-row">
                 <input placeholder="Description" value={stat.description} onChange={(e) => updateStat(index, { description: e.target.value })}
-                       className="md:col-span-2 p-2 text-sm border rounded bg-tertiary-background flex-1" />
+                       className="w-full p-2 text-sm border rounded bg-tertiary-background flex-1" />
 
-                <input type="checkbox" checked={!!stat.bonus_round} onChange={(e) => updateStat(index, { bonus_round: e.target.checked })}
-                       className="ml-2" /><span className="text-sm opacity-60">Bonus Round</span>
+                <div className="flex items-center gap-2">
+                    <input id={`bonus-${index}`} type="checkbox" checked={!!stat.bonus_round} onChange={(e) => updateStat(index, { bonus_round: e.target.checked })}
+                       className="ml-2" />
+                    <label htmlFor={`bonus-${index}`} className="text-sm opacity-60">Bonus Round</label>
+                </div>
             </div>
         </div>
     );
@@ -327,7 +330,7 @@ export const EditorInteraction = () => {
 
     return (
         <div className="mx-auto p-6 gap-8 min-h-screen flex flex-col items-center">
-            <div className="flex justify-center items-center gap-5 flex-wrap">
+            <div className="flex justify-center items-center gap-5 flex-wrap text-sm sm:text-base">
                 <label>
                     Date
                     <input
@@ -359,10 +362,12 @@ export const EditorInteraction = () => {
                         placeholder="e.g. small, medium, large"
                     />
                 </label>
+            </div>
 
+            <div className="flex justify-center items-center gap-5 flex-wrap text-sm sm:text-base">
                 <button
                     onClick={shuffle_puzzle}
-                    className="ml-4 bg-primary fg-on-primary px-6 py-2 rounded-full font-bold transition cursor-pointer flex items-center gap-2"
+                    className="bg-primary fg-on-primary px-6 py-2 rounded-full font-bold transition cursor-pointer flex items-center gap-2"
                 >
                     <Shuffle className="w-4 h-4" />
 
