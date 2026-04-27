@@ -9,9 +9,7 @@ import {useSearchParams} from "next/navigation";
 
 const TestRun = ({json_data}: { json_data: TodayData }) => (
     <VirtualRangleStateProvider data={json_data}>
-        <Game archive_date={json_data.date} leaderboard_is_open={false} open_leaderboard={() => {
-        }} close_leaderboard={() => {
-        }}/>
+        <Game archive_date={json_data.date} leaderboard_is_open={false} open_leaderboard={() => {}} close_leaderboard={() => {}} />
     </VirtualRangleStateProvider>
 );
 
