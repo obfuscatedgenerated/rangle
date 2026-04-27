@@ -147,8 +147,11 @@ const EditableStat = ({ index, stat, updateStat }: {
     };
 
     const selectProperty = (prop: any) => {
-        // Basic mapping for common units to suffixes
-        const suffixMap: Record<string, string> = {
+        const prefix_map: Record<string, string> = {
+            "dollar": "$",
+        }
+
+        const suffix_map: Record<string, string> = {
             "metre": " m",
             "kilogram": " kg",
             "kilometre": " km",
@@ -156,11 +159,27 @@ const EditableStat = ({ index, stat, updateStat }: {
             "year": ""
         };
 
+        const unit_hint_map: Record<string, string> = {
+            "year": "",
+        };
+
+        const metric_prefix_map: Record<string, string> = {
+            "year": "year of ",
+        };
+
+        const metric_replacement_map: Record<string, string> = {
+            "time of discovery or invention": "discovery or invention",
+        };
+
+        const replaced_metric = metric_replacement_map[prop.label] || prop.label;
+        const metric_prefix = metric_prefix_map[prop.unitLabel] || "";
+
         updateStat(index, {
-            metric: prop.label,
+            metric: `${metric_prefix}${replaced_metric}`,
             value: prop.value,
-            suffix: suffixMap[prop.unitLabel] || ` ${prop.unitLabel}`, // Auto-fill suffix
-            unit_hint: prop.unitLabel ? `in ${prop.unitLabel}s` : ""   // Auto-fill hint
+            prefix: prefix_map[prop.unitLabel] !== undefined ? prefix_map[prop.unitLabel] : "",
+            suffix: suffix_map[prop.unitLabel] !== undefined ? suffix_map[prop.unitLabel] : "",
+            unit_hint: prop.unitLabel ? (unit_hint_map[prop.unitLabel] !== undefined ? unit_hint_map[prop.unitLabel] : `in ${prop.unitLabel}s`) : ""   // Auto-fill hint
         });
 
         setMetricSearch(prop.label);
