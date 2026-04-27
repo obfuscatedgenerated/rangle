@@ -6,6 +6,7 @@ import {Game, TodayData} from "@/features/game/Game";
 import {VirtualRangleStateProvider} from "@/context/RangleStateContext";
 import {LoadingSpinner} from "@/components/ui/LoadingSpinner";
 import {useSearchParams} from "next/navigation";
+import {safe_atob} from "@/util/base64";
 
 const TestRun = ({json_data}: { json_data: TodayData }) => (
     <VirtualRangleStateProvider data={json_data}>
@@ -30,7 +31,7 @@ export const TestRunInteraction = () => {
         }
 
         try {
-            const url_data = atob(url_data_b64);
+            const url_data = safe_atob(url_data_b64);
             const parsed_data = JSON.parse(url_data);
             setJsonData(parsed_data);
         } catch (err) {

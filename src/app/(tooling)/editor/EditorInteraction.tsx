@@ -5,6 +5,7 @@ import {useState, useEffect, useCallback} from "react";
 import { PuzzleStat } from "@/features/game/Game";
 import {Play, Save, Shuffle, Upload} from "lucide-react";
 import {ToggleSwitch} from "@/components/ui/ToggleSwitch";
+import {safe_btoa} from "@/util/base64";
 
 // --- API Helpers ---
 
@@ -359,7 +360,7 @@ export const EditorInteraction = () => {
     const test_run = useCallback(
         () => {
             const url = new URL("/testrun", window.location.origin);
-            url.searchParams.set("data", btoa(JSON.stringify(get_json())));
+            url.searchParams.set("data", safe_btoa(JSON.stringify(get_json())));
             window.open(url.toString(), "_blank");
         },
         [get_json]
@@ -463,7 +464,7 @@ export const EditorInteraction = () => {
                     Test run
                 </button>
 
-                <ToggleSwitch value={show_values} on_toggle={setShowValues}>
+                <ToggleSwitch value={show_values} on_toggle={setShowValues} title="Disable to keep the puzzle a mystery while editing. Thanks Rihana for the suggestion!">
                     Show values
                 </ToggleSwitch>
             </div>
