@@ -1,55 +1,56 @@
 {
   "date": "2026-04-28",
   "number": 31,
-  "difficulty": "Easy",
-  "neighbourhood": "small",
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
   "puzzle": [
     {
-      "id": "Q23670",
-      "name": "It's Always Sunny in Philadelphia",
-      "value": 17,
-      "metric": "Number of Seasons",
-      "description": "American comedy television series",
-      "prefix": "",
-      "suffix": " seasons"
-    },
-    {
-      "id": "Q14344806",
-      "name": "Applause",
-      "value": 14,
-      "metric": "Tempo",
-      "description": "2013 single by Lady Gaga",
-      "prefix": "",
-      "suffix": " BPM",
-      "unit_hint": "beats per minute"
-    },
-    {
-      "id": "Q21148896",
-      "name": "Iron Fist",
-      "value": 23,
-      "metric": "Number of Episodes",
-      "description": "American television series",
-      "prefix": "",
-      "suffix": " episodes"
-    },
-    {
-      "id": "Q121439",
-      "name": "raccoon",
-      "value": 20,
-      "metric": "Life Expectancy / Maximum Lifespan",
-      "description": "species of mammal native to North America",
-      "prefix": "",
-      "suffix": " years",
-      "unit_hint": "in years"
-    },
-    {
-      "id": "Q280154",
-      "name": "All That",
+      "id": "Q125309",
+      "name": "Lake Chad",
       "value": 11,
-      "metric": "Number of Seasons",
-      "description": "American sketch comedy television series",
+      "metric": "Depth",
+      "description": "lake in Africa",
       "prefix": "",
-      "suffix": " seasons"
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q177856",
+      "name": "Griffon Vulture",
+      "value": 3,
+      "metric": "Wingspan",
+      "description": "species of bird",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q40591",
+      "name": "The Communist Manifesto",
+      "value": 23,
+      "metric": "Number of Pages",
+      "description": "1848 publication written by Karl Marx and Friedrich Engels",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q1396889",
+      "name": "Animal Farm",
+      "value": 92,
+      "metric": "Number of Pages",
+      "description": "1945 novella by George Orwell",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q6383",
+      "name": "Lake Balaton",
+      "value": 13,
+      "metric": "Depth",
+      "description": "freshwater lake in Hungary",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
     }
   ]
 }
