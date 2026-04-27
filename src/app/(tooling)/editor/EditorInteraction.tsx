@@ -4,6 +4,7 @@ import {epoch_utc} from "../../../../time";
 import {useState, useEffect, useCallback} from "react";
 import { PuzzleStat } from "@/features/game/Game";
 import {Play, Save, Shuffle, Upload} from "lucide-react";
+import {ToggleSwitch} from "@/components/ui/ToggleSwitch";
 
 // --- API Helpers ---
 
@@ -98,10 +99,11 @@ const fetchItemClaims = async (qid: string) => {
 
 // --- Component ---
 
-const EditableStat = ({ index, stat, updateStat }: {
+const EditableStat = ({ index, stat, updateStat, show_values }: {
     index: number;
     stat: PuzzleStat;
-    updateStat: (index: number, newData: Partial<PuzzleStat>) => void
+    updateStat: (index: number, newData: Partial<PuzzleStat>) => void,
+    show_values: boolean;
 }) => {
     // Item Search State
     const [searchTerm, setSearchTerm] = useState(stat.name);
@@ -244,7 +246,7 @@ const EditableStat = ({ index, stat, updateStat }: {
                                      className="p-2 hover:bg-primary hover:text-white cursor-pointer text-sm border-b last:border-0 border-background-variant-border"
                                 >
                                     <div className="font-bold">{prop.label}</div>
-                                    <div className="text-xs opacity-60">Value: {prop.value}</div>
+                                    {show_values && <div className="text-xs opacity-60">Value: {prop.value}</div>}
                                 </div>
                             ))}
                         </div>
@@ -256,7 +258,7 @@ const EditableStat = ({ index, stat, updateStat }: {
                         type="number"
                         value={stat.value}
                         onChange={(e) => updateStat(index, { value: Number(e.target.value) })}
-                        className="w-full p-2 border rounded bg-tertiary-background font-mono"
+                        className={`w-full p-2 border rounded bg-tertiary-background font-mono ${show_values ? "" : "text-transparent"}`}
                     />
                 </div>
             </div>
@@ -309,17 +311,20 @@ export const EditorInteraction = () => {
     const [difficulty_string, setDifficultyString] = useState("Custom");
     const [neighbourhood_string, setNeighborhoodString] = useState("custom");
 
-    const get_json = () => {
-        const days_since_epoch = Math.floor((new Date(iso_date).getTime() - epoch_utc.getTime()) / (1000 * 60 * 60 * 24));
+    const get_json = useCallback(
+        () => {
+            const days_since_epoch = Math.floor((new Date(iso_date).getTime() - epoch_utc.getTime()) / (1000 * 60 * 60 * 24));
 
-        return {
-            date: iso_date,
-            number: days_since_epoch + 1,
-            difficulty: difficulty_string,
-            neighbourhood: neighbourhood_string,
-            puzzle: puzzle
-        };
-    }
+            return {
+                date: iso_date,
+                number: days_since_epoch + 1,
+                difficulty: difficulty_string,
+                neighbourhood: neighbourhood_string,
+                puzzle: puzzle
+            };
+        },
+        [iso_date, difficulty_string, neighbourhood_string, puzzle]
+    );
 
     const export_json = useCallback(
         () => {
@@ -359,6 +364,8 @@ export const EditorInteraction = () => {
         },
         [get_json]
     );
+
+    const [show_values, setShowValues] = useState(true);
 
     return (
         <div className="mx-auto p-6 gap-8 min-h-screen flex flex-col items-center">
@@ -453,14 +460,18 @@ export const EditorInteraction = () => {
                 >
                     <Play className="w-4 h-4" />
 
-                    Test Run
+                    Test run
                 </button>
+
+                <ToggleSwitch value={show_values} on_toggle={setShowValues}>
+                    Show values
+                </ToggleSwitch>
             </div>
 
             <div className="space-y-4 max-w-5xl">
                 {puzzle.map((stat, i) => (
-                    <div key={i} style={{ zIndex: 5 - i, position: 'relative' }}>
-                        <EditableStat index={i} stat={stat} updateStat={updateStat} />
+                    <div key={i} style={{ zIndex: 5 - i, position: "relative" }}>
+                        <EditableStat index={i} stat={stat} updateStat={updateStat} show_values={show_values} />
                     </div>
                 ))}
             </div>
