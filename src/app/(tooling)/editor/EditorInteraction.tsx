@@ -237,7 +237,7 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
                                 updateStat(index, { metric: e.target.value });
                             }
                         }}
-                        placeholder="Search Props..."
+                        placeholder="Search properties..."
                         className="w-full p-2 border rounded bg-tertiary-background"
                     />
                     {showMetricResults && filteredProps.length > 0 && (
