@@ -172,16 +172,17 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
 
         const replaced_metric = metric_replacement_map[prop.label] || prop.label;
         const metric_prefix = metric_prefix_map[prop.unitLabel] || "";
+        const final_metric = `${metric_prefix}${replaced_metric}`;
 
         updateStat(index, {
-            metric: `${metric_prefix}${replaced_metric}`,
+            metric: final_metric,
             value: prop.value,
             prefix: prefix_map[prop.unitLabel] !== undefined ? prefix_map[prop.unitLabel] : "",
             suffix: suffix_map[prop.unitLabel] !== undefined ? suffix_map[prop.unitLabel] : "",
             unit_hint: prop.unitLabel ? (unit_hint_map[prop.unitLabel] !== undefined ? unit_hint_map[prop.unitLabel] : `in ${prop.unitLabel}s`) : ""   // Auto-fill hint
         });
 
-        setMetricSearch(prop.label);
+        setMetricSearch(final_metric);
         setShowMetricResults(false);
     };
 
