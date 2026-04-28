@@ -116,7 +116,9 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
     const [metricSearch, setMetricSearch] = useState(stat.metric);
     const [show_item_results, setShowItemResults] = useState(false);
     const [showMetricResults, setShowMetricResults] = useState(false);
+
     const [original_label, setOriginalLabel] = useState(stat.name);
+    const [original_label_for_id, setOriginalLabelForId] = useState(stat.id);
 
     useEffect(() => {
         const delayDebounceFn = setTimeout(async () => {
@@ -128,6 +130,41 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
         return () => clearTimeout(delayDebounceFn);
     }, [original_label, searchTerm]);
 
+    // sync item name and metric label to prop (in case changed via open json)
+    useEffect(() => {
+        setSearchTerm(stat.name);
+    }, [stat.name]);
+
+    useEffect(() => {
+        setMetricSearch(stat.metric);
+    }, [stat.metric]);
+
+    // if original label is outdated (because id changed via json) fetch the original name from wikidata for the new id
+    useEffect(() => {
+        if (stat.id === original_label_for_id) {
+            return;
+        }
+
+        const fetchOriginalLabel = async () => {
+            if (stat.id) {
+                try {
+                    const res = await fetch(`${WIKIDATA_API}?action=wbgetentities&ids=${stat.id}&props=labels&languages=en&format=json&origin=*`);
+                    const data = await res.json();
+                    const label = data.entities?.[stat.id]?.labels?.en?.value || "";
+                    setOriginalLabel(label);
+                    setOriginalLabelForId(stat.id);
+                } catch (err) {
+                    console.error("Error fetching original label:", err);
+                }
+            } else {
+                setOriginalLabel("");
+                setOriginalLabelForId("");
+            }
+        };
+
+        fetchOriginalLabel();
+    }, [stat.id, original_label_for_id]);
+
     const selectItem = async (item: any) => {
         updateStat(index, {
             id: item.id,
@@ -135,6 +172,7 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
             description: item.description,
         });
         setOriginalLabel(item.label);
+        setOriginalLabelForId(item.id);
         setSearchTerm(item.label);
         setResults([]);
 
@@ -223,7 +261,7 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
                         placeholder="Search name or class ID..."
                         className="w-full p-2 border rounded bg-tertiary-background text-on-tertiary-background"
                     />
-                    {stat.id && searchTerm !== original_label && (
+                    {stat.id && searchTerm !== original_label && original_label_for_id === stat.id && (
                         <span title="Renamed from original Wikidata label" className="absolute top-1/2 right-1 -translate-y-1/2 opacity-50">
                             <Asterisk />
                         </span>
