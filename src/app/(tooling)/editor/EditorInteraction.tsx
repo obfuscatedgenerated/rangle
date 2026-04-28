@@ -480,7 +480,15 @@ export const EditorInteraction = () => {
                                     setIsoDate(parsed_data.date || iso_date);
                                     setDifficultyString(parsed_data.difficulty || difficulty_string);
                                     setNeighborhoodString(parsed_data.neighbourhood || neighbourhood_string);
-                                    setPuzzle(parsed_data.puzzle || puzzle);
+
+                                    if (!parsed_data.puzzle || !Array.isArray(parsed_data.puzzle) || parsed_data.puzzle.length !== 5) {
+                                        return;
+                                    }
+
+                                    setPuzzle(parsed_data.puzzle.map((stat: PuzzleStat, idx: number) => ({
+                                        ...stat,
+                                        render_key: idx,  // add render keys for internal use
+                                    })));
                                 } catch (err) {
                                     console.error("Error parsing JSON:", err);
                                 }
