@@ -196,7 +196,7 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
                 <input
                     type="text"
                     value={stat.id || "No ID!"}
-                    className={`w-full p-2 border rounded text-foreground/50 ${stat.id ? "font-mono bg-tertiary-background text-on-tertiary-background" : "italic border-red-500 bg-lost text-on-lost"}`}
+                    className={`w-full p-2 border rounded ${stat.id ? "font-mono bg-tertiary-background text-on-tertiary-background/75" : "italic border-red-500 bg-lost text-on-lost"}`}
                     readOnly
                 />
             </div>
