@@ -539,6 +539,9 @@ export const EditorInteraction = () => {
                             }
                         };
                         reader.readAsText(file);
+
+                        // reset the input so the same file can be uploaded again if needed
+                        e.target.value = "";
                     }}
                     className="hidden"
                     id="file-upload"
