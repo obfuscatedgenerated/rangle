@@ -1,0 +1,58 @@
+{
+  "date": "2026-04-30",
+  "number": 33,
+  "difficulty": "Brainrot",
+  "neighbourhood": "custom",
+  "puzzle": [
+    {
+      "id": "Q123480242",
+      "name": "Katseye",
+      "value": 2024,
+      "metric": "year of formation",
+      "description": "American girl group",
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": ""
+    },
+    {
+      "id": "Q134227481",
+      "name": "Tung Tung Tung Sahur",
+      "value": 2025,
+      "metric": "year of creation",
+      "description": "internet meme",
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": ""
+    },
+    {
+      "id": "Q131460044",
+      "name": "The Rizzler",
+      "value": 2016,
+      "metric": "year of birth",
+      "description": "American social media personality from New Jersey",
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": ""
+    },
+    {
+      "id": "Q81068910",
+      "name": "COVID-19 pandemic",
+      "value": 2019,
+      "metric": "year of release",
+      "description": "pandemic caused by SARS-CoV-2",
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": ""
+    },
+    {
+      "id": "Q135043976",
+      "name": "Goofy Gorillas",
+      "value": 2023,
+      "metric": "year of release",
+      "description": "video game developed by sponge",
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": ""
+    }
+  ]
+}
