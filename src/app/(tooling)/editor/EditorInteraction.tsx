@@ -3,7 +3,7 @@
 import {epoch_utc} from "../../../../time";
 import {useState, useEffect, useCallback, useRef} from "react";
 import { PuzzleStat } from "@/features/game/Game";
-import {Asterisk, Play, Save, Shuffle, Upload} from "lucide-react";
+import {ArrowDown, ArrowUp, Asterisk, Play, Save, Shuffle, Upload} from "lucide-react";
 import {ToggleSwitch} from "@/components/ui/ToggleSwitch";
 import {safe_btoa} from "@/util/base64";
 import {NewTabLink} from "@/components/ui/NewTabLink";
@@ -400,7 +400,7 @@ export const EditorInteraction = () => {
     const [show_values, setShowValues] = useState(true);
 
     return (
-        <div className="mx-auto p-6 gap-8 min-h-screen flex flex-col items-center">
+        <div className="mx-auto p-1 sm:p-6 gap-8 min-h-screen flex flex-col items-center">
             <div className="flex justify-center items-center gap-5 flex-wrap text-sm sm:text-base">
                 <label>
                     Date
@@ -502,9 +502,43 @@ export const EditorInteraction = () => {
             </div>
 
             <div className="space-y-4 max-w-5xl">
-                {puzzle.map((stat, i) => (
-                    <div key={stat.render_key} style={{ zIndex: 5 - i, position: "relative" }}>
-                        <EditableStat index={i} stat={stat} updateStat={updateStat} show_values={show_values} />
+                {puzzle.map((stat, idx) => (
+                    <div key={stat.render_key} style={{ zIndex: 5 - idx }} className="relative flex items-stretch gap-2">
+                        <div className="flex flex-col my-16 justify-between items-center">
+                            {idx !== 0 ? (
+                                <button
+                                    onClick={() => {
+                                        const newPuzzle = [...puzzle];
+                                        [newPuzzle[idx - 1], newPuzzle[idx]] = [newPuzzle[idx], newPuzzle[idx - 1]];
+                                        setPuzzle(newPuzzle);
+                                    }}
+                                    className="text-xs opacity-50 hover:opacity-100 transition cursor-pointer"
+                                    title="Move up"
+                                >
+                                    <ArrowUp />
+                                </button>
+                            ) : (
+                                <div />
+                            )}
+
+                            {idx !== puzzle.length - 1 ? (
+                                <button
+                                    onClick={() => {
+                                        const newPuzzle = [...puzzle];
+                                        [newPuzzle[idx], newPuzzle[idx + 1]] = [newPuzzle[idx + 1], newPuzzle[idx]];
+                                        setPuzzle(newPuzzle);
+                                    }}
+                                    className="text-xs opacity-50 hover:opacity-100 transition cursor-pointer"
+                                    title="Move down"
+                                >
+                                    <ArrowDown />
+                                </button>
+                            ) : (
+                                <div />
+                            )}
+                        </div>
+
+                        <EditableStat index={idx} stat={stat} updateStat={updateStat} show_values={show_values} />
                     </div>
                 ))}
             </div>
