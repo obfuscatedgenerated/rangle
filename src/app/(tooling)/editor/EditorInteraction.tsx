@@ -1,7 +1,7 @@
 "use client";
 
 import {epoch_utc} from "../../../../time";
-import {useState, useEffect, useCallback, useRef} from "react";
+import {useState, useEffect, useCallback, useRef, useMemo} from "react";
 import { PuzzleStat } from "@/features/game/Game";
 import {ArrowDown, ArrowUp, Asterisk, Play, Save, Shuffle, Upload} from "lucide-react";
 import {ToggleSwitch} from "@/components/ui/ToggleSwitch";
@@ -333,6 +333,11 @@ export const EditorInteraction = () => {
         }))
     );
 
+    const some_no_id = useMemo(
+        () => puzzle.some(stat => !stat.id),
+        [puzzle]
+    );
+
     const updateStat = (index: number, newData: Partial<PuzzleStat>) => {
         const newPuzzle = [...puzzle];
         newPuzzle[index] = { ...newPuzzle[index], ...newData };
@@ -345,6 +350,11 @@ export const EditorInteraction = () => {
 
     const get_json = useCallback(
         () => {
+            if (puzzle.some(stat => !stat.id)) {
+                alert("Not all stats have an associated Wikidata ID!");
+                return null;
+            }
+
             const days_since_epoch = Math.floor((new Date(iso_date).getTime() - epoch_utc.getTime()) / (1000 * 60 * 60 * 24));
 
             return {
@@ -360,7 +370,12 @@ export const EditorInteraction = () => {
 
     const export_json = useCallback(
         () => {
-            const blob = new Blob([JSON.stringify(get_json(), null, 2)], { type: "application/json" });
+            const json = get_json();
+            if (!json) {
+                return;
+            }
+
+            const blob = new Blob([JSON.stringify(json, null, 2)], { type: "application/json" });
             const url = URL.createObjectURL(blob);
             const a = document.createElement("a");
             a.href = url;
@@ -390,8 +405,13 @@ export const EditorInteraction = () => {
 
     const test_run = useCallback(
         () => {
+            const json = get_json();
+            if (!json) {
+                return;
+            }
+
             const url = new URL("/testrun", window.location.origin);
-            url.searchParams.set("data", safe_btoa(JSON.stringify(get_json())));
+            url.searchParams.set("data", safe_btoa(JSON.stringify(json)));
             window.open(url.toString(), "_blank");
         },
         [get_json]
@@ -479,8 +499,10 @@ export const EditorInteraction = () => {
 
                 {/* TODO: make button a component, it looks nice */}
                 <button
+                    disabled={some_no_id}
                     onClick={export_json}
-                    className="bg-primary fg-on-primary px-6 py-2 rounded-full font-bold transition cursor-pointer flex items-center gap-2"
+                    className="bg-primary fg-on-primary px-6 py-2 rounded-full font-bold transition cursor-pointer flex items-center gap-2 disabled:bg-gray-500 disabled:text-gray-700 disabled:cursor-not-allowed"
+                    title={some_no_id ? "Please assign Wikidata IDs to all stats before exporting!" : ""}
                 >
                     <Save className="w-4 h-4"  />
 
@@ -488,8 +510,10 @@ export const EditorInteraction = () => {
                 </button>
 
                 <button
+                    disabled={some_no_id}
                     onClick={test_run}
-                    className="bg-primary fg-on-primary px-6 py-2 rounded-full font-bold transition cursor-pointer flex items-center gap-2"
+                    className="bg-primary fg-on-primary px-6 py-2 rounded-full font-bold transition cursor-pointer flex items-center gap-2 disabled:bg-gray-500 disabled:text-gray-700 disabled:cursor-not-allowed"
+                    title={some_no_id ? "Please assign Wikidata IDs to all stats before testing!" : ""}
                 >
                     <Play className="w-4 h-4" />
 
