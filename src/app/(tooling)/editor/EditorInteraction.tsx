@@ -451,8 +451,9 @@ export const EditorInteraction = () => {
                 <label>
                     Neighbourhood
                     <input
+                        disabled
                         type="text"
-                        className="ml-2 p-1 border rounded bg-tertiary-background text-on-tertiary-background"
+                        className="ml-2 p-1 border rounded bg-tertiary-background text-on-tertiary-background disabled:cursor-not-allowed disabled:text-on-tertiary-background/50"
                         value={neighbourhood_string}
                         onChange={(e) => setNeighborhoodString(e.target.value)}
                         placeholder="e.g. small, medium, large"
