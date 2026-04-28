@@ -345,7 +345,11 @@ export const EditorInteraction = () => {
         setPuzzle(newPuzzle);
     };
 
-    const [iso_date, setIsoDate] = useState(new Date().toISOString().split('T')[0]);
+    const [iso_date, setIsoDate] = useState(() => {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        return tomorrow.toISOString().split("T")[0];
+    });
     const [difficulty_string, setDifficultyString] = useState("Custom");
     const [neighbourhood_string, setNeighborhoodString] = useState("custom");
 
