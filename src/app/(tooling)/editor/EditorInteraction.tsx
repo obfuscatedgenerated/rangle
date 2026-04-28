@@ -204,7 +204,7 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
 
             {/* ITEM SEARCH */}
             <div className="space-y-2 relative col-span-3">
-                <label className="text-xs font-bold uppercase opacity-50">Item Search</label>
+                <label className="text-xs font-bold uppercase opacity-50">Item</label>
                 <div className="relative">
                     <input
                         type="text"
