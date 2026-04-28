@@ -66,7 +66,7 @@ export const ThemeChooser = () => {
 
     return (
         <div className="relative w-full max-w-xs group">
-            <div className="flex items-center justify-between p-2 rounded bg-tertiary-background border border-foreground-variant/10 group-focus-within:ring-2 group-focus-within:ring-primary pointer-events-none">
+            <div className="flex items-center justify-between p-2 rounded bg-tertiary-background text-on-tertiary-background border border-foreground-variant/10 group-focus-within:ring-2 group-focus-within:ring-primary pointer-events-none">
                 <span className="truncate">{selected_theme_name}</span>
                 <ChevronDown className="w-4 h-4 opacity-50" />
             </div>
@@ -74,7 +74,7 @@ export const ThemeChooser = () => {
             <select
                 value={theme_id}
                 onChange={(e) => setThemeId(e.target.value)}
-                className="absolute inset-0 opacity-0 cursor-pointer w-full h-full appearance-none text-foreground bg-tertiary-background rounded border border-foreground-variant/10 focus:ring-2 focus:ring-primary p-2"
+                className="absolute inset-0 opacity-0 cursor-pointer w-full h-full appearance-none bg-tertiary-background text-on-tertiary-background rounded border border-foreground-variant/10 focus:ring-2 focus:ring-primary p-2"
             >
                 {visible_themes.map((id) => {
                     const theme = THEMES[id as keyof typeof THEMES];

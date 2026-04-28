@@ -196,7 +196,7 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
                 <input
                     type="text"
                     value={stat.id || "No ID!"}
-                    className="w-full p-2 border rounded bg-tertiary-background text-foreground/50"
+                    className={`w-full p-2 border rounded text-foreground/50 ${stat.id ? "font-mono bg-tertiary-background text-on-tertiary-background" : "italic border-red-500 bg-lost text-on-lost"}`}
                     readOnly
                 />
             </div>
@@ -220,7 +220,7 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
                             }
                         }}
                         placeholder="Search name or class ID..."
-                        className="w-full p-2 border rounded bg-tertiary-background"
+                        className="w-full p-2 border rounded bg-tertiary-background text-on-tertiary-background"
                     />
                     {stat.id && searchTerm !== original_label && (
                         <span title="Renamed from original Wikidata label" className="absolute top-1/2 right-1 -translate-y-1/2 opacity-50">
@@ -229,7 +229,7 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
                     )}
                 </div>
                 {show_item_results && results.length > 0 && (
-                    <div className="absolute z-20 w-full mt-1 border rounded shadow-lg max-h-40 overflow-y-auto bg-tertiary-background">
+                    <div className="absolute z-20 w-full mt-1 border rounded shadow-lg max-h-40 overflow-y-auto bg-tertiary-background text-on-tertiary-background">
                         {results.map((item) => (
                             <div key={item.id} onClick={() => selectItem(item)}
                                  className="p-2 hover:bg-primary hover:text-white cursor-pointer text-sm border-b last:border-0 border-background-variant-border"
@@ -260,10 +260,10 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
                             }
                         }}
                         placeholder="Search properties..."
-                        className="w-full p-2 border rounded bg-tertiary-background"
+                        className="w-full p-2 border rounded bg-tertiary-background text-on-tertiary-background"
                     />
                     {showMetricResults && filteredProps.length > 0 && (
-                        <div className="absolute z-10 w-full mt-1 border rounded shadow-lg max-h-40 overflow-y-auto bg-tertiary-background">
+                        <div className="absolute z-10 w-full mt-1 border rounded shadow-lg max-h-40 overflow-y-auto bg-tertiary-background text-on-tertiary-background">
                             {filteredProps.map((prop) => (
                                 <div key={prop.pId} onClick={() => selectProperty(prop)}
                                      className="p-2 hover:bg-primary hover:text-white cursor-pointer text-sm border-b last:border-0 border-background-variant-border"
@@ -281,7 +281,7 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
                         type="number"
                         value={stat.value}
                         onChange={(e) => updateStat(index, { value: Number(e.target.value) })}
-                        className={`w-full p-2 border rounded bg-tertiary-background font-mono ${show_values ? "" : "text-transparent"}`}
+                        className={`w-full p-2 border rounded bg-tertiary-background font-mono ${show_values ? "text-on-tertiary-background" : "text-transparent"}`}
                     />
                 </div>
             </div>
@@ -289,16 +289,16 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
             {/* METADATA */}
             <div className="md:col-span-8 col-span-4 grid grid-cols-2 md:grid-cols-4 gap-2">
                 <input placeholder="Prefix (shown when revealed)" value={stat.prefix} onChange={(e) => updateStat(index, { prefix: e.target.value })}
-                       className="p-2 text-sm border rounded bg-tertiary-background" />
+                       className="p-2 text-sm border rounded bg-tertiary-background text-on-tertiary-background" />
                 <input placeholder="Suffix (shown when revealed)" value={stat.suffix} onChange={(e) => updateStat(index, { suffix: e.target.value })}
-                       className="p-2 text-sm border rounded bg-tertiary-background" />
+                       className="p-2 text-sm border rounded bg-tertiary-background text-on-tertiary-background" />
                 <input placeholder="Unit Hint (always shown)" value={stat.unit_hint || ""} onChange={(e) => updateStat(index, { unit_hint: e.target.value })}
-                       className="p-2 text-sm border rounded bg-tertiary-background col-span-2" />
+                       className="p-2 text-sm border rounded bg-tertiary-background text-on-tertiary-background col-span-2" />
             </div>
 
             <div className="sm:col-span-8 col-span-4 flex items-center gap-4 mr-2 flex-col sm:flex-row">
                 <input placeholder="Description (always shown)" value={stat.description} onChange={(e) => updateStat(index, { description: e.target.value })}
-                       className="w-full p-2 text-sm border rounded bg-tertiary-background flex-1" />
+                       className="w-full p-2 text-sm border rounded bg-tertiary-background text-on-tertiary-background flex-1" />
 
                 <ToggleSwitch value={!!stat.bonus_round} on_toggle={(val) => updateStat(index, { bonus_round: val })} title="Mark this stat to be played in the bonus round. If the player beats the Rangle, all bonus round values are kept secret and the player must guess them!">
                     Bonus round
@@ -406,7 +406,7 @@ export const EditorInteraction = () => {
                     Date
                     <input
                         type="date"
-                        className="ml-2 p-1 border rounded bg-tertiary-background"
+                        className="ml-2 p-1 border rounded bg-tertiary-background text-on-tertiary-background"
                         value={iso_date}
                         onChange={(e) => setIsoDate(e.target.value)}
                     />
@@ -416,7 +416,7 @@ export const EditorInteraction = () => {
                     Difficulty
                     <input
                         type="text"
-                        className="ml-2 p-1 border rounded bg-tertiary-background"
+                        className="ml-2 p-1 border rounded bg-tertiary-background text-on-tertiary-background"
                         value={difficulty_string}
                         onChange={(e) => setDifficultyString(e.target.value)}
                         placeholder="e.g. Easy, Medium, Hard"
@@ -427,7 +427,7 @@ export const EditorInteraction = () => {
                     Neighbourhood
                     <input
                         type="text"
-                        className="ml-2 p-1 border rounded bg-tertiary-background"
+                        className="ml-2 p-1 border rounded bg-tertiary-background text-on-tertiary-background"
                         value={neighbourhood_string}
                         onChange={(e) => setNeighborhoodString(e.target.value)}
                         placeholder="e.g. small, medium, large"

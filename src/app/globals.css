@@ -12,6 +12,7 @@
     --muted-foreground: #374151;
     --muted: #6b7280;
     --disabled: #9ca3af;
+    --on-tertiary-background: #ffffff;
 
     /* Branding & Actions */
     --primary: #3b82f6;
@@ -22,6 +23,7 @@
     /* Game Status */
     --correct: #4ade80;
     --correct-border: #16a34a;
+    --correct-variant: #12af57;
     --incorrect: #ef4444;
     --incorrect-border: #b91c1c;
 
@@ -67,6 +69,7 @@
         --background-variant: #18181b;
         --background-variant-border: #374151;
         --tertiary-background: #374151;
+        --on-tertiary-background: #ffffff;
 
         --foreground: #ededed;
         --foreground-variant: #cccccc;
@@ -76,6 +79,7 @@
 
         --correct: #16a34a;
         --correct-border: #166534;
+        --correct-variant: #5dab7d;
 
         --won: #14532d;
         --won-border: #15803d;
@@ -115,6 +119,7 @@
     --color-muted-foreground: var(--muted-foreground);
     --color-muted: var(--muted);
     --color-disabled: var(--disabled);
+    --color-on-tertiary-background: var(--on-tertiary-background);
 
     --color-primary: var(--primary);
     --color-on-primary: var(--on-primary);
@@ -125,7 +130,7 @@
     --color-correct-border: var(--correct-border);
     --color-incorrect: var(--incorrect);
     --color-incorrect-border: var(--incorrect-border);
-    --color-correct-variant: var(--correct);
+    --color-correct-variant: var(--correct-variant);
 
     --color-won: var(--won);
     --color-won-border: var(--won-border);
