@@ -128,16 +128,6 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
         return () => clearTimeout(delayDebounceFn);
     }, [original_label, searchTerm]);
 
-    // if stat.name changes, update the input field to reflect that (e.g. when shuffling)
-    useEffect(() => {
-        setSearchTerm(stat.name);
-    }, [stat.name]);
-
-    // if metric changes, update metric search to reflect that (e.g. when shuffling)
-    useEffect(() => {
-        setMetricSearch(stat.metric);
-    }, [stat.metric]);
-
     const selectItem = async (item: any) => {
         updateStat(index, {
             id: item.id,
@@ -329,17 +319,18 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
 };
 
 export const EditorInteraction = () => {
-    const [puzzle, setPuzzle] = useState<PuzzleStat[]>(
-        Array(5).fill({
+    const [puzzle, setPuzzle] = useState<(PuzzleStat & {render_key: number})[]>(
+        Array(5).fill(null).map((_, i) => ({
+            render_key: i,
             id: "",
             name: "",
-            value: 0,
-            metric: "",
             description: "",
+            metric: "",
+            value: 0,
             prefix: "",
             suffix: "",
-            unit_hint: ""
-        })
+            unit_hint: "",
+        }))
     );
 
     const updateStat = (index: number, newData: Partial<PuzzleStat>) => {
@@ -361,7 +352,7 @@ export const EditorInteraction = () => {
                 number: days_since_epoch + 1,
                 difficulty: difficulty_string,
                 neighbourhood: neighbourhood_string,
-                puzzle: puzzle
+                puzzle: puzzle.map(({ render_key, ...stat }) => stat),  // strip render keys
             };
         },
         [iso_date, difficulty_string, neighbourhood_string, puzzle]
@@ -512,7 +503,7 @@ export const EditorInteraction = () => {
 
             <div className="space-y-4 max-w-5xl">
                 {puzzle.map((stat, i) => (
-                    <div key={i} style={{ zIndex: 5 - i, position: "relative" }}>
+                    <div key={stat.render_key} style={{ zIndex: 5 - i, position: "relative" }}>
                         <EditableStat index={i} stat={stat} updateStat={updateStat} show_values={show_values} />
                     </div>
                 ))}
