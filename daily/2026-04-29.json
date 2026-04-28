@@ -1,0 +1,59 @@
+{
+  "date": "2026-04-29",
+  "number": 32,
+  "difficulty": "Medium",
+  "neighbourhood": "custom",
+  "puzzle": [
+    {
+      "id": "Q695",
+      "name": "Palau",
+      "value": 14417,
+      "metric": "urban population",
+      "description": "island sovereign state in Oceania",
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": ""
+    },
+    {
+      "id": "Q118645627",
+      "name": "Concord",
+      "value": 25000,
+      "metric": "units sold",
+      "description": "2024 video game developed by Firewalk Studios",
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": ""
+    },
+    {
+      "id": "Q34433",
+      "name": "University of Oxford",
+      "value": 26000,
+      "metric": "count of students",
+      "description": "collegiate research university in Oxford, England",
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": "2025-26, approx"
+    },
+    {
+      "id": "Q459173",
+      "name": "Challenger Deep",
+      "value": 10994,
+      "metric": "depth below sea level",
+      "description": "deepest known point in the Earth's seabed hydrosphere",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres, maximum"
+    },
+    {
+      "id": "Q1434547",
+      "name": "Loughborough University",
+      "value": 17906,
+      "metric": "count of students ",
+      "description": "public university in Loughborough, UK",
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": "2025-26",
+      "bonus_round": true
+    }
+  ]
+}
