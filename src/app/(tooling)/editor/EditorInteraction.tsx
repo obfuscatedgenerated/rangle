@@ -1,11 +1,12 @@
 "use client";
 
 import {epoch_utc} from "../../../../time";
-import {useState, useEffect, useCallback} from "react";
+import {useState, useEffect, useCallback, useRef} from "react";
 import { PuzzleStat } from "@/features/game/Game";
-import {Play, Save, Shuffle, Upload} from "lucide-react";
+import {Asterisk, Play, Save, Shuffle, Upload} from "lucide-react";
 import {ToggleSwitch} from "@/components/ui/ToggleSwitch";
 import {safe_btoa} from "@/util/base64";
+import {NewTabLink} from "@/components/ui/NewTabLink";
 
 // --- API Helpers ---
 
@@ -113,17 +114,19 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
     // Property/Metric State
     const [availableProperties, setAvailableProperties] = useState<any[]>([]);
     const [metricSearch, setMetricSearch] = useState(stat.metric);
+    const [show_item_results, setShowItemResults] = useState(false);
     const [showMetricResults, setShowMetricResults] = useState(false);
+    const [original_label, setOriginalLabel] = useState(stat.name);
 
     useEffect(() => {
         const delayDebounceFn = setTimeout(async () => {
-            if (searchTerm !== stat.name) {
+            if (searchTerm !== original_label) {
                 const searchResults = await searchWikidata(searchTerm);
                 setResults(searchResults);
             }
         }, 300);
         return () => clearTimeout(delayDebounceFn);
-    }, [searchTerm, stat.name]);
+    }, [original_label, searchTerm]);
 
     // if stat.name changes, update the input field to reflect that (e.g. when shuffling)
     useEffect(() => {
@@ -141,6 +144,7 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
             name: item.label,
             description: item.description,
         });
+        setOriginalLabel(item.label);
         setSearchTerm(item.label);
         setResults([]);
 
@@ -173,6 +177,7 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
 
         const metric_replacement_map: Record<string, string> = {
             "time of discovery or invention": "discovery or invention",
+            "inception": "inception or creation"
         };
 
         const replaced_metric = metric_replacement_map[prop.label] || prop.label;
@@ -195,25 +200,51 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
     );
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 border border-background-variant-border rounded-xl bg-background-variant backdrop-blur-sm shadow-sm">
-
-            {/* ITEM SEARCH */}
-            <div className="space-y-2 relative">
-                <label className="text-xs font-bold uppercase opacity-50">Item Search</label>
+        <div className="grid grid-cols-3 md:grid-cols-8 gap-4 p-4 border border-background-variant-border rounded-xl bg-background-variant backdrop-blur-sm shadow-sm">
+            <div className="space-y-2 relative col-span-1">
+                <label className="text-xs font-bold uppercase opacity-50">ID</label>
                 <input
                     type="text"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    placeholder="Search name or class ID..."
-                    className="w-full p-2 border rounded bg-tertiary-background"
+                    value={stat.id || "No ID!"}
+                    className="w-full p-2 border rounded bg-tertiary-background text-foreground/50"
+                    readOnly
                 />
-                {results.length > 0 && (
+            </div>
+
+
+            {/* ITEM SEARCH */}
+            <div className="space-y-2 relative col-span-3">
+                <label className="text-xs font-bold uppercase opacity-50">Item Search</label>
+                <div className="relative">
+                    <input
+                        type="text"
+                        value={searchTerm}
+                        onFocus={() => setShowItemResults(true)}
+                        onBlur={() => setTimeout(() => setShowItemResults(false), 200)} // delay to allow click
+                        onChange={(e) => {
+                            setSearchTerm(e.target.value);
+
+                            // sync stat.name to what's typed into the field to allow for renaming a selected stat
+                            if (stat.name !== e.target.value) {
+                                updateStat(index, { name: e.target.value });
+                            }
+                        }}
+                        placeholder="Search name or class ID..."
+                        className="w-full p-2 border rounded bg-tertiary-background"
+                    />
+                    {stat.id && searchTerm !== original_label && (
+                        <span title="Renamed from original Wikidata label" className="absolute top-1/2 right-1 -translate-y-1/2 opacity-50">
+                            <Asterisk />
+                        </span>
+                    )}
+                </div>
+                {show_item_results && results.length > 0 && (
                     <div className="absolute z-20 w-full mt-1 border rounded shadow-lg max-h-40 overflow-y-auto bg-tertiary-background">
                         {results.map((item) => (
                             <div key={item.id} onClick={() => selectItem(item)}
                                  className="p-2 hover:bg-primary hover:text-white cursor-pointer text-sm border-b last:border-0 border-background-variant-border"
                             >
-                                <div className="font-bold">{item.label}</div>
+                                <div className="font-bold">{item.label} [{item.id}]</div>
                                 <div className="text-xs opacity-60 truncate">{item.description}</div>
                             </div>
                         ))}
@@ -222,13 +253,14 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
             </div>
 
             {/* METRIC / PROPERTY SEARCH */}
-            <div className="grid grid-cols-2 gap-2">
-                <div className="space-y-1 relative">
+            <div className="grid grid-cols-3 gap-2 col-span-4">
+                <div className="space-y-1 relative col-span-2">
                     <label className="text-xs font-bold opacity-50 uppercase">Metric</label>
                     <input
                         type="text"
                         value={metricSearch}
                         onFocus={() => setShowMetricResults(true)}
+                        onBlur={() => setTimeout(() => setShowMetricResults(false), 200)} // delay to allow click
                         onChange={(e) => {
                             setMetricSearch(e.target.value);
 
@@ -246,7 +278,7 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
                                 <div key={prop.pId} onClick={() => selectProperty(prop)}
                                      className="p-2 hover:bg-primary hover:text-white cursor-pointer text-sm border-b last:border-0 border-background-variant-border"
                                 >
-                                    <div className="font-bold">{prop.label}</div>
+                                    <div className="font-bold">{prop.label} [{prop.pId}]</div>
                                     {show_values && <div className="text-xs opacity-60">Value: {prop.value}</div>}
                                 </div>
                             ))}
@@ -265,16 +297,16 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
             </div>
 
             {/* METADATA */}
-            <div className="md:col-span-2 grid grid-cols-3 gap-2">
+            <div className="md:col-span-8 col-span-4 grid grid-cols-2 md:grid-cols-4 gap-2">
                 <input placeholder="Prefix (shown when revealed)" value={stat.prefix} onChange={(e) => updateStat(index, { prefix: e.target.value })}
                        className="p-2 text-sm border rounded bg-tertiary-background" />
                 <input placeholder="Suffix (shown when revealed)" value={stat.suffix} onChange={(e) => updateStat(index, { suffix: e.target.value })}
                        className="p-2 text-sm border rounded bg-tertiary-background" />
                 <input placeholder="Unit Hint (always shown)" value={stat.unit_hint || ""} onChange={(e) => updateStat(index, { unit_hint: e.target.value })}
-                       className="p-2 text-sm border rounded bg-tertiary-background" />
+                       className="p-2 text-sm border rounded bg-tertiary-background col-span-2" />
             </div>
 
-            <div className="sm:col-span-3 flex items-center gap-4 mr-2 flex-col sm:flex-row">
+            <div className="sm:col-span-8 col-span-4 flex items-center gap-4 mr-2 flex-col sm:flex-row">
                 <input placeholder="Description (always shown)" value={stat.description} onChange={(e) => updateStat(index, { description: e.target.value })}
                        className="w-full p-2 text-sm border rounded bg-tertiary-background flex-1" />
 
@@ -282,6 +314,16 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
                     Bonus round
                 </ToggleSwitch>
             </div>
+
+            {stat.id ? (
+                <NewTabLink className="col-span-3 md:col-span-8 text-center underline" href={`https://wikidata.org/wiki/${stat.id}`}>
+                    Open {original_label} on Wikidata
+                </NewTabLink>
+            ) : (
+                <div className="col-span-3 md:col-span-8 text-center opacity-50">
+                    (no item selected yet)
+                </div>
+            )}
         </div>
     );
 };
@@ -484,4 +526,3 @@ export const EditorInteraction = () => {
 
 // TODO: add neighbourhood and difficulty helpers to suggest value ranges
 // TODO: add spread helper
-// TODO: allow item renaming?
