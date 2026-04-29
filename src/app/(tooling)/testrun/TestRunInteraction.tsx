@@ -6,7 +6,7 @@ import {Game, TodayData} from "@/features/game/Game";
 import {VirtualRangleStateProvider} from "@/context/RangleStateContext";
 import {LoadingSpinner} from "@/components/ui/LoadingSpinner";
 import {useSearchParams} from "next/navigation";
-import {safe_atob} from "@/util/base64";
+import {safe_atob, safe_btoa} from "@/util/base64";
 import {Save} from "lucide-react";
 
 const TestRun = ({json_data}: { json_data: TodayData }) => {
@@ -100,7 +100,7 @@ export const TestRunInteraction = () => {
 
                             // add the json data to the url without invoking the search params effect
                             const new_url = new URL(window.location.href);
-                            new_url.searchParams.set("data", btoa(reader.result));
+                            new_url.searchParams.set("data", safe_btoa(reader.result));
                             window.history.replaceState({}, "", new_url.toString());
                         } catch (err) {
                             console.error("Error parsing JSON:", err);
