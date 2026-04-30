@@ -1,57 +1,58 @@
 {
   "date": "2026-05-01",
   "number": 34,
-  "difficulty": "Medium",
-  "neighbourhood": "large",
+  "difficulty": "Hard 🕷️",
+  "neighbourhood": "custom",
   "puzzle": [
     {
-      "id": "Q23781155",
-      "name": "Avengers: Endgame",
-      "value": 356000000,
-      "metric": "Production Budget",
-      "description": "2019 film by Anthony and Joe Russo",
-      "prefix": "$",
+      "id": "Q41542",
+      "name": "Dracula",
+      "description": "Novel by Bram Stoker",
+      "metric": "year of publication",
+      "value": 1897,
+      "prefix": "",
       "suffix": "",
-      "unit_hint": "in dollars"
+      "unit_hint": ""
     },
     {
-      "id": "Q11051",
-      "name": "Hindustani",
-      "value": 490100000,
-      "metric": "Native Speakers",
-      "description": "Indo-Aryan language spoken in South Asia, comprising the two normative forms of Hindi and Urdu",
+      "id": "Q150827",
+      "name": "Frankenstein; or, The Modern Prometheus",
+      "description": "Novel by Mary Shelley",
+      "metric": "year of publication",
+      "value": 1818,
       "prefix": "",
-      "suffix": " speakers"
-    },
-    {
-      "id": "Q54274",
-      "name": "Pirates of the Caribbean: At World's End",
-      "value": 300000000,
-      "metric": "Production Budget",
-      "description": "2007 film directed by Gore Verbinski",
-      "prefix": "$",
       "suffix": "",
-      "unit_hint": "in dollars"
+      "unit_hint": ""
     },
     {
-      "id": "Q42490",
-      "name": "Asterix",
-      "value": 385000000,
-      "metric": "Total Units Sold",
-      "description": "series of French comic books",
+      "id": "Q1043792",
+      "name": "Carmilla",
+      "description": "Novella by Sheridan Le Fanu",
+      "metric": "year of publication",
+      "value": 1872,
       "prefix": "",
-      "suffix": " units",
-      "unit_hint": "approx."
+      "suffix": "",
+      "unit_hint": ""
     },
     {
-      "id": "Q744536",
-      "name": "The Adventures of Tintin",
-      "value": 275000000,
-      "metric": "Total Units Sold",
-      "description": "series of 24 comic albums by Belgian cartoonist Georges Remi (Hergé)",
+      "id": "Q762206",
+      "name": "The Tell-Tale Heart",
+      "description": "Short story by Edgar Allan Poe",
+      "metric": "year of publication",
+      "value": 1843,
       "prefix": "",
-      "suffix": " units",
-      "unit_hint": "approx."
+      "suffix": "",
+      "unit_hint": ""
+    },
+    {
+      "id": "Q82464",
+      "name": "The Picture of Dorian Gray",
+      "description": "Novel by Oscar Wilde",
+      "metric": "year of publication",
+      "value": 1890,
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": ""
     }
   ]
 }
