@@ -169,8 +169,8 @@
     },
     "2026-05-01": {
       "number": 34,
-      "difficulty": "Medium",
-      "neighbourhood": "large"
+      "difficulty": "Hard 🕷",
+      "neighbourhood": "custom"
     }
   }
 }
