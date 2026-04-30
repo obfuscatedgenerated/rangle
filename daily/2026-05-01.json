@@ -1,0 +1,57 @@
+{
+  "date": "2026-05-01",
+  "number": 34,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q23781155",
+      "name": "Avengers: Endgame",
+      "value": 356000000,
+      "metric": "Production Budget",
+      "description": "2019 film by Anthony and Joe Russo",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q11051",
+      "name": "Hindustani",
+      "value": 490100000,
+      "metric": "Native Speakers",
+      "description": "Indo-Aryan language spoken in South Asia, comprising the two normative forms of Hindi and Urdu",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q54274",
+      "name": "Pirates of the Caribbean: At World's End",
+      "value": 300000000,
+      "metric": "Production Budget",
+      "description": "2007 film directed by Gore Verbinski",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q42490",
+      "name": "Asterix",
+      "value": 385000000,
+      "metric": "Total Units Sold",
+      "description": "series of French comic books",
+      "prefix": "",
+      "suffix": " units",
+      "unit_hint": "approx."
+    },
+    {
+      "id": "Q744536",
+      "name": "The Adventures of Tintin",
+      "value": 275000000,
+      "metric": "Total Units Sold",
+      "description": "series of 24 comic albums by Belgian cartoonist Georges Remi (Hergé)",
+      "prefix": "",
+      "suffix": " units",
+      "unit_hint": "approx."
+    }
+  ]
+}
