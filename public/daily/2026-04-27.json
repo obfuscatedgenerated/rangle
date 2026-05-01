@@ -1,0 +1,59 @@
+{
+  "date": "2026-04-27",
+  "number": 30,
+  "difficulty": "Musical",
+  "neighbourhood": "custom",
+  "puzzle": [
+    {
+      "id": "Q1195106",
+      "name": "The Lion King",
+      "value": 1997,
+      "metric": "year of first performance",
+      "description": "stage musical with music by Elton John, lyrics by Tim Rice, and book by Roger Allers and Irene Mecchi",
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": ""
+    },
+    {
+      "id": "Q830581",
+      "name": "Les Misérables",
+      "value": 1980,
+      "metric": "year of first performance",
+      "description": "musical composed by Claude-Michel Schönberg, libretto by Alain Boublil, lyrics by Alain Boublil and Jean-Marc Natel",
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": ""
+    },
+    {
+      "id": "Q616439",
+      "name": "Wicked",
+      "value": 2003,
+      "metric": "year of first performance",
+      "description": "musical based on Gregory Maguire's novel",
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": "",
+      "bonus_round": true
+    },
+    {
+      "id": "Q669010",
+      "name": "West Side Story",
+      "value": 1957,
+      "metric": "year of first performance",
+      "description": "American musical with a book by Arthur Laurents, music by Leonard Bernstein and lyrics by Stephen Sondheim",
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": ""
+    },
+    {
+      "id": "Q19320959",
+      "name": "Hamilton",
+      "value": 2015,
+      "metric": "year of first performance",
+      "description": "musical by Lin-Manuel Miranda about Alexander Hamilton",
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": ""
+    }
+  ]
+}
