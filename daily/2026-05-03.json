@@ -10,9 +10,9 @@
       "value": 2000000000,
       "metric": "Production Budget",
       "description": "2001 anime film directed by Hayao Miyazaki",
-      "prefix": "$",
+      "prefix": "¥",
       "suffix": "",
-      "unit_hint": "in dollars"
+      "unit_hint": "in yen"
     },
     {
       "id": "Q83495",
