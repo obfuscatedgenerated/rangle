@@ -50,9 +50,9 @@
       "value": 2380000000,
       "metric": "Total Revenue",
       "description": "Italian car manufacturer",
-      "prefix": "$",
+      "prefix": "€",
       "suffix": "",
-      "unit_hint": "in dollars"
+      "unit_hint": "in Euro"
     }
   ]
 }
