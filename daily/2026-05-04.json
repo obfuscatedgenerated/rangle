@@ -1,56 +1,53 @@
 {
   "date": "2026-05-04",
   "number": 37,
-  "difficulty": "Medium",
+  "difficulty": "Hard",
   "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q20716",
-      "name": "Samsung Group",
-      "value": 262647,
-      "metric": "Number of Employees",
-      "description": "South Korean multinational conglomerate",
+      "id": "Q391028",
+      "name": "University of British Columbia",
+      "value": 71201,
+      "metric": "Student Enrollment",
+      "description": "public research university in British Columbia, Canada",
       "prefix": "",
-      "suffix": " employees"
+      "suffix": " students"
     },
     {
-      "id": "Q25226",
-      "name": "Cam Ranh International Airport",
-      "value": 8300000,
-      "metric": "Number of Passengers",
-      "description": "Airport that serves Nha Trang, Vietnam",
+      "id": "Q202150",
+      "name": "Stade Vélodrome",
+      "value": 67394,
+      "metric": "Maximum Capacity",
+      "description": "football stadium in Marseille, France",
       "prefix": "",
-      "suffix": " passengers",
-      "unit_hint": "annual"
+      "suffix": " people"
     },
     {
-      "id": "Q24815",
-      "name": "Citizen Kane",
-      "value": 839727,
-      "metric": "Production Budget",
-      "description": "1941 American drama film directed by Orson Welles",
-      "prefix": "$",
-      "suffix": "",
-      "unit_hint": "in dollars"
-    },
-    {
-      "id": "Q9584",
-      "name": "Honda",
-      "value": 204035,
-      "metric": "Number of Employees",
-      "description": "manufacturer of automobiles, motorcycles, and power equipment",
+      "id": "Q33871",
+      "name": "Nogai",
+      "value": 87119,
+      "metric": "Native Speakers",
+      "description": "Turkic language",
       "prefix": "",
-      "suffix": " employees"
+      "suffix": " speakers"
     },
     {
-      "id": "Q40895",
-      "name": "Dumbo",
-      "value": 950000,
-      "metric": "Production Budget",
-      "description": "1941 animated film directed by Ben Sharpsteen",
-      "prefix": "$",
-      "suffix": "",
-      "unit_hint": "in dollars"
+      "id": "Q21715205",
+      "name": "UEFA Euro 2016 finals: Portugal v France",
+      "value": 75868,
+      "metric": "Event Attendance",
+      "description": "final game of the UEFA Euro 2016",
+      "prefix": "",
+      "suffix": " attendees"
+    },
+    {
+      "id": "Q13205",
+      "name": "Stade de France",
+      "value": 81338,
+      "metric": "Maximum Capacity",
+      "description": "national stadium of France",
+      "prefix": "",
+      "suffix": " people"
     }
   ]
 }
