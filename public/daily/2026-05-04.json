@@ -1,53 +1,58 @@
 {
   "date": "2026-05-04",
   "number": 37,
-  "difficulty": "Hard",
-  "neighbourhood": "large",
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
   "puzzle": [
     {
-      "id": "Q56467",
-      "name": "Modern Standard Arabic",
-      "value": 335,
-      "metric": "Native Speakers",
-      "description": "the standardized and literary variety of Arabic used in writing and in most formal speech",
+      "id": "Q10288",
+      "name": "Parthenon",
+      "value": 14,
+      "metric": "Height",
+      "description": "former temple of Athena on the Athenian Acropolis, Greece",
       "prefix": "",
-      "suffix": " speakers"
+      "suffix": " m",
+      "unit_hint": "in metres"
     },
     {
-      "id": "Q273570",
-      "name": "École des chartes",
-      "value": 188,
-      "metric": "Student Enrollment",
-      "description": "grande école in Paris specialised in history",
+      "id": "Q6383",
+      "name": "Lake Balaton",
+      "value": 13,
+      "metric": "Depth",
+      "description": "freshwater lake in Hungary",
       "prefix": "",
-      "suffix": " students"
+      "suffix": " m",
+      "unit_hint": "in metres"
     },
     {
-      "id": "Q36464",
-      "name": "Nivkh",
-      "value": 198,
-      "metric": "Native Speakers",
-      "description": "Palaeosiberian languages spoken in Eastern Siberia and Sakhaline",
+      "id": "Q125309",
+      "name": "Lake Chad",
+      "value": 11,
+      "metric": "Depth",
+      "description": "lake in Africa",
       "prefix": "",
-      "suffix": " speakers"
+      "suffix": " m",
+      "unit_hint": "in metres"
     },
     {
-      "id": "Q76412544",
-      "name": "2020–21 La Liga",
-      "value": 2689,
-      "metric": "Event Attendance",
-      "description": "90th season of LaLiga",
+      "id": "Q57357",
+      "name": "Hadrian's Wall",
+      "value": 6,
+      "metric": "Height",
+      "description": "defensive fortification in Roman Britain",
       "prefix": "",
-      "suffix": " attendees"
+      "suffix": " m",
+      "unit_hint": "in metres"
     },
     {
-      "id": "Q273638",
-      "name": "ESPCI Paris, PSL University",
-      "value": 300,
-      "metric": "Student Enrollment",
-      "description": "Engineering school founded in 1882 by The City of Paris, France",
+      "id": "Q550",
+      "name": "avenue des Champs-Élysées",
+      "value": 2,
+      "metric": "Length",
+      "description": "avenue in Paris, France",
       "prefix": "",
-      "suffix": " students"
+      "suffix": " km",
+      "unit_hint": "in kilometres"
     }
   ]
 }
