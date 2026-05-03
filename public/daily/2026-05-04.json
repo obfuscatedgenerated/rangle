@@ -1,0 +1,56 @@
+{
+  "date": "2026-05-04",
+  "number": 37,
+  "difficulty": "Easy",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q478595",
+      "name": "Tan Son Nhat International Airport",
+      "value": 34278320,
+      "metric": "Number of Passengers",
+      "description": "International airport in Ho Chi Minh City, Vietnam",
+      "prefix": "",
+      "suffix": " passengers",
+      "unit_hint": "annual"
+    },
+    {
+      "id": "Q174555",
+      "name": "Madagascar",
+      "value": 542063846,
+      "metric": "Total Box Office Revenue",
+      "description": "2005 animated film directed by Eric Darnell and Tom McGrath",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q9217",
+      "name": "Thai",
+      "value": 20700000,
+      "metric": "Native Speakers",
+      "description": "Tai language",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q9292",
+      "name": "Azerbaijani",
+      "value": 23000000,
+      "metric": "Native Speakers",
+      "description": "Oghuz Turkic language",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q159",
+      "name": "Russia",
+      "value": 17075400,
+      "metric": "Area",
+      "description": "country in Eastern Europe and Northern Asia, the largest in the world by area",
+      "prefix": "",
+      "suffix": " sq km",
+      "unit_hint": "in sq km"
+    }
+  ]
+}
