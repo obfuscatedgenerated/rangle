@@ -1,56 +1,53 @@
 {
   "date": "2026-05-04",
   "number": 37,
-  "difficulty": "Easy",
+  "difficulty": "Hard",
   "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q478595",
-      "name": "Tan Son Nhat International Airport",
-      "value": 34278320,
-      "metric": "Number of Passengers",
-      "description": "International airport in Ho Chi Minh City, Vietnam",
-      "prefix": "",
-      "suffix": " passengers",
-      "unit_hint": "annual"
-    },
-    {
-      "id": "Q174555",
-      "name": "Madagascar",
-      "value": 542063846,
-      "metric": "Total Box Office Revenue",
-      "description": "2005 animated film directed by Eric Darnell and Tom McGrath",
-      "prefix": "$",
-      "suffix": "",
-      "unit_hint": "in dollars"
-    },
-    {
-      "id": "Q9217",
-      "name": "Thai",
-      "value": 20700000,
+      "id": "Q56467",
+      "name": "Modern Standard Arabic",
+      "value": 335,
       "metric": "Native Speakers",
-      "description": "Tai language",
+      "description": "the standardized and literary variety of Arabic used in writing and in most formal speech",
       "prefix": "",
       "suffix": " speakers"
     },
     {
-      "id": "Q9292",
-      "name": "Azerbaijani",
-      "value": 23000000,
+      "id": "Q273570",
+      "name": "École des chartes",
+      "value": 188,
+      "metric": "Student Enrollment",
+      "description": "grande école in Paris specialised in history",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q36464",
+      "name": "Nivkh",
+      "value": 198,
       "metric": "Native Speakers",
-      "description": "Oghuz Turkic language",
+      "description": "Palaeosiberian languages spoken in Eastern Siberia and Sakhaline",
       "prefix": "",
       "suffix": " speakers"
     },
     {
-      "id": "Q159",
-      "name": "Russia",
-      "value": 17075400,
-      "metric": "Area",
-      "description": "country in Eastern Europe and Northern Asia, the largest in the world by area",
+      "id": "Q76412544",
+      "name": "2020–21 La Liga",
+      "value": 2689,
+      "metric": "Event Attendance",
+      "description": "90th season of LaLiga",
       "prefix": "",
-      "suffix": " sq km",
-      "unit_hint": "in sq km"
+      "suffix": " attendees"
+    },
+    {
+      "id": "Q273638",
+      "name": "ESPCI Paris, PSL University",
+      "value": 300,
+      "metric": "Student Enrollment",
+      "description": "Engineering school founded in 1882 by The City of Paris, France",
+      "prefix": "",
+      "suffix": " students"
     }
   ]
 }
