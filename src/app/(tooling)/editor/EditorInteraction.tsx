@@ -362,6 +362,12 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
                 </ToggleSwitch>
             </div>
 
+            <input placeholder="Image URL (optional, always shown)" value={stat.image_url || ""} onChange={(e) => updateStat(index, { image_url: e.target.value })}
+                   className="w-full p-2 text-sm border rounded bg-tertiary-background text-on-tertiary-background col-span-4" />
+
+            <input placeholder="Image alt text" value={stat.image_alt || ""} onChange={(e) => updateStat(index, { image_alt: e.target.value })}
+                   className="w-full p-2 text-sm border rounded bg-tertiary-background text-on-tertiary-background col-span-4" />
+
             {stat.id ? (
                 <NewTabLink className="col-span-3 md:col-span-8 text-center underline" href={`https://wikidata.org/wiki/${stat.id}`}>
                     Open {original_label} on Wikidata
