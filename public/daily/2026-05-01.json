@@ -1,0 +1,58 @@
+{
+  "date": "2026-05-01",
+  "number": 34,
+  "difficulty": "Hard 🕷️",
+  "neighbourhood": "custom",
+  "puzzle": [
+    {
+      "id": "Q41542",
+      "name": "Dracula",
+      "description": "Novel by Bram Stoker",
+      "metric": "year of publication",
+      "value": 1897,
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": ""
+    },
+    {
+      "id": "Q150827",
+      "name": "Frankenstein; or, The Modern Prometheus",
+      "description": "Novel by Mary Shelley",
+      "metric": "year of publication",
+      "value": 1818,
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": ""
+    },
+    {
+      "id": "Q1043792",
+      "name": "Carmilla",
+      "description": "Novella by Sheridan Le Fanu",
+      "metric": "year of publication",
+      "value": 1872,
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": ""
+    },
+    {
+      "id": "Q762206",
+      "name": "The Tell-Tale Heart",
+      "description": "Short story by Edgar Allan Poe",
+      "metric": "year of publication",
+      "value": 1843,
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": ""
+    },
+    {
+      "id": "Q82464",
+      "name": "The Picture of Dorian Gray",
+      "description": "Novel by Oscar Wilde",
+      "metric": "year of publication",
+      "value": 1890,
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": ""
+    }
+  ]
+}

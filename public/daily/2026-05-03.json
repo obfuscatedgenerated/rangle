@@ -1,0 +1,58 @@
+{
+  "date": "2026-05-03",
+  "number": 36,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q155653",
+      "name": "Spirited Away",
+      "value": 2000000000,
+      "metric": "Production Budget",
+      "description": "2001 anime film directed by Hayao Miyazaki",
+      "prefix": "¥",
+      "suffix": "",
+      "unit_hint": "in yen"
+    },
+    {
+      "id": "Q83495",
+      "name": "The Matrix",
+      "value": 467222728,
+      "metric": "Total Box Office Revenue",
+      "description": "1999 American science fiction action thriller film",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q3009",
+      "name": "3 Juno",
+      "value": 501775008,
+      "metric": "Distance from Sun",
+      "description": "large asteroid in the asteroid belt, the third asteroid discovered, in 1804, by German astronomer Karl Harding",
+      "prefix": "",
+      "suffix": " km",
+      "unit_hint": "in kilometres"
+    },
+    {
+      "id": "Q181795",
+      "name": "Star Wars: Episode V – The Empire Strikes Back",
+      "value": 538375067,
+      "metric": "Total Box Office Revenue",
+      "description": "1980 American epic space opera film directed by Irvin Kershner",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q35886",
+      "name": "Lamborghini",
+      "value": 2380000000,
+      "metric": "Total Revenue",
+      "description": "Italian car manufacturer",
+      "prefix": "€",
+      "suffix": "",
+      "unit_hint": "in Euro"
+    }
+  ]
+}
