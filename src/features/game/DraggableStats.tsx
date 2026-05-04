@@ -26,6 +26,12 @@ interface DraggableStatProps {
     className?: string;
 }
 
+const CURRENCY_CODES: { [symbol: string]: string } = {
+    "£": "GBP",
+    "$": "USD",
+    "€": "EUR",
+}
+
 const DraggableStat = ({ stat, correct, finished, reveal_values, bonus_round_reveal = false, className = "" }: DraggableStatProps) => {
     const lock_position = correct || finished;
 
@@ -72,20 +78,21 @@ const DraggableStat = ({ stat, correct, finished, reveal_values, bonus_round_rev
     };
 
     // TODO: animate in link
+    // @ts-ignore
     return (
         <div
             ref={correct ? undefined : setNodeRef}
             style={correct ? undefined : drag_style}
             {...attributes}
             {...listeners}
-            className={`touch-none flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 border-2 rounded p-4 w-full
+            className={`touch-none flex flex-col sm:flex-row items-center justify-start gap-4 sm:gap-8 border-2 rounded p-4 w-full
             ${className}
             ${lock_position ? "" : "cursor-move"}
             `}
         >
             {stat.image_url && <ExpandableImage src={stat.image_url} alt={stat.image_alt || `Image for ${stat.name}`} title="Click to expand" draggable="false" className="max-h-24 object-contain border-muted-foreground border-1 rounded-sm" />}
 
-            <div className={`flex flex-col ${stat.image_url ? "items-center sm:items-start" : "items-center"} justify-center gap-1`}>
+            <div className="flex flex-col items-center justify-center gap-1 flex-1">
                 <p className="text-pretty text-center text-lg sm:text-2xl font-bold pointer-events-none">
                     {reveal_values && (!stat.bonus_round || bonus_round_reveal) && !stat.id.startsWith("!")
                         ? (
@@ -107,6 +114,10 @@ const DraggableStat = ({ stat, correct, finished, reveal_values, bonus_round_rev
                             className={`transition-opacity font-black tracking-normal normal-case ${value_display_state === "visible" ? "opacity-100" : "opacity-0"}`}
                         >
                             {`: ${stat.prefix}${
+                                // TODO: less messy
+                                stat.metric.toLowerCase().includes("price")
+                                 ? Intl.NumberFormat("en-GB", { style: "currency", currency: CURRENCY_CODES[stat.prefix]}).format(stat.value).replace(stat.prefix, "")
+                                    :
                                 // TODO: better property to specify this
                                 stat.metric.toLowerCase().includes("year") 
                                     ? stat.value
