@@ -3,7 +3,7 @@
 import {epoch_utc} from "../../../../time";
 import {useState, useEffect, useCallback, useRef, useMemo} from "react";
 import { PuzzleStat } from "@/features/game/Game";
-import {ArrowDown, ArrowUp, Asterisk, Play, Save, Shuffle, Upload} from "lucide-react";
+import {ArrowDown, ArrowUp, Asterisk, LockOpen, Play, Save, Shuffle, Upload} from "lucide-react";
 import {ToggleSwitch} from "@/components/ui/ToggleSwitch";
 import {safe_btoa} from "@/util/base64";
 import {NewTabLink} from "@/components/ui/NewTabLink";
@@ -100,6 +100,8 @@ const fetchItemClaims = async (qid: string) => {
 };
 
 // --- Component ---
+
+let dummy_id_counter = 0;
 
 const EditableStat = ({ index, stat, updateStat, show_values }: {
     index: number;
@@ -228,6 +230,16 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
         p.label.toLowerCase().includes(metricSearch.toLowerCase())
     );
 
+    const on_unlock = useCallback(
+        () => {
+            const confirmation = confirm("Are you sure you want to unlock the ID?\n\nStats should ideally be associated with a Wikidata item to make it clickable, and more importantly reliable. Use the Item search field if you wanted to associate an ID.\n\nClicking unlock will add a dummy ID to this item (unless overridden by searching an item)");
+            if (confirmation) {
+                updateStat(index, { id: `!${dummy_id_counter++}` });
+            }
+        },
+        [index, updateStat]
+    );
+
     return (
         <div className="grid grid-cols-3 md:grid-cols-8 gap-4 p-4 border border-background-variant-border rounded-xl bg-background-variant backdrop-blur-sm shadow-sm">
             <div className="space-y-2 relative col-span-1">
@@ -235,9 +247,15 @@ const EditableStat = ({ index, stat, updateStat, show_values }: {
                 <input
                     type="text"
                     value={stat.id || "No ID!"}
-                    className={`w-full p-2 border rounded ${stat.id ? "font-mono bg-tertiary-background text-on-tertiary-background/75" : "italic border-red-500 bg-lost text-on-lost"}`}
+                    className={`peer w-full p-2 border rounded ${stat.id ? "font-mono bg-tertiary-background text-on-tertiary-background/75" : "italic border-red-500 bg-lost text-on-lost"}`}
                     readOnly
                 />
+
+                {!stat.id && (
+                    <button onClick={on_unlock} className="absolute top-1/2 right-2 cursor-pointer opacity-0 hover:opacity-100 peer-hover:opacity-100 transition-opacity">
+                        <LockOpen className="w-4 h-4" />
+                    </button>
+                )}
             </div>
 
 
@@ -396,6 +414,16 @@ export const EditorInteraction = () => {
             if (puzzle.some(stat => !stat.id)) {
                 alert("Not all stats have an associated Wikidata ID!");
                 return null;
+            }
+
+            // make sure no stats have duplicate IDs
+            const id_counts: Record<string, number> = {};
+            for (const stat of puzzle) {
+                if (id_counts[stat.id]) {
+                    alert(`All items must have unique Wikidata IDs! The ID ${stat.id} (${stat.name}) is duplicated.`);
+                    return null;
+                }
+                id_counts[stat.id] = 1;
             }
 
             const days_since_epoch = Math.floor((new Date(iso_date).getTime() - epoch_utc.getTime()) / (1000 * 60 * 60 * 24));

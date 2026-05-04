@@ -87,7 +87,7 @@ const DraggableStat = ({ stat, correct, finished, reveal_values, bonus_round_rev
 
             <div className={`flex flex-col ${stat.image_url ? "items-center sm:items-start" : "items-center"} justify-center gap-1`}>
                 <p className="text-pretty text-center text-lg sm:text-2xl font-bold pointer-events-none">
-                    {reveal_values && (!stat.bonus_round || bonus_round_reveal)
+                    {reveal_values && (!stat.bonus_round || bonus_round_reveal) && !stat.id.startsWith("!")
                         ? (
                             <span className="flex items-center">
                                 <NewTabLink title={`Open ${stat.name} on Wikidata`} className="pointer-events-auto underline" href={`https://wikidata.org/wiki/${stat.id}`}>
