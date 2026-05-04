@@ -5,7 +5,7 @@ import {Scrim} from "@/components/ui/Scrim";
 
 const ExpandedImageOverlay = ({image_props, expanded, setExpanded}: {image_props: React.ComponentProps<"img">, expanded: boolean, setExpanded: (expanded: boolean) => void}) => (
     <div
-        className={`cursor-pointer flex items-center justify-center fixed h-screen w-screen top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${expanded ? "opacity-100" : "opacity-0 pointer-events-none"} transition-opacity duration-300 z-50`}
+        className={`cursor-zoom-out flex items-center justify-center fixed h-screen w-screen top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${expanded ? "opacity-100" : "opacity-0 pointer-events-none"} transition-opacity duration-300 z-50`}
         onClick={() => setExpanded(false)}
         onPointerDown={(e) => e.stopPropagation()}
         onMouseDown={(e) => e.stopPropagation()}
@@ -26,7 +26,7 @@ export const ExpandableImage = (props: React.ComponentProps<"img">) => {
         <>
             <img
                 {...props}
-                className={`${props.className} cursor-pointer transition-all duration-300 object-contain`}
+                className={`${props.className} cursor-zoom-in transition-all duration-300 object-contain`}
                 onClick={() => setExpanded(!expanded)}
                 onPointerDown={(e) => e.stopPropagation()}
                 onMouseDown={(e) => e.stopPropagation()}
