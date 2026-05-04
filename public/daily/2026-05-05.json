@@ -1,0 +1,63 @@
+{
+  "date": "2026-05-05",
+  "number": 38,
+  "difficulty": "Scrangle",
+  "neighbourhood": "custom",
+  "puzzle": [
+    {
+      "id": "!0",
+      "name": "Turkey, pigs in blankets, stuffing and gravy over fries",
+      "description": "Leeds United",
+      "metric": "price",
+      "value": 7.5,
+      "prefix": "£",
+      "suffix": "",
+      "unit_hint": "in pounds",
+      "image_url": "https://pbs.twimg.com/media/HGcoqGbWgAA5Rf0?format=jpg&name=medium"
+    },
+    {
+      "id": "!4",
+      "name": "Cheeseburger and chips",
+      "description": "Arsenal",
+      "metric": "price",
+      "value": 18.5,
+      "prefix": "£",
+      "suffix": "",
+      "unit_hint": "in pounds",
+      "image_url": "https://pbs.twimg.com/media/HC5OwN8XsAESGDC?format=jpg&name=medium"
+    },
+    {
+      "id": "!1",
+      "name": "Pie, chips and gravy",
+      "description": "Bamber Bridge FC",
+      "metric": "price",
+      "value": 5.5,
+      "prefix": "£",
+      "suffix": "",
+      "unit_hint": "in pounds",
+      "image_url": "https://pbs.twimg.com/media/HGCkxtBXIAAG6Mu?format=jpg&name=medium"
+    },
+    {
+      "id": "!2",
+      "name": "Chicken and bacon pizza",
+      "description": "MK Dons",
+      "metric": "price",
+      "value": 4.99,
+      "prefix": "£",
+      "suffix": "",
+      "unit_hint": "in pounds",
+      "image_url": "https://pbs.twimg.com/media/Fu96u3QXsAEkJnP?format=jpg&name=medium"
+    },
+    {
+      "id": "!3",
+      "name": "Chicken and chips",
+      "description": "Aston Villa",
+      "metric": "price",
+      "value": 4.5,
+      "prefix": "£",
+      "suffix": "",
+      "unit_hint": "in pounds",
+      "image_url": "https://pbs.twimg.com/media/HHAhzqeWUAAWsaq?format=jpg&name=medium"
+    }
+  ]
+}
