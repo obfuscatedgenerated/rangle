@@ -39,6 +39,8 @@ export interface PuzzleStat {
     suffix: string;
     unit_hint?: string;
     bonus_round?: boolean;
+    image_url?: string;
+    image_alt?: string;
 }
 
 export type StatPositionFlags = [boolean, boolean, boolean, boolean, boolean];

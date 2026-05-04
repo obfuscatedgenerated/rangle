@@ -14,6 +14,7 @@ import type {PuzzleStat} from "@/features/game/Game";
 import {useEffect, useState} from "react";
 import {LinkIcon} from "lucide-react";
 import {NewTabLink} from "@/components/ui/NewTabLink";
+import {ExpandableImage} from "@/components/ui/ExpandableImage";
 
 interface DraggableStatProps {
     stat: PuzzleStat;
@@ -77,43 +78,48 @@ const DraggableStat = ({ stat, correct, finished, reveal_values, bonus_round_rev
             style={correct ? undefined : drag_style}
             {...attributes}
             {...listeners}
-            className={`touch-none flex flex-col items-center justify-center gap-1 border-2 rounded p-4 w-full
+            className={`touch-none flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 border-2 rounded p-4 w-full
             ${className}
             ${lock_position ? "" : "cursor-move"}
             `}
         >
-            <p className="text-pretty text-center text-lg sm:text-2xl font-bold pointer-events-none">
-                {reveal_values && (!stat.bonus_round || bonus_round_reveal)
-                    ? (
-                        <span className="flex items-center">
-                            <NewTabLink title={`Open ${stat.name} on Wikidata`} className="pointer-events-auto underline" href={`https://wikidata.org/wiki/${stat.id}`}>
-                                {stat.name}
-                            </NewTabLink>
-                            <LinkIcon className="ml-1 w-4 h-4" />
+            {stat.image_url && <ExpandableImage src={stat.image_url} alt={stat.image_alt || `Image for ${stat.name}`} title="Click to expand" draggable="false" className="max-h-24 object-contain border-muted-foreground border-1 rounded-sm" />}
+
+            <div className={`flex flex-col ${stat.image_url ? "items-center sm:items-start" : "items-center"} justify-center gap-1`}>
+                <p className="text-pretty text-center text-lg sm:text-2xl font-bold pointer-events-none">
+                    {reveal_values && (!stat.bonus_round || bonus_round_reveal)
+                        ? (
+                            <span className="flex items-center">
+                                <NewTabLink title={`Open ${stat.name} on Wikidata`} className="pointer-events-auto underline" href={`https://wikidata.org/wiki/${stat.id}`}>
+                                    {stat.name}
+                                </NewTabLink>
+                                <LinkIcon className="ml-1 w-4 h-4" />
+                            </span>
+                        )
+                        : stat.name
+                    }
+                </p>
+                <p className="uppercase tracking-wider text-pretty text-sm sm:text-base text-center pointer-events-none mb-2">
+                    {stat.metric}
+
+                    {value_display_state !== "hidden"
+                        && <span
+                            className={`transition-opacity font-black tracking-normal normal-case ${value_display_state === "visible" ? "opacity-100" : "opacity-0"}`}
+                        >
+                            {`: ${stat.prefix}${
+                                // TODO: better property to specify this
+                                stat.metric.toLowerCase().includes("year") 
+                                    ? stat.value
+                                    : stat.value.toLocaleString()
+                            }${stat.suffix}`}
                         </span>
-                    )
-                    : stat.name
-                }
-            </p>
-            <p className="uppercase tracking-wider text-pretty text-sm sm:text-base text-center pointer-events-none mb-2">
-                {stat.metric}
+                    }
 
-                {value_display_state !== "hidden"
-                    && <span
-                        className={`transition-opacity font-black tracking-normal normal-case ${value_display_state === "visible" ? "opacity-100" : "opacity-0"}`}
-                    >
-                        {`: ${stat.prefix}${
-                            // TODO: better property to specify this
-                            stat.metric.toLowerCase().includes("year") 
-                                ? stat.value
-                                : stat.value.toLocaleString()
-                        }${stat.suffix}`}
-                    </span>
-                }
+                    {value_display_state === "hidden" && <span>{stat.unit_hint ? ` (${stat.unit_hint})` : ""}</span>}
+                </p>
 
-                {value_display_state === "hidden" && <span>{stat.unit_hint ? ` (${stat.unit_hint})` : ""}</span>}
-            </p>
-            <p className="text-pretty text-center text-sm opacity-60 pointer-events-none">({stat.description})</p>
+                <p className="text-pretty text-center text-sm opacity-60 pointer-events-none">({stat.description})</p>
+            </div>
         </div>
     );
 };
