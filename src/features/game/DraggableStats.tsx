@@ -90,7 +90,7 @@ const DraggableStat = ({ stat, correct, finished, reveal_values, bonus_round_rev
             ${lock_position ? "" : "cursor-move"}
             `}
         >
-            {stat.image_url && <ExpandableImage src={stat.image_url} alt={stat.image_alt || `Image for ${stat.name}`} title="Click to expand" draggable="false" className="max-h-24 object-contain border-muted-foreground border-1 rounded-sm" />}
+            {stat.image_url && <ExpandableImage src={stat.image_url} alt={stat.image_alt || `Image for ${stat.name}`} draggable="false" className="max-h-24 object-contain border-muted-foreground border-1 rounded-sm" />}
 
             <div className="flex flex-col items-center justify-center gap-1 flex-1">
                 <p className="text-pretty text-center text-lg sm:text-2xl font-bold pointer-events-none">

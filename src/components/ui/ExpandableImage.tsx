@@ -26,6 +26,7 @@ export const ExpandableImage = (props: React.ComponentProps<"img">) => {
         <>
             <img
                 {...props}
+                title="Click to expand"
                 className={`${props.className} cursor-zoom-in transition-all duration-300 object-contain`}
                 onClick={() => setExpanded(!expanded)}
                 onPointerDown={(e) => e.stopPropagation()}
