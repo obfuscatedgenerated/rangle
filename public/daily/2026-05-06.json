@@ -5,43 +5,32 @@
   "neighbourhood": "medium",
   "puzzle": [
     {
-      "id": "Q166162",
-      "name": "Lake Onega",
-      "value": 127,
-      "metric": "Depth",
-      "description": "freshwater lake in Russia, second largest in Europe",
+      "id": "Q1113311",
+      "name": "Peshawar",
+      "value": 359,
+      "metric": "Elevation above sea level",
+      "description": "capital of Khyber Pakhtunkhwa Province, Pakistan",
       "prefix": "",
       "suffix": " m",
       "unit_hint": "in metres"
     },
     {
-      "id": "Q182719",
-      "name": "Lake Turkana",
-      "value": 109,
-      "metric": "Depth",
-      "description": "alkaline lake on the border of Ethiopia and Kenya",
+      "id": "Q1053",
+      "name": "molybdenum",
+      "value": 1778,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Mo and atomic number 42",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": ""
     },
     {
-      "id": "Q1846",
-      "name": "holmium",
-      "value": 2600,
-      "metric": "Boiling Point",
-      "description": "chemical element with symbol Ho and atomic number 67",
+      "id": "Q1819",
+      "name": "samarium",
+      "value": 1879,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Sm and atomic number 62",
       "prefix": "",
-      "suffix": "°C",
-      "unit_hint": "in Celsius"
-    },
-    {
-      "id": "Q43361",
-      "name": "Harry Potter and the Philosopher's Stone",
-      "value": 240,
-      "metric": "Number of Pages",
-      "description": "1997 novel by J. K. Rowling",
-      "prefix": "",
-      "suffix": " pages"
+      "suffix": ""
     },
     {
       "id": "Q81689",
@@ -51,6 +40,16 @@
       "description": "2003 novel by Dan Brown",
       "prefix": "",
       "suffix": " pages"
+    },
+    {
+      "id": "Q3778",
+      "name": "Zwickau",
+      "value": 267,
+      "metric": "Elevation above sea level",
+      "description": "town in Saxony, Germany",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
     }
   ]
 }
