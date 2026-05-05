@@ -2,54 +2,57 @@
   "date": "2026-05-06",
   "number": 39,
   "difficulty": "Medium",
-  "neighbourhood": "medium",
+  "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q1113311",
-      "name": "Peshawar",
-      "value": 359,
-      "metric": "Elevation above sea level",
-      "description": "capital of Khyber Pakhtunkhwa Province, Pakistan",
-      "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "id": "Q155653",
+      "name": "Spirited Away",
+      "value": 2000000000,
+      "metric": "Production Budget",
+      "description": "2001 anime film directed by Hayao Miyazaki",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q1053",
-      "name": "molybdenum",
-      "value": 1778,
-      "metric": "Year of Discovery",
-      "description": "chemical element with symbol Mo and atomic number 42",
-      "prefix": "",
-      "suffix": ""
+      "id": "Q35886",
+      "name": "Lamborghini",
+      "value": 2380000000,
+      "metric": "Total Revenue",
+      "description": "Italian car manufacturer",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q1819",
-      "name": "samarium",
-      "value": 1879,
-      "metric": "Year of Discovery",
-      "description": "chemical element with symbol Sm and atomic number 62",
-      "prefix": "",
-      "suffix": ""
+      "id": "Q47099",
+      "name": "Grupo Televisa",
+      "value": 5300000000,
+      "metric": "Total Revenue",
+      "description": "Mexican entertainment and media conglomerate",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q81689",
-      "name": "The Da Vinci Code",
-      "value": 519,
-      "metric": "Number of Pages",
-      "description": "2003 novel by Dan Brown",
-      "prefix": "",
-      "suffix": " pages"
+      "id": "Q131074",
+      "name": "The Lord of the Rings: The Return of the King",
+      "value": 1149079287,
+      "metric": "Total Box Office Revenue",
+      "description": "2003 film by Peter Jackson",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q3778",
-      "name": "Zwickau",
-      "value": 267,
-      "metric": "Elevation above sea level",
-      "description": "town in Saxony, Germany",
-      "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "id": "Q161087",
+      "name": "Pirates of the Caribbean: Dead Man's Chest",
+      "value": 1066179725,
+      "metric": "Total Box Office Revenue",
+      "description": "2006 film directed by Gore Verbinski",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     }
   ]
 }
