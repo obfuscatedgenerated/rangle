@@ -1,54 +1,58 @@
 {
   "date": "2026-05-06",
   "number": 39,
-  "difficulty": "Hard",
+  "difficulty": "Medium",
   "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q49741",
-      "name": "Central Atlas Tamazight",
-      "value": 17000000,
-      "metric": "Native Speakers",
-      "description": "Amazigh language of the Afro-Asiatic language family",
-      "prefix": "",
-      "suffix": " speakers"
-    },
-    {
-      "id": "Q220780",
-      "name": "Raging Bull",
-      "value": 23383987,
+      "id": "Q102438",
+      "name": "Harry Potter and the Philosopher's Stone",
+      "value": 978087613,
       "metric": "Total Box Office Revenue",
-      "description": "1980 film directed by Martin Scorsese",
+      "description": "2001 film directed by Chris Columbus",
       "prefix": "$",
       "suffix": "",
       "unit_hint": "in dollars"
     },
     {
-      "id": "Q15065",
-      "name": "Malaysian Malay",
-      "value": 12030000,
-      "metric": "Native Speakers",
-      "description": "standard Malay dialect spoken in Malaysia",
-      "prefix": "",
-      "suffix": " speakers"
+      "id": "Q35886",
+      "name": "Lamborghini",
+      "value": 2380000000,
+      "metric": "Total Revenue",
+      "description": "Italian car manufacturer",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q310725",
-      "name": "2012–13 Fußball-Bundesliga",
-      "value": 13039267,
-      "metric": "Event Attendance",
-      "description": "50th season of the Bundesliga",
-      "prefix": "",
-      "suffix": " attendees"
+      "id": "Q167726",
+      "name": "Jurassic Park",
+      "value": 1030314141,
+      "metric": "Total Box Office Revenue",
+      "description": "1993 film by Steven Spielberg",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q108723",
-      "name": "2011–12 Fußball-Bundesliga",
-      "value": 13805496,
-      "metric": "Event Attendance",
-      "description": "49th season of the Bundesliga",
-      "prefix": "",
-      "suffix": " attendees"
+      "id": "Q47099",
+      "name": "Grupo Televisa",
+      "value": 5300000000,
+      "metric": "Total Revenue",
+      "description": "Mexican entertainment and media conglomerate",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q155653",
+      "name": "Spirited Away",
+      "value": 2000000000,
+      "metric": "Production Budget",
+      "description": "2001 anime film directed by Hayao Miyazaki",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     }
   ]
 }
