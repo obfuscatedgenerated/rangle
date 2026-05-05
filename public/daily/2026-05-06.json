@@ -1,0 +1,54 @@
+{
+  "date": "2026-05-06",
+  "number": 39,
+  "difficulty": "Easy",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q794",
+      "name": "Iran",
+      "value": 92417700,
+      "metric": "Population",
+      "description": "country in Western Asia",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q115",
+      "name": "Ethiopia",
+      "value": 128691692,
+      "metric": "Population",
+      "description": "country in the Horn of Africa",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q9176",
+      "name": "Korean",
+      "value": 77300000,
+      "metric": "Native Speakers",
+      "description": "language spoken in Korean Peninsula and some parts of North-eastern China",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q256",
+      "name": "Turkish",
+      "value": 82231620,
+      "metric": "Native Speakers",
+      "description": "Oghuz Turkic language of the Turkish people",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q313",
+      "name": "Venus",
+      "value": 108942109,
+      "metric": "Distance from Sun",
+      "description": "second planet from the Solar System, tellurian and very similar to Earth",
+      "prefix": "",
+      "suffix": " km",
+      "unit_hint": "in kilometres"
+    }
+  ]
+}

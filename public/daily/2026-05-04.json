@@ -1,0 +1,53 @@
+{
+  "date": "2026-05-04",
+  "number": 37,
+  "difficulty": "Hard",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q391028",
+      "name": "University of British Columbia",
+      "value": 71201,
+      "metric": "Student Enrollment",
+      "description": "public research university in British Columbia, Canada",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q202150",
+      "name": "Stade Vélodrome",
+      "value": 67394,
+      "metric": "Maximum Capacity",
+      "description": "football stadium in Marseille, France",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q33871",
+      "name": "Nogai",
+      "value": 87119,
+      "metric": "Native Speakers",
+      "description": "Turkic language",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q21715205",
+      "name": "UEFA Euro 2016 finals: Portugal v France",
+      "value": 75868,
+      "metric": "Event Attendance",
+      "description": "final game of the UEFA Euro 2016",
+      "prefix": "",
+      "suffix": " attendees"
+    },
+    {
+      "id": "Q13205",
+      "name": "Stade de France",
+      "value": 81338,
+      "metric": "Maximum Capacity",
+      "description": "national stadium of France",
+      "prefix": "",
+      "suffix": " people"
+    }
+  ]
+}
