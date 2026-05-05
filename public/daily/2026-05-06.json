@@ -1,58 +1,58 @@
 {
   "date": "2026-05-06",
   "number": 39,
-  "difficulty": "Medium",
-  "neighbourhood": "large",
+  "difficulty": "Hard",
+  "neighbourhood": "small",
   "puzzle": [
     {
-      "id": "Q102438",
-      "name": "Harry Potter and the Philosopher's Stone",
-      "value": 978087613,
-      "metric": "Total Box Office Revenue",
-      "description": "2001 film directed by Chris Columbus",
-      "prefix": "$",
-      "suffix": "",
-      "unit_hint": "in dollars"
+      "id": "Q2301866",
+      "name": "Amstel Light",
+      "value": 3.5,
+      "metric": "Alcohol by Volume",
+      "description": "beer",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
     },
     {
-      "id": "Q35886",
-      "name": "Lamborghini",
-      "value": 2380000000,
-      "metric": "Total Revenue",
-      "description": "Italian car manufacturer",
-      "prefix": "$",
-      "suffix": "",
-      "unit_hint": "in dollars"
+      "id": "Q3315551",
+      "name": "Yellow-striped Brush Finch",
+      "value": 4,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "small little sparrow",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
     },
     {
-      "id": "Q167726",
-      "name": "Jurassic Park",
-      "value": 1030314141,
-      "metric": "Total Box Office Revenue",
-      "description": "1993 film by Steven Spielberg",
-      "prefix": "$",
-      "suffix": "",
-      "unit_hint": "in dollars"
+      "id": "Q134083",
+      "name": "Kangaroo Island dunnart",
+      "value": 12,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
     },
     {
-      "id": "Q47099",
-      "name": "Grupo Televisa",
-      "value": 5300000000,
-      "metric": "Total Revenue",
-      "description": "Mexican entertainment and media conglomerate",
-      "prefix": "$",
-      "suffix": "",
-      "unit_hint": "in dollars"
+      "id": "Q1035257",
+      "name": "Cara Pils",
+      "value": 4.4,
+      "metric": "Alcohol by Volume",
+      "description": "store brand pilsner from Colruyt Group",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
     },
     {
-      "id": "Q155653",
-      "name": "Spirited Away",
-      "value": 2000000000,
-      "metric": "Production Budget",
-      "description": "2001 anime film directed by Hayao Miyazaki",
-      "prefix": "$",
-      "suffix": "",
-      "unit_hint": "in dollars"
+      "id": "Q2668298",
+      "name": "Pale-headed Brushfinch",
+      "value": 3,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of bird",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
     }
   ]
 }
