@@ -1,54 +1,56 @@
 {
   "date": "2026-05-06",
   "number": 39,
-  "difficulty": "Easy",
-  "neighbourhood": "large",
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
   "puzzle": [
     {
-      "id": "Q794",
-      "name": "Iran",
-      "value": 92417700,
-      "metric": "Population",
-      "description": "country in Western Asia",
+      "id": "Q166162",
+      "name": "Lake Onega",
+      "value": 127,
+      "metric": "Depth",
+      "description": "freshwater lake in Russia, second largest in Europe",
       "prefix": "",
-      "suffix": " people"
+      "suffix": " m",
+      "unit_hint": "in metres"
     },
     {
-      "id": "Q115",
-      "name": "Ethiopia",
-      "value": 128691692,
-      "metric": "Population",
-      "description": "country in the Horn of Africa",
+      "id": "Q182719",
+      "name": "Lake Turkana",
+      "value": 109,
+      "metric": "Depth",
+      "description": "alkaline lake on the border of Ethiopia and Kenya",
       "prefix": "",
-      "suffix": " people"
+      "suffix": " m",
+      "unit_hint": "in metres"
     },
     {
-      "id": "Q9176",
-      "name": "Korean",
-      "value": 77300000,
-      "metric": "Native Speakers",
-      "description": "language spoken in Korean Peninsula and some parts of North-eastern China",
+      "id": "Q1846",
+      "name": "holmium",
+      "value": 2600,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol Ho and atomic number 67",
       "prefix": "",
-      "suffix": " speakers"
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
     },
     {
-      "id": "Q256",
-      "name": "Turkish",
-      "value": 82231620,
-      "metric": "Native Speakers",
-      "description": "Oghuz Turkic language of the Turkish people",
+      "id": "Q43361",
+      "name": "Harry Potter and the Philosopher's Stone",
+      "value": 240,
+      "metric": "Number of Pages",
+      "description": "1997 novel by J. K. Rowling",
       "prefix": "",
-      "suffix": " speakers"
+      "suffix": " pages"
     },
     {
-      "id": "Q313",
-      "name": "Venus",
-      "value": 108942109,
-      "metric": "Distance from Sun",
-      "description": "second planet from the Solar System, tellurian and very similar to Earth",
+      "id": "Q81689",
+      "name": "The Da Vinci Code",
+      "value": 519,
+      "metric": "Number of Pages",
+      "description": "2003 novel by Dan Brown",
       "prefix": "",
-      "suffix": " km",
-      "unit_hint": "in kilometres"
+      "suffix": " pages"
     }
   ]
 }
