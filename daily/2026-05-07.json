@@ -1,13 +1,13 @@
 {
   "date": "2026-05-07",
   "number": 40,
-  "difficulty": "Hard",
+  "difficulty": "Medium",
   "neighbourhood": "small",
   "puzzle": [
     {
-      "id": "Q134083",
-      "name": "Kangaroo Island dunnart",
-      "value": 12,
+      "id": "Q191781",
+      "name": "Macaca fuscata",
+      "value": 180,
       "metric": "Gestation Period",
       "description": "species of mammal",
       "prefix": "",
@@ -15,40 +15,41 @@
       "unit_hint": "in days"
     },
     {
-      "id": "Q461371",
-      "name": "Casa Batlló",
-      "value": 6,
-      "metric": "Number of Floors",
-      "description": "modernist building in Barcelona",
-      "prefix": "",
-      "suffix": " floors"
+      "id": "Q1265834",
+      "name": "Vaporeon",
+      "value": 134,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
     },
     {
-      "id": "Q7300878",
-      "name": "Real Crime",
-      "value": 10,
-      "metric": "Number of Seasons",
-      "description": "television series",
-      "prefix": "",
-      "suffix": " seasons"
+      "id": "Q2480066",
+      "name": "Snorlax",
+      "value": 143,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
     },
     {
-      "id": "Q17014542",
-      "name": "Move It",
-      "value": 5,
-      "metric": "Number of Seasons",
-      "description": "television series",
+      "id": "Q705388",
+      "name": "Art Attack",
+      "value": 291,
+      "metric": "Number of Episodes",
+      "description": "British television series",
       "prefix": "",
-      "suffix": " seasons"
+      "suffix": " episodes"
     },
     {
-      "id": "Q204496",
-      "name": "Millennium Stadium",
-      "value": 7,
-      "metric": "Number of Floors",
-      "description": "national stadium of Wales",
+      "id": "Q476930",
+      "name": "Saimiri sciureus",
+      "value": 162,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
       "prefix": "",
-      "suffix": " floors"
+      "suffix": " days",
+      "unit_hint": "in days"
     }
   ]
 }
