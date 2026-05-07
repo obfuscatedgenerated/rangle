@@ -5,51 +5,52 @@
   "neighbourhood": "small",
   "puzzle": [
     {
-      "id": "Q2836862",
-      "name": "Mighty Morphin Alien Rangers",
+      "id": "Q541959",
+      "name": "Vino Nobile di Montepulciano",
+      "value": 12.5,
+      "metric": "Alcohol by Volume",
+      "description": "Italian wine from the town of Montepulciano",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q18679875",
+      "name": "Syke",
+      "value": 16,
+      "metric": "Number of Seasons",
+      "description": "Finnish medical drama television series (2014–)",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q726151",
+      "name": "quokka",
       "value": 10,
-      "metric": "Number of Episodes",
-      "description": "television series",
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of mammal",
       "prefix": "",
-      "suffix": " episodes"
+      "suffix": " years",
+      "unit_hint": "in years"
     },
     {
-      "id": "Q887730",
-      "name": "Newcastle Brown Ale",
-      "value": 4.7,
-      "metric": "Alcohol by Volume",
-      "description": "brown ale, originally produced in Newcastle upon Tyne, but now brewed by Heineken at the Zoeterwoude Brewery in the Netherlands",
-      "prefix": "",
-      "suffix": "%",
-      "unit_hint": "by approx. percent"
-    },
-    {
-      "id": "Q2905047",
-      "name": "sorghum beer",
-      "value": 3.3,
-      "metric": "Alcohol by Volume",
-      "description": "beer originating in sub-Sahara Africa",
-      "prefix": "",
-      "suffix": "%",
-      "unit_hint": "by approx. percent"
-    },
-    {
-      "id": "Q3755648",
-      "name": "Tarzán",
-      "value": 3,
+      "id": "Q5221487",
+      "name": "Dança dos Famosos",
+      "value": 17,
       "metric": "Number of Seasons",
-      "description": "television series",
+      "description": "Brazilian television series",
       "prefix": "",
       "suffix": " seasons"
     },
     {
-      "id": "Q6844174",
-      "name": "Mighty Mouse: The New Adventures",
-      "value": 2,
-      "metric": "Number of Seasons",
-      "description": "American animated television series",
+      "id": "Q194663",
+      "name": "Common opossum",
+      "value": 14,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
       "prefix": "",
-      "suffix": " seasons"
+      "suffix": " days",
+      "unit_hint": "in days"
     }
   ]
 }
