@@ -1,0 +1,54 @@
+{
+  "date": "2026-05-09",
+  "number": 42,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q165980",
+      "name": "University of Vienna",
+      "value": 93628,
+      "metric": "Student Enrollment",
+      "description": "public university in Vienna, Austria",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q164027",
+      "name": "Bernabéu",
+      "value": 83186,
+      "metric": "Maximum Capacity",
+      "description": "Real Madrid's home ground, stadium in Madrid",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q24815",
+      "name": "Citizen Kane",
+      "value": 839727,
+      "metric": "Production Budget",
+      "description": "1941 American drama film directed by Orson Welles",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q155174",
+      "name": "Maracanã Stadium",
+      "value": 78838,
+      "metric": "Maximum Capacity",
+      "description": "stadium in Rio de Janeiro, Brazil",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q180865",
+      "name": "University of Toronto",
+      "value": 102431,
+      "metric": "Student Enrollment",
+      "description": "public research university in the Greater Toronto Area of Ontario, Canada",
+      "prefix": "",
+      "suffix": " students"
+    }
+  ]
+}
