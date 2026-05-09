@@ -1,0 +1,58 @@
+{
+  "date": "2026-05-10",
+  "number": 43,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q24815",
+      "name": "Citizen Kane",
+      "value": 839727,
+      "metric": "Production Budget",
+      "description": "1941 American drama film directed by Orson Welles",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q132689",
+      "name": "Casablanca",
+      "value": 950000,
+      "metric": "Production Budget",
+      "description": "1942 film directed by Michael Curtiz",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q773330",
+      "name": "Da Nang International Airport",
+      "value": 15504650,
+      "metric": "Number of Passengers",
+      "description": "airport in Vietnam",
+      "prefix": "",
+      "suffix": " passengers",
+      "unit_hint": "annual"
+    },
+    {
+      "id": "Q25226",
+      "name": "Cam Ranh International Airport",
+      "value": 8300000,
+      "metric": "Number of Passengers",
+      "description": "Airport that serves Nha Trang, Vietnam",
+      "prefix": "",
+      "suffix": " passengers",
+      "unit_hint": "annual"
+    },
+    {
+      "id": "Q14799",
+      "name": "Lenovo",
+      "value": 13367000,
+      "metric": "Market Capitalisation",
+      "description": "Chinese multinational technology company established in 1984",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    }
+  ]
+}
