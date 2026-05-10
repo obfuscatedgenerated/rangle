@@ -1,58 +1,57 @@
 {
   "date": "2026-05-11",
   "number": 44,
-  "difficulty": "Easy",
-  "neighbourhood": "medium",
+  "difficulty": "Hard",
+  "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q23883",
-      "name": "Dead Sea",
-      "value": 360,
-      "metric": "Depth",
-      "description": "lake with no outflow (sea) in Western Asia",
-      "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "id": "Q638156",
+      "name": "ZiL",
+      "value": 809851000,
+      "metric": "Total Revenue",
+      "description": "Russian truck and heavy equipment manufacturer",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q9202",
-      "name": "Statue of Liberty",
-      "value": 47,
-      "metric": "Height",
-      "description": "American icon in New York, United States",
+      "id": "Q727694",
+      "name": "Standard Chinese",
+      "value": 897071810,
+      "metric": "Native Speakers",
+      "description": "standard form of the Chinese language",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " speakers"
     },
     {
-      "id": "Q9141",
-      "name": "Taj Mahal",
-      "value": 73,
-      "metric": "Height",
-      "description": "marble mausoleum in Agra, India",
+      "id": "Q156442",
+      "name": "679 Pax",
+      "value": 506787149,
+      "metric": "Distance from Sun",
+      "description": "main-belt asteroid",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " km",
+      "unit_hint": "in kilometres"
     },
     {
-      "id": "Q5505",
-      "name": "Lake Victoria",
-      "value": 83,
-      "metric": "Depth",
-      "description": "lake in east-central Africa",
-      "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "id": "Q486269",
+      "name": "Kodak",
+      "value": 1117000000,
+      "metric": "Total Revenue",
+      "description": "American company",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q703",
-      "name": "potassium",
-      "value": 766,
-      "metric": "Boiling Point",
-      "description": "chemical element with symbol K and atomic number 19",
+      "id": "Q155672",
+      "name": "582 Olympia",
+      "value": 476965788,
+      "metric": "Distance from Sun",
+      "description": "main-belt asteroid",
       "prefix": "",
-      "suffix": "°C",
-      "unit_hint": "in Celsius"
+      "suffix": " km",
+      "unit_hint": "in kilometres"
     }
   ]
 }
