@@ -1,54 +1,53 @@
 {
   "date": "2026-05-12",
   "number": 45,
-  "difficulty": "Easy",
-  "neighbourhood": "small",
+  "difficulty": "Medium",
+  "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q208048",
-      "name": "Band of Brothers",
-      "value": 10,
-      "metric": "Number of Episodes",
-      "description": "TV mini-series",
+      "id": "Q25289",
+      "name": "Cornish",
+      "value": 600,
+      "metric": "Native Speakers",
+      "description": "Brythonic Celtic language indigenous to Cornwall",
       "prefix": "",
-      "suffix": " episodes"
+      "suffix": " speakers"
     },
     {
-      "id": "Q25357",
-      "name": "Northern Raven",
-      "value": 17,
-      "metric": "Life Expectancy / Maximum Lifespan",
-      "description": "species of bird",
+      "id": "Q146803",
+      "name": "Lingua Franca Nova",
+      "value": 200,
+      "metric": "Native Speakers",
+      "description": "auxiliary constructed language, originally created by C. George Boeree, and largely based on a Romance substrate partially creolized then modified by some evolutive rules of simplification",
       "prefix": "",
-      "suffix": " years",
-      "unit_hint": "in years"
+      "suffix": " speakers"
     },
     {
-      "id": "Q21528692",
-      "name": "11.22.63",
-      "value": 8,
-      "metric": "Number of Episodes",
-      "description": "2016 American television series",
+      "id": "Q182950",
+      "name": "Studio Ghibli",
+      "value": 190,
+      "metric": "Number of Employees",
+      "description": "Japanese animation studio",
       "prefix": "",
-      "suffix": " episodes"
+      "suffix": " employees"
     },
     {
-      "id": "Q1636903",
-      "name": "Ivysaur",
-      "value": 2,
-      "metric": "Pokédex Number",
-      "description": "Pokémon species",
-      "prefix": "#",
-      "suffix": ""
+      "id": "Q43449",
+      "name": "Creative Commons",
+      "value": 147,
+      "metric": "Number of Employees",
+      "description": "non-profit-organization creating copyright licenses for the public release of creative works",
+      "prefix": "",
+      "suffix": " employees"
     },
     {
-      "id": "Q847571",
-      "name": "Bulbasaur",
-      "value": 1,
-      "metric": "Pokédex Number",
-      "description": "Pokémon species",
-      "prefix": "#",
-      "suffix": ""
+      "id": "Q161562",
+      "name": "California Institute of Technology",
+      "value": 2397,
+      "metric": "Student Enrollment",
+      "description": "private research university located in Pasadena, California, USA",
+      "prefix": "",
+      "suffix": " students"
     }
   ]
 }
