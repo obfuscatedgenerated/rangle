@@ -1,0 +1,54 @@
+{
+  "date": "2026-05-12",
+  "number": 45,
+  "difficulty": "Easy",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q208048",
+      "name": "Band of Brothers",
+      "value": 10,
+      "metric": "Number of Episodes",
+      "description": "TV mini-series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q25357",
+      "name": "Northern Raven",
+      "value": 17,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of bird",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    },
+    {
+      "id": "Q21528692",
+      "name": "11.22.63",
+      "value": 8,
+      "metric": "Number of Episodes",
+      "description": "2016 American television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q1636903",
+      "name": "Ivysaur",
+      "value": 2,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q847571",
+      "name": "Bulbasaur",
+      "value": 1,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    }
+  ]
+}
