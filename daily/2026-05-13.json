@@ -1,0 +1,56 @@
+{
+  "date": "2026-05-13",
+  "number": 46,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q26842",
+      "name": "silverfish",
+      "value": 2,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of insect",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    },
+    {
+      "id": "Q2905047",
+      "name": "sorghum beer",
+      "value": 3.3,
+      "metric": "Alcohol by Volume",
+      "description": "beer originating in sub-Sahara Africa",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q1128810",
+      "name": "Private Crimes",
+      "value": 1,
+      "metric": "Number of Seasons",
+      "description": "television program",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q737413",
+      "name": "Greater Horseshoe Bat",
+      "value": 3,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    },
+    {
+      "id": "Q88759629",
+      "name": "Unorthodox",
+      "value": 4,
+      "metric": "Number of Episodes",
+      "description": "2020 German television miniseries",
+      "prefix": "",
+      "suffix": " episodes"
+    }
+  ]
+}
