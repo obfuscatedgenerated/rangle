@@ -1,56 +1,56 @@
 {
   "date": "2026-05-13",
   "number": 46,
-  "difficulty": "Medium",
+  "difficulty": "Hard",
   "neighbourhood": "small",
   "puzzle": [
     {
-      "id": "Q26842",
-      "name": "silverfish",
-      "value": 2,
-      "metric": "Life Expectancy / Maximum Lifespan",
-      "description": "species of insect",
-      "prefix": "",
-      "suffix": " years",
-      "unit_hint": "in years"
-    },
-    {
-      "id": "Q2905047",
-      "name": "sorghum beer",
-      "value": 3.3,
+      "id": "Q1035257",
+      "name": "Cara Pils",
+      "value": 4.4,
       "metric": "Alcohol by Volume",
-      "description": "beer originating in sub-Sahara Africa",
+      "description": "store brand pilsner from Colruyt Group",
       "prefix": "",
       "suffix": "%",
       "unit_hint": "by approx. percent"
     },
     {
-      "id": "Q1128810",
-      "name": "Private Crimes",
-      "value": 1,
+      "id": "Q16245244",
+      "name": "B430",
+      "value": 3,
       "metric": "Number of Seasons",
-      "description": "television program",
+      "description": "television series",
       "prefix": "",
       "suffix": " seasons"
     },
     {
-      "id": "Q737413",
-      "name": "Greater Horseshoe Bat",
-      "value": 3,
+      "id": "Q2301866",
+      "name": "Amstel Light",
+      "value": 3.5,
+      "metric": "Alcohol by Volume",
+      "description": "beer",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q3315551",
+      "name": "Yellow-striped Brush Finch",
+      "value": 4,
       "metric": "Life Expectancy / Maximum Lifespan",
-      "description": "species of mammal",
+      "description": "small little sparrow",
       "prefix": "",
       "suffix": " years",
       "unit_hint": "in years"
     },
     {
-      "id": "Q88759629",
-      "name": "Unorthodox",
-      "value": 4,
-      "metric": "Number of Episodes",
-      "description": "2020 German television miniseries",
+      "id": "Q17014542",
+      "name": "Move It",
+      "value": 5,
+      "metric": "Number of Seasons",
+      "description": "television series",
       "prefix": "",
-      "suffix": " episodes"
+      "suffix": " seasons"
     }
   ]
 }
