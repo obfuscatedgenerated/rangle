@@ -1,0 +1,57 @@
+{
+  "date": "2026-05-14",
+  "number": 47,
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q48814715",
+      "name": "Ingenuity",
+      "value": 36,
+      "metric": "Top Speed",
+      "description": "decommissioned NASA rotorcraft on the Mars 2020 mission",
+      "prefix": "",
+      "suffix": " km/h",
+      "unit_hint": "in km/h"
+    },
+    {
+      "id": "Q688605",
+      "name": "Flyer I",
+      "value": 48,
+      "metric": "Top Speed",
+      "description": "heavier-than-air powered aircraft, designed and built by the Wright Brothers",
+      "prefix": "",
+      "suffix": " km/h",
+      "unit_hint": "in km/h"
+    },
+    {
+      "id": "Q373536",
+      "name": "Jonathan Livingston Seagull",
+      "value": 25,
+      "metric": "Number of Pages",
+      "description": "story by Richard Bach",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q81150",
+      "name": "Uvs Lake",
+      "value": 20,
+      "metric": "Depth",
+      "description": "salt lake",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q19253",
+      "name": "Lake Peipus",
+      "value": 18,
+      "metric": "Depth",
+      "description": "lake in Estonia and Russia, including Lake Pihkva",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
