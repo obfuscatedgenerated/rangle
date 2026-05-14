@@ -1,0 +1,54 @@
+{
+  "date": "2026-05-15",
+  "number": 48,
+  "difficulty": "Easy",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q845294",
+      "name": "Squirtle",
+      "value": 7,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q463999",
+      "name": "The Cosby Show",
+      "value": 8,
+      "metric": "Number of Seasons",
+      "description": "American sitcom",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q36101",
+      "name": "koala",
+      "value": 10,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "arboreal herbivorous marsupial native to Australia",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    },
+    {
+      "id": "Q844940",
+      "name": "Charizard",
+      "value": 6,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q1357944",
+      "name": "The Wild Thornberrys",
+      "value": 5,
+      "metric": "Number of Seasons",
+      "description": "American animated series",
+      "prefix": "",
+      "suffix": " seasons"
+    }
+  ]
+}
