@@ -41,15 +41,15 @@
       "prefix": "",
       "suffix": " seasons"
     },
-    {
-      "id": "Q14344806",
-      "name": "Applause",
-      "value": 14,
-      "metric": "Tempo",
-      "description": "2013 single by Lady Gaga",
+     {
+      "id": "Q36101",
+      "name": "koala",
+      "value": 10,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "arboreal herbivorous marsupial native to Australia",
       "prefix": "",
-      "suffix": " BPM",
-      "unit_hint": "beats per minute"
+      "suffix": " years",
+      "unit_hint": "in years"
     }
   ]
 }
