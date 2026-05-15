@@ -1,56 +1,57 @@
 {
   "date": "2026-05-16",
   "number": 49,
-  "difficulty": "Medium",
-  "neighbourhood": "small",
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
   "puzzle": [
     {
-      "id": "Q2905047",
-      "name": "sorghum beer",
-      "value": 3.3,
-      "metric": "Alcohol by Volume",
-      "description": "beer originating in sub-Sahara Africa",
+      "id": "Q332628",
+      "name": "Lake Nyos",
+      "value": 210,
+      "metric": "Depth",
+      "description": "crater lake in the Northwest Region of Cameroon",
       "prefix": "",
-      "suffix": "%",
-      "unit_hint": "by approx. percent"
+      "suffix": " m",
+      "unit_hint": "in metres"
     },
     {
-      "id": "Q192056",
-      "name": "adder",
-      "value": 10,
-      "metric": "Life Expectancy / Maximum Lifespan",
-      "description": "species of snake belonging to the viper family (Viperidae)",
+      "id": "Q335277",
+      "name": "Pont Neuf",
+      "value": 238,
+      "metric": "Length",
+      "description": "bridge across the Seine in Paris",
       "prefix": "",
-      "suffix": " years",
-      "unit_hint": "in years"
+      "suffix": " m",
+      "unit_hint": "in metres"
     },
     {
-      "id": "Q887730",
-      "name": "Newcastle Brown Ale",
-      "value": 4.7,
-      "metric": "Alcohol by Volume",
-      "description": "brown ale, originally produced in Newcastle upon Tyne, but now brewed by Heineken at the Zoeterwoude Brewery in the Netherlands",
+      "id": "Q156715",
+      "name": "Königssee",
+      "value": 190,
+      "metric": "Depth",
+      "description": "lake in Schönau am Königsee, Bavaria, Germany",
       "prefix": "",
-      "suffix": "%",
-      "unit_hint": "by approx. percent"
+      "suffix": " m",
+      "unit_hint": "in metres"
     },
     {
-      "id": "Q1128810",
-      "name": "Private Crimes",
-      "value": 1,
-      "metric": "Number of Seasons",
-      "description": "television program",
+      "id": "Q202531",
+      "name": "Deception Point",
+      "value": 372,
+      "metric": "Number of Pages",
+      "description": "2001 novel by Dan Brown",
       "prefix": "",
-      "suffix": " seasons"
+      "suffix": " pages"
     },
     {
-      "id": "Q67616963",
-      "name": "Archibald's Next Big Thing",
-      "value": 2,
-      "metric": "Number of Seasons",
-      "description": "2019 American comedy animated web television series",
+      "id": "Q153370",
+      "name": "Tirpitz",
+      "value": 251,
+      "metric": "Length",
+      "description": "1939 Bismarck-class battleship",
       "prefix": "",
-      "suffix": " seasons"
+      "suffix": " m",
+      "unit_hint": "in metres"
     }
   ]
 }
