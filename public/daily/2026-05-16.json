@@ -1,0 +1,56 @@
+{
+  "date": "2026-05-16",
+  "number": 49,
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q152917",
+      "name": "Lamborghini Gallardo",
+      "value": 320,
+      "metric": "Top Speed",
+      "description": "car model",
+      "prefix": "",
+      "suffix": " km/h",
+      "unit_hint": "in km/h"
+    },
+    {
+      "id": "Q457289",
+      "name": "Siddhartha",
+      "value": 152,
+      "metric": "Number of Pages",
+      "description": "novel by Hermann Hesse",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q486066",
+      "name": "Yakovlev SJ-100",
+      "value": 54,
+      "metric": "Wingspan",
+      "description": "twin-engine regional jet",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q107790",
+      "name": "The Green Book",
+      "value": 110,
+      "metric": "Number of Pages",
+      "description": "لا اله الا الله",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q217964",
+      "name": "LZ 129 Hindenburg",
+      "value": 135,
+      "metric": "Top Speed",
+      "description": "German airship",
+      "prefix": "",
+      "suffix": " km/h",
+      "unit_hint": "in km/h"
+    }
+  ]
+}
