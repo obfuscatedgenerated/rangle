@@ -1,0 +1,54 @@
+{
+  "date": "2026-04-26",
+  "number": 29,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q182059",
+      "name": "Kumasi",
+      "value": 3903480,
+      "metric": "Population",
+      "description": "capital city of Ashanti Region",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q183584",
+      "name": "Lanzhou",
+      "value": 4359446,
+      "metric": "Population",
+      "description": "prefecture-level city in Gansu, China",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q25226",
+      "name": "Cam Ranh International Airport",
+      "value": 8300000,
+      "metric": "Number of Passengers",
+      "description": "Airport that serves Nha Trang, Vietnam",
+      "prefix": "",
+      "suffix": " passengers",
+      "unit_hint": "annual"
+    },
+    {
+      "id": "Q37285",
+      "name": "2006 FIFA World Cup",
+      "value": 3359439,
+      "metric": "Event Attendance",
+      "description": "18th FIFA World Cup, held in Germany",
+      "prefix": "",
+      "suffix": " attendees"
+    },
+    {
+      "id": "Q176883",
+      "name": "2010 FIFA World Cup",
+      "value": 3178856,
+      "metric": "Event Attendance",
+      "description": "19th FIFA World Cup, held in South Africa",
+      "prefix": "",
+      "suffix": " attendees"
+    }
+  ]
+}

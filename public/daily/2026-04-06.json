@@ -1,0 +1,56 @@
+{
+  "date": "2026-04-06",
+  "number": 9,
+  "difficulty": "Easy",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q880",
+      "name": "platinum",
+      "value": 1557,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Pt and atomic number 78",
+      "prefix": "",
+      "suffix": ""
+    },
+    {
+      "id": "Q5505",
+      "name": "Lake Victoria",
+      "value": 83,
+      "metric": "Depth",
+      "description": "lake in east-central Africa",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q23883",
+      "name": "Dead Sea",
+      "value": 360,
+      "metric": "Depth",
+      "description": "lake with no outflow (sea) in Western Asia",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q871",
+      "name": "arsenic",
+      "value": 1300,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol As and atomic number 33",
+      "prefix": "",
+      "suffix": ""
+    },
+    {
+      "id": "Q703",
+      "name": "potassium",
+      "value": 766,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol K and atomic number 19",
+      "prefix": "",
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
+    }
+  ]
+}

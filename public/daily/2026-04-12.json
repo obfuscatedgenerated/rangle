@@ -1,0 +1,54 @@
+{
+  "date": "2026-04-12",
+  "number": 15,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q13300",
+      "name": "Nahuatl",
+      "value": 1925620,
+      "metric": "Native Speakers",
+      "description": "language of the Nahuan branch of the Uto-Aztecan language family",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q34014",
+      "name": "Swazi",
+      "value": 2034200,
+      "metric": "Native Speakers",
+      "description": "language of the Swazi people",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q20927",
+      "name": "Daegu",
+      "value": 2444412,
+      "metric": "Population",
+      "description": "Metropolitan city in South Korea",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q14799",
+      "name": "Lenovo",
+      "value": 13367000,
+      "metric": "Market Capitalisation",
+      "description": "Chinese multinational technology company established in 1984",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q40236",
+      "name": "Manaus",
+      "value": 2303732,
+      "metric": "Population",
+      "description": "municipality of Amazonas state, Brazil",
+      "prefix": "",
+      "suffix": " people"
+    }
+  ]
+}

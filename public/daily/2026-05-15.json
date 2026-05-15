@@ -1,0 +1,55 @@
+{
+  "date": "2026-05-16",
+  "number": 49,
+  "difficulty": "Easy",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q25851",
+      "name": "European Rabbit",
+      "value": 30,
+      "metric": "Gestation Period",
+      "description": "species of lagomorphs (Lagomorpha)",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q19363670",
+      "name": "The Lion Guard",
+      "value": 3,
+      "metric": "Number of Seasons",
+      "description": "2015 American animated television series",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q9351",
+      "name": "Pikachu",
+      "value": 25,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species, mascot of the Pokémon franchise",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q1214882",
+      "name": "The Mummy",
+      "value": 2,
+      "metric": "Number of Seasons",
+      "description": "American animated television series",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+     {
+      "id": "Q36101",
+      "name": "koala",
+      "value": 10,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "arboreal herbivorous marsupial native to Australia",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    }
+  ]
+}
