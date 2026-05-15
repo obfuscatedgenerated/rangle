@@ -1,56 +1,56 @@
 {
   "date": "2026-05-16",
   "number": 49,
-  "difficulty": "Hard",
-  "neighbourhood": "medium",
+  "difficulty": "Medium",
+  "neighbourhood": "small",
   "puzzle": [
     {
-      "id": "Q152917",
-      "name": "Lamborghini Gallardo",
-      "value": 320,
-      "metric": "Top Speed",
-      "description": "car model",
+      "id": "Q2905047",
+      "name": "sorghum beer",
+      "value": 3.3,
+      "metric": "Alcohol by Volume",
+      "description": "beer originating in sub-Sahara Africa",
       "prefix": "",
-      "suffix": " km/h",
-      "unit_hint": "in km/h"
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
     },
     {
-      "id": "Q457289",
-      "name": "Siddhartha",
-      "value": 152,
-      "metric": "Number of Pages",
-      "description": "novel by Hermann Hesse",
+      "id": "Q192056",
+      "name": "adder",
+      "value": 10,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of snake belonging to the viper family (Viperidae)",
       "prefix": "",
-      "suffix": " pages"
+      "suffix": " years",
+      "unit_hint": "in years"
     },
     {
-      "id": "Q486066",
-      "name": "Yakovlev SJ-100",
-      "value": 54,
-      "metric": "Wingspan",
-      "description": "twin-engine regional jet",
+      "id": "Q887730",
+      "name": "Newcastle Brown Ale",
+      "value": 4.7,
+      "metric": "Alcohol by Volume",
+      "description": "brown ale, originally produced in Newcastle upon Tyne, but now brewed by Heineken at the Zoeterwoude Brewery in the Netherlands",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
     },
     {
-      "id": "Q107790",
-      "name": "The Green Book",
-      "value": 110,
-      "metric": "Number of Pages",
-      "description": "لا اله الا الله",
+      "id": "Q1128810",
+      "name": "Private Crimes",
+      "value": 1,
+      "metric": "Number of Seasons",
+      "description": "television program",
       "prefix": "",
-      "suffix": " pages"
+      "suffix": " seasons"
     },
     {
-      "id": "Q217964",
-      "name": "LZ 129 Hindenburg",
-      "value": 135,
-      "metric": "Top Speed",
-      "description": "German airship",
+      "id": "Q67616963",
+      "name": "Archibald's Next Big Thing",
+      "value": 2,
+      "metric": "Number of Seasons",
+      "description": "2019 American comedy animated web television series",
       "prefix": "",
-      "suffix": " km/h",
-      "unit_hint": "in km/h"
+      "suffix": " seasons"
     }
   ]
 }
