@@ -132,7 +132,7 @@ export const RangleStateProvider = ({children}: { children: React.ReactNode }) =
                                 setHardcore(false);
                             }
 
-                            const saved_order = today_save.current_order_ids.map((id: string) => id_to_stat[id]);
+                            const saved_order = today_save.current_order_ids.map((id: string) => id_to_stat[id]) || data.puzzle;
                             setCurrentOrder(saved_order);
 
                             const saved_previous_guesses = (today_save.previous_guess_ids || []).map((guess_ids: string[]) => guess_ids.map((id: string) => id_to_stat[id]));
