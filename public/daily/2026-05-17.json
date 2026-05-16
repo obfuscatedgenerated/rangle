@@ -1,56 +1,58 @@
 {
   "date": "2026-05-17",
   "number": 50,
-  "difficulty": "Medium",
-  "neighbourhood": "large",
+  "difficulty": "50",
+  "neighbourhood": "custom",
   "puzzle": [
     {
-      "id": "Q773330",
-      "name": "Da Nang International Airport",
-      "value": 15504650,
-      "metric": "Number of Passengers",
-      "description": "airport in Vietnam",
+      "id": "Q282159",
+      "name": "50th Academy Awards",
+      "description": "movie awards",
+      "metric": "year held",
+      "value": 1978,
       "prefix": "",
-      "suffix": " passengers",
-      "unit_hint": "annual"
-    },
-    {
-      "id": "Q20927",
-      "name": "Daegu",
-      "value": 2444412,
-      "metric": "Population",
-      "description": "Metropolitan city in South Korea",
-      "prefix": "",
-      "suffix": " people"
-    },
-    {
-      "id": "Q40738",
-      "name": "Bursa",
-      "value": 2901396,
-      "metric": "Population",
-      "description": "city in Turkey",
-      "prefix": "",
-      "suffix": " people"
-    },
-    {
-      "id": "Q109116",
-      "name": "The Great Dictator",
-      "value": 5000000,
-      "metric": "Total Box Office Revenue",
-      "description": "1940 film directed by Charlie Chaplin",
-      "prefix": "$",
       "suffix": "",
-      "unit_hint": "in dollars"
+      "unit_hint": ""
     },
     {
-      "id": "Q25226",
-      "name": "Cam Ranh International Airport",
-      "value": 8300000,
-      "metric": "Number of Passengers",
-      "description": "Airport that serves Nha Trang, Vietnam",
+      "id": "Q241482",
+      "name": "50 First Dates",
+      "description": "film by Peter Segal",
+      "metric": "year of publication",
+      "value": 2004,
       "prefix": "",
-      "suffix": " passengers",
-      "unit_hint": "annual"
+      "suffix": "",
+      "unit_hint": ""
+    },
+    {
+      "id": "Q21084467",
+      "name": "50th Parliament of the United Kingdom",
+      "description": "Parliament of the United Kingdom",
+      "metric": "year of start",
+      "value": 1987,
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": ""
+    },
+    {
+      "id": "Q2494010",
+      "name": "50th British Academy Film Awards",
+      "description": "film awards",
+      "metric": "year held",
+      "value": 1997,
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": ""
+    },
+    {
+      "id": "Q6060",
+      "name": "50 Cent",
+      "description": "American rapper",
+      "metric": "year of birth",
+      "value": 1975,
+      "prefix": "",
+      "suffix": "",
+      "unit_hint": ""
     }
   ]
 }
