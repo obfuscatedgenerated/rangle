@@ -2,56 +2,56 @@
   "date": "2026-05-18",
   "number": 51,
   "difficulty": "Medium",
-  "neighbourhood": "small",
+  "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q16930604",
-      "name": "Pills N Potions",
-      "value": 84,
-      "metric": "Tempo",
-      "description": "2014 single by Nicki Minaj",
+      "id": "Q3030",
+      "name": "Vesta",
+      "value": 385136112,
+      "metric": "Distance from Sun",
+      "description": "second largest asteroid of the main asteroid belt",
       "prefix": "",
-      "suffix": " BPM",
-      "unit_hint": "beats per minute"
+      "suffix": " km",
+      "unit_hint": "in kilometres"
     },
     {
-      "id": "Q116764603",
-      "name": "Lost",
-      "value": 105,
-      "metric": "Tempo",
-      "description": "2023 single by Linkin Park",
-      "prefix": "",
-      "suffix": " BPM",
-      "unit_hint": "beats per minute"
+      "id": "Q484442",
+      "name": "Spider-Man",
+      "value": 139000000,
+      "metric": "Production Budget",
+      "description": "2002 film directed by Sam Raimi",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q185295",
-      "name": "Aardwolf",
-      "value": 91,
-      "metric": "Gestation Period",
-      "description": "species of mammal",
+      "id": "Q11051",
+      "name": "Hindustani",
+      "value": 490100000,
+      "metric": "Native Speakers",
+      "description": "Indo-Aryan language spoken in South Asia, comprising the two normative forms of Hindi and Urdu",
       "prefix": "",
-      "suffix": " days",
-      "unit_hint": "in days"
+      "suffix": " speakers"
     },
     {
-      "id": "Q1744723",
-      "name": "Jynx",
-      "value": 124,
-      "metric": "Pokédex Number",
-      "description": "Pokémon species",
-      "prefix": "#",
-      "suffix": ""
+      "id": "Q596",
+      "name": "Ceres",
+      "value": 446653340,
+      "metric": "Distance from Sun",
+      "description": "dwarf planet in the Solar System and largest asteroid of the main asteroid belt",
+      "prefix": "",
+      "suffix": " km",
+      "unit_hint": "in kilometres"
     },
     {
-      "id": "Q144923",
-      "name": "Helarctos malayanus",
-      "value": 96,
-      "metric": "Gestation Period",
-      "description": "bear found in tropical forest habitats of Southeast Asia",
-      "prefix": "",
-      "suffix": " days",
-      "unit_hint": "in days"
+      "id": "Q102438",
+      "name": "Harry Potter and the Philosopher's Stone",
+      "value": 125000000,
+      "metric": "Production Budget",
+      "description": "2001 film directed by Chris Columbus",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     }
   ]
 }
