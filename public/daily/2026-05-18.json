@@ -1,0 +1,57 @@
+{
+  "date": "2026-05-18",
+  "number": 51,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q16930604",
+      "name": "Pills N Potions",
+      "value": 84,
+      "metric": "Tempo",
+      "description": "2014 single by Nicki Minaj",
+      "prefix": "",
+      "suffix": " BPM",
+      "unit_hint": "beats per minute"
+    },
+    {
+      "id": "Q116764603",
+      "name": "Lost",
+      "value": 105,
+      "metric": "Tempo",
+      "description": "2023 single by Linkin Park",
+      "prefix": "",
+      "suffix": " BPM",
+      "unit_hint": "beats per minute"
+    },
+    {
+      "id": "Q185295",
+      "name": "Aardwolf",
+      "value": 91,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q1744723",
+      "name": "Jynx",
+      "value": 124,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q144923",
+      "name": "Helarctos malayanus",
+      "value": 96,
+      "metric": "Gestation Period",
+      "description": "bear found in tropical forest habitats of Southeast Asia",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    }
+  ]
+}
