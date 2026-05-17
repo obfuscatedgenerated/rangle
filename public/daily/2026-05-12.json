@@ -1,0 +1,53 @@
+{
+  "date": "2026-05-12",
+  "number": 45,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q25289",
+      "name": "Cornish",
+      "value": 600,
+      "metric": "Native Speakers",
+      "description": "Brythonic Celtic language indigenous to Cornwall",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q146803",
+      "name": "Lingua Franca Nova",
+      "value": 200,
+      "metric": "Native Speakers",
+      "description": "auxiliary constructed language, originally created by C. George Boeree, and largely based on a Romance substrate partially creolized then modified by some evolutive rules of simplification",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q182950",
+      "name": "Studio Ghibli",
+      "value": 190,
+      "metric": "Number of Employees",
+      "description": "Japanese animation studio",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q43449",
+      "name": "Creative Commons",
+      "value": 147,
+      "metric": "Number of Employees",
+      "description": "non-profit-organization creating copyright licenses for the public release of creative works",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q161562",
+      "name": "California Institute of Technology",
+      "value": 2397,
+      "metric": "Student Enrollment",
+      "description": "private research university located in Pasadena, California, USA",
+      "prefix": "",
+      "suffix": " students"
+    }
+  ]
+}

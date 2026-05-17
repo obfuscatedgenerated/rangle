@@ -1,0 +1,58 @@
+{
+  "date": "2026-04-18",
+  "number": 21,
+  "difficulty": "Easy",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q1295",
+      "name": "Dortmund",
+      "value": 103,
+      "metric": "Elevation above sea level",
+      "description": "city in North Rhine-Westphalia, Germany",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q142794",
+      "name": "Neymar",
+      "value": 69,
+      "metric": "Mass / Weight",
+      "description": "Brazilian association football player",
+      "prefix": "",
+      "suffix": " kg",
+      "unit_hint": "in kilograms"
+    },
+    {
+      "id": "Q12897",
+      "name": "Pelé",
+      "value": 74,
+      "metric": "Mass / Weight",
+      "description": "Brazilian footballer (1940–2022)",
+      "prefix": "",
+      "suffix": " kg",
+      "unit_hint": "in kilograms"
+    },
+    {
+      "id": "Q37400",
+      "name": "Naypyidaw",
+      "value": 115,
+      "metric": "Elevation above sea level",
+      "description": "capital city of Myanmar",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q703",
+      "name": "potassium",
+      "value": 766,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol K and atomic number 19",
+      "prefix": "",
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
+    }
+  ]
+}

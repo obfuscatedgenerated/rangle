@@ -1,0 +1,56 @@
+{
+  "date": "2026-04-20",
+  "number": 23,
+  "difficulty": "Easy",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q23800",
+      "name": "Valletta",
+      "value": 56,
+      "metric": "Elevation above sea level",
+      "description": "capital of Malta",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q867",
+      "name": "germanium",
+      "value": 1886,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Ge and atomic number 32",
+      "prefix": "",
+      "suffix": ""
+    },
+    {
+      "id": "Q172",
+      "name": "Toronto",
+      "value": 76,
+      "metric": "Elevation above sea level",
+      "description": "capital and largest city of the province of Ontario, Canada",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q743",
+      "name": "tungsten",
+      "value": 1783,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol W and atomic number 74",
+      "prefix": "",
+      "suffix": ""
+    },
+    {
+      "id": "Q5513",
+      "name": "Lake Baikal",
+      "value": 1642,
+      "metric": "Depth",
+      "description": "freshwater rift lake in southern Siberia, Russia; the greatest mountain lake in Asia and the most voluminous freshwater lake in the world",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
