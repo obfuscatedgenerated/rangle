@@ -1,58 +1,57 @@
 {
   "date": "2026-05-19",
   "number": 52,
-  "difficulty": "Hard",
+  "difficulty": "Medium",
   "neighbourhood": "medium",
   "puzzle": [
     {
-      "id": "Q80813",
-      "name": "Jin Mao Tower",
-      "value": 421,
-      "metric": "Height",
-      "description": "landmark skyscraper in Shanghai",
-      "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
-    },
-    {
-      "id": "Q245246",
-      "name": "CITIC Plaza",
-      "value": 390,
-      "metric": "Height",
-      "description": "skyscraper in the Tianhe District of Guangzhou, Guangdong, China",
-      "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
-    },
-    {
-      "id": "Q587557",
-      "name": "USS Abraham Lincoln",
-      "value": 333,
-      "metric": "Length",
-      "description": "US Navy Nimitz-class aircraft carrier",
-      "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
-    },
-    {
-      "id": "Q5525",
-      "name": "Great Bear Lake",
-      "value": 446,
+      "id": "Q15288",
+      "name": "Lake Ladoga",
+      "value": 230,
       "metric": "Depth",
-      "description": "large glacial lake in the Northwest Territories, Canada",
+      "description": "freshwater lake in Russia and largest lake entirely in Europe",
       "prefix": "",
       "suffix": " m",
       "unit_hint": "in metres"
     },
     {
-      "id": "Q192381",
-      "name": "Oasis of the Seas",
-      "value": 360,
-      "metric": "Length",
-      "description": "Oasis-class cruise ship built in 2009",
+      "id": "Q166162",
+      "name": "Lake Onega",
+      "value": 127,
+      "metric": "Depth",
+      "description": "freshwater lake in Russia, second largest in Europe",
       "prefix": "",
       "suffix": " m",
       "unit_hint": "in metres"
+    },
+    {
+      "id": "Q1053",
+      "name": "molybdenum",
+      "value": 1778,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Mo and atomic number 42",
+      "prefix": "",
+      "suffix": ""
+    },
+    {
+      "id": "Q107674650",
+      "name": "Percy Liza",
+      "value": 86,
+      "metric": "Mass / Weight",
+      "description": "Peruvian footballer",
+      "prefix": "",
+      "suffix": " kg",
+      "unit_hint": "in kilograms"
+    },
+    {
+      "id": "Q43913",
+      "name": "Arjen Robben",
+      "value": 80,
+      "metric": "Mass / Weight",
+      "description": "Dutch association football player (born 1984)",
+      "prefix": "",
+      "suffix": " kg",
+      "unit_hint": "in kilograms"
     }
   ]
 }
