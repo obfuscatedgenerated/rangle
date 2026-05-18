@@ -2,56 +2,55 @@
   "date": "2026-05-19",
   "number": 52,
   "difficulty": "Medium",
-  "neighbourhood": "medium",
+  "neighbourhood": "small",
   "puzzle": [
     {
-      "id": "Q15288",
-      "name": "Lake Ladoga",
-      "value": 230,
-      "metric": "Depth",
-      "description": "freshwater lake in Russia and largest lake entirely in Europe",
+      "id": "Q150268",
+      "name": "David de Gea",
+      "value": 189,
+      "metric": "Height",
+      "description": "Spanish association football player",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " cm",
+      "unit_hint": "in centimeters"
     },
     {
-      "id": "Q166162",
-      "name": "Lake Onega",
-      "value": 127,
-      "metric": "Depth",
-      "description": "freshwater lake in Russia, second largest in Europe",
+      "id": "Q127367",
+      "name": "The Lord of the Rings: The Fellowship of the Ring",
+      "value": 228,
+      "metric": "Duration / Runtime",
+      "description": "2001 film by Peter Jackson",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " minutes",
+      "unit_hint": "in minutes"
     },
     {
-      "id": "Q1053",
-      "name": "molybdenum",
-      "value": 1778,
-      "metric": "Year of Discovery",
-      "description": "chemical element with symbol Mo and atomic number 42",
+      "id": "Q978283",
+      "name": "Extreme Makeover: Home Edition",
+      "value": 200,
+      "metric": "Number of Episodes",
+      "description": "television program",
       "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q2090128",
+      "name": "Raikou",
+      "value": 243,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
       "suffix": ""
     },
     {
-      "id": "Q107674650",
-      "name": "Percy Liza",
-      "value": 86,
-      "metric": "Mass / Weight",
-      "description": "Peruvian footballer",
+      "id": "Q17499",
+      "name": "Cesc Fàbregas",
+      "value": 179,
+      "metric": "Height",
+      "description": "Spanish professional footballer player and manager",
       "prefix": "",
-      "suffix": " kg",
-      "unit_hint": "in kilograms"
-    },
-    {
-      "id": "Q43913",
-      "name": "Arjen Robben",
-      "value": 80,
-      "metric": "Mass / Weight",
-      "description": "Dutch association football player (born 1984)",
-      "prefix": "",
-      "suffix": " kg",
-      "unit_hint": "in kilograms"
+      "suffix": " cm",
+      "unit_hint": "in centimeters"
     }
   ]
 }
