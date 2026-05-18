@@ -1,0 +1,58 @@
+{
+  "date": "2026-05-19",
+  "number": 52,
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q80813",
+      "name": "Jin Mao Tower",
+      "value": 421,
+      "metric": "Height",
+      "description": "landmark skyscraper in Shanghai",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q245246",
+      "name": "CITIC Plaza",
+      "value": 390,
+      "metric": "Height",
+      "description": "skyscraper in the Tianhe District of Guangzhou, Guangdong, China",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q587557",
+      "name": "USS Abraham Lincoln",
+      "value": 333,
+      "metric": "Length",
+      "description": "US Navy Nimitz-class aircraft carrier",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q5525",
+      "name": "Great Bear Lake",
+      "value": 446,
+      "metric": "Depth",
+      "description": "large glacial lake in the Northwest Territories, Canada",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q192381",
+      "name": "Oasis of the Seas",
+      "value": 360,
+      "metric": "Length",
+      "description": "Oasis-class cruise ship built in 2009",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
