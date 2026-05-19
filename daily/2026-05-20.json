@@ -1,0 +1,55 @@
+{
+  "date": "2026-05-20",
+  "number": 53,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q280154",
+      "name": "All That",
+      "value": 210,
+      "metric": "Number of Episodes",
+      "description": "American sketch comedy television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q944698",
+      "name": "Last Man Standing",
+      "value": 194,
+      "metric": "Number of Episodes",
+      "description": "American sitcom created by Jack Burditt",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q127367",
+      "name": "The Lord of the Rings: The Fellowship of the Ring",
+      "value": 228,
+      "metric": "Duration / Runtime",
+      "description": "2001 film by Peter Jackson",
+      "prefix": "",
+      "suffix": " minutes",
+      "unit_hint": "in minutes"
+    },
+    {
+      "id": "Q2345747",
+      "name": "Blaziken",
+      "value": 257,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q663412",
+      "name": "Javan rusa",
+      "value": 240,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    }
+  ]
+}
