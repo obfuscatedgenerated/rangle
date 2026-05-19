@@ -1,55 +1,56 @@
 {
   "date": "2026-05-20",
   "number": 53,
-  "difficulty": "Medium",
-  "neighbourhood": "small",
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
   "puzzle": [
     {
-      "id": "Q280154",
-      "name": "All That",
-      "value": 210,
-      "metric": "Number of Episodes",
-      "description": "American sketch comedy television series",
+      "id": "Q190192",
+      "name": "Dune",
+      "value": 412,
+      "metric": "Number of Pages",
+      "description": "1965 science fiction novel by Frank Herbert",
       "prefix": "",
-      "suffix": " episodes"
+      "suffix": " pages"
     },
     {
-      "id": "Q944698",
-      "name": "Last Man Standing",
-      "value": 194,
-      "metric": "Number of Episodes",
-      "description": "American sitcom created by Jack Burditt",
+      "id": "Q202531",
+      "name": "Deception Point",
+      "value": 372,
+      "metric": "Number of Pages",
+      "description": "2001 novel by Dan Brown",
       "prefix": "",
-      "suffix": " episodes"
+      "suffix": " pages"
     },
     {
-      "id": "Q127367",
-      "name": "The Lord of the Rings: The Fellowship of the Ring",
-      "value": 228,
-      "metric": "Duration / Runtime",
-      "description": "2001 film by Peter Jackson",
+      "id": "Q18536",
+      "name": "The Shard",
+      "value": 306,
+      "metric": "Height",
+      "description": "skyscraper in London, England",
       "prefix": "",
-      "suffix": " minutes",
-      "unit_hint": "in minutes"
+      "suffix": " m",
+      "unit_hint": "in metres"
     },
     {
-      "id": "Q2345747",
-      "name": "Blaziken",
-      "value": 257,
-      "metric": "Pokédex Number",
-      "description": "Pokémon species",
-      "prefix": "#",
-      "suffix": ""
+      "id": "Q217109",
+      "name": "Teletskoe",
+      "value": 325,
+      "metric": "Depth",
+      "description": "lake in Altai Republic, Russia",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
     },
     {
-      "id": "Q663412",
-      "name": "Javan rusa",
-      "value": 240,
-      "metric": "Gestation Period",
-      "description": "species of mammal",
+      "id": "Q217727",
+      "name": "875 North Michigan Avenue",
+      "value": 344,
+      "metric": "Height",
+      "description": "skyscraper in Chicago, Illinois, United States",
       "prefix": "",
-      "suffix": " days",
-      "unit_hint": "in days"
+      "suffix": " m",
+      "unit_hint": "in metres"
     }
   ]
 }
