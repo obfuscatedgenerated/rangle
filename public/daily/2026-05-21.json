@@ -2,52 +2,57 @@
   "date": "2026-05-21",
   "number": 54,
   "difficulty": "Medium",
-  "neighbourhood": "large",
+  "neighbourhood": "small",
   "puzzle": [
     {
-      "id": "Q146803",
-      "name": "Lingua Franca Nova",
-      "value": 200,
-      "metric": "Native Speakers",
-      "description": "auxiliary constructed language, originally created by C. George Boeree, and largely based on a Romance substrate partially creolized then modified by some evolutive rules of simplification",
+      "id": "Q15077003",
+      "name": "Unconditionally",
+      "value": 129,
+      "metric": "Tempo",
+      "description": "Katy Perry song",
       "prefix": "",
-      "suffix": " speakers"
+      "suffix": " BPM",
+      "unit_hint": "beats per minute"
     },
     {
-      "id": "Q25289",
-      "name": "Cornish",
-      "value": 600,
-      "metric": "Native Speakers",
-      "description": "Brythonic Celtic language indigenous to Cornwall",
+      "id": "Q743963",
+      "name": "Peacock",
+      "value": 138,
+      "metric": "Tempo",
+      "description": "song by Katy Perry",
       "prefix": "",
-      "suffix": " speakers"
+      "suffix": " BPM",
+      "unit_hint": "beats per minute"
     },
     {
-      "id": "Q182950",
-      "name": "Studio Ghibli",
-      "value": 190,
-      "metric": "Number of Employees",
-      "description": "Japanese animation studio",
+      "id": "Q168327",
+      "name": "Capra ibex",
+      "value": 167,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
       "prefix": "",
-      "suffix": " employees"
+      "suffix": " days",
+      "unit_hint": "in days"
     },
     {
-      "id": "Q161562",
-      "name": "California Institute of Technology",
-      "value": 2397,
-      "metric": "Student Enrollment",
-      "description": "private research university located in Pasadena, California, USA",
-      "prefix": "",
-      "suffix": " students"
-    },
-    {
-      "id": "Q43449",
-      "name": "Creative Commons",
+      "id": "Q161687",
+      "name": "Harry Potter and the Half-Blood Prince",
       "value": 147,
-      "metric": "Number of Employees",
-      "description": "non-profit-organization creating copyright licenses for the public release of creative works",
+      "metric": "Duration / Runtime",
+      "description": "2009 film directed by David Yates",
       "prefix": "",
-      "suffix": " employees"
+      "suffix": " minutes",
+      "unit_hint": "in minutes"
+    },
+    {
+      "id": "Q322141",
+      "name": "Barbary sheep",
+      "value": 157,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
     }
   ]
 }
