@@ -1,55 +1,53 @@
 {
   "date": "2026-05-21",
   "number": 54,
-  "difficulty": "Hard",
-  "neighbourhood": "medium",
+  "difficulty": "Medium",
+  "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q107541",
-      "name": "9 Metis",
-      "value": 1848,
-      "metric": "Year of Discovery",
-      "description": "main-belt asteroid",
+      "id": "Q146803",
+      "name": "Lingua Franca Nova",
+      "value": 200,
+      "metric": "Native Speakers",
+      "description": "auxiliary constructed language, originally created by C. George Boeree, and largely based on a Romance substrate partially creolized then modified by some evolutive rules of simplification",
       "prefix": "",
-      "suffix": ""
+      "suffix": " speakers"
     },
     {
-      "id": "Q190192",
-      "name": "Dune",
-      "value": 412,
-      "metric": "Number of Pages",
-      "description": "1965 science fiction novel by Frank Herbert",
+      "id": "Q25289",
+      "name": "Cornish",
+      "value": 600,
+      "metric": "Native Speakers",
+      "description": "Brythonic Celtic language indigenous to Cornwall",
       "prefix": "",
-      "suffix": " pages"
+      "suffix": " speakers"
     },
     {
-      "id": "Q11678",
-      "name": "The Hunger Games",
-      "value": 374,
-      "metric": "Number of Pages",
-      "description": "2008 novel by Suzanne Collins",
+      "id": "Q182950",
+      "name": "Studio Ghibli",
+      "value": 190,
+      "metric": "Number of Employees",
+      "description": "Japanese animation studio",
       "prefix": "",
-      "suffix": " pages"
+      "suffix": " employees"
     },
     {
-      "id": "Q189764",
-      "name": "Pont du Gard",
-      "value": 275,
-      "metric": "Length",
-      "description": "ancient Roman aqueduct bridge that crosses the Gardon River in Vers-Pont-du-Gard, France",
+      "id": "Q161562",
+      "name": "California Institute of Technology",
+      "value": 2397,
+      "metric": "Student Enrollment",
+      "description": "private research university located in Pasadena, California, USA",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " students"
     },
     {
-      "id": "Q335277",
-      "name": "Pont Neuf",
-      "value": 238,
-      "metric": "Length",
-      "description": "bridge across the Seine in Paris",
+      "id": "Q43449",
+      "name": "Creative Commons",
+      "value": 147,
+      "metric": "Number of Employees",
+      "description": "non-profit-organization creating copyright licenses for the public release of creative works",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " employees"
     }
   ]
 }
