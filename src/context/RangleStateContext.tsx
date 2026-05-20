@@ -116,9 +116,24 @@ export const RangleStateProvider = ({children}: { children: React.ReactNode }) =
 
                     const saved_state = localStorage.getItem("rangle_state_v1");
                     if (saved_state) {
-                        const parsed_state = JSON.parse(saved_state);
+                        const parsed_state = JSON.parse(saved_state) as SaveState;
                         const today_save = parsed_state?.[data.date];
+
                         if (today_save) {
+                            // edge case fix: the date was wrong on the 15th may 2026 which stored data into the 16th. check if it broke!
+                            // just checking against an id that was in the 15th
+                            if (data.date === "2026-05-16" && today_save.current_order_ids.includes("Q25851")) {
+                                const ignore = confirm("Looks like your save data for today is broken. Do you want to ignore the saved state to try load the puzzle?");
+                                if (ignore) {
+                                    // dont delete anything, just dont load it into the state
+                                    setCurrentOrder(data.puzzle);
+                                    if (on_loaded) {
+                                        on_loaded();
+                                    }
+                                    return;
+                                }
+                            }
+
                             // resolve ids to full order object
                             // TODO: should current order just store ids in general?
                             const id_to_stat: Record<string, PuzzleStat> = {};
