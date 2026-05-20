@@ -1,0 +1,56 @@
+{
+  "date": "2026-05-20",
+  "number": 53,
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q190192",
+      "name": "Dune",
+      "value": 412,
+      "metric": "Number of Pages",
+      "description": "1965 science fiction novel by Frank Herbert",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q202531",
+      "name": "Deception Point",
+      "value": 372,
+      "metric": "Number of Pages",
+      "description": "2001 novel by Dan Brown",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q18536",
+      "name": "The Shard",
+      "value": 306,
+      "metric": "Height",
+      "description": "skyscraper in London, England",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q217109",
+      "name": "Teletskoe",
+      "value": 325,
+      "metric": "Depth",
+      "description": "lake in Altai Republic, Russia",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q217727",
+      "name": "875 North Michigan Avenue",
+      "value": 344,
+      "metric": "Height",
+      "description": "skyscraper in Chicago, Illinois, United States",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "date": "2026-04-22",
+  "number": 25,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q40993",
+      "name": "Porsche",
+      "value": 36996,
+      "metric": "Number of Employees",
+      "description": "German automobile manufacturer specializing in high-performance sports cars, SUVs and sedans, owned by Volkswagen AG",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q49088",
+      "name": "Columbia University",
+      "value": 33413,
+      "metric": "Student Enrollment",
+      "description": "private university in New York City, New York, US",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q900492",
+      "name": "Cà Mau Airport",
+      "value": 30698,
+      "metric": "Number of Passengers",
+      "description": "airport in Vietnam",
+      "prefix": "",
+      "suffix": " passengers",
+      "unit_hint": "annual"
+    },
+    {
+      "id": "Q13199",
+      "name": "Romansh",
+      "value": 40039,
+      "metric": "Native Speakers",
+      "description": "Romance language spoken in the Swiss canton of Grisons (Graubünden)",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q151510",
+      "name": "Heidelberg University",
+      "value": 28413,
+      "metric": "Student Enrollment",
+      "description": "public research university in Heidelberg, Baden-Württemberg, Germany",
+      "prefix": "",
+      "suffix": " students"
+    }
+  ]
+}

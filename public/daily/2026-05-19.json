@@ -1,0 +1,56 @@
+{
+  "date": "2026-05-19",
+  "number": 52,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q150268",
+      "name": "David de Gea",
+      "value": 189,
+      "metric": "Height",
+      "description": "Spanish association football player",
+      "prefix": "",
+      "suffix": " cm",
+      "unit_hint": "in centimeters"
+    },
+    {
+      "id": "Q127367",
+      "name": "The Lord of the Rings: The Fellowship of the Ring",
+      "value": 228,
+      "metric": "Duration / Runtime",
+      "description": "2001 film by Peter Jackson",
+      "prefix": "",
+      "suffix": " minutes",
+      "unit_hint": "in minutes"
+    },
+    {
+      "id": "Q978283",
+      "name": "Extreme Makeover: Home Edition",
+      "value": 200,
+      "metric": "Number of Episodes",
+      "description": "television program",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q2090128",
+      "name": "Raikou",
+      "value": 243,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q17499",
+      "name": "Cesc Fàbregas",
+      "value": 179,
+      "metric": "Height",
+      "description": "Spanish professional footballer player and manager",
+      "prefix": "",
+      "suffix": " cm",
+      "unit_hint": "in centimeters"
+    }
+  ]
+}
