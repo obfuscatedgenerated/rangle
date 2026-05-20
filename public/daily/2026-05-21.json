@@ -5,26 +5,6 @@
   "neighbourhood": "small",
   "puzzle": [
     {
-      "id": "Q15077003",
-      "name": "Unconditionally",
-      "value": 129,
-      "metric": "Tempo",
-      "description": "Katy Perry song",
-      "prefix": "",
-      "suffix": " BPM",
-      "unit_hint": "beats per minute"
-    },
-    {
-      "id": "Q743963",
-      "name": "Peacock",
-      "value": 138,
-      "metric": "Tempo",
-      "description": "song by Katy Perry",
-      "prefix": "",
-      "suffix": " BPM",
-      "unit_hint": "beats per minute"
-    },
-    {
       "id": "Q168327",
       "name": "Capra ibex",
       "value": 167,
@@ -35,24 +15,42 @@
       "unit_hint": "in days"
     },
     {
-      "id": "Q161687",
-      "name": "Harry Potter and the Half-Blood Prince",
-      "value": 147,
+      "id": "Q2037718",
+      "name": "Unown",
+      "value": 201,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q41483",
+      "name": "The Good, the Bad and the Ugly",
+      "value": 177,
       "metric": "Duration / Runtime",
-      "description": "2009 film directed by David Yates",
+      "description": "1966 film directed by Sergio Leone",
       "prefix": "",
       "suffix": " minutes",
       "unit_hint": "in minutes"
     },
     {
-      "id": "Q322141",
-      "name": "Barbary sheep",
-      "value": 157,
+      "id": "Q190508",
+      "name": "Siberian musk deer",
+      "value": 190,
       "metric": "Gestation Period",
       "description": "species of mammal",
       "prefix": "",
       "suffix": " days",
       "unit_hint": "in days"
+    },
+    {
+      "id": "Q2295660",
+      "name": "Quilava",
+      "value": 156,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
     }
   ]
 }
