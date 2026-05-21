@@ -1,0 +1,56 @@
+{
+  "date": "2026-05-22",
+  "number": 55,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q14799",
+      "name": "Lenovo",
+      "value": 13367000,
+      "metric": "Market Capitalisation",
+      "description": "Chinese multinational technology company established in 1984",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q109116",
+      "name": "The Great Dictator",
+      "value": 5000000,
+      "metric": "Total Box Office Revenue",
+      "description": "1940 film directed by Charlie Chaplin",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q132529",
+      "name": "1990 FIFA World Cup",
+      "value": 2516348,
+      "metric": "Event Attendance",
+      "description": "14th FIFA World Cup, held in Italy",
+      "prefix": "",
+      "suffix": " attendees"
+    },
+    {
+      "id": "Q47735",
+      "name": "2002 FIFA World Cup",
+      "value": 2705197,
+      "metric": "Event Attendance",
+      "description": "17th FIFA World Cup, held in South Korea and Japan",
+      "prefix": "",
+      "suffix": " attendees"
+    },
+    {
+      "id": "Q20751338",
+      "name": "Rock Dog",
+      "value": 24148488,
+      "metric": "Total Box Office Revenue",
+      "description": "2016 animated film directed by Ash Brannon",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    }
+  ]
+}
