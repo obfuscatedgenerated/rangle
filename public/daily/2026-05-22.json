@@ -1,53 +1,55 @@
 {
   "date": "2026-05-22",
   "number": 55,
-  "difficulty": "Medium",
+  "difficulty": "Hard",
   "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q14799",
-      "name": "Lenovo",
-      "value": 13367000,
+      "id": "Q25136484",
+      "name": "It",
+      "value": 701842551,
+      "metric": "Total Box Office Revenue",
+      "description": "2017 film directed by Andy Muschietti",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q1201853",
+      "name": "Thor: The Dark World",
+      "value": 644783140,
+      "metric": "Total Box Office Revenue",
+      "description": "2013 film directed by Alan Taylor",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q204296",
+      "name": "Air New Zealand",
+      "value": 1790936544,
       "metric": "Market Capitalisation",
-      "description": "Chinese multinational technology company established in 1984",
+      "description": "National airline of New Zealand",
       "prefix": "$",
       "suffix": "",
       "unit_hint": "in dollars"
     },
     {
-      "id": "Q109116",
-      "name": "The Great Dictator",
-      "value": 5000000,
-      "metric": "Total Box Office Revenue",
-      "description": "1940 film directed by Charlie Chaplin",
-      "prefix": "$",
-      "suffix": "",
-      "unit_hint": "in dollars"
-    },
-    {
-      "id": "Q132529",
-      "name": "1990 FIFA World Cup",
-      "value": 2516348,
-      "metric": "Event Attendance",
-      "description": "14th FIFA World Cup, held in Italy",
+      "id": "Q136430",
+      "name": "1143 Odysseus",
+      "value": 855550223,
+      "metric": "Distance from Sun",
+      "description": "asteroid",
       "prefix": "",
-      "suffix": " attendees"
+      "suffix": " km",
+      "unit_hint": "in kilometres"
     },
     {
-      "id": "Q47735",
-      "name": "2002 FIFA World Cup",
-      "value": 2705197,
-      "metric": "Event Attendance",
-      "description": "17th FIFA World Cup, held in South Korea and Japan",
-      "prefix": "",
-      "suffix": " attendees"
-    },
-    {
-      "id": "Q20751338",
-      "name": "Rock Dog",
-      "value": 24148488,
-      "metric": "Total Box Office Revenue",
-      "description": "2016 animated film directed by Ash Brannon",
+      "id": "Q137910",
+      "name": "thyssenkrupp AG",
+      "value": 2166000000,
+      "metric": "Market Capitalisation",
+      "description": "German multinational conglomerate corporation",
       "prefix": "$",
       "suffix": "",
       "unit_hint": "in dollars"
