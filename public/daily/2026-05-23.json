@@ -1,0 +1,56 @@
+{
+  "date": "2026-05-23",
+  "number": 56,
+  "difficulty": "Easy",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q725",
+      "name": "chromium",
+      "value": 2672,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol Cr and atomic number 24",
+      "prefix": "",
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
+    },
+    {
+      "id": "Q788",
+      "name": "Arctic Ocean",
+      "value": 5550,
+      "metric": "Depth",
+      "description": "smallest, shallowest, coldest, and northernmost of the world's major oceans",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q671",
+      "name": "francium",
+      "value": 1939,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Fr and atomic number 87",
+      "prefix": "",
+      "suffix": ""
+    },
+    {
+      "id": "Q744",
+      "name": "nickel",
+      "value": 2913,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol Ni and atomic number 28",
+      "prefix": "",
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
+    },
+    {
+      "id": "Q706",
+      "name": "calcium",
+      "value": 1808,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Ca and atomic number 20",
+      "prefix": "",
+      "suffix": ""
+    }
+  ]
+}
