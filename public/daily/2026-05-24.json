@@ -5,6 +5,25 @@
   "neighbourhood": "medium",
   "puzzle": [
     {
+      "id": "Q192258",
+      "name": "Quidditch Through the Ages",
+      "value": 56,
+      "metric": "Number of Pages",
+      "description": "2001 book by J. K. Rowling",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q11260",
+      "name": "Broadway",
+      "value": 53,
+      "metric": "Length",
+      "description": "road in New York City and Westchester County, New York, United States",
+      "prefix": "",
+      "suffix": " km",
+      "unit_hint": "in kilometres"
+    },
+    {
       "id": "Q202347",
       "name": "Enterprise",
       "value": 68,
@@ -15,42 +34,24 @@
       "unit_hint": "in metric tonnes"
     },
     {
-      "id": "Q192258",
-      "name": "Quidditch Through the Ages",
-      "value": 56,
-      "metric": "Number of Pages",
-      "description": "2001 book by J. K. Rowling",
+      "id": "Q184492",
+      "name": "Mälaren",
+      "value": 64,
+      "metric": "Depth",
+      "description": "lake in Sweden",
       "prefix": "",
-      "suffix": " pages"
+      "suffix": " m",
+      "unit_hint": "in metres"
     },
     {
-      "id": "Q688605",
-      "name": "Flyer I",
-      "value": 48,
-      "metric": "Top Speed",
-      "description": "heavier-than-air powered aircraft, designed and built by the Wright Brothers",
+      "id": "Q173862",
+      "name": "Lake Nicaragua",
+      "value": 60,
+      "metric": "Depth",
+      "description": "largest lake in Central America",
       "prefix": "",
-      "suffix": " km/h",
-      "unit_hint": "in km/h"
-    },
-    {
-      "id": "Q48814715",
-      "name": "Ingenuity",
-      "value": 36,
-      "metric": "Top Speed",
-      "description": "decommissioned NASA rotorcraft on the Mars 2020 mission",
-      "prefix": "",
-      "suffix": " km/h",
-      "unit_hint": "in km/h"
-    },
-    {
-      "id": "Q373536",
-      "name": "Jonathan Livingston Seagull",
-      "value": 25,
-      "metric": "Number of Pages",
-      "description": "story by Richard Bach",
-      "prefix": "",
-      "suffix": " pages"
+      "suffix": " m",
+      "unit_hint": "in metres"
     }
   ]
 }
