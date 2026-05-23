@@ -1,0 +1,56 @@
+{
+  "date": "2026-05-24",
+  "number": 57,
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q202347",
+      "name": "Enterprise",
+      "value": 68,
+      "metric": "Mass / Weight",
+      "description": "American Space Shuttle test vehicle",
+      "prefix": "",
+      "suffix": " tonnes",
+      "unit_hint": "in metric tonnes"
+    },
+    {
+      "id": "Q192258",
+      "name": "Quidditch Through the Ages",
+      "value": 56,
+      "metric": "Number of Pages",
+      "description": "2001 book by J. K. Rowling",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q688605",
+      "name": "Flyer I",
+      "value": 48,
+      "metric": "Top Speed",
+      "description": "heavier-than-air powered aircraft, designed and built by the Wright Brothers",
+      "prefix": "",
+      "suffix": " km/h",
+      "unit_hint": "in km/h"
+    },
+    {
+      "id": "Q48814715",
+      "name": "Ingenuity",
+      "value": 36,
+      "metric": "Top Speed",
+      "description": "decommissioned NASA rotorcraft on the Mars 2020 mission",
+      "prefix": "",
+      "suffix": " km/h",
+      "unit_hint": "in km/h"
+    },
+    {
+      "id": "Q373536",
+      "name": "Jonathan Livingston Seagull",
+      "value": 25,
+      "metric": "Number of Pages",
+      "description": "story by Richard Bach",
+      "prefix": "",
+      "suffix": " pages"
+    }
+  ]
+}
