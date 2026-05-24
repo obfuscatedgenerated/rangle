@@ -1,55 +1,56 @@
 {
   "date": "2026-05-25",
   "number": 58,
-  "difficulty": "Medium",
-  "neighbourhood": "medium",
+  "difficulty": "Easy",
+  "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q1846",
-      "name": "holmium",
-      "value": 1878,
-      "metric": "Year of Discovery",
-      "description": "chemical element with symbol Ho and atomic number 67",
+      "id": "Q313",
+      "name": "Venus",
+      "value": 108942109,
+      "metric": "Distance from Sun",
+      "description": "second planet from the Solar System, tellurian and very similar to Earth",
       "prefix": "",
-      "suffix": ""
+      "suffix": " km",
+      "unit_hint": "in kilometres"
     },
     {
-      "id": "Q1100",
-      "name": "tellurium",
-      "value": 1783,
-      "metric": "Year of Discovery",
-      "description": "chemical element with symbol Te and atomic number 52",
+      "id": "Q2",
+      "name": "Earth",
+      "value": 152098232,
+      "metric": "Distance from Sun",
+      "description": "third planet from the Sun in the Solar System",
       "prefix": "",
-      "suffix": ""
+      "suffix": " km",
+      "unit_hint": "in kilometres"
     },
     {
-      "id": "Q43361",
-      "name": "Harry Potter and the Philosopher's Stone",
-      "value": 240,
-      "metric": "Number of Pages",
-      "description": "1997 novel by J. K. Rowling",
-      "prefix": "",
-      "suffix": " pages"
+      "id": "Q174555",
+      "name": "Madagascar",
+      "value": 542063846,
+      "metric": "Total Box Office Revenue",
+      "description": "2005 animated film directed by Eric Darnell and Tom McGrath",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q182719",
-      "name": "Lake Turkana",
-      "value": 109,
-      "metric": "Depth",
-      "description": "alkaline lake on the border of Ethiopia and Kenya",
+      "id": "Q256",
+      "name": "Turkish",
+      "value": 82231620,
+      "metric": "Native Speakers",
+      "description": "Oghuz Turkic language of the Turkish people",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " speakers"
     },
     {
-      "id": "Q126307",
-      "name": "Lake Van",
-      "value": 171,
-      "metric": "Depth",
-      "description": "largest lake in Turkey",
+      "id": "Q5885",
+      "name": "Tamil",
+      "value": 75000000,
+      "metric": "Native Speakers",
+      "description": "Dravidian language native to South India and Sri Lanka",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " speakers"
     }
   ]
 }
