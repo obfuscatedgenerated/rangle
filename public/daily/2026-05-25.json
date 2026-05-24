@@ -1,56 +1,57 @@
 {
   "date": "2026-05-25",
   "number": 58,
-  "difficulty": "Easy",
-  "neighbourhood": "large",
+  "difficulty": "Hard",
+  "neighbourhood": "small",
   "puzzle": [
     {
-      "id": "Q313",
-      "name": "Venus",
-      "value": 108942109,
-      "metric": "Distance from Sun",
-      "description": "second planet from the Solar System, tellurian and very similar to Earth",
+      "id": "Q5442095",
+      "name": "Felis margarita thinobia",
+      "value": 65,
+      "metric": "Gestation Period",
+      "description": "subspecies of the only cat living foremost in true deserts",
       "prefix": "",
-      "suffix": " km",
-      "unit_hint": "in kilometres"
+      "suffix": " days",
+      "unit_hint": "in days"
     },
     {
-      "id": "Q2",
-      "name": "Earth",
-      "value": 152098232,
-      "metric": "Distance from Sun",
-      "description": "third planet from the Sun in the Solar System",
+      "id": "Q55086089",
+      "name": "Sink the Bismarck!",
+      "value": 41,
+      "metric": "Alcohol by Volume",
+      "description": "high-alcohol IPA beer, brewed by Brewdog",
       "prefix": "",
-      "suffix": " km",
-      "unit_hint": "in kilometres"
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
     },
     {
-      "id": "Q174555",
-      "name": "Madagascar",
-      "value": 542063846,
-      "metric": "Total Box Office Revenue",
-      "description": "2005 animated film directed by Eric Darnell and Tom McGrath",
-      "prefix": "$",
-      "suffix": "",
-      "unit_hint": "in dollars"
+      "id": "Q82710",
+      "name": "Tachyoryctes",
+      "value": 47,
+      "metric": "Gestation Period",
+      "description": "genus of mammals",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
     },
     {
-      "id": "Q256",
-      "name": "Turkish",
-      "value": 82231620,
-      "metric": "Native Speakers",
-      "description": "Oghuz Turkic language of the Turkish people",
-      "prefix": "",
-      "suffix": " speakers"
+      "id": "Q2022294",
+      "name": "Mankey",
+      "value": 56,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
     },
     {
-      "id": "Q5885",
-      "name": "Tamil",
-      "value": 75000000,
-      "metric": "Native Speakers",
-      "description": "Dravidian language native to South India and Sri Lanka",
+      "id": "Q18636121",
+      "name": "Say You Love Me",
+      "value": 60,
+      "metric": "Tempo",
+      "description": "2014 song by Jessie Ware",
       "prefix": "",
-      "suffix": " speakers"
+      "suffix": " BPM",
+      "unit_hint": "beats per minute"
     }
   ]
 }
