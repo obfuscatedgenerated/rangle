@@ -1,57 +1,54 @@
 {
   "date": "2026-05-25",
   "number": 58,
-  "difficulty": "Hard",
-  "neighbourhood": "small",
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
   "puzzle": [
     {
-      "id": "Q5442095",
-      "name": "Felis margarita thinobia",
-      "value": 65,
-      "metric": "Gestation Period",
-      "description": "subspecies of the only cat living foremost in true deserts",
+      "id": "Q1053",
+      "name": "molybdenum",
+      "value": 1778,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Mo and atomic number 42",
       "prefix": "",
-      "suffix": " days",
-      "unit_hint": "in days"
-    },
-    {
-      "id": "Q55086089",
-      "name": "Sink the Bismarck!",
-      "value": 41,
-      "metric": "Alcohol by Volume",
-      "description": "high-alcohol IPA beer, brewed by Brewdog",
-      "prefix": "",
-      "suffix": "%",
-      "unit_hint": "by approx. percent"
-    },
-    {
-      "id": "Q82710",
-      "name": "Tachyoryctes",
-      "value": 47,
-      "metric": "Gestation Period",
-      "description": "genus of mammals",
-      "prefix": "",
-      "suffix": " days",
-      "unit_hint": "in days"
-    },
-    {
-      "id": "Q2022294",
-      "name": "Mankey",
-      "value": 56,
-      "metric": "Pokédex Number",
-      "description": "Pokémon species",
-      "prefix": "#",
       "suffix": ""
     },
     {
-      "id": "Q18636121",
-      "name": "Say You Love Me",
-      "value": 60,
-      "metric": "Tempo",
-      "description": "2014 song by Jessie Ware",
+      "id": "Q81689",
+      "name": "The Da Vinci Code",
+      "value": 519,
+      "metric": "Number of Pages",
+      "description": "2003 novel by Dan Brown",
       "prefix": "",
-      "suffix": " BPM",
-      "unit_hint": "beats per minute"
+      "suffix": " pages"
+    },
+    {
+      "id": "Q1846",
+      "name": "holmium",
+      "value": 1878,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Ho and atomic number 67",
+      "prefix": "",
+      "suffix": ""
+    },
+    {
+      "id": "Q999",
+      "name": "astatine",
+      "value": 230,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol At and atomic number 85",
+      "prefix": "",
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
+    },
+    {
+      "id": "Q1396889",
+      "name": "Animal Farm",
+      "value": 92,
+      "metric": "Number of Pages",
+      "description": "1945 novella by George Orwell",
+      "prefix": "",
+      "suffix": " pages"
     }
   ]
 }
