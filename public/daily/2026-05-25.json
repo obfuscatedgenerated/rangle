@@ -2,55 +2,54 @@
   "date": "2026-05-25",
   "number": 58,
   "difficulty": "Hard",
-  "neighbourhood": "medium",
+  "neighbourhood": "small",
   "puzzle": [
     {
-      "id": "Q107790",
-      "name": "The Green Book",
-      "value": 110,
-      "metric": "Number of Pages",
-      "description": "لا اله الا الله",
+      "id": "Q941564",
+      "name": "Hispid cotton rat",
+      "value": 27,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
       "prefix": "",
-      "suffix": " pages"
+      "suffix": " days",
+      "unit_hint": "in days"
     },
     {
-      "id": "Q14429",
-      "name": "Lake Biel",
-      "value": 74,
-      "metric": "Depth",
-      "description": "lake at Biel/Bienne, Canton of Bern, Switzerland",
+      "id": "Q9557010",
+      "name": "The Age of Uncertainty",
+      "value": 15,
+      "metric": "Number of Episodes",
+      "description": "1977 film",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " episodes"
     },
     {
-      "id": "Q184492",
-      "name": "Mälaren",
-      "value": 64,
-      "metric": "Depth",
-      "description": "lake in Sweden",
+      "id": "Q1210170",
+      "name": "lutrine opossum",
+      "value": 14,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " days",
+      "unit_hint": "in days"
     },
     {
-      "id": "Q192258",
-      "name": "Quidditch Through the Ages",
-      "value": 56,
-      "metric": "Number of Pages",
-      "description": "2001 book by J. K. Rowling",
+      "id": "Q2700924",
+      "name": "Wortegemsen",
+      "value": 24.5,
+      "metric": "Alcohol by Volume",
       "prefix": "",
-      "suffix": " pages"
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
     },
     {
-      "id": "Q168713",
-      "name": "Aurora",
-      "value": 127,
-      "metric": "Length",
-      "description": "1900 Pallada-class cruiser",
+      "id": "Q28675455",
+      "name": "The Chairman's Ear",
+      "value": 16,
+      "metric": "Number of Episodes",
+      "description": "Polish web series",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " episodes"
     }
   ]
 }
