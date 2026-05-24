@@ -1,55 +1,55 @@
 {
   "date": "2026-05-25",
   "number": 58,
-  "difficulty": "Hard",
-  "neighbourhood": "small",
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
   "puzzle": [
     {
-      "id": "Q941564",
-      "name": "Hispid cotton rat",
-      "value": 27,
-      "metric": "Gestation Period",
-      "description": "species of mammal",
+      "id": "Q1846",
+      "name": "holmium",
+      "value": 1878,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Ho and atomic number 67",
       "prefix": "",
-      "suffix": " days",
-      "unit_hint": "in days"
+      "suffix": ""
     },
     {
-      "id": "Q9557010",
-      "name": "The Age of Uncertainty",
-      "value": 15,
-      "metric": "Number of Episodes",
-      "description": "1977 film",
+      "id": "Q1100",
+      "name": "tellurium",
+      "value": 1783,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Te and atomic number 52",
       "prefix": "",
-      "suffix": " episodes"
+      "suffix": ""
     },
     {
-      "id": "Q1210170",
-      "name": "lutrine opossum",
-      "value": 14,
-      "metric": "Gestation Period",
-      "description": "species of mammal",
+      "id": "Q43361",
+      "name": "Harry Potter and the Philosopher's Stone",
+      "value": 240,
+      "metric": "Number of Pages",
+      "description": "1997 novel by J. K. Rowling",
       "prefix": "",
-      "suffix": " days",
-      "unit_hint": "in days"
+      "suffix": " pages"
     },
     {
-      "id": "Q2700924",
-      "name": "Wortegemsen",
-      "value": 24.5,
-      "metric": "Alcohol by Volume",
+      "id": "Q182719",
+      "name": "Lake Turkana",
+      "value": 109,
+      "metric": "Depth",
+      "description": "alkaline lake on the border of Ethiopia and Kenya",
       "prefix": "",
-      "suffix": "%",
-      "unit_hint": "by approx. percent"
+      "suffix": " m",
+      "unit_hint": "in metres"
     },
     {
-      "id": "Q28675455",
-      "name": "The Chairman's Ear",
-      "value": 16,
-      "metric": "Number of Episodes",
-      "description": "Polish web series",
+      "id": "Q126307",
+      "name": "Lake Van",
+      "value": 171,
+      "metric": "Depth",
+      "description": "largest lake in Turkey",
       "prefix": "",
-      "suffix": " episodes"
+      "suffix": " m",
+      "unit_hint": "in metres"
     }
   ]
 }
