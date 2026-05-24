@@ -1,0 +1,56 @@
+{
+  "date": "2026-05-25",
+  "number": 58,
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q107790",
+      "name": "The Green Book",
+      "value": 110,
+      "metric": "Number of Pages",
+      "description": "لا اله الا الله",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q14429",
+      "name": "Lake Biel",
+      "value": 74,
+      "metric": "Depth",
+      "description": "lake at Biel/Bienne, Canton of Bern, Switzerland",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q184492",
+      "name": "Mälaren",
+      "value": 64,
+      "metric": "Depth",
+      "description": "lake in Sweden",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q192258",
+      "name": "Quidditch Through the Ages",
+      "value": 56,
+      "metric": "Number of Pages",
+      "description": "2001 book by J. K. Rowling",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q168713",
+      "name": "Aurora",
+      "value": 127,
+      "metric": "Length",
+      "description": "1900 Pallada-class cruiser",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
