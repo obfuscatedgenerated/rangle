@@ -1,0 +1,54 @@
+{
+  "date": "2026-05-26",
+  "number": 59,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q166121",
+      "name": "1974 FIFA World Cup",
+      "value": 1774022,
+      "metric": "Event Attendance",
+      "description": "10th FIFA World Cup, held in West Germany",
+      "prefix": "",
+      "suffix": " attendees"
+    },
+    {
+      "id": "Q240",
+      "name": "Brussels-Capital Region",
+      "value": 1255795,
+      "metric": "Population",
+      "description": "city and region of Belgium",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q40895",
+      "name": "Dumbo",
+      "value": 1600000,
+      "metric": "Total Box Office Revenue",
+      "description": "1941 animated film directed by Ben Sharpsteen",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q160450",
+      "name": "Samsun",
+      "value": 1368488,
+      "metric": "Population",
+      "description": "city in northern Turkey",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q3884",
+      "name": "Amazon",
+      "value": 1500000,
+      "metric": "Number of Employees",
+      "description": "American multinational technology company",
+      "prefix": "",
+      "suffix": " employees"
+    }
+  ]
+}
