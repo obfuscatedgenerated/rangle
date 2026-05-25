@@ -1,54 +1,58 @@
 {
   "date": "2026-05-26",
   "number": 59,
-  "difficulty": "Medium",
+  "difficulty": "Hard",
   "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q166121",
-      "name": "1974 FIFA World Cup",
-      "value": 1774022,
-      "metric": "Event Attendance",
-      "description": "10th FIFA World Cup, held in West Germany",
-      "prefix": "",
-      "suffix": " attendees"
-    },
-    {
-      "id": "Q240",
-      "name": "Brussels-Capital Region",
-      "value": 1255795,
-      "metric": "Population",
-      "description": "city and region of Belgium",
-      "prefix": "",
-      "suffix": " people"
-    },
-    {
-      "id": "Q40895",
-      "name": "Dumbo",
-      "value": 1600000,
-      "metric": "Total Box Office Revenue",
-      "description": "1941 animated film directed by Ben Sharpsteen",
+      "id": "Q229808",
+      "name": "The Amazing Spider-Man",
+      "value": 230000000,
+      "metric": "Production Budget",
+      "description": "2012 film directed by Marc Webb",
       "prefix": "$",
       "suffix": "",
       "unit_hint": "in dollars"
     },
     {
-      "id": "Q160450",
-      "name": "Samsun",
-      "value": 1368488,
-      "metric": "Population",
-      "description": "city in northern Turkey",
-      "prefix": "",
-      "suffix": " people"
+      "id": "Q54860489",
+      "name": "Black Panther: Wakanda Forever",
+      "value": 250000000,
+      "metric": "Production Budget",
+      "description": "2022 film directed by Ryan Coogler",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q3884",
-      "name": "Amazon",
-      "value": 1500000,
-      "metric": "Number of Employees",
-      "description": "American multinational technology company",
-      "prefix": "",
-      "suffix": " employees"
+      "id": "Q152864",
+      "name": "ASUS",
+      "value": 351330000,
+      "metric": "Total Revenue",
+      "description": "Taiwanese computers and electronics company",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q3010512",
+      "name": "Olympus Has Fallen",
+      "value": 170270201,
+      "metric": "Total Box Office Revenue",
+      "description": "2013 film directed by Antoine Fuqua",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q213208",
+      "name": "The Fast and the Furious: Tokyo Drift",
+      "value": 158964610,
+      "metric": "Total Box Office Revenue",
+      "description": "2006 film directed by Justin Lin",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     }
   ]
 }
