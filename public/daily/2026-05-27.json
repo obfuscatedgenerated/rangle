@@ -5,54 +5,53 @@
   "neighbourhood": "medium",
   "puzzle": [
     {
-      "id": "Q1960",
-      "name": "Dar es Salaam",
-      "value": 12,
-      "metric": "Elevation above sea level",
-      "description": "largest city in Tanzania and capital of Dar es Salaam Region",
+      "id": "Q43361",
+      "name": "Harry Potter and the Philosopher's Stone",
+      "value": 240,
+      "metric": "Number of Pages",
+      "description": "1997 novel by J. K. Rowling",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " pages"
     },
     {
-      "id": "Q126982",
-      "name": "Sea of Galilee",
-      "value": 44,
+      "id": "Q126307",
+      "name": "Lake Van",
+      "value": 171,
       "metric": "Depth",
-      "description": "largest freshwater lake in Israel",
+      "description": "largest lake in Turkey",
       "prefix": "",
       "suffix": " m",
       "unit_hint": "in metres"
     },
     {
-      "id": "Q5475",
-      "name": "Treviso",
-      "value": 15,
-      "metric": "Elevation above sea level",
-      "description": "comune in Veneto, Italy",
+      "id": "Q41421",
+      "name": "Michael Jordan",
+      "value": 98,
+      "metric": "Mass / Weight",
+      "description": "American basketball player and businessman (born 1963)",
+      "prefix": "",
+      "suffix": " kg",
+      "unit_hint": "in kilograms"
+    },
+    {
+      "id": "Q166162",
+      "name": "Lake Onega",
+      "value": 127,
+      "metric": "Depth",
+      "description": "freshwater lake in Russia, second largest in Europe",
       "prefix": "",
       "suffix": " m",
       "unit_hint": "in metres"
     },
     {
-      "id": "Q48604",
-      "name": "Mir",
-      "value": 28,
-      "metric": "Height",
-      "description": "1986–2001 modular space station in low Earth orbit",
+      "id": "Q1911",
+      "name": "Olivier Giroud",
+      "value": 93,
+      "metric": "Mass / Weight",
+      "description": "French footballer (born 1986)",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
-    },
-    {
-      "id": "Q35525",
-      "name": "White House",
-      "value": 21,
-      "metric": "Height",
-      "description": "official residence and office of the President of the United States",
-      "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " kg",
+      "unit_hint": "in kilograms"
     }
   ]
 }
