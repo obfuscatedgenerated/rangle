@@ -1,0 +1,58 @@
+{
+  "date": "2026-05-27",
+  "number": 60,
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q1960",
+      "name": "Dar es Salaam",
+      "value": 12,
+      "metric": "Elevation above sea level",
+      "description": "largest city in Tanzania and capital of Dar es Salaam Region",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q126982",
+      "name": "Sea of Galilee",
+      "value": 44,
+      "metric": "Depth",
+      "description": "largest freshwater lake in Israel",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q5475",
+      "name": "Treviso",
+      "value": 15,
+      "metric": "Elevation above sea level",
+      "description": "comune in Veneto, Italy",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q48604",
+      "name": "Mir",
+      "value": 28,
+      "metric": "Height",
+      "description": "1986–2001 modular space station in low Earth orbit",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q35525",
+      "name": "White House",
+      "value": 21,
+      "metric": "Height",
+      "description": "official residence and office of the President of the United States",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
