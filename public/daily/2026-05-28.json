@@ -1,55 +1,58 @@
 {
   "date": "2026-05-28",
   "number": 61,
-  "difficulty": "Easy",
-  "neighbourhood": "small",
+  "difficulty": "Medium",
+  "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q847571",
-      "name": "Bulbasaur",
-      "value": 1,
-      "metric": "Pokédex Number",
-      "description": "Pokémon species",
-      "prefix": "#",
-      "suffix": ""
+      "id": "Q155653",
+      "name": "Spirited Away",
+      "value": 2000000000,
+      "metric": "Production Budget",
+      "description": "2001 anime film directed by Hayao Miyazaki",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q929276",
-      "name": "Stella Artois",
-      "value": 5,
-      "metric": "Alcohol by Volume",
-      "description": "trademark",
-      "prefix": "",
-      "suffix": "%",
-      "unit_hint": "by approx. percent"
+      "id": "Q9325",
+      "name": "Lufthansa",
+      "value": 9710000000,
+      "metric": "Market Capitalisation",
+      "description": "Flag-carrier and largest airline of Germany",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q1636903",
-      "name": "Ivysaur",
-      "value": 2,
-      "metric": "Pokédex Number",
-      "description": "Pokémon species",
-      "prefix": "#",
-      "suffix": ""
+      "id": "Q6686",
+      "name": "Renault",
+      "value": 14683000000,
+      "metric": "Market Capitalisation",
+      "description": "automotive conglomerate",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q56153643",
-      "name": "Watchmen",
-      "value": 9,
-      "metric": "Number of Episodes",
-      "description": "2019 American superhero drama television series",
-      "prefix": "",
-      "suffix": " episodes"
+      "id": "Q35886",
+      "name": "Lamborghini",
+      "value": 2380000000,
+      "metric": "Total Revenue",
+      "description": "Italian car manufacturer",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q864987",
-      "name": "Corona",
-      "value": 4.5,
-      "metric": "Alcohol by Volume",
-      "description": "branded beverage from Mexico",
-      "prefix": "",
-      "suffix": "%",
-      "unit_hint": "by approx. percent"
+      "id": "Q47099",
+      "name": "Grupo Televisa",
+      "value": 5300000000,
+      "metric": "Total Revenue",
+      "description": "Mexican entertainment and media conglomerate",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     }
   ]
 }
