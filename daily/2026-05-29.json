@@ -1,0 +1,55 @@
+{
+  "date": "2026-05-29",
+  "number": 62,
+  "difficulty": "Hard",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q869465",
+      "name": "Cozumel Island coati",
+      "value": 73,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q7046647",
+      "name": "Noddy",
+      "value": 66,
+      "metric": "Number of Episodes",
+      "description": "TV series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q22682112",
+      "name": "River Lea",
+      "value": 83,
+      "metric": "Tempo",
+      "description": "single by Adele",
+      "prefix": "",
+      "suffix": " BPM",
+      "unit_hint": "beats per minute"
+    },
+    {
+      "id": "Q2488577",
+      "name": "Muk",
+      "value": 89,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q2019398",
+      "name": "Ponyta",
+      "value": 77,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    }
+  ]
+}
