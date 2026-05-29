@@ -1,0 +1,58 @@
+{
+  "date": "2026-05-30",
+  "number": 63,
+  "difficulty": "Hard",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q502121",
+      "name": "BlackBerry",
+      "value": 1040000000,
+      "metric": "Total Revenue",
+      "description": "enterprise software and the Internet of things company",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q161833",
+      "name": "Leica Camera",
+      "value": 596000000,
+      "metric": "Total Revenue",
+      "description": "German optics company",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q135805",
+      "name": "1090 Sumida",
+      "value": 430918013,
+      "metric": "Distance from Sun",
+      "description": "asteroid",
+      "prefix": "",
+      "suffix": " km",
+      "unit_hint": "in kilometres"
+    },
+    {
+      "id": "Q204296",
+      "name": "Air New Zealand",
+      "value": 1790936544,
+      "metric": "Market Capitalisation",
+      "description": "National airline of New Zealand",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q150539",
+      "name": "30 Urania",
+      "value": 398742030,
+      "metric": "Distance from Sun",
+      "description": "main-belt asteroid",
+      "prefix": "",
+      "suffix": " km",
+      "unit_hint": "in kilometres"
+    }
+  ]
+}
