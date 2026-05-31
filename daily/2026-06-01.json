@@ -1,0 +1,56 @@
+{
+  "date": "2026-06-01",
+  "number": 65,
+  "difficulty": "Easy",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q147734",
+      "name": "Halo",
+      "value": 80,
+      "metric": "Tempo",
+      "description": "2009 song by Beyonce",
+      "prefix": "",
+      "suffix": " BPM",
+      "unit_hint": "beats per minute"
+    },
+    {
+      "id": "Q19363670",
+      "name": "The Lion Guard",
+      "value": 74,
+      "metric": "Number of Episodes",
+      "description": "2015 American animated television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q153044",
+      "name": "Alejandro",
+      "value": 99,
+      "metric": "Tempo",
+      "description": "2010 single by Lady Gaga",
+      "prefix": "",
+      "suffix": " BPM",
+      "unit_hint": "beats per minute"
+    },
+    {
+      "id": "Q265152",
+      "name": "The Shield",
+      "value": 88,
+      "metric": "Number of Episodes",
+      "description": "American drama television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q41960",
+      "name": "Red Panda",
+      "value": 139,
+      "metric": "Gestation Period",
+      "description": "species of small mammal from the Ailuridae family, native to Eastern Himalayas and Southwest China",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    }
+  ]
+}
