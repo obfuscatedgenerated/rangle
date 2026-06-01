@@ -1,0 +1,56 @@
+{
+  "date": "2026-06-02",
+  "number": 66,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q705388",
+      "name": "Art Attack",
+      "value": 291,
+      "metric": "Number of Episodes",
+      "description": "British television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q131074",
+      "name": "The Lord of the Rings: The Return of the King",
+      "value": 263,
+      "metric": "Duration / Runtime",
+      "description": "2003 film by Peter Jackson",
+      "prefix": "",
+      "suffix": " minutes",
+      "unit_hint": "in minutes"
+    },
+    {
+      "id": "Q1247688",
+      "name": "Leave It to Beaver",
+      "value": 234,
+      "metric": "Number of Episodes",
+      "description": "American sitcom from the 1950s and 1960s",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q190516",
+      "name": "sika deer",
+      "value": 217,
+      "metric": "Gestation Period",
+      "description": "species of deer native to much of East Asia",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q817180",
+      "name": "Semnopithecus entellus",
+      "value": 200,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    }
+  ]
+}
