@@ -1,0 +1,53 @@
+{
+  "date": "2026-06-03",
+  "number": 67,
+  "difficulty": "Hard",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q152057",
+      "name": "BP",
+      "value": 70100,
+      "metric": "Number of Employees",
+      "description": "British multinational oil and gas company",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q150928",
+      "name": "Westfalenstadion",
+      "value": 81359,
+      "metric": "Maximum Capacity",
+      "description": "football stadium in the city of Dortmund, Germany",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q155351",
+      "name": "Merkur Spiel-Arena",
+      "value": 66500,
+      "metric": "Maximum Capacity",
+      "description": "stadium in the city of Düsseldorf, North Rhine-Westphalia, Germany",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q860580",
+      "name": "Tencent",
+      "value": 62885,
+      "metric": "Number of Employees",
+      "description": "Chinese multinational investment holding conglomerate",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q15926885",
+      "name": "2014 FIFA World Cup Final",
+      "value": 74738,
+      "metric": "Event Attendance",
+      "description": "2014 FIFA World Cup match",
+      "prefix": "",
+      "suffix": " attendees"
+    }
+  ]
+}
