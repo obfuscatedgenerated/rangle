@@ -1,0 +1,57 @@
+{
+  "date": "2026-06-04",
+  "number": 68,
+  "difficulty": "Easy",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q788",
+      "name": "Arctic Ocean",
+      "value": 5550,
+      "metric": "Depth",
+      "description": "smallest, shallowest, coldest, and northernmost of the world's major oceans",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q7296",
+      "name": "Mount Kilimanjaro",
+      "value": 5895,
+      "metric": "Elevation above sea level",
+      "description": "mountain massif in Kilimanjaro National Park in Tanzania",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q7354",
+      "name": "Southern Ocean",
+      "value": 7235,
+      "metric": "Depth",
+      "description": "ocean around Antarctica",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q1491",
+      "name": "La Paz",
+      "value": 3640,
+      "metric": "Elevation above sea level",
+      "description": "seat of government of Bolivia",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q696",
+      "name": "argon",
+      "value": 1894,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Ar and atomic number 18; rare gas",
+      "prefix": "",
+      "suffix": ""
+    }
+  ]
+}
