@@ -1,0 +1,54 @@
+{
+  "date": "2026-06-05",
+  "number": 69,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q24815",
+      "name": "Citizen Kane",
+      "value": 839727,
+      "metric": "Production Budget",
+      "description": "1941 American drama film directed by Orson Welles",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q16739",
+      "name": "Long Beach",
+      "value": 466742,
+      "metric": "Population",
+      "description": "city in Los Angeles County, California, United States",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q26245",
+      "name": "Rusyn",
+      "value": 610000,
+      "metric": "Native Speakers",
+      "description": "East Slavic language spoken by Carpathian Rusyns, Lemkos, Boykos, and Hutsuls",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q9166",
+      "name": "Maltese",
+      "value": 570000,
+      "metric": "Native Speakers",
+      "description": "Semitic language spoken mostly in Malta",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q41819",
+      "name": "Kansas City",
+      "value": 508090,
+      "metric": "Population",
+      "description": "city in Missouri, United States, that is one of two county seats of Jackson County and the largest city in Missouri",
+      "prefix": "",
+      "suffix": " people"
+    }
+  ]
+}
