@@ -1,0 +1,56 @@
+{
+  "date": "2026-06-06",
+  "number": 70,
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q753898",
+      "name": "Argentino Lake",
+      "value": 150,
+      "metric": "Depth",
+      "description": "glacial lake in the Patagonian province of Santa Cruz, Argentina",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q393018",
+      "name": "I, Robot",
+      "value": 180,
+      "metric": "Number of Pages",
+      "description": "short story collection by Isaac Asimov",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q501514",
+      "name": "The Lightning Thief",
+      "value": 211,
+      "metric": "Number of Pages",
+      "description": "2005 novel by Rick Riordan",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q152917",
+      "name": "Lamborghini Gallardo",
+      "value": 320,
+      "metric": "Top Speed",
+      "description": "car model",
+      "prefix": "",
+      "suffix": " km/h",
+      "unit_hint": "in km/h"
+    },
+    {
+      "id": "Q208926",
+      "name": "Loch Lomond",
+      "value": 190,
+      "metric": "Depth",
+      "description": "freshwater lake in Scotland, UK",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
