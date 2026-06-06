@@ -1,0 +1,53 @@
+{
+  "date": "2026-06-07",
+  "number": 71,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q148971",
+      "name": "Interslavic",
+      "value": 7000,
+      "metric": "Native Speakers",
+      "description": "Pan-Slavic language",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q47099",
+      "name": "Grupo Televisa",
+      "value": 24362,
+      "metric": "Number of Employees",
+      "description": "Mexican entertainment and media conglomerate",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q31519",
+      "name": "Charles University",
+      "value": 9156,
+      "metric": "Number of Employees",
+      "description": "oldest and largest university in the Czech Republic",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q158119",
+      "name": "Ramallah",
+      "value": 43880,
+      "metric": "Population",
+      "description": "city in the State of Palestine",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q13248",
+      "name": "Upper Sorbian",
+      "value": 13300,
+      "metric": "Native Speakers",
+      "description": "language spoken by Sorbs in Germany in the historical province of Upper Lusatia",
+      "prefix": "",
+      "suffix": " speakers"
+    }
+  ]
+}
