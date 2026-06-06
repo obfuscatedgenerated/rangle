@@ -5,49 +5,54 @@
   "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q148971",
-      "name": "Interslavic",
-      "value": 7000,
-      "metric": "Native Speakers",
-      "description": "Pan-Slavic language",
+      "id": "Q3030",
+      "name": "Vesta",
+      "value": 385136112,
+      "metric": "Distance from Sun",
+      "description": "second largest asteroid of the main asteroid belt",
       "prefix": "",
-      "suffix": " speakers"
+      "suffix": " km",
+      "unit_hint": "in kilometres"
     },
     {
-      "id": "Q47099",
-      "name": "Grupo Televisa",
-      "value": 24362,
-      "metric": "Number of Employees",
-      "description": "Mexican entertainment and media conglomerate",
-      "prefix": "",
-      "suffix": " employees"
+      "id": "Q190086",
+      "name": "Some Like It Hot",
+      "value": 25000000,
+      "metric": "Total Box Office Revenue",
+      "description": "1959 film directed by Billy Wilder",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q31519",
-      "name": "Charles University",
-      "value": 9156,
-      "metric": "Number of Employees",
-      "description": "oldest and largest university in the Czech Republic",
-      "prefix": "",
-      "suffix": " employees"
+      "id": "Q19090",
+      "name": "Robin Hood",
+      "value": 32056467,
+      "metric": "Total Box Office Revenue",
+      "description": "1973 animated film directed by Wolfgang Reitherman",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q158119",
-      "name": "Ramallah",
-      "value": 43880,
-      "metric": "Population",
-      "description": "city in the State of Palestine",
-      "prefix": "",
-      "suffix": " people"
+      "id": "Q105031",
+      "name": "Home Alone",
+      "value": 18000000,
+      "metric": "Production Budget",
+      "description": "1990 film directed by Chris Columbus",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     },
     {
-      "id": "Q13248",
-      "name": "Upper Sorbian",
-      "value": 13300,
-      "metric": "Native Speakers",
-      "description": "language spoken by Sorbs in Germany in the historical province of Upper Lusatia",
-      "prefix": "",
-      "suffix": " speakers"
+      "id": "Q171048",
+      "name": "Toy Story",
+      "value": 30000000,
+      "metric": "Production Budget",
+      "description": "1995 animated film directed by John Lasseter",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
     }
   ]
 }
