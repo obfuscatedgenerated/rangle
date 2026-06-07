@@ -2,57 +2,55 @@
   "date": "2026-06-08",
   "number": 72,
   "difficulty": "Medium",
-  "neighbourhood": "large",
+  "neighbourhood": "small",
   "puzzle": [
     {
-      "id": "Q35886",
-      "name": "Lamborghini",
-      "value": 2380000000,
-      "metric": "Total Revenue",
-      "description": "Italian car manufacturer",
-      "prefix": "$",
-      "suffix": "",
-      "unit_hint": "in dollars"
+      "id": "Q27027",
+      "name": "Phocoena phocoena",
+      "value": 9,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of marine mammal",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
     },
     {
-      "id": "Q47099",
-      "name": "Grupo Televisa",
-      "value": 5300000000,
-      "metric": "Total Revenue",
-      "description": "Mexican entertainment and media conglomerate",
-      "prefix": "$",
-      "suffix": "",
-      "unit_hint": "in dollars"
+      "id": "Q626737",
+      "name": "Hero",
+      "value": 11,
+      "metric": "Number of Episodes",
+      "description": "2001 Japanese television series",
+      "prefix": "",
+      "suffix": " episodes"
     },
     {
-      "id": "Q155653",
-      "name": "Spirited Away",
-      "value": 2000000000,
-      "metric": "Production Budget",
-      "description": "2001 anime film directed by Hayao Miyazaki",
-      "prefix": "$",
-      "suffix": "",
-      "unit_hint": "in dollars"
+      "id": "Q194663",
+      "name": "Common opossum",
+      "value": 14,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
     },
     {
-      "id": "Q182218",
-      "name": "The Avengers",
-      "value": 1518812988,
-      "metric": "Total Box Office Revenue",
-      "description": "2012 film directed by Joss Whedon",
-      "prefix": "$",
-      "suffix": "",
-      "unit_hint": "in dollars"
+      "id": "Q541959",
+      "name": "Vino Nobile di Montepulciano DOCG",
+      "value": 12.5,
+      "metric": "Alcohol by Volume",
+      "description": "Italian controlled and guaranteed designation of origin wine from Tuscany",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
     },
     {
-      "id": "Q14171368",
-      "name": "Avengers: Age of Ultron",
-      "value": 1402805868,
-      "metric": "Total Box Office Revenue",
-      "description": "2015 film directed by Joss Whedon",
-      "prefix": "$",
-      "suffix": "",
-      "unit_hint": "in dollars"
+      "id": "Q5905004",
+      "name": "Horrible Histories",
+      "value": 7,
+      "metric": "Number of Seasons",
+      "description": "British sketch comedy television series (2009)",
+      "prefix": "",
+      "suffix": " seasons"
     }
   ]
 }
