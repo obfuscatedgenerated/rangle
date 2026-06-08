@@ -1,0 +1,54 @@
+{
+  "date": "2026-06-09",
+  "number": 73,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q24069296",
+      "name": "Taken",
+      "value": 26,
+      "metric": "Number of Episodes",
+      "description": "Franco-American drama series based on the Taken film trilogy",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q2708504",
+      "name": "Tōshō Daimos",
+      "value": 44,
+      "metric": "Number of Episodes",
+      "description": "Japanese anime television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q6726715",
+      "name": "Made in Chelsea",
+      "value": 31,
+      "metric": "Number of Seasons",
+      "description": "British television series",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q132905",
+      "name": "humpback whale",
+      "value": 48,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    },
+    {
+      "id": "Q2739954",
+      "name": "Vulpix",
+      "value": 37,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    }
+  ]
+}
