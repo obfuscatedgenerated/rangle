@@ -1,0 +1,55 @@
+{
+  "date": "2026-06-10",
+  "number": 74,
+  "difficulty": "Hard",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q60764505",
+      "name": "The Leader",
+      "value": 7,
+      "metric": "Number of Episodes",
+      "description": "Chinese state-backed animated web series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q134083",
+      "name": "Kangaroo Island dunnart",
+      "value": 12,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q2066778",
+      "name": "Barbe d'Or",
+      "value": 7.5,
+      "metric": "Alcohol by Volume",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q2131449",
+      "name": "Alfa Lente Bok",
+      "value": 6.5,
+      "metric": "Alcohol by Volume",
+      "description": "beer brewed by Alfa Bier",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q22074985",
+      "name": "Mercy Street",
+      "value": 6,
+      "metric": "Number of Episodes",
+      "description": "American period medical drama television series",
+      "prefix": "",
+      "suffix": " episodes"
+    }
+  ]
+}
