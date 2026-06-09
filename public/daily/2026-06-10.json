@@ -1,55 +1,56 @@
 {
   "date": "2026-06-10",
   "number": 74,
-  "difficulty": "Hard",
-  "neighbourhood": "small",
+  "difficulty": "Easy",
+  "neighbourhood": "medium",
   "puzzle": [
     {
-      "id": "Q60764505",
-      "name": "The Leader",
-      "value": 7,
-      "metric": "Number of Episodes",
-      "description": "Chinese state-backed animated web series",
+      "id": "Q674",
+      "name": "phosphorus",
+      "value": 1669,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol P and atomic number 15",
       "prefix": "",
-      "suffix": " episodes"
+      "suffix": ""
     },
     {
-      "id": "Q134083",
-      "name": "Kangaroo Island dunnart",
-      "value": 12,
-      "metric": "Gestation Period",
-      "description": "species of mammal",
+      "id": "Q627",
+      "name": "nitrogen",
+      "value": 1772,
+      "metric": "Year of Discovery",
+      "description": "chemical element, symbol N and atomic number 7; most abundant element in Earth atmosphere",
       "prefix": "",
-      "suffix": " days",
-      "unit_hint": "in days"
+      "suffix": ""
     },
     {
-      "id": "Q2066778",
-      "name": "Barbe d'Or",
-      "value": 7.5,
-      "metric": "Alcohol by Volume",
+      "id": "Q243",
+      "name": "Eiffel Tower",
+      "value": 330,
+      "metric": "Height",
+      "description": "tower located on the Champ de Mars in Paris, France",
       "prefix": "",
-      "suffix": "%",
-      "unit_hint": "by approx. percent"
+      "suffix": " m",
+      "unit_hint": "in metres"
     },
     {
-      "id": "Q2131449",
-      "name": "Alfa Lente Bok",
-      "value": 6.5,
-      "metric": "Alcohol by Volume",
-      "description": "beer brewed by Alfa Bier",
+      "id": "Q1721",
+      "name": "Wiesbaden",
+      "value": 162,
+      "metric": "Elevation above sea level",
+      "description": "capital of the German state of Hesse",
       "prefix": "",
-      "suffix": "%",
-      "unit_hint": "by approx. percent"
+      "suffix": " m",
+      "unit_hint": "in metres"
     },
     {
-      "id": "Q22074985",
-      "name": "Mercy Street",
-      "value": 6,
-      "metric": "Number of Episodes",
-      "description": "American period medical drama television series",
+      "id": "Q42308",
+      "name": "Kharkiv",
+      "value": 152,
+      "metric": "Elevation above sea level",
+      "description": "capital city of Kharkiv Oblast in eastern Ukraine",
       "prefix": "",
-      "suffix": " episodes"
+      "suffix": " m",
+      "unit_hint": "in metres"
     }
   ]
 }
