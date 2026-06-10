@@ -1,0 +1,56 @@
+{
+  "date": "2026-06-11",
+  "number": 75,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q46033",
+      "name": "Frankfurt Airport",
+      "value": 61564957,
+      "metric": "Number of Passengers",
+      "description": "biggest airport of Germany, located in Frankfurt, Hesse",
+      "prefix": "",
+      "suffix": " passengers",
+      "unit_hint": "annual"
+    },
+    {
+      "id": "Q160618",
+      "name": "Brokeback Mountain",
+      "value": 14000000,
+      "metric": "Production Budget",
+      "description": "2005 film directed by Ang Lee",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q33973",
+      "name": "Sicilian",
+      "value": 4700000,
+      "metric": "Native Speakers",
+      "description": "Extreme Southern Italian language spoken in Sicily and surrounding islands",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q9211",
+      "name": "Lao",
+      "value": 5225552,
+      "metric": "Native Speakers",
+      "description": "Kra–Dai language of Southeast Asia",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q162255",
+      "name": "The Terminator",
+      "value": 6400000,
+      "metric": "Production Budget",
+      "description": "1984 film by James Cameron",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    }
+  ]
+}
