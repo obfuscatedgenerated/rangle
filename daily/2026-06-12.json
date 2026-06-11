@@ -1,56 +1,56 @@
 {
   "date": "2026-06-12",
   "number": 76,
-  "difficulty": "Hard",
+  "difficulty": "Medium",
   "neighbourhood": "small",
   "puzzle": [
     {
-      "id": "Q2301866",
-      "name": "Amstel Light",
-      "value": 3.5,
+      "id": "Q204175",
+      "name": "Mesocricetus auratus",
+      "value": 16,
+      "metric": "Gestation Period",
+      "description": "species of hamster",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q1778696",
+      "name": "Kakuna",
+      "value": 14,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q194516",
+      "name": "Eastern quoll",
+      "value": 21,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q455290",
+      "name": "Amarula",
+      "value": 17,
       "metric": "Alcohol by Volume",
-      "description": "beer",
+      "description": "liqueur",
       "prefix": "",
       "suffix": "%",
       "unit_hint": "by approx. percent"
     },
     {
-      "id": "Q2668298",
-      "name": "Pale-headed Brushfinch",
-      "value": 3,
-      "metric": "Life Expectancy / Maximum Lifespan",
-      "description": "species of bird",
-      "prefix": "",
-      "suffix": " years",
-      "unit_hint": "in years"
-    },
-    {
-      "id": "Q3208404",
-      "name": "Coming Home",
-      "value": 2,
-      "metric": "Number of Episodes",
-      "description": "1998 British TV series or program",
-      "prefix": "",
-      "suffix": " episodes"
-    },
-    {
-      "id": "Q653991",
-      "name": "All I Want for Christmas Is You",
-      "value": 4,
-      "metric": "Duration / Runtime",
-      "description": "1994 song by Mariah Carey",
-      "prefix": "",
-      "suffix": " minutes",
-      "unit_hint": "in minutes"
-    },
-    {
-      "id": "Q48744164",
-      "name": "Camping",
-      "value": 1,
-      "metric": "Number of Seasons",
-      "description": "2018 American comedy television series",
-      "prefix": "",
-      "suffix": " seasons"
+      "id": "Q2252880",
+      "name": "Rattata",
+      "value": 19,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
     }
   ]
 }
