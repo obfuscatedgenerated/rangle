@@ -1,0 +1,55 @@
+{
+  "date": "2026-06-13",
+  "number": 77,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q1971387",
+      "name": "Un posto al sole",
+      "value": 30,
+      "metric": "Number of Seasons",
+      "description": "Italian television soap opera",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q840762",
+      "name": "North African hedgehog",
+      "value": 35,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q602148",
+      "name": "How to Rock",
+      "value": 25,
+      "metric": "Number of Episodes",
+      "description": "television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q264793",
+      "name": "field vole",
+      "value": 20,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q7803245",
+      "name": "Bratz",
+      "value": 40,
+      "metric": "Number of Episodes",
+      "description": "computer-animated television series, based on a line of toy dolls of the same name",
+      "prefix": "",
+      "suffix": " episodes"
+    }
+  ]
+}
