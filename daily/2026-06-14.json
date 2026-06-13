@@ -1,0 +1,57 @@
+{
+  "date": "2026-06-14",
+  "number": 78,
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q1062",
+      "name": "Lake Ontario",
+      "value": 244,
+      "metric": "Depth",
+      "description": "one of the Great Lakes in North America",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q12512",
+      "name": "St. Peter's Basilica",
+      "value": 137,
+      "metric": "Height",
+      "description": "church in Vatican City",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q1100",
+      "name": "tellurium",
+      "value": 1783,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Te and atomic number 52",
+      "prefix": "",
+      "suffix": ""
+    },
+    {
+      "id": "Q182719",
+      "name": "Lake Turkana",
+      "value": 109,
+      "metric": "Depth",
+      "description": "alkaline lake on the border of Ethiopia and Kenya",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q2981",
+      "name": "Notre-Dame de Paris",
+      "value": 90,
+      "metric": "Height",
+      "description": "cathedral in Paris",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
