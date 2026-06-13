@@ -1,57 +1,53 @@
 {
   "date": "2026-06-14",
   "number": 78,
-  "difficulty": "Medium",
-  "neighbourhood": "medium",
+  "difficulty": "Hard",
+  "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q1062",
-      "name": "Lake Ontario",
-      "value": 244,
-      "metric": "Depth",
-      "description": "one of the Great Lakes in North America",
+      "id": "Q334204",
+      "name": "Morgan Stanley",
+      "value": 80006,
+      "metric": "Number of Employees",
+      "description": "U.S. investment bank",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " employees"
     },
     {
-      "id": "Q12512",
-      "name": "St. Peter's Basilica",
-      "value": 137,
-      "metric": "Height",
-      "description": "church in Vatican City",
+      "id": "Q496302",
+      "name": "Deere & Company",
+      "value": 67000,
+      "metric": "Number of Employees",
+      "description": "American agricultural and industrial auto manufacturing corporation",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " employees"
     },
     {
-      "id": "Q1100",
-      "name": "tellurium",
-      "value": 1783,
-      "metric": "Year of Discovery",
-      "description": "chemical element with symbol Te and atomic number 52",
+      "id": "Q1186333",
+      "name": "Lusail Stadium",
+      "value": 88966,
+      "metric": "Maximum Capacity",
+      "description": "football stadium in Lusail, Qatar",
       "prefix": "",
-      "suffix": ""
+      "suffix": " people"
     },
     {
-      "id": "Q182719",
-      "name": "Lake Turkana",
-      "value": 109,
-      "metric": "Depth",
-      "description": "alkaline lake on the border of Ethiopia and Kenya",
+      "id": "Q159884",
+      "name": "Stadio Olimpico",
+      "value": 70634,
+      "metric": "Maximum Capacity",
+      "description": "sports venue in Rome, Italy",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " people"
     },
     {
-      "id": "Q2981",
-      "name": "Notre-Dame de Paris",
-      "value": 90,
-      "metric": "Height",
-      "description": "cathedral in Paris",
+      "id": "Q193510",
+      "name": "University of Padua",
+      "value": 75000,
+      "metric": "Student Enrollment",
+      "description": "university in Italy",
       "prefix": "",
-      "suffix": " m",
-      "unit_hint": "in metres"
+      "suffix": " students"
     }
   ]
 }
