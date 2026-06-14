@@ -1,0 +1,55 @@
+{
+  "date": "2026-06-15",
+  "number": 79,
+  "difficulty": "Easy",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q120277524",
+      "name": "A Knight of the Seven Kingdoms",
+      "value": 6,
+      "metric": "Number of Episodes",
+      "description": "American fantasy drama television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q847571",
+      "name": "Bulbasaur",
+      "value": 1,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q1636903",
+      "name": "Ivysaur",
+      "value": 2,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q25345",
+      "name": "Mustela erminea",
+      "value": 5,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of mustelid (Mustelidae)",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    },
+    {
+      "id": "Q25380",
+      "name": "Eurasian Sparrowhawk",
+      "value": 4,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of bird",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    }
+  ]
+}
