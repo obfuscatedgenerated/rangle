@@ -1,0 +1,56 @@
+{
+  "date": "2026-06-16",
+  "number": 80,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q41483",
+      "name": "The Good, the Bad and the Ugly",
+      "value": 38900000,
+      "metric": "Total Box Office Revenue",
+      "description": "1966 film directed by Sergio Leone",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q40302",
+      "name": "The Fox and the Hound",
+      "value": 63456988,
+      "metric": "Total Box Office Revenue",
+      "description": "1981 animated film directed by Art Stevens, Ted Berman and Richard Rich",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q56475",
+      "name": "Hausa",
+      "value": 43900000,
+      "metric": "Native Speakers",
+      "description": "Chadic language native to the Hausa people",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q33268",
+      "name": "Bhojpuri",
+      "value": 52200000,
+      "metric": "Native Speakers",
+      "description": "Indo-Aryan language native to India and Nepal",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q10683",
+      "name": "PlayStation 3",
+      "value": 87000000,
+      "metric": "Total Units Sold",
+      "description": "video game console developed Sony Interactive Entertainment",
+      "prefix": "",
+      "suffix": " units",
+      "unit_hint": "approx."
+    }
+  ]
+}
