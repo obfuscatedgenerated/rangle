@@ -1,0 +1,54 @@
+{
+  "date": "2026-06-17",
+  "number": 81,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q173761",
+      "name": "Lithuanian Soviet Socialist Republic",
+      "value": 65200,
+      "metric": "Area",
+      "description": "republic of the Soviet Union (1940-1991)",
+      "prefix": "",
+      "suffix": " sq km",
+      "unit_hint": "in sq km"
+    },
+    {
+      "id": "Q131005",
+      "name": "Air France",
+      "value": 71654,
+      "metric": "Number of Employees",
+      "description": "flag-carrier and largest airline in France",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q158888",
+      "name": "Yamaha Motor Company",
+      "value": 53701,
+      "metric": "Number of Employees",
+      "description": "Japanese motorcycle manufacturer",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q31519",
+      "name": "Charles University",
+      "value": 49508,
+      "metric": "Student Enrollment",
+      "description": "oldest and largest university in the Czech Republic",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q168756",
+      "name": "University of California, Berkeley",
+      "value": 45057,
+      "metric": "Student Enrollment",
+      "description": "public university in Berkeley, California, USA",
+      "prefix": "",
+      "suffix": " students"
+    }
+  ]
+}
