@@ -5,50 +5,51 @@
   "neighbourhood": "large",
   "puzzle": [
     {
-      "id": "Q173761",
-      "name": "Lithuanian Soviet Socialist Republic",
-      "value": 65200,
+      "id": "Q21578",
+      "name": "Princeton University",
+      "value": 8799,
+      "metric": "Student Enrollment",
+      "description": "private Ivy League research university in Princeton, New Jersey, United States",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q41506",
+      "name": "Stanford University",
+      "value": 17246,
+      "metric": "Student Enrollment",
+      "description": "private research university in Stanford, California, USA",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q1363",
+      "name": "Tripura",
+      "value": 10486,
       "metric": "Area",
-      "description": "republic of the Soviet Union (1940-1991)",
+      "description": "Indian state",
       "prefix": "",
       "suffix": " sq km",
       "unit_hint": "in sq km"
     },
     {
-      "id": "Q131005",
-      "name": "Air France",
-      "value": 71654,
-      "metric": "Number of Employees",
-      "description": "flag-carrier and largest airline in France",
+      "id": "Q170322",
+      "name": "Qingdao",
+      "value": 11282,
+      "metric": "Area",
+      "description": "prefecture-level city in Shandong, China",
       "prefix": "",
-      "suffix": " employees"
+      "suffix": " sq km",
+      "unit_hint": "in sq km"
     },
     {
-      "id": "Q158888",
-      "name": "Yamaha Motor Company",
-      "value": 53701,
-      "metric": "Number of Employees",
-      "description": "Japanese motorcycle manufacturer",
+      "id": "Q127429",
+      "name": "Allianz Arena",
+      "value": 75024,
+      "metric": "Maximum Capacity",
+      "description": "stadium in Munich, Germany",
       "prefix": "",
-      "suffix": " employees"
-    },
-    {
-      "id": "Q31519",
-      "name": "Charles University",
-      "value": 49508,
-      "metric": "Student Enrollment",
-      "description": "oldest and largest university in the Czech Republic",
-      "prefix": "",
-      "suffix": " students"
-    },
-    {
-      "id": "Q168756",
-      "name": "University of California, Berkeley",
-      "value": 45057,
-      "metric": "Student Enrollment",
-      "description": "public university in Berkeley, California, USA",
-      "prefix": "",
-      "suffix": " students"
+      "suffix": " people"
     }
   ]
 }
