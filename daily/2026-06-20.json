@@ -1,0 +1,54 @@
+{
+  "date": "2026-06-20",
+  "number": 84,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q36451",
+      "name": "Māori",
+      "value": 213849,
+      "metric": "Native Speakers",
+      "description": "Polynesian language spoken in New Zealand",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q20716",
+      "name": "Samsung Group",
+      "value": 262647,
+      "metric": "Number of Employees",
+      "description": "South Korean multinational conglomerate",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q40895",
+      "name": "Dumbo",
+      "value": 950000,
+      "metric": "Production Budget",
+      "description": "1941 animated film directed by Ben Sharpsteen",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q8821",
+      "name": "Montenegrin",
+      "value": 232600,
+      "metric": "Native Speakers",
+      "description": "normative variety of Serbo-Croatian in Montenegro",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q160120",
+      "name": "Huawei",
+      "value": 197000,
+      "metric": "Number of Employees",
+      "description": "Chinese multinational technology company",
+      "prefix": "",
+      "suffix": " employees"
+    }
+  ]
+}
