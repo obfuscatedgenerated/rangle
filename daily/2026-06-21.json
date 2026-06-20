@@ -1,0 +1,55 @@
+{
+  "date": "2026-06-21",
+  "number": 85,
+  "difficulty": "Easy",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q847571",
+      "name": "Bulbasaur",
+      "value": 1,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q1636903",
+      "name": "Ivysaur",
+      "value": 2,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q864987",
+      "name": "Corona",
+      "value": 4.5,
+      "metric": "Alcohol by Volume",
+      "description": "branded beverage from Mexico",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q243",
+      "name": "Eiffel Tower",
+      "value": 3,
+      "metric": "Number of Floors",
+      "description": "tower located on the Champ de Mars in Paris, France",
+      "prefix": "",
+      "suffix": " floors"
+    },
+    {
+      "id": "Q25380",
+      "name": "Eurasian Sparrowhawk",
+      "value": 4,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of bird",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    }
+  ]
+}
