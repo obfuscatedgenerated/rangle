@@ -1,0 +1,55 @@
+{
+  "date": "2026-06-24",
+  "number": 88,
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q81689",
+      "name": "The Da Vinci Code",
+      "value": 519,
+      "metric": "Number of Pages",
+      "description": "2003 novel by Dan Brown",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q126307",
+      "name": "Lake Van",
+      "value": 171,
+      "metric": "Depth",
+      "description": "largest lake in Turkey",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q1819",
+      "name": "samarium",
+      "value": 1879,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Sm and atomic number 62",
+      "prefix": "",
+      "suffix": ""
+    },
+    {
+      "id": "Q182719",
+      "name": "Lake Turkana",
+      "value": 109,
+      "metric": "Depth",
+      "description": "alkaline lake on the border of Ethiopia and Kenya",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q1053",
+      "name": "molybdenum",
+      "value": 1778,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Mo and atomic number 42",
+      "prefix": "",
+      "suffix": ""
+    }
+  ]
+}
