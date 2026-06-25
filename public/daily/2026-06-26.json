@@ -1,0 +1,55 @@
+{
+  "date": "2026-06-26",
+  "number": 90,
+  "difficulty": "Hard",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q20155528",
+      "name": "Horizon Zero Dawn",
+      "value": 20000000,
+      "metric": "Total Units Sold",
+      "description": "2017 action role-playing video game",
+      "prefix": "",
+      "suffix": " units",
+      "unit_hint": "approx."
+    },
+    {
+      "id": "Q471159",
+      "name": "Born on the Fourth of July",
+      "value": 17800000,
+      "metric": "Production Budget",
+      "description": "1989 film directed by Oliver Stone",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q33475",
+      "name": "Gan Chinese",
+      "value": 22100000,
+      "metric": "Native Speakers",
+      "description": "member of the Sinitic languages of the Sino-Tibetan language family spoken as the native language by the people in the Jiangxi province of China",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q124371422",
+      "name": "2024–25 Premier League",
+      "value": 15356083,
+      "metric": "Event Attendance",
+      "description": "33rd season of the Premier League",
+      "prefix": "",
+      "suffix": " attendees"
+    },
+    {
+      "id": "Q33158",
+      "name": "Chhattisgarhi",
+      "value": 16300000,
+      "metric": "Native Speakers",
+      "description": "asụsụ gọọmentị na steeti Chhattisgarh nke India",
+      "prefix": "",
+      "suffix": " speakers"
+    }
+  ]
+}
