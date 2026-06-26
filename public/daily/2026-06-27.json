@@ -1,0 +1,56 @@
+{
+  "date": "2026-06-27",
+  "number": 91,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q840762",
+      "name": "North African hedgehog",
+      "value": 35,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q1998207",
+      "name": "Nidorina",
+      "value": 30,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q20992391",
+      "name": "Goodbye Mr. Black",
+      "value": 20,
+      "metric": "Number of Episodes",
+      "description": "2016 South Korean television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q542594",
+      "name": "Angostura bitters",
+      "value": 44.7,
+      "metric": "Alcohol by Volume",
+      "description": "concentrated bitters made of water, alcohol, herbs and spices",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q1321102",
+      "name": "Afghan pika",
+      "value": 25,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    }
+  ]
+}
