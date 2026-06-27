@@ -1,0 +1,57 @@
+{
+  "date": "2026-06-28",
+  "number": 92,
+  "difficulty": "Hard",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q3522507",
+      "name": "Rick Mercer Report",
+      "value": 150,
+      "metric": "Number of Episodes",
+      "description": "television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q125392328",
+      "name": "28 Years Later",
+      "value": 115,
+      "metric": "Duration / Runtime",
+      "description": "2025 film directed by Danny Boyle",
+      "prefix": "",
+      "suffix": " minutes",
+      "unit_hint": "in minutes"
+    },
+    {
+      "id": "Q12125299",
+      "name": "Jupiter Ascending",
+      "value": 127,
+      "metric": "Duration / Runtime",
+      "description": "2015 film directed by Lana Wachowski and Lilly Wachowski",
+      "prefix": "",
+      "suffix": " minutes",
+      "unit_hint": "in minutes"
+    },
+    {
+      "id": "Q956345",
+      "name": "Lepilemur mustelinus",
+      "value": 140,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q400",
+      "name": "Jenna Jameson",
+      "value": 167,
+      "metric": "Height",
+      "description": "American pornographic actress",
+      "prefix": "",
+      "suffix": " cm",
+      "unit_hint": "in centimeters"
+    }
+  ]
+}
