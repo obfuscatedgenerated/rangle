@@ -1,0 +1,56 @@
+{
+  "date": "2026-06-29",
+  "number": 93,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q33273",
+      "name": "Chewa",
+      "value": 12000000,
+      "metric": "Native Speakers",
+      "description": "language of the Bantu language family",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q19090",
+      "name": "Robin Hood",
+      "value": 32056467,
+      "metric": "Total Box Office Revenue",
+      "description": "1973 animated film directed by Wolfgang Reitherman",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q33491",
+      "name": "Haitian Creole",
+      "value": 9600000,
+      "metric": "Native Speakers",
+      "description": "language spoken in Haiti",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q5014725",
+      "name": "PlayStation 4",
+      "value": 117200000,
+      "metric": "Total Units Sold",
+      "description": "Sony's fourth home video game console, part of the eighth generation of consoles",
+      "prefix": "",
+      "suffix": " units",
+      "unit_hint": "approx."
+    },
+    {
+      "id": "Q190086",
+      "name": "Some Like It Hot",
+      "value": 25000000,
+      "metric": "Total Box Office Revenue",
+      "description": "1959 film directed by Billy Wilder",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    }
+  ]
+}
