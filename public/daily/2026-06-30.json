@@ -1,0 +1,56 @@
+{
+  "date": "2026-06-30",
+  "number": 94,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q280154",
+      "name": "All That",
+      "value": 210,
+      "metric": "Number of Episodes",
+      "description": "American sketch comedy television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q9488",
+      "name": "Sachin Tendulkar",
+      "value": 170,
+      "metric": "Height",
+      "description": "Indian cricketer",
+      "prefix": "",
+      "suffix": " cm",
+      "unit_hint": "in centimeters"
+    },
+    {
+      "id": "Q221464",
+      "name": "Gilbert Gottfried",
+      "value": 160,
+      "metric": "Height",
+      "description": "American stand-up comedian (1955–2022)",
+      "prefix": "",
+      "suffix": " cm",
+      "unit_hint": "in centimeters"
+    },
+    {
+      "id": "Q1191179",
+      "name": "Más Sabe el Diablo",
+      "value": 182,
+      "metric": "Number of Episodes",
+      "description": "American television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q483941",
+      "name": "Schindler's List",
+      "value": 195,
+      "metric": "Duration / Runtime",
+      "description": "1993 film directed by Steven Spielberg",
+      "prefix": "",
+      "suffix": " minutes",
+      "unit_hint": "in minutes"
+    }
+  ]
+}
