@@ -1,0 +1,58 @@
+{
+  "date": "2026-07-02",
+  "number": 96,
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q81239",
+      "name": "Lake Assal",
+      "value": 20,
+      "metric": "Depth",
+      "description": "crater lake in Djibouti",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q48814715",
+      "name": "Ingenuity",
+      "value": 36,
+      "metric": "Top Speed",
+      "description": "decommissioned NASA rotorcraft on the Mars 2020 mission",
+      "prefix": "",
+      "suffix": " km/h",
+      "unit_hint": "in km/h"
+    },
+    {
+      "id": "Q76925",
+      "name": "Venetian Lagoon",
+      "value": 22,
+      "metric": "Depth",
+      "description": "enclosed bay of the Adriatic Sea",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q688605",
+      "name": "Flyer I",
+      "value": 48,
+      "metric": "Top Speed",
+      "description": "heavier-than-air powered aircraft, designed and built by the Wright Brothers",
+      "prefix": "",
+      "suffix": " km/h",
+      "unit_hint": "in km/h"
+    },
+    {
+      "id": "Q54383",
+      "name": "Columbia",
+      "value": 24,
+      "metric": "Wingspan",
+      "description": "American Space Shuttle orbiter",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
