@@ -1,0 +1,56 @@
+{
+  "date": "2026-07-04",
+  "number": 98,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q2347124",
+      "name": "Croconaw",
+      "value": 159,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q768071",
+      "name": "Axis calamianensis",
+      "value": 180,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q483941",
+      "name": "Schindler's List",
+      "value": 195,
+      "metric": "Duration / Runtime",
+      "description": "1993 film directed by Steven Spielberg",
+      "prefix": "",
+      "suffix": " minutes",
+      "unit_hint": "in minutes"
+    },
+    {
+      "id": "Q1191234",
+      "name": "Dragonite",
+      "value": 149,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q131340",
+      "name": "chamois",
+      "value": 170,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    }
+  ]
+}
