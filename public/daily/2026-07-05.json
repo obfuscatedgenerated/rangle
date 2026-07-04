@@ -1,0 +1,55 @@
+{
+  "date": "2026-07-05",
+  "number": 99,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q622878",
+      "name": "tamaraw",
+      "value": 289,
+      "metric": "Gestation Period",
+      "description": "species of buffalo",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q1266682",
+      "name": "Regirock",
+      "value": 377,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q728643",
+      "name": "Thorold's deer",
+      "value": 270,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q687483",
+      "name": "The Old Fox",
+      "value": 459,
+      "metric": "Number of Episodes",
+      "description": "German crime drama series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q6498629",
+      "name": "Pachirisu",
+      "value": 417,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    }
+  ]
+}
