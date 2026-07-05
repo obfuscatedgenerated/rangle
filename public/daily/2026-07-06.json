@@ -1,0 +1,53 @@
+{
+  "date": "2026-07-06",
+  "number": 100,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q40993",
+      "name": "Porsche",
+      "value": 36996,
+      "metric": "Number of Employees",
+      "description": "German automobile manufacturer specializing in high-performance sports cars, SUVs and sedans, owned by Volkswagen AG",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q27567",
+      "name": "Abaza",
+      "value": 48000,
+      "metric": "Native Speakers",
+      "description": "language of the Caucasus mountains in the Russian Karachay–Cherkess Republic by the Abazins",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q26319",
+      "name": "Università degli Studi Niccolò Cusano",
+      "value": 32567,
+      "metric": "Student Enrollment",
+      "description": "university in Rome, Italy",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q13199",
+      "name": "Romansh",
+      "value": 40039,
+      "metric": "Native Speakers",
+      "description": "Romance language spoken in the Swiss canton of Grisons (Graubünden)",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q7842",
+      "name": "University of Tokyo",
+      "value": 28918,
+      "metric": "Student Enrollment",
+      "description": "national university in Tokyo, Japan",
+      "prefix": "",
+      "suffix": " students"
+    }
+  ]
+}
