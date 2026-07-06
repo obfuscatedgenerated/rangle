@@ -1,0 +1,55 @@
+{
+  "date": "2026-07-07",
+  "number": 101,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q190508",
+      "name": "Siberian musk deer",
+      "value": 190,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q1247688",
+      "name": "Leave It to Beaver",
+      "value": 234,
+      "metric": "Number of Episodes",
+      "description": "American sitcom from the 1950s and 1960s",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q754947",
+      "name": "Siberian ibex",
+      "value": 162,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q44782202",
+      "name": "Deus Salve o Rei",
+      "value": 174,
+      "metric": "Number of Episodes",
+      "description": "Brazilian telenovela",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q2037718",
+      "name": "Unown",
+      "value": 201,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    }
+  ]
+}
