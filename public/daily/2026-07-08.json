@@ -1,0 +1,58 @@
+{
+  "date": "2026-07-08",
+  "number": 102,
+  "difficulty": "Easy",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q174555",
+      "name": "Madagascar",
+      "value": 75000000,
+      "metric": "Production Budget",
+      "description": "2005 animated film directed by Eric Darnell and Tom McGrath",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q155",
+      "name": "Brazil",
+      "value": 8515767,
+      "metric": "Area",
+      "description": "country in South America",
+      "prefix": "",
+      "suffix": " sq km",
+      "unit_hint": "in sq km"
+    },
+    {
+      "id": "Q148",
+      "name": "People's Republic of China",
+      "value": 9596961,
+      "metric": "Area",
+      "description": "country in East Asia",
+      "prefix": "",
+      "suffix": " sq km",
+      "unit_hint": "in sq km"
+    },
+    {
+      "id": "Q308",
+      "name": "Mercury",
+      "value": 69817446,
+      "metric": "Distance from Sun",
+      "description": "first planet from the Solar System and smallest among all, tellurian and with extreme temperatures",
+      "prefix": "",
+      "suffix": " km",
+      "unit_hint": "in kilometres"
+    },
+    {
+      "id": "Q313",
+      "name": "Venus",
+      "value": 108942109,
+      "metric": "Distance from Sun",
+      "description": "second planet from the Solar System, tellurian and very similar to Earth",
+      "prefix": "",
+      "suffix": " km",
+      "unit_hint": "in kilometres"
+    }
+  ]
+}
