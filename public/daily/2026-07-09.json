@@ -1,0 +1,55 @@
+{
+  "date": "2026-07-09",
+  "number": 103,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q215617",
+      "name": "Sleeping Beauty",
+      "value": 51600000,
+      "metric": "Total Box Office Revenue",
+      "description": "1959 American animated film",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q172241",
+      "name": "The Shawshank Redemption",
+      "value": 28817291,
+      "metric": "Total Box Office Revenue",
+      "description": "1994 film directed by Frank Darabont",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q92161",
+      "name": "Changchun",
+      "value": 9066906,
+      "metric": "Population",
+      "description": "capital city of Jilin Province, China",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q9211",
+      "name": "Lao",
+      "value": 5225552,
+      "metric": "Native Speakers",
+      "description": "Kra–Dai language of Southeast Asia",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q35876",
+      "name": "Guarani",
+      "value": 4500000,
+      "metric": "Native Speakers",
+      "description": "Tupian language of Paraguay, Argentina, Brazil and Bolivia, distinct groups within the Guaraní subgroup",
+      "prefix": "",
+      "suffix": " speakers"
+    }
+  ]
+}
