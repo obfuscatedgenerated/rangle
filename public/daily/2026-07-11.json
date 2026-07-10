@@ -1,0 +1,54 @@
+{
+  "date": "2026-07-11",
+  "number": 105,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q2090182",
+      "name": "Pidgeotto",
+      "value": 17,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q541959",
+      "name": "Vino Nobile di Montepulciano DOCG",
+      "value": 12.5,
+      "metric": "Alcohol by Volume",
+      "description": "Italian controlled and guaranteed designation of origin wine from Tuscany",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q131538168",
+      "name": "The Boroughs",
+      "value": 8,
+      "metric": "Number of Episodes",
+      "description": "2026 American television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q60769208",
+      "name": "The New Pope",
+      "value": 9,
+      "metric": "Number of Episodes",
+      "description": "2020 Sky Atlantic-HBO-Canal+ miniseries",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q2021999",
+      "name": "Spearow",
+      "value": 21,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    }
+  ]
+}
