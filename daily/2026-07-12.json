@@ -1,0 +1,57 @@
+{
+  "date": "2026-07-12",
+  "number": 106,
+  "difficulty": "Easy",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q744",
+      "name": "nickel",
+      "value": 2913,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol Ni and atomic number 28",
+      "prefix": "",
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
+    },
+    {
+      "id": "Q1491",
+      "name": "La Paz",
+      "value": 3640,
+      "metric": "Elevation above sea level",
+      "description": "seat of government of Bolivia",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q788",
+      "name": "Arctic Ocean",
+      "value": 5550,
+      "metric": "Depth",
+      "description": "smallest, shallowest, coldest, and northernmost of the world's major oceans",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q725",
+      "name": "chromium",
+      "value": 2672,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol Cr and atomic number 24",
+      "prefix": "",
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
+    },
+    {
+      "id": "Q1128",
+      "name": "radium",
+      "value": 1898,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Ra and atomic number 88",
+      "prefix": "",
+      "suffix": ""
+    }
+  ]
+}
