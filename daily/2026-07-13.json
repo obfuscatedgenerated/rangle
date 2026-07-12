@@ -1,0 +1,54 @@
+{
+  "date": "2026-07-13",
+  "number": 107,
+  "difficulty": "Easy",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q1637365",
+      "name": "Charmeleon",
+      "value": 5,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q864987",
+      "name": "Corona",
+      "value": 4.5,
+      "metric": "Alcohol by Volume",
+      "description": "branded beverage from Mexico",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q844940",
+      "name": "Charizard",
+      "value": 6,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q304290",
+      "name": "Rugrats",
+      "value": 9,
+      "metric": "Number of Seasons",
+      "description": "American children's television series",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q2069800",
+      "name": "American Pickers",
+      "value": 8,
+      "metric": "Number of Seasons",
+      "description": "U.S. reality show following antique and collectible pickers",
+      "prefix": "",
+      "suffix": " seasons"
+    }
+  ]
+}
