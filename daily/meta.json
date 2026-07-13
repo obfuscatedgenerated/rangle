@@ -1,6 +1,6 @@
 {
-  "time": "2026-07-12T13:48:18.278Z",
-  "count": 106,
+  "time": "2026-07-13T14:49:50.167Z",
+  "count": 107,
   "days": {
     "2026-03-29": {
       "number": 1,
@@ -529,6 +529,11 @@
     },
     "2026-07-13": {
       "number": 107,
+      "difficulty": "Easy",
+      "neighbourhood": "small"
+    },
+    "2026-07-14": {
+      "number": 108,
       "difficulty": "Easy",
       "neighbourhood": "small"
     }

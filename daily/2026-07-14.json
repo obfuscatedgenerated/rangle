@@ -1,0 +1,55 @@
+{
+  "date": "2026-07-14",
+  "number": 108,
+  "difficulty": "Easy",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q56153643",
+      "name": "Watchmen",
+      "value": 9,
+      "metric": "Number of Episodes",
+      "description": "2019 American superhero drama television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q25345",
+      "name": "Mustela erminea",
+      "value": 5,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of mustelid (Mustelidae)",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    },
+    {
+      "id": "Q25380",
+      "name": "Eurasian Sparrowhawk",
+      "value": 4,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of bird",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    },
+    {
+      "id": "Q1636903",
+      "name": "Ivysaur",
+      "value": 2,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q847571",
+      "name": "Bulbasaur",
+      "value": 1,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    }
+  ]
+}
