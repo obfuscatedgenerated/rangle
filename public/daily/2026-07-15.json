@@ -1,0 +1,56 @@
+{
+  "date": "2026-07-15",
+  "number": 109,
+  "difficulty": "Easy",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q641521",
+      "name": "Foster's Home for Imaginary Friends",
+      "value": 79,
+      "metric": "Number of Episodes",
+      "description": "American animated television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q129026",
+      "name": "great white shark",
+      "value": 73,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of large lamniform shark",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    },
+    {
+      "id": "Q23907",
+      "name": "cheetah",
+      "value": 92,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q1165866",
+      "name": "Daria",
+      "value": 67,
+      "metric": "Number of Episodes",
+      "description": "American adult animated sitcom",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q30197",
+      "name": "snow leopard",
+      "value": 102,
+      "metric": "Gestation Period",
+      "description": "large felid native to the mountains of Central and South Asia",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    }
+  ]
+}
