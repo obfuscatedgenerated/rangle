@@ -1,0 +1,55 @@
+{
+  "date": "2026-07-17",
+  "number": 111,
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q182719",
+      "name": "Lake Turkana",
+      "value": 109,
+      "metric": "Depth",
+      "description": "alkaline lake on the border of Ethiopia and Kenya",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q126307",
+      "name": "Lake Van",
+      "value": 171,
+      "metric": "Depth",
+      "description": "largest lake in Turkey",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q1100",
+      "name": "tellurium",
+      "value": 1783,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Te and atomic number 52",
+      "prefix": "",
+      "suffix": ""
+    },
+    {
+      "id": "Q1846",
+      "name": "holmium",
+      "value": 1878,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Ho and atomic number 67",
+      "prefix": "",
+      "suffix": ""
+    },
+    {
+      "id": "Q81689",
+      "name": "The Da Vinci Code",
+      "value": 519,
+      "metric": "Number of Pages",
+      "description": "2003 novel by Dan Brown",
+      "prefix": "",
+      "suffix": " pages"
+    }
+  ]
+}
