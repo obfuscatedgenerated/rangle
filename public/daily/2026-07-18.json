@@ -1,0 +1,53 @@
+{
+  "date": "2026-07-18",
+  "number": 112,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q21578",
+      "name": "Princeton University",
+      "value": 8799,
+      "metric": "Student Enrollment",
+      "description": "private Ivy League research university in Princeton, New Jersey, United States",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q130879",
+      "name": "Reuters",
+      "value": 2500,
+      "metric": "Number of Employees",
+      "description": "international news agency",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q174335",
+      "name": "French Civil Aviation University",
+      "value": 3002,
+      "metric": "Student Enrollment",
+      "description": "University of civil aviation",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q49112",
+      "name": "Yale University",
+      "value": 3619,
+      "metric": "Number of Employees",
+      "description": "private university in New Haven, Connecticut",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q13286",
+      "name": "Lower Sorbian",
+      "value": 6670,
+      "metric": "Native Speakers",
+      "description": "Western Slavic language spoken in eastern Germany in the historical province of Lower Lusatia",
+      "prefix": "",
+      "suffix": " speakers"
+    }
+  ]
+}
