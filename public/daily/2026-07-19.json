@@ -1,0 +1,57 @@
+{
+  "date": "2026-07-19",
+  "number": 113,
+  "difficulty": "Easy",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q39624",
+      "name": "Rangifer tarandus",
+      "value": 228,
+      "metric": "Gestation Period",
+      "description": "species of deer",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q164100",
+      "name": "Tik Tok",
+      "value": 120,
+      "metric": "Tempo",
+      "description": "2009 single by Kesha",
+      "prefix": "",
+      "suffix": " BPM",
+      "unit_hint": "beats per minute"
+    },
+    {
+      "id": "Q2141803",
+      "name": "Mewtwo",
+      "value": 150,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q33602",
+      "name": "Giant panda",
+      "value": 127,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q229553",
+      "name": "3",
+      "value": 135,
+      "metric": "Tempo",
+      "description": "2009 single by Britney Spears",
+      "prefix": "",
+      "suffix": " BPM",
+      "unit_hint": "beats per minute"
+    }
+  ]
+}
