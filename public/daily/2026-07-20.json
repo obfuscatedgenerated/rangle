@@ -1,0 +1,56 @@
+{
+  "date": "2026-07-20",
+  "number": 114,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q2489048",
+      "name": "Bayleef",
+      "value": 153,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q476930",
+      "name": "Saimiri sciureus",
+      "value": 162,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q1029643",
+      "name": "Hair",
+      "value": 135,
+      "metric": "Tempo",
+      "description": "2011 song by Lady Gaga",
+      "prefix": "",
+      "suffix": " BPM",
+      "unit_hint": "beats per minute"
+    },
+    {
+      "id": "Q2070430",
+      "name": "Articuno",
+      "value": 144,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q751636",
+      "name": "yellow baboon",
+      "value": 183,
+      "metric": "Gestation Period",
+      "description": "species of baboon",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    }
+  ]
+}
