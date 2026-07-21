@@ -1,0 +1,54 @@
+{
+  "date": "2026-07-22",
+  "number": 116,
+  "difficulty": "Hard",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q854122",
+      "name": "Stade Bollaert-Delelis",
+      "value": 38223,
+      "metric": "Maximum Capacity",
+      "description": "football stadium in Lens, France",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q55044",
+      "name": "Ludwig-Maximilians-Universität München",
+      "value": 52418,
+      "metric": "Student Enrollment",
+      "description": "public university in Munich, Germany",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q187042",
+      "name": "Peter Mokaba Stadium",
+      "value": 41733,
+      "metric": "Maximum Capacity",
+      "description": "stadium",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q11618",
+      "name": "Eraserhead",
+      "value": 100000,
+      "metric": "Production Budget",
+      "description": "1977 film by David Lynch",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q1494353",
+      "name": "Airlangga University",
+      "value": 35985,
+      "metric": "Student Enrollment",
+      "description": "national university in East Java, Indonesia",
+      "prefix": "",
+      "suffix": " students"
+    }
+  ]
+}
