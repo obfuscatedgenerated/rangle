@@ -1,0 +1,54 @@
+{
+  "date": "2026-07-23",
+  "number": 117,
+  "difficulty": "Easy",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q794",
+      "name": "Iran",
+      "value": 92417700,
+      "metric": "Population",
+      "description": "country in Western Asia",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q1617",
+      "name": "Urdu",
+      "value": 68600000,
+      "metric": "Native Speakers",
+      "description": "Indo-Aryan language spoken in South Asia",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q174555",
+      "name": "Madagascar",
+      "value": 542063846,
+      "metric": "Total Box Office Revenue",
+      "description": "2005 animated film directed by Eric Darnell and Tom McGrath",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q79",
+      "name": "Egypt",
+      "value": 114535772,
+      "metric": "Population",
+      "description": "country in Northeast Africa and Southwest Asia",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q652",
+      "name": "Italian",
+      "value": 64800000,
+      "metric": "Native Speakers",
+      "description": "Romance language",
+      "prefix": "",
+      "suffix": " speakers"
+    }
+  ]
+}
