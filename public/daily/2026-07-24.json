@@ -1,0 +1,58 @@
+{
+  "date": "2026-07-24",
+  "number": 118,
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q153370",
+      "name": "Tirpitz",
+      "value": 251,
+      "metric": "Length",
+      "description": "1939 Bismarck-class battleship",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q335277",
+      "name": "Pont Neuf",
+      "value": 238,
+      "metric": "Length",
+      "description": "bridge across the Seine in Paris",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q152917",
+      "name": "Lamborghini Gallardo",
+      "value": 320,
+      "metric": "Top Speed",
+      "description": "car model",
+      "prefix": "",
+      "suffix": " km/h",
+      "unit_hint": "in km/h"
+    },
+    {
+      "id": "Q332628",
+      "name": "Lake Nyos",
+      "value": 210,
+      "metric": "Depth",
+      "description": "crater lake in the Northwest Region of Cameroon",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q14436",
+      "name": "Lake Zug",
+      "value": 198,
+      "metric": "Depth",
+      "description": "lake in Switzerland",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
