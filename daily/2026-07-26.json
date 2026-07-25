@@ -1,0 +1,55 @@
+{
+  "date": "2026-07-26",
+  "number": 120,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q108735969",
+      "name": "Island",
+      "value": 12,
+      "metric": "Number of Episodes",
+      "description": "2022 South Korean web series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q2836862",
+      "name": "Mighty Morphin Alien Rangers",
+      "value": 10,
+      "metric": "Number of Episodes",
+      "description": "television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q903559",
+      "name": "Delirium Tremens",
+      "value": 8.5,
+      "metric": "Alcohol by Volume",
+      "description": "beer",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q1401625",
+      "name": "Wild at Heart",
+      "value": 7,
+      "metric": "Number of Seasons",
+      "description": "British TV series",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q928026",
+      "name": "Cynar",
+      "value": 16.5,
+      "metric": "Alcohol by Volume",
+      "description": "Italian bitter liqueur",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    }
+  ]
+}
