@@ -1,0 +1,54 @@
+{
+  "date": "2026-07-28",
+  "number": 122,
+  "difficulty": "Easy",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q189007",
+      "name": "Just Dance",
+      "value": 119,
+      "metric": "Tempo",
+      "description": "2008 song by Lady Gaga",
+      "prefix": "",
+      "suffix": " BPM",
+      "unit_hint": "beats per minute"
+    },
+    {
+      "id": "Q2668662",
+      "name": "Father of the Pride",
+      "value": 15,
+      "metric": "Number of Episodes",
+      "description": "American animated television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q212731",
+      "name": "Fawlty Towers",
+      "value": 12,
+      "metric": "Number of Episodes",
+      "description": "1970s BBC television sitcom",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q1263559",
+      "name": "Eevee",
+      "value": 133,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q304290",
+      "name": "Rugrats",
+      "value": 9,
+      "metric": "Number of Seasons",
+      "description": "American children's television series",
+      "prefix": "",
+      "suffix": " seasons"
+    }
+  ]
+}
