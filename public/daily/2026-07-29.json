@@ -1,0 +1,56 @@
+{
+  "date": "2026-07-29",
+  "number": 123,
+  "difficulty": "Hard",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q28675455",
+      "name": "The Chairman's Ear",
+      "value": 16,
+      "metric": "Number of Episodes",
+      "description": "Polish web series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q5705344",
+      "name": "Arrayán",
+      "value": 12,
+      "metric": "Number of Seasons",
+      "description": "Spanish television series broadcast by Canal Sur (2001-2013)",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q1009351",
+      "name": "Geomys",
+      "value": 18,
+      "metric": "Gestation Period",
+      "description": "genus of mammals",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q4008340",
+      "name": "Valtellina superiore Valgella DOCG",
+      "value": 13,
+      "metric": "Alcohol by Volume",
+      "description": "type of the Valtellina superiore Italian DOCG",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q4008341",
+      "name": "Valtellina superiore Sassella DOCG",
+      "value": 14,
+      "metric": "Alcohol by Volume",
+      "description": "type of the Valtellina superiore Italian DOCG",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    }
+  ]
+}
