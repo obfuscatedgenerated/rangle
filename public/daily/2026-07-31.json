@@ -1,0 +1,55 @@
+{
+  "date": "2026-07-31",
+  "number": 125,
+  "difficulty": "Easy",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q1171",
+      "name": "Goa",
+      "value": 3702,
+      "metric": "Area",
+      "description": "state in western India",
+      "prefix": "",
+      "suffix": " sq km",
+      "unit_hint": "in sq km"
+    },
+    {
+      "id": "Q907112",
+      "name": "Transnistria",
+      "value": 4163,
+      "metric": "Area",
+      "description": "Russian-occupied territory in Moldova",
+      "prefix": "",
+      "suffix": " sq km",
+      "unit_hint": "in sq km"
+    },
+    {
+      "id": "Q11059",
+      "name": "Sanskrit",
+      "value": 49736,
+      "metric": "Native Speakers",
+      "description": "ancient Indo-Aryan language of South Asia",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q672",
+      "name": "Tuvalu",
+      "value": 10643,
+      "metric": "Population",
+      "description": "country in Oceania",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q235",
+      "name": "Monaco",
+      "value": 38857,
+      "metric": "Population",
+      "description": "microstate in Western Europe",
+      "prefix": "",
+      "suffix": " people"
+    }
+  ]
+}
