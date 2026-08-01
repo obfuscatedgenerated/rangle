@@ -1,0 +1,58 @@
+{
+  "date": "2026-08-02",
+  "number": 127,
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q549267",
+      "name": "Laacher See",
+      "value": 51,
+      "metric": "Depth",
+      "description": "volcanic crater lake in Germany",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q10285",
+      "name": "Colosseum",
+      "value": 48,
+      "metric": "Height",
+      "description": "ancient Roman amphitheatre, a landmark of Rome, Italy",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q35883",
+      "name": "Aral Sea",
+      "value": 42,
+      "metric": "Depth",
+      "description": "Formerly a salt lake in Central Asia",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q999",
+      "name": "astatine",
+      "value": 230,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol At and atomic number 85",
+      "prefix": "",
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
+    },
+    {
+      "id": "Q39054",
+      "name": "Leaning Tower of Pisa",
+      "value": 58,
+      "metric": "Height",
+      "description": "cathedral bell tower in Pisa, Italy",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
