@@ -1,0 +1,54 @@
+{
+  "date": "2026-08-03",
+  "number": 128,
+  "difficulty": "Easy",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q1636903",
+      "name": "Ivysaur",
+      "value": 2,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q864987",
+      "name": "Corona",
+      "value": 4.5,
+      "metric": "Alcohol by Volume",
+      "description": "branded beverage from Mexico",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q463999",
+      "name": "The Cosby Show",
+      "value": 8,
+      "metric": "Number of Seasons",
+      "description": "American sitcom",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q847571",
+      "name": "Bulbasaur",
+      "value": 1,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q56153643",
+      "name": "Watchmen",
+      "value": 9,
+      "metric": "Number of Episodes",
+      "description": "2019 American superhero drama television series",
+      "prefix": "",
+      "suffix": " episodes"
+    }
+  ]
+}
