@@ -1,0 +1,54 @@
+{
+  "date": "2026-08-05",
+  "number": 130,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q27567",
+      "name": "Abaza",
+      "value": 48000,
+      "metric": "Native Speakers",
+      "description": "language of the Caucasus mountains in the Russian Karachay–Cherkess Republic by the Abazins",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q153978",
+      "name": "University of Tübingen",
+      "value": 28238,
+      "metric": "Student Enrollment",
+      "description": "public research university in Tübingen, Germany",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q7894375",
+      "name": "Universidade Federal de Goiás",
+      "value": 25846,
+      "metric": "Student Enrollment",
+      "description": "public university in Goiânia, Goiás, Brazil",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q29921",
+      "name": "Inuktitut",
+      "value": 39770,
+      "metric": "Native Speakers",
+      "description": "name of several Inuit languages spoken in Canada",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q900492",
+      "name": "Cà Mau Airport",
+      "value": 30698,
+      "metric": "Number of Passengers",
+      "description": "airport in Vietnam",
+      "prefix": "",
+      "suffix": " passengers",
+      "unit_hint": "annual"
+    }
+  ]
+}
