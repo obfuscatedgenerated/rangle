@@ -1,0 +1,55 @@
+{
+  "date": "2026-08-07",
+  "number": 132,
+  "difficulty": "Easy",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q864987",
+      "name": "Corona",
+      "value": 4.5,
+      "metric": "Alcohol by Volume",
+      "description": "branded beverage from Mexico",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q243",
+      "name": "Eiffel Tower",
+      "value": 3,
+      "metric": "Number of Floors",
+      "description": "tower located on the Champ de Mars in Paris, France",
+      "prefix": "",
+      "suffix": " floors"
+    },
+    {
+      "id": "Q106797829",
+      "name": "One of Us Is Lying",
+      "value": 2,
+      "metric": "Number of Seasons",
+      "description": "2021 American young adult mystery drama",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q25380",
+      "name": "Eurasian Sparrowhawk",
+      "value": 4,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of bird",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    },
+    {
+      "id": "Q1990905",
+      "name": "Wolverine and the X-Men",
+      "value": 1,
+      "metric": "Number of Seasons",
+      "description": "American animated television series",
+      "prefix": "",
+      "suffix": " seasons"
+    }
+  ]
+}
