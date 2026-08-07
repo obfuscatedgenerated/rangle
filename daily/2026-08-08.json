@@ -1,0 +1,57 @@
+{
+  "date": "2026-08-08",
+  "number": 133,
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q182719",
+      "name": "Lake Turkana",
+      "value": 109,
+      "metric": "Depth",
+      "description": "alkaline lake on the border of Ethiopia and Kenya",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q81689",
+      "name": "The Da Vinci Code",
+      "value": 519,
+      "metric": "Number of Pages",
+      "description": "2003 novel by Dan Brown",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q1846",
+      "name": "holmium",
+      "value": 2600,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol Ho and atomic number 67",
+      "prefix": "",
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
+    },
+    {
+      "id": "Q166162",
+      "name": "Lake Onega",
+      "value": 127,
+      "metric": "Depth",
+      "description": "freshwater lake in Russia, second largest in Europe",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q999",
+      "name": "astatine",
+      "value": 230,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol At and atomic number 85",
+      "prefix": "",
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
+    }
+  ]
+}
