@@ -1,0 +1,57 @@
+{
+  "date": "2026-08-09",
+  "number": 134,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q134899",
+      "name": "Zhigulevskoye",
+      "value": 4,
+      "metric": "Alcohol by Volume",
+      "description": "Russian beer brand",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q1752151",
+      "name": "Wartortle",
+      "value": 8,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q26842",
+      "name": "silverfish",
+      "value": 2,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of insect",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    },
+    {
+      "id": "Q737413",
+      "name": "Greater Horseshoe Bat",
+      "value": 3,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    },
+    {
+      "id": "Q2905047",
+      "name": "sorghum beer",
+      "value": 3.3,
+      "metric": "Alcohol by Volume",
+      "description": "beer originating in sub-Sahara Africa",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    }
+  ]
+}
