@@ -1,0 +1,56 @@
+{
+  "date": "2026-08-10",
+  "number": 135,
+  "difficulty": "Easy",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q36101",
+      "name": "koala",
+      "value": 37,
+      "metric": "Gestation Period",
+      "description": "arboreal herbivorous marsupial native to Australia",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q25851",
+      "name": "Poponejo",
+      "value": 30,
+      "metric": "Gestation Period",
+      "description": "species of lagomorphs (Lagomorpha)",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q79997521",
+      "name": "Start-Up",
+      "value": 16,
+      "metric": "Number of Episodes",
+      "description": "2020 South Korean romantic drama TV series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q174555",
+      "name": "Madagascar",
+      "value": 86,
+      "metric": "Duration / Runtime",
+      "description": "2005 animated film directed by Eric Darnell and Tom McGrath",
+      "prefix": "",
+      "suffix": " minutes",
+      "unit_hint": "in minutes"
+    },
+    {
+      "id": "Q212731",
+      "name": "Fawlty Towers",
+      "value": 12,
+      "metric": "Number of Episodes",
+      "description": "1970s BBC television sitcom",
+      "prefix": "",
+      "suffix": " episodes"
+    }
+  ]
+}
