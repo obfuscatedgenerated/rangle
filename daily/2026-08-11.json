@@ -1,0 +1,53 @@
+{
+  "date": "2026-08-11",
+  "number": 136,
+  "difficulty": "Hard",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q727078",
+      "name": "Stockholm Olympic Stadium",
+      "value": 14500,
+      "metric": "Maximum Capacity",
+      "description": "stadium at Stockholm, Sweden",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q36867",
+      "name": "Udi",
+      "value": 8000,
+      "metric": "Native Speakers",
+      "description": "Northeast Caucasian language",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q29960",
+      "name": "Even",
+      "value": 5660,
+      "metric": "Native Speakers",
+      "description": "Tungusic language spoken by the Evens in Siberia",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q9219",
+      "name": "United States Military Academy",
+      "value": 4487,
+      "metric": "Student Enrollment",
+      "description": "federal service academy in West Point, New York, United States",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q83259",
+      "name": "École Normale Supérieure",
+      "value": 2536,
+      "metric": "Student Enrollment",
+      "description": "French \"grande école\" (ENS Paris)",
+      "prefix": "",
+      "suffix": " students"
+    }
+  ]
+}
