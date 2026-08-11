@@ -1,0 +1,58 @@
+{
+  "date": "2026-08-12",
+  "number": 137,
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q126307",
+      "name": "Lake Van",
+      "value": 171,
+      "metric": "Depth",
+      "description": "largest lake in Turkey",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q2518",
+      "name": "Helmut Kohl",
+      "value": 150,
+      "metric": "Mass / Weight",
+      "description": "Chancellor of West Germany and reunified Germany (1982–1998)",
+      "prefix": "",
+      "suffix": " kg",
+      "unit_hint": "in kilograms"
+    },
+    {
+      "id": "Q428858",
+      "name": "Al-Masjid Al-Haram",
+      "value": 138,
+      "metric": "Height",
+      "description": "Islam's holiest mosque in Mecca, Saudi Arabia",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q166162",
+      "name": "Lake Onega",
+      "value": 127,
+      "metric": "Depth",
+      "description": "freshwater lake in Russia, second largest in Europe",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q79031",
+      "name": "Mike Tyson",
+      "value": 109,
+      "metric": "Mass / Weight",
+      "description": "American boxer and media personality (born 1966)",
+      "prefix": "",
+      "suffix": " kg",
+      "unit_hint": "in kilograms"
+    }
+  ]
+}
