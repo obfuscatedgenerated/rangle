@@ -1,0 +1,58 @@
+{
+  "date": "2026-08-13",
+  "number": 138,
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q688605",
+      "name": "Flyer I",
+      "value": 48,
+      "metric": "Top Speed",
+      "description": "heavier-than-air powered aircraft, designed and built by the Wright Brothers",
+      "prefix": "",
+      "suffix": " km/h",
+      "unit_hint": "in km/h"
+    },
+    {
+      "id": "Q204496",
+      "name": "Millennium Stadium",
+      "value": 33,
+      "metric": "Height",
+      "description": "national stadium of Wales",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q842822",
+      "name": "Maiden Tower",
+      "value": 30,
+      "metric": "Height",
+      "description": "12th-century monument in the Old City, Baku, Azerbaijan",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q182508",
+      "name": "Endeavour",
+      "value": 78,
+      "metric": "Mass / Weight",
+      "description": "American Space Shuttle orbiter",
+      "prefix": "",
+      "suffix": " tonnes",
+      "unit_hint": "in metric tonnes"
+    },
+    {
+      "id": "Q48814715",
+      "name": "Ingenuity",
+      "value": 36,
+      "metric": "Top Speed",
+      "description": "decommissioned NASA rotorcraft on the Mars 2020 mission",
+      "prefix": "",
+      "suffix": " km/h",
+      "unit_hint": "in km/h"
+    }
+  ]
+}
