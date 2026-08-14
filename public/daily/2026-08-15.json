@@ -1,0 +1,54 @@
+{
+  "date": "2026-08-15",
+  "number": 140,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q3159",
+      "name": "Kursk",
+      "value": 434696,
+      "metric": "Population",
+      "description": "city in the south-west of Russia",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q48432",
+      "name": "1930 FIFA World Cup",
+      "value": 590549,
+      "metric": "Event Attendance",
+      "description": "1st FIFA World Cup, held in Uruguay",
+      "prefix": "",
+      "suffix": " attendees"
+    },
+    {
+      "id": "Q24815",
+      "name": "Citizen Kane",
+      "value": 839727,
+      "metric": "Production Budget",
+      "description": "1941 American drama film directed by Orson Welles",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q160813",
+      "name": "1962 FIFA World Cup",
+      "value": 893172,
+      "metric": "Event Attendance",
+      "description": "7th FIFA World Cup, held in Chile",
+      "prefix": "",
+      "suffix": " attendees"
+    },
+    {
+      "id": "Q49259",
+      "name": "Virginia Beach",
+      "value": 459470,
+      "metric": "Population",
+      "description": "independent city in Virginia, United States",
+      "prefix": "",
+      "suffix": " people"
+    }
+  ]
+}
