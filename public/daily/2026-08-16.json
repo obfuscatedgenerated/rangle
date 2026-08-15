@@ -1,0 +1,58 @@
+{
+  "date": "2026-08-16",
+  "number": 141,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q6686",
+      "name": "Renault",
+      "value": 14683000000,
+      "metric": "Market Capitalisation",
+      "description": "automotive conglomerate",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q182218",
+      "name": "The Avengers",
+      "value": 1518812988,
+      "metric": "Total Box Office Revenue",
+      "description": "2012 film directed by Joss Whedon",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q232009",
+      "name": "Harry Potter and the Deathly Hallows – Part 2",
+      "value": 1341511219,
+      "metric": "Total Box Office Revenue",
+      "description": "2011 film directed by David Yates",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q155653",
+      "name": "Spirited Away",
+      "value": 2000000000,
+      "metric": "Production Budget",
+      "description": "2001 anime film directed by Hayao Miyazaki",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q9325",
+      "name": "Lufthansa",
+      "value": 9710000000,
+      "metric": "Market Capitalisation",
+      "description": "Flag-carrier and largest airline of Germany",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    }
+  ]
+}
