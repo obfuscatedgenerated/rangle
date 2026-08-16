@@ -1,0 +1,55 @@
+{
+  "date": "2026-08-17",
+  "number": 142,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q541959",
+      "name": "Vino Nobile di Montepulciano DOCG",
+      "value": 12.5,
+      "metric": "Alcohol by Volume",
+      "description": "Italian controlled and guaranteed designation of origin wine from Tuscany",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q1401625",
+      "name": "Wild at Heart",
+      "value": 7,
+      "metric": "Number of Seasons",
+      "description": "British TV series",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q1752154",
+      "name": "Blastoise",
+      "value": 9,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q1752151",
+      "name": "Wartortle",
+      "value": 8,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q903559",
+      "name": "Delirium Tremens",
+      "value": 8.5,
+      "metric": "Alcohol by Volume",
+      "description": "beer",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    }
+  ]
+}
