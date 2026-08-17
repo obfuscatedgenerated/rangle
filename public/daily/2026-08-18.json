@@ -1,0 +1,55 @@
+{
+  "date": "2026-08-18",
+  "number": 143,
+  "difficulty": "Easy",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q25851",
+      "name": "Poponejo",
+      "value": 30,
+      "metric": "Gestation Period",
+      "description": "species of lagomorphs (Lagomorpha)",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q106679014",
+      "name": "The White Lotus",
+      "value": 21,
+      "metric": "Number of Episodes",
+      "description": "2021 American television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q23670",
+      "name": "It's Always Sunny in Philadelphia",
+      "value": 17,
+      "metric": "Number of Seasons",
+      "description": "American comedy television series",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q36101",
+      "name": "koala",
+      "value": 37,
+      "metric": "Gestation Period",
+      "description": "arboreal herbivorous marsupial native to Australia",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q858387",
+      "name": "Serial Experiments Lain",
+      "value": 13,
+      "metric": "Number of Episodes",
+      "description": "1998 television anime series",
+      "prefix": "",
+      "suffix": " episodes"
+    }
+  ]
+}
