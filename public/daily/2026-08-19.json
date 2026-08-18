@@ -1,0 +1,55 @@
+{
+  "date": "2026-08-19",
+  "number": 144,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q1752151",
+      "name": "Wartortle",
+      "value": 8,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q125732790",
+      "name": "The Fairly OddParents: A New Wish",
+      "value": 5,
+      "metric": "Number of Episodes",
+      "description": "American animated television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q26842",
+      "name": "silverfish",
+      "value": 2,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of insect",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    },
+    {
+      "id": "Q737413",
+      "name": "Greater Horseshoe Bat",
+      "value": 3,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    },
+    {
+      "id": "Q88759629",
+      "name": "Unorthodox",
+      "value": 4,
+      "metric": "Number of Episodes",
+      "description": "2020 German television miniseries",
+      "prefix": "",
+      "suffix": " episodes"
+    }
+  ]
+}
