@@ -1,0 +1,53 @@
+{
+  "date": "2026-08-21",
+  "number": 146,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q182950",
+      "name": "Studio Ghibli",
+      "value": 190,
+      "metric": "Number of Employees",
+      "description": "Japanese animation studio",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q42751",
+      "name": "Palikir",
+      "value": 6227,
+      "metric": "Population",
+      "description": "capital of Federated States of Micronesia",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q161562",
+      "name": "California Institute of Technology",
+      "value": 2397,
+      "metric": "Student Enrollment",
+      "description": "private research university located in Pasadena, California, USA",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q43449",
+      "name": "Creative Commons",
+      "value": 147,
+      "metric": "Number of Employees",
+      "description": "non-profit-organization creating copyright licenses for the public release of creative works",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q37819",
+      "name": "Auckland Grammar School",
+      "value": 2583,
+      "metric": "Student Enrollment",
+      "description": "state secondary (year 9-15) school in Auckland, New Zealand",
+      "prefix": "",
+      "suffix": " students"
+    }
+  ]
+}
