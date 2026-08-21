@@ -1,0 +1,58 @@
+{
+  "date": "2026-08-22",
+  "number": 147,
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q3778",
+      "name": "Zwickau",
+      "value": 267,
+      "metric": "Elevation above sea level",
+      "description": "town in Saxony, Germany",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q182059",
+      "name": "Kumasi",
+      "value": 300,
+      "metric": "Elevation above sea level",
+      "description": "capital city of Ashanti Region",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q29294",
+      "name": "Willis Tower",
+      "value": 442,
+      "metric": "Height",
+      "description": "skyscraper in Chicago, Illinois, USA",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q4127",
+      "name": "Lake Constance",
+      "value": 251,
+      "metric": "Depth",
+      "description": "lake in Germany, Switzerland and Austria",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q6414",
+      "name": "Lake Garda",
+      "value": 346,
+      "metric": "Depth",
+      "description": "lake in Italy",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
