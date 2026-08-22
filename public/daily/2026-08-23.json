@@ -1,0 +1,53 @@
+{
+  "date": "2026-08-23",
+  "number": 148,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q183213",
+      "name": "Institut Polytechnique des Sciences Avancées",
+      "value": 2721,
+      "metric": "Student Enrollment",
+      "description": "French engineering college in aerospace",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q10285",
+      "name": "Colosseum",
+      "value": 65000,
+      "metric": "Maximum Capacity",
+      "description": "ancient Roman amphitheatre, a landmark of Rome, Italy",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q21578",
+      "name": "Princeton University",
+      "value": 8799,
+      "metric": "Student Enrollment",
+      "description": "private Ivy League research university in Princeton, New Jersey, United States",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q35886",
+      "name": "Lamborghini",
+      "value": 1779,
+      "metric": "Number of Employees",
+      "description": "Italian car manufacturer",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q434841",
+      "name": "20th Century Studios",
+      "value": 2300,
+      "metric": "Number of Employees",
+      "description": "American film studio owned by The Walt Disney Company",
+      "prefix": "",
+      "suffix": " employees"
+    }
+  ]
+}
