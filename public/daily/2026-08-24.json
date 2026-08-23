@@ -1,0 +1,56 @@
+{
+  "date": "2026-08-24",
+  "number": 149,
+  "difficulty": "Easy",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q153044",
+      "name": "Alejandro",
+      "value": 99,
+      "metric": "Tempo",
+      "description": "2010 single by Lady Gaga",
+      "prefix": "",
+      "suffix": " BPM",
+      "unit_hint": "beats per minute"
+    },
+    {
+      "id": "Q33602",
+      "name": "Giant panda",
+      "value": 127,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q147734",
+      "name": "Halo",
+      "value": 80,
+      "metric": "Tempo",
+      "description": "2009 song by Beyonce",
+      "prefix": "",
+      "suffix": " BPM",
+      "unit_hint": "beats per minute"
+    },
+    {
+      "id": "Q457409",
+      "name": "The Jetsons",
+      "value": 75,
+      "metric": "Number of Episodes",
+      "description": "American animated sit-com (1962–1987)",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q265152",
+      "name": "The Shield",
+      "value": 88,
+      "metric": "Number of Episodes",
+      "description": "American drama television series",
+      "prefix": "",
+      "suffix": " episodes"
+    }
+  ]
+}
