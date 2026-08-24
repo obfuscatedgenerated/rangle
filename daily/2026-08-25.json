@@ -1,0 +1,56 @@
+{
+  "date": "2026-08-25",
+  "number": 150,
+  "difficulty": "Easy",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q319",
+      "name": "Jupiter",
+      "value": 816520700,
+      "metric": "Distance from Sun",
+      "description": "fifth planet in the Solar System and largest among all; gaseous giant mainly composed of hydrogen and helium",
+      "prefix": "",
+      "suffix": " km",
+      "unit_hint": "in kilometres"
+    },
+    {
+      "id": "Q174555",
+      "name": "Madagascar",
+      "value": 542063846,
+      "metric": "Total Box Office Revenue",
+      "description": "2005 animated film directed by Eric Darnell and Tom McGrath",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q9610",
+      "name": "Bangla",
+      "value": 300000000,
+      "metric": "Native Speakers",
+      "description": "Indo-Aryan language mostly spoken in Bangladesh and India",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q111",
+      "name": "Mars",
+      "value": 249260000,
+      "metric": "Distance from Sun",
+      "description": "fourth planet from the Solar System, tellurian and orange-red due to iron oxide",
+      "prefix": "",
+      "suffix": " km",
+      "unit_hint": "in kilometres"
+    },
+    {
+      "id": "Q150",
+      "name": "French",
+      "value": 208157220,
+      "metric": "Native Speakers",
+      "description": "Romance language",
+      "prefix": "",
+      "suffix": " speakers"
+    }
+  ]
+}
