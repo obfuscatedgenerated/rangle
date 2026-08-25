@@ -1,0 +1,56 @@
+{
+  "date": "2026-08-26",
+  "number": 151,
+  "difficulty": "Hard",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q1970993",
+      "name": "She Spies",
+      "value": 40,
+      "metric": "Number of Episodes",
+      "description": "TV action series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q265167",
+      "name": "Lowland streaked tenrec",
+      "value": 59,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q18008963",
+      "name": "Jealous",
+      "value": 92,
+      "metric": "Tempo",
+      "description": "Nick Jonas song",
+      "prefix": "",
+      "suffix": " BPM",
+      "unit_hint": "beats per minute"
+    },
+    {
+      "id": "Q579126",
+      "name": "Mindanao Treeshrew",
+      "value": 55,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q3625328",
+      "name": "The Duke of Mount Deer",
+      "value": 45,
+      "metric": "Number of Episodes",
+      "description": "1998 Hong Kong TVB television series",
+      "prefix": "",
+      "suffix": " episodes"
+    }
+  ]
+}
