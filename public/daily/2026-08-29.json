@@ -1,0 +1,55 @@
+{
+  "date": "2026-08-29",
+  "number": 154,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q887730",
+      "name": "Newcastle Brown Ale",
+      "value": 4.7,
+      "metric": "Alcohol by Volume",
+      "description": "brown ale, originally produced in Newcastle upon Tyne, but now brewed by Heineken at the Zoeterwoude Brewery in the Netherlands",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q317575",
+      "name": "Les Faucheurs de marguerites",
+      "value": 4,
+      "metric": "Number of Seasons",
+      "description": "television series",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q2905047",
+      "name": "sorghum beer",
+      "value": 3.3,
+      "metric": "Alcohol by Volume",
+      "description": "beer originating in sub-Sahara Africa",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q55011273",
+      "name": "Bob the Builder",
+      "value": 3,
+      "metric": "Number of Seasons",
+      "description": "animated children's television series",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q2836862",
+      "name": "Mighty Morphin Alien Rangers",
+      "value": 10,
+      "metric": "Number of Episodes",
+      "description": "television series",
+      "prefix": "",
+      "suffix": " episodes"
+    }
+  ]
+}
