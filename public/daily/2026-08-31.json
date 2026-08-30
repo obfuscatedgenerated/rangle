@@ -1,0 +1,56 @@
+{
+  "date": "2026-08-31",
+  "number": 156,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q317575",
+      "name": "Les Faucheurs de marguerites",
+      "value": 4,
+      "metric": "Number of Seasons",
+      "description": "television series",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q6090103",
+      "name": "Bir Cocuk Sevdim",
+      "value": 1,
+      "metric": "Number of Seasons",
+      "description": "Turkish television series",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q2905047",
+      "name": "sorghum beer",
+      "value": 3.3,
+      "metric": "Alcohol by Volume",
+      "description": "beer originating in sub-Sahara Africa",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q737413",
+      "name": "Greater Horseshoe Bat",
+      "value": 3,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    },
+    {
+      "id": "Q26842",
+      "name": "silverfish",
+      "value": 2,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of insect",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    }
+  ]
+}
