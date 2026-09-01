@@ -1,0 +1,54 @@
+{
+  "date": "2026-09-02",
+  "number": 158,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q8821",
+      "name": "Montenegrin",
+      "value": 232600,
+      "metric": "Native Speakers",
+      "description": "normative variety of Serbo-Croatian in Montenegro",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q7414",
+      "name": "The Walt Disney Company",
+      "value": 201000,
+      "metric": "Number of Employees",
+      "description": "American multinational mass media company",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q24815",
+      "name": "Citizen Kane",
+      "value": 839727,
+      "metric": "Production Budget",
+      "description": "1941 American drama film directed by Orson Welles",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q20716",
+      "name": "Samsung Group",
+      "value": 262647,
+      "metric": "Number of Employees",
+      "description": "South Korean multinational conglomerate",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q36451",
+      "name": "Māori",
+      "value": 213849,
+      "metric": "Native Speakers",
+      "description": "Polynesian language spoken in New Zealand",
+      "prefix": "",
+      "suffix": " speakers"
+    }
+  ]
+}
