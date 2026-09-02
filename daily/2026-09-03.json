@@ -1,0 +1,56 @@
+{
+  "date": "2026-09-03",
+  "number": 159,
+  "difficulty": "Hard",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q19829417",
+      "name": "Equus asinus",
+      "value": 368,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q332368",
+      "name": "A View to a Kill",
+      "value": 131,
+      "metric": "Duration / Runtime",
+      "description": "1985 film by John Glen",
+      "prefix": "",
+      "suffix": " minutes",
+      "unit_hint": "in minutes"
+    },
+    {
+      "id": "Q2738858",
+      "name": "Quagsire",
+      "value": 195,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q2739085",
+      "name": "Igglybuff",
+      "value": 174,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q108628759",
+      "name": "Joker: Folie à Deux",
+      "value": 138,
+      "metric": "Duration / Runtime",
+      "description": "2024 film directed by Todd Phillips",
+      "prefix": "",
+      "suffix": " minutes",
+      "unit_hint": "in minutes"
+    }
+  ]
+}
