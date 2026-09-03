@@ -1,0 +1,57 @@
+{
+  "date": "2026-09-04",
+  "number": 160,
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q335277",
+      "name": "Pont Neuf",
+      "value": 238,
+      "metric": "Length",
+      "description": "bridge across the Seine in Paris",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q156198",
+      "name": "Messeturm",
+      "value": 257,
+      "metric": "Height",
+      "description": "skyscraper in Frankfurt, Germany",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q151765",
+      "name": "Commerzbank Tower",
+      "value": 300,
+      "metric": "Height",
+      "description": "skyscraper in Frankfurt, Germany",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q107486",
+      "name": "8 Flora",
+      "value": 1847,
+      "metric": "Year of Discovery",
+      "description": "main-belt asteroid",
+      "prefix": "",
+      "suffix": ""
+    },
+    {
+      "id": "Q130206",
+      "name": "London Bridge",
+      "value": 283,
+      "metric": "Length",
+      "description": "road bridge across River Thames in London, opened in 1973",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
