@@ -1,0 +1,58 @@
+{
+  "date": "2026-09-05",
+  "number": 161,
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q1306",
+      "name": "tennessine",
+      "value": 610,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol Ts and atomic number 117",
+      "prefix": "",
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
+    },
+    {
+      "id": "Q126307",
+      "name": "Lake Van",
+      "value": 171,
+      "metric": "Depth",
+      "description": "largest lake in Turkey",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q166162",
+      "name": "Lake Onega",
+      "value": 127,
+      "metric": "Depth",
+      "description": "freshwater lake in Russia, second largest in Europe",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q125006",
+      "name": "Brooklyn Bridge",
+      "value": 1825,
+      "metric": "Length",
+      "description": "bridge in New York City, crossing the East River",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q999",
+      "name": "astatine",
+      "value": 230,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol At and atomic number 85",
+      "prefix": "",
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
+    }
+  ]
+}
