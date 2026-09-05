@@ -1,0 +1,58 @@
+{
+  "date": "2026-09-06",
+  "number": 162,
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q13670",
+      "name": "Syracuse",
+      "value": 17,
+      "metric": "Elevation above sea level",
+      "description": "Italian municipality",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q35883",
+      "name": "Aral Sea",
+      "value": 42,
+      "metric": "Depth",
+      "description": "Formerly a salt lake in Central Asia",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q169160",
+      "name": "Lezhë",
+      "value": 10,
+      "metric": "Elevation above sea level",
+      "description": "city in Lezhë County, Albania",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q12237722",
+      "name": "Layal Abboud",
+      "value": 50,
+      "metric": "Mass / Weight",
+      "description": "Lebanese pop singer",
+      "prefix": "",
+      "suffix": " kg",
+      "unit_hint": "in kilograms"
+    },
+    {
+      "id": "Q6383",
+      "name": "Lake Balaton",
+      "value": 13,
+      "metric": "Depth",
+      "description": "freshwater lake in Hungary",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
