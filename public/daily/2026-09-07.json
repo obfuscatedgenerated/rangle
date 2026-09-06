@@ -1,0 +1,58 @@
+{
+  "date": "2026-09-07",
+  "number": 163,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q41483",
+      "name": "The Good, the Bad and the Ugly",
+      "value": 38900000,
+      "metric": "Total Box Office Revenue",
+      "description": "1966 film directed by Sergio Leone",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q36479",
+      "name": "The Lion King",
+      "value": 45000000,
+      "metric": "Production Budget",
+      "description": "1994 animated film directed by Roger Allers and Rob Minkoff",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q943192",
+      "name": "Fantasia",
+      "value": 76411819,
+      "metric": "Total Box Office Revenue",
+      "description": "1940 animated film",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q5890",
+      "name": "V for Vendetta",
+      "value": 54000000,
+      "metric": "Production Budget",
+      "description": "2005 film directed by James McTeigue",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q9694",
+      "name": "Amsterdam Schiphol Airport",
+      "value": 66828453,
+      "metric": "Number of Passengers",
+      "description": "airport in Haarlemmermeer, Netherlands",
+      "prefix": "",
+      "suffix": " passengers",
+      "unit_hint": "annual"
+    }
+  ]
+}
