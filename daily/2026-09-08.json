@@ -1,0 +1,55 @@
+{
+  "date": "2026-09-08",
+  "number": 164,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q2905047",
+      "name": "sorghum beer",
+      "value": 3.3,
+      "metric": "Alcohol by Volume",
+      "description": "beer originating in sub-Sahara Africa",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q887730",
+      "name": "Newcastle Brown Ale",
+      "value": 4.7,
+      "metric": "Alcohol by Volume",
+      "description": "brown ale, originally produced in Newcastle upon Tyne, but now brewed by Heineken at the Zoeterwoude Brewery in the Netherlands",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q1651039",
+      "name": "Caterpie",
+      "value": 10,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q67616963",
+      "name": "Archibald's Next Big Thing",
+      "value": 2,
+      "metric": "Number of Seasons",
+      "description": "2019 American comedy animated web television series",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q1128810",
+      "name": "Private Crimes",
+      "value": 1,
+      "metric": "Number of Seasons",
+      "description": "television program",
+      "prefix": "",
+      "suffix": " seasons"
+    }
+  ]
+}
