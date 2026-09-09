@@ -1,0 +1,56 @@
+{
+  "date": "2026-09-10",
+  "number": 166,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q13201",
+      "name": "Romani",
+      "value": 46000000,
+      "metric": "Native Speakers",
+      "description": "language of the Romani people belonging to the Indo-Aryan branch of the Indo-European language family",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q20751338",
+      "name": "Rock Dog",
+      "value": 60000000,
+      "metric": "Production Budget",
+      "description": "2016 animated film directed by Ash Brannon",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q184843",
+      "name": "Blade Runner",
+      "value": 41722424,
+      "metric": "Total Box Office Revenue",
+      "description": "1982 film directed by Ridley Scott",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q5890",
+      "name": "V for Vendetta",
+      "value": 54000000,
+      "metric": "Production Budget",
+      "description": "2005 film directed by James McTeigue",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q34311",
+      "name": "Yoruba",
+      "value": 37800000,
+      "metric": "Native Speakers",
+      "description": "Niger-Congo language spoken in West Africa",
+      "prefix": "",
+      "suffix": " speakers"
+    }
+  ]
+}
