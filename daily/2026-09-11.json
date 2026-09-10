@@ -1,0 +1,57 @@
+{
+  "date": "2026-09-11",
+  "number": 167,
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q125309",
+      "name": "Lake Chad",
+      "value": 11,
+      "metric": "Depth",
+      "description": "lake in Africa",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q550",
+      "name": "avenue des Champs-Élysées",
+      "value": 2,
+      "metric": "Length",
+      "description": "avenue in Paris, France",
+      "prefix": "",
+      "suffix": " km",
+      "unit_hint": "in kilometres"
+    },
+    {
+      "id": "Q177856",
+      "name": "Griffon Vulture",
+      "value": 3,
+      "metric": "Wingspan",
+      "description": "species of bird",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q6383",
+      "name": "Lake Balaton",
+      "value": 13,
+      "metric": "Depth",
+      "description": "freshwater lake in Hungary",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q40591",
+      "name": "The Communist Manifesto",
+      "value": 23,
+      "metric": "Number of Pages",
+      "description": "1848 publication written by Karl Marx and Friedrich Engels",
+      "prefix": "",
+      "suffix": " pages"
+    }
+  ]
+}
