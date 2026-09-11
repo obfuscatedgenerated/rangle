@@ -1,0 +1,57 @@
+{
+  "date": "2026-09-12",
+  "number": 168,
+  "difficulty": "Hard",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q2019398",
+      "name": "Ponyta",
+      "value": 77,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q1767406",
+      "name": "Townsend's mole",
+      "value": 30,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q11875337",
+      "name": "Leijona Viina",
+      "value": 32,
+      "metric": "Alcohol by Volume",
+      "description": "Finnish distilled beverage",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q662475",
+      "name": "Pseudomys",
+      "value": 34,
+      "metric": "Gestation Period",
+      "description": "genus of mammals",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q7538198",
+      "name": "Skåne Akvavit",
+      "value": 38,
+      "metric": "Alcohol by Volume",
+      "description": "Swedish akvavit",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    }
+  ]
+}
