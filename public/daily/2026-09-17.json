@@ -1,0 +1,56 @@
+{
+  "date": "2026-09-17",
+  "number": 173,
+  "difficulty": "Hard",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q3978549",
+      "name": "Bakersfield P.D.",
+      "value": 1,
+      "metric": "Number of Seasons",
+      "description": "American television comedy series",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q2301866",
+      "name": "Amstel Light",
+      "value": 3.5,
+      "metric": "Alcohol by Volume",
+      "description": "beer",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q3208404",
+      "name": "Coming Home",
+      "value": 2,
+      "metric": "Number of Episodes",
+      "description": "1998 British TV series or program",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q115576141",
+      "name": "Grolsch Oud Bruin",
+      "value": 2.5,
+      "metric": "Alcohol by Volume",
+      "description": "beer type from the Dutch Grolsch brewery",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q2668298",
+      "name": "Pale-headed Brushfinch",
+      "value": 3,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of bird",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    }
+  ]
+}
