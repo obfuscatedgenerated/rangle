@@ -1,0 +1,54 @@
+{
+  "date": "2026-09-18",
+  "number": 174,
+  "difficulty": "Hard",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q20779252",
+      "name": "2023 AFC Asian Cup",
+      "value": 1507790,
+      "metric": "Event Attendance",
+      "description": "international football competition",
+      "prefix": "",
+      "suffix": " attendees"
+    },
+    {
+      "id": "Q23014",
+      "name": "Palatinate German",
+      "value": 1000000,
+      "metric": "Native Speakers",
+      "description": "West Franconian dialect of German",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q18107167",
+      "name": "2023 Africa Cup of Nations",
+      "value": 1109593,
+      "metric": "Event Attendance",
+      "description": "34th edition of the African Cup of Nations",
+      "prefix": "",
+      "suffix": " attendees"
+    },
+    {
+      "id": "Q32704",
+      "name": "Venda",
+      "value": 1300000,
+      "metric": "Native Speakers",
+      "description": "language of the Venda people",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q218513",
+      "name": "Bleach",
+      "value": 1700000,
+      "metric": "Total Units Sold",
+      "description": "1989 debut studio album by Nirvana",
+      "prefix": "",
+      "suffix": " units",
+      "unit_hint": "approx."
+    }
+  ]
+}
