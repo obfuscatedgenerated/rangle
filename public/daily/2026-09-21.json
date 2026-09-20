@@ -1,0 +1,56 @@
+{
+  "date": "2026-09-21",
+  "number": 177,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q9694",
+      "name": "Amsterdam Schiphol Airport",
+      "value": 66828453,
+      "metric": "Number of Passengers",
+      "description": "airport in Haarlemmermeer, Netherlands",
+      "prefix": "",
+      "suffix": " passengers",
+      "unit_hint": "annual"
+    },
+    {
+      "id": "Q9186",
+      "name": "Cantonese",
+      "value": 72893210,
+      "metric": "Native Speakers",
+      "description": "variety of Yue Chinese spoken in Guangzhou, Hong Kong, and Macau",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q46033",
+      "name": "Frankfurt Airport",
+      "value": 61564957,
+      "metric": "Number of Passengers",
+      "description": "biggest airport of Germany, located in Frankfurt, Hesse",
+      "prefix": "",
+      "suffix": " passengers",
+      "unit_hint": "annual"
+    },
+    {
+      "id": "Q215617",
+      "name": "Sleeping Beauty",
+      "value": 51600000,
+      "metric": "Total Box Office Revenue",
+      "description": "1959 American animated film",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q56475",
+      "name": "Hausa",
+      "value": 43900000,
+      "metric": "Native Speakers",
+      "description": "Chadic language native to the Hausa people",
+      "prefix": "",
+      "suffix": " speakers"
+    }
+  ]
+}
