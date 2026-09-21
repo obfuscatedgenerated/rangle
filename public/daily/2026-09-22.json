@@ -1,0 +1,54 @@
+{
+  "date": "2026-09-22",
+  "number": 178,
+  "difficulty": "Hard",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q612227",
+      "name": "BC Place",
+      "value": 54500,
+      "metric": "Maximum Capacity",
+      "description": "stadium at Vancouver, British Columbia, Canada",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q179693",
+      "name": "Kazimierz Górski National Stadium",
+      "value": 58274,
+      "metric": "Maximum Capacity",
+      "description": "football stadium located in Warsaw, Poland",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q886597",
+      "name": "The Texas Chain Saw Massacre",
+      "value": 83532,
+      "metric": "Production Budget",
+      "description": "1974 film directed by Tobe Hooper",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q309331",
+      "name": "Ohio State University",
+      "value": 61419,
+      "metric": "Student Enrollment",
+      "description": "public research university in Columbus, Ohio, United States",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q586904",
+      "name": "Federal University of Rio de Janeiro",
+      "value": 67329,
+      "metric": "Student Enrollment",
+      "description": "university in Brazil",
+      "prefix": "",
+      "suffix": " students"
+    }
+  ]
+}
