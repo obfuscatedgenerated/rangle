@@ -1,0 +1,54 @@
+{
+  "date": "2026-09-24",
+  "number": 180,
+  "difficulty": "Easy",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q3234619",
+      "name": "Arka Sokaklar",
+      "value": 20,
+      "metric": "Number of Seasons",
+      "description": "Turkish crime drama tv series",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q776262",
+      "name": "Goede tijden, slechte tijden",
+      "value": 37,
+      "metric": "Number of Seasons",
+      "description": "Dutch tv-soap based on The Restless Years",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q30847",
+      "name": "caracal",
+      "value": 70,
+      "metric": "Gestation Period",
+      "description": "species of wild cat",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q96414952",
+      "name": "All of Us Are Dead",
+      "value": 12,
+      "metric": "Number of Episodes",
+      "description": "2022 South Korean television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q79997161",
+      "name": "The World of the Married",
+      "value": 16,
+      "metric": "Number of Episodes",
+      "description": "2020 South Korea television series",
+      "prefix": "",
+      "suffix": " episodes"
+    }
+  ]
+}
