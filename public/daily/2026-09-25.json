@@ -1,0 +1,56 @@
+{
+  "date": "2026-09-25",
+  "number": 181,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q6144664",
+      "name": "Inside Out",
+      "value": 175000000,
+      "metric": "Production Budget",
+      "description": "2015 animated film directed by Pete Docter",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q17452",
+      "name": "Grand Theft Auto V",
+      "value": 225000000,
+      "metric": "Total Units Sold",
+      "description": "2013 action-adventure video game developed by Rockstar North",
+      "prefix": "",
+      "suffix": " units",
+      "unit_hint": "approx."
+    },
+    {
+      "id": "Q9192",
+      "name": "Mandarin",
+      "value": 918000000,
+      "metric": "Native Speakers",
+      "description": "major branch of Chinese spoken across most of northern and southwestern China",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q163872",
+      "name": "The Dark Knight",
+      "value": 185000000,
+      "metric": "Production Budget",
+      "description": "2008 film directed by Christopher Nolan",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q11051",
+      "name": "Hindustani",
+      "value": 490100000,
+      "metric": "Native Speakers",
+      "description": "Indo-Aryan language spoken in South Asia, comprising the two normative forms of Hindi and Urdu",
+      "prefix": "",
+      "suffix": " speakers"
+    }
+  ]
+}
