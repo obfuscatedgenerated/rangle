@@ -1,0 +1,55 @@
+{
+  "date": "2026-09-26",
+  "number": 182,
+  "difficulty": "Easy",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q866368",
+      "name": "Cosmos: A Personal Voyage",
+      "value": 13,
+      "metric": "Number of Episodes",
+      "description": "1980 American documentary television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q1647331",
+      "name": "Raichu",
+      "value": 26,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q36101",
+      "name": "koala",
+      "value": 37,
+      "metric": "Gestation Period",
+      "description": "arboreal herbivorous marsupial native to Australia",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q121439",
+      "name": "raccoon",
+      "value": 20,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of mammal native to North America",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    },
+    {
+      "id": "Q56153643",
+      "name": "Watchmen",
+      "value": 9,
+      "metric": "Number of Episodes",
+      "description": "2019 American superhero drama television series",
+      "prefix": "",
+      "suffix": " episodes"
+    }
+  ]
+}
