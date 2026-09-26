@@ -1,0 +1,58 @@
+{
+  "date": "2026-09-27",
+  "number": 183,
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q1846",
+      "name": "holmium",
+      "value": 2600,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol Ho and atomic number 67",
+      "prefix": "",
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
+    },
+    {
+      "id": "Q44440",
+      "name": "Golden Gate Bridge",
+      "value": 2737,
+      "metric": "Length",
+      "description": "suspension bridge on the San Francisco Bay",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q130321",
+      "name": "Mount Athos",
+      "value": 2033,
+      "metric": "Elevation above sea level",
+      "description": "mountain in northeastern Greece",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q1819",
+      "name": "samarium",
+      "value": 1900,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol Sm and atomic number 62",
+      "prefix": "",
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
+    },
+    {
+      "id": "Q127063",
+      "name": "Kars",
+      "value": 1768,
+      "metric": "Elevation above sea level",
+      "description": "central district and city in Kars Province, Turkey",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
