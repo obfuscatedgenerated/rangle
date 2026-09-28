@@ -1,0 +1,53 @@
+{
+  "date": "2026-09-29",
+  "number": 185,
+  "difficulty": "Hard",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q29960",
+      "name": "Even",
+      "value": 5660,
+      "metric": "Native Speakers",
+      "description": "Tungusic language spoken by the Evens in Siberia",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q754502",
+      "name": "Yves du Manoir Stadium",
+      "value": 14000,
+      "metric": "Maximum Capacity",
+      "description": "Multi-purpose stadium at Colombes, France",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q32878",
+      "name": "Dolgan",
+      "value": 4836,
+      "metric": "Native Speakers",
+      "description": "Turkic language with around 5,000 speakers, spoken in the Taymyr Peninsula in Russia",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q219564",
+      "name": "Karolinska Institutet",
+      "value": 8070,
+      "metric": "Student Enrollment",
+      "description": "medical university located in Stockholm, Sweden",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q273518",
+      "name": "School for Advanced Studies in the Social Sciences",
+      "value": 2613,
+      "metric": "Student Enrollment",
+      "description": "French higher education institution",
+      "prefix": "",
+      "suffix": " students"
+    }
+  ]
+}
