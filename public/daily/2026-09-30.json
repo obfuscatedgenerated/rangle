@@ -1,0 +1,53 @@
+{
+  "date": "2026-09-30",
+  "number": 186,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q47099",
+      "name": "Grupo Televisa",
+      "value": 24362,
+      "metric": "Number of Employees",
+      "description": "Mexican entertainment and media conglomerate",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q155174",
+      "name": "Maracanã Stadium",
+      "value": 78838,
+      "metric": "Maximum Capacity",
+      "description": "stadium in Rio de Janeiro, Brazil",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q40993",
+      "name": "Porsche",
+      "value": 36996,
+      "metric": "Number of Employees",
+      "description": "German automobile manufacturer specializing in high-performance sports cars, SUVs and sedans, owned by Volkswagen AG",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q44564",
+      "name": "Charleston",
+      "value": 48864,
+      "metric": "Population",
+      "description": "capital city of the U.S. state of West Virginia and seat of Kanawha County",
+      "prefix": "",
+      "suffix": " people"
+    },
+    {
+      "id": "Q33850",
+      "name": "Norman",
+      "value": 100000,
+      "metric": "Native Speakers",
+      "description": "Romance language of northwest France",
+      "prefix": "",
+      "suffix": " speakers"
+    }
+  ]
+}
