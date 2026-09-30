@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-01",
+  "number": 187,
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q14274",
+      "name": "Aarau",
+      "value": 384,
+      "metric": "Elevation above sea level",
+      "description": "capital of Canton Aargau, Switzerland",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q81689",
+      "name": "The Da Vinci Code",
+      "value": 519,
+      "metric": "Number of Pages",
+      "description": "2003 novel by Dan Brown",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q1100",
+      "name": "tellurium",
+      "value": 1783,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Te and atomic number 52",
+      "prefix": "",
+      "suffix": ""
+    },
+    {
+      "id": "Q1819",
+      "name": "samarium",
+      "value": 1879,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol Sm and atomic number 62",
+      "prefix": "",
+      "suffix": ""
+    },
+    {
+      "id": "Q1113311",
+      "name": "Peshawar",
+      "value": 359,
+      "metric": "Elevation above sea level",
+      "description": "capital of Khyber Pakhtunkhwa Province, Pakistan",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
