@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-04",
+  "number": 190,
+  "difficulty": "Hard",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q317575",
+      "name": "Les Faucheurs de marguerites",
+      "value": 14,
+      "metric": "Number of Episodes",
+      "description": "television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q7177505",
+      "name": "Callitris glaucophylla",
+      "value": 33,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of plant",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    },
+    {
+      "id": "Q15877488",
+      "name": "Koeketiene",
+      "value": 8.5,
+      "metric": "Alcohol by Volume",
+      "description": "Belgian tripel",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q7519738",
+      "name": "Simon Schama's Power of Art",
+      "value": 8,
+      "metric": "Number of Episodes",
+      "description": "television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q55530589",
+      "name": "-196˚C Strong Zero",
+      "value": 9,
+      "metric": "Alcohol by Volume",
+      "description": "Japanese alcoholic beverage",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    }
+  ]
+}
