@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-05",
+  "number": 191,
+  "difficulty": "Hard",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q194151",
+      "name": "Southern brown bandicoot",
+      "value": 14,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q134083",
+      "name": "Kangaroo Island dunnart",
+      "value": 12,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q2577810",
+      "name": "La Trappe Dubbel",
+      "value": 7,
+      "metric": "Alcohol by Volume",
+      "description": "Dubbel brewed by Bierbrouwerij De Koningshoeven",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q9557010",
+      "name": "The Age of Uncertainty",
+      "value": 15,
+      "metric": "Number of Episodes",
+      "description": "1977 film",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q2726969",
+      "name": "Gulpener Jaarling",
+      "value": 6.5,
+      "metric": "Alcohol by Volume",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    }
+  ]
+}
