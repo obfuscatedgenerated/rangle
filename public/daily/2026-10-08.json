@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-08",
+  "number": 194,
+  "difficulty": "Hard",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q1226179",
+      "name": "Survivors",
+      "value": 38,
+      "metric": "Number of Episodes",
+      "description": "television series, 1975–1977",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q1769720",
+      "name": "vagrant shrew",
+      "value": 20,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q1497037",
+      "name": "Botta's pocket gopher",
+      "value": 18,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q13450704",
+      "name": "Scandal: A Shocking and Wrongful Incident",
+      "value": 36,
+      "metric": "Number of Episodes",
+      "description": "South Korean television drama (2013)",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q56707143",
+      "name": "Alolan Raichu",
+      "value": 26,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    }
+  ]
+}
