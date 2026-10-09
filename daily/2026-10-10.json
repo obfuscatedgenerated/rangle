@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-10",
+  "number": 196,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q37819",
+      "name": "Auckland Grammar School",
+      "value": 2583,
+      "metric": "Student Enrollment",
+      "description": "state secondary (year 9-15) school in Auckland, New Zealand",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q36846",
+      "name": "Toki Pona",
+      "value": 3100,
+      "metric": "Native Speakers",
+      "description": "minimalist language created by Sonja Lang",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q131252",
+      "name": "University of Chicago",
+      "value": 2350,
+      "metric": "Number of Employees",
+      "description": "private university in Chicago, Illinois",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q13343",
+      "name": "Moksha",
+      "value": 2025,
+      "metric": "Native Speakers",
+      "description": "language part of the Mordvinic branch of the Uralic languages and the majority language in the western part of Mordovia",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q49112",
+      "name": "Yale University",
+      "value": 3619,
+      "metric": "Number of Employees",
+      "description": "private university in New Haven, Connecticut",
+      "prefix": "",
+      "suffix": " employees"
+    }
+  ]
+}
