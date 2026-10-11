@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-12",
+  "number": 198,
+  "difficulty": "Easy",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q23883",
+      "name": "Dead Sea",
+      "value": 360,
+      "metric": "Depth",
+      "description": "lake with no outflow (sea) in Western Asia",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q9202",
+      "name": "Statue of Liberty",
+      "value": 47,
+      "metric": "Height",
+      "description": "monument in New York",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q12506",
+      "name": "Hagia Sophia",
+      "value": 55,
+      "metric": "Height",
+      "description": "mosque, museum, and former church in Istanbul, Turkey",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q5505",
+      "name": "Lake Victoria",
+      "value": 83,
+      "metric": "Depth",
+      "description": "lake in east-central Africa",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q871",
+      "name": "arsenic",
+      "value": 1300,
+      "metric": "Year of Discovery",
+      "description": "chemical element with symbol As and atomic number 33",
+      "prefix": "",
+      "suffix": ""
+    }
+  ]
+}
