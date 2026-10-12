@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-13",
+  "number": 199,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q17452",
+      "name": "Grand Theft Auto V",
+      "value": 225000000,
+      "metric": "Total Units Sold",
+      "description": "2013 action-adventure video game developed by Rockstar North",
+      "prefix": "",
+      "suffix": " units",
+      "unit_hint": "approx."
+    },
+    {
+      "id": "Q58635",
+      "name": "Punjabi",
+      "value": 125000000,
+      "metric": "Native Speakers",
+      "description": "Indo-Aryan language spoken in the Punjab region of Pakistan and India",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q42051",
+      "name": "Star Wars: Episode III – Revenge of the Sith",
+      "value": 113000000,
+      "metric": "Production Budget",
+      "description": "2005 film directed by George Lucas",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q3030",
+      "name": "Vesta",
+      "value": 385136112,
+      "metric": "Distance from Sun",
+      "description": "second largest asteroid of the main asteroid belt",
+      "prefix": "",
+      "suffix": " km",
+      "unit_hint": "in kilometres"
+    },
+    {
+      "id": "Q171300",
+      "name": "The Princess and the Frog",
+      "value": 105000000,
+      "metric": "Production Budget",
+      "description": "2009 animated film directed by John Musker and Ron Clements",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    }
+  ]
+}
