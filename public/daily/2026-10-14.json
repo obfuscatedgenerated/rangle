@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-14",
+  "number": 200,
+  "difficulty": "Hard",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q18149495",
+      "name": "Cuphead",
+      "value": 1000000,
+      "metric": "Total Units Sold",
+      "description": "2017 video game",
+      "prefix": "",
+      "suffix": " units",
+      "unit_hint": "approx."
+    },
+    {
+      "id": "Q327274",
+      "name": "Swabian",
+      "value": 820000,
+      "metric": "Native Speakers",
+      "description": "Upper German dialect",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q822849",
+      "name": "Bully",
+      "value": 1500000,
+      "metric": "Total Units Sold",
+      "description": "2007 video game",
+      "prefix": "",
+      "suffix": " units",
+      "unit_hint": "approx."
+    },
+    {
+      "id": "Q819425",
+      "name": "Indian Railways",
+      "value": 1230000,
+      "metric": "Number of Employees",
+      "description": "state-owned enterprise operating India's national railway system",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q36748",
+      "name": "Pontic Greek",
+      "value": 778000,
+      "metric": "Native Speakers",
+      "description": "Greek dialect",
+      "prefix": "",
+      "suffix": " speakers"
+    }
+  ]
+}
