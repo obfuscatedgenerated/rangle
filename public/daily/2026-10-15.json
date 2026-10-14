@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-15",
+  "number": 201,
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q209630",
+      "name": "Herschel Space Observatory",
+      "value": 8,
+      "metric": "Height",
+      "description": "former ESA space observatory",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q52505",
+      "name": "Rialto Bridge",
+      "value": 7,
+      "metric": "Height",
+      "description": "one of four bridges spanning the Grand Canal in Venice, Italy",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q33209",
+      "name": "Mary Celeste",
+      "value": 31,
+      "metric": "Length",
+      "description": "Ship found abandoned in the Atlantic Ocean in 1872",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q211516",
+      "name": "Võrtsjärv",
+      "value": 6,
+      "metric": "Depth",
+      "description": "lake in Estonia",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q1143935",
+      "name": "Rukwa Lake",
+      "value": 5,
+      "metric": "Depth",
+      "description": "lake in Songwe, Katavi and Rukwa Regions, Tanzania",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
