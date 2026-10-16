@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-17",
+  "number": 203,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q834329",
+      "name": "black-capped squirrel monkey",
+      "value": 20,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    },
+    {
+      "id": "Q81056",
+      "name": "Canadian beaver",
+      "value": 15,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    },
+    {
+      "id": "Q60747233",
+      "name": "Our Planet",
+      "value": 12,
+      "metric": "Number of Episodes",
+      "description": "2019 British nature documentary series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q928026",
+      "name": "Cynar",
+      "value": 16.5,
+      "metric": "Alcohol by Volume",
+      "description": "Italian bitter liqueur",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q42895115",
+      "name": "A Place Further Than The Universe",
+      "value": 13,
+      "metric": "Number of Episodes",
+      "description": "Japanese anime television series",
+      "prefix": "",
+      "suffix": " episodes"
+    }
+  ]
+}
