@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-18",
+  "number": 204,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q2087817",
+      "name": "Fearow",
+      "value": 22,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q2252880",
+      "name": "Rattata",
+      "value": 19,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q928026",
+      "name": "Cynar",
+      "value": 16.5,
+      "metric": "Alcohol by Volume",
+      "description": "Italian bitter liqueur",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q242419",
+      "name": "numbat",
+      "value": 14,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q199788",
+      "name": "Gadus morhua",
+      "value": 25,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "benthopelagic fish of the family Gadidae",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    }
+  ]
+}
