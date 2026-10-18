@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-19",
+  "number": 205,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q35886",
+      "name": "Lamborghini",
+      "value": 2380000000,
+      "metric": "Total Revenue",
+      "description": "Italian car manufacturer",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q167726",
+      "name": "Jurassic Park",
+      "value": 1030314141,
+      "metric": "Total Box Office Revenue",
+      "description": "1993 film by Steven Spielberg",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q131074",
+      "name": "The Lord of the Rings: The Return of the King",
+      "value": 1138063541,
+      "metric": "Total Box Office Revenue",
+      "description": "2003 film by Peter Jackson",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q155653",
+      "name": "Spirited Away",
+      "value": 2000000000,
+      "metric": "Production Budget",
+      "description": "2001 anime film directed by Hayao Miyazaki",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q47099",
+      "name": "Grupo Televisa",
+      "value": 5300000000,
+      "metric": "Total Revenue",
+      "description": "Mexican entertainment and media conglomerate",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    }
+  ]
+}
