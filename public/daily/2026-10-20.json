@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-20",
+  "number": 206,
+  "difficulty": "Easy",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q148",
+      "name": "People's Republic of China",
+      "value": 9596961,
+      "metric": "Area",
+      "description": "country in East Asia",
+      "prefix": "",
+      "suffix": " sq km",
+      "unit_hint": "in sq km"
+    },
+    {
+      "id": "Q8108",
+      "name": "Georgian",
+      "value": 3700000,
+      "metric": "Native Speakers",
+      "description": "Kartvelian language",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q9083",
+      "name": "Lithuanian",
+      "value": 4000000,
+      "metric": "Native Speakers",
+      "description": "Baltic language spoken in Lithuania",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q478595",
+      "name": "Tan Son Nhat International Airport",
+      "value": 34278320,
+      "metric": "Number of Passengers",
+      "description": "International airport in Ho Chi Minh City, Vietnam",
+      "prefix": "",
+      "suffix": " passengers",
+      "unit_hint": "annual"
+    },
+    {
+      "id": "Q155",
+      "name": "Brazil",
+      "value": 8515767,
+      "metric": "Area",
+      "description": "country in South America",
+      "prefix": "",
+      "suffix": " sq km",
+      "unit_hint": "in sq km"
+    }
+  ]
+}
