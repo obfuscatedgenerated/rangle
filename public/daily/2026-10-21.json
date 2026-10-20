@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-21",
+  "number": 207,
+  "difficulty": "Easy",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q25311",
+      "name": "Mustela nivalis",
+      "value": 35,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q661047",
+      "name": "Marienhof",
+      "value": 18,
+      "metric": "Number of Seasons",
+      "description": "German television series",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q96414952",
+      "name": "All of Us Are Dead",
+      "value": 12,
+      "metric": "Number of Episodes",
+      "description": "2022 South Korean television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q687483",
+      "name": "The Old Fox",
+      "value": 52,
+      "metric": "Number of Seasons",
+      "description": "German crime drama series",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q2668662",
+      "name": "Father of the Pride",
+      "value": 15,
+      "metric": "Number of Episodes",
+      "description": "American animated television series",
+      "prefix": "",
+      "suffix": " episodes"
+    }
+  ]
+}
