@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-22",
+  "number": 208,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q280154",
+      "name": "All That",
+      "value": 210,
+      "metric": "Number of Episodes",
+      "description": "American sketch comedy television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q222031",
+      "name": "Aleksandar Vučić",
+      "value": 199,
+      "metric": "Height",
+      "description": "5th President of the Republic of Serbia",
+      "prefix": "",
+      "suffix": " cm",
+      "unit_hint": "in centimeters"
+    },
+    {
+      "id": "Q127367",
+      "name": "The Lord of the Rings: The Fellowship of the Ring",
+      "value": 228,
+      "metric": "Duration / Runtime",
+      "description": "2001 film by Peter Jackson",
+      "prefix": "",
+      "suffix": " minutes",
+      "unit_hint": "in minutes"
+    },
+    {
+      "id": "Q705388",
+      "name": "Art Attack",
+      "value": 291,
+      "metric": "Number of Episodes",
+      "description": "British television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q131074",
+      "name": "The Lord of the Rings: The Return of the King",
+      "value": 263,
+      "metric": "Duration / Runtime",
+      "description": "2003 film by Peter Jackson",
+      "prefix": "",
+      "suffix": " minutes",
+      "unit_hint": "in minutes"
+    }
+  ]
+}
