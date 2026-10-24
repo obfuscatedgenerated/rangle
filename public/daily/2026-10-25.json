@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-25",
+  "number": 211,
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q550",
+      "name": "avenue des Champs-Élysées",
+      "value": 2,
+      "metric": "Length",
+      "description": "avenue in Paris, France",
+      "prefix": "",
+      "suffix": " km",
+      "unit_hint": "in kilometres"
+    },
+    {
+      "id": "Q177856",
+      "name": "Griffon Vulture",
+      "value": 3,
+      "metric": "Wingspan",
+      "description": "species of bird",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q40591",
+      "name": "The Communist Manifesto",
+      "value": 23,
+      "metric": "Number of Pages",
+      "description": "1848 publication written by Karl Marx and Friedrich Engels",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q10288",
+      "name": "Parthenon",
+      "value": 14,
+      "metric": "Height",
+      "description": "former temple of Athena on the Athenian Acropolis, Greece",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q35525",
+      "name": "White House",
+      "value": 21,
+      "metric": "Height",
+      "description": "official residence and office of the President of the United States",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
