@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-29",
+  "number": 215,
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q979",
+      "name": "polonium",
+      "value": 962,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol Po and atomic number 84",
+      "prefix": "",
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
+    },
+    {
+      "id": "Q81689",
+      "name": "The Da Vinci Code",
+      "value": 519,
+      "metric": "Number of Pages",
+      "description": "2003 novel by Dan Brown",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q166162",
+      "name": "Lake Onega",
+      "value": 127,
+      "metric": "Depth",
+      "description": "freshwater lake in Russia, second largest in Europe",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q182719",
+      "name": "Lake Turkana",
+      "value": 109,
+      "metric": "Depth",
+      "description": "alkaline lake on the border of Ethiopia and Kenya",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q1306",
+      "name": "tennessine",
+      "value": 610,
+      "metric": "Boiling Point",
+      "description": "chemical element with symbol Ts and atomic number 117",
+      "prefix": "",
+      "suffix": "°C",
+      "unit_hint": "in Celsius"
+    }
+  ]
+}
