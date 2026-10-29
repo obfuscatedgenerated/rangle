@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-30",
+  "number": 216,
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q188487",
+      "name": "Lake Trasimeno",
+      "value": 7,
+      "metric": "Depth",
+      "description": "lake in Umbria, Italy",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q54383",
+      "name": "Columbia",
+      "value": 24,
+      "metric": "Wingspan",
+      "description": "American Space Shuttle orbiter",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q682958",
+      "name": "Bhagavata Purana",
+      "value": 49,
+      "metric": "Number of Pages",
+      "description": "Sanskrit text, most popular of the eighteen major Puranas, story of Krishna",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q537374",
+      "name": "Hulun Lake",
+      "value": 9,
+      "metric": "Depth",
+      "description": "lake in New Barag Left Banner, Inner Mongolia, People's Republic of China",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q688605",
+      "name": "Flyer I",
+      "value": 12,
+      "metric": "Wingspan",
+      "description": "heavier-than-air powered aircraft, designed and built by the Wright Brothers",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
