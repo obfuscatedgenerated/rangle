@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-31",
+  "number": 217,
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q457289",
+      "name": "Siddhartha",
+      "value": 152,
+      "metric": "Number of Pages",
+      "description": "novel by Hermann Hesse",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q181932",
+      "name": "Lake Sevan",
+      "value": 81,
+      "metric": "Depth",
+      "description": "lake in Armenia",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q321007",
+      "name": "RMS Olympic",
+      "value": 269,
+      "metric": "Length",
+      "description": "lead ship of the Olympic-Class ocean liners. Sister ship to RMS Titanic and HMHS Britannic",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q233627",
+      "name": "Lake Manasarovar",
+      "value": 90,
+      "metric": "Depth",
+      "description": "freshwater lake in Purang County, Ngari Prefecture, Tibet, China",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q373536",
+      "name": "Jonathan Livingston Seagull",
+      "value": 95,
+      "metric": "Number of Pages",
+      "description": "story by Richard Bach",
+      "prefix": "",
+      "suffix": " pages"
+    }
+  ]
+}
