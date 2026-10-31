@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-01",
+  "number": 218,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q1210870",
+      "name": "The Adventures of Robin Hood",
+      "value": 143,
+      "metric": "Number of Episodes",
+      "description": "British television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q21539942",
+      "name": "PJ Masks",
+      "value": 151,
+      "metric": "Number of Episodes",
+      "description": "children's animated superhero television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q17489280",
+      "name": "All About That Bass",
+      "value": 134,
+      "metric": "Tempo",
+      "description": "2014 single by Meghan Trainor",
+      "prefix": "",
+      "suffix": " BPM",
+      "unit_hint": "beats per minute"
+    },
+    {
+      "id": "Q2347124",
+      "name": "Croconaw",
+      "value": 159,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q2485612",
+      "name": "Pinsir",
+      "value": 127,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    }
+  ]
+}
