@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-02",
+  "number": 219,
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q107790",
+      "name": "The Green Book",
+      "value": 110,
+      "metric": "Number of Pages",
+      "description": "لا اله الا الله",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q233627",
+      "name": "Lake Manasarovar",
+      "value": 90,
+      "metric": "Depth",
+      "description": "freshwater lake in Purang County, Ngari Prefecture, Tibet, China",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q692557",
+      "name": "A Clockwork Orange",
+      "value": 144,
+      "metric": "Number of Pages",
+      "description": "1962 novel by Anthony Burgess",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q181932",
+      "name": "Lake Sevan",
+      "value": 81,
+      "metric": "Depth",
+      "description": "lake in Armenia",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q217964",
+      "name": "LZ 129 Hindenburg",
+      "value": 135,
+      "metric": "Top Speed",
+      "description": "German airship, launched in 1936 and destroyed in 1937",
+      "prefix": "",
+      "suffix": " km/h",
+      "unit_hint": "in km/h"
+    }
+  ]
+}
