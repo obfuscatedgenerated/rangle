@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-04",
+  "number": 221,
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q611206",
+      "name": "Bosten Lake",
+      "value": 17,
+      "metric": "Depth",
+      "description": "lake",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q216621",
+      "name": "Lake Zaysan",
+      "value": 15,
+      "metric": "Depth",
+      "description": "lake in eastern Kazakhstan",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q11260",
+      "name": "Broadway",
+      "value": 53,
+      "metric": "Length",
+      "description": "road in New York City and Westchester County, New York, United States",
+      "prefix": "",
+      "suffix": " km",
+      "unit_hint": "in kilometres"
+    },
+    {
+      "id": "Q192258",
+      "name": "Quidditch Through the Ages",
+      "value": 56,
+      "metric": "Number of Pages",
+      "description": "2001 book by J. K. Rowling",
+      "prefix": "",
+      "suffix": " pages"
+    },
+    {
+      "id": "Q688605",
+      "name": "Flyer I",
+      "value": 48,
+      "metric": "Top Speed",
+      "description": "heavier-than-air powered aircraft, designed and built by the Wright Brothers",
+      "prefix": "",
+      "suffix": " km/h",
+      "unit_hint": "in km/h"
+    }
+  ]
+}
