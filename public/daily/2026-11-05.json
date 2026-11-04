@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-05",
+  "number": 222,
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q688605",
+      "name": "Flyer I",
+      "value": 48,
+      "metric": "Top Speed",
+      "description": "heavier-than-air powered aircraft, designed and built by the Wright Brothers",
+      "prefix": "",
+      "suffix": " km/h",
+      "unit_hint": "in km/h"
+    },
+    {
+      "id": "Q831903",
+      "name": "Lake Bohinj",
+      "value": 45,
+      "metric": "Depth",
+      "description": "lake in Slovenia",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q207468",
+      "name": "Bay of Kotor",
+      "value": 60,
+      "metric": "Depth",
+      "description": "bay",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q11260",
+      "name": "Broadway",
+      "value": 53,
+      "metric": "Length",
+      "description": "road in New York City and Westchester County, New York, United States",
+      "prefix": "",
+      "suffix": " km",
+      "unit_hint": "in kilometres"
+    },
+    {
+      "id": "Q217964",
+      "name": "LZ 129 Hindenburg",
+      "value": 135,
+      "metric": "Top Speed",
+      "description": "German airship, launched in 1936 and destroyed in 1937",
+      "prefix": "",
+      "suffix": " km/h",
+      "unit_hint": "in km/h"
+    }
+  ]
+}
