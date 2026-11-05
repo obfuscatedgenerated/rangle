@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-06",
+  "number": 223,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q2021999",
+      "name": "Spearow",
+      "value": 21,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q1539525",
+      "name": "Stolichnaya",
+      "value": 40,
+      "metric": "Alcohol by Volume",
+      "description": "vodka brand",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q2699785",
+      "name": "Mistresses",
+      "value": 16,
+      "metric": "Number of Episodes",
+      "description": "2008-2010 British serial drama television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q542594",
+      "name": "Angostura bitters",
+      "value": 44.7,
+      "metric": "Alcohol by Volume",
+      "description": "concentrated bitter made of water, alcohol, herbs and spices",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q2337000",
+      "name": "Pidgeot",
+      "value": 18,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    }
+  ]
+}
