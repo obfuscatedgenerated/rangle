@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-08",
+  "number": 225,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q80680",
+      "name": "jenever",
+      "value": 30,
+      "metric": "Alcohol by Volume",
+      "description": "French, Dutch and Belgian liquor",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q199788",
+      "name": "Gadus morhua",
+      "value": 25,
+      "metric": "Life Expectancy / Maximum Lifespan",
+      "description": "benthopelagic fish of the family Gadidae",
+      "prefix": "",
+      "suffix": " years",
+      "unit_hint": "in years"
+    },
+    {
+      "id": "Q2144186",
+      "name": "8 out of 10 Cats",
+      "value": 22,
+      "metric": "Number of Seasons",
+      "description": "British television comedy panel game",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q25396458",
+      "name": "Dirk Gently's Holistic Detective Agency",
+      "value": 18,
+      "metric": "Number of Episodes",
+      "description": "American television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q127310",
+      "name": "Æon Flux",
+      "value": 16,
+      "metric": "Number of Episodes",
+      "description": "1991-1995 animated television series",
+      "prefix": "",
+      "suffix": " episodes"
+    }
+  ]
+}
