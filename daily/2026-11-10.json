@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-10",
+  "number": 227,
+  "difficulty": "Hard",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q192653",
+      "name": "Czech Airlines",
+      "value": 133,
+      "metric": "Number of Employees",
+      "description": "Czech holding company, former airline",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q461340",
+      "name": "Paris Observatory, PSL University",
+      "value": 114,
+      "metric": "Student Enrollment",
+      "description": "foremost astronomical observatory of France",
+      "prefix": "",
+      "suffix": " students"
+    },
+    {
+      "id": "Q1377116",
+      "name": "Kotava",
+      "value": 50,
+      "metric": "Native Speakers",
+      "description": "international auxiliary language created in 1978",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q29942",
+      "name": "Enets",
+      "value": 43,
+      "metric": "Native Speakers",
+      "description": "Samoyedic pair of languages by the Enets people in Krasnoyarsk Krai, Russia",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q215539",
+      "name": "Moscow Conservatory",
+      "value": 40,
+      "metric": "Number of Employees",
+      "description": "higher musical education institution in Moscow",
+      "prefix": "",
+      "suffix": " employees"
+    }
+  ]
+}
