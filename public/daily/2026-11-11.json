@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-11",
+  "number": 228,
+  "difficulty": "Hard",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q201373",
+      "name": "Nikola Žigić",
+      "value": 202,
+      "metric": "Height",
+      "description": "Serbian footballer",
+      "prefix": "",
+      "suffix": " cm",
+      "unit_hint": "in centimeters"
+    },
+    {
+      "id": "Q18225084",
+      "name": "The Hateful Eight",
+      "value": 187,
+      "metric": "Duration / Runtime",
+      "description": "2015 film directed by Quentin Tarantino",
+      "prefix": "",
+      "suffix": " minutes",
+      "unit_hint": "in minutes"
+    },
+    {
+      "id": "Q15895171",
+      "name": "The Heart of Woman",
+      "value": 262,
+      "metric": "Number of Episodes",
+      "description": "Taiwanese television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q2538169",
+      "name": "Mitsunori Yoshida",
+      "value": 175,
+      "metric": "Height",
+      "description": "Japanese association football player",
+      "prefix": "",
+      "suffix": " cm",
+      "unit_hint": "in centimeters"
+    },
+    {
+      "id": "Q2708006",
+      "name": "Corsola",
+      "value": 222,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    }
+  ]
+}
