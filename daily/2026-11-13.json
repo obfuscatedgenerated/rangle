@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-13",
+  "number": 230,
+  "difficulty": "Hard",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q16323131",
+      "name": "100 Pipers",
+      "value": 42.8,
+      "metric": "Alcohol by Volume",
+      "description": "blended Scotch whisky",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q2022294",
+      "name": "Mankey",
+      "value": 56,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q2486279",
+      "name": "Arcanine",
+      "value": 59,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q17102143",
+      "name": "Kraken Rum",
+      "value": 40,
+      "metric": "Alcohol by Volume",
+      "description": "black rum",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q22682112",
+      "name": "River Lea",
+      "value": 83,
+      "metric": "Tempo",
+      "description": "single by Adele",
+      "prefix": "",
+      "suffix": " BPM",
+      "unit_hint": "beats per minute"
+    }
+  ]
+}
