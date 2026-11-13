@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-14",
+  "number": 231,
+  "difficulty": "Hard",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q109858",
+      "name": "Fifth Avenue",
+      "value": 10,
+      "metric": "Length",
+      "description": "north-south avenue in Manhattan, New York",
+      "prefix": "",
+      "suffix": " km",
+      "unit_hint": "in kilometres"
+    },
+    {
+      "id": "Q323310",
+      "name": "Mont Blanc Tunnel",
+      "value": 12,
+      "metric": "Length",
+      "description": "road tunnel connecting France and Italy",
+      "prefix": "",
+      "suffix": " km",
+      "unit_hint": "in kilometres"
+    },
+    {
+      "id": "Q188487",
+      "name": "Lake Trasimeno",
+      "value": 7,
+      "metric": "Depth",
+      "description": "lake in Umbria, Italy",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q161385",
+      "name": "Szczecin Lagoon",
+      "value": 6,
+      "metric": "Depth",
+      "description": "estuary on the Polish-German border",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q54383",
+      "name": "Columbia",
+      "value": 24,
+      "metric": "Wingspan",
+      "description": "American Space Shuttle orbiter",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
