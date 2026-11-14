@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-15",
+  "number": 232,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q944698",
+      "name": "Last Man Standing",
+      "value": 194,
+      "metric": "Number of Episodes",
+      "description": "American sitcom created by Jack Burditt",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q191644",
+      "name": "Eva Green",
+      "value": 170,
+      "metric": "Height",
+      "description": "French actress (born 1980)",
+      "prefix": "",
+      "suffix": " cm",
+      "unit_hint": "in centimeters"
+    },
+    {
+      "id": "Q163249",
+      "name": "Jessica Biel",
+      "value": 160,
+      "metric": "Height",
+      "description": "American actress (born 1982)",
+      "prefix": "",
+      "suffix": " cm",
+      "unit_hint": "in centimeters"
+    },
+    {
+      "id": "Q1191179",
+      "name": "Más Sabe el Diablo",
+      "value": 182,
+      "metric": "Number of Episodes",
+      "description": "American television series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q2708483",
+      "name": "Shuckle",
+      "value": 213,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    }
+  ]
+}
