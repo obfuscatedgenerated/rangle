@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-16",
+  "number": 233,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q215617",
+      "name": "Sleeping Beauty",
+      "value": 6000000,
+      "metric": "Production Budget",
+      "description": "1959 American animated film",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q83265",
+      "name": "Grand Theft Auto: San Andreas",
+      "value": 21500000,
+      "metric": "Total Units Sold",
+      "description": "2004 video game",
+      "prefix": "",
+      "suffix": " units",
+      "unit_hint": "approx."
+    },
+    {
+      "id": "Q109116",
+      "name": "The Great Dictator",
+      "value": 5000000,
+      "metric": "Total Box Office Revenue",
+      "description": "1940 film directed by Charlie Chaplin",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q20751338",
+      "name": "Rock Dog",
+      "value": 24148488,
+      "metric": "Total Box Office Revenue",
+      "description": "2016 animated film directed by Ash Brannon",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    },
+    {
+      "id": "Q184701",
+      "name": "The Aristocats",
+      "value": 4000000,
+      "metric": "Production Budget",
+      "description": "1970 animated film directed by Wolfgang Reitherman",
+      "prefix": "$",
+      "suffix": "",
+      "unit_hint": "in dollars"
+    }
+  ]
+}
