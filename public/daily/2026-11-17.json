@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-17",
+  "number": 234,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q322141",
+      "name": "Barbary sheep",
+      "value": 157,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q734086",
+      "name": "Do Somethin'",
+      "value": 130,
+      "metric": "Tempo",
+      "description": "2005 single by Britney Spears",
+      "prefix": "",
+      "suffix": " BPM",
+      "unit_hint": "beats per minute"
+    },
+    {
+      "id": "Q666168",
+      "name": "Breakaway",
+      "value": 166,
+      "metric": "Tempo",
+      "description": "2004 song by Kelly Clarkson",
+      "prefix": "",
+      "suffix": " BPM",
+      "unit_hint": "beats per minute"
+    },
+    {
+      "id": "Q2632784",
+      "name": "Kabutops",
+      "value": 141,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q1191234",
+      "name": "Dragonite",
+      "value": 149,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    }
+  ]
+}
