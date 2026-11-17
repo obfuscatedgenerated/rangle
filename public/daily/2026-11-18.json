@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-18",
+  "number": 235,
+  "difficulty": "Hard",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q546829",
+      "name": "Frankenstein",
+      "value": 71,
+      "metric": "Duration / Runtime",
+      "description": "1931 film directed by James Whale",
+      "prefix": "",
+      "suffix": " minutes",
+      "unit_hint": "in minutes"
+    },
+    {
+      "id": "Q2708006",
+      "name": "Corsola",
+      "value": 222,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q279378",
+      "name": "Dracula",
+      "value": 75,
+      "metric": "Duration / Runtime",
+      "description": "1931 film directed by Tod Browning",
+      "prefix": "",
+      "suffix": " minutes",
+      "unit_hint": "in minutes"
+    },
+    {
+      "id": "Q2294246",
+      "name": "Roosevelt's muntjac",
+      "value": 180,
+      "metric": "Gestation Period",
+      "description": "species of mammal",
+      "prefix": "",
+      "suffix": " days",
+      "unit_hint": "in days"
+    },
+    {
+      "id": "Q12698585",
+      "name": "Murkrow",
+      "value": 198,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    }
+  ]
+}
