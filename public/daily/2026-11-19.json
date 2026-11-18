@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-19",
+  "number": 236,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q1752151",
+      "name": "Wartortle",
+      "value": 8,
+      "metric": "Pokédex Number",
+      "description": "Pokémon species",
+      "prefix": "#",
+      "suffix": ""
+    },
+    {
+      "id": "Q625859",
+      "name": "Happy Together",
+      "value": 1,
+      "metric": "Number of Seasons",
+      "description": "South Korean television series",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q134899",
+      "name": "Zhigulevskoye",
+      "value": 4,
+      "metric": "Alcohol by Volume",
+      "description": "Russian beer brand",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q4460120",
+      "name": "Tom Goes to the Mayor",
+      "value": 2,
+      "metric": "Number of Seasons",
+      "description": "animated television series",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q2905047",
+      "name": "sorghum beer",
+      "value": 3.3,
+      "metric": "Alcohol by Volume",
+      "description": "beer originating in sub-Sahara Africa",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    }
+  ]
+}
