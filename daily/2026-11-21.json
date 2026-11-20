@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-21",
+  "number": 238,
+  "difficulty": "Easy",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q212731",
+      "name": "Fawlty Towers",
+      "value": 12,
+      "metric": "Number of Episodes",
+      "description": "1970s BBC television sitcom",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q776262",
+      "name": "Goede tijden, slechte tijden",
+      "value": 37,
+      "metric": "Number of Seasons",
+      "description": "Dutch tv-soap based on The Restless Years",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q229553",
+      "name": "3",
+      "value": 135,
+      "metric": "Tempo",
+      "description": "2009 single by Britney Spears",
+      "prefix": "",
+      "suffix": " BPM",
+      "unit_hint": "beats per minute"
+    },
+    {
+      "id": "Q79997521",
+      "name": "Start-Up",
+      "value": 16,
+      "metric": "Number of Episodes",
+      "description": "2020 South Korean romantic drama TV series",
+      "prefix": "",
+      "suffix": " episodes"
+    },
+    {
+      "id": "Q4616",
+      "name": "Marilyn Monroe",
+      "value": 166,
+      "metric": "Height",
+      "description": "American actress and model (1926–1962)",
+      "prefix": "",
+      "suffix": " cm",
+      "unit_hint": "in centimeters"
+    }
+  ]
+}
