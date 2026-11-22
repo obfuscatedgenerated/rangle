@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-23",
+  "number": 240,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q849751",
+      "name": "York University",
+      "value": 10709,
+      "metric": "Number of Employees",
+      "description": "public research university in Toronto, Ontario, Canada",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q168756",
+      "name": "University of California, Berkeley",
+      "value": 12122,
+      "metric": "Number of Employees",
+      "description": "public university in Berkeley, California, USA",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q900492",
+      "name": "Cà Mau Airport",
+      "value": 30698,
+      "metric": "Number of Passengers",
+      "description": "airport in Vietnam",
+      "prefix": "",
+      "suffix": " passengers",
+      "unit_hint": "annual"
+    },
+    {
+      "id": "Q32762",
+      "name": "Võro",
+      "value": 74499,
+      "metric": "Native Speakers",
+      "description": "Finnic language or dialect spoken in South Estonia; part of the South Estonian [Võro-Seto] linguistic region",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q33947",
+      "name": "Northern Sami",
+      "value": 25700,
+      "metric": "Native Speakers",
+      "description": "most widely spoken of all Sámi languages",
+      "prefix": "",
+      "suffix": " speakers"
+    }
+  ]
+}
