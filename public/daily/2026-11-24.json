@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-24",
+  "number": 241,
+  "difficulty": "Medium",
+  "neighbourhood": "large",
+  "puzzle": [
+    {
+      "id": "Q677037",
+      "name": "Telangana",
+      "value": 112077,
+      "metric": "Area",
+      "description": "state in southern India",
+      "prefix": "",
+      "suffix": " sq km",
+      "unit_hint": "in sq km"
+    },
+    {
+      "id": "Q9325",
+      "name": "Lufthansa",
+      "value": 100290,
+      "metric": "Number of Employees",
+      "description": "Flag-carrier and largest airline of Germany",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q248",
+      "name": "Intel",
+      "value": 121100,
+      "metric": "Number of Employees",
+      "description": "American multinational technology company",
+      "prefix": "",
+      "suffix": " employees"
+    },
+    {
+      "id": "Q34094",
+      "name": "Tongan",
+      "value": 186010,
+      "metric": "Native Speakers",
+      "description": "Polynesian language",
+      "prefix": "",
+      "suffix": " speakers"
+    },
+    {
+      "id": "Q33457",
+      "name": "Gagauz",
+      "value": 148720,
+      "metric": "Native Speakers",
+      "description": "Turkic language, spoken mainly by the Gagauz people and the official language of the autonomous Moldovan region of Gagauzia",
+      "prefix": "",
+      "suffix": " speakers"
+    }
+  ]
+}
