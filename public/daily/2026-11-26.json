@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-26",
+  "number": 243,
+  "difficulty": "Medium",
+  "neighbourhood": "small",
+  "puzzle": [
+    {
+      "id": "Q134899",
+      "name": "Zhigulevskoye",
+      "value": 4,
+      "metric": "Alcohol by Volume",
+      "description": "Russian beer brand",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q2905047",
+      "name": "sorghum beer",
+      "value": 3.3,
+      "metric": "Alcohol by Volume",
+      "description": "beer originating in sub-Sahara Africa",
+      "prefix": "",
+      "suffix": "%",
+      "unit_hint": "by approx. percent"
+    },
+    {
+      "id": "Q67616963",
+      "name": "Archibald's Next Big Thing",
+      "value": 2,
+      "metric": "Number of Seasons",
+      "description": "2019 American comedy animated web television series",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q1040028",
+      "name": "The Singing Detective",
+      "value": 1,
+      "metric": "Number of Seasons",
+      "description": "1986 British television series written by Dennis Potter",
+      "prefix": "",
+      "suffix": " seasons"
+    },
+    {
+      "id": "Q65120601",
+      "name": "Belgravia",
+      "value": 6,
+      "metric": "Number of Episodes",
+      "description": "American television series",
+      "prefix": "",
+      "suffix": " episodes"
+    }
+  ]
+}
