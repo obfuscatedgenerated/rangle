@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-27",
+  "number": 244,
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q134883",
+      "name": "CN Tower",
+      "value": 553,
+      "metric": "Height",
+      "description": "communications and observation tower in Toronto, Canada",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q42191",
+      "name": "Issyk-Kul",
+      "value": 668,
+      "metric": "Depth",
+      "description": "lake in Kyrgyzstan",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q125006",
+      "name": "Brooklyn Bridge",
+      "value": 1825,
+      "metric": "Length",
+      "description": "bridge in New York City, crossing the East River",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q125912",
+      "name": "Lake Kivu",
+      "value": 485,
+      "metric": "Depth",
+      "description": "meromictic lake in the East African Rift valley",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q29294",
+      "name": "Willis Tower",
+      "value": 442,
+      "metric": "Height",
+      "description": "skyscraper in Chicago, Illinois, USA",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
