@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-28",
+  "number": 245,
+  "difficulty": "Medium",
+  "neighbourhood": "medium",
+  "puzzle": [
+    {
+      "id": "Q6383",
+      "name": "Lake Balaton",
+      "value": 13,
+      "metric": "Depth",
+      "description": "freshwater lake in Hungary",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q140631",
+      "name": "Tainan",
+      "value": 1,
+      "metric": "Elevation above sea level",
+      "description": "city in southern Taiwan",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q146790",
+      "name": "Aomori",
+      "value": 2,
+      "metric": "Elevation above sea level",
+      "description": "city in Aomori Prefecture, Japan",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q10288",
+      "name": "Parthenon",
+      "value": 14,
+      "metric": "Height",
+      "description": "former temple of Athena on the Athenian Acropolis, Greece",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    },
+    {
+      "id": "Q125309",
+      "name": "Lake Chad",
+      "value": 11,
+      "metric": "Depth",
+      "description": "lake in Africa",
+      "prefix": "",
+      "suffix": " m",
+      "unit_hint": "in metres"
+    }
+  ]
+}
